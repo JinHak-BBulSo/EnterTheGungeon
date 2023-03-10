@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  - PlayerBullet
+  - MonsterBullet
+  - Item
+  - Door
+  - Wall
+  - DestroyObj
+  - InteractiveObj
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Lighting
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 579850169
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 3547978739
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 1359866939
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 3277374571
+    locked: 0
+  - name: BackMap
+    uniqueID: 57243957
+    locked: 0
+  - name: BackObjs
+    uniqueID: 1486359169
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 2454920327
+    locked: 0
+  - name: New Layer 8
+    uniqueID: 1969783717
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 673289853
+    locked: 0
+  - name: Player
+    uniqueID: 4084323277
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 1262727381
+    locked: 0
+  - name: Bullet
+    uniqueID: 2877693529
+    locked: 0
+  - name: New Layer 13
+    uniqueID: 1761383041
+    locked: 0
+  - name: New Layer 14
+    uniqueID: 105734929
+    locked: 0
+  - name: FrontMap
+    uniqueID: 327396791
+    locked: 0
+  - name: FrontObjs
+    uniqueID: 4069695163
+    locked: 0
+  - name: New Layer 17
+    uniqueID: 2619405217
+    locked: 0
+  - name: New Layer 18
+    uniqueID: 1817025659
+    locked: 0
+  - name: BackUI
+    uniqueID: 2987196533
+    locked: 0
+  - name: FrontUI
+    uniqueID: 3863650803
+    locked: 0
