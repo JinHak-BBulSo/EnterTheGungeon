@@ -6,8 +6,9 @@ public class TestEnemyWeapon : MonoBehaviour
 {
     float angle;
     GameObject player;
-    public RaycastHit2D hit;
+    public RaycastHit2D hit = default;
 
+    bool isDelayEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +44,18 @@ public class TestEnemyWeapon : MonoBehaviour
     }
     public void fire()
     {
-        Debug.Log("fire bullet");
-        GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-        clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+        if (isDelayEnd == false)
+        {
+            isDelayEnd = true; 
+            Debug.Log("fire bullet");
+            GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+            clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+            StartCoroutine(FireDelay());
+        }
+    }
+    IEnumerator FireDelay()
+    {
+        yield return new WaitForSeconds(2);
+        isDelayEnd = false;
     }
 }
