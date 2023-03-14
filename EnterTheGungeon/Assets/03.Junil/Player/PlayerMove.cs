@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerController playerController = default;
     private Rigidbody2D playerRigid2D = default;
     private Animator playerAni = default;
+    private PlayerAttack playerAttack = default;
 
 
     public float playerSpeed = default;
@@ -21,6 +22,10 @@ public class PlayerMove : MonoBehaviour
         playerController = gameObject.GetComponentMust<PlayerController>();
         playerRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         playerAni = gameObject.GetComponentMust<Animator>();
+
+        GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
+
+        playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
 
         isNowArmor = false;
         isDodgeing = false;
@@ -44,7 +49,7 @@ public class PlayerMove : MonoBehaviour
     public void OnMove(float inputX, float inputY)
     {
 
-        if(isDodgeing == true) { return; }
+        if(isDodgeing == true || isReDodgeing == true) { return; }
 
         playerRigid2D.velocity = new Vector2(inputX * playerSpeed, inputY * playerSpeed);
 
@@ -77,6 +82,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         isDodgeing = true;
+        playerAttack.isDodgeing = true;
 
         /// @param Vector3 mousePos_ : 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -97,6 +103,8 @@ public class PlayerMove : MonoBehaviour
         
         yield return new WaitForSeconds(0.8f);
         isDodgeing = false;
+        playerAttack.isDodgeing = false;
+
         //playerAni.SetTrigger("OnArmorOne");
 
         StartCoroutine("ReDodge");
