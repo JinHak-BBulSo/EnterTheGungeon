@@ -8,9 +8,6 @@ public class TestEnemyWeapon : MonoBehaviour
     GameObject player;
     public RaycastHit2D hit;
 
-    float fireDelay = 2f;
-
-    bool isDelayEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +39,12 @@ public class TestEnemyWeapon : MonoBehaviour
         int layerMask = 1 << LayerMask.NameToLayer("Bullet");
         layerMask = ~layerMask;
         hit = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, layerMask);
-        Debug.Log(hit.collider);
         // } Raycast To Player
     }
-    public void fire()  //delay주기
+    public void fire()
     {
         Debug.Log("fire bullet");
         GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-        clone.transform.parent = GameObject.Find("GameObjs").transform;
+        clone.transform.SetParent(GameObject.Find("GameObjs").transform);
     }
 }
