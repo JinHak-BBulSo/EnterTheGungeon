@@ -1,0 +1,3769 @@
+fileFormatVersion: 2
+guid: 682b053def00e0544b36018f7bc49de7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shotgun Kin_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 492
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b493328731fcdd4694e1668e71c6b18
+      internalID: 706190585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 492
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf3236132d43c747a39e4bbde68cd0a
+      internalID: 109867367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 492
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bbd72f86c22b246b33c408fdadb31b
+      internalID: -97234261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_7
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 492
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9606fe44c5db1a34aa30d21f1ec7016b
+      internalID: 1891660082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_8
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 492
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11d75b5a4f9c784f9a66bc78ec1c4b2
+      internalID: 902974848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_9
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 492
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af0e21634aa60345b7559dffbbafcea
+      internalID: -158453450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_10
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 492
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8b7b961a9e5d8449ea1a1f697be694
+      internalID: -536784442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_11
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 492
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ddd485c14935a4e9e0c8d7b8be2280
+      internalID: -435675354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 448
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7438279c773f244a998f7ddc097a268
+      internalID: 1182106480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_19
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c3e09dcc6c72144a6197b7dc0d69b0
+      internalID: -2140638844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 448
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043fe953d85114e4083dd690be7a49fd
+      internalID: -437854658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 448
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077d43a1e22e7b64c8829f649a96a294
+      internalID: -654249813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_22
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507e4eea3e496ea4cb90a1cf155d7ba6
+      internalID: 399785247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 448
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfd1f65a1318ad48be7bf5c5e76ea20
+      internalID: -66234192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_24
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 448
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a677ca43f1270942b9cc81865cc065c
+      internalID: 1228671802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_25
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fd4ba149c0d944196db0fee51e81b1
+      internalID: -1128637990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_26
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 448
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9b3e144e601d445a84a4049cd45a43
+      internalID: 1171922397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_27
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 448
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f50e0c80b5aa3d45be2642167de414b
+      internalID: 526654400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_28
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f4fd6c797c387439baa840831ec06d
+      internalID: 689162888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_29
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 448
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf80b9101f940b468167935caeef04b
+      internalID: -1956970246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_30
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 448
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b4c820c6d45184b8f901df153a5ca4
+      internalID: 1055682530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_31
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f68b5e5a3502144b4808f84266a356
+      internalID: -1578297880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_32
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 448
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7793685b2467d044e9e3e9bc725c2fb8
+      internalID: -136134776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 448
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174d58001a748b24291a66f4084ce1d1
+      internalID: 393520102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_34
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f046d07157e14be4187b6605dd2e593e
+      internalID: -101279122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_35
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 448
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a01c97e70d5f64f8b8e4e7eac17252
+      internalID: -1755914766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_36
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 448
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5011c8057c961c40b951a3054e97187
+      internalID: 1890832842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_37
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c44364ed84e55547b0a5d29cf8887fd
+      internalID: -1296646829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_38
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 448
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d6c4eced0afc54da630020a3c34d22
+      internalID: -1208125441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_39
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 448
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6437132f4d8d0d46a85ff7ba22a33b9
+      internalID: 685735970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_40
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 448
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c02e685e43ca3f42a6041059dc582c5
+      internalID: 310645518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_41
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 448
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f609122fe8b7f194c975cd1fe2aa718a
+      internalID: 927666303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_42
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 416
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: addaecd7e69209d4a800a7418d246605
+      internalID: 613496790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_43
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 416
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a38c398cf906342b07d2440ece3e3c
+      internalID: -989168041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_44
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 416
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c88ead78c17dd49be3ad01f7b551c5
+      internalID: -1154419255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_45
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 416
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e63ae090c79424db49ec31189f4077
+      internalID: 702709456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_46
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 416
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a6caf8db67e0c4e801f92ac2abce08
+      internalID: -1936195464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_47
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 416
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8b078f876fc9d41958d2d61fe56b22
+      internalID: -266786686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_48
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 416
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fd956996ddd2a4ab9cff5a953c126f
+      internalID: 1676767960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_49
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 416
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1dd011606173144b9b14daaab7059f0
+      internalID: 133201638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_50
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 416
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d9a0285a6cbc74883f1063b8ff78fc
+      internalID: 415629690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_51
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 416
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac24353412fa9704f8373153245e11c6
+      internalID: -414511318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_52
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 416
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd191181d2721c443982aa3277445473
+      internalID: 522874630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_53
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 416
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f7fa55cde38384e9924b9f14f9e6b8
+      internalID: 526977156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_54
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 416
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9dc1d078706f94ab25339d8ad0af92
+      internalID: 968271558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_55
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 416
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfc939929723ab47999e9c0ed7d4bad
+      internalID: 532119145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_56
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 416
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a38dbd5b15d054593fdf4c7c61e748
+      internalID: 2107557744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_57
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 416
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fe859b74e071342809089b307a3179
+      internalID: -1876310974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_58
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 416
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b32ead3047e64419ad4c40a9e41ac1
+      internalID: -1140205431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_59
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 416
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db0803105221c44eba70643b0bc2cda
+      internalID: 276555722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_62
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 319
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92758ba513425b44a7a224b871df170
+      internalID: -718499814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_63
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 373
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac484c24b480f64791115dcbad170cf
+      internalID: -1959735843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_67
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 373
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88278a43d81bbd4480034c84e55c7af
+      internalID: -276330772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_69
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 319
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba592c6d626d3d4389f58cf17f63211
+      internalID: -233252828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_70
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 373
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cdb4bb38ad43342aa4a06195e21d44
+      internalID: -2118445998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_72
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 319
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016bc3cb902339543bd1ec0b7a757a16
+      internalID: 1178971929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_75
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 373
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafb1eaf6a2e2ae44a1b19bcf968febb
+      internalID: -1142295166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_78
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 319
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa69d0846f86e9419bfd42786ef8472
+      internalID: 529963476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_80
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 373
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6337d3b8e50cc4db41e15ebcbe0e88
+      internalID: 1554516865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 373
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9443b1c54969440b22ec64780506fd
+      internalID: -602924764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_85
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 319
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87240e5d24168e94ba1f46b8735c6237
+      internalID: 12993618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_91
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 373
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc92c7b2073ed3e4dbcfe98293f8abde
+      internalID: -685630705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_92
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 373
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60b6eba310ddad4886fbce05f4afd25
+      internalID: 293938663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_93
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 319
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93c3a7a28a727848bb13bd9c501e09d
+      internalID: 2137942228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_94
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 373
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55539a916600e7a4084b4b9feae49e87
+      internalID: -196850207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_95
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 373
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c379d30e78ec7c42ae916c233443103
+      internalID: -884189048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_97
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 319
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618c3cbbdc8a49744b81e1c6d92d9a7d
+      internalID: -1950711110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_98
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 373
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8647790d6fb70a04fb05f3c8e2618e6c
+      internalID: -810302229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_101
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 373
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fe563c2132b724ea68446c9b279546
+      internalID: 593431185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_102
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 319
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e081935c6858d40a164f56bf59c901
+      internalID: 2096598795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_104
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 373
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c961497ca8c9b3548901565454880965
+      internalID: -2129603717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_106
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 319
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd0e3b2726c3134a9ddcf0724ad6fef
+      internalID: 636945964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_109
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 373
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9978f7315d5f7e44919dfc4b6caffae
+      internalID: -373465903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_112
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 319
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e05c80aba95c34e8f7a17e81bb3272
+      internalID: 2109947929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_114
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 373
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0710bca97f58631489bae068fb403221
+      internalID: 356141464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_116
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 373
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a27c18273fe1b44d94fc31473714417
+      internalID: 219327969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_119
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 319
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f978e5211d3c8440a5796c1c0f7b4af
+      internalID: 1668209573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_125
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 373
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879144af921b2874c9936f85c1ac5fff
+      internalID: 1799283825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_127
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 373
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982490f0062dbcd4dbf4376913600eb8
+      internalID: -248050419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_128
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 373
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6552ce02ba3b01449e935768cda2e31
+      internalID: -1231094911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_129
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 373
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b072a105683af3a479eaff4ce95846f1
+      internalID: -1880512796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_138
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 279
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cd7e3e36b8cea4a926f524e0888f86
+      internalID: 178477160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_139
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 279
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1f704c6c78ac543a8f570ff85fbb96
+      internalID: 379302907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_140
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 279
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e6b24e87654cb448792f2b97912966
+      internalID: 447555924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_141
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 279
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0eff36ff7a86824b9acc57bfbbfd70c
+      internalID: -838227373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_142
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 279
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f98c65909716a048a7a46d795ab3281
+      internalID: 1985662385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_143
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 279
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c49e6d2da479ce4abb42774cfd45882
+      internalID: -1012028366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_144
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 279
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4c849ee0209d744a7a7e7887f39d7c
+      internalID: -1876916268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_145
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 279
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d1c46133d7a7c40b692c0a21c8e522
+      internalID: 1455783523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_146
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 279
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5fb3ec59ed1944492fdc1d64fb3f99
+      internalID: 1978126642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_147
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 279
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29a381c89bf2af4389a3b1bbb6b5fdc
+      internalID: -1509803885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_182
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 238
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3b2533c85241246bba46f169de75bb
+      internalID: -161012652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_183
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 238
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beeb5672e85819e4a9153a702759be00
+      internalID: -1947794439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_184
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 238
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fd3d3fc6a44f147a28c7a4b068c666
+      internalID: -780677761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_185
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 238
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8bada8516aa6847bdcba60a28e85c0
+      internalID: -1411808922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_186
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 238
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2744181f032854c46a291ab105194aba
+      internalID: -708429996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_187
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 238
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbaf8690b2a2ce41b9fd39bd9fed6ad
+      internalID: 788216986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_188
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 238
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb01e1a3f773a441a7790165f8af51a
+      internalID: 27851742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_189
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 238
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d153358993c58cb48a8820d60bbbc944
+      internalID: 1800764664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_190
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 212
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a840194a62ec964d96612cc914b14d2
+      internalID: 2040813143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_191
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 212
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e7f258fc7af5b44be23a3c90d0aed7
+      internalID: -821564059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_192
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 212
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4ede14400e5f74b9414c5580fa0112
+      internalID: -245448111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_193
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 212
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9557e9c62a6d04ebe28dd03010a45f
+      internalID: 1616880034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_194
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 212
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a6cdd6ca44fde47870bd47d9eca986
+      internalID: 1056994877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_195
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 212
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed9d7ef2fb211f4fbce70b023b9a313
+      internalID: -69074512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_196
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 212
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4839dd216d313ca47b82a49312c82555
+      internalID: -1817430456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_197
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 212
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f20f45a128300843be902c1fc2fe335
+      internalID: 1838353349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_198
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 185
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd4ee0c9759d89448f886206f94f2eb
+      internalID: 284373556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_199
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 185
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1951bd7a7ff79354e89483452fa72643
+      internalID: -1323054514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_200
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 185
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38a447cc88a4294b855693ef2f3b30d
+      internalID: 754744352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_201
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 185
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57366c3ca1af1ef4f8f163f1ffd4afc6
+      internalID: -768926433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_202
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 185
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c007586fc19124db23c7f19ca4376f
+      internalID: -811511231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_203
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 185
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fd8f53851d9db4593b6be2ad55fcb3
+      internalID: -802230272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_204
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 185
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576d94db7c03efe48aafcf1aa382c6b8
+      internalID: -961876060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_205
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 185
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c5b39eeac74464f83abf13b46ca1ba
+      internalID: 1197893080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_206
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 155
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a39f98984a8f74cb8829e1ebd048e0
+      internalID: 1773737267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_207
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 155
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8864bf29838b34a8233eaa00851b39
+      internalID: -782041707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_208
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 155
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302f577a926d9b74999c29268980f0ba
+      internalID: -1686159109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_209
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 155
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1ecd3b6a9386248b683d3a9b5227e8
+      internalID: 44905187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_210
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 155
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396f0979c711397459d5a1b30924d6b4
+      internalID: 1069971650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_211
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 155
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2893e6976b79e55499b1f57c294eb228
+      internalID: -627151501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_212
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 155
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37e8308ee33b70449ade4a4d1a57663
+      internalID: 509737812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_213
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 155
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae96e91fad42ff347a21e415f6d5401e
+      internalID: -1796578660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_214
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 128
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4057d57a8467edc4f8ea175f2c6b54dc
+      internalID: 458064805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_215
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 128
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0564924b852ede47b3c8bda55a16629
+      internalID: -547366660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_216
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 128
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e8c5066a7c64a4fbb86d7b21177d61
+      internalID: 1777997260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_217
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 128
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153b1ef7ce90b104589c079d23a5e2f8
+      internalID: -821637014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_218
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 128
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86009a624448464d88b78433bd485f8
+      internalID: -473441796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_219
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 128
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51df67b034863974a9782bc37f20d396
+      internalID: 1937942919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_220
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 128
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a7fdbc8146e414d953e323885a0f5c
+      internalID: 1352879724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_221
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 128
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e55ab9d9027f6346a79dba72a8a8f69
+      internalID: -554560480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_222
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 98
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c6407c5cc610045a9ec3e6d9ee5253
+      internalID: 490396342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_223
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 98
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b74e67a2aa9b484e9829858f1ca6780
+      internalID: 1061984124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_224
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 98
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d6fd8554b670d4db72203717f307d4
+      internalID: 232740954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_225
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 98
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92b86fb4d3a9b94a99811a7c17fa8a9
+      internalID: -880867699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_226
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 98
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dd16fd9bd66574a9251b847cda65d7
+      internalID: -300124636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_227
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 98
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f35b0420fe7b34f98007604fdba918
+      internalID: -148752080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_228
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 98
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be65105fc32857f469a3cdff6027cd20
+      internalID: -1247121621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_229
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 98
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f855a639692c24948b9f982014fdc608
+      internalID: -759222380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_230
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 98
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2173a76fae3834588221f3a73bd6ec
+      internalID: -938867882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_231
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 98
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947b9374115778a47897cd054a8f14a7
+      internalID: -152442605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_232
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 68
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb77c7fb131ece04483855745dd3ca16
+      internalID: 1790441171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_233
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 68
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfbfe7ea36c1d3b48aeab8c2334c97e8
+      internalID: -687478532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_234
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 68
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb024a519688d1d4d8912bf688b72aab
+      internalID: 894935451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_235
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 68
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6cd715f8344534e8da1049adaa60f6
+      internalID: -448373045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_236
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 68
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c415f362fc34f74e83bf2f5211881df
+      internalID: -384358948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_237
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 68
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62be5c3638f6e643bacecf546f9031d
+      internalID: 1232086873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_238
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 68
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e464c2c000508a48be77109ad7c7013
+      internalID: -749210922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_239
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 68
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26d4ed61db88749818b84f895d9cba
+      internalID: -1355811267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_240
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 68
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9585e6593f7964e4b8bb0d5eeff30e4d
+      internalID: -1895001329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_241
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 68
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86a4740821128245af8d5964e16bef2
+      internalID: -488499290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_242
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 47
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02c9b8fd4970ad409c5acf15037ae43
+      internalID: -234805689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_243
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 47
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3b2a6ed93309d4ab75104780ff09c3
+      internalID: -178651510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_244
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 47
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b750f954a8dc3c047b1039f9c3e6d0f2
+      internalID: -794204430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_245
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 47
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885e1ca659f755b43aae4f89ca3ff34e
+      internalID: -2043413602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_258
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb976b20eb7e6e468c9d6d776feffd3
+      internalID: -1954780878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_259
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 5
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c9adaa573b3604c9373fe7f40e6332
+      internalID: 579042072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 319
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e806b57ba4adf49bb3090a57245b3c
+      internalID: -908234030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 319
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1c2f13fbc5a3b439e1f34379059b16
+      internalID: 1137565278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun Kin_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 319
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb37d7ba8c68b1448d47dba415cee7c
+      internalID: -733086024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shotgun Kin_0: -908234030
+      Shotgun Kin_1: 1137565278
+      Shotgun Kin_10: -536784442
+      Shotgun Kin_100: 643485693
+      Shotgun Kin_101: 593431185
+      Shotgun Kin_102: 2096598795
+      Shotgun Kin_103: 290637673
+      Shotgun Kin_104: -2129603717
+      Shotgun Kin_105: 2086123801
+      Shotgun Kin_106: 636945964
+      Shotgun Kin_107: -1048461685
+      Shotgun Kin_108: 826314826
+      Shotgun Kin_109: -373465903
+      Shotgun Kin_11: -435675354
+      Shotgun Kin_110: -2031526825
+      Shotgun Kin_111: -223739830
+      Shotgun Kin_112: 2109947929
+      Shotgun Kin_113: -1818513691
+      Shotgun Kin_114: 356141464
+      Shotgun Kin_115: 1692391033
+      Shotgun Kin_116: 219327969
+      Shotgun Kin_117: 2126188861
+      Shotgun Kin_118: 1370816127
+      Shotgun Kin_119: 1668209573
+      Shotgun Kin_12: -777121197
+      Shotgun Kin_120: -2112549811
+      Shotgun Kin_121: -1094245334
+      Shotgun Kin_122: -176511691
+      Shotgun Kin_123: 185351976
+      Shotgun Kin_124: 1832885611
+      Shotgun Kin_125: 1799283825
+      Shotgun Kin_126: 1788515184
+      Shotgun Kin_127: -248050419
+      Shotgun Kin_128: -1231094911
+      Shotgun Kin_129: -1880512796
+      Shotgun Kin_13: -623967265
+      Shotgun Kin_130: -894444852
+      Shotgun Kin_131: 2089223436
+      Shotgun Kin_132: -1277639402
+      Shotgun Kin_133: -1547027835
+      Shotgun Kin_134: -1477216508
+      Shotgun Kin_135: 1231046757
+      Shotgun Kin_136: -1141002989
+      Shotgun Kin_137: -1791088984
+      Shotgun Kin_138: 178477160
+      Shotgun Kin_139: 379302907
+      Shotgun Kin_14: 1658620404
+      Shotgun Kin_140: 447555924
+      Shotgun Kin_141: -838227373
+      Shotgun Kin_142: 1985662385
+      Shotgun Kin_143: -1012028366
+      Shotgun Kin_144: -1876916268
+      Shotgun Kin_145: 1455783523
+      Shotgun Kin_146: 1978126642
+      Shotgun Kin_147: -1509803885
+      Shotgun Kin_148: 220633348
+      Shotgun Kin_149: -1224074222
+      Shotgun Kin_15: -1242590741
+      Shotgun Kin_150: -387392757
+      Shotgun Kin_151: 2056275953
+      Shotgun Kin_152: 1288537700
+      Shotgun Kin_153: -1441718854
+      Shotgun Kin_154: -327351114
+      Shotgun Kin_155: 1307284816
+      Shotgun Kin_156: -569001548
+      Shotgun Kin_157: -1057038490
+      Shotgun Kin_158: 1552561079
+      Shotgun Kin_159: -2163756
+      Shotgun Kin_16: 1866505018
+      Shotgun Kin_160: -797956487
+      Shotgun Kin_161: 855866315
+      Shotgun Kin_162: -1439491369
+      Shotgun Kin_163: 374215188
+      Shotgun Kin_164: -1655386748
+      Shotgun Kin_165: -1094087366
+      Shotgun Kin_166: -706278182
+      Shotgun Kin_167: -1614583285
+      Shotgun Kin_168: -2130360625
+      Shotgun Kin_169: -1521430810
+      Shotgun Kin_17: 306484909
+      Shotgun Kin_170: 531682835
+      Shotgun Kin_171: -1688749120
+      Shotgun Kin_172: -1239864538
+      Shotgun Kin_173: 1620955908
+      Shotgun Kin_174: 281400797
+      Shotgun Kin_175: -2145200591
+      Shotgun Kin_176: 1890719891
+      Shotgun Kin_177: 53610768
+      Shotgun Kin_178: 384171633
+      Shotgun Kin_179: 911604160
+      Shotgun Kin_18: 1182106480
+      Shotgun Kin_180: -1685498519
+      Shotgun Kin_181: -455894569
+      Shotgun Kin_182: -161012652
+      Shotgun Kin_183: -1947794439
+      Shotgun Kin_184: -780677761
+      Shotgun Kin_185: -1411808922
+      Shotgun Kin_186: -708429996
+      Shotgun Kin_187: 788216986
+      Shotgun Kin_188: 27851742
+      Shotgun Kin_189: 1800764664
+      Shotgun Kin_19: -2140638844
+      Shotgun Kin_190: 2040813143
+      Shotgun Kin_191: -821564059
+      Shotgun Kin_192: -245448111
+      Shotgun Kin_193: 1616880034
+      Shotgun Kin_194: 1056994877
+      Shotgun Kin_195: -69074512
+      Shotgun Kin_196: -1817430456
+      Shotgun Kin_197: 1838353349
+      Shotgun Kin_198: 284373556
+      Shotgun Kin_199: -1323054514
+      Shotgun Kin_2: -733086024
+      Shotgun Kin_20: -437854658
+      Shotgun Kin_200: 754744352
+      Shotgun Kin_201: -768926433
+      Shotgun Kin_202: -811511231
+      Shotgun Kin_203: -802230272
+      Shotgun Kin_204: -961876060
+      Shotgun Kin_205: 1197893080
+      Shotgun Kin_206: 1773737267
+      Shotgun Kin_207: -782041707
+      Shotgun Kin_208: -1686159109
+      Shotgun Kin_209: 44905187
+      Shotgun Kin_21: -654249813
+      Shotgun Kin_210: 1069971650
+      Shotgun Kin_211: -627151501
+      Shotgun Kin_212: 509737812
+      Shotgun Kin_213: -1796578660
+      Shotgun Kin_214: 458064805
+      Shotgun Kin_215: -547366660
+      Shotgun Kin_216: 1777997260
+      Shotgun Kin_217: -821637014
+      Shotgun Kin_218: -473441796
+      Shotgun Kin_219: 1937942919
+      Shotgun Kin_22: 399785247
+      Shotgun Kin_220: 1352879724
+      Shotgun Kin_221: -554560480
+      Shotgun Kin_222: 490396342
+      Shotgun Kin_223: 1061984124
+      Shotgun Kin_224: 232740954
+      Shotgun Kin_225: -880867699
+      Shotgun Kin_226: -300124636
+      Shotgun Kin_227: -148752080
+      Shotgun Kin_228: -1247121621
+      Shotgun Kin_229: -759222380
+      Shotgun Kin_23: -66234192
+      Shotgun Kin_230: -938867882
+      Shotgun Kin_231: -152442605
+      Shotgun Kin_232: 1790441171
+      Shotgun Kin_233: -687478532
+      Shotgun Kin_234: 894935451
+      Shotgun Kin_235: -448373045
+      Shotgun Kin_236: -384358948
+      Shotgun Kin_237: 1232086873
+      Shotgun Kin_238: -749210922
+      Shotgun Kin_239: -1355811267
+      Shotgun Kin_24: 1228671802
+      Shotgun Kin_240: -1895001329
+      Shotgun Kin_241: -488499290
+      Shotgun Kin_242: -234805689
+      Shotgun Kin_243: -178651510
+      Shotgun Kin_244: -794204430
+      Shotgun Kin_245: -2043413602
+      Shotgun Kin_246: -2127581231
+      Shotgun Kin_247: 617894253
+      Shotgun Kin_248: 1196187688
+      Shotgun Kin_249: -1226803026
+      Shotgun Kin_25: -1128637990
+      Shotgun Kin_250: 782520307
+      Shotgun Kin_251: -419535353
+      Shotgun Kin_252: -1611206025
+      Shotgun Kin_253: 1623764754
+      Shotgun Kin_254: -623302060
+      Shotgun Kin_255: -107253848
+      Shotgun Kin_256: -1734097816
+      Shotgun Kin_257: -1706324779
+      Shotgun Kin_258: -1954780878
+      Shotgun Kin_259: 579042072
+      Shotgun Kin_26: 1171922397
+      Shotgun Kin_260: -640711473
+      Shotgun Kin_261: 767578827
+      Shotgun Kin_262: -670483904
+      Shotgun Kin_263: 1722549389
+      Shotgun Kin_264: -1678320730
+      Shotgun Kin_265: -792819977
+      Shotgun Kin_266: -1828922649
+      Shotgun Kin_267: -507651434
+      Shotgun Kin_268: -610977374
+      Shotgun Kin_269: -975659952
+      Shotgun Kin_27: 526654400
+      Shotgun Kin_270: -92908000
+      Shotgun Kin_271: -1786727350
+      Shotgun Kin_272: -1864158563
+      Shotgun Kin_273: 569709998
+      Shotgun Kin_274: 1335580044
+      Shotgun Kin_275: 212714859
+      Shotgun Kin_276: 1354937222
+      Shotgun Kin_277: 62604650
+      Shotgun Kin_278: -639989784
+      Shotgun Kin_279: -1189792251
+      Shotgun Kin_28: 689162888
+      Shotgun Kin_280: -1196660505
+      Shotgun Kin_281: -1365881568
+      Shotgun Kin_282: 783382189
+      Shotgun Kin_283: 252829828
+      Shotgun Kin_284: 47423104
+      Shotgun Kin_285: -1847454882
+      Shotgun Kin_29: -1956970246
+      Shotgun Kin_3: -786449481
+      Shotgun Kin_30: 1055682530
+      Shotgun Kin_31: -1578297880
+      Shotgun Kin_32: -136134776
+      Shotgun Kin_33: 393520102
+      Shotgun Kin_34: -101279122
+      Shotgun Kin_35: -1755914766
+      Shotgun Kin_36: 1890832842
+      Shotgun Kin_37: -1296646829
+      Shotgun Kin_38: -1208125441
+      Shotgun Kin_39: 685735970
+      Shotgun Kin_4: 706190585
+      Shotgun Kin_40: 310645518
+      Shotgun Kin_41: 927666303
+      Shotgun Kin_42: 613496790
+      Shotgun Kin_43: -989168041
+      Shotgun Kin_44: -1154419255
+      Shotgun Kin_45: 702709456
+      Shotgun Kin_46: -1936195464
+      Shotgun Kin_47: -266786686
+      Shotgun Kin_48: 1676767960
+      Shotgun Kin_49: 133201638
+      Shotgun Kin_5: 109867367
+      Shotgun Kin_50: 415629690
+      Shotgun Kin_51: -414511318
+      Shotgun Kin_52: 522874630
+      Shotgun Kin_53: 526977156
+      Shotgun Kin_54: 968271558
+      Shotgun Kin_55: 532119145
+      Shotgun Kin_56: 2107557744
+      Shotgun Kin_57: -1876310974
+      Shotgun Kin_58: -1140205431
+      Shotgun Kin_59: 276555722
+      Shotgun Kin_6: -97234261
+      Shotgun Kin_60: 329509725
+      Shotgun Kin_61: 569996397
+      Shotgun Kin_62: -718499814
+      Shotgun Kin_63: -1959735843
+      Shotgun Kin_64: -275258785
+      Shotgun Kin_65: 132562705
+      Shotgun Kin_66: -1037472163
+      Shotgun Kin_67: -276330772
+      Shotgun Kin_68: -1896273935
+      Shotgun Kin_69: -233252828
+      Shotgun Kin_7: 1891660082
+      Shotgun Kin_70: -2118445998
+      Shotgun Kin_71: 1237997421
+      Shotgun Kin_72: 1178971929
+      Shotgun Kin_73: 976503072
+      Shotgun Kin_74: 1614139712
+      Shotgun Kin_75: -1142295166
+      Shotgun Kin_76: 1239902137
+      Shotgun Kin_77: -280076310
+      Shotgun Kin_78: 529963476
+      Shotgun Kin_79: 492902276
+      Shotgun Kin_8: 902974848
+      Shotgun Kin_80: 1554516865
+      Shotgun Kin_81: 105324112
+      Shotgun Kin_82: -602924764
+      Shotgun Kin_83: -1193966918
+      Shotgun Kin_84: 604320154
+      Shotgun Kin_85: 12993618
+      Shotgun Kin_86: 1865132963
+      Shotgun Kin_87: 535571242
+      Shotgun Kin_88: 69272829
+      Shotgun Kin_89: -180011996
+      Shotgun Kin_9: -158453450
+      Shotgun Kin_90: 292836280
+      Shotgun Kin_91: -685630705
+      Shotgun Kin_92: 293938663
+      Shotgun Kin_93: 2137942228
+      Shotgun Kin_94: -196850207
+      Shotgun Kin_95: -884189048
+      Shotgun Kin_96: 624910662
+      Shotgun Kin_97: -1950711110
+      Shotgun Kin_98: -810302229
+      Shotgun Kin_99: 1640110742
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
