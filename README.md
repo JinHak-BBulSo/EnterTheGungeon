@@ -2,7 +2,7 @@
 
 2023-03-13 Init Set, Project Start
 
-Project URP Change - Built in to URP.
+Project URP Change - Built in to URP..
 
 [HT]
 총알을 발사 할 때, RayCast가 총알의 Layer에 막혀 로직에 문제가 발생
