@@ -1,0 +1,4699 @@
+fileFormatVersion: 2
+guid: c31589083bd3eb1469928239a389e3ab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 986
+        width: 66
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ffb6a4eb6df8c4a83c985dadf7732d
+      internalID: -1653066286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 982
+        width: 76
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b28a7af4f78e942bee00368bbd77e6
+      internalID: 262681793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 979
+        width: 76
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9b9b1d8c23d9b4ebceec9d332b7358
+      internalID: 497996119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 978
+        width: 76
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accc315f47ea3794a9dc3ddd8fd1049d
+      internalID: -1781442772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_4
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 964
+        width: 67
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f406e1d1e0cbe04eb852669f3981494
+      internalID: 210389496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_5
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 964
+        width: 71
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a6d79be449a304e8f450a07b8b1379
+      internalID: 2005155754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_6
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 963
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1f84e6c2c5bca41b735f936940bbc5
+      internalID: 1246074454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_7
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 946
+        width: 31
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8e09bef0aadc54f812d2e0e2cf2a09
+      internalID: -1186259709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_8
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 946
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb750c2bc5727eb408f687d4698974b4
+      internalID: -431998180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_9
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 965
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a556bf9567ab341b605c7a84525d08
+      internalID: 1907716361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_10
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 951
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ee9b247f9ec55409ec9c600ac3328b
+      internalID: -1369281043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_11
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 943
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9817b98d547ed45b9ca26c6916c424
+      internalID: 745602014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_12
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 984
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be44776fab960794eb8e074abc8e550e
+      internalID: 753120616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 918
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b31f4f15843fa42aa7e92a2ee7b178
+      internalID: -1672444990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_14
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 920
+        width: 67
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6da6b25da308ec4db816400cbf3c889
+      internalID: -1121903514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_15
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 918
+        width: 68
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc375891aa2a094d984466cc41f5ca7
+      internalID: -362248183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_16
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 916
+        width: 65
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb1dd517b28a134996a68b2d9dea2f9
+      internalID: 2051809528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 896
+        width: 59
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4b9b0808dc9924598683db4e98471f
+      internalID: 369378417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_18
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 886
+        width: 43
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe85e6dfc2ad3545816e9003465c28f
+      internalID: -1645629123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_19
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 881
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf4123451ceaed42b553048d639e8c6
+      internalID: -990320702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_20
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 926
+        width: 62
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a2ab628ac40b64fb699398010dd405
+      internalID: 1702485079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_21
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 897
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3f3d3dced364743a80825478b46e49
+      internalID: -2122266247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_22
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 919
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938c413865a501f4fb632a12bc3938c2
+      internalID: -135889853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_23
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 906
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f06baebc22efc4fb40513082e35b72
+      internalID: 1779591155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_24
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 943
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c277c9d17ba6ef14aa6289b2e7e299b3
+      internalID: -353496801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 849
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cba5920657a66042a316e9572857438
+      internalID: 1449786822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_26
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 848
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccb8f8abc2a5aa4dab4e5c23e99baeb
+      internalID: 2138607425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_27
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 848
+        width: 59
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4f2e993fee1b2428e821bcf4e0e4e3
+      internalID: -1924616737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_28
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 847
+        width: 59
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50495f03db4d0f74cb52b5d82d8f39f5
+      internalID: -733361438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_29
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 870
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ff97df7ea733f4eb7b6b71ba8d17bc
+      internalID: 2012887050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_30
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 868
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6343b5ef0cc71c24dac6b7956ac3903b
+      internalID: -944022423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_31
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 856
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e27ed24c0cd934aa41005673e59c0f
+      internalID: 776549464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_32
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 900
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2a811e947ca2546b7c34d53fdbf476
+      internalID: -1546752876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_33
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 829
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a2d9e3c4f8ace4d980027bacddfdbf
+      internalID: 1904881519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_34
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 824
+        width: 55
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f2f4f43cd79e74e8fa3bb12485f4df
+      internalID: 428479725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_35
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 817
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ca19e5e722a99458d7f61909db6b75
+      internalID: -1761297804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_36
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 800
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea6c5a502636ba4f9139b9a1869dc53
+      internalID: -1198510977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_37
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 845
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fd1eed37c5ed84f979f55b9d23a05f
+      internalID: 1474537289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_38
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 819
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc8268d9c91ac048b5bbe94f4b69c92
+      internalID: -851865264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_39
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 856
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8df363f178347439bcca0075fb8e7d
+      internalID: -1544595580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_40
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 853
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf49668c2d51c8439ff9e0ca3b4903b
+      internalID: -468692202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_41
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 780
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764e5859986ebbe43969060dc0b1b07d
+      internalID: 1301124553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_42
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 780
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020c2c965ce2d1443b3654a18125b37f
+      internalID: -121051662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_43
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 780
+        width: 61
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18862c508a3d3a944b4b5d456fb3e41d
+      internalID: -1174464985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_44
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 762
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8da3de3a8678d4d802983819fd2ca8
+      internalID: 19855968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_45
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 753
+        width: 47
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f4d9b81c4efd146b083295562226f6
+      internalID: -578990072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_46
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 753
+        width: 48
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d87873fbb884a4abf45d9d306ec9d0
+      internalID: 404253733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_47
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 787
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf0924cb279e464c9ced13452280598
+      internalID: 1201702240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_48
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 819
+        width: 56
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce85901ab4b521e4a9273f06a36578f0
+      internalID: -1381940569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_49
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 813
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ff02dbbafc698498400540fe5cca2f
+      internalID: -683630972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_50
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 805
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75931b45c4fefb42a613eb204bd671f
+      internalID: -110473429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_51
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 747
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbac9662edfb8c4583a567d4bd66bf0
+      internalID: -1950543778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_52
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 734
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35d23ed0d306c940b72929723a5428d
+      internalID: -720633936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_53
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 786
+        width: 67
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff35bb2ef2c0794e8e89428b9574404
+      internalID: -1433943182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_54
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 779
+        width: 61
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a3508bac2fe884fabcfee8205d00f7
+      internalID: 626273415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_55
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 769
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295a6b0e5ebba7b4dab60fd5074f8fea
+      internalID: 449004774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_56
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 755
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2603ba0906055944bff40e4c2df8fbf
+      internalID: -1691669993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_57
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 712
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36e939172b79a04ea9738fe45b98d7f
+      internalID: 480042515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_58
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 712
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3427d3a01e9aec04591633f365f7b32d
+      internalID: -561115959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_59
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 699
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ec6a990c3eedf4e86ce74a67d664a7
+      internalID: -1687678590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_60
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 695
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06470fd72063e7643a648cf7889f32f7
+      internalID: -1494039795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 688
+        width: 54
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f165f519a5d0f4c938e6ed13319a4f
+      internalID: -2130655510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_62
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 686
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f01963c0373f3b488cf1643ea1457bc
+      internalID: -1368492302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_63
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 686
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace5c238f54f0fa40a48464c54427021
+      internalID: -1529308864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_64
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 731
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f631dee1d70eb4409866653c453fb13
+      internalID: 1992695375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_65
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 730
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e64db0ac4d84e64cbd64662113f7d1d
+      internalID: -354941807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_66
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 724
+        width: 39
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31029432e5531d4db36332087ae1c8f
+      internalID: -285020303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_67
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 724
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0dd3739387dcfa47ac7c4ba3deeb482
+      internalID: -104515251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_68
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 722
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3773e562436c1ee43bb90770f8618d18
+      internalID: -1662426837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_69
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 719
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298bf1c2b12bca946b5ec75519773286
+      internalID: -1409100258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_70
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 705
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0cd2c651e58cf468c40e508ed87590
+      internalID: 1812655290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_71
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 643
+        width: 65
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a614a156c614914ebcd6b1c4ac045b9
+      internalID: -1844174068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_72
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 633
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2374dc5722f22c84cba65da39555e0cc
+      internalID: 1887999229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_73
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 628
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8062d1be225956a4d9d2e5cd0b420a83
+      internalID: -473837597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_74
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 628
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39df9ccb5f5c2b444962e799b147ec1d
+      internalID: 280553005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_75
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 610
+        width: 47
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3761d93e0e637cc44aacb4ddc884ddcf
+      internalID: -28697681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_76
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 648
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddf8fcb095a9194bb934720c88f96d9
+      internalID: -1600171418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_77
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 679
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94da90e706300b84d948d522ab0d92f5
+      internalID: 1033019750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_78
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 677
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7977d3d5057c5ec409b3fc2f732c58dd
+      internalID: -640885292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_79
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 675
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891c03fc19cea7b4ca1eaedc348c4a5a
+      internalID: 955456038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_80
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 675
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691f888b49cbac741ab3cac85a884469
+      internalID: 344216034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_81
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 672
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13561c719e3628d4fabf80fb1ffe336f
+      internalID: 1411916254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_82
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 669
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fc5198cd192e74ead8945f8852f43f
+      internalID: -1964182449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_83
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 657
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b18655736e1ad84aa0bb0abe2e46cd7
+      internalID: -803493159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_84
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 587
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b85f36a99116546a9feb1df5b8edf2
+      internalID: -69506032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_85
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 631
+        width: 62
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287276ab85eda1d48a10fcf0f40573d3
+      internalID: 198013829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_86
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 622
+        width: 43
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932cd39efbb5a554ebfe9c6e8981295e
+      internalID: 632171044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_87
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 622
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6251b1f23698c1b4386183337e3f5ee9
+      internalID: -1284044603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_88
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 641
+        width: 67
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9531b93ad6a3e249b665fddf33351ca
+      internalID: -177356711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_89
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 629
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60377dd51af9ab43b3f12a4b1f3197e
+      internalID: 1346989462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_90
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 623
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de93fefe9a32d342a32424c1b83551c
+      internalID: 485419007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_91
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 605
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed90caa115e212448f3ad275aa1b597
+      internalID: -329299978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_92
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 565
+        width: 58
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a8d13e471899d4897fec1fb6d43462
+      internalID: -972508422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_93
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 565
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7f4b7a67470af41acb92ab21b7291a
+      internalID: -1323132687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_94
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 565
+        width: 68
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9134a1525a73fc241a91794b9ce6a25c
+      internalID: 982030596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_95
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 535
+        width: 50
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a22d4d40a19fc4b91cdf46121a5af4
+      internalID: -733899431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_96
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 535
+        width: 50
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a998292f418c0f418141282eca15faf
+      internalID: 100863985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_97
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 583
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc872de159e50b458b8e5a726e600d0
+      internalID: -1346852204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_98
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 563
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46dc577b21664c14ba3a345b4690fe37
+      internalID: -872019387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_99
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 591
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a9f5d40a190964dbfa7b164772b59e
+      internalID: 1837638110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_100
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98aaf491b5f97844ca94a9ba4ee29e62
+      internalID: -667420074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_101
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 576
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f65a81556dbd848876c267ff75eebe
+      internalID: 1992376238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_102
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 559
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfeb8d51a230044186dcb636e05578b
+      internalID: -987658358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_103
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 495
+        width: 65
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b38383fe6bc934aa32ee380f77a241
+      internalID: -507486742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_104
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 495
+        width: 63
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636e94d4864a05e4cbb65baa462402a2
+      internalID: 1087172766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_105
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 515
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49feeb10b30036409bd3e8bd480a557
+      internalID: 603666710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_106
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 512
+        width: 46
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a12eec8e1814e4986098f60a850e53
+      internalID: -980608046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_107
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 493
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbe1e497c0e9e04eaea48d4482b88dc
+      internalID: -539139425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_108
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 537
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51673f010de15344494c327bc5d474c1
+      internalID: -1285298343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_109
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 527
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188333c9269f2e24ca1390e7f207d64f
+      internalID: -465097236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_110
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 527
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58f151f249b166418465bf1c2a3d5e4
+      internalID: 174813044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_111
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 513
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d295e3621b8a3bc4cbede1afa2e8d3a2
+      internalID: 312372862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_112
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 471
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601abe131dd63df42a27e99d2718d40d
+      internalID: -1476262001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_113
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 467
+        width: 58
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbefa5f0dcd91b4caa1bd7ef1468899
+      internalID: 1517483073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_114
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 466
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c75a959dafc0541a84ad20885cc44c
+      internalID: -2127553416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_115
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 450
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41dcda8f3cfe6624baac9818e568beb7
+      internalID: -195908306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_116
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 493
+        width: 69
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bc726153d7e704ea92bcf3a72181a4
+      internalID: 1074717548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_117
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 473
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762cfea2ebad54c49923324acce4491c
+      internalID: 1011423924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_118
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 468
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5f3d8a3251af649a8f3df27b63f08c
+      internalID: -350954121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_119
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 463
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a20929c3830944a8914ad793ef7467
+      internalID: -150008521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_120
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 406
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82cfc8fd04508a438e6049d0ab87c17
+      internalID: 1799889248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_121
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 400
+        width: 62
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecb97eb3ead83c4c979cc8f8a1140ac
+      internalID: 811712294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_122
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 400
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448678f789e1f3648b8f27a3952d4036
+      internalID: -1107582163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_123
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 398
+        width: 58
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf37fba5bc58df4ab483934c0318e4c
+      internalID: -1777926376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_124
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 398
+        width: 71
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ac52cb08f93c043b237f35efd0f56e
+      internalID: -612829727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_125
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 445
+        width: 69
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9f1fed498458c4fbe9bcd2473d9ef0
+      internalID: 642740785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_126
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 428
+        width: 67
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0978ea78f29f9cc44b9cb6c2aad60db0
+      internalID: 1337558449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_127
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 424
+        width: 54
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a08d45aa270914fb2992e8d9daa23b
+      internalID: 1369018079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_128
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 420
+        width: 54
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b85789c4294202418e7a8601c971476
+      internalID: -1099041163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_129
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 311
+        width: 84
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e76f74dd6bd0bf40ba8378dec8ed00b
+      internalID: -82952795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_130
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 311
+        width: 85
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba963794e625d54cb94459d8efb063f
+      internalID: -57143120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_131
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 368
+        width: 45
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829a5b6e0630f884d9d709ae2c5b164c
+      internalID: -1521478765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_132
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 362
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fe3e42b3a57b94a8564c5023eea760
+      internalID: 1514814313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_133
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 395
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7855fd4abaeaf1049924879549390c77
+      internalID: 733258625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_134
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 378
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5e076952b83684596da69c602e47a5
+      internalID: -1448586214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_135
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 375
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fca2309502e8e46894ec41db5b3440
+      internalID: 222828814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_136
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 360
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d8f5ab27a691846b0fe4fc55e3df72
+      internalID: -1833700609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_137
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 286
+        width: 51
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c615fc799e9dee344b3138f1879a30f1
+      internalID: -1238040679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_138
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 286
+        width: 48
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5a039c6d27dbf409faf1030368470f
+      internalID: 1008936084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_139
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 333
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b64a64241cdca49bbc85b4e3aca48a
+      internalID: -1731901720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_140
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 328
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b12337e8742754da68f71642feaf9e
+      internalID: 1104740645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_141
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 328
+        width: 70
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf06b6e65788e3448b8a4c2dd3c6f8bc
+      internalID: -1523838972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_142
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 300
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553ebad29aa337145975d8ba8704d8f6
+      internalID: 1611953105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_143
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 295
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929ffd84560faf347a41775ab92f3698
+      internalID: -604564304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_144
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 252
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7559b50a5f991f645a4d8318a5da762c
+      internalID: -236647651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_145
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 235
+        width: 32
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b252f2ace596fb548ac5bb7000e74437
+      internalID: 194703761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_146
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 215
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc126bdd6792edb4db095b5c2ab2ef27
+      internalID: 906582014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_147
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 210
+        width: 70
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5db63e2c6111245a2ed43f61312e45
+      internalID: -979106244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_148
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 271
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d9e60fd7385e34783273cfa5272655
+      internalID: -1150458080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_149
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 266
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbc942de217f504ba8515dc7d237d43
+      internalID: 216857245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_150
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 260
+        width: 53
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7599b12813299914fa70fd0e235ed9f8
+      internalID: -1556492245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_151
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 255
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a76329bc4596c048845e5dfe5f47143
+      internalID: -158825312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_152
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 250
+        width: 66
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e74c5d40d336d94d94b8e969616d460
+      internalID: -1069394602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_153
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 249
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bde2f8b643ff30449d5eb8811742396
+      internalID: 891228923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_154
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 215
+        width: 67
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0689b5e0dc2f74799cf78a624d1f9d
+      internalID: 1873730251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_155
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 209
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b539c06707573245b526a9552408704
+      internalID: 469863280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_156
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 204
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acf8200bfd78a74a9b2bda4af6c1fce
+      internalID: 2005099893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_157
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 204
+        width: 65
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd17ff4bce27914396aafc78e7adafe
+      internalID: 1280188129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_158
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 180
+        width: 47
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d455fcd074486408896fb5e1aa5fbb
+      internalID: 687899410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_159
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 180
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0745f206e76f53419c78eff5e29bfab
+      internalID: 1884401937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_160
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 168
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec40027a524945943b7338b58e344504
+      internalID: 657154524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_161
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 199
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aff32efa6e4fd049977fcbeec1ea45b
+      internalID: -834640439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_162
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 195
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9791f9e359eca6d448e90c1bb3e01524
+      internalID: -1805660577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_163
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 105
+        width: 76
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f8001587183144d8742c13d581bbac
+      internalID: 208106153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_164
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 201
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854fb9aec903de54984fa25e465822e0
+      internalID: -882289507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_165
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 201
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7a2095e08d25940aac42705ade6991
+      internalID: -599191654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_166
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 201
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a795540ab7587e4ba8e51923f8eccda
+      internalID: -68376624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_167
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 201
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b419f5363871c404e92005b08ca0e394
+      internalID: -1128899054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_168
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 201
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c214431fc59b0c469d8b0b534ad50ee
+      internalID: -543550267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_169
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 201
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e3c709bef79504faa8aaa8526a316b
+      internalID: 18644747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_170
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 170
+        width: 71
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3789e1005615d41982c533694bc2ea
+      internalID: 1049517522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_171
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 154
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c0ed18c9552064eb2c01d81d953c6d
+      internalID: -1766942590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_172
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 105
+        width: 87
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd9bb31c4e91684f91b79dba1651ea6
+      internalID: -195456796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_173
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 170
+        width: 53
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efae07a4b9ad0d6409c0b8e3b8aa03d2
+      internalID: -1294904898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_174
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 133
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adfffdee06992c4796c97a365e0687b
+      internalID: 1585639707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_175
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 113
+        width: 53
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ad0d58747edfa4e8f7bff3de501f17
+      internalID: 1400282204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_176
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 140
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff8dff03d197fe44bce2345599256de
+      internalID: 1789355947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_177
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 138
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a513a4de7f29a3241b8f20f0731165b9
+      internalID: -3266585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_178
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 137
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419daf8d653b33c478dabac9355f94d6
+      internalID: 1251840538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_179
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 105
+        width: 97
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c61b11c4ab2c2342b659bcde72afd58
+      internalID: -323816739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_180
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 77
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807477c5794c15e4497e4c7c77389d48
+      internalID: 581325900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_181
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 71
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c008085055320d74583f8a05a6c4bbe0
+      internalID: -1115150054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_182
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 63
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e50d59e79997614c820e1c2d3afb2fe
+      internalID: 827636206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_183
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 98
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7e34376cd2bae4cbb3815644b07ae2
+      internalID: 616216955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_184
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 98
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dded42fa8751ca4b849a1c8be9fc956
+      internalID: -1531436056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_185
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 93
+        width: 61
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad68f17885bc7b43ae3404856dfe8ac
+      internalID: -2043357278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_186
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 93
+        width: 58
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795763215c5b6f246a0525ebfa682921
+      internalID: -1165558433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_187
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 98
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688f7b3a14e702a4bb5163d2e77c8959
+      internalID: 1840595558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_188
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 81
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1234a49b7899e941ba2632bc31f7233
+      internalID: 1163950056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_189
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 81
+        width: 37
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bc03f52eb530a4b8771016023bdeeb
+      internalID: 1692788129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_190
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 81
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3424d028bcc19444192cc37e8a00676e
+      internalID: -1548959775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_191
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 77
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383b1d64857c38049b2aa34143760244
+      internalID: -512939274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_192
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 77
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f24c43293b3b24590bb8529ad02b48
+      internalID: 1816878655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_193
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 49
+        width: 73
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88e59531ec672943af8ad5a5ac28c05
+      internalID: 1221687392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_194
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 48
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222c34e7698f39542bae70fa639d05a2
+      internalID: 859913472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_195
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 47
+        width: 59
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7463a1f46beba42bedc5f4b4f30f2e
+      internalID: -1826855572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_196
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 46
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2955accc3e711f04fa1c4d68c74f3641
+      internalID: 924013422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_197
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 45
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd56f25fd3e48da4aa21ed373553fd3b
+      internalID: -2092964093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_198
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1
+        width: 103
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9887d35a0db881f4b8462f1e91c81d7f
+      internalID: 2072012411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_199
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5c5b09f6cc7424288fabc3756ee634
+      internalID: -974889875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_200
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c11396ecfe6fb349b32c382b4be1f42
+      internalID: -628289632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_201
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2a8c2a882b70c4cb9f6290245a7f13
+      internalID: 739178556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_202
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1
+        width: 75
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1db4fdf4731c1e4980d2d3a5ff1107f
+      internalID: 854445448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_203
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11101ea266d8c624e86a76db0975689d
+      internalID: -1251523795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_204
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a6c9cd1d5396a4eb4c97fc2d73da5b
+      internalID: 1892813213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_205
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1
+        width: 59
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0905591e34918b745b203b8d15e15c58
+      internalID: 304246667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_206
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1
+        width: 60
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c9a0d2965fc4c4787fbe10bc00c52d
+      internalID: -754213980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Gatling_Gull_207
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1
+        width: 66
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81770ba192dce9e4a98e98ebd3fa90b5
+      internalID: 530627750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Boss_Gatling_Gull_0: -1653066286
+      Boss_Gatling_Gull_1: 262681793
+      Boss_Gatling_Gull_10: -1369281043
+      Boss_Gatling_Gull_100: -667420074
+      Boss_Gatling_Gull_101: 1992376238
+      Boss_Gatling_Gull_102: -987658358
+      Boss_Gatling_Gull_103: -507486742
+      Boss_Gatling_Gull_104: 1087172766
+      Boss_Gatling_Gull_105: 603666710
+      Boss_Gatling_Gull_106: -980608046
+      Boss_Gatling_Gull_107: -539139425
+      Boss_Gatling_Gull_108: -1285298343
+      Boss_Gatling_Gull_109: -465097236
+      Boss_Gatling_Gull_11: 745602014
+      Boss_Gatling_Gull_110: 174813044
+      Boss_Gatling_Gull_111: 312372862
+      Boss_Gatling_Gull_112: -1476262001
+      Boss_Gatling_Gull_113: 1517483073
+      Boss_Gatling_Gull_114: -2127553416
+      Boss_Gatling_Gull_115: -195908306
+      Boss_Gatling_Gull_116: 1074717548
+      Boss_Gatling_Gull_117: 1011423924
+      Boss_Gatling_Gull_118: -350954121
+      Boss_Gatling_Gull_119: -150008521
+      Boss_Gatling_Gull_12: 753120616
+      Boss_Gatling_Gull_120: 1799889248
+      Boss_Gatling_Gull_121: 811712294
+      Boss_Gatling_Gull_122: -1107582163
+      Boss_Gatling_Gull_123: -1777926376
+      Boss_Gatling_Gull_124: -612829727
+      Boss_Gatling_Gull_125: 642740785
+      Boss_Gatling_Gull_126: 1337558449
+      Boss_Gatling_Gull_127: 1369018079
+      Boss_Gatling_Gull_128: -1099041163
+      Boss_Gatling_Gull_129: -82952795
+      Boss_Gatling_Gull_13: -1672444990
+      Boss_Gatling_Gull_130: -57143120
+      Boss_Gatling_Gull_131: -1521478765
+      Boss_Gatling_Gull_132: 1514814313
+      Boss_Gatling_Gull_133: 733258625
+      Boss_Gatling_Gull_134: -1448586214
+      Boss_Gatling_Gull_135: 222828814
+      Boss_Gatling_Gull_136: -1833700609
+      Boss_Gatling_Gull_137: -1238040679
+      Boss_Gatling_Gull_138: 1008936084
+      Boss_Gatling_Gull_139: -1731901720
+      Boss_Gatling_Gull_14: -1121903514
+      Boss_Gatling_Gull_140: 1104740645
+      Boss_Gatling_Gull_141: -1523838972
+      Boss_Gatling_Gull_142: 1611953105
+      Boss_Gatling_Gull_143: -604564304
+      Boss_Gatling_Gull_144: -236647651
+      Boss_Gatling_Gull_145: 194703761
+      Boss_Gatling_Gull_146: 906582014
+      Boss_Gatling_Gull_147: -979106244
+      Boss_Gatling_Gull_148: -1150458080
+      Boss_Gatling_Gull_149: 216857245
+      Boss_Gatling_Gull_15: -362248183
+      Boss_Gatling_Gull_150: -1556492245
+      Boss_Gatling_Gull_151: -158825312
+      Boss_Gatling_Gull_152: -1069394602
+      Boss_Gatling_Gull_153: 891228923
+      Boss_Gatling_Gull_154: 1873730251
+      Boss_Gatling_Gull_155: 469863280
+      Boss_Gatling_Gull_156: 2005099893
+      Boss_Gatling_Gull_157: 1280188129
+      Boss_Gatling_Gull_158: 687899410
+      Boss_Gatling_Gull_159: 1884401937
+      Boss_Gatling_Gull_16: 2051809528
+      Boss_Gatling_Gull_160: 657154524
+      Boss_Gatling_Gull_161: -834640439
+      Boss_Gatling_Gull_162: -1805660577
+      Boss_Gatling_Gull_163: 208106153
+      Boss_Gatling_Gull_164: -882289507
+      Boss_Gatling_Gull_165: -599191654
+      Boss_Gatling_Gull_166: -68376624
+      Boss_Gatling_Gull_167: -1128899054
+      Boss_Gatling_Gull_168: -543550267
+      Boss_Gatling_Gull_169: 18644747
+      Boss_Gatling_Gull_17: 369378417
+      Boss_Gatling_Gull_170: 1049517522
+      Boss_Gatling_Gull_171: -1766942590
+      Boss_Gatling_Gull_172: -195456796
+      Boss_Gatling_Gull_173: -1294904898
+      Boss_Gatling_Gull_174: 1585639707
+      Boss_Gatling_Gull_175: 1400282204
+      Boss_Gatling_Gull_176: 1789355947
+      Boss_Gatling_Gull_177: -3266585
+      Boss_Gatling_Gull_178: 1251840538
+      Boss_Gatling_Gull_179: -323816739
+      Boss_Gatling_Gull_18: -1645629123
+      Boss_Gatling_Gull_180: 581325900
+      Boss_Gatling_Gull_181: -1115150054
+      Boss_Gatling_Gull_182: 827636206
+      Boss_Gatling_Gull_183: 616216955
+      Boss_Gatling_Gull_184: -1531436056
+      Boss_Gatling_Gull_185: -2043357278
+      Boss_Gatling_Gull_186: -1165558433
+      Boss_Gatling_Gull_187: 1840595558
+      Boss_Gatling_Gull_188: 1163950056
+      Boss_Gatling_Gull_189: 1692788129
+      Boss_Gatling_Gull_19: -990320702
+      Boss_Gatling_Gull_190: -1548959775
+      Boss_Gatling_Gull_191: -512939274
+      Boss_Gatling_Gull_192: 1816878655
+      Boss_Gatling_Gull_193: 1221687392
+      Boss_Gatling_Gull_194: 859913472
+      Boss_Gatling_Gull_195: -1826855572
+      Boss_Gatling_Gull_196: 924013422
+      Boss_Gatling_Gull_197: -2092964093
+      Boss_Gatling_Gull_198: 2072012411
+      Boss_Gatling_Gull_199: -974889875
+      Boss_Gatling_Gull_2: 497996119
+      Boss_Gatling_Gull_20: 1702485079
+      Boss_Gatling_Gull_200: -628289632
+      Boss_Gatling_Gull_201: 739178556
+      Boss_Gatling_Gull_202: 854445448
+      Boss_Gatling_Gull_203: -1251523795
+      Boss_Gatling_Gull_204: 1892813213
+      Boss_Gatling_Gull_205: 304246667
+      Boss_Gatling_Gull_206: -754213980
+      Boss_Gatling_Gull_207: 530627750
+      Boss_Gatling_Gull_21: -2122266247
+      Boss_Gatling_Gull_22: -135889853
+      Boss_Gatling_Gull_23: 1779591155
+      Boss_Gatling_Gull_24: -353496801
+      Boss_Gatling_Gull_25: 1449786822
+      Boss_Gatling_Gull_26: 2138607425
+      Boss_Gatling_Gull_27: -1924616737
+      Boss_Gatling_Gull_28: -733361438
+      Boss_Gatling_Gull_29: 2012887050
+      Boss_Gatling_Gull_3: -1781442772
+      Boss_Gatling_Gull_30: -944022423
+      Boss_Gatling_Gull_31: 776549464
+      Boss_Gatling_Gull_32: -1546752876
+      Boss_Gatling_Gull_33: 1904881519
+      Boss_Gatling_Gull_34: 428479725
+      Boss_Gatling_Gull_35: -1761297804
+      Boss_Gatling_Gull_36: -1198510977
+      Boss_Gatling_Gull_37: 1474537289
+      Boss_Gatling_Gull_38: -851865264
+      Boss_Gatling_Gull_39: -1544595580
+      Boss_Gatling_Gull_4: 210389496
+      Boss_Gatling_Gull_40: -468692202
+      Boss_Gatling_Gull_41: 1301124553
+      Boss_Gatling_Gull_42: -121051662
+      Boss_Gatling_Gull_43: -1174464985
+      Boss_Gatling_Gull_44: 19855968
+      Boss_Gatling_Gull_45: -578990072
+      Boss_Gatling_Gull_46: 404253733
+      Boss_Gatling_Gull_47: 1201702240
+      Boss_Gatling_Gull_48: -1381940569
+      Boss_Gatling_Gull_49: -683630972
+      Boss_Gatling_Gull_5: 2005155754
+      Boss_Gatling_Gull_50: -110473429
+      Boss_Gatling_Gull_51: -1950543778
+      Boss_Gatling_Gull_52: -720633936
+      Boss_Gatling_Gull_53: -1433943182
+      Boss_Gatling_Gull_54: 626273415
+      Boss_Gatling_Gull_55: 449004774
+      Boss_Gatling_Gull_56: -1691669993
+      Boss_Gatling_Gull_57: 480042515
+      Boss_Gatling_Gull_58: -561115959
+      Boss_Gatling_Gull_59: -1687678590
+      Boss_Gatling_Gull_6: 1246074454
+      Boss_Gatling_Gull_60: -1494039795
+      Boss_Gatling_Gull_61: -2130655510
+      Boss_Gatling_Gull_62: -1368492302
+      Boss_Gatling_Gull_63: -1529308864
+      Boss_Gatling_Gull_64: 1992695375
+      Boss_Gatling_Gull_65: -354941807
+      Boss_Gatling_Gull_66: -285020303
+      Boss_Gatling_Gull_67: -104515251
+      Boss_Gatling_Gull_68: -1662426837
+      Boss_Gatling_Gull_69: -1409100258
+      Boss_Gatling_Gull_7: -1186259709
+      Boss_Gatling_Gull_70: 1812655290
+      Boss_Gatling_Gull_71: -1844174068
+      Boss_Gatling_Gull_72: 1887999229
+      Boss_Gatling_Gull_73: -473837597
+      Boss_Gatling_Gull_74: 280553005
+      Boss_Gatling_Gull_75: -28697681
+      Boss_Gatling_Gull_76: -1600171418
+      Boss_Gatling_Gull_77: 1033019750
+      Boss_Gatling_Gull_78: -640885292
+      Boss_Gatling_Gull_79: 955456038
+      Boss_Gatling_Gull_8: -431998180
+      Boss_Gatling_Gull_80: 344216034
+      Boss_Gatling_Gull_81: 1411916254
+      Boss_Gatling_Gull_82: -1964182449
+      Boss_Gatling_Gull_83: -803493159
+      Boss_Gatling_Gull_84: -69506032
+      Boss_Gatling_Gull_85: 198013829
+      Boss_Gatling_Gull_86: 632171044
+      Boss_Gatling_Gull_87: -1284044603
+      Boss_Gatling_Gull_88: -177356711
+      Boss_Gatling_Gull_89: 1346989462
+      Boss_Gatling_Gull_9: 1907716361
+      Boss_Gatling_Gull_90: 485419007
+      Boss_Gatling_Gull_91: -329299978
+      Boss_Gatling_Gull_92: -972508422
+      Boss_Gatling_Gull_93: -1323132687
+      Boss_Gatling_Gull_94: 982030596
+      Boss_Gatling_Gull_95: -733899431
+      Boss_Gatling_Gull_96: 100863985
+      Boss_Gatling_Gull_97: -1346852204
+      Boss_Gatling_Gull_98: -872019387
+      Boss_Gatling_Gull_99: 1837638110
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
