@@ -24,7 +24,7 @@ public class RedShotgunKinController : MonoBehaviour
     {
         distance = Vector2.Distance(transform.localPosition, GameObject.Find("Player").transform.localPosition);
 
-        if (distance > 350)
+        if (distance > 300)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("Player").transform.localPosition, 0.2f);
 
