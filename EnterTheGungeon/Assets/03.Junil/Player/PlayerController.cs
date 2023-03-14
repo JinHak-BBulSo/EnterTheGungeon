@@ -17,8 +17,11 @@ public class PlayerController : MonoBehaviour
 
 
     /// @param int ChkBlankBullets : 소지하고 있는 공포탄 개수
-    public int ChkBlankBullets = default;
+    public int chkBlankBullets = default;
 
+    public int armorVal = default;
+
+    public bool isArmor = true;
 
     private void Awake()
     {
@@ -27,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
 
         // 초기 시작 시, 공포탄 2개 지급
-        ChkBlankBullets = 2;
+        chkBlankBullets = 2;
+        armorVal = 1;
+        isArmor = true;
     }
 
 
@@ -41,6 +46,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ResetPlayerAni();
+
 
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
@@ -49,15 +56,37 @@ public class PlayerController : MonoBehaviour
 
 
 
+        /// @brief 구르기를 사용하는 함수
+        if (Input.GetMouseButtonDown(1))
+        {
+            playerMove.PlayerAniRestart(isArmor);
+            playerMove.OnDodge();
+        }
 
 
         /// @brief 공포탄을 사용하는 함수
         if (Input.GetKeyDown(KeyCode.Q))
         {
 
-            if(ChkBlankBullets == 0) { return; }
+            if(chkBlankBullets == 0 && chkBlankBullets == default) { return; }
             OnPlayerBlankBullet();
-            ChkBlankBullets--;
+            chkBlankBullets--;
         }
     }
+
+    public void ResetPlayerAni()
+    {
+        if(armorVal == 0)
+        {
+            isArmor = false;
+        }
+        else
+        {
+            isArmor = true;
+        }
+
+        // 추후 무기 값도 가져오기
+    }
+
+
 }
