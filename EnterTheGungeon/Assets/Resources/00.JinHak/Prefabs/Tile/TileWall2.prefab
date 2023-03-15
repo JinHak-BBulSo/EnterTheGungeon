@@ -95,9 +95,48 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 245914122, guid: 6b3fcc489a74d50478c243165529f48a, type: 3}
+    - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -746988557
+      objectReference: {fileID: 0}
     - target: {fileID: 8313973061961079232, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
       propertyPath: m_Name
       value: TileWall2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+--- !u!1 &6473699279272456858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9036285976742975235, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+  m_PrefabInstance: {fileID: 2643724075815888281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &894727116040410516
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6473699279272456858}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0

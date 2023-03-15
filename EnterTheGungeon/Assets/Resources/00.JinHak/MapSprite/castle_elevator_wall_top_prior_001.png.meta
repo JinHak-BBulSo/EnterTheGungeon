@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_0
+      name: walltop
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +125,7 @@ TextureImporter:
         width: 16
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,11 +138,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_1
+      name: walltopshadow
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 0
+        y: 7
         width: 16
         height: 6
       alignment: 0
@@ -152,92 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48afbaec62a910044a16a83010e4671f
-      internalID: -1281055625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 133c93b5157d8604c91747b75442538b
-      internalID: 1273980901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeacbbe06bf914d4788473b0299de3de
-      internalID: 991795049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2e53450b8c753e42836c1f813714b19
-      internalID: 393256014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: castle_elevator_wall_top_prior_001_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64c9e04de7774584b8a4d88a810dc0ec
-      internalID: 998361831
+      spriteID: b8b9df3f477200d49a4f00818358e412
+      internalID: -1131248730
       vertices: []
       indices: 
       edges: []
@@ -253,12 +169,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      castle_elevator_wall_top_prior_001_0: -580826711
       castle_elevator_wall_top_prior_001_1: -1281055625
       castle_elevator_wall_top_prior_001_2: 1273980901
       castle_elevator_wall_top_prior_001_3: 991795049
       castle_elevator_wall_top_prior_001_4: 393256014
       castle_elevator_wall_top_prior_001_5: 998361831
+      walltop: -580826711
+      walltopshadow: -1131248730
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
