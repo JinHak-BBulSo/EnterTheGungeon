@@ -35,7 +35,14 @@ public class TestBullet : MonsterBullets
             isCheckAngle = true;
         }
 
-        gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+        if (bulletType != 1)
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+        }
+        else if(bulletType == 1)
+        {
+            StartCoroutine(WaitToFire());
+        }
 
     }
 
@@ -51,5 +58,12 @@ public class TestBullet : MonsterBullets
     {
         yield return new WaitForSeconds(5);
         Destroy(this.gameObject);
+    }
+
+    IEnumerator WaitToFire()
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+
     }
 }

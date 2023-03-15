@@ -25,6 +25,7 @@ public class TestEnemy : MonoBehaviour
 
     bool isMove;
     bool IsSpawnEnd;
+    bool isAttack;
 
     // } animation var
 
@@ -57,7 +58,7 @@ public class TestEnemy : MonoBehaviour
             isMove = false;
 
             dist = Vector2.Distance(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition);
-            if (dist > 500)
+            if (dist > 500 && !isAttack)
             {
                 Move();
             }
@@ -70,7 +71,7 @@ public class TestEnemy : MonoBehaviour
                 {
                     Attack();
                 }
-                else if (eye.hit.collider.tag != "Player")
+                else if (eye.hit.collider.tag != "Player" && !isAttack)
                 {
                     Move();
                 }
@@ -166,27 +167,11 @@ public class TestEnemy : MonoBehaviour
         // summon bullet
         else if (attackType == 1)
         {
-            if (this.name == "bookllet")
+            if (!isDelayEnd)
             {
-                float[] xPos = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
-                float[] yPos = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
-
-                if (!isDelayEnd)
-                {
-                    isDelayEnd = true;
-                    for (int i = 0; i < 19; i++)
-                    {
-                        GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-                        clone.GetComponent<TestBullet>().bulletType = 1;
-                        clone.transform.SetParent(GameObject.Find("GameObjs").transform);
-                        clone.transform.localPosition = new Vector2(transform.localPosition.x + xPos[i], transform.localPosition.y + yPos[i]);
-                    }
-                    transform.GetChild(0).GetComponent<Animator>().SetBool("IsAttack", true);//trigger로 교체?
-                    
-
-                    StartCoroutine(FireDelay(5));
-                }
-
+                isDelayEnd = true;
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
+                StartCoroutine(Fire(1, 5));
             }
         }
         else
@@ -201,12 +186,28 @@ public class TestEnemy : MonoBehaviour
         transform.GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
     }
 
-    IEnumerator FireDelay(float delayTime)
+    IEnumerator Fire(float castTime, float delayTime)
     {
-        yield return new WaitForSeconds(delayTime);
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsAttack", false);
+        yield return new WaitForSeconds(castTime);
+        isAttack = false;
 
+        // { enemy pattern
+        if (this.name == "bookllet")
+        {
+            float[] xPos = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
+            float[] yPos = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
+            for (int i = 0; i < 19; i++)
+            {
+                GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                clone.GetComponent<TestBullet>().bulletType = 1;
+                clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+                clone.transform.localPosition = new Vector2(transform.localPosition.x + xPos[i], transform.localPosition.y + yPos[i]);
+            }
+        }
+        // } enemy pattern
+        yield return new WaitForSeconds(delayTime);
         isDelayEnd = false;
+        isAttack = true;
     }
 }
 
