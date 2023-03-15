@@ -52,7 +52,7 @@ TagManager:
   - name: Ground
     uniqueID: 579850169
     locked: 0
-  - name: New Layer 2
+  - name: Wall
     uniqueID: 3547978739
     locked: 0
   - name: New Layer 3
