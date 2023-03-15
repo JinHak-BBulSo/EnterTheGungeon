@@ -14,6 +14,8 @@ public class TestEnemy : MonoBehaviour
     float angle;
     GameObject player;
 
+    Vector2 direction;
+
     public float moveSpeed;
 
     // { animation var
@@ -56,6 +58,7 @@ public class TestEnemy : MonoBehaviour
         {
 
             isMove = false;
+            isAttack = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
 
             dist = Vector2.Distance(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition);
             if (dist > 500 && !isAttack)
@@ -79,9 +82,15 @@ public class TestEnemy : MonoBehaviour
             // } Raycast To Player & Condition Check RayCast Hit
 
             // { Calc Player Angle from this Position & animation apply
-            CheckAngle();
-            AnimationSet();
+            //CheckAngle();
+            //AnimationSet();
             // } Calc Player Angle from this Position & animation apply
+
+            // { set var for using animation
+            direction = player.transform.position - transform.position;
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputX", direction.x);
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputY", direction.y);
+            // ] set var for using animation
         }
 
 
@@ -92,7 +101,7 @@ public class TestEnemy : MonoBehaviour
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
     }
 
-    void CheckAngle()
+    /* void CheckAngle()
     {
         isTargetLeft = false;
         isTargetRight = false;
@@ -153,10 +162,9 @@ public class TestEnemy : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
         }
-    }
+    } */
 
 
-    //scriptableObject 생성 후 변경
     void Attack()
     {
         // use weapon
@@ -189,8 +197,6 @@ public class TestEnemy : MonoBehaviour
     IEnumerator Fire(float castTime, float delayTime)
     {
         yield return new WaitForSeconds(castTime);
-        isAttack = false;
-
         // { enemy pattern
         if (this.name == "bookllet")
         {
@@ -204,10 +210,14 @@ public class TestEnemy : MonoBehaviour
                 clone.transform.localPosition = new Vector2(transform.localPosition.x + xPos[i], transform.localPosition.y + yPos[i]);
             }
         }
+
+        if(this.name == "gunNut")
+        {
+            
+        }
         // } enemy pattern
         yield return new WaitForSeconds(delayTime);
         isDelayEnd = false;
-        isAttack = true;
     }
 }
 
