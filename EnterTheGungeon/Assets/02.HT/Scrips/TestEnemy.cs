@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class TestEnemy : MonoBehaviour
 {
-    GameObject hand;
+    public int attackType;
+
     TestEnemyWeapon weapon;
+    TestEnemyEye eye;
+    GameObject hand;
     float dist;
     bool isDelayEnd;
 
     float angle;
     GameObject player;
 
+    public float moveSpeed;
 
     // { animation var
 
@@ -27,16 +30,21 @@ public class TestEnemy : MonoBehaviour
 
     //If FSM R&D, Rebuild animaion
 
-
     // Start is called before the first frame update
     void Start()
     {
-        hand = transform.GetChild(1).gameObject;
-        weapon = hand.transform.GetChild(0).GetComponent<TestEnemyWeapon>();
+        eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
+
+        if (attackType == 0)
+        {
+            hand = transform.GetChild(2).gameObject;
+            weapon = hand.transform.GetChild(0).GetComponent<TestEnemyWeapon>();
+        }
 
         player = GameObject.FindWithTag("Player");
 
         StartCoroutine(SpawnTime());
+        moveSpeed = 0.3f;
     }
 
     // Update is called once per frame
@@ -56,18 +64,18 @@ public class TestEnemy : MonoBehaviour
             else { }
 
             // { Raycast To Player & Condition Check RayCast Hit
-            if (weapon.hit != default)
+            if (eye.hit != default)
             {
-                if (weapon.hit.transform.tag == "Player")
+                if (eye.hit.collider.tag == "Player")
                 {
-                    weapon.GetComponent<TestEnemyWeapon>().fire();
+                    Attack();
                 }
-                else if (weapon.GetComponent<TestEnemyWeapon>().hit.collider.tag != "Player")
+                else if (eye.hit.collider.tag != "Player")
                 {
                     Move();
                 }
             }
-            // } Raycast To Player & Condition Check RayCast Hit 
+            // } Raycast To Player & Condition Check RayCast Hit
 
             // { Calc Player Angle from this Position & animation apply
             CheckAngle();
@@ -76,13 +84,11 @@ public class TestEnemy : MonoBehaviour
         }
 
 
-
     }
     void Move()
     {
-        Debug.Log("Move to player");
         isMove = true;
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, 0.3f);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
     }
 
     void CheckAngle()
@@ -148,10 +154,59 @@ public class TestEnemy : MonoBehaviour
         }
     }
 
+
+    //scriptableObject 생성 후 변경
+    void Attack()
+    {
+        // use weapon
+        if (attackType == 0)
+        {
+            weapon.fire();
+        }
+        // summon bullet
+        else if (attackType == 1)
+        {
+            if (this.name == "bookllet")
+            {
+                float[] xPos = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
+                float[] yPos = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
+
+                if (!isDelayEnd)
+                {
+                    isDelayEnd = true;
+                    for (int i = 0; i < 19; i++)
+                    {
+                        GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                        clone.GetComponent<TestBullet>().bulletType = 1;
+                        clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+                        clone.transform.localPosition = new Vector2(transform.localPosition.x + xPos[i], transform.localPosition.y + yPos[i]);
+                    }
+                    transform.GetChild(0).GetComponent<Animator>().SetBool("IsAttack", true);//trigger로 교체?
+                    
+
+                    StartCoroutine(FireDelay(5));
+                }
+
+            }
+        }
+        else
+        {
+
+        }
+    }
     IEnumerator SpawnTime()
     {
         yield return new WaitForSeconds(1.5f);
         IsSpawnEnd = true;
         transform.GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
     }
+
+    IEnumerator FireDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        transform.GetChild(0).GetComponent<Animator>().SetBool("IsAttack", false);
+
+        isDelayEnd = false;
+    }
 }
+

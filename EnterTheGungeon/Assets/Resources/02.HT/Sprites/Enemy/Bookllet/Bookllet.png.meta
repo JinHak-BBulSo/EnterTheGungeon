@@ -1,0 +1,2262 @@
+fileFormatVersion: 2
+guid: af116ffa17482cc45b5d69caf0a9d97c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bookllet_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70be155f9fc6b4941ae45f28eabc52b8
+      internalID: -1732283535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_10
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 132
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e120fd34b9e6d234bb84e1a2be1b5747
+      internalID: -1645862479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_11
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c51dbfa7de92c438e4893265805708
+      internalID: -1359349928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163487b190f9ea947a335d95fd5a226b
+      internalID: 339650120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_13
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcae2e8b6df13424ab5d332448c08187
+      internalID: 685325681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_14
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 132
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0950cdb0f7de1242b4f7788351b86b1
+      internalID: -538331086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_15
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc2c99cfb26771408f4d753e0af3223
+      internalID: 1975358513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_16
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556f82702a30c89429341b3852c0a203
+      internalID: 1655240868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_17
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786053eb34b4db44a9cdbe561bb1f0e7
+      internalID: -166217845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_18
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 132
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d639f75eacf4404c86e155dfb075bcd
+      internalID: 333627623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_19
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fc166949600ac4ca4947883538ff00
+      internalID: -1195495505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_20
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 132
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c771c7f5cc3fea644accaa506afdeb69
+      internalID: 1500683890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_33
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a73bfab485d3b43a645852002189c9
+      internalID: -495585914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_34
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1a81c1dc0036f4cbfb6ae536512958
+      internalID: 1720487243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_35
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 100
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a537b05a7496d4ab7f0a64ccdcaed8
+      internalID: 2140206596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 100
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a909bf7a3b5f89c4ab95177b6ebbcefe
+      internalID: -311041395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_37
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 100
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf5ad0c3cb452d4d860a30b94d491e5
+      internalID: 280790753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_38
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947e80402da7d6b4f93158afc37ea892
+      internalID: 988679784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_39
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155f1c06d228e254599bdf94de3dc7e9
+      internalID: 1199087180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_40
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 100
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82dff6286d416a04e8e694f7e6da9055
+      internalID: 648953414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_41
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 100
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff860d54c507eb4281f59438572d01a
+      internalID: -858905752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_42
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee92cc7854ca92a458fe39ff0d27ae70
+      internalID: 2023441498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_43
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d462a94fa4e173046be7f3675d154156
+      internalID: -1131915928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_44
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc36dd9dfe52ff418bcd1b45c8b67e5
+      internalID: -21165402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_45
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fda7e1636b1fdc4bb146966cc1e8be7
+      internalID: -594198123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_46
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de776364635fef94eb0e68969e115446
+      internalID: 396523584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_47
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb37738bc8996f42a17717d7b4f0c9b
+      internalID: 1163321538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_48
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 100
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d722e40b4a538b545b6a457af6b452fe
+      internalID: 2110410515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_49
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 100
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b84c2e7cabc444ebf553659715c360
+      internalID: -7619265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_50
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 100
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ffcb455d8be6640a3c994800c38b7a
+      internalID: -467609532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_51
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d8dc6974d437542b317b83e7d918cc
+      internalID: -1466709390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_52
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a533bbb2978bce4cbc70ab4cec0276a
+      internalID: 921281253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_53
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 100
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a760244f36da52046b50ef8b392e9de4
+      internalID: 1345894972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_54
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 100
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c8360871652464893fedabef8d9eec
+      internalID: 1705317146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_55
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7a082cde9af154d9f38e85eb48b70a
+      internalID: 864409215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_56
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6da10ffecd853b48ab33059788d58e4
+      internalID: 1527925527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_57
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581a6eefded288e46924c65f48f176a9
+      internalID: 1533312166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_58
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d469eff21986d4794f02d26288d45e
+      internalID: 558739926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_59
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b8c4cd5600f8f4cb9a1c0ae503ec6f
+      internalID: 437497260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_60
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 100
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3e23120748a3a458e5344a2a43ba3a
+      internalID: 1152124797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_61
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 100
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee3abe4dc450d74cab9b8660d295082
+      internalID: -2142755713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_62
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 100
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eddd3464fa0a5847bce9ef02de7d05c
+      internalID: -1177995853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_63
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 100
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb03f906569281438f027a630c43257
+      internalID: -1640732604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_64
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d585e97dcbdf4448c0b97c524737ec
+      internalID: 1738111110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_65
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcc8fa22489c874f8a514ae24b28b02
+      internalID: 9286990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_66
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 100
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcd1c73b8bf7584890c5f97240df3a4
+      internalID: 1959616986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_67
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 100
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ac0b4cf5ebdbc41912a21f8aa00bb5
+      internalID: -264136590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_68
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896da0df8a1469e40aa076a4344e1ef5
+      internalID: 1705888755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_69
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbdb2cdb2c86af4884fe76cb726300c
+      internalID: 149459698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_70
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e81ddc3df7c3824c9b6c279e3f70af3
+      internalID: 1593215653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_71
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 100
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f5cb84b48fa8f46ad738089da96e32
+      internalID: -1364681810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_96
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 63
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5359449185e5dc24dacf07be7ad774e0
+      internalID: 597239999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_97
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 63
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05f49ad2f0b8c643b12c74030471ad7
+      internalID: -2042268191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_98
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 63
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b52de73594c10d469bd519959b136c1
+      internalID: 803777673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_99
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 63
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f90dde8c5ab334ab4b2d6e967a4908
+      internalID: 519502955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_100
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 63
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8db9738d0643c945951913251afe56f
+      internalID: -1907360938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_101
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 63
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5112de2908f5cff4c894774b0683b39f
+      internalID: 219977085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_102
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 63
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a73605c9fb14d49b47e433c97f34ba
+      internalID: -1545893468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_103
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 63
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a5b9b38f410a6458526af081e90983
+      internalID: 1272722184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_104
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 63
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df96b34ffa5f76445a5209b7da47bf0a
+      internalID: -1393588430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_105
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 63
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9818aca384cdffd42b1d2ca4e94073ce
+      internalID: 1305687089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_106
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 63
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591051ead45a0b849b2a0cd1550a41ce
+      internalID: -666257980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_107
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 63
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342d440529a536548a58563ce6b53ba0
+      internalID: -1108408597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_108
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 63
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56470bd91597f8c48aca281ad422864e
+      internalID: 204160757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_109
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 63
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0439bdd86423973428e71823c9cf0c5c
+      internalID: -1204493376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_110
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 63
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddeeadbd573eda45a79fe46426c88bc
+      internalID: -1837981411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_111
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 63
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a9a6900fa11864c9ce03c0775aaad7
+      internalID: -952672782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_112
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 63
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6b1ec5eb003814984055f85ad08961
+      internalID: 1399367942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_113
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 63
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b54978ae97c2b45882103698f4e9a7
+      internalID: -351623738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_114
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 63
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b543c7730b2e3c24d97e98bdd4f531fd
+      internalID: -1773835861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_115
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 63
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7362f7c540233459686984a18aa61d
+      internalID: -2114563742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_116
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 63
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe21a1212a93d2e4c8589ea7a4ffebed
+      internalID: -1494121529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_117
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 63
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc69d3764451e44dbc49d2453f120af
+      internalID: -849214387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_118
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 63
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a37f361a11f8aa47b77ccf8a982a419
+      internalID: -1043739087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_119
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 63
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950c8155441d0204489b4a5c760021d1
+      internalID: 1640080210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_120
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 63
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fae1e2015346c4d91d1e4ef67385ff
+      internalID: 1389058028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_121
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 63
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05272cc7fbfe47144846796b5640af87
+      internalID: 1628938846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_122
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 63
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321196cb7ceb11543b94f72019f04a31
+      internalID: 1397641862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_135
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 33
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71935227646a12e4f87becba66595a18
+      internalID: -1484569048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_136
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a60e3db2c3f5742a9ec222c9de4576
+      internalID: -535414096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_137
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 33
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5786b61c959f2942a0623bebad1c5ec
+      internalID: 1850623963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_138
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889edd9d3b037cc4d90cba2ad28b378d
+      internalID: -762586697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_139
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 33
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a93c5630389774fa1f257ef6019aed
+      internalID: 1229584237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_140
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac42936914e723449ba7074fdc6866f6
+      internalID: 1960828235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_160
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9426703196f73944ba7c6e3051343c33
+      internalID: 2081134798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_161
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de51e982914bc2438538b9599d3eb88
+      internalID: -1567108576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_162
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578cac5b25722c14dbb1bcd7f6c86cca
+      internalID: -1419323683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_163
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b58dd5e4047bfb4f90cb1fa2628859b
+      internalID: -1273473648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_164
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1932f219d14199244876ffac2b6b8907
+      internalID: 347886278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_165
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5ae61597a59464aacb3f1a0f9f4be0
+      internalID: 1213579521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_166
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256d544898a599a4380e30ee72d09ff4
+      internalID: -12011181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_167
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c607a13ad8fa7f48b58112033b3db7a
+      internalID: 1844352708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bookllet_168
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 5
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fedb6b9c9aab84bb74ca87de9fcb47
+      internalID: 2123314877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bookllet_0: 163940289
+      Bookllet_1: -285403047
+      Bookllet_10: -1645862479
+      Bookllet_100: -1907360938
+      Bookllet_101: 219977085
+      Bookllet_102: -1545893468
+      Bookllet_103: 1272722184
+      Bookllet_104: -1393588430
+      Bookllet_105: 1305687089
+      Bookllet_106: -666257980
+      Bookllet_107: -1108408597
+      Bookllet_108: 204160757
+      Bookllet_109: -1204493376
+      Bookllet_11: -1359349928
+      Bookllet_110: -1837981411
+      Bookllet_111: -952672782
+      Bookllet_112: 1399367942
+      Bookllet_113: -351623738
+      Bookllet_114: -1773835861
+      Bookllet_115: -2114563742
+      Bookllet_116: -1494121529
+      Bookllet_117: -849214387
+      Bookllet_118: -1043739087
+      Bookllet_119: 1640080210
+      Bookllet_12: 339650120
+      Bookllet_120: 1389058028
+      Bookllet_121: 1628938846
+      Bookllet_122: 1397641862
+      Bookllet_123: 993735944
+      Bookllet_124: 514734244
+      Bookllet_125: -153110978
+      Bookllet_126: 707286004
+      Bookllet_127: -2092560215
+      Bookllet_128: -1300647592
+      Bookllet_129: 1057433746
+      Bookllet_13: 685325681
+      Bookllet_130: 278866991
+      Bookllet_131: 176607521
+      Bookllet_132: -1143231173
+      Bookllet_133: 1601509999
+      Bookllet_134: -129331590
+      Bookllet_135: -1484569048
+      Bookllet_136: -535414096
+      Bookllet_137: 1850623963
+      Bookllet_138: -762586697
+      Bookllet_139: 1229584237
+      Bookllet_14: -538331086
+      Bookllet_140: 1960828235
+      Bookllet_141: 1336204267
+      Bookllet_142: -1718694098
+      Bookllet_143: -2004930159
+      Bookllet_144: -892137088
+      Bookllet_145: 214165701
+      Bookllet_146: -196881385
+      Bookllet_147: 350087406
+      Bookllet_148: 421300919
+      Bookllet_149: -1673634368
+      Bookllet_15: 1975358513
+      Bookllet_150: -1538377867
+      Bookllet_151: 1251682284
+      Bookllet_152: 374729645
+      Bookllet_153: 937729101
+      Bookllet_154: 1872737496
+      Bookllet_155: -1497204654
+      Bookllet_156: 436042466
+      Bookllet_157: -315979084
+      Bookllet_158: 1399477121
+      Bookllet_159: 55405449
+      Bookllet_16: 1655240868
+      Bookllet_160: 2081134798
+      Bookllet_161: -1567108576
+      Bookllet_162: -1419323683
+      Bookllet_163: -1273473648
+      Bookllet_164: 347886278
+      Bookllet_165: 1213579521
+      Bookllet_166: -12011181
+      Bookllet_167: 1844352708
+      Bookllet_168: 2123314877
+      Bookllet_169: 1588734215
+      Bookllet_17: -166217845
+      Bookllet_170: -111887959
+      Bookllet_171: -951158889
+      Bookllet_172: 1708516863
+      Bookllet_173: -696238010
+      Bookllet_174: 298611441
+      Bookllet_175: 1963078354
+      Bookllet_176: -454307066
+      Bookllet_177: -972110603
+      Bookllet_178: -2132742236
+      Bookllet_179: -1797119896
+      Bookllet_18: 333627623
+      Bookllet_180: 960641158
+      Bookllet_181: -308612346
+      Bookllet_182: -1911646758
+      Bookllet_183: 1043342946
+      Bookllet_184: -2086916083
+      Bookllet_185: -1665441768
+      Bookllet_19: -1195495505
+      Bookllet_2: 1738949365
+      Bookllet_20: 1500683890
+      Bookllet_21: 886707332
+      Bookllet_22: 1067652374
+      Bookllet_23: 628586475
+      Bookllet_24: 1623669917
+      Bookllet_25: 31741218
+      Bookllet_26: -435356613
+      Bookllet_27: 887076624
+      Bookllet_28: 254271207
+      Bookllet_29: -1220935201
+      Bookllet_3: 305854391
+      Bookllet_30: 1107565733
+      Bookllet_31: -1847447509
+      Bookllet_32: 963662173
+      Bookllet_33: -495585914
+      Bookllet_34: 1720487243
+      Bookllet_35: 2140206596
+      Bookllet_36: -311041395
+      Bookllet_37: 280790753
+      Bookllet_38: 988679784
+      Bookllet_39: 1199087180
+      Bookllet_4: -1685087169
+      Bookllet_40: 648953414
+      Bookllet_41: -858905752
+      Bookllet_42: 2023441498
+      Bookllet_43: -1131915928
+      Bookllet_44: -21165402
+      Bookllet_45: -594198123
+      Bookllet_46: 396523584
+      Bookllet_47: 1163321538
+      Bookllet_48: 2110410515
+      Bookllet_49: -7619265
+      Bookllet_5: 1793027008
+      Bookllet_50: -467609532
+      Bookllet_51: -1466709390
+      Bookllet_52: 921281253
+      Bookllet_53: 1345894972
+      Bookllet_54: 1705317146
+      Bookllet_55: 864409215
+      Bookllet_56: 1527925527
+      Bookllet_57: 1533312166
+      Bookllet_58: 558739926
+      Bookllet_59: 437497260
+      Bookllet_6: -427493934
+      Bookllet_60: 1152124797
+      Bookllet_61: -2142755713
+      Bookllet_62: -1177995853
+      Bookllet_63: -1640732604
+      Bookllet_64: 1738111110
+      Bookllet_65: 9286990
+      Bookllet_66: 1959616986
+      Bookllet_67: -264136590
+      Bookllet_68: 1705888755
+      Bookllet_69: 149459698
+      Bookllet_7: -1306941305
+      Bookllet_70: 1593215653
+      Bookllet_71: -1364681810
+      Bookllet_72: -1097221234
+      Bookllet_73: 288525760
+      Bookllet_74: -206276141
+      Bookllet_75: -2081748794
+      Bookllet_76: 121259677
+      Bookllet_77: -2047966153
+      Bookllet_78: 265349757
+      Bookllet_79: -1551463385
+      Bookllet_8: -1094206076
+      Bookllet_80: 1107526986
+      Bookllet_81: 21067819
+      Bookllet_82: -767683496
+      Bookllet_83: 755493348
+      Bookllet_84: 1506819982
+      Bookllet_85: -134964183
+      Bookllet_86: -1885922916
+      Bookllet_87: -2127556549
+      Bookllet_88: 489247052
+      Bookllet_89: -338321290
+      Bookllet_9: -1732283535
+      Bookllet_90: -916967137
+      Bookllet_91: -1984528378
+      Bookllet_92: 256456800
+      Bookllet_93: 1953587092
+      Bookllet_94: -2086458782
+      Bookllet_95: -1772215772
+      Bookllet_96: 597239999
+      Bookllet_97: -2042268191
+      Bookllet_98: 803777673
+      Bookllet_99: 519502955
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
