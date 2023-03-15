@@ -13,3 +13,4 @@ Raycast 에서 Bullet의 LayerMask를 제외하고 Hit 체크를 하도록 설�
 2023/03/14 / v0.0.1 / Add PlayerMarine Animater and Move, dodge    
 2023/03/14 / v0.0.2 / Fix Player Move    
 2023/03/14 / v0.0.2 / Add PlayerMarine Less Animater    
+2023/03/15 / v0.0.3 / Add proto Weapon and fix rotate player    
