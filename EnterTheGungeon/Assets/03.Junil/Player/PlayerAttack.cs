@@ -9,10 +9,18 @@ public class PlayerAttack : MonoBehaviour
 
     private GameObject playerObj = default;
     private GameObject rotateObjs = default;
+    private GameObject weaponObjs = default;
     private Animator playerAni = default;
     private Canvas rotateSort = default;
 
+
+    public GameObject[] playerWeaponPrefabs = default;
+    public GameObject[] playerWeapons = default;
+    public PlayerWeapon[] playerWeaponScript = default;
+
     public bool isDodgeing = false;
+
+    public int nowWeaponIndex = default;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +28,36 @@ public class PlayerAttack : MonoBehaviour
         rotateObjs = gameObject.transform.parent.gameObject;
         playerObj = rotateObjs.transform.parent.gameObject;
         playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
+        weaponObjs = gameObject.FindChildObj("Weapons");
 
-        rotateSort = gameObject.FindChildObj("Weapons").GetComponentMust<Canvas>();
+
+        rotateSort = weaponObjs.GetComponentMust<Canvas>();
         rotateSort.sortingLayerName = "Player";
-
+        
+        nowWeaponIndex = 0;
 
         isDodgeing = false;
+
+        playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
+
+        playerWeapons = new GameObject[playerWeaponPrefabs.Length];
+        playerWeaponScript = new PlayerWeapon[playerWeaponPrefabs.Length];
+
+        for (int i = 0; i < playerWeaponPrefabs.Length; i++)
+        {
+
+            playerWeapons[i] = Instantiate(playerWeaponPrefabs[i], weaponObjs.transform.position,
+                Quaternion.identity, weaponObjs.transform);
+
+            playerWeaponScript[i] = playerWeapons[i].GetComponentMust<PlayerWeapon>();
+
+            playerWeaponPrefabs[i].SetActive(false);
+            playerWeapons[i].SetActive(false);
+
+        }
+
+
+        playerWeapons[nowWeaponIndex].SetActive(true);
     }
 
     // Update is called once per frame
@@ -38,8 +70,6 @@ public class PlayerAttack : MonoBehaviour
         /// @param Vector3 mousePos_ : 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
-        Debug.Log("회전축 : " + transform.position);
-        Debug.Log("마우스 : " + mousePos_);
 
         /// @param Vector2 len_ : 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
         //Vector2 len_ = mousePos_ - transform.position;
@@ -60,7 +90,6 @@ public class PlayerAttack : MonoBehaviour
         Vector2 rotateStand_ = mousePos_ - playerObj.transform.position;
 
 
-        GFunc.Log($"{rotateStand_.x}");
 
         if(rotateStand_.x > 0)
         {
@@ -81,9 +110,27 @@ public class PlayerAttack : MonoBehaviour
 
 
         float lookZ2_ = Mathf.Atan2(rotateStand_.y, rotateStand_.x);
-        GFunc.Log($"{lookZ2_}, {lookZ2_ * Mathf.Rad2Deg}");
 
         chkPosWeaponSort(rotateStand_.x, rotateStand_.y);
+
+
+
+        // 현재 들고 있는 총을 쏜다
+        if (Input.GetMouseButtonDown(0))
+        {
+            GFunc.Log("공격 클릭 됨");
+            playerWeaponScript[0].FireBullet();
+
+        }
+
+
+        // 재장전
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerWeaponScript[0].ReloadBullet();
+
+        }
+
     }
 
 

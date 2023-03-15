@@ -15,6 +15,9 @@ public class PlayerWeapon : MonoBehaviour
     // 무기 설명
     public string weaponDescription = string.Empty;
 
+    // 무기 위치
+    public Vector3 weaponPos = default;
+
     // 재장전 값
     public float weaponReload = default;
 
@@ -71,6 +74,7 @@ public class PlayerWeapon : MonoBehaviour
 
         weaponName = weapons.WeaponName();
         weaponDescription = weapons.WeaponDescription();
+        weaponPos = weapons.WeaponPos();
         weaponReload = weapons.WeaponReload();
         weaponMagazine = weapons.WeaponMagazine();
         weaponBulletValue = weapons.WeaponBulletValue();
@@ -82,5 +86,16 @@ public class PlayerWeapon : MonoBehaviour
         weaponDeley = weapons.WeaponDeley();
         weaponHand = weapons.WeaponHand();
 
+    }
+
+
+    public virtual void ReloadBullet()
+    {
+
+    }
+
+    public virtual void FireBullet()
+    {
+        
     }
 }
