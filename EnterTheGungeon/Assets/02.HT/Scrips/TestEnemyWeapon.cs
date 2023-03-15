@@ -8,6 +8,8 @@ public class TestEnemyWeapon : MonoBehaviour
     GameObject player;
     public RaycastHit2D hit = default;
 
+    public float delayTime;
+
     bool isDelayEnd;
     // Start is called before the first frame update
     void Start()
@@ -34,28 +36,22 @@ public class TestEnemyWeapon : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
         }
         // } Look At Player Position
-
-        // { Raycast To Player
-        Debug.DrawRay(transform.position, transform.up * 10, Color.red);
-        int layerMask = 1 << LayerMask.NameToLayer("Bullet");
-        layerMask = ~layerMask;
-        hit = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, layerMask);
-        // } Raycast To Player
     }
     public void fire()
     {
         if (isDelayEnd == false)
         {
-            isDelayEnd = true; 
+            isDelayEnd = true;
             Debug.Log("fire bullet");
             GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
             clone.transform.SetParent(GameObject.Find("GameObjs").transform);
-            StartCoroutine(FireDelay());
+            clone.GetComponent<TestBullet>().bulletType = 0;
+            StartCoroutine(FireDelay(delayTime));
         }
     }
-    IEnumerator FireDelay()
+    IEnumerator FireDelay(float delayTime)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(delayTime);
         isDelayEnd = false;
     }
 }

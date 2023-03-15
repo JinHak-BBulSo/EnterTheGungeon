@@ -36,4 +36,5 @@ public class GSingleton<T> : GComponent where T : GSingleton<T>
     {
         /* Do something */
     }
+
 }
