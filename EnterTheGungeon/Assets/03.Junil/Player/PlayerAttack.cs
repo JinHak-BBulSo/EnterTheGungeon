@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject playerObj = default;
     private GameObject rotateObjs = default;
     private Animator playerAni = default;
-
+    private Canvas rotateSort = default;
 
     public bool isDodgeing = false;
 
@@ -20,6 +20,10 @@ public class PlayerAttack : MonoBehaviour
         rotateObjs = gameObject.transform.parent.gameObject;
         playerObj = rotateObjs.transform.parent.gameObject;
         playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
+
+        rotateSort = gameObject.FindChildObj("Weapons").GetComponentMust<Canvas>();
+        rotateSort.sortingLayerName = "Player";
+
 
         isDodgeing = false;
     }
@@ -53,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
         // } [Junil] 무기가 마우스 커서를 바라보는 코드
 
         /// @param Vector2 rotateStand_ : 제대로 된 x 축 반전을 구하기 위한 값
-        Vector2 rotateStand_ = mousePos_ - rotateObjs.transform.position;
+        Vector2 rotateStand_ = mousePos_ - playerObj.transform.position;
 
 
         GFunc.Log($"{rotateStand_.x}");
@@ -72,13 +76,31 @@ public class PlayerAttack : MonoBehaviour
         }
 
 
-        Vector3 mousePos2_ = Camera.main.WorldToScreenPoint(Input.mousePosition);
-
-        playerAni.SetFloat("inputX", mousePos2_.x);
-        playerAni.SetFloat("inputY", mousePos2_.y);
+        playerAni.SetFloat("inputX", rotateStand_.x);
+        playerAni.SetFloat("inputY", rotateStand_.y);
 
 
+        float lookZ2_ = Mathf.Atan2(rotateStand_.y, rotateStand_.x);
+        GFunc.Log($"{lookZ2_}, {lookZ2_ * Mathf.Rad2Deg}");
+
+        chkPosWeaponSort(rotateStand_.x, rotateStand_.y);
+    }
 
 
+    //! 무기 위치에 따라 레이어 값 바꾸기
+    public void chkPosWeaponSort(float mousePosX, float mousePosY)
+    {
+
+        float lookZ2_ = Mathf.Atan2(mousePosY, mousePosX) * Mathf.Rad2Deg;
+
+
+        if (26f < lookZ2_&& lookZ2_ < 153f)
+        {
+            rotateSort.sortingOrder = 0;
+        }
+        else
+        {
+            rotateSort.sortingOrder = 2;
+        }
     }
 }
