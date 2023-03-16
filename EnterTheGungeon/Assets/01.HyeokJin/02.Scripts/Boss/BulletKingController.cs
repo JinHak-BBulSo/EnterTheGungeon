@@ -6,9 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BulletKingController : MonoBehaviour
 {
+    [SerializeField] public Transform target = default;
+    [SerializeField] public GameObject bulletPrefab = default;
+
+    private List<GameObject> bullets = default;
     private Rigidbody2D bulletkingRigidbody = default;
     private Animator bulletkingAnimator = default;
-    [SerializeField] public Transform target = default;
 
     private float distance = default;
     private float moveSpeed = default;
@@ -27,6 +30,7 @@ public class BulletKingController : MonoBehaviour
     {
         bulletkingRigidbody = GetComponent<Rigidbody2D>();
         bulletkingAnimator = GetComponent<Animator>();
+        bullets = new List<GameObject>();
 
         moveSpeed = 0.2f;
     }
@@ -37,9 +41,7 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        Move();
-
-        Pattern_1();
+        Pattern_2();
     }
 
     private void Move()
@@ -76,7 +78,9 @@ public class BulletKingController : MonoBehaviour
 
     private void Pattern_2()
     {
-        //  자신을 중심으로 나아가는 불꽃 모양의 탄을 1겹 원형으로 발사한다. (36개)
+        //  자신을 중심으로 나아가는 불꽃 모양의 탄을 1겹 원형으로 발사한다.
+        //  36개의 탄이 보스 중앙에서 생성되어 원형으로 점점 퍼져 나간다.
+
     }
 
     private void Pattern_3()
