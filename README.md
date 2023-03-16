@@ -24,6 +24,3 @@ prob: 공격 모션이 있는 적들이 모션 도중 움직이지 않도록 설
 
 slove: GetCurrentAnimatorStateInfo를 사용하여 애니메이션이 동작할 경우와 아닐 경우의 bool값을 쉽게 구할 수 있게 변경.
 
-prob: 현재 오브젝트에서 특정 angle방향으로 특정 distance값 만큼의 position을 구하려고함.
-
-not slove yet:
