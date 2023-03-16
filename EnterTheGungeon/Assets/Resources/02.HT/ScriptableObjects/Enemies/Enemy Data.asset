@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
   enemyName: 
-  attackType: 
-  weapon: {fileID: 0}
+  attackType: 0
+  weapon:
+  - {fileID: 0}
   enemyImage: {fileID: 0}
+  enemyAnim: {fileID: 0}
   enemyHp: 0
+  enemyMoveSpeed: 0

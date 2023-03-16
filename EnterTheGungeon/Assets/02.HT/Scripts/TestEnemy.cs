@@ -31,7 +31,35 @@ public class TestEnemy : MonoBehaviour
 
     // } animation var
 
+
+    // { Var for summonBullet
+    float xValue;
+    float yValue;
+    Vector2 directionForSummonBullet;
+    Vector2 summonBulletPosition;
+    float angleForSummonBullet;
+    // } Var for summonBullet
+
     //If FSM R&D, Rebuild animaion
+
+
+
+    // { Var using for FindPlayerDirection
+    float minDist = default;
+    float getDist;
+    float minDistArrayIndex;
+
+    Vector2 dir1;
+    Vector2 dir2;
+    Vector2 dir3;
+    Vector2 dir4;
+    Vector2 dir5;
+    Vector2 dir6;
+    Vector2 dir7;
+    Vector2 dir8;
+
+    Vector2[] directionArray = new Vector2[8];
+    // } Var using for FindPlayerDirection
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +81,7 @@ public class TestEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!IsSpawnEnd) { }
         else
         {
@@ -81,10 +110,6 @@ public class TestEnemy : MonoBehaviour
             }
             // } Raycast To Player & Condition Check RayCast Hit
 
-            // { Calc Player Angle from this Position & animation apply
-            //CheckAngle();
-            //AnimationSet();
-            // } Calc Player Angle from this Position & animation apply
 
             // { set var for using animation
             direction = player.transform.position - transform.position;
@@ -93,68 +118,7 @@ public class TestEnemy : MonoBehaviour
             // ] set var for using animation
         }
 
-
-    }
-    void Move()
-    {
-        isMove = true;
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
-    }
-
-    /* void CheckAngle()
-    {
-        isTargetLeft = false;
-        isTargetRight = false;
-        isTargetLeftBack = false;
-        isTargetRightBack = false;
-
-        angle = Quaternion.FromToRotation(Vector3.up, (player.transform.position - transform.position)).eulerAngles.z;
-        if (angle >= 90 && angle < 180)
-        {
-            isTargetLeft = true;
-        }
-        else if (angle >= 180 && angle < 270)
-        {
-            isTargetRight = true;
-        }
-        else if (angle >= 0 && angle < 90)
-        {
-            isTargetLeftBack = true;
-        }
-        else if (angle >= 270 && angle < 360)
-        {
-            isTargetRightBack = true;
-        }
-
-    }
-
-    void AnimationSet()
-    {
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookLeft", false);
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookRight", false);
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookLeftBack", false);
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookRightBack", false);
-
-        if (isTargetLeft)
-        {
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookLeft", true);
-        }
-        else if (isTargetRight)
-        {
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookRight", true);
-        }
-        else if (isTargetLeftBack)
-        {
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookLeftBack", true);
-        }
-        else if (isTargetRightBack)
-        {
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsLookRightBack", true);
-        }
-        else { }
-
-
-        if (isMove == true)
+        if (isMove)
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", true);
         }
@@ -162,9 +126,15 @@ public class TestEnemy : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
         }
-    } */
 
+        FindPlayerDirection();
+    }
+    void Move()
+    {
+        isMove = true;
 
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
+    }
     void Attack()
     {
         // use weapon
@@ -194,9 +164,9 @@ public class TestEnemy : MonoBehaviour
         transform.GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
     }
 
-    IEnumerator Fire(float castTime, float delayTime)
+    IEnumerator Fire(float castTime_, float delayTime_)   //castime & delaytime < scriptableobj에 값 추가 예정
     {
-        yield return new WaitForSeconds(castTime);
+        yield return new WaitForSeconds(castTime_);
         // { enemy pattern
         if (this.name == "bookllet")
         {
@@ -211,13 +181,63 @@ public class TestEnemy : MonoBehaviour
             }
         }
 
-        if(this.name == "gunNut")
+        if (this.name == "gunNut")
         {
-            
+            for (float i = minDistArrayIndex * 45; i <= minDistArrayIndex * 45 + 90; i += 10)
+            {
+                int j = (int)minDistArrayIndex;
+                Debug.Log(directionArray[j]);
+
+
+                GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                clone.GetComponent<TestBullet>().bulletType = 1;
+                clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+
+                angleForSummonBullet = i * Mathf.PI / 180.0f;
+                xValue = Mathf.Cos(angleForSummonBullet);
+                yValue = Mathf.Sin(angleForSummonBullet);
+                directionForSummonBullet = new Vector2(xValue, yValue);
+                summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 150;
+                clone.transform.localPosition = summonBulletPosition;
+            }
         }
         // } enemy pattern
-        yield return new WaitForSeconds(delayTime);
+        yield return new WaitForSeconds(delayTime_);
         isDelayEnd = false;
+    }
+
+    // @brief find player's direction from current enemy position.
+    void FindPlayerDirection()
+    {
+        dir1 = (Vector2.up + Vector2.right).normalized;
+        dir2 = (Vector2.up).normalized;
+        dir3 = (Vector2.left + Vector2.up).normalized;
+        dir4 = Vector2.left.normalized;
+        dir5 = (Vector2.down + Vector2.left).normalized;
+        dir6 = (Vector2.down).normalized;
+        dir7 = (Vector2.right + Vector2.down).normalized;
+        dir8 = (Vector2.right).normalized;
+
+
+        Vector2[] directionArray_ = { dir1, dir2, dir3, dir4, dir5, dir6, dir7, dir8 };
+
+        directionArray = directionArray_;
+
+        for (int i = 0; i < directionArray_.Length; i++)
+        {
+            getDist = Vector2.Distance((player.transform.position - transform.position).normalized, directionArray_[i]);
+            if (i == 0 || minDist > getDist)
+            {
+                minDist = getDist;
+            }
+            else { }
+
+            if (minDist == getDist)
+            {
+                minDistArrayIndex = i;
+            }
+            else { }
+        }
     }
 }
 

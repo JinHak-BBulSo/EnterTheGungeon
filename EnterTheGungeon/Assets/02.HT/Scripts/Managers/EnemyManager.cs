@@ -18,14 +18,15 @@ public class EnemyManager : GSingleton<EnemyManager>
 
         enemyPrefab = Resources.Load<GameObject>("02.HT/Prefabs/EnemyPrefab");
 
+        GameObject clone = Instantiate(enemyPrefab, GameObject.Find("TestRoom").transform);
         if (enemyData.Weapon.Count > 0)
         {
             int weaponNum = Random.Range(0, enemyData.Weapon.Count);
             weapon = enemyData.Weapon[weaponNum];
+            Instantiate(weapon, clone.transform.GetChild(2));
         }
+        else { }
 
-        GameObject clone = Instantiate(enemyPrefab, GameObject.Find("TestRoom").transform);
-        Instantiate(weapon, clone.transform.GetChild(2));
         clone.name = enemyData.EnemyName;
 
         // { image 변경 & image size 조절
@@ -42,7 +43,7 @@ public class EnemyManager : GSingleton<EnemyManager>
         clone.GetComponent<TestEnemy>().attackType = enemyData.AttackType;
 
         //attacktype이 0이 아닌경우(!useWeapon)
-        if(enemyData.AttackType !=0)
+        if (enemyData.AttackType != 0)
         {
             clone.transform.GetChild(2).gameObject.SetActive(false);
         }
