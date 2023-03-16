@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : GSingleton<PlayerManager>
 {
-    private Canvas rotateSort = default;
+    public PlayerController player = default;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Awake()
     {
-        rotateSort = gameObject.GetComponentMust<Canvas>();
-
-        rotateSort.sortingLayerName = "Player";
-
-        // 플레이어 본체는 Player 의 1 값 고정이다
-        rotateSort.sortingOrder = 1;
+        base.Awake();
+    }
+    public override void Start()
+    {
+        base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Init()
     {
-        
+        GFunc.Log("싱글톤 호출");
+
     }
 }

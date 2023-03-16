@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5869124156722850510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -92,8 +92,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObjs: {fileID: 0}
+  firePos: {fileID: 0}
+  rotateWeapon: {fileID: 0}
   weaponName: 
   weaponDescription: 
+  weaponPos: {x: 0, y: 0, z: 0}
   weaponReload: 0
   weaponMagazine: 0
   weaponBulletValue: 0
@@ -107,6 +110,7 @@ MonoBehaviour:
   countBullet: 0
   deleyChkVal: 0
   isAttack: 0
+  isReload: 0
 --- !u!1 &5869124156885049220
 GameObject:
   m_ObjectHideFlags: 0

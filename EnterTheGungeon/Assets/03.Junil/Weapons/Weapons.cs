@@ -148,3 +148,32 @@ class MarineNorWeapon : Weapons
         this.weaponHand = 1;
     }
 }
+
+class MoonrakerWeaponVal : Weapons
+{
+    public MoonrakerWeaponVal()
+    {
+        this.weaponName = "문스크래퍼";
+        this.weaponDescription = "비이이이이오오옹!\r\n" +
+            "이 강력한 레이저는 테라포밍 프로젝트에서 고속으로 월면석을 깎아낼 목적으로 설계된 것입니다.";
+
+        this.weaponPos = new Vector3(5f, 2f, 0f);
+
+        // -1은 재장전이 없다는 의미다.
+        this.weaponReload = -1;
+
+        this.weaponMagazine = 700;
+
+        this.weaponBulletValue = 700;
+        this.knockBack = 20f;
+
+        // default는 탄속이 없다는 의미다.
+        this.bulletSpeed = default;
+
+        this.bulletDamage = 26;
+        this.bulletRange = 50f;
+        this.bulletShotRange = 5;
+        this.weaponDeley = 0.1f;
+        this.weaponHand = 1;
+    }
+}

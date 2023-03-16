@@ -13,10 +13,14 @@ public class PlayerAttack : MonoBehaviour
     private Animator playerAni = default;
     private Canvas rotateSort = default;
 
-
+    // 무기 프리팹 저장하는 배열
     public GameObject[] playerWeaponPrefabs = default;
-    public GameObject[] playerWeapons = default;
-    public PlayerWeapon[] playerWeaponScript = default;
+
+    // 지금 사용 가능한 무기 배열
+    public List<GameObject> playerWeapons = default;
+
+    // 지금 사용할 무기 스크립트 가져오는 배열
+    public List<PlayerWeapon> playerWeaponScript = default;
 
     public bool isDodgeing = false;
 
@@ -40,16 +44,19 @@ public class PlayerAttack : MonoBehaviour
 
         playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
 
-        playerWeapons = new GameObject[playerWeaponPrefabs.Length];
-        playerWeaponScript = new PlayerWeapon[playerWeaponPrefabs.Length];
 
         for (int i = 0; i < playerWeaponPrefabs.Length; i++)
         {
 
-            playerWeapons[i] = Instantiate(playerWeaponPrefabs[i], weaponObjs.transform.position,
-                Quaternion.identity, weaponObjs.transform);
+            playerWeapons.Add(Instantiate(playerWeaponPrefabs[i], weaponObjs.transform.position,
+                Quaternion.identity, weaponObjs.transform));
 
-            playerWeaponScript[i] = playerWeapons[i].GetComponentMust<PlayerWeapon>();
+            playerWeaponScript.Add(playerWeapons[i].GetComponentMust<PlayerWeapon>());
+
+
+            
+            playerWeapons[i].name = playerWeaponPrefabs[i].name;
+            playerWeaponScript[i].name = playerWeaponPrefabs[i].name + "_Script";
 
             playerWeaponPrefabs[i].SetActive(false);
             playerWeapons[i].SetActive(false);
@@ -115,22 +122,28 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        // 현재 들고 있는 총을 쏜다
-        if (Input.GetMouseButtonDown(0))
-        {
-            GFunc.Log("공격 클릭 됨");
-            playerWeaponScript[0].FireBullet();
+        
 
-        }
+    }
 
+    //! 현재 들고 있는 총을 발사하는 함수
+    public void FireBulletWeapon()
+    {
+        GFunc.Log("공격 클릭 됨");
+        playerWeaponScript[nowWeaponIndex].FireBullet();
+    }
 
-        // 재장전
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            playerWeaponScript[0].ReloadBullet();
+    //! 현재 총을 재장전해주는 함수
+    public void ReloadBulletWeapon()
+    {
+        playerWeaponScript[nowWeaponIndex].ReloadBullet();
 
-        }
+    }
 
+    //! 무기를 바꾸는 함수
+    public void ChangeWeapons()
+    {
+        
     }
 
 

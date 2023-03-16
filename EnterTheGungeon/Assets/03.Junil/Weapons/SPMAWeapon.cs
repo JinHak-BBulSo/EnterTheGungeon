@@ -8,9 +8,6 @@ public class SPMAWeapon : PlayerWeapon
 
     private GameObject[] spmaBullets = default;
 
-    private Transform firePos = default;
-
-    private GameObject rotateWeapon = default;
 
     public Weapons weapons = default;
 
@@ -27,13 +24,9 @@ public class SPMAWeapon : PlayerWeapon
 
         spmaBulletPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/SPMA_Bullet");
 
-        firePos = gameObject.FindChildObj("FirePos").transform;
         isAttack = false;
         isReload = false;
         deleyChkVal = 0f;
-
-        GameObject weapons_ = gameObject.transform.parent.gameObject;
-        rotateWeapon = weapons_.transform.parent.gameObject;
 
         weapons = new MarineNorWeapon();
 
@@ -110,6 +103,7 @@ public class SPMAWeapon : PlayerWeapon
 
     public override void ReloadBullet()
     {
+        
         if (isReload == true) { return; }
 
         StartCoroutine(OnReload());
