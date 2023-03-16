@@ -68,6 +68,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2c55f637d9348d24ebb3596ce527d682, type: 2}
   - {fileID: 21300000, guid: 7ade527700e44a5449cad09774445092, type: 2}
   - {fileID: 21300000, guid: 216b7377213e4c04f9c0e9dc79383de3, type: 2}
+  - {fileID: 21300000, guid: b3822e188ec9c1647a4bdf223b0591c0, type: 2}
   - {fileID: 21300000, guid: 6a179248a67e00e49984c22f87423671, type: 2}
   - {fileID: 21300000, guid: 6251f598c1c664e4d88ac8580ffd1451, type: 2}
   - {fileID: 21300000, guid: c7f725a8bed4689428b8b37c2819fe2d, type: 2}
@@ -130,6 +131,7 @@ SpriteAtlas:
   - title_comet_white_001
   - title_comet_sailrmoon_001
   - title_comet_sailrmoon_006
+  - Option_Top
   - silhouette_lich_top_windy_004
   - silhouette_lich_gun_004
   - title_comet_white_002
