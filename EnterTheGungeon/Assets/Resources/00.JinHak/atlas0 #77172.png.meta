@@ -3372,7 +3372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_155
+      name: GreenTile5
       rect:
         serializedVersion: 2
         x: 90
@@ -4002,7 +4002,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_185
+      name: GreenTile6
       rect:
         serializedVersion: 2
         x: 90
@@ -9756,7 +9756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_459
+      name: GreenTile3
       rect:
         serializedVersion: 2
         x: 198
@@ -10533,7 +10533,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_496
+      name: GreenTile4
       rect:
         serializedVersion: 2
         x: 360
@@ -10575,7 +10575,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_498
+      name: GreenTile2
       rect:
         serializedVersion: 2
         x: 396
@@ -12108,7 +12108,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_571
+      name: GreenTileBase
       rect:
         serializedVersion: 2
         x: 198
@@ -12129,7 +12129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_572
+      name: GreenTileBase2
       rect:
         serializedVersion: 2
         x: 216
@@ -12822,7 +12822,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_605
+      name: GreenWall3
       rect:
         serializedVersion: 2
         x: 306
@@ -12843,7 +12843,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_606
+      name: GreenWall2
       rect:
         serializedVersion: 2
         x: 324
@@ -12864,7 +12864,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_607
+      name: GreenWall1
       rect:
         serializedVersion: 2
         x: 342
@@ -13074,6 +13074,16 @@ TextureImporter:
       BookShelfTopMiddle2: -615997766
       BookShelfTopMiddle3: -1657418035
       BookShelfTopRightEdge: -1047030547
+      GreenTile2: -1967628776
+      GreenTile3: -333683977
+      GreenTile4: -1711013896
+      GreenTile5: -213352463
+      GreenTile6: -1196779720
+      GreenTileBase: -225684945
+      GreenTileBase2: 275872917
+      GreenWall1: -1334968204
+      GreenWall2: 1158654477
+      GreenWall3: -193477207
       RedCarpetBase: 422157219
       RedCarpetEdge: 502299435
       RedCarpetEdgeSide: -1973292833
@@ -13144,7 +13154,6 @@ TextureImporter:
       atlas0 #77172_152: -46246774
       atlas0 #77172_153: 1881426148
       atlas0 #77172_154: 1807118077
-      atlas0 #77172_155: -213352463
       atlas0 #77172_156: 1838155165
       atlas0 #77172_157: -47306041
       atlas0 #77172_158: -237745076
@@ -13176,7 +13185,6 @@ TextureImporter:
       atlas0 #77172_182: -1662921988
       atlas0 #77172_183: 169062596
       atlas0 #77172_184: -310506636
-      atlas0 #77172_185: -1196779720
       atlas0 #77172_187: 1393452168
       atlas0 #77172_188: -1741489269
       atlas0 #77172_189: -2073592277
@@ -13467,7 +13475,6 @@ TextureImporter:
       atlas0 #77172_456: 1325469445
       atlas0 #77172_457: -897086576
       atlas0 #77172_458: 988189596
-      atlas0 #77172_459: -333683977
       atlas0 #77172_46: -1537730667
       atlas0 #77172_460: 1539965809
       atlas0 #77172_461: 655920070
@@ -13505,9 +13512,7 @@ TextureImporter:
       atlas0 #77172_493: 1238829075
       atlas0 #77172_494: -451586614
       atlas0 #77172_495: -1216189257
-      atlas0 #77172_496: -1711013896
       atlas0 #77172_497: 1291024246
-      atlas0 #77172_498: -1967628776
       atlas0 #77172_499: -1453167844
       atlas0 #77172_5: 91893487
       atlas0 #77172_50: -659503730
@@ -13585,8 +13590,6 @@ TextureImporter:
       atlas0 #77172_569: 45740698
       atlas0 #77172_57: 1148876835
       atlas0 #77172_570: -1359113076
-      atlas0 #77172_571: -225684945
-      atlas0 #77172_572: 275872917
       atlas0 #77172_573: 1737306679
       atlas0 #77172_574: -1637816418
       atlas0 #77172_575: 1634904168
@@ -13617,9 +13620,6 @@ TextureImporter:
       atlas0 #77172_598: 1301319834
       atlas0 #77172_6: 36273256
       atlas0 #77172_604: -469613316
-      atlas0 #77172_605: -193477207
-      atlas0 #77172_606: 1158654477
-      atlas0 #77172_607: -1334968204
       atlas0 #77172_608: 908926689
       atlas0 #77172_609: -1466636573
       atlas0 #77172_61: -29879575
