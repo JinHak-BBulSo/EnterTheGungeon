@@ -7,7 +7,7 @@ public class TestBullet : MonsterBullets
     //0: fired from weapon, 1: summon from Enemy
     public int bulletType;
 
-    float angle;
+    public float angle;
     GameObject player;
 
     bool isCheckAngle;
@@ -37,9 +37,9 @@ public class TestBullet : MonsterBullets
 
         if (bulletType != 1)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+            //gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
         }
-        else if(bulletType == 1)
+        else if (bulletType == 1)
         {
             StartCoroutine(WaitToFire());
         }
@@ -63,6 +63,7 @@ public class TestBullet : MonsterBullets
     IEnumerator WaitToFire()
     {
         yield return new WaitForSeconds(1);
+
         gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
 
     }

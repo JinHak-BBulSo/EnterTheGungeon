@@ -46,6 +46,7 @@ public class TestEnemyWeapon : MonoBehaviour
             GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
             clone.transform.SetParent(GameObject.Find("GameObjs").transform);
             clone.GetComponent<TestBullet>().bulletType = 0;
+            clone.GetComponent<Rigidbody2D>().velocity = clone.transform.up * 5;
             StartCoroutine(FireDelay(delayTime));
         }
     }

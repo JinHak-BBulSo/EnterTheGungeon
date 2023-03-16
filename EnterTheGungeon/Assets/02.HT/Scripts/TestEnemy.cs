@@ -149,6 +149,8 @@ public class TestEnemy : MonoBehaviour
             {
                 isDelayEnd = true;
                 transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
+
+                //bookllet casttime_ = 1, gunNut casttime_ = 0.5f
                 StartCoroutine(Fire(1, 5));
             }
         }
@@ -170,40 +172,85 @@ public class TestEnemy : MonoBehaviour
         // { enemy pattern
         if (this.name == "bookllet")
         {
-            float[] xPos = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
-            float[] yPos = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
-            for (int i = 0; i < 19; i++)
+            int patternNum_ = Random.Range(0, 2);
+
+            if (patternNum_ == 0)
             {
-                GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-                clone.GetComponent<TestBullet>().bulletType = 1;
-                clone.transform.SetParent(GameObject.Find("GameObjs").transform);
-                clone.transform.localPosition = new Vector2(transform.localPosition.x + xPos[i], transform.localPosition.y + yPos[i]);
+                float[] xPos_ = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
+                float[] yPos_ = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
+                for (int i = 0; i < 19; i++)
+                {
+                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    clone_.GetComponent<TestBullet>().bulletType = 1;
+                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    clone_.transform.localPosition = new Vector2(transform.localPosition.x + xPos_[i], transform.localPosition.y + yPos_[i]);
+                }
+            }
+            else if (patternNum_ == 1)
+            {
+                for (float i = 0; i <= 360; i += 10)
+                {
+                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+
+                    angleForSummonBullet = i * Mathf.PI / 180.0f;
+                    xValue = Mathf.Cos(angleForSummonBullet);
+                    yValue = Mathf.Sin(angleForSummonBullet);
+                    directionForSummonBullet = new Vector2(xValue, yValue);
+                    summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 50;
+
+                    clone_.transform.localPosition = summonBulletPosition;
+                    StartCoroutine(WaitToSummonAllBullet(clone_, directionForSummonBullet.normalized));
+                    //clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
+                }
+                for (int i = 0; i <= 60; i += 10)
+                {
+                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
+                    StartCoroutine(WaitToSummonAllBullet(clone_, clone_.transform.up.normalized));
+                }
+                for (int i = 0; i >= -60; i -= 10)
+                {
+                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
+                    StartCoroutine(WaitToSummonAllBullet(clone_, -clone_.transform.up.normalized));
+                }
             }
         }
 
         if (this.name == "gunNut")
         {
-            for (float i = minDistArrayIndex * 45; i <= minDistArrayIndex * 45 + 90; i += 10)
+            for (float i = minDistArrayIndex * 45; i <= minDistArrayIndex * 45 + 90; i += 5)
             {
-                int j = (int)minDistArrayIndex;
-                Debug.Log(directionArray[j]);
-
-
-                GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-                clone.GetComponent<TestBullet>().bulletType = 1;
-                clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+                GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                clone_.GetComponent<TestBullet>().bulletType = 0;
+                clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
 
                 angleForSummonBullet = i * Mathf.PI / 180.0f;
                 xValue = Mathf.Cos(angleForSummonBullet);
                 yValue = Mathf.Sin(angleForSummonBullet);
                 directionForSummonBullet = new Vector2(xValue, yValue);
-                summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 150;
-                clone.transform.localPosition = summonBulletPosition;
+                summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 50;
+
+                clone_.transform.localPosition = summonBulletPosition;
+                clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
             }
         }
         // } enemy pattern
         yield return new WaitForSeconds(delayTime_);
         isDelayEnd = false;
+    }
+
+    IEnumerator WaitToSummonAllBullet(GameObject clone_, Vector2 direction_)
+    {
+        yield return new WaitForSeconds(1);
+        clone_.GetComponent<Rigidbody2D>().AddForce(direction_ * 5, ForceMode2D.Impulse);
+
     }
 
     // @brief find player's direction from current enemy position.

@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - bulletKin
+  - bookllet
 --- !u!1 &954571989
 GameObject:
   m_ObjectHideFlags: 0
