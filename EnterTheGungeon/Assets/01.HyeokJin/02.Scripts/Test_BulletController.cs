@@ -6,6 +6,8 @@ public class Test_BulletController : MonoBehaviour
 {
     private Rigidbody2D bulletRigidbody = default;
 
+    public int dmg = default;
+
     private void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody2D>();
@@ -15,7 +17,7 @@ public class Test_BulletController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
