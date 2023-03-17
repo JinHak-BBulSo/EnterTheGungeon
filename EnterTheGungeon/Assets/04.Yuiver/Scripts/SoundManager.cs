@@ -47,7 +47,7 @@ public class SoundManager : GSingleton<SoundManager>
     }
 
     //! 랩핑한 오디오 클립을 받는 버전의 코드
-    public void Play(string path, Sound type = Sound.SE, float pitch = 1.0f)
+    public void Play(string path, Sound type = Sound.UI_SFX, float pitch = 1.0f)
     {
         AudioClip audioClip = GetAudioClip(path , type);
         Debug.Log(audioClip.name);
@@ -55,7 +55,7 @@ public class SoundManager : GSingleton<SoundManager>
     }
 
     //! DB에서 받을때는 경로로 받지만 그전까지 귀찮으니 오디오 클립으로 받는다.
-    public void Play(AudioClip audioClip, Sound type = Sound.SE, float pitch = 1.0f)
+    public void Play(AudioClip audioClip, Sound type = Sound.UI_SFX, float pitch = 1.0f)
     {
 
 
@@ -75,17 +75,22 @@ public class SoundManager : GSingleton<SoundManager>
             audioSource.clip = audioClip;
             audioSource.Play();
         }
+        else if (type == Sound.SFX)
+        {
+            AudioSource audioSource = _audioSources[(int)Sound.SFX];
+            audioSource.pitch = pitch;
+            audioSource.PlayOneShot(audioClip);
+        }
         else
         {
-
-            AudioSource audioSource = _audioSources[(int)Sound.SE];
+            AudioSource audioSource = _audioSources[(int)Sound.UI_SFX];
             audioSource.pitch = pitch;
             audioSource.PlayOneShot(audioClip);
         }
     }
 
     //! 오디오 클립의 경로를 만들어주거나 파일을 로드해오는 함수
-    AudioClip GetAudioClip(string path, Sound type = Sound.SE)
+    AudioClip GetAudioClip(string path, Sound type = Sound.UI_SFX)
     {
         // 사운드 경로가 생략되었다면 사운드 경로를 Resources/Audio로 생성해준다!
         if (path.Contains("Audio/") == false)

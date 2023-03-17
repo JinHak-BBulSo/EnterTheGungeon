@@ -21,7 +21,7 @@ public class CountFpsController : MonoBehaviour
     }
     private void Start()
     {
-        SoundManager.Instance.Play("TestSound", Sound.Bgm);
+        SoundManager.Instance.Play("TestSound", Sound.SFX);
     }
 
     void OnGUI()
