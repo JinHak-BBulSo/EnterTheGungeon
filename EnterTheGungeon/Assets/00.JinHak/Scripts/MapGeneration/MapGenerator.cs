@@ -232,7 +232,7 @@ public class MapGenerator : MonoBehaviour
         Vector2Int leftNodeCenter = nowNode_.leftNode.Center;
         Vector2Int rightNodeCenter = nowNode_.rightNode.Center;
 
-        if (height_ < MAXIMUM_DEPTH - 2)
+        if (height_ < MAXIMUM_DEPTH - 1)
         {
             RoomAccess(nowNode_.leftNode, height_ + 1);
             RoomAccess(nowNode_.rightNode, height_ + 1);
