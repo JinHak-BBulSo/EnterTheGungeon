@@ -171,7 +171,7 @@ class MoonrakerWeaponVal : Weapons
         this.bulletSpeed = default;
 
         this.bulletDamage = 26;
-        this.bulletRange = 50f;
+        this.bulletRange = 30f;
         this.bulletShotRange = 5;
         this.weaponDeley = 0.1f;
         this.weaponHand = 1;

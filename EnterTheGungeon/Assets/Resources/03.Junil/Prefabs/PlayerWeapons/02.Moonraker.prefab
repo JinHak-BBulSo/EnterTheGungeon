@@ -334,4 +334,7 @@ MonoBehaviour:
   countBullet: 0
   deleyChkVal: 0
   layerMask: 0
+  reflectMax: 0
+  isLoopActive: 0
   isLaserOn: 0
+  isChkMagazine: 0

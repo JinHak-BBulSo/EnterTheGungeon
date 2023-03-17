@@ -5,8 +5,17 @@ using UnityEngine;
 public class MoonrakerWeapon : PlayerWeapon
 {
 
+    // 레이저 길이
     [SerializeField]
     private float defDistanceRay = default;
+
+    // 레이저 발사 위치
+    private Vector3 firstPos = default;
+
+    // 레이저 발사 방향
+    private Vector3 directLaser = default;
+
+       
 
     public Weapons weapons = default;
 
@@ -18,7 +27,13 @@ public class MoonrakerWeapon : PlayerWeapon
 
     public int layerMask = default;
 
+    // 반사되는 최대 횟수
+    public int reflectMax = default;
+
+
+    public bool isLoopActive = true;
     public bool isLaserOn = false;
+    public bool isChkMagazine = false;
 
 
     // Start is called before the first frame update
@@ -27,14 +42,23 @@ public class MoonrakerWeapon : PlayerWeapon
         weapons = new MoonrakerWeaponVal();
         SetWeaponData(weapons);
 
+
         moonLineRenderer = gameObject.GetComponentMust<LineRenderer>();
         moonTransform = gameObject.GetComponentMust<Transform>();
-
+        
+        isChkMagazine = false;
         moonLineRenderer.enabled = false;
         countBullet = weaponMagazine;
 
         deleyChkVal = 0f;
+        reflectMax = 2;
+
+        isLoopActive = false;
         isLaserOn = false;
+
+        firstPos = new Vector3();
+        directLaser = new Vector3();
+
 
         // 레이저 길이
         defDistanceRay = (int)bulletRange;
@@ -50,9 +74,19 @@ public class MoonrakerWeapon : PlayerWeapon
     // Update is called once per frame
     void Update()
     {
-        if(isLaserOn == true)
+        GFunc.Log($"{weaponMagazine}");
+
+        if (isLaserOn == true)
         {
-            ShootLaser();
+            if(isChkMagazine == false)
+            {
+                StartCoroutine("MinusWeaponMagazine");
+                isChkMagazine = true;
+            }
+
+            TestLaser();
+
+            
         }
         
         if (Input.GetMouseButtonUp(0))
@@ -72,60 +106,84 @@ public class MoonrakerWeapon : PlayerWeapon
         base.ReloadBullet();
     }
 
-
-
-    public void ShootLaser()
+    public void TestLaser()
     {
-
         moonLineRenderer.enabled = true;
+        isLoopActive = true;
+
+        firstPos = firePos.position;
+
+        int countLaser_ = 1;
+
+        directLaser = transform.right;
+
+        // 라인렌더러 굴기
+        moonLineRenderer.startWidth = 0.20f;
+        moonLineRenderer.endWidth = 0.20f;
+
+
+        moonLineRenderer.numCornerVertices = 20;
+        // 라인렌더러 끝부분의 둥글기
+        moonLineRenderer.numCapVertices = 6;
+        moonLineRenderer.positionCount = countLaser_;
+        moonLineRenderer.SetPosition(0, firstPos);
+
+        while(isLoopActive == true)
+        {
+            RaycastHit2D hit_ = Physics2D.Raycast(firstPos, directLaser, defDistanceRay, layerMask);
+
+            if(hit_ != default)
+            {
+                Vector3 temp_ = firstPos;
+
+                countLaser_++;
+                moonLineRenderer.positionCount = countLaser_;
+                directLaser = Vector3.Reflect(directLaser, hit_.normal);
+                firstPos = (Vector2) directLaser.normalized + hit_.point;
+                moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
+                
+
+            }
+            else
+            {
+                countLaser_++;
+                moonLineRenderer.positionCount = countLaser_;
+                moonLineRenderer.SetPosition(countLaser_ - 1, firstPos + (directLaser.normalized * defDistanceRay));
+                isLoopActive = false;
+            }
+
+            if(reflectMax < countLaser_)
+            {
+                isLoopActive = false;
+            }
+
+
+        }
+
         
-
-        RaycastHit2D hit_ = Physics2D.Raycast(moonTransform.position, transform.right, defDistanceRay, layerMask);
-
-        if (hit_ != default )
-        {
-            
-            Draw2DRay(firePos.position, hit_.point);
-
-            ReflectLaser(hit_.point, firePos.position);
-
-        }
-        else
-        {
-            Draw2DRay(firePos.position, firePos.transform.right * defDistanceRay);
-        }
-
-    }
-
-    //! 레이저 반사되는 함수
-    public void ReflectLaser(Vector3 hitPos, Vector3 startPos) 
-    {
-        // 입사 벡터 값
-        float inComingVecter_ = Vector3.SignedAngle(hitPos, startPos, -Vector3.right);
-
-        // 충돌할 면의 벡터 값
-        float normalVecter_ = Mathf.Atan2(hitPos.y, hitPos.x) * 180f / Mathf.PI;
-
-        // 입사 벡터를 각도로 변환
-        //float inComingAngle = Vector3.SignedAngle()
     }
 
 
     public void OffLaser()
     {
+        StopCoroutine("MinusWeaponMagazine");
         isLaserOn = false;
+        isChkMagazine = false;
         moonLineRenderer.enabled = false;
     }
 
 
-    public void Draw2DRay(Vector2 startPos, Vector2 endPos)
+
+    IEnumerator MinusWeaponMagazine()
     {
-        moonLineRenderer.SetPosition(0, startPos);
-        moonLineRenderer.SetPosition(1, endPos);
+        while (isLaserOn == true)
+        {
+            yield return new WaitForSeconds(weaponDeley);
+
+            weaponMagazine--;
+        }
 
     }
-
-
 
 
 }
