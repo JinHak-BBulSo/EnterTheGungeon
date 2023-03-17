@@ -14,6 +14,9 @@ Raycast 에서 Bullet의 LayerMask를 제외하고 Hit 체크를 하도록 설�
 2023/03/14 / v0.0.2 / Fix Player Move    
 2023/03/14 / v0.0.2 / Add PlayerMarine Less Animater    
 2023/03/15 / v0.0.3 / Add proto Weapon and fix rotate player.    
+2023/03/15 / v0.0.3 / Add playerMarine normal Weapon prototype    
+2023/03/16 / v0.0.4 / Add Weapon Laser prototype and Weapon Swap    
+2023/03/17 / fix Laser Weapon and Laser reflect    
 
 ## [KJH]    
 2023/03/14 타일맵의 게임오브젝트 브러쉬 맵툴 준비    
