@@ -68,9 +68,12 @@ public class MapGenerator : MonoBehaviour
 
         CompositeCollider2D lineComposite = lineRenderer.AddComponent<CompositeCollider2D>();
         lineComposite.isTrigger = true;
+        lineComposite.geometryType = CompositeCollider2D.GeometryType.Polygons;
 
         lineComposite.gameObject.SetActive(false);
         lineComposite.gameObject.SetActive(true);
+
+        lineComposite.geometryType = CompositeCollider2D.GeometryType.Outlines;
     }
 
     // [KJH] 2023-03-15
@@ -170,11 +173,11 @@ public class MapGenerator : MonoBehaviour
 
         if (lineBoxCollider.size.y == 0.5f)
         {
-            lineBoxCollider.size = new Vector2(lineBoxCollider.size.x, 1);
+            //lineBoxCollider.size = new Vector2(Mathf.Abs((end_.x - start_.x) / 4), 1);
         }
-        else if (lineBoxCollider.size.x == 0.5f) ;
+        else if (lineBoxCollider.size.x == 0.5f)
         {
-            lineBoxCollider.size = new Vector2(1, lineBoxCollider.size.y);
+            //lineBoxCollider.size = new Vector2(1, Mathf.Abs((end_.y - start_.y) / 4));
         }
 
         lineBoxCollider.usedByComposite = true;
@@ -229,7 +232,7 @@ public class MapGenerator : MonoBehaviour
         Vector2Int leftNodeCenter = nowNode_.leftNode.Center;
         Vector2Int rightNodeCenter = nowNode_.rightNode.Center;
 
-        if (height_ < MAXIMUM_DEPTH - 1)
+        if (height_ < MAXIMUM_DEPTH - 2)
         {
             RoomAccess(nowNode_.leftNode, height_ + 1);
             RoomAccess(nowNode_.rightNode, height_ + 1);
