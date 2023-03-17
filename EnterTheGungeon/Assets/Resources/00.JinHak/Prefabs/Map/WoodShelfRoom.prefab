@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7843346648962766036}
+  - component: {fileID: 2085964603}
   m_Layer: 0
   m_Name: WoodShelfRoom
   m_TagString: Untagged
@@ -66,6 +67,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085964603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7843346648962766027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2097cf72896884b9b69553ed82c4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSize: {x: 29, y: 17}
 --- !u!1 &7843346649304717585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1715,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1816,6 +1838,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -2002,6 +2028,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -2411,6 +2445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfRightEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
 --- !u!224 &8699141754375918341 stripped
@@ -2622,6 +2660,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -2947,6 +2989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3236,6 +3282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411615499741 stripped
@@ -3253,6 +3303,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -3747,6 +3801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010370764495639 stripped
@@ -4172,6 +4230,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -4887,6 +4949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5285,6 +5351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427751977167696 stripped
@@ -5386,6 +5456,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -5506,6 +5584,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -5803,6 +5885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427752013906490 stripped
@@ -5904,6 +5990,10 @@ PrefabInstance:
     - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
@@ -6211,6 +6301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427751908490976 stripped
@@ -6320,6 +6414,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -6737,6 +6835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010370903087099 stripped
@@ -6856,6 +6958,10 @@ PrefabInstance:
     - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
@@ -7145,6 +7251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427751926977793 stripped
@@ -7349,6 +7459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfRightEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
 --- !u!224 &8699141754328735009 stripped
@@ -7451,6 +7565,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213254580925068 stripped
@@ -7552,6 +7674,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -7960,6 +8090,10 @@ PrefabInstance:
     - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
       propertyPath: m_Name
       value: BookShelfRightEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
@@ -8387,6 +8521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8489,6 +8627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8590,6 +8732,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -8897,6 +9043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9082,6 +9232,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -9286,6 +9440,10 @@ PrefabInstance:
     - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
@@ -9797,6 +9955,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946179444870233 stripped
@@ -9814,6 +9976,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -10205,6 +10371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411388696101 stripped
@@ -10314,6 +10484,10 @@ PrefabInstance:
     - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
@@ -10434,6 +10608,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -10723,6 +10901,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213254434097041 stripped
@@ -10740,6 +10926,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -11029,6 +11219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946179340389320 stripped
@@ -11148,6 +11342,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -11352,6 +11550,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -11659,6 +11861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11768,6 +11974,10 @@ PrefabInstance:
     - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Name
       value: BookShelfTopLeftEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6393279399171507334, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Pivot.x
@@ -12687,6 +12897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12890,6 +13104,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -13289,6 +13507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010371164569189 stripped
@@ -13306,6 +13528,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -14248,6 +14474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946179298800804 stripped
@@ -14452,6 +14682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411528246933 stripped
@@ -14469,6 +14703,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -14674,6 +14912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14877,6 +15119,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -15286,6 +15532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15490,6 +15740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15591,6 +15845,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -16296,6 +16554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427752417008361 stripped
@@ -16926,6 +17188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17129,6 +17395,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -17520,6 +17790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411120868529 stripped
@@ -17622,6 +17896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946179190316590 stripped
@@ -17639,6 +17917,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -17741,6 +18023,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -17936,6 +18222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010371328362577 stripped
@@ -18056,6 +18346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18157,6 +18451,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -18343,6 +18641,10 @@ PrefabInstance:
     - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
@@ -18548,6 +18850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfLeftEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 5371803579776399235, guid: e4d09a05a808275428668b935a828ea2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d09a05a808275428668b935a828ea2, type: 3}
 --- !u!224 &4630727152344806137 stripped
@@ -18649,6 +18955,10 @@ PrefabInstance:
     - target: {fileID: 8906649953314701079, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
       propertyPath: m_Name
       value: BookShelfTobRightEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906649953314701079, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
@@ -18871,6 +19181,10 @@ PrefabInstance:
     - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
@@ -19474,6 +19788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010371535764613 stripped
@@ -19882,6 +20200,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213254027268755 stripped
@@ -19899,6 +20225,10 @@ PrefabInstance:
     - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
@@ -20205,6 +20535,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -20716,6 +21050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21022,6 +21360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodSideEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 699043320917849997, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8044965091949282906, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21131,6 +21473,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -22134,6 +22480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946179044107286 stripped
@@ -22235,6 +22585,10 @@ PrefabInstance:
     - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
@@ -22447,6 +22801,10 @@ PrefabInstance:
     - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
@@ -22864,6 +23222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTobRightEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 8906649953314701079, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
 --- !u!224 &8166461927950895533 stripped
@@ -22881,6 +23243,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -23169,6 +23535,10 @@ PrefabInstance:
     - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
@@ -23476,6 +23846,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213253798494840 stripped
@@ -23697,6 +24075,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -24412,6 +24794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -24820,6 +25206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -24921,6 +25311,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -25432,6 +25826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -25923,6 +26321,10 @@ PrefabInstance:
     - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
@@ -26748,6 +27150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411032291180 stripped
@@ -27486,6 +27892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427752811873374 stripped
@@ -27588,6 +27998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946178824301756 stripped
@@ -27605,6 +28019,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -27791,6 +28209,10 @@ PrefabInstance:
     - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
@@ -28116,6 +28538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodSideEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 699043320917849997, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8044965091949282906, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -28225,6 +28651,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -28412,6 +28842,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213253695094607 stripped
@@ -28429,6 +28867,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -28615,6 +29057,10 @@ PrefabInstance:
     - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
@@ -28940,6 +29386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -29245,6 +29695,10 @@ PrefabInstance:
     - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
@@ -29840,6 +30294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946178664046528 stripped
@@ -29941,6 +30399,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -30163,6 +30629,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -30578,6 +31048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTobRightEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 8906649953314701079, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
 --- !u!224 &8166461929813835291 stripped
@@ -30883,6 +31357,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -31310,6 +31788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -31597,6 +32079,10 @@ PrefabInstance:
     - target: {fileID: 5371803579776399235, guid: e4d09a05a808275428668b935a828ea2, type: 3}
       propertyPath: m_Name
       value: BookShelfLeftEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371803579776399235, guid: e4d09a05a808275428668b935a828ea2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d09a05a808275428668b935a828ea2, type: 3}
@@ -32024,6 +32510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopLeftEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6393279399171507334, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -32125,6 +32615,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -32431,6 +32925,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -33128,6 +33626,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213255797327539 stripped
@@ -33349,6 +33855,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -33637,6 +34147,10 @@ PrefabInstance:
     - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
       propertyPath: m_Name
       value: BookShelfRightEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247868277097610831, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a49b98f0f090b43a9941d99ec6ecbc, type: 3}
@@ -34268,6 +34782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodSideEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 699043320917849997, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8044965091949282906, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -34581,6 +35099,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -34979,6 +35501,10 @@ PrefabInstance:
     - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
@@ -35405,6 +35931,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -36510,6 +37040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427750874374016 stripped
@@ -36630,6 +37164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -36731,6 +37269,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -37242,6 +37784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -37530,6 +38076,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213255448232633 stripped
@@ -37742,6 +38296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010372209982317 stripped
@@ -37759,6 +38317,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -37954,6 +38516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010372199737719 stripped
@@ -38056,6 +38622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010372112645349 stripped
@@ -38073,6 +38643,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -38175,6 +38749,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -38481,6 +39059,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -39186,6 +39768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010372138736281 stripped
@@ -39203,6 +39789,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -39305,6 +39895,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -39713,6 +40307,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -40530,6 +41128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -40938,6 +41540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -41039,6 +41645,10 @@ PrefabInstance:
     - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Name
       value: BookShelfTopLeftEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6393279399171507334, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Pivot.x
@@ -41244,6 +41854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -41345,6 +41959,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -41448,6 +42066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -41549,6 +42171,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -41940,6 +42566,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213255313582119 stripped
@@ -41957,6 +42591,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -42151,6 +42789,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -42374,6 +43016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -42560,6 +43206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427751109678872 stripped
@@ -42577,6 +43227,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -42679,6 +43333,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -43292,6 +43950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -43496,6 +44158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -43699,6 +44365,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -44210,6 +44880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -44311,6 +44985,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -44719,6 +45397,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -45144,6 +45826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -45431,6 +46117,10 @@ PrefabInstance:
     - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
       propertyPath: m_Name
       value: BookShelfTopMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
@@ -46061,6 +46751,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -47574,6 +48268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfLeftEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 5371803579776399235, guid: e4d09a05a808275428668b935a828ea2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d09a05a808275428668b935a828ea2, type: 3}
 --- !u!224 &4630727151269555497 stripped
@@ -47693,6 +48391,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -47898,6 +48600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -48083,6 +48789,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -48390,6 +49104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 8809560096532780291, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d1ca4ed2c6ff847ba4c767c724ba25, type: 3}
 --- !u!224 &8110427751484715349 stripped
@@ -48594,6 +49312,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213255049690440 stripped
@@ -48714,6 +49440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -48824,6 +49554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopLeftEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 4516979237560005969, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6393279399171507334, guid: 8affebe3c768eca4eb45e82a475cc084, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -48925,6 +49659,10 @@ PrefabInstance:
     - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808529996165207939, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9155753591140787796, guid: cf7893093cd53e742abc7f9da82022a7, type: 3}
       propertyPath: m_Pivot.x
@@ -49253,6 +49991,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -49781,6 +50527,10 @@ PrefabInstance:
     - target: {fileID: 699043320917849997, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
       propertyPath: m_Name
       value: WoodSideEdge
+      objectReference: {fileID: 0}
+    - target: {fileID: 699043320917849997, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8044965091949282906, guid: 46fd2d436ff664e4d950c982b19ee37a, type: 3}
       propertyPath: m_Pivot.x
@@ -50384,6 +51134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946177976465864 stripped
@@ -50401,6 +51155,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -50809,6 +51567,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -51301,6 +52063,14 @@ PrefabInstance:
     - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
       propertyPath: m_Name
       value: WoodTopDoubleSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
@@ -52238,6 +53008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -52339,6 +53113,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -52526,6 +53304,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213254953178751 stripped
@@ -52645,6 +53431,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -53138,6 +53928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 9034639319028971802, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5a4c92ee845d34b81828671f1a21fb, type: 3}
 --- !u!224 &8624010372637430700 stripped
@@ -53155,6 +53949,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -53350,6 +54148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627411917443793 stripped
@@ -53367,6 +54169,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -53962,6 +54768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTobRightEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 8906649953314701079, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf299adeddd080489c5ece5a79180e1, type: 3}
 --- !u!224 &8166461928916765829 stripped
@@ -54064,6 +54874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946177847449328 stripped
@@ -54081,6 +54895,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -54183,6 +55001,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -54388,6 +55210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -54489,6 +55315,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -54694,6 +55524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -54898,6 +55732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -55101,6 +55939,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -55389,6 +56231,10 @@ PrefabInstance:
     - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
@@ -55816,6 +56662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -56002,6 +56852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle2
       objectReference: {fileID: 0}
+    - target: {fileID: 4866698194849295985, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0893de09fb21e1941917de9317e5f84b, type: 3}
 --- !u!224 &5279946177736013925 stripped
@@ -56019,6 +56873,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -56223,6 +57081,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -56512,6 +57374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfLeftEdge
       objectReference: {fileID: 0}
+    - target: {fileID: 5371803579776399235, guid: e4d09a05a808275428668b935a828ea2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d09a05a808275428668b935a828ea2, type: 3}
 --- !u!224 &4630727150957854821 stripped
@@ -56734,6 +57600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -56835,6 +57705,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -57182,6 +58056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -57283,6 +58161,10 @@ PrefabInstance:
     - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Name
       value: BookShelfMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
@@ -57470,6 +58352,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopDoubleSide
       objectReference: {fileID: 0}
+    - target: {fileID: 5342259824084893017, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182766185571727132, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9e84e875f25d04d901ea9e385505ec, type: 3}
 --- !u!224 &4678213254816240702 stripped
@@ -57487,6 +58377,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -57590,6 +58484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfMiddle1
       objectReference: {fileID: 0}
+    - target: {fileID: 1540307410970932674, guid: edc070af2860865438fa98233f50542d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8320031422097523733, guid: edc070af2860865438fa98233f50542d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -57692,6 +58590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -57793,6 +58695,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -58202,6 +59108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodTopMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -58303,6 +59213,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x
@@ -58498,6 +59412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookShelfTopMiddle3
       objectReference: {fileID: 0}
+    - target: {fileID: 6201136258267583539, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1837eec6a43f5a428a5b5a78942c10f, type: 3}
 --- !u!224 &6683627412067353624 stripped
@@ -58515,6 +59433,10 @@ PrefabInstance:
     - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Name
       value: WoodTopMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 994424350169470216, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7771544719909020895, guid: a7562affac98b734ea0057f042ba98eb, type: 3}
       propertyPath: m_Pivot.x

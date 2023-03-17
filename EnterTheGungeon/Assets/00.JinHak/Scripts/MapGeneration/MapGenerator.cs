@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -11,7 +12,9 @@ public class MapGenerator : MonoBehaviour
         public MapNode rightNode = default;
         public MapNode parentNode = default;
         public RectInt nodeRect = default; // 현재 본인의 RECT 크기
-        public int nodeIndex = 0;
+        public Vector2 nodePosition = default;
+        public int nodeIndex = 1;
+        public Room room = default;
 
         public Vector2Int Center
         {
@@ -27,12 +30,13 @@ public class MapGenerator : MonoBehaviour
         {
             this.nodeRect = nodeRect_;
             this.nodeIndex = index_;
-            Debug.Log(nodeIndex);
         }
     }
 
     [SerializeField]
     private List<GameObject> mapPrefabs = new List<GameObject>();
+    public GameObject indexCheckObj = default;
+    public GameObject lineRenderer = default;
 
     private const float MINIMUM_DIVIDE_RATE = 0.36f;
     private const float MAXIMUM_DIVIDE_RATE = 0.64f;
@@ -61,6 +65,12 @@ public class MapGenerator : MonoBehaviour
         DrawMap(0, 0);
         DivideMap(root_, 0);
         RoomAccess(root_, 0);
+
+        CompositeCollider2D lineComposite = lineRenderer.AddComponent<CompositeCollider2D>();
+        lineComposite.isTrigger = true;
+
+        lineComposite.gameObject.SetActive(false);
+        lineComposite.gameObject.SetActive(true);
     }
 
     // [KJH] 2023-03-15
@@ -96,9 +106,10 @@ public class MapGenerator : MonoBehaviour
         if (nowNode_.nodeRect.width >= nowNode_.nodeRect.height)
         {
             nowNode_.leftNode = new MapNode(new RectInt(nowNode_.nodeRect.x, nowNode_.nodeRect.y, split_,
-                nowNode_.nodeRect.height), nowNode_.nodeIndex * 2 + 1);
+                nowNode_.nodeRect.height), nowNode_.nodeIndex * 2);
+
             nowNode_.rightNode = new MapNode(new RectInt(nowNode_.nodeRect.x + split_, nowNode_.nodeRect.y,
-                nowNode_.nodeRect.width - split_, nowNode_.nodeRect.height), nowNode_.nodeIndex * 2 + 2);
+                nowNode_.nodeRect.width - split_, nowNode_.nodeRect.height), nowNode_.nodeIndex * 2 + 1);
 
             Vector2 start_ = new Vector2(nowNode_.nodeRect.x + split_, nowNode_.nodeRect.y);
             Vector2 end_ = new Vector2(nowNode_.nodeRect.x + split_, nowNode_.nodeRect.y + nowNode_.nodeRect.height);
@@ -110,9 +121,13 @@ public class MapGenerator : MonoBehaviour
         else
         {
             nowNode_.leftNode = new MapNode(new RectInt(nowNode_.nodeRect.x, nowNode_.nodeRect.y, 
-                nowNode_.nodeRect.width, split_), nowNode_.nodeIndex * 2 + 1);
+                nowNode_.nodeRect.width, split_), nowNode_.nodeIndex * 2);
+            nowNode_.leftNode.nodePosition = new Vector2(nowNode_.nodeRect.x, nowNode_.nodeRect.y - (maxLength_ - split_));
+
             nowNode_.rightNode = new MapNode(new RectInt(nowNode_.nodeRect.x, nowNode_.nodeRect.y + split_,
-                nowNode_.nodeRect.width, nowNode_.nodeRect.height - split_), nowNode_.nodeIndex * 2 + 2);
+                nowNode_.nodeRect.width, nowNode_.nodeRect.height - split_), nowNode_.nodeIndex * 2 + 1);
+            nowNode_.rightNode.nodePosition = new Vector2(nowNode_.nodeRect.x, nowNode_.nodeRect.y + split_);
+
 
             Vector2 start_ = new Vector2(nowNode_.nodeRect.x, nowNode_.nodeRect.y + split_);
             Vector2 end_ = new Vector2(nowNode_.nodeRect.x + nowNode_.nodeRect.width, nowNode_.nodeRect.y + split_);
@@ -127,32 +142,53 @@ public class MapGenerator : MonoBehaviour
         DivideMap(nowNode_.rightNode, height_ + 1);
     }
 
+    #region DrawLine 맵의 윤곽선 및 라인 그리기
     // [KJH] 2023-03-15
     // @brief 방의 윤곽선을 그리는 함수
     // @param start 시작점
     // @param end 끝점
     private void DrawLine(Vector2 start_, Vector2 end_)
     {
-#if DEBUG_MODE
+        if (start_ == end_) return;
         LineRenderer lineRenderer_ = Instantiate(line).GetComponent<LineRenderer>();
         lineRenderer_.SetPosition(0, start_ - mapSize / 2);
         lineRenderer_.SetPosition(1, end_ - mapSize / 2);
-#endif
     }
 
-    private void DrawRoomLine(Vector2 start_, Vector2 end_)
+    private void DrawRoomLine(Vector2 start_, Vector2 end_, MapNode nowNode_)
     {
+        if (start_ == end_) return;
+        nowNode_.leftNode.nodePosition = start_ - mapSize / 2;
+        nowNode_.rightNode.nodePosition = end_ - mapSize / 2;
+
         LineRenderer lineRenderer_ = Instantiate(roomLine).GetComponent<LineRenderer>();
         lineRenderer_.SetPosition(0, start_ - mapSize / 2);
         lineRenderer_.SetPosition(1, end_ - mapSize / 2);
+
+        lineRenderer_.AddComponent<BoxCollider2D>();
+        BoxCollider2D lineBoxCollider = lineRenderer_.GetComponent<BoxCollider2D>();
+
+        if (lineBoxCollider.size.y == 0.5f)
+        {
+            lineBoxCollider.size = new Vector2(lineBoxCollider.size.x, 1);
+        }
+        else if (lineBoxCollider.size.x == 0.5f) ;
+        {
+            lineBoxCollider.size = new Vector2(1, lineBoxCollider.size.y);
+        }
+
+        lineBoxCollider.usedByComposite = true;
+        lineBoxCollider.transform.parent = lineRenderer.transform;
     }
 
     private void DrawRoomLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
     {
+        if (start_ == end_) return;
         LineRenderer lineRenderer_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
         lineRenderer_.SetPosition(0, start_ - mapSize / 2);
         lineRenderer_.SetPosition(1, end_ - mapSize / 2);
     }
+    #endregion
 
     // [KJH] 2023-03-16
     // @brief 방 간의 연결을 보여주는 함수
@@ -160,21 +196,57 @@ public class MapGenerator : MonoBehaviour
     // @param h 트리 구조에서의 높이
     private void RoomAccess(MapNode nowNode_, int height_)
     {
-        if (height_ == MAXIMUM_DEPTH) return; // 트리의 최대 높이와 같아 리프 노드인 경우
+        if (height_ == MAXIMUM_DEPTH)
+        {
+            Debug.Log(nowNode_.nodeIndex);
+            Debug.Log(nowNode_.nodePosition);
+            GameObject indexCheck = Instantiate(indexCheckObj, transform.parent);
+            indexCheck.transform.position = (Vector2)nowNode_.nodePosition;
+            indexCheck.name = nowNode_.nodeIndex.ToString();
+
+            while (true)
+            {
+                int ran_ = Random.Range(2, mapPrefabs.Count);
+
+                Room room_ = mapPrefabs[ran_].GetComponent<Room>();
+                
+                if(room_.roomSize.x > nowNode_.nodeRect.width || room_.roomSize.y > nowNode_.nodeRect.height)
+                {
+                    continue;
+                }
+                else
+                {
+                    GameObject nodeRoom_ = Instantiate(room_.gameObject, transform.parent);
+                    nodeRoom_.transform.position = nowNode_.nodePosition;
+                    nowNode_.room = room_;
+                    break;
+                }
+            }
+            
+            return;
+        }
 
         Vector2Int leftNodeCenter = nowNode_.leftNode.Center;
         Vector2Int rightNodeCenter = nowNode_.rightNode.Center;
 
-        DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, leftNodeCenter.y));
-        DrawRoomLine(new Vector2(rightNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, rightNodeCenter.y));
+        if (height_ < MAXIMUM_DEPTH - 1)
+        {
+            RoomAccess(nowNode_.leftNode, height_ + 1);
+            RoomAccess(nowNode_.rightNode, height_ + 1);
+        }
+        else
+        {
+            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, leftNodeCenter.y), nowNode_);
+            DrawRoomLine(new Vector2(rightNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, rightNodeCenter.y), nowNode_);
 
-        DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y + 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y + 1), roomTIle1);
-        DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y - 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y - 1), roomTIle2);
+            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y + 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y + 1), roomTIle1);
+            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y - 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y - 1), roomTIle2);
 
-        DrawRoomLine(new Vector2(rightNodeCenter.x + 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x + 1, rightNodeCenter.y), roomTIle1);
-        DrawRoomLine(new Vector2(rightNodeCenter.x - 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x - 1, rightNodeCenter.y), roomTIle2);
+            DrawRoomLine(new Vector2(rightNodeCenter.x + 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x + 1, rightNodeCenter.y), roomTIle1);
+            DrawRoomLine(new Vector2(rightNodeCenter.x - 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x - 1, rightNodeCenter.y), roomTIle2);
 
-        RoomAccess(nowNode_.leftNode, height_ + 1);
-        RoomAccess(nowNode_.rightNode, height_ + 1);
+            RoomAccess(nowNode_.leftNode, height_ + 1);
+            RoomAccess(nowNode_.rightNode, height_ + 1);
+        }
     }
 }
