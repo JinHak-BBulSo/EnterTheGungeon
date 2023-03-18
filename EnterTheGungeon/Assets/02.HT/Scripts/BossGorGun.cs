@@ -16,6 +16,8 @@ public class BossGorGun : MonoBehaviour
     bool ispattern1StartEnd;
     bool durationTimeCheck;
 
+    bool isFirstTargeting;
+
     Rigidbody2D rigid;
     CapsuleCollider2D bossCollider;
     float angle;
@@ -34,6 +36,7 @@ public class BossGorGun : MonoBehaviour
     Image effectImage;
     RectTransform effectImageRectTransform;
     // } Var for Image
+
 
     void Start()
     {
@@ -86,6 +89,7 @@ public class BossGorGun : MonoBehaviour
                 effectImageRectTransform.sizeDelta = new Vector2(effectImageRectTransform.sizeDelta.x * 3, effectImageRectTransform.sizeDelta.y * 3);
 
                 ispattern1StartEnd = true;
+                isFirstTargeting = true;
             }
             else { }
 
@@ -97,6 +101,8 @@ public class BossGorGun : MonoBehaviour
                 moveSpeed = defaultMoveSpeed * 5;
                 rigid.velocity = transform.up * moveSpeed;
                 TargetingPlayer();
+
+                MakePoisonArea();
             }
             else { }
 
@@ -125,8 +131,23 @@ public class BossGorGun : MonoBehaviour
         * Mathf.Rad2Deg;
         Quaternion lookRotation_ = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 
+        if (isFirstTargeting)
+        {
+            transform.rotation = lookRotation_;
+            isFirstTargeting = false;
+        }
+
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation_, 1f * Time.deltaTime);
     }
+
+    void MakePoisonArea()
+    {
+        GameObject poisonArea_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/BossGorgun/PoisonArea"), transform.position, new Quaternion(0, 0, 0, 0));
+        poisonArea_.name = "PoisonArea";
+        poisonArea_.transform.SetParent(GameObject.Find("PoisonObject").transform);
+        poisonArea_.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Wall")
@@ -137,6 +158,7 @@ public class BossGorGun : MonoBehaviour
             rigid.velocity = Vector2.zero;
             transform.rotation = defaultRotation;
         }
+
     }
     IEnumerator MovePatternDurationTime(float durationTime_)
     {
@@ -148,8 +170,6 @@ public class BossGorGun : MonoBehaviour
         rigid.velocity = Vector2.zero;
         transform.rotation = defaultRotation;
         durationTimeCheck = false;
-
-
     }
 }
 
