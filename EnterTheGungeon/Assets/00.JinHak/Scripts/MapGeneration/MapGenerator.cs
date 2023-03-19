@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -36,7 +37,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     private List<GameObject> mapPrefabs = new List<GameObject>();
     public GameObject indexCheckObj = default;
-    public GameObject lineRenderer = default;
+    public GameObject mapAccessLine = default;
 
     private const float MINIMUM_DIVIDE_RATE = 0.36f;
     private const float MAXIMUM_DIVIDE_RATE = 0.64f;
@@ -54,6 +55,7 @@ public class MapGenerator : MonoBehaviour
     // 전체 사이즈 맵 -> 나누기 전 Root Map
     [SerializeField]
     private GameObject maxSizeMap = default;
+    private MapNode[] mapNodeArray = new MapNode[MAXIMUM_DEPTH * MAXIMUM_DEPTH];
 
     // 전체 맵의 크기
     [SerializeField]
@@ -66,7 +68,7 @@ public class MapGenerator : MonoBehaviour
         DivideMap(root_, 0);
         RoomAccess(root_, 0);
 
-        CompositeCollider2D lineComposite = lineRenderer.AddComponent<CompositeCollider2D>();
+        CompositeCollider2D lineComposite = mapAccessLine.AddComponent<CompositeCollider2D>();
         lineComposite.isTrigger = true;
         lineComposite.geometryType = CompositeCollider2D.GeometryType.Polygons;
 
@@ -158,7 +160,7 @@ public class MapGenerator : MonoBehaviour
         lineRenderer_.SetPosition(1, end_ - mapSize / 2);
     }
 
-    private void DrawRoomLine(Vector2 start_, Vector2 end_, MapNode nowNode_)
+    private void DrawAccessLine(Vector2 start_, Vector2 end_, MapNode nowNode_)
     {
         if (start_ == end_) return;
         nowNode_.leftNode.nodePosition = start_ - mapSize / 2;
@@ -181,10 +183,10 @@ public class MapGenerator : MonoBehaviour
         }
 
         lineBoxCollider.usedByComposite = true;
-        lineBoxCollider.transform.parent = lineRenderer.transform;
+        lineBoxCollider.transform.parent = mapAccessLine.transform;
     }
 
-    private void DrawRoomLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
+    private void DrawAccessLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
     {
         if (start_ == end_) return;
         LineRenderer lineRenderer_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
@@ -201,20 +203,24 @@ public class MapGenerator : MonoBehaviour
     {
         if (height_ == MAXIMUM_DEPTH)
         {
-            Debug.Log(nowNode_.nodeIndex);
-            Debug.Log(nowNode_.nodePosition);
             GameObject indexCheck = Instantiate(indexCheckObj, transform.parent);
             indexCheck.transform.position = (Vector2)nowNode_.nodePosition;
             indexCheck.name = nowNode_.nodeIndex.ToString();
+            mapNodeArray[nowNode_.nodeIndex] = nowNode_;
+            Debug.Log(mapNodeArray[nowNode_.nodeIndex].nodeIndex);
+            Debug.Log(nowNode_.nodePosition);
+
+            int index = 0;
 
             while (true)
             {
                 int ran_ = Random.Range(2, mapPrefabs.Count);
-
                 Room room_ = mapPrefabs[ran_].GetComponent<Room>();
                 
                 if(room_.roomSize.x > nowNode_.nodeRect.width || room_.roomSize.y > nowNode_.nodeRect.height)
                 {
+                    if (index > 100) break;
+                    index++;
                     continue;
                 }
                 else
@@ -225,7 +231,43 @@ public class MapGenerator : MonoBehaviour
                     break;
                 }
             }
-            
+
+            if(nowNode_.nodeIndex == MAXIMUM_DEPTH * MAXIMUM_DEPTH - 1)
+            {
+                for(int i = 0; i < mapNodeArray.Count(); i += 2)
+                {
+                    Vector2 start_;
+                    Vector2 end_;
+                    LineRenderer lineRenderer_ = Instantiate(roomLine).GetComponent<LineRenderer>();
+
+                    // x 포지션 값이 같은 경우
+                    if (mapNodeArray[i].nodePosition.x == mapNodeArray[i + 1].nodePosition.x)
+                    {
+                        start_ = mapNodeArray[i].nodePosition; //+ new Vector2(0, mapNodeArray[i].room.roomSize.y / 2 - 1);
+                        end_ = mapNodeArray[i + 1].nodePosition; //- new Vector2(0, mapNodeArray[i + 1].room.roomSize.y / 2 + 1);
+
+                        
+                        lineRenderer_.SetPosition(0, start_);
+                        lineRenderer_.SetPosition(1, end_);
+                    }
+                    // y 포지션 값이 같은 경우
+                    else
+                    {
+                        start_ = mapNodeArray[i].nodePosition;// + new Vector2(mapNodeArray[i].room.roomSize.x / 2 - 3, 0);
+                        end_ = mapNodeArray[i + 1].nodePosition;// - new Vector2(mapNodeArray[i + 1].room.roomSize.x / 2 + 3, 0);
+
+                        lineRenderer_.SetPosition(0, start_);
+                        lineRenderer_.SetPosition(1, end_);
+                    }
+
+                    lineRenderer_.AddComponent<BoxCollider2D>();
+                    BoxCollider2D lineBoxCollider = lineRenderer_.GetComponent<BoxCollider2D>();
+
+                    lineBoxCollider.usedByComposite = true;
+                    lineBoxCollider.transform.parent = mapAccessLine.transform;
+                }
+            }
+
             return;
         }
 
@@ -239,17 +281,47 @@ public class MapGenerator : MonoBehaviour
         }
         else
         {
-            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, leftNodeCenter.y), nowNode_);
-            DrawRoomLine(new Vector2(rightNodeCenter.x, leftNodeCenter.y), new Vector2(rightNodeCenter.x, rightNodeCenter.y), nowNode_);
+            Vector2 start_;
+            Vector2 end_;
 
-            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y + 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y + 1), roomTIle1);
-            DrawRoomLine(new Vector2(leftNodeCenter.x, leftNodeCenter.y - 1), new Vector2(rightNodeCenter.x, leftNodeCenter.y - 1), roomTIle2);
-
-            DrawRoomLine(new Vector2(rightNodeCenter.x + 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x + 1, rightNodeCenter.y), roomTIle1);
-            DrawRoomLine(new Vector2(rightNodeCenter.x - 1, leftNodeCenter.y), new Vector2(rightNodeCenter.x - 1, rightNodeCenter.y), roomTIle2);
+            if(nowNode_.leftNode.Center.y == nowNode_.rightNode.Center.y)
+            {
+                start_ = new Vector2(leftNodeCenter.x, leftNodeCenter.y);
+                end_ = new Vector2(rightNodeCenter.x, leftNodeCenter.y);
+            }
+            else
+            {
+                start_ = new Vector2(rightNodeCenter.x, leftNodeCenter.y);
+                end_ = new Vector2(rightNodeCenter.x, rightNodeCenter.y);
+            }
+            
+            nowNode_.leftNode.nodePosition = start_ - mapSize / 2;
+            nowNode_.rightNode.nodePosition = end_ - mapSize / 2;
 
             RoomAccess(nowNode_.leftNode, height_ + 1);
             RoomAccess(nowNode_.rightNode, height_ + 1);
         }
+    }
+    private void SetSpecialRoom()
+    {
+        int[] AccessRommIndex_ = new int[4] { 0, 4, 8, 15};
+    
+    }
+
+    private void AccessZone()
+    {
+        int[] zoneAccessRommIndex_ = new int[4] { 3, 6, 9, 12 };
+
+        if (mapNodeArray[9].nodePosition.y > mapNodeArray[10].nodePosition.y)
+        {
+            /* Do nothing */
+        }
+        else
+        {
+            zoneAccessRommIndex_[2] = 10;
+        }
+
+        int ran_ = Random.Range(0, 3 + 1);
+
     }
 }
