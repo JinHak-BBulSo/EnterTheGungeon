@@ -45,7 +45,7 @@ public class ObjectManager : MonoBehaviour
 
     //  [YHJ] 2023-03-18
     //  @brief ObjectPooling / SetActive
-    public GameObject MackObject(string type_)
+    public GameObject MakeObject(string type_)
     {
         switch (type_)
         {

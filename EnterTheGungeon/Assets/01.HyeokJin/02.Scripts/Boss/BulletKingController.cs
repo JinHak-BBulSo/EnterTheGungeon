@@ -20,11 +20,6 @@ public class BulletKingController : MonoBehaviour
     public int[] maxPatternCount = default;
 
 
-
-    private List<GameObject> bullets = default;
-    private Rigidbody2D bulletkingRigidbody = default;
-    private Animator bulletkingAnimator = default;
-
     private float distance = default;
     private float moveSpeed = default;
 
@@ -42,9 +37,6 @@ public class BulletKingController : MonoBehaviour
 
     private void Awake()
     {
-        bulletkingRigidbody = GetComponent<Rigidbody2D>();
-        bulletkingAnimator = GetComponent<Animator>();
-        bullets = new List<GameObject>();
 
         moveSpeed = 0.2f;
     }
@@ -57,7 +49,7 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        Pattern_2();
+        Pattern();
     }
 
     //  [YHJ] 2023-03-16
@@ -125,6 +117,23 @@ public class BulletKingController : MonoBehaviour
         //{
         //    //  오른쪽 아래로 3-way 총알을 두 번 발사
         //}
+
+        GameObject bulletR = objectManager.MakeObject("EnemyBullet");
+        bulletR.transform.position = transform.position;
+
+        Rigidbody2D rigidR = bulletR.GetComponent<Rigidbody2D>();
+        rigidR.AddForce(Vector2.down * 8, ForceMode2D.Impulse);
+
+        curPatternCount++;
+
+        if (curPatternCount < maxPatternCount[patternIndex])
+        {
+            Invoke("Pattern_1", 1f);
+        }
+        else
+        {
+            Invoke("Pattern", 2f);
+        }
     }
 
     //  [YHJ] 2023-03-16
@@ -137,7 +146,7 @@ public class BulletKingController : MonoBehaviour
 
         for (int index = 0; index < bulletCount; index++)
         {
-            GameObject bullet = objectManager.MackObject("EnemyBullet");
+            GameObject bullet = objectManager.MakeObject("EnemyBullet");
             bullet.transform.position = transform.position;
             bullet.transform.rotation = Quaternion.identity;
 

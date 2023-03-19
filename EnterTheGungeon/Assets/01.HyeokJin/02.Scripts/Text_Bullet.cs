@@ -24,7 +24,7 @@ public class Text_Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Wall"))
         {
             gameObject.SetActive(false);
         }
