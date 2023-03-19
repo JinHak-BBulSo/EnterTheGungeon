@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class BulletKingController : MonoBehaviour
 {
+    [SerializeField] public GameObject enemyBullet = default;
+    [SerializeField] public ObjectManager objectManager = default;
+    [SerializeField] public GameObject player = default;
+
     private string enemyName = default;
     private int health = default;
 
     private int patternIndex = default;
 
-    [SerializeField] public GameObject enemyBullet = default;
-
-    [SerializeField] public ObjectManager objectManager = default;
-
     private int curPatternCount = default;
     public int[] maxPatternCount = default;
+
 
 
     private float distance = default;
@@ -37,19 +39,24 @@ public class BulletKingController : MonoBehaviour
 
     private void Awake()
     {
-
-        moveSpeed = 0.2f;
+        player = GameObject.FindWithTag("Player");
     }
     private void Start()
     {
         health = 950;
 
         curPatternCount = 0;
+
     }
 
     private void Update()
     {
         Pattern();
+    }
+
+    private void FindPlayer()
+    {
+        float angle = Mathf.Atan2(player.transform.position.y, player.transform.position.x);
     }
 
     //  [YHJ] 2023-03-16
@@ -122,7 +129,7 @@ public class BulletKingController : MonoBehaviour
         bulletR.transform.position = transform.position;
 
         Rigidbody2D rigidR = bulletR.GetComponent<Rigidbody2D>();
-        rigidR.AddForce(Vector2.down * 8, ForceMode2D.Impulse);
+        rigidR.velocity = new Vector3(player.transform.position.x, player.transform.position.y, 0);
 
         curPatternCount++;
 
