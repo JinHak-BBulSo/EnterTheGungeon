@@ -57,8 +57,7 @@ public class Test_Enemy : MonoBehaviour
         }
         else if (collision.CompareTag("Bullet"))
         {
-            Test_BulletController bullet = collision.gameObject.GetComponent<Test_BulletController>();
-            OnHit(bullet.dmg);
+            //Test_BulletController bullet = collision.gameObject.GetComponent<Test_BulletController>();
 
             collision.gameObject.SetActive(false);
         }
