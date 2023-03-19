@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class TestEnemy : MonoBehaviour
 {
     public int attackType;
@@ -44,7 +45,7 @@ public class TestEnemy : MonoBehaviour
 
 
 
-    // { Var using for FindPlayerDirection
+    // { Var for FindPlayerDirection
     float minDist = default;
     float getDist;
     float minDistArrayIndex;
@@ -59,7 +60,13 @@ public class TestEnemy : MonoBehaviour
     Vector2 dir8;
 
     Vector2[] directionArray = new Vector2[8];
-    // } Var using for FindPlayerDirection
+    // } Var for FindPlayerDirection
+
+
+    // { Var for PathFinder
+    GameObject pathFinder;
+    RectTransform rectTransform;
+    // } Var for PathFinder
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +79,20 @@ public class TestEnemy : MonoBehaviour
             weapon = hand.transform.GetChild(0).GetComponent<TestEnemyWeapon>();
         }
 
+        rectTransform = GetComponent<RectTransform>();
         player = GameObject.FindWithTag("Player");
+
+        //working
+        pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
+        pathFinder.transform.SetParent(transform.parent);
+        pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
+        pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
+        pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
+
+        pathFinder.name = $"{this.name}" + "PathFinder";
+
+        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
+        //working
 
         StartCoroutine(SpawnTime());
         moveSpeed = 0.3f;
@@ -184,6 +204,7 @@ public class TestEnemy : MonoBehaviour
                     clone_.GetComponent<TestBullet>().bulletType = 1;
                     clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     clone_.transform.localPosition = new Vector2(transform.localPosition.x + xPos_[i], transform.localPosition.y + yPos_[i]);
+                    yield return new WaitForSeconds(0.03f);
                 }
             }
             else if (patternNum_ == 1)
