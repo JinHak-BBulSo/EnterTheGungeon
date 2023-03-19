@@ -28,8 +28,8 @@ RectTransform:
   m_GameObject: {fileID: 2749881244278201389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2749881246015578729}
   m_Father: {fileID: 0}
@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b018c2f9e67cde41ba43c89c450828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonIndex: -1
+  OptionButtonController: {fileID: 0}
 --- !u!1 &2749881246015578730
 GameObject:
   m_ObjectHideFlags: 0
