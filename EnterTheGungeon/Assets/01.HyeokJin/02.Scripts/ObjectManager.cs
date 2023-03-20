@@ -5,12 +5,16 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour
 {
     [Header("Prefabs_Enemy")]
-    [SerializeField ]public GameObject bossBulletKingPrefab = default;
+    [SerializeField] public GameObject bossBulletKingPrefab = default;
     [Header("Prefabs_Bullet")]
-    [SerializeField]public GameObject bulletPrefab = default;
+    [SerializeField] public GameObject bulletBasicPrefab = default;
+    [SerializeField] public GameObject bulletTypeAPrefab = default;
+    [SerializeField] public GameObject bulletTypeBPrefab = default;
 
-    GameObject[] enemyBullet = default;
     GameObject[] enemyBulletKing = default;
+    GameObject[] bulletBasic = default;
+    GameObject[] bulletTypeA = default;
+    GameObject[] bulletTypeB = default;
 
     GameObject[] targetPool = default;
 
@@ -19,7 +23,9 @@ public class ObjectManager : MonoBehaviour
     private void Awake()
     {
         enemyBulletKing = new GameObject[1];
-        enemyBullet = new GameObject[200];
+        bulletBasic = new GameObject[500];
+        bulletTypeA = new GameObject[500];
+        bulletTypeB = new GameObject[500];
 
         Generate();
     }   //  Awake()
@@ -36,10 +42,25 @@ public class ObjectManager : MonoBehaviour
         }
 
         //  Bullet
-        for (int index = 0; index < enemyBullet.Length; index++)
+        //  Bullet_Basic : Basic
+        for (int index = 0; index < bulletBasic.Length; index++)
         {
-            enemyBullet[index] = Instantiate(bulletPrefab);
-            enemyBullet[index].SetActive(false);
+            bulletBasic[index] = Instantiate(bulletBasicPrefab);
+            bulletBasic[index].SetActive(false);
+        }
+
+        //  BulletTypeA : Rotation
+        for (int index = 0; index < bulletTypeA.Length; index++)
+        {
+            bulletTypeA[index] = Instantiate(bulletTypeAPrefab);
+            bulletTypeA[index].SetActive(false);
+        }
+
+        //  bulletTypeB : Flicker
+        for (int index = 0; index < bulletTypeB.Length; index++)
+        {
+            bulletTypeB[index] = Instantiate(bulletTypeBPrefab);
+            bulletTypeB[index].SetActive(false);
         }
     }   //  Generate()
 
@@ -49,8 +70,14 @@ public class ObjectManager : MonoBehaviour
     {
         switch (type_)
         {
-            case "EnemyBullet":
-                targetPool = enemyBullet;
+            case "Bullet_Basic":
+                targetPool = bulletBasic;
+                break;
+            case "Bullet_TypeA":
+                targetPool = bulletTypeA;
+                break;
+            case "Bullet_TypeB":
+                targetPool = bulletTypeB;
                 break;
         }
 
@@ -72,8 +99,14 @@ public class ObjectManager : MonoBehaviour
     {
         switch (type_)
         {
-            case "EnemyBullet":
-                targetPool = enemyBullet;
+            case "Bullet_Basic":
+                targetPool = bulletBasic;
+                break;
+            case "Bullet_TypeA":
+                targetPool = bulletTypeA;
+                break;
+            case "Bullet_TypeB":
+                targetPool = bulletTypeB;
                 break;
         }
 

@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class Text_Bullet : MonoBehaviour
 {
-    private float bulletSpeed = default;
-
-
-    private void Start()
-    {
-        bulletSpeed = 10f;
-    }
+    [SerializeField] public bool isRotate = default;
 
     private void Update()
     {
-        BulletControll();
-    }
-
-    private void BulletControll()
-    {
-        transform.Rotate(Vector3.forward * bulletSpeed);
+        if (isRotate)
+        {
+            transform.Rotate(Vector3.forward * 3f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
