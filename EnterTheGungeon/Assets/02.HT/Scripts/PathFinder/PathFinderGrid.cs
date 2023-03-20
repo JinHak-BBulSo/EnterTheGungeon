@@ -8,21 +8,12 @@ public class PathFinderGrid : MonoBehaviour
     RectTransform rectTransform;
     BoxCollider2D boxCollider2D;
     Image image;
-
-    bool isColliderSizeSet;
-
-    //test
-    public bool isTest;
-    string defaultName;
-    //test
-
-
     GameObject[,] gridArray;
+    string defaultName;
+    bool isColliderSizeSet;
     public int gridArrayX;
     public int gridArrayY;
-
     PathFinder pathFinder;
-
     //start pos
     public GameObject enemy;
     //target pos
@@ -30,16 +21,9 @@ public class PathFinderGrid : MonoBehaviour
 
     public float distanceToEnemy;
     public float distanceToPlayer;
-
     public bool isStartPosition;
     public bool isEndPosition;
-
-    //test
     public bool isPassable;
-
-    GameObject startGrid;
-    GameObject endGrid;
-
 
     // { Var for PathFind
     public float scoreF;
@@ -50,16 +34,14 @@ public class PathFinderGrid : MonoBehaviour
     public bool isAddedCloseList;
     // } Var for PathFind
 
+    public List<GameObject> connectedList;
+    public bool isInOpenList;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        //test
         isPassable = true;
 
         defaultName = this.name;
-        //test
 
         pathFinder = transform.parent.GetComponent<PathFinder>();
 
@@ -91,14 +73,8 @@ public class PathFinderGrid : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isTest)
-        {
-            //transform.parent.GetComponent<PathFinder>().gridArray[gridArrayX + 1, gridArrayY].name = "test";
-            Debug.Log(Vector2.Distance(this.transform.position, transform.parent.GetComponent<PathFinder>().gridArray[gridArrayX + 1, gridArrayY].transform.position));
-        }
 
         CheckDistance();
         SetGridStatus();
@@ -149,7 +125,7 @@ public class PathFinderGrid : MonoBehaviour
             if (!isInOpenList)
             {
                 this.name = defaultName;
-                image.color = new Color32(255, 255, 255, 100);
+                image.color = new Color32(255, 255, 255, 0);
             }
         }
         pathFinder.isSetGridStatus = true;
@@ -190,8 +166,6 @@ public class PathFinderGrid : MonoBehaviour
         }
     }
 
-    public List<GameObject> connectedList;
-    public bool isInOpenList;
     void CheckConnectedGrid(int x, int y)
     {
         if (x < gridArray.GetLength(0) && y < gridArray.GetLength(1))
@@ -228,5 +202,31 @@ public class PathFinderGrid : MonoBehaviour
         CheckConnectedGrid(gridArrayX - 1, gridArrayY + 1);
         CheckConnectedGrid(gridArrayX, gridArrayY + 1);
         CheckConnectedGrid(gridArrayX + 1, gridArrayY + 1);
+    }
+    public void Reset()
+    {
+        rectTransform = default;
+        boxCollider2D = default;
+        image = default;
+        gridArray = default;
+        defaultName = default;
+        isColliderSizeSet = default;
+        gridArrayX = default;
+        gridArrayY = default;
+        pathFinder = default;
+        enemy = default;
+        player = default;
+        distanceToEnemy = default;
+        distanceToPlayer = default;
+        isStartPosition = default;
+        isEndPosition = default;
+        isPassable = default;
+        scoreF = default;
+        scoreG = default;
+        scoreH = default;
+        parentNode = default;
+        isAddedCloseList = default;
+        connectedList = default;
+        isInOpenList = default;
     }
 }

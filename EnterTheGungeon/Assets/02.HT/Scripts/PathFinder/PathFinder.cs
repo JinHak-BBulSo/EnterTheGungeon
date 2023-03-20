@@ -31,10 +31,23 @@ public class PathFinder : MonoBehaviour
     public GameObject endGrid;
 
     public bool isSetGridStatus;
+    public List<GameObject> openList;
+    public List<GameObject> closeList;
 
+    public GameObject checkGrid;
+    bool isInitPathFind;
 
-    // Start is called before the first frame update
-    void Start()
+    bool isFinPathFind;
+    public GameObject nextCloseListObject;
+
+    // { Var for CompletePath
+    public List<Vector2> completePath;
+    GameObject completePathNode;
+    bool isCompletePath;
+    // } Var for CompletePath
+
+    
+    public void Start()
     {
         player = GameObject.FindWithTag("Player");
 
@@ -59,12 +72,8 @@ public class PathFinder : MonoBehaviour
                 gridArray[x, y] = grid_;
             }
         }
-
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckMinDistance();
@@ -139,14 +148,6 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-    public List<GameObject> openList;
-    public List<GameObject> closeList;
-
-    public GameObject checkGrid;
-    //8방향 체크
-    bool isInitPathFind;
-
-    bool isFinPathFind;
     void PathFind()
     {
         StartCoroutine(InitPathFind());
@@ -178,7 +179,6 @@ public class PathFinder : MonoBehaviour
         }
 
     }
-    public GameObject nextCloseListObject;
     void FindNextCloseListObject()
     {
         float minScoreF = default;
@@ -203,9 +203,6 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-    public List<Vector2> completePath;
-    GameObject completePathNode;
-    bool isCompletePath;
     void CompletePath(GameObject completePathNode_)
     {
         if (completePathNode_ == null)
@@ -220,7 +217,7 @@ public class PathFinder : MonoBehaviour
             enemy.GetComponent<TestEnemy>().isPathFind = false;
             Destroy(this.gameObject);
 
-            
+
 
         }
         else
@@ -229,5 +226,34 @@ public class PathFinder : MonoBehaviour
             completePathNode_ = completePathNode_.GetComponent<PathFinderGrid>().parentNode;
             CompletePath(completePathNode_);
         }
+    }
+
+    private void Reset()
+    {
+        gridNumber = default;
+        rectTransform = default;
+        cellSizeX = default;
+        cellSizeY = default;
+        gridArray = default;
+        enemy = default;
+        startX = default;
+        startY = default;
+        player = default;
+        endX = default;
+        endY = default;
+        minDistToEnemy = default;
+        minDistToPlayer = default;
+        startGrid = default;
+        endGrid = default;
+        isSetGridStatus = default;
+        openList = default;
+        closeList = default;
+        checkGrid = default;
+        isInitPathFind = default;
+        isFinPathFind = default;
+        nextCloseListObject = default;
+        completePath = default;
+        completePathNode = default;
+        isCompletePath = default;
     }
 }

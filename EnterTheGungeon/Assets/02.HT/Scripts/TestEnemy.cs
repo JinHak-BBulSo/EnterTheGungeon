@@ -152,7 +152,7 @@ public class TestEnemy : MonoBehaviour
 
         FindPlayerDirection();
 
-        if(!isPathFind)
+        if (!isPathFind)
         {
             PathFind();
         }
