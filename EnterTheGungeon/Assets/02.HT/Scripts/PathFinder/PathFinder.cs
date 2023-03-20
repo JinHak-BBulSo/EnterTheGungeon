@@ -152,7 +152,7 @@ public class PathFinder : MonoBehaviour
             checkGrid.GetComponent<PathFinderGrid>().isAddedCloseList = true;
 
             openList.Remove(checkGrid);
-            if (checkGrid.GetComponent<PathFinderGrid>().scoreF < 0.8f)
+            if (checkGrid.name == "End")
             {
                 isFinPathFind = true;
             }
@@ -178,14 +178,21 @@ public class PathFinder : MonoBehaviour
         float minScoreF = default;
         for (int i = 0; i < openList.Count; i++)
         {
-            if (minScoreF == default)
+            if (openList[i].name == "End")
             {
-                minScoreF = openList[0].GetComponent<PathFinderGrid>().scoreF;
-            }
-            if (minScoreF != default && minScoreF > openList[i].GetComponent<PathFinderGrid>().scoreF)
-            {
-                minScoreF = openList[i].GetComponent<PathFinderGrid>().scoreF;
                 nextCloseListObject = openList[i];
+            }
+            else
+            {
+                if (minScoreF == default)
+                {
+                    minScoreF = openList[0].GetComponent<PathFinderGrid>().scoreF;
+                }
+                if (minScoreF != default && minScoreF > openList[i].GetComponent<PathFinderGrid>().scoreF)
+                {
+                    minScoreF = openList[i].GetComponent<PathFinderGrid>().scoreF;
+                    nextCloseListObject = openList[i];
+                }
             }
         }
     }

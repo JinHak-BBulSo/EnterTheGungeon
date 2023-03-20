@@ -102,35 +102,7 @@ public class PathFinderGrid : MonoBehaviour
 
         CheckDistance();
         SetGridStatus();
-        //test
-        /* if (isStartPosition)
-        {
-            this.name = "Start";
-            image.color = new Color32(0, 0, 255, 100);
-            pathFinder.startGrid = this.gameObject;
-        }
-        else if (isEndPosition)
-        {
-            this.name = "End";
-            image.color = new Color32(0, 0, 255, 100);
-            pathFinder.endGrid = this.gameObject;
-        }
-        else if (!isPassable)
-        {
-            this.name = "Obstacle";
-            image.color = new Color32(0, 0, 0, 100);
-        }
-        else
-        {
-            this.name = defaultName;
-            image.color = new Color32(255, 255, 255, 100);
-        } */
 
-        //find scoreG
-        /* if (pathFinder.checkGrid != null)
-        {
-            scoreG = Vector2.Distance(transform.position, pathFinder.checkGrid.transform.position);
-        } */
         //find scoreH
         if (pathFinder.endGrid != null)
         {
@@ -168,7 +140,7 @@ public class PathFinderGrid : MonoBehaviour
             this.name = "Obstacle";
             image.color = new Color32(0, 0, 0, 100);
         }
-        else if(isAddedCloseList)
+        else if (isAddedCloseList)
         {
             image.color = new Color32(255, 0, 0, 100);
         }
@@ -224,7 +196,13 @@ public class PathFinderGrid : MonoBehaviour
     {
         if (x < gridArray.GetLength(0) && y < gridArray.GetLength(1))
         {
-            if (gridArray[x, y] != null && !gridArray[x, y].GetComponent<PathFinderGrid>().isAddedCloseList && gridArray[x, y].GetComponent<PathFinderGrid>().isPassable)
+            if (gridArray[x, y] != null && gridArray[x, y].name == "End")
+            {
+                pathFinder.openList.Add(gridArray[x, y]);
+                gridArray[x, y].GetComponent<PathFinderGrid>().isInOpenList = true;
+                gridArray[x, y].GetComponent<PathFinderGrid>().parentNode = pathFinder.checkGrid;
+            }
+            else if (gridArray[x, y] != null && !gridArray[x, y].GetComponent<PathFinderGrid>().isAddedCloseList && gridArray[x, y].GetComponent<PathFinderGrid>().isPassable)
             {
                 if (pathFinder.openList.IndexOf(gridArray[x, y]) == -1)
                 {

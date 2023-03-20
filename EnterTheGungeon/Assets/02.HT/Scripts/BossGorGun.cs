@@ -37,6 +37,13 @@ public class BossGorGun : MonoBehaviour
     RectTransform effectImageRectTransform;
     // } Var for Image
 
+    // { Var for Attack
+    public bool isAttackPattern;
+
+    BossGorgunBody bossGorgunBody;
+    // } Var for Attack
+
+
 
     void Start()
     {
@@ -55,6 +62,8 @@ public class BossGorGun : MonoBehaviour
         effectObject = transform.GetChild(0).GetChild(0).gameObject;
         effectImage = effectObject.GetComponent<Image>();
         effectImageRectTransform = effectObject.GetComponent<RectTransform>();
+
+        bossGorgunBody = transform.GetChild(0).GetComponent<BossGorgunBody>();
     }
 
     void Update()
@@ -69,10 +78,12 @@ public class BossGorGun : MonoBehaviour
         }
 
         Move();
+        attack();
 
         bodyImage.SetNativeSize();
         bodyImageRectTransform.sizeDelta = new Vector2(bodyImageRectTransform.sizeDelta.x * 3, bodyImageRectTransform.sizeDelta.y * 3);
 
+        EndAttack();
     }
 
     void Move()
@@ -115,6 +126,7 @@ public class BossGorGun : MonoBehaviour
         }
         if (!isMovepattern)
         {
+            //조건 추가 공격중이 아닐때
             if (distance > 300)
             {
                 moveSpeed = defaultMoveSpeed;
@@ -157,8 +169,10 @@ public class BossGorGun : MonoBehaviour
             ispattern1StartEnd = false;
             rigid.velocity = Vector2.zero;
             transform.rotation = defaultRotation;
+            //
+            isAttackPattern = true;
+            pattrenNum = Random.Range(0, 2);
         }
-
     }
     IEnumerator MovePatternDurationTime(float durationTime_)
     {
@@ -170,7 +184,94 @@ public class BossGorGun : MonoBehaviour
         rigid.velocity = Vector2.zero;
         transform.rotation = defaultRotation;
         durationTimeCheck = false;
+        //
+        yield return new WaitForSeconds(1);
+        isAttackPattern = true;
+        pattrenNum = Random.Range(0, 2);
+
     }
+    int attackPatternCount;
+    int pattrenNum;
+    void attack()
+    {
+        if (isAttackPattern)
+        {
+            anim.SetBool("isAttack", true);
+            //attack pattern1
+            if (pattrenNum == 0)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 0);
+                if (bossGorgunBody.patternCount == 5)
+                {
+                    anim.SetBool("isAttack", false);
+                    attackPatternCount++;
+
+                    //
+                    isAttackPattern = false;
+                    //isMovepattern = true;
+                    bossGorgunBody.patternCount = 0;
+                    if (!AttackDelayCheck)
+                    {
+                        StartCoroutine(AttackDelay());
+                    }
+
+                }
+            }
+            if (pattrenNum == 1)
+            {
+                // @brief when player position is upside of gorgun/downside of gorgun
+                if (player.transform.position.y > transform.position.y)
+                {
+                    transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 1);
+                }
+                if (player.transform.position.y < transform.position.y)
+                {
+                    transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 1);
+
+                }
+
+                if (bossGorgunBody.patternCount == 2)
+                {
+                    anim.SetBool("isAttack", false);
+
+                    attackPatternCount++;
+
+                    //
+                    isAttackPattern = false;
+                    //isMovepattern = true;
+                    bossGorgunBody.patternCount = 0;
+                    if (!AttackDelayCheck)
+                    {
+                        StartCoroutine(AttackDelay());
+                    }
+                }
+            }
+        }
+    }
+
+    bool AttackDelayCheck;
+    IEnumerator AttackDelay()
+    {
+        if (attackPatternCount != 3)
+        {
+            AttackDelayCheck = true;
+            yield return new WaitForSeconds(1);
+            isAttackPattern = true;
+            pattrenNum = Random.Range(0, 2);
+            AttackDelayCheck = false;
+        }
+
+    }
+
+    void EndAttack()
+    {
+        if (attackPatternCount == 3)
+        {
+            isMovepattern = true;
+            attackPatternCount = 0;
+        }
+    }
+
 }
 
 
