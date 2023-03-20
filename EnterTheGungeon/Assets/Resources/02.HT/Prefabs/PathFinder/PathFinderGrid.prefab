@@ -87,6 +87,11 @@ MonoBehaviour:
   isStartPosition: 0
   isEndPosition: 0
   isPassable: 0
+  scoreF: 0
+  parentNode: {fileID: 0}
+  isAddedCloseList: 0
+  connectedList: []
+  isInOpenList: 0
 --- !u!222 &-4055551791026830750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5233699728999246752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

@@ -79,6 +79,11 @@ public class PathFinder : MonoBehaviour
         }
 
         FindNextCloseListObject();
+
+        if (isFinPathFind && !isCompletePath)
+        {
+            CompletePath(completePathNode);
+        }
     }
 
     // @brief set starting and end point of pathfinder
@@ -151,14 +156,16 @@ public class PathFinder : MonoBehaviour
             checkGrid = nextCloseListObject;
             checkGrid.GetComponent<PathFinderGrid>().isAddedCloseList = true;
 
+            //test
+            completePathNode = checkGrid;
+            //test
+
             openList.Remove(checkGrid);
             if (checkGrid.name == "End")
             {
                 isFinPathFind = true;
             }
         }
-
-
     }
     IEnumerator InitPathFind()
     {
@@ -171,7 +178,6 @@ public class PathFinder : MonoBehaviour
         }
 
     }
-
     public GameObject nextCloseListObject;
     void FindNextCloseListObject()
     {
@@ -194,6 +200,34 @@ public class PathFinder : MonoBehaviour
                     nextCloseListObject = openList[i];
                 }
             }
+        }
+    }
+
+    public List<Vector2> completePath;
+    GameObject completePathNode;
+    bool isCompletePath;
+    void CompletePath(GameObject completePathNode_)
+    {
+        if (completePathNode_ == null)
+        {
+
+            isCompletePath = true;
+            if (enemy.GetComponent<TestEnemy>().completePath != completePath)
+            {
+                enemy.GetComponent<TestEnemy>().completePath = completePath;
+            }
+            else { }
+            enemy.GetComponent<TestEnemy>().isPathFind = false;
+            Destroy(this.gameObject);
+
+            
+
+        }
+        else
+        {
+            completePath.Add(completePathNode_.transform.position);
+            completePathNode_ = completePathNode_.GetComponent<PathFinderGrid>().parentNode;
+            CompletePath(completePathNode_);
         }
     }
 }

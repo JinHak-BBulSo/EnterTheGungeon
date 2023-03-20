@@ -66,6 +66,9 @@ public class TestEnemy : MonoBehaviour
     // { Var for PathFinder
     GameObject pathFinder;
     RectTransform rectTransform;
+
+    public List<Vector2> completePath;
+    public bool isPathFind;
     // } Var for PathFinder
 
     // Start is called before the first frame update
@@ -83,7 +86,7 @@ public class TestEnemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
 
         //working
-        pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
+        /* pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
         pathFinder.transform.SetParent(transform.parent);
         pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
         pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
@@ -91,7 +94,7 @@ public class TestEnemy : MonoBehaviour
 
         pathFinder.name = $"{this.name}" + "PathFinder";
 
-        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
+        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject; */
         //working
 
         StartCoroutine(SpawnTime());
@@ -148,6 +151,11 @@ public class TestEnemy : MonoBehaviour
         }
 
         FindPlayerDirection();
+
+        if(!isPathFind)
+        {
+            PathFind();
+        }
     }
     void Move()
     {
@@ -306,6 +314,20 @@ public class TestEnemy : MonoBehaviour
             }
             else { }
         }
+    }
+
+    void PathFind()
+    {
+        pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
+        pathFinder.transform.SetParent(transform.parent);
+        pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
+        pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
+        pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
+
+        pathFinder.name = $"{this.name}" + "PathFinder";
+
+        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
+        isPathFind = true;
     }
 }
 
