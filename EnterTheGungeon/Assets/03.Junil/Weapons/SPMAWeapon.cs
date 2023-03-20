@@ -9,10 +9,13 @@ public class SPMAWeapon : PlayerWeapon
     private GameObject[] spmaBullets = default;
 
 
-
     public Weapons weapons = default;
 
     public int countBullet = default;
+    public float deleyChkVal = default;
+
+    public bool isAttack = false;
+    public bool isReload = false;
 
 
     // Start is called before the first frame update
@@ -21,16 +24,22 @@ public class SPMAWeapon : PlayerWeapon
 
         spmaBulletPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/SPMA_Bullet");
 
+        isAttack = false;
+        isReload = false;
+        deleyChkVal = 0f;
+
         weapons = new MarineNorWeapon();
+
 
         SetWeaponData(weapons);
 
         countBullet = weaponMagazine;
 
+        gameObject.transform.localPosition = weapons.WeaponPos();
 
         spmaBullets = new GameObject[weaponMagazine];
 
-        Vector3 saveBulletPos_ = new Vector3(0f, -2000f, 0f);
+        Vector3 saveBulletPos_ = new Vector3(0f, 0f, 0f);
 
         for(int i = 0; i < spmaBullets.Length; i++)
         {
@@ -46,6 +55,71 @@ public class SPMAWeapon : PlayerWeapon
     // Update is called once per frame
     void Update()
     {
-        
+        deleyChkVal += Time.deltaTime;
     }
+
+
+    public override void FireBullet()
+    {
+        
+        GFunc.Log("공격함");
+
+        if(isReload == true) { return; }
+
+        if (weaponDeley <= deleyChkVal)
+        {
+            deleyChkVal = 0f;
+            isAttack = false;
+        }
+        else { return; }
+
+
+
+        if (isAttack == false)
+        {
+            isAttack = true;
+
+            spmaBullets[countBullet - 1].transform.position = firePos.position;
+
+            spmaBullets[countBullet - 1].transform.rotation = gameObject.transform.rotation;
+
+            spmaBullets[countBullet - 1].transform.Rotate(new Vector3(0f, 0f, -90f));
+            spmaBullets[countBullet - 1].SetActive(true);
+
+            float shotRange_ = Random.Range(bulletShotRange * -1, bulletShotRange + 1);
+
+            spmaBullets[countBullet - 1].transform.Rotate(new Vector3(0f, 0f, shotRange_));
+
+
+
+            countBullet--;
+
+            if(countBullet == 0)
+            {
+                StartCoroutine(OnReload());
+            }
+        }
+    }
+
+    public override void ReloadBullet()
+    {
+        
+        if (isReload == true) { return; }
+
+        StartCoroutine(OnReload());
+
+    }
+
+    IEnumerator OnReload()
+    {
+        GFunc.Log("리로드 중");
+        isReload = true;
+
+        yield return new WaitForSeconds(weaponReload);
+        countBullet = weaponMagazine;
+
+        isReload = false;
+    }
+
+    
 }

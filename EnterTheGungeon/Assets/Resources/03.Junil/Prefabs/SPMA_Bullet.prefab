@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5875865306524037331}
   - component: {fileID: 7542813110006510733}
   - component: {fileID: 2540966490187198456}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: SPMA_Bullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -92,6 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 0
+  bulletDamage: 0
+  bulletRange: 0
+  activePos: {x: 0, y: 0, z: 0}
 --- !u!58 &7542813110006510733
 CircleCollider2D:
   m_ObjectHideFlags: 0

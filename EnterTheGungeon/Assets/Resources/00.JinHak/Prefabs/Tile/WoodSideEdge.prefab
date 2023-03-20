@@ -102,7 +102,23 @@ PrefabInstance:
     - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
       propertyPath: m_Sprite
       value: 
+<<<<<<< HEAD:EnterTheGungeon/Assets/Resources/00.JinHak/Prefabs/Tile/EdgeTile.prefab
+      objectReference: {fileID: 21300000, guid: 55640fdb555633449a2d50c37e46621e, type: 3}
+    - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 579850169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822530883884962693, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+=======
       objectReference: {fileID: -689189065, guid: 1892415b4d227934e929bd325bafd4f5, type: 3}
+>>>>>>> origin/Develop:EnterTheGungeon/Assets/Resources/00.JinHak/Prefabs/Tile/WoodSideEdge.prefab
     - target: {fileID: 8313973061961079232, guid: 9ba68dac836d32e4686b22db6aa90a2b, type: 3}
       propertyPath: m_Name
       value: WoodSideEdge
