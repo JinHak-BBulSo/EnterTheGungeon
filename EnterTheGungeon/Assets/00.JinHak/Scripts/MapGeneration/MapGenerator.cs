@@ -318,21 +318,26 @@ public class MapGenerator : MonoBehaviour
     {
         int[] zoneAccessRoomIndex_ = new int[4] { 3, 5, 9, 12 };
 
-        if (mapNodeArray[5].nodePosition.y > mapNodeArray[6].nodePosition.y)
+        if (mapNodeArray[4].nodePosition.y == mapNodeArray[5].nodePosition.y)
+        {
+            zoneAccessRoomIndex_[1] = 5;
+        }
+        else if (mapNodeArray[5].nodePosition.y > mapNodeArray[6].nodePosition.y)
         {
             zoneAccessRoomIndex_[1] = 6;
         }
 
-        if (mapNodeArray[9].nodePosition.y > mapNodeArray[10].nodePosition.y)
-        {
-            /* Do nothing */
-        }
-        else
+        if (mapNodeArray[10].nodePosition.y > mapNodeArray[9].nodePosition.y)
         {
             zoneAccessRoomIndex_[2] = 10;
         }
+        else if (mapNodeArray[8].nodePosition.y == mapNodeArray[9].nodePosition.y)
+        {
+            zoneAccessRoomIndex_[2] = 8;
+            
+        }
 
-        // 존1, 존3 연결
+        // 존1, 존2 연결
         Vector2 start_;
         Vector2 middle_;
         Vector2 middle2_;
@@ -345,7 +350,7 @@ public class MapGenerator : MonoBehaviour
 
         DrawAccessLine(start_, end_, middle_, middle2_);
 
-        // 존1, 존2 연결
+        // 존1, 존3 연결
 
         start_ = mapNodeArray[zoneAccessRoomIndex_[0]].rightCenter;
         end_ = mapNodeArray[zoneAccessRoomIndex_[2]].leftCenter;
@@ -379,22 +384,29 @@ public class MapGenerator : MonoBehaviour
         Vector2 middle2_ = default;
         Vector2 end_ = default;
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < MAXIMUM_DEPTH; i++)
         {
-            MapNode middleNode = mapNodeArray[4 * i + 1];
+            MapNode middleNode = mapNodeArray[MAXIMUM_DEPTH * i + 1];
 
-            if (middleNode.nodePosition.y > mapNodeArray[4 * i].nodePosition.y)
+            if (middleNode.nodePosition.y > mapNodeArray[MAXIMUM_DEPTH * i].nodePosition.y)
             {
                 start_ = middleNode.rightCenter;
-                end_ = mapNodeArray[4 * i + 3].leftCenter;
+                end_ = mapNodeArray[MAXIMUM_DEPTH * i + MAXIMUM_DEPTH - 1].leftCenter;
                 middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
                 middle2_ = new Vector2(middle_.x, end_.y);
             }
             else
             {
                 start_ = middleNode.topCenter;
-                end_ = mapNodeArray[4 * i + 3].bottomCenter;
-                middle_ = new Vector2(start_.x, (start_.x + end_.x) / 2);
+                end_ = mapNodeArray[MAXIMUM_DEPTH * i + MAXIMUM_DEPTH - 1].bottomCenter;
+
+                if (middleNode.nodePosition.y >= mapNodeArray[MAXIMUM_DEPTH * i + 2].nodePosition.y)
+                {
+                    start_ = middleNode.rightCenter;
+                    end_ = mapNodeArray[MAXIMUM_DEPTH * i + 2].leftCenter;
+                }
+                
+                middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
                 middle2_ = new Vector2(end_.x, middle_.y);
             }
 
