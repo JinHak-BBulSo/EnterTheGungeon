@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -188,8 +187,8 @@ public class BulletKingController : MonoBehaviour
     {
         maxPatternCount = 6;
         bulletSpeed = 6f;
-        bulletCount = 50;
-        bulletGap = 5;
+        bulletCount = 40;
+        bulletGap = 4;
         enemyRadius = 1.8f;
 
         for (int i = 0; i < bulletCount; i ++)
@@ -226,10 +225,9 @@ public class BulletKingController : MonoBehaviour
     //  @brief 빙글빙글 돌면서 방 전체에 총알을 일정하게 연사한 뒤, 마지막으로 약간 더 빠른 총알을 자신을 중심으로 원형으로 발사한다.
     private void Pattern_4()
     {
-        maxPatternCount = 20;
+        maxPatternCount = 30;
         bulletSpeed = 8f;
-        bulletCount = 5;
-        bulletGap = 5;
+        bulletCount = 6;
         enemyRadius = 1.5f;
 
         for (int i = 0; i < bulletCount; i++)
@@ -241,59 +239,14 @@ public class BulletKingController : MonoBehaviour
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             Vector2 dirction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
             bulletRigidbody.AddForce(dirction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
         }
-
-
-
-
-
-
-
-
-
-        //if (timeSinceLastShot >= bulletInterval)
-        //{
-        //    timeSinceLastShot = 0f;
-
-        //    for (int i = 0; i < bulletCount; i++)
-        //    {
-        //        GameObject bullet = objectManager.MakeObject("Bullet_Basic");
-        //        bullet.transform.position = transform.position + new Vector3(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount))) * enemyRadius;
-        //        bullet.transform.rotation = Quaternion.Euler(0f, 0f, i * (360f / bulletCount));
-
-        //        Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-        //        bulletRigidbody.velocity = bullet.transform.up * bulletSpeed;
-        //    }
-        //}
-
-        //maxPatternCount = 1;
-        //bulletSpeed = 6f;
-        //bulletCount = 8;
-        //enemyRadius = 1.5f;
-
-        //for (int i = 0; i < bulletCount; i++)
-        //{
-        //    if (i % bulletGap == 0)
-        //    {
-        //        /* Do Nothing */
-        //    }
-        //    else
-        //    {
-        //        GameObject bullet = objectManager.MakeObject("Bullet_Basic");
-        //        bullet.transform.position = transform.position + new Vector3(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount))) * enemyRadius;
-        //        bullet.transform.rotation = Quaternion.identity;
-
-        //        Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-        //        Vector2 dirction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
-        //        bulletRigidbody.AddForce(dirction.normalized * bulletSpeed, ForceMode2D.Impulse);
-        //    }
-        //}
 
         curPatternCount++;
 
         if (curPatternCount < maxPatternCount)
         {
-            Invoke("Pattern_4", 0.1f);
+            Invoke("Pattern_4", 0.3f);
         }
         else
         {
