@@ -218,7 +218,18 @@ public class MapGenerator : MonoBehaviour
                 
                 if(room_.roomSize.x > nowNode_.nodeRect.width || room_.roomSize.y > nowNode_.nodeRect.height)
                 {
-                    if (index > 100) break;
+                    if (index > 100)
+                    {
+                        GameObject nodeRoom_ = Instantiate(mapPrefabs[2], transform.parent);
+                        nodeRoom_.transform.position = nowNode_.nodePosition;
+                        nowNode_.room = room_;
+
+                        nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                        nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                        nowNode_.topCenter = nowNode_.nodePosition + new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+                        nowNode_.bottomCenter = nowNode_.nodePosition - new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+                        break;
+                    }
                     index++;
                     continue;
                 }
