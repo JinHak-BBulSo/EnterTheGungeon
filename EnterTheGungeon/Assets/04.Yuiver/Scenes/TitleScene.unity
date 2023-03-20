@@ -5671,8 +5671,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230230596}
-        m_TargetAssemblyTypeName: TitleButtonController, Assembly-CSharp
+      - m_Target: {fileID: 1967594314}
+        m_TargetAssemblyTypeName: OptionButtonController, Assembly-CSharp
         m_MethodName: OptionMenuDisable
         m_Mode: 1
         m_Arguments:
