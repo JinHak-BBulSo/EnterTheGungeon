@@ -321,6 +321,14 @@ public class MapGenerator : MonoBehaviour
         if (mapNodeArray[4].nodePosition.y == mapNodeArray[5].nodePosition.y)
         {
             zoneAccessRoomIndex_[1] = 5;
+            if (mapNodeArray[5].nodePosition.y > mapNodeArray[6].nodePosition.y)
+            {
+                zoneAccessRoomIndex_[1] = 6; 
+            }
+            else if (mapNodeArray[5].nodePosition.y == mapNodeArray[6].nodePosition.y)
+            {
+                zoneAccessRoomIndex_[1] = 7;
+            }
         }
         else if (mapNodeArray[5].nodePosition.y > mapNodeArray[6].nodePosition.y)
         {
@@ -395,19 +403,22 @@ public class MapGenerator : MonoBehaviour
                 middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
                 middle2_ = new Vector2(middle_.x, end_.y);
             }
+
             else
             {
                 start_ = middleNode.topCenter;
                 end_ = mapNodeArray[MAXIMUM_DEPTH * i + MAXIMUM_DEPTH - 1].bottomCenter;
+                middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
+                middle2_ = new Vector2(end_.x, middle_.y);
 
                 if (middleNode.nodePosition.y >= mapNodeArray[MAXIMUM_DEPTH * i + 2].nodePosition.y)
                 {
                     start_ = middleNode.rightCenter;
                     end_ = mapNodeArray[MAXIMUM_DEPTH * i + 2].leftCenter;
+                    middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
+                    middle2_ = new Vector2(middle_.x, end_.y);
                 }
                 
-                middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
-                middle2_ = new Vector2(end_.x, middle_.y);
             }
 
             DrawAccessLine(start_, end_, middle_, middle2_);
