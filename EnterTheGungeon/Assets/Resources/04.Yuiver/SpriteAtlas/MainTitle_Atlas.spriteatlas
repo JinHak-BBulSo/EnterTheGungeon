@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainTitle_Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ff95a82a8bdfa7d4882184be181b8d2b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1a2b3d10c9dbe734c85156e947a0bdc8, type: 2}
+  - {fileID: 21300000, guid: f6a17f801b3dd744fb8ddb0678f8c14d, type: 2}
+  - {fileID: 21300000, guid: d771de900a4449248a20306384c12f76, type: 2}
+  - {fileID: 21300000, guid: b347fca077220584ea751535b4c2b5b0, type: 2}
+  - {fileID: 21300000, guid: 57bf89f0ba9602a48953e7ab69200454, type: 2}
+  - {fileID: 21300000, guid: f88bb31146c96514396e415dfb6bb7b6, type: 2}
+  - {fileID: 21300000, guid: f4fd88a10c32d7a4fa9651a901423e74, type: 2}
+  - {fileID: 21300000, guid: 970881e1b7570ce48bee1a26e3602fa2, type: 2}
+  - {fileID: 21300000, guid: c8ed5bf180640494fab42b81d0a35ddd, type: 2}
+  - {fileID: 21300000, guid: 6136c4029f0cfd1438bb6724ee0e1d0f, type: 2}
+  - {fileID: 21300000, guid: f1aa3c8209077694ca8e3c50de2ee331, type: 2}
+  - {fileID: 21300000, guid: c116c492e1fe8d7498c64ec3be4f2108, type: 2}
+  - {fileID: 21300000, guid: eef73323db3e8a64c8e5384e2bb5c435, type: 2}
+  - {fileID: 21300000, guid: 698047d38c7a4644781ed760ca9a64af, type: 2}
+  - {fileID: 21300000, guid: c3b3b4e304f52f74b8adf347c6d2a5a6, type: 2}
+  - {fileID: 21300000, guid: 45ced6049a261d947bd6de0a707495ca, type: 2}
+  - {fileID: 21300000, guid: 4b0371140e596a44e87cbd558fad0d1c, type: 2}
+  - {fileID: 21300000, guid: 24b1d8058766a5940824b486b5f60c19, type: 2}
+  - {fileID: 21300000, guid: 49b01a158d1696c418497486d0e080d2, type: 2}
+  - {fileID: 21300000, guid: 40fea2555eba2734eb474d306e61e439, type: 2}
+  - {fileID: 21300000, guid: 31e4ee959045c7f46b6e8964a3556982, type: 2}
+  - {fileID: 21300000, guid: 26c3aaa506438ca499b23386c6615308, type: 2}
+  - {fileID: 21300000, guid: 3de497d56a143c84993d2427a0b52458, type: 2}
+  - {fileID: 21300000, guid: 2cb5a716d7291e540944348159607fc3, type: 2}
+  - {fileID: 21300000, guid: 579ef42605c50b24fa67c3df04da3caf, type: 2}
+  - {fileID: 21300000, guid: e6bf4526a99797744b75a3a038ffbf87, type: 2}
+  - {fileID: 21300000, guid: ff1966d639cae3a45b74d1aa49a7e9a0, type: 2}
+  - {fileID: 21300000, guid: 102f3ae654af9d4429cb5ff1e2d5f890, type: 2}
+  - {fileID: 21300000, guid: 2c55f637d9348d24ebb3596ce527d682, type: 2}
+  - {fileID: 21300000, guid: 7ade527700e44a5449cad09774445092, type: 2}
+  - {fileID: 21300000, guid: 216b7377213e4c04f9c0e9dc79383de3, type: 2}
+  - {fileID: 21300000, guid: b3822e188ec9c1647a4bdf223b0591c0, type: 2}
+  - {fileID: 21300000, guid: 6a179248a67e00e49984c22f87423671, type: 2}
+  - {fileID: 21300000, guid: 6251f598c1c664e4d88ac8580ffd1451, type: 2}
+  - {fileID: 21300000, guid: c7f725a8bed4689428b8b37c2819fe2d, type: 2}
+  - {fileID: 21300000, guid: 0d80a6a863e867747823552f6a7c5651, type: 2}
+  - {fileID: 21300000, guid: 1ff574f8e5f3981498e8ab347d28fb2f, type: 2}
+  - {fileID: 21300000, guid: ffa3c9f875ca25f49a1f77b4121ed228, type: 2}
+  - {fileID: 21300000, guid: 5ad49819c10257c4ab0ceb02b3ddc2bc, type: 2}
+  - {fileID: 21300000, guid: 3269f949f4a00b746a40f2d48bf8cbf0, type: 2}
+  - {fileID: 21300000, guid: 1a3092790c5c8fb4c82ab31e552d8e17, type: 2}
+  - {fileID: 21300000, guid: 7565508922c33774a87b35add9797147, type: 2}
+  - {fileID: 21300000, guid: d3eb52991599b604f99d10b11c2ed181, type: 2}
+  - {fileID: 21300000, guid: 3648208a22de4fa449b3636b8fea2c54, type: 2}
+  - {fileID: 21300000, guid: 0f5e0f8adfa804546a3ded98c54783c6, type: 2}
+  - {fileID: 21300000, guid: 785dddaa7e423e44f9b4e827f7643e74, type: 2}
+  - {fileID: 21300000, guid: 628ca26b480fbac4f9aa783c5e55142c, type: 2}
+  - {fileID: 21300000, guid: 9d8b70ab1581a9c4b8eea18837031e72, type: 2}
+  - {fileID: 21300000, guid: 8ce71ecb06c9d77488817dd7fabfd02c, type: 2}
+  - {fileID: 21300000, guid: 19c0ad1ca74e07e45963fd9680363fd3, type: 2}
+  - {fileID: 21300000, guid: 2d0f767ceb0b66d4aa31fe4d9da5809d, type: 2}
+  - {fileID: 21300000, guid: 189a9d9c643785945aa589d9f04404da, type: 2}
+  - {fileID: 21300000, guid: 28924ddc062e7b34abc16c22741a49a5, type: 2}
+  - {fileID: 21300000, guid: 1b27c7ecb7eb48941b572f5d3fccd48a, type: 2}
+  - {fileID: 21300000, guid: 17d3f60d0dc69984d9222c81ed827f96, type: 2}
+  - {fileID: 21300000, guid: 72999e3db9032674e8c0ef42f4638e9c, type: 2}
+  - {fileID: 21300000, guid: 335757dd71c07bd4985a53857209d101, type: 2}
+  - {fileID: 21300000, guid: b3ef164e44444d24b96a4c6fa2fb47c4, type: 2}
+  - {fileID: 21300000, guid: 60d203bec62fb31479f09c5230e60b3d, type: 2}
+  - {fileID: 21300000, guid: 13d7f9ee368f53f4c9d0e24279345cbf, type: 2}
+  - {fileID: 21300000, guid: 199e502f423a4964a879f6af56c35b25, type: 2}
+  - {fileID: 21300000, guid: 337dda5fbfaa44d4495095731c75d5cb, type: 2}
+  - {fileID: 21300000, guid: 788f8bafcdab7684d96fe36a25f43cdb, type: 2}
+  - {fileID: 21300000, guid: 05fc48ff035aebe4488824f80029a4b8, type: 2}
+  m_PackedSpriteNamesToIndex:
+  - silhouette_lich_gun_006
+  - title_comet_sailrmoon_002
+  - silhouette_lich_bot_idle_003
+  - silhouette_lich_bot_idle_002
+  - silhouette_lich_click_005
+  - title_water_001
+  - silhouette_lich_bot_flap_001
+  - silhouette_lich_gun_005
+  - isle_of_gungeon_crop_002
+  - flag_wave_006
+  - BackLighting
+  - GamePause
+  - silhouette_lich_bot_lower_003
+  - title_comet_22x3
+  - silhouette_lich_top_windy_006
+  - TITLE
+  - title_comet_white_sprite_001
+  - silhouette_lich_gun_001
+  - title_comet_sailrmoon_004
+  - silhouette_lich_top_windy_001
+  - silhouette_lich_bot_idle_005
+  - flag_wave_003
+  - flag_wave_004
+  - marsh_of_gungeon_001
+  - silhouette_lich_top_windy_003
+  - silhouette_lich_bot_idle_006
+  - silhouette_lich_bot_flap_003
+  - flag_wave_001
+  - title_comet_white_001
+  - title_comet_sailrmoon_001
+  - title_comet_sailrmoon_006
+  - Option_Top
+  - silhouette_lich_top_windy_004
+  - silhouette_lich_gun_004
+  - title_comet_white_002
+  - silhouette_lich_bot_raise_001
+  - silhouette_lich_click_001
+  - silhouette_lich_bot_lower_004
+  - marsh_of_gungeon_nonglow_001
+  - silhouette_lich_bot_raise_004
+  - silhouette_lich_bot_idle_004
+  - silhouette_lich_bot_raise_002
+  - silhouette_lich_click_004
+  - silhouette_lich_bot_flap_002
+  - silhouette_lich_bot_lower_001
+  - marsh_of_gungeon_glow_001
+  - silhouette_lich_bot_lower_002
+  - title_comet_sailrmoon_005
+  - silhouette_lich_click_002
+  - silhouette_lich_bot_raise_003
+  - silhouette_lich_gun_002
+  - flag_wave_005
+  - silhouette_lich_bot_idle_001
+  - silhouette_lich_top_windy_005
+  - Option_Setting
+  - silhouette_lich_click_003
+  - NewTitleShadowMask
+  - title_comet_sailrmoon_003
+  - silhouette_lich_gun_003
+  - flag_wave_002
+  - silhouette_lich_top_windy_002
+  - title_comet_white_003
+  - marsh_of_gungeon_nonglow_002
+  - silhouette_lich_bot_flap_004
+  m_RenderDataMap: {}
+  m_Tag: MainTitle_Atlas
+  m_IsVariant: 0
