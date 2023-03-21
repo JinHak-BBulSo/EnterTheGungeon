@@ -7,10 +7,19 @@ public class BossGorgunMuzzle : MonoBehaviour
     // Vector2[] muzzleLeftPosition = new Vector2[] { new Vector2(-60, 120), new Vector2(-120, 45), new Vector2(-90, -20), new Vector2(-20, -40), new Vector2(-10, -1) };
     // Vector2[] muzzleRightPosition = new Vector2[] { new Vector2(60, 120), new Vector2(120, 45), new Vector2(90, -20), new Vector2(30, -40), new Vector2(10, -1) };
 
-    Vector2 muzzleLeftStartPosition = new Vector2(-60, 120);
-    Vector2 muzzleLeftEndPosition = new Vector2(-20, -40);
-    Vector2 muzzleRightStartPosition = new Vector2(60, 120);
-    Vector2 muzzleRightEndPosition = new Vector2(30, -40);
+    //pattern2
+    Vector2 muzzleLeftStartPosition1 = new Vector2(-60, 120);
+    Vector2 muzzleLeftEndPosition1 = new Vector2(-20, -40);
+    Vector2 muzzleRightStartPosition1 = new Vector2(60, 120);
+    Vector2 muzzleRightEndPosition1 = new Vector2(30, -40);
+    //pattern2
+
+    //pattern2_1
+    Vector2 muzzleLeftStartPosition2 = new Vector2(-130, 80);
+    Vector2 muzzleLeftEndPosition2 = new Vector2(-35, -30);
+    Vector2 muzzleRightStartPosition2 = new Vector2(125, 42);
+    Vector2 muzzleRightEndPosition2 = new Vector2(-30, -35);
+    //pattern2_1
 
 
     bool isMuzzlePositionSet;
@@ -24,6 +33,7 @@ public class BossGorgunMuzzle : MonoBehaviour
     float yValue;
 
     Transform bossGorgun;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,11 +57,26 @@ public class BossGorgunMuzzle : MonoBehaviour
         {
             if (isLeft)
             {
-                transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleLeftEndPosition, 2 * Time.deltaTime);
+                if (bossGorgun.GetComponent<BossGorGun>().isPlayerUpside)
+                {
+                    transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleLeftEndPosition1, 2 * Time.deltaTime);
+                }
+                else
+                {
+                    transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleLeftEndPosition2, 2 * Time.deltaTime);
+                }
             }
             if (isRight)
             {
-                transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleRightEndPosition, 2 * Time.deltaTime);
+                if (bossGorgun.GetComponent<BossGorGun>().isPlayerUpside)
+                {
+                    transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleRightEndPosition1, 2 * Time.deltaTime);
+                }
+                else
+                {
+                    transform.localPosition = Vector3.Slerp(transform.localPosition, muzzleRightEndPosition2, 2 * Time.deltaTime);
+
+                }
             }
 
             GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
@@ -69,11 +94,26 @@ public class BossGorgunMuzzle : MonoBehaviour
     {
         if (isLeft && isMuzzlePositionSet)
         {
-            transform.localPosition = muzzleLeftStartPosition;
+            if (bossGorgun.GetComponent<BossGorGun>().isPlayerUpside)
+            {
+                transform.localPosition = muzzleLeftStartPosition1;
+            }
+            else
+            {
+                transform.localPosition = muzzleLeftStartPosition2;
+            }
         }
         if (isRight && isMuzzlePositionSet)
         {
-            transform.localPosition = muzzleRightStartPosition;
+            if (bossGorgun.GetComponent<BossGorGun>().isPlayerUpside)
+            {
+                transform.localPosition = muzzleRightStartPosition1;
+            }
+            else
+            {
+                transform.localPosition = muzzleRightStartPosition2;
+
+            }
         }
         isMuzzlePositionSet = false;
     }

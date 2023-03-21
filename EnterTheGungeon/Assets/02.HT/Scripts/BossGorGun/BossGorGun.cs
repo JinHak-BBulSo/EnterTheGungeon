@@ -43,10 +43,22 @@ public class BossGorGun : MonoBehaviour
     BossGorgunBody bossGorgunBody;
     // } Var for Attack
 
+    // Var for AttackPattern1
+    public bool isPlayerUpside;
 
+    int maxHp;
+    int currentHp;
+    public bool isDead;
+
+    //피격시 받는 데미지 체크를 위한 변수
+    int damageTaken;
+    public bool isChangeTostatue;
 
     void Start()
     {
+        maxHp = 975;
+        currentHp = 975;
+
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
         player = GameObject.FindWithTag("Player");
         defaultMoveSpeed = 1f;
@@ -55,7 +67,7 @@ public class BossGorGun : MonoBehaviour
 
         rigid = GetComponent<Rigidbody2D>();
         bossCollider = GetComponent<CapsuleCollider2D>();
-        anim = transform.GetChild(0).GetComponent<Animator>();
+        anim = transform.GetChild(0).GetComponent<Animator>(); ;
         bodyImage = transform.GetChild(0).GetComponent<Image>();
         bodyImageRectTransform = transform.GetChild(0).GetComponent<RectTransform>();
 
@@ -77,13 +89,29 @@ public class BossGorGun : MonoBehaviour
             anim.SetBool("isMovePattern1", false);
         }
 
-        Move();
-        attack();
+        if (!isDead)
+        {
+            Move();
+            attack();
+            EndAttack();
+        }
 
+        if (currentHp <= 0)
+        {
+            isDead = true;
+        }
+        if (isDead)
+        {
+
+            Die();
+        }
+        ImageSizeSet();
+    }
+
+    void ImageSizeSet()
+    {
         bodyImage.SetNativeSize();
         bodyImageRectTransform.sizeDelta = new Vector2(bodyImageRectTransform.sizeDelta.x * 3, bodyImageRectTransform.sizeDelta.y * 3);
-
-        EndAttack();
     }
 
     void Move()
@@ -171,7 +199,20 @@ public class BossGorGun : MonoBehaviour
             transform.rotation = defaultRotation;
             //
             isAttackPattern = true;
-            pattrenNum = Random.Range(0, 2);
+            pattrenNum = Random.Range(0, 4);
+        }
+
+        // @brief colide player bullet, take damage and apply currentHp.
+        if (other.tag == "PlayerBullet")
+        {
+            damageTaken = 0;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
+            currentHp -= damageTaken;
+            damageTaken = 0;
+
+            if (isChangeTostatue)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     IEnumerator MovePatternDurationTime(float durationTime_)
@@ -187,7 +228,7 @@ public class BossGorGun : MonoBehaviour
         //
         yield return new WaitForSeconds(1);
         isAttackPattern = true;
-        pattrenNum = Random.Range(0, 2);
+        pattrenNum = Random.Range(0, 4);
 
     }
     int attackPatternCount;
@@ -200,7 +241,7 @@ public class BossGorGun : MonoBehaviour
             //attack pattern1
             if (pattrenNum == 0)
             {
-                transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 0);
+                anim.SetFloat("attackPattern", 0);
                 if (bossGorgunBody.patternCount == 5)
                 {
                     anim.SetBool("isAttack", false);
@@ -222,12 +263,13 @@ public class BossGorGun : MonoBehaviour
                 // @brief when player position is upside of gorgun/downside of gorgun
                 if (player.transform.position.y > transform.position.y)
                 {
-                    transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 1);
+                    isPlayerUpside = true;
+                    anim.SetFloat("attackPattern", 1 / 4f);
                 }
                 if (player.transform.position.y < transform.position.y)
                 {
-                    transform.GetChild(0).GetComponent<Animator>().SetFloat("attackPattern", 1);
-
+                    isPlayerUpside = false;
+                    anim.SetFloat("attackPattern", 2 / 4f);
                 }
 
                 if (bossGorgunBody.patternCount == 2)
@@ -235,7 +277,6 @@ public class BossGorGun : MonoBehaviour
                     anim.SetBool("isAttack", false);
 
                     attackPatternCount++;
-
                     //
                     isAttackPattern = false;
                     //isMovepattern = true;
@@ -244,6 +285,39 @@ public class BossGorGun : MonoBehaviour
                     {
                         StartCoroutine(AttackDelay());
                     }
+                }
+            }
+            if (pattrenNum == 2)
+            {
+                anim.SetFloat("attackPattern", 3 / 4f);
+                if (bossGorgunBody.patternCount == 1)
+                {
+                    anim.SetBool("isAttack", false);
+                    attackPatternCount++;
+                    isAttackPattern = false;
+                    bossGorgunBody.patternCount = 0;
+                    if (!AttackDelayCheck)
+                    {
+                        StartCoroutine(AttackDelay());
+                    }
+
+                }
+            }
+
+            if (pattrenNum == 3)
+            {
+                anim.SetFloat("attackPattern", 1);
+                if (bossGorgunBody.patternCount == 1)
+                {
+                    anim.SetBool("isAttack", false);
+                    attackPatternCount++;
+                    isAttackPattern = false;
+                    bossGorgunBody.patternCount = 0;
+                    if (!AttackDelayCheck)
+                    {
+                        StartCoroutine(AttackDelay());
+                    }
+
                 }
             }
         }
@@ -257,7 +331,7 @@ public class BossGorGun : MonoBehaviour
             AttackDelayCheck = true;
             yield return new WaitForSeconds(1);
             isAttackPattern = true;
-            pattrenNum = Random.Range(0, 2);
+            pattrenNum = Random.Range(0, 4);
             AttackDelayCheck = false;
         }
 
@@ -272,8 +346,25 @@ public class BossGorGun : MonoBehaviour
         }
     }
 
+    void Die()
+    {
+        if (isDead == true)
+        {
+            isDead = false;
+            if (effectObject.activeSelf == true)
+            {
+                effectObject.SetActive(false);
+            }
+            anim.SetTrigger("isDead");
+
+            // exception: while movepattern, take dot damage to die
+            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
+            bossCollider.isTrigger = false;
+            // exception: while movepattern, take dot damage to die
+
+            StopAllCoroutines();
+        }
+    }
+
+
 }
-
-
-
-//이동 패턴 1//이동패턴1 완료 후 공격 3~4번진행 공격 패턴 간 기본이동(move toward)//반복//

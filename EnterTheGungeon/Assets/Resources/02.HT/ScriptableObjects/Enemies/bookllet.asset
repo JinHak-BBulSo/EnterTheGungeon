@@ -17,5 +17,5 @@ MonoBehaviour:
   weapon: []
   enemyImage: {fileID: -1732283535, guid: af116ffa17482cc45b5d69caf0a9d97c, type: 3}
   enemyAnim: {fileID: 9100000, guid: 4d9202cc476c4134da39d4b7e817e326, type: 2}
-  enemyHp: 15
+  enemyHp: 25
   enemyMoveSpeed: 0.3

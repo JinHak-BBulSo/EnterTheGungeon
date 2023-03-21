@@ -17,7 +17,13 @@ public class TestEnemy : MonoBehaviour
 
     Vector2 direction;
 
+    // { status
+    public int maxHp;
+    int currentHp;
     public float moveSpeed;
+
+    bool isDead;
+    // { status
 
     // { animation var
 
@@ -71,9 +77,13 @@ public class TestEnemy : MonoBehaviour
     public bool isPathFind;
     // } Var for PathFinder
 
+    int damageTaken;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentHp = maxHp;
+
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
 
         if (attackType == 0)
@@ -85,20 +95,8 @@ public class TestEnemy : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         player = GameObject.FindWithTag("Player");
 
-        //working
-        /* pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
-        pathFinder.transform.SetParent(transform.parent);
-        pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
-        pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
-        pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
-
-        pathFinder.name = $"{this.name}" + "PathFinder";
-
-        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject; */
-        //working
-
         StartCoroutine(SpawnTime());
-        moveSpeed = 0.3f;
+        //moveSpeed = 0.3f;
     }
 
     // Update is called once per frame
@@ -152,9 +150,18 @@ public class TestEnemy : MonoBehaviour
 
         FindPlayerDirection();
 
-        if (!isPathFind)
+        //-working
+        /* if (!isPathFind)
         {
             PathFind();
+        } */
+        //-working
+
+        //
+        if (currentHp <= 0)
+        {
+            isDead = true;
+            Die();
         }
     }
     void Move()
@@ -328,6 +335,29 @@ public class TestEnemy : MonoBehaviour
 
         pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
         isPathFind = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "PlayerBullet")
+        {
+            damageTaken = 0;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
+            currentHp -= damageTaken;
+            damageTaken = 0;
+        }
+    }
+
+    void Die()
+    {
+        if (isDead == true)
+        {
+            isDead = false;
+
+
+            StopAllCoroutines();
+
+            //Destroy(this.gameObject); will be add amimation event
+        }
     }
 }
 

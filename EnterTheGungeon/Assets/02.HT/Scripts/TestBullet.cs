@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestBullet : MonsterBullets
 {
@@ -12,13 +13,26 @@ public class TestBullet : MonsterBullets
 
     bool isCheckAngle;
 
+    public bool isGorgunBullet;
+    Image image;
+    public int patternBulletNumber;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        image = GetComponent<Image>();
+
 
         StartCoroutine(DestroyBullet());
+
+        if (isGorgunBullet)
+        {
+            image.enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            StartCoroutine(Patten1Bullet());
+        }
     }
 
     // Update is called once per frame
@@ -66,5 +80,17 @@ public class TestBullet : MonsterBullets
 
         gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
 
+    }
+    IEnumerator Patten1Bullet()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (patternBulletNumber == i)
+            {
+                yield return new WaitForSeconds(i + 1);
+                image.enabled = true;
+                GetComponent<CircleCollider2D>().enabled = true;
+            }
+        }
     }
 }

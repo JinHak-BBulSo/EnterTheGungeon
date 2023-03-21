@@ -48,5 +48,10 @@ public class EnemyManager : GSingleton<EnemyManager>
             clone.transform.GetChild(2).gameObject.SetActive(false);
         }
 
+        //Status 설정
+        clone.GetComponent<TestEnemy>().maxHp = enemyData.EnemyHp;
+        clone.GetComponent<TestEnemy>().moveSpeed = enemyData.EnemyMoveSpeed;
+
+
     }
 }
