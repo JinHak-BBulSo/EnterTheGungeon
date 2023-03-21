@@ -1,14 +1,15 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletKingController : MonoBehaviour
 {
-    [SerializeField] public GameObject enemyBullet = default;
-    [SerializeField] public ObjectManager objectManager = default;
-    [SerializeField] public GameObject player = default;
+    private ObjectManager objectManager = default;
+    private GameObject player = default;
 
     private float bulletCount = default;
     private float bulletSpeed = default;
+    private float bulletLifeTime = default;
     private float moveSpeed = default;
     private float enemyRadius = default;
 
@@ -19,11 +20,8 @@ public class BulletKingController : MonoBehaviour
     private int bulletGap = default;
 
 
+    private bool isPatterenCountReset = false;
     private bool isMoving = false;
-
-    public float timeSinceLastShot = 0f;
-
-
 
 
     private float distance = default;
@@ -32,16 +30,16 @@ public class BulletKingController : MonoBehaviour
     private float direction_Y = default;
 
 
-
     private void OnEnable()
     {
         health = 950;
-        Invoke("Pattern", 2f);
+        Invoke("Test", 1f);
     }
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
+        objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
     }
     private void Start()
     {
@@ -50,7 +48,6 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        timeSinceLastShot += Time.deltaTime;
 
     }
 
@@ -103,11 +100,6 @@ public class BulletKingController : MonoBehaviour
                 break;
         }
 
-    }
-
-    IEnumerator WaitForPattern(float delay_)
-    {
-        yield return new WaitForSeconds(delay_);
     }
 
     #region Pattern_1
@@ -164,8 +156,8 @@ public class BulletKingController : MonoBehaviour
             bullet.transform.rotation = Quaternion.identity;
 
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            Vector2 dirction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
-            bulletRigidbody.AddForce(dirction.normalized * bulletSpeed, ForceMode2D.Impulse);
+            Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
+            bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
         }
 
         curPatternCount++;
@@ -173,10 +165,6 @@ public class BulletKingController : MonoBehaviour
         if (curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_2", 0.5f);
-        }
-        else
-        {
-            Invoke("Pattern", 3f);
         }
     }   //  Pattern_2()
     #endregion
@@ -204,8 +192,8 @@ public class BulletKingController : MonoBehaviour
                 bullet.transform.rotation = Quaternion.identity;
 
                 Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-                Vector2 dirction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
-                bulletRigidbody.AddForce(dirction.normalized * bulletSpeed, ForceMode2D.Impulse);
+                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
+                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
             }
         }
 
@@ -227,47 +215,171 @@ public class BulletKingController : MonoBehaviour
     {
         maxPatternCount = 30;
         bulletSpeed = 8f;
-        bulletCount = 6;
+        bulletCount = 10;
         enemyRadius = 1.5f;
 
         for (int i = 0; i < bulletCount; i++)
         {
-            GameObject bullet = objectManager.MakeObject("Bullet_Basic");
-            bullet.transform.position = transform.position + new Vector3(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount))) * enemyRadius;
-            bullet.transform.rotation = Quaternion.identity;
+            if (curPatternCount % 2 == 0)
+            {
+                GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = Quaternion.identity;
 
-            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            Vector2 dirction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
-            bulletRigidbody.AddForce(dirction.normalized * bulletSpeed, ForceMode2D.Impulse);
+                Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
+                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+            }
+            else if (curPatternCount == maxPatternCount - 1)
+            {
+                GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = Quaternion.identity;
 
+                Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
+                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+            }
+            else
+            {
+                GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = Quaternion.identity;
+
+                Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount)));
+                direction = Quaternion.Euler(0f, 0f, 60) * direction;
+                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+            }
         }
 
         curPatternCount++;
 
         if (curPatternCount < maxPatternCount)
         {
-            Invoke("Pattern_4", 0.3f);
-        }
-        else
-        {
-            Invoke("Pattern", 3f);
+            Invoke("Pattern_4", 0.2f);
         }
     }
 
     //  [YHJ] 2023-03-16
     //  @brief 자신의 위쪽에 커다란 총알을 한 발 발사한다. 발사된 총알은 여러 개의 깜빡거리는 탄환 여러 개로 나뉘고 이 탄환들은 잠시 뒤 여러 갈래로 퍼져나간다.
-    private void Pattern_5()
+    IEnumerator Pattern_5()
     {
+        maxPatternCount = 1;
+        bulletSpeed = 0.7f;
+        bulletCount = 1;
+
+        GameObject bullet = objectManager.MakeObject("Bullet_TypeC");
+        bullet.transform.position = transform.position + new Vector3(0f, 2f, 0f);
+        bullet.transform.rotation = Quaternion.identity;
+
+        Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+        Vector2 direction = Vector2.up;
+        bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(1f);
+
+        bullet.SetActive(false);
+
+        StartCoroutine(Pattern_5_ExplodeBullet_1(bullet.transform.position));
+
+        yield return new WaitForSeconds(0.5f);
+
         curPatternCount++;
 
         if (curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_5", 0.7f);
         }
-        else
+    }
+
+    IEnumerator Pattern_5_ExplodeBullet_1(Vector3 currentPosition_)
+    {
+        List<GameObject> bullets = new List<GameObject>();
+
+        maxPatternCount = 1;
+        bulletSpeed = 8f;
+        bulletCount = 8;
+
+        for (int i = 0; i < bulletCount; i++)
         {
-            Invoke("Pattern", 3f);
+            GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.transform.position = currentPosition_;
+            bullet.transform.rotation = Quaternion.identity;
+
+            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
+            bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+            bullets.Add(bullet);
         }
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (var bullet in bullets)
+        {
+            StartCoroutine(Pattern_5_ExplodeBullet_2(bullet.transform.position));
+            bullet.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator Pattern_5_ExplodeBullet_2(Vector3 nextPosition_)
+    {
+        List<GameObject> bullets = new List<GameObject>();
+
+        maxPatternCount = 1;
+        bulletSpeed = 7f;
+        bulletCount = 7;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.transform.position = nextPosition_;
+            bullet.transform.rotation = Quaternion.identity;
+
+            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
+            bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+            bullets.Add(bullet);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (var bullet in bullets)
+        {
+            StartCoroutine(Pattern_5_ExplodeBullet_3(bullet.transform.position));
+            bullet.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator Pattern_5_ExplodeBullet_3(Vector3 next2Position_)
+    {
+        List<GameObject> bullets = new List<GameObject>();
+
+        maxPatternCount = 1;
+        bulletSpeed = 6f;
+        bulletCount = 6;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.transform.position = next2Position_;
+            bullet.transform.rotation = Quaternion.identity;
+
+            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
+            bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+            bullets.Add(bullet);
+        }
+
+        yield return null;
+    }
+
+    private void Test()
+    {
+        StartCoroutine("Pattern_5");
     }
 
     //  [YHJ] 2023-03-16
@@ -279,10 +391,6 @@ public class BulletKingController : MonoBehaviour
         if (curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_6", 0.7f);
-        }
-        else
-        {
-            Invoke("Pattern", 3f);
         }
     }
 }

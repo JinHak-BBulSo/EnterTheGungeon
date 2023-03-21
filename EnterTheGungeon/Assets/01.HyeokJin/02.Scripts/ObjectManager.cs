@@ -10,11 +10,12 @@ public class ObjectManager : MonoBehaviour
     [SerializeField] public GameObject bulletBasicPrefab = default;
     [SerializeField] public GameObject bulletTypeAPrefab = default;
     [SerializeField] public GameObject bulletTypeBPrefab = default;
+    [SerializeField] public GameObject bulletTypeCPrefab = default;
 
-    GameObject[] enemyBulletKing = default;
     GameObject[] bulletBasic = default;
     GameObject[] bulletTypeA = default;
     GameObject[] bulletTypeB = default;
+    GameObject[] bulletTypeC = default;
 
     GameObject[] targetPool = default;
 
@@ -22,10 +23,10 @@ public class ObjectManager : MonoBehaviour
     //  @brief Awake
     private void Awake()
     {
-        enemyBulletKing = new GameObject[1];
-        bulletBasic = new GameObject[500];
-        bulletTypeA = new GameObject[500];
+        bulletBasic = new GameObject[1000];
+        bulletTypeA = new GameObject[1000];
         bulletTypeB = new GameObject[500];
+        bulletTypeC = new GameObject[10];
 
         Generate();
     }   //  Awake()
@@ -35,11 +36,7 @@ public class ObjectManager : MonoBehaviour
     private void Generate()
     {
         //  Enemy
-        for (int index = 0; index < enemyBulletKing.Length; index++)
-        {
-            enemyBulletKing[index] = Instantiate(bossBulletKingPrefab);
-            enemyBulletKing[index].SetActive(false);
-        }
+
 
         //  Bullet
         //  Bullet_Basic : Basic
@@ -62,6 +59,13 @@ public class ObjectManager : MonoBehaviour
             bulletTypeB[index] = Instantiate(bulletTypeBPrefab);
             bulletTypeB[index].SetActive(false);
         }
+
+        //  bulletTypeC : Big
+        for (int index = 0; index < bulletTypeC.Length; index++)
+        {
+            bulletTypeC[index] = Instantiate(bulletTypeCPrefab);
+            bulletTypeC[index].SetActive(false);
+        }
     }   //  Generate()
 
     //  [YHJ] 2023-03-18
@@ -79,6 +83,9 @@ public class ObjectManager : MonoBehaviour
             case "Bullet_TypeB":
                 targetPool = bulletTypeB;
                 break;
+            case "Bullet_TypeC":
+                targetPool = bulletTypeC;
+                break;
         }
 
         for (int index = 0; index < targetPool.Length; index++)
@@ -95,7 +102,7 @@ public class ObjectManager : MonoBehaviour
 
     //  [YHJ] 2023-03-18
     //  @brief ObjectPooling
-    public GameObject[] GetPool(string type_)
+    private GameObject[] GetPool(string type_)
     {
         switch (type_)
         {
@@ -107,6 +114,9 @@ public class ObjectManager : MonoBehaviour
                 break;
             case "Bullet_TypeB":
                 targetPool = bulletTypeB;
+                break;
+            case "Bullet_TypeC":
+                targetPool = bulletTypeC;
                 break;
         }
 
