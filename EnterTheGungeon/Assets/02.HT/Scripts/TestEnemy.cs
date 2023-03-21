@@ -79,6 +79,10 @@ public class TestEnemy : MonoBehaviour
 
     int damageTaken;
 
+    ObjectPool objectPool;
+    List<GameObject> enemyBulletPool;
+    GameObject enemyBulletPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +101,10 @@ public class TestEnemy : MonoBehaviour
 
         StartCoroutine(SpawnTime());
         //moveSpeed = 0.3f;
+
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        enemyBulletPool = objectPool.enemyBulletPool;
+        enemyBulletPrefab = objectPool.enemyBulletPrefab;
     }
 
     // Update is called once per frame
@@ -151,10 +159,10 @@ public class TestEnemy : MonoBehaviour
         FindPlayerDirection();
 
         //-working
-        /* if (!isPathFind)
+        if (!isPathFind)
         {
             PathFind();
-        } */
+        }
         //-working
 
         //

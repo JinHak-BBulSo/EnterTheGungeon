@@ -46,7 +46,10 @@ public class PathFinder : MonoBehaviour
     bool isCompletePath;
     // } Var for CompletePath
 
-    
+    ObjectPool objectPool;
+    List<GameObject> pathFinderGridPool;
+    GameObject pathFinderGridPrefab;
+
     public void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -60,18 +63,26 @@ public class PathFinder : MonoBehaviour
 
         gridArray = new GameObject[(int)(rectTransform.sizeDelta.x / cellSizeX), (int)(rectTransform.sizeDelta.y / cellSizeY)];
 
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        pathFinderGridPool = objectPool.pathFinderGridPool;
+        pathFinderGridPrefab = objectPool.pathFinderGridPrefab;
+
+
         for (int y = 0; y < gridArray.GetLength(1); y++)
         {
             for (int x = 0; x < gridArray.GetLength(0); x++)
             {
-
-                GameObject grid_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid"), transform.position, transform.rotation);
+                GameObject grid_ = objectPool.GetObject(pathFinderGridPool, pathFinderGridPrefab, 0);
                 grid_.transform.SetParent(this.transform);
+
+                //GameObject grid_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid"), transform.position, transform.rotation);
                 grid_.GetComponent<RectTransform>().localScale = Vector3.one;
 
                 gridArray[x, y] = grid_;
             }
         }
+
+
     }
 
     void Update()
@@ -226,34 +237,5 @@ public class PathFinder : MonoBehaviour
             completePathNode_ = completePathNode_.GetComponent<PathFinderGrid>().parentNode;
             CompletePath(completePathNode_);
         }
-    }
-
-    private void Reset()
-    {
-        gridNumber = default;
-        rectTransform = default;
-        cellSizeX = default;
-        cellSizeY = default;
-        gridArray = default;
-        enemy = default;
-        startX = default;
-        startY = default;
-        player = default;
-        endX = default;
-        endY = default;
-        minDistToEnemy = default;
-        minDistToPlayer = default;
-        startGrid = default;
-        endGrid = default;
-        isSetGridStatus = default;
-        openList = default;
-        closeList = default;
-        checkGrid = default;
-        isInitPathFind = default;
-        isFinPathFind = default;
-        nextCloseListObject = default;
-        completePath = default;
-        completePathNode = default;
-        isCompletePath = default;
     }
 }

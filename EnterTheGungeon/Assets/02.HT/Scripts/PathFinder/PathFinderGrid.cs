@@ -37,6 +37,8 @@ public class PathFinderGrid : MonoBehaviour
     public List<GameObject> connectedList;
     public bool isInOpenList;
 
+    bool isCreated;
+
     void Start()
     {
         isPassable = true;
@@ -59,7 +61,7 @@ public class PathFinderGrid : MonoBehaviour
             StartCoroutine(ColliderSizeSet());
         }
 
-        gridArray = transform.parent.GetComponent<PathFinder>().gridArray;
+        gridArray = pathFinder.gridArray;
         for (int y = 0; y < gridArray.GetLength(1); y++)
         {
             for (int x = 0; x < gridArray.GetLength(0); x++)
@@ -72,6 +74,35 @@ public class PathFinderGrid : MonoBehaviour
             }
         }
     }
+    private void OnEnable()
+    {
+
+        if (isCreated)
+        {
+            pathFinder = transform.parent.GetComponent<PathFinder>();
+            enemy = pathFinder.enemy;
+
+            if (!isColliderSizeSet)
+            {
+                StartCoroutine(ColliderSizeSet());
+            }
+
+            gridArray = pathFinder.gridArray;
+            for (int y = 0; y < gridArray.GetLength(1); y++)
+            {
+                for (int x = 0; x < gridArray.GetLength(0); x++)
+                {
+                    if (gridArray[x, y] == this.gameObject)
+                    {
+                        gridArrayX = x;
+                        gridArrayY = y;
+                    }
+                }
+            }
+        }
+        isCreated = true;
+    }
+
 
     void Update()
     {
