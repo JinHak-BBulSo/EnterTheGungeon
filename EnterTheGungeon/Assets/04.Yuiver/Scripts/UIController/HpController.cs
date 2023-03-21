@@ -7,21 +7,28 @@ using UnityEngine.UI;
 public class HpController : MonoBehaviour
 {
     public int PlayerHp = default;
+    public int playerMaxHp = default;
+    public int PlayerShield = default;
     public const int PLAYER_Display_MAX_HP = 44;
+    public const int PLAYER_Display_MAX_Shield = 10;
 
     [ShowInInspector]
     List<HpElement> hpObjList = new List<HpElement>();
 
 
+
+
     void Start()
     {
+        PlayerShield = 2;
+        playerMaxHp = 6;
 
         for (int i = 0; i < transform.childCount; i++)
         {
             hpObjList.Add(transform.GetChild(i).GetComponent<HpElement>());
         }
 
-        SetPlayerHp(5);
+        SetPlayerHp(4);
 
     }
 
@@ -35,8 +42,9 @@ public class HpController : MonoBehaviour
     {
         PlayerHp = playerHp_;
         int tempPlayerHp = PlayerHp;
+        int ShieldIndex = -1;
 
-        for (int i = 0; i < (int)Mathf.CeilToInt(PlayerHp * 0.5f); i++)
+        for (int i = 0; i < (int)Mathf.CeilToInt(playerMaxHp * 0.5f); i++)
         {
             hpObjList[i].GetComponent<Image>().enabled = true;
             if (tempPlayerHp - 2 >= 0)
@@ -45,13 +53,18 @@ public class HpController : MonoBehaviour
                 hpObjList[i].HpImgChanger(2);
             }
             else
-            { 
+            {
+                ShieldIndex = i + 1;
                 hpObjList[i].HpImgChanger(tempPlayerHp);
             }
         }
-        for (int i = 0; i < (int)(transform.childCount - PlayerHp * 0.5f); i++)
+        for (int i = 0; i < (int)(transform.childCount - (playerMaxHp * 0.5f + PlayerShield)); i++)
         {
-            hpObjList[(int)Mathf.CeilToInt(PlayerHp * 0.5f) + i].GetComponent<Image>().enabled = false;
+            hpObjList[(int)Mathf.CeilToInt(playerMaxHp * 0.5f + PlayerShield) + i].GetComponent<Image>().enabled = false;
+        }
+        for (int i = 0; i < PlayerShield; i++)
+        {
+            hpObjList[ShieldIndex + i].HpImgChanger(3);
         }
     }
 }

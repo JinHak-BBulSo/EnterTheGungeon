@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpImg:
-  - {fileID: 21300000, guid: fa453302ee90b0d4a9f69104dfe26b01, type: 3}
-  - {fileID: 21300000, guid: d383f25a940685d45b1988955638dd4b, type: 3}
-  - {fileID: 21300000, guid: cd1c8e6ed6907584ba95896fc8ac8e22, type: 3}
+  - {fileID: 21300000, guid: c6212f8fa42e1254b838ecce3a1f4e98, type: 2}
+  - {fileID: 21300000, guid: 19d53f4ddff3f84469294845f061b6ef, type: 2}
+  - {fileID: 21300000, guid: 2c3094048985fa84f9fef6126447c8d3, type: 2}
+  - {fileID: 21300000, guid: 69f832bff5bedbd43b0502d36c658ce2, type: 2}

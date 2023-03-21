@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HpElement : MonoBehaviour
 {
     [SerializeField]
-    Sprite[] HpImg = new Sprite[3];
+    Sprite[] HpImg = new Sprite[4]; /// 0이 빈거, 1이 반만 찬거, 2가 꽉찬거, 3이 실드
 
     Image hpImage = default;
     void Start()
