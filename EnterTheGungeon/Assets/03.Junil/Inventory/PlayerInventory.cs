@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,32 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
+    // { [Junil] 인벤토리를 관리할 리스트와 딕셔너리
+
+    private int invenTabMenu = default;
+
+    private const int IEVEN_TAB_VAL = 5;
+
+    private Dictionary<string, Sprite> inventorySprite = default;
+
+    private Dictionary<string, List<GameObject>> invenDict = default;
+    private List<GameObject> weaponItems = default;
+    private List<GameObject> activeItems = default;
+    private List<GameObject> passiveItems = default;
+    // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
+
+    private const int IEVEN_TAB_ICON_CNT = 4;
+
+
+    // 인벤토리 탭 종류 | 장비, 총, 아이템, 적, 보스
+    private GameObject[] equipmentMenu = default;
+    private GameObject[] gunMenu = default;
+    private GameObject[] itemMenu = default;
+    private GameObject[] monsterMenu = default;
+    private GameObject[] bossMenu = default;
+
+
+
     // 총 아이템을 모아두는 인벤토리
     public GameObject gunsInven = default;
 
@@ -42,8 +69,37 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
+
+        equipmentMenu = new GameObject[IEVEN_TAB_ICON_CNT];
+        gunMenu = new GameObject[IEVEN_TAB_ICON_CNT];
+        itemMenu = new GameObject[IEVEN_TAB_ICON_CNT];
+        monsterMenu = new GameObject[IEVEN_TAB_ICON_CNT];
+        bossMenu = new GameObject[IEVEN_TAB_ICON_CNT];
+
         // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
         SetInventory();
+
+
+        invenTabMenu = IEVEN_TAB_VAL;
+
+
+
+        Sprite[] sprites_ = Resources.LoadAll<Sprite>("03.Junil/Inventory");
+
+
+        // 인벤토리 스프라이트 배열 선언
+        inventorySprite = new Dictionary<string, Sprite>();
+
+        for(int i = 0; i < sprites_.Length; i++)
+        {
+            inventorySprite[sprites_[i].name] = sprites_[i];
+        }
+
+
+        invenDict = new Dictionary<string, List<GameObject>>();
+        weaponItems = new List<GameObject>();
+        activeItems = new List<GameObject>();
+        passiveItems = new List<GameObject>();
 
 
 
@@ -61,12 +117,40 @@ public class PlayerInventory : MonoBehaviour
         
     }
 
+
+    /// @brief 인벤토리 탭을 어떤 걸 선택했는지 보여주는 함수
+    public void ViewTabInven()
+    {
+        
+    }
+
     
+    /// @brief 초기 인벤토리를 셋팅하는 함수
     public void SetInventory()
     {
         GameObject ammonomicMenu_ = gameObject.FindChildObj("AmmonomiconMenu");
         GameObject ammonomicList_ = ammonomicMenu_.FindChildObj("AmmonomiconList");
         GameObject ammonomicInfo_ = ammonomicMenu_.FindChildObj("AmmonomiconInfo");
+
+        GameObject invenMenu_ = ammonomicList_.FindChildObj("InventoryMenu");
+
+
+        GameObject equipmentMenuChild_ = invenMenu_.FindChildObj("01EquipmentMenu");
+        GameObject gunMenuChild_ = invenMenu_.FindChildObj("02GunMenu");
+        GameObject itemMenuChild_ = invenMenu_.FindChildObj("03ItemMenu");
+        GameObject monsterMenuChild_ = invenMenu_.FindChildObj("04MonsterMenu");
+        GameObject bossMenuChild_ = invenMenu_.FindChildObj("05BossMenu");
+
+        for (int i = 0; i < IEVEN_TAB_ICON_CNT; i++)
+        {
+            equipmentMenu[i] = equipmentMenuChild_.transform.GetChild(i).gameObject;
+            gunMenu[i] = gunMenuChild_.transform.GetChild(i).gameObject;
+            itemMenu[i] = itemMenuChild_.transform.GetChild(i).gameObject;
+            monsterMenu[i] = monsterMenuChild_.transform.GetChild(i).gameObject;
+            bossMenu[i] = bossMenuChild_.transform.GetChild(i).gameObject;
+        }
+
+
 
         GameObject inventorySetObjs_ = ammonomicList_.FindChildObj("InventorySetObjs");
 
