@@ -1,0 +1,2671 @@
+fileFormatVersion: 2
+guid: 964c9d0671c46ce4cb6b75bef92b7fec
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gorgun_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 842
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7ca54f784cff343853376433bb5820
+      internalID: -170386391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 870
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5070c2c6f875c6741805802e09ebafb5
+      internalID: 422175515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 849
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309b111bcea026d4f8eaf9068d44a0ec
+      internalID: 683097624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 786
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e1b128ecc34c547969f0ab9dd6e41f
+      internalID: 625079823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 807
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a16c20019e88141851681e47003e41
+      internalID: -1095085409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 786
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940ce8ae79293c24ca80d00996619112
+      internalID: 1744190711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 828
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48cd1ae0e1ddd14fb9e878f025d98c2
+      internalID: -375266675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 785
+        width: 26
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d057073b98fe6714f81206e7664b7d7f
+      internalID: 182221317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 750
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cf9997ab7bee04a9773999f751e60c
+      internalID: -146816449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 795
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36e91a21dccd0043abbb07e0eb3c6b5
+      internalID: 804603240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_10
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 800
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00082a306497ba45a41a037297afcfc
+      internalID: -774486713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 721
+        width: 33
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac10b96e594b8d5468d0d1a8c2e440ab
+      internalID: -1070624859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_12
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 721
+        width: 31
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4226c469e421645a9c7f321a5e1a92
+      internalID: 2114780418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 764
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ef375523fbcaf4a83eb7b8040888ae
+      internalID: 1271441933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 757
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea04eeaa266e134a98f46a12fa021e3
+      internalID: 1798682217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 730
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cab8aaa03ab614e9018bce79ab9cbc
+      internalID: -1501782732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_16
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 724
+        width: 26
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39335471ec148a9409330227f2c16210
+      internalID: 1548260318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_17
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 716
+        width: 31
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3924be711931d554d94e0518fa7cc99f
+      internalID: -1233444296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 662
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc76946984fbac46927bcf0873ac467
+      internalID: 822290373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_19
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 676
+        width: 29
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a3af45aeeda0f4aabe7b9f1173f019
+      internalID: -2097186404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 662
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fb0a391295e084da20de6aaca0658c
+      internalID: -439460590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_21
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 710
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c9dd72e443dcb4d881f234dabc6909
+      internalID: 1976834741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_22
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 700
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e50fe831cbfcd45a930880fff14982
+      internalID: -1000623372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_23
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 659
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cf6424a3a747647b04650fd18dbfa0
+      internalID: 1662411200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_24
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 662
+        width: 29
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebcca6179a9e60740bef2758747bb5c9
+      internalID: -1583569008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_25
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 654
+        width: 29
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78efdba3941e7614db6790f77056f44f
+      internalID: -1685541652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_26
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 648
+        width: 25
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee13ff3e419f11b428b94d3d01def8c8
+      internalID: -2116062808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_27
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 599
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7343666af76c04bada44d58c608b2b
+      internalID: 1959538278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_28
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 616
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f0385301911fe4a909a7d134c37a32
+      internalID: 2108290358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 607
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ede0329eebe6f4fae4b3d809e0ac7e
+      internalID: 2065905730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_30
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 651
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66582ffb994ba3147810d1eb8d7495cf
+      internalID: 688177924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_31
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 659
+        width: 53
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d128ed8b19cd7854d9427f6c7dc25bf2
+      internalID: 188520838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 604
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d3e962422f1e44f945c9d0e7774b46
+      internalID: -1991968041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_33
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 610
+        width: 55
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b8c28d01d4ee84e852d2d088f20a39
+      internalID: 305036027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_34
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 618
+        width: 55
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c1666594fe11b45af9d0930a5a7c41
+      internalID: -1347148246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_35
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 581
+        width: 30
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebdf4be4ea7a4e4b9a60fdc89389c93
+      internalID: 1012873059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_36
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 580
+        width: 28
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f5d085ce63f134f891d6932004c823
+      internalID: 90998249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_37
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 602
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f46cfe5603b634bbf9cf8f17e24969
+      internalID: -499664906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_38
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 593
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3db84b764a08784296a93bfec518d85
+      internalID: 1065261808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_39
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 536
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a1e70cd0396cc48b6089cecbf16a19
+      internalID: 352537579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_40
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 553
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c90e6dfac4c5464694306bb832b5e66
+      internalID: -682949909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_41
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 547
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21eb04a535042b24c80e4a5aaac96538
+      internalID: -343478913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_42
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 570
+        width: 59
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e618b5edf7dc6d943afc2aa09be00b8f
+      internalID: -738668601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 577
+        width: 56
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a6780dded4f2643a7efeeaabbbd649
+      internalID: -1738577954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_44
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 541
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81f04084f5fb7642b858b9f66189887
+      internalID: 543396410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_45
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 517
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766a443a4040797489566ff871651ba6
+      internalID: 193754936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_46
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 552
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1643d397949171a4d8e04fc89840a53a
+      internalID: 523714188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_47
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 556
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f5760bd90f7304d8dc72db538b587a
+      internalID: -1345943062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_48
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 556
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c92c5a2afd07b14791966f9442bf87c
+      internalID: -915218327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 490
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbba6afd7d287c146a269721e8bbd464
+      internalID: 2035312132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_50
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 484
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524bbbc3502943348b647d0267239bd4
+      internalID: 1865756874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_51
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 529
+        width: 58
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021f984f69811924e9302df8679a8356
+      internalID: -949783850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_52
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 538
+        width: 61
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d7ce84365d0fb48973de3f0ce584d9
+      internalID: -543749432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_53
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 478
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d508b23c2f64af49a17595a1568c760
+      internalID: 1802480700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_54
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 512
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be055688bac2124fad44489e1bb9b4b
+      internalID: -932134913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_55
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 516
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241f050f52f20ef438b4dcbdae9a0f88
+      internalID: -927992486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_56
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 474
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b3156c22198cb468ad2d79a39a4a92
+      internalID: 2134361449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_57
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 489
+        width: 60
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7f7a7dc4bca734fb4f1e8accae910c
+      internalID: 1231466601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_58
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 498
+        width: 60
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489640f8eb290444897a0748672f5fa6
+      internalID: -775960796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_59
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 454
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba8d599035f47e4897b40d93256083c
+      internalID: -163760601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_60
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 472
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3929daca7ab7b444a72a5d45fce6b67
+      internalID: -390403534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_61
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 476
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb93f5d5bf4f374aa2be674c6981cb0
+      internalID: 364695511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_62
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 411
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adec8a33d9f101447a14098b62ff3ca4
+      internalID: -1322291406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_63
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 428
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e7090aecd4e864fb7cc0632a1c3f29
+      internalID: 1321405719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_64
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 437
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe84aa7498378847be10ddd1f9b3d32
+      internalID: 1862746866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_65
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 449
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09e66107aeb6e348954f76ddc3fb322
+      internalID: 460371190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_66
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 458
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728e9efd0c2b2e94e82b71223186f324
+      internalID: 220876846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_67
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 415
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593a003c00843864d8e33dbefa3302e8
+      internalID: -194776257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_69
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 435
+        width: 60
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ee22592d749d14087eb98b1655221e
+      internalID: 605528656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_70
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 415
+        width: 57
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcd0df012babb940916a8a96cd24f97
+      internalID: 1933416908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_71
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 395
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b22e08e675e9f4c83e256040119f7f
+      internalID: -1656146957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_73
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 402
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cead69e689564b47b18f9a17e3c4899
+      internalID: 1629791800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_75
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bceedb0b6ffbcaf4eb2443f6f12f65a4
+      internalID: 1358154368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_76
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 365
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81993f8b1457f134d85369d578a38145
+      internalID: -1080932465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_77
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 388
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b131d39e9b9c3dd4dbb413722c827f7d
+      internalID: -566258891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_79
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 366
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2799ee36e23133f449f11668952a1956
+      internalID: 997356121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_80
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 347
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26ed6d8508e5bd439a20b7578a271fd
+      internalID: 1893739087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_81
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 368
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaaad0828a0d51d4bb42a18f367df41d
+      internalID: 113213190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_82
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 396
+        width: 64
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb7c31da3d74e2488b9dbaa1bef1cd1
+      internalID: 1306448525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_85
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 307
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066854356d2dbe947b1915926c0e15e1
+      internalID: 423515955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_86
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 332
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf36cd2fe308da147b13be3c7353cff8
+      internalID: -987193147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_88
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 317
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e6abd18a0912040a230da11178f5ef
+      internalID: -1494757950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_89
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 342
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fd4b1981f43494ca30a6ebbb972706
+      internalID: 1805628776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_90
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 308
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6497ed71e7ff7a409c09cdc08b1842b
+      internalID: -1995578632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_91
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 349
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061fca069ca09764cb48f51b7caef494
+      internalID: -1909015726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_96
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 275
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5ee2ad0b9b5864c9d52a420421d535
+      internalID: 1436142490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_97
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 293
+        width: 57
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c40387367b3bda4f8dbbe07740ec1f9
+      internalID: -72054775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_98
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 269
+        width: 53
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de81681e656b424eae988a598da12b7
+      internalID: 73627169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_102
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 220
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecdb136fa94c71418af1b505b8e7b70
+      internalID: 931479623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_103
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 237
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771b3b9a850fd454695b069dca04118b
+      internalID: 1358598657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_104
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 270
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c776ee3c9e32b41968ebc9f02d82b2
+      internalID: -2091190571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_106
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 205
+        width: 27
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba04017ffeab12e498b45d9cedc4dd90
+      internalID: -932737813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_107
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 244
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b62cb40d0237ed4394c5dc6a5352a70
+      internalID: 1616086089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_108
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 150
+        width: 57
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6083ebd212e6b444fae9348b231a2789
+      internalID: -617990354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_109
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 234
+        width: 33
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e21e835377aff44783a32dc6535b710
+      internalID: -1712087371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_110
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 189
+        width: 53
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68e41091d92d2245b5ea9ec7ff31d3d
+      internalID: -1901567100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_111
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 171
+        width: 74
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5767fd78e6db3949b529dde4b1e7cb8
+      internalID: 2127273751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_114
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 151
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1affd835a44a64787a13be6138b3ff
+      internalID: -42469185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_115
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 210
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b0eda3c3943944fba754ec198fb414
+      internalID: 1442078941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_116
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 198
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122c096fa343e6540906e694c58674de
+      internalID: 1095912227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_119
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 145
+        width: 89
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a13fe40d0c42b4b9eda402592be27a
+      internalID: -1926781947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_120
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 192
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d14179b30ee384b8ff06a4ec2b6dc5
+      internalID: 858371304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_122
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 192
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1470a255c07afe408e8f837617f6ce0
+      internalID: -1190095303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_123
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 161
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a31c10262f135148a8186f6d9d98161
+      internalID: -1902801869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_126
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 172
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861d9f8a996e6c74ab1ec77a29946d4c
+      internalID: 2134340201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_127
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 153
+        width: 15
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4eb5f8c37e2a34f83628dacb484eee
+      internalID: 1357367908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_129
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 97
+        width: 55
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9814dee5715e0e147934a6dd02d40c77
+      internalID: -1712186327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_130
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 94
+        width: 95
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510a33c6212ca3846bedf09deaa4eee6
+      internalID: 543724915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_131
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 146
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54009e5b299a1e42a5b767ebc3aa8b8
+      internalID: -1146609426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_170
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 84
+        width: 74
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e899cc27801307947be051f1288246db
+      internalID: 209923679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_174
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7606c51a801bb084c96ad0c12715b6d1
+      internalID: -1763472515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_68
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 291
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff981113ecd38004fb68b0fdf2c9ffeb
+      internalID: 1965362195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun_72
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 277
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d164d09926064ef4a99e231b92ea4c47
+      internalID: -1277333767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      gorgun_0: -170386391
+      gorgun_1: 422175515
+      gorgun_10: -774486713
+      gorgun_100: -1004104794
+      gorgun_101: -7228297
+      gorgun_102: 931479623
+      gorgun_103: 1358598657
+      gorgun_104: -2091190571
+      gorgun_105: 613188631
+      gorgun_106: -932737813
+      gorgun_107: 1616086089
+      gorgun_108: -617990354
+      gorgun_109: -1712087371
+      gorgun_11: -1070624859
+      gorgun_110: -1901567100
+      gorgun_111: 2127273751
+      gorgun_112: -1431371044
+      gorgun_113: -1874894932
+      gorgun_114: -42469185
+      gorgun_115: 1442078941
+      gorgun_116: 1095912227
+      gorgun_117: 1593255290
+      gorgun_118: -867394164
+      gorgun_119: -1926781947
+      gorgun_12: 2114780418
+      gorgun_120: 858371304
+      gorgun_121: 126585346
+      gorgun_122: -1190095303
+      gorgun_123: -1902801869
+      gorgun_124: 1495859171
+      gorgun_125: 2118212431
+      gorgun_126: 2134340201
+      gorgun_127: 1357367908
+      gorgun_128: 906846754
+      gorgun_129: -1712186327
+      gorgun_13: 1271441933
+      gorgun_130: 543724915
+      gorgun_131: -1146609426
+      gorgun_132: -410220065
+      gorgun_133: -70475102
+      gorgun_134: -1475316038
+      gorgun_135: 978815455
+      gorgun_136: -1660287453
+      gorgun_137: 1321899630
+      gorgun_138: 1229585086
+      gorgun_139: 1002803188
+      gorgun_14: 1798682217
+      gorgun_140: -1184435005
+      gorgun_141: 907572167
+      gorgun_142: -348730560
+      gorgun_143: -1550422991
+      gorgun_144: -103797859
+      gorgun_145: -920990505
+      gorgun_146: -1809252215
+      gorgun_147: 2095129624
+      gorgun_148: 746579169
+      gorgun_149: -1686031012
+      gorgun_15: -1501782732
+      gorgun_150: -1155632601
+      gorgun_151: 1290000276
+      gorgun_152: 608349844
+      gorgun_153: -1722403566
+      gorgun_154: 265174593
+      gorgun_155: 1125535993
+      gorgun_156: 319242081
+      gorgun_157: 1326421473
+      gorgun_158: 2094481435
+      gorgun_159: -1201796615
+      gorgun_16: 1548260318
+      gorgun_160: 1314238354
+      gorgun_161: -872928055
+      gorgun_162: -1956556536
+      gorgun_163: 1590649808
+      gorgun_164: 391424568
+      gorgun_165: 570052527
+      gorgun_166: 1701369078
+      gorgun_167: 1295761831
+      gorgun_168: 348801256
+      gorgun_169: -416765722
+      gorgun_17: -1233444296
+      gorgun_170: 209923679
+      gorgun_171: 2035007049
+      gorgun_172: -1421769280
+      gorgun_173: 982212066
+      gorgun_174: -1763472515
+      gorgun_18: 822290373
+      gorgun_19: -2097186404
+      gorgun_2: 683097624
+      gorgun_20: -439460590
+      gorgun_21: 1976834741
+      gorgun_22: -1000623372
+      gorgun_23: 1662411200
+      gorgun_24: -1583569008
+      gorgun_25: -1685541652
+      gorgun_26: -2116062808
+      gorgun_27: 1959538278
+      gorgun_28: 2108290358
+      gorgun_29: 2065905730
+      gorgun_3: 625079823
+      gorgun_30: 688177924
+      gorgun_31: 188520838
+      gorgun_32: -1991968041
+      gorgun_33: 305036027
+      gorgun_34: -1347148246
+      gorgun_35: 1012873059
+      gorgun_36: 90998249
+      gorgun_37: -499664906
+      gorgun_38: 1065261808
+      gorgun_39: 352537579
+      gorgun_4: -1095085409
+      gorgun_40: -682949909
+      gorgun_41: -343478913
+      gorgun_42: -738668601
+      gorgun_43: -1738577954
+      gorgun_44: 543396410
+      gorgun_45: 193754936
+      gorgun_46: 523714188
+      gorgun_47: -1345943062
+      gorgun_48: -915218327
+      gorgun_49: 2035312132
+      gorgun_5: 1744190711
+      gorgun_50: 1865756874
+      gorgun_51: -949783850
+      gorgun_52: -543749432
+      gorgun_53: 1802480700
+      gorgun_54: -932134913
+      gorgun_55: -927992486
+      gorgun_56: 2134361449
+      gorgun_57: 1231466601
+      gorgun_58: -775960796
+      gorgun_59: -163760601
+      gorgun_6: -375266675
+      gorgun_60: -390403534
+      gorgun_61: 364695511
+      gorgun_62: -1322291406
+      gorgun_63: 1321405719
+      gorgun_64: 1862746866
+      gorgun_65: 460371190
+      gorgun_66: 220876846
+      gorgun_67: -194776257
+      gorgun_68: 1965362195
+      gorgun_69: 605528656
+      gorgun_7: 182221317
+      gorgun_70: 1933416908
+      gorgun_71: -1656146957
+      gorgun_72: -1277333767
+      gorgun_73: 1629791800
+      gorgun_74: -45447383
+      gorgun_75: 1358154368
+      gorgun_76: -1080932465
+      gorgun_77: -566258891
+      gorgun_78: 1115652911
+      gorgun_79: 997356121
+      gorgun_8: -146816449
+      gorgun_80: 1893739087
+      gorgun_81: 113213190
+      gorgun_82: 1306448525
+      gorgun_83: 621249190
+      gorgun_84: -913449629
+      gorgun_85: 423515955
+      gorgun_86: -987193147
+      gorgun_87: -871392113
+      gorgun_88: -1494757950
+      gorgun_89: 1805628776
+      gorgun_9: 804603240
+      gorgun_90: -1995578632
+      gorgun_91: -1909015726
+      gorgun_92: 728315098
+      gorgun_93: 1065754969
+      gorgun_94: -1212414434
+      gorgun_95: 1199277933
+      gorgun_96: 1436142490
+      gorgun_97: -72054775
+      gorgun_98: 73627169
+      gorgun_99: -1892186756
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

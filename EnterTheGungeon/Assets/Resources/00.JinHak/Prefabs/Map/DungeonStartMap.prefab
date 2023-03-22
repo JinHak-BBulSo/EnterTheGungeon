@@ -86,6 +86,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 495369536383558223}
+  - component: {fileID: -6641809427068937447}
+  - component: {fileID: 5649636485529515000}
   m_Layer: 0
   m_Name: DungeonStartMap
   m_TagString: Untagged
@@ -111,6 +113,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6641809427068937447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495369536383558220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2097cf72896884b9b69553ed82c4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSize: {x: 22, y: 22}
+--- !u!114 &5649636485529515000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495369536383558220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ad44e05f42834ca87cbb1278982f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &495369536499157059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1027,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -225272133
   m_SortingLayer: 16
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf7227d228b7db64585183a1003bdfdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
