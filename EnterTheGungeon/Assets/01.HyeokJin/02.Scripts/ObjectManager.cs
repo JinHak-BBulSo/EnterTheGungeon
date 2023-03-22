@@ -11,11 +11,15 @@ public class ObjectManager : MonoBehaviour
     [SerializeField] public GameObject bulletTypeAPrefab = default;
     [SerializeField] public GameObject bulletTypeBPrefab = default;
     [SerializeField] public GameObject bulletTypeCPrefab = default;
+    [SerializeField] public GameObject bulletTypeDPrefab = default;
+    [SerializeField] public GameObject bulletTypeEPrefab = default;
 
     GameObject[] bulletBasic = default;
     GameObject[] bulletTypeA = default;
     GameObject[] bulletTypeB = default;
     GameObject[] bulletTypeC = default;
+    GameObject[] bulletTypeD = default;
+    GameObject[] bulletTypeE = default;
 
     GameObject[] targetPool = default;
 
@@ -27,6 +31,8 @@ public class ObjectManager : MonoBehaviour
         bulletTypeA = new GameObject[1000];
         bulletTypeB = new GameObject[500];
         bulletTypeC = new GameObject[10];
+        bulletTypeD = new GameObject[10];
+        bulletTypeE = new GameObject[50];
 
         Generate();
     }   //  Awake()
@@ -66,6 +72,20 @@ public class ObjectManager : MonoBehaviour
             bulletTypeC[index] = Instantiate(bulletTypeCPrefab);
             bulletTypeC[index].SetActive(false);
         }
+
+        //  bulletTypeD : Grenade
+        for (int index = 0; index < bulletTypeD.Length; index++)
+        {
+            bulletTypeD[index] = Instantiate(bulletTypeDPrefab);
+            bulletTypeD[index].SetActive(false);
+        }
+
+        //  bulletTypeE : Long
+        for (int index = 0; index < bulletTypeE.Length; index++)
+        {
+            bulletTypeE[index] = Instantiate(bulletTypeEPrefab);
+            bulletTypeE[index].SetActive(false);
+        }
     }   //  Generate()
 
     //  [YHJ] 2023-03-18
@@ -85,6 +105,12 @@ public class ObjectManager : MonoBehaviour
                 break;
             case "Bullet_TypeC":
                 targetPool = bulletTypeC;
+                break;
+            case "Bullet_TypeD":
+                targetPool = bulletTypeD;
+                break;
+            case "Bullet_TypeE":
+                targetPool = bulletTypeE;
                 break;
         }
 
@@ -117,6 +143,12 @@ public class ObjectManager : MonoBehaviour
                 break;
             case "Bullet_TypeC":
                 targetPool = bulletTypeC;
+                break;
+            case "Bullet_TypeD":
+                targetPool = bulletTypeD;
+                break;
+            case "Bullet_TypeE":
+                targetPool = bulletTypeE;
                 break;
         }
 
