@@ -19,8 +19,8 @@ public class TitleButtonHandler : BaseButtonHandler, IPointerEnterHandler, IPoin
         switch (buttonIndex)
         {
             case 0:
-                Debug.Log("게임 플레이 씬 이름을 넣어주세요. 아직 설정하지 않았습니다.");
-                //GFunc.LoadScene("");
+                //Debug.Log("게임 플레이 씬 이름을 넣어주세요. 아직 설정하지 않았습니다.");
+                GFunc.LoadScene("03.LobbyScene");
                 break;
             case 1:
                 titleButtonController.OptionMenuActive();

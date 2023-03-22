@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Schema;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
@@ -99,6 +98,7 @@ public class MapGenerator : MonoBehaviour
         ColliderSizeSet();
         wallComposite.isTrigger = false;*/
         ColliderSizeSet();
+        StartCoroutine(AccessRoomLineColEnableFalse(lineComposite));
     }
 
     private void ColliderSizeSet()
@@ -108,11 +108,11 @@ public class MapGenerator : MonoBehaviour
             BoxCollider2D childCollider_ = mapAccessWall.transform.GetChild(i).GetComponent<BoxCollider2D>();
             if(childCollider_.size.x > 0.6)
             {
-                childCollider_.size = new Vector2(childCollider_.size.x * 0.9f, 0.3f);
+                childCollider_.size = new Vector2(childCollider_.size.x, 0.3f);
             }
             else
             {
-                childCollider_.size = new Vector2(0.3f, childCollider_.size.y * 0.9f);
+                childCollider_.size = new Vector2(0.3f, childCollider_.size.y);
             }
             childCollider_.isTrigger = false;
         }
@@ -677,5 +677,11 @@ public class MapGenerator : MonoBehaviour
 
         DrawAccessLine(startLeft_, endLeft_, middleLeft_, middleLeft2_, roomWall2);
         DrawAccessLine(startRight_, endRight_, middleRight_, middleRight2_, roomWall2);
+    }
+
+    IEnumerator AccessRoomLineColEnableFalse(CompositeCollider2D lineComposite_)
+    {
+        yield return null;
+        lineComposite_.enabled = false;
     }
 }
