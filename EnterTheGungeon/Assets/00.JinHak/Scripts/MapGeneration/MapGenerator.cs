@@ -108,11 +108,11 @@ public class MapGenerator : MonoBehaviour
             BoxCollider2D childCollider_ = mapAccessWall.transform.GetChild(i).GetComponent<BoxCollider2D>();
             if(childCollider_.size.x > 0.6)
             {
-                childCollider_.size = new Vector2(childCollider_.size.x * 0.8f, 0.3f);
+                childCollider_.size = new Vector2(childCollider_.size.x * 0.9f, 0.3f);
             }
             else
             {
-                childCollider_.size = new Vector2(0.3f, childCollider_.size.y * 0.8f);
+                childCollider_.size = new Vector2(0.3f, childCollider_.size.y * 0.9f);
             }
             childCollider_.isTrigger = false;
         }
@@ -306,7 +306,7 @@ public class MapGenerator : MonoBehaviour
             RoomAccess(nowNode_.rightNode, height_ + 1);
         }
     }
-    private void SetSpecialRoom()
+    private void SetStartRoom()
     {
         List<int> accessRoomIndex_ = new List<int>{ 0, 4, 8, 15};
 
@@ -532,7 +532,7 @@ public class MapGenerator : MonoBehaviour
             DrawAccessLine(start_, end_, middle_, middle2_);
         }
 
-        SetSpecialRoom();
+        SetStartRoom();
     }
     private void DrawAccessLine(Vector2 start_, Vector2 end_)
     {
