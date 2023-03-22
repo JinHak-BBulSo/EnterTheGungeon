@@ -6,19 +6,21 @@ using UnityEngine.UI;
 public class EnemyManager : GSingleton<EnemyManager>
 {
     public bool isTest;
+    public bool isBossTest;
     EnemyData enemyData;
     GameObject enemyPrefab;
+    GameObject bossPrefab;
     GameObject weapon;
 
     public List<string> enemyName = new List<string> { "bulletKin", "bandanaBulletKin" };
 
-    public void CreateEnemy(string enemyName)
+    public void CreateEnemy(string enemyName, Transform transform_)
     {
         enemyData = Resources.Load<EnemyData>($"02.HT/ScriptableObjects/Enemies/{enemyName}");
 
         enemyPrefab = Resources.Load<GameObject>("02.HT/Prefabs/EnemyPrefab");
 
-        GameObject clone = Instantiate(enemyPrefab, GameObject.Find("TestRoom").transform);
+        GameObject clone = Instantiate(enemyPrefab, transform_);
         if (enemyData.Weapon.Count > 0)
         {
             int weaponNum = Random.Range(0, enemyData.Weapon.Count);
@@ -51,7 +53,11 @@ public class EnemyManager : GSingleton<EnemyManager>
         //Status 설정
         clone.GetComponent<TestEnemy>().maxHp = enemyData.EnemyHp;
         clone.GetComponent<TestEnemy>().moveSpeed = enemyData.EnemyMoveSpeed;
-
-
     }
+
+    public void CreateBoss(GameObject bossPrefab_, Transform transform_)
+    {
+        GameObject clone = Instantiate(bossPrefab_, transform_);
+    }
+
 }

@@ -37,7 +37,7 @@ public class PathFinder : MonoBehaviour
     public GameObject checkGrid;
     bool isInitPathFind;
 
-    bool isFinPathFind;
+    public bool isFinPathFind;
     public GameObject nextCloseListObject;
 
     // { Var for CompletePath
@@ -226,7 +226,8 @@ public class PathFinder : MonoBehaviour
             }
             else { }
             enemy.GetComponent<TestEnemy>().isPathFind = false;
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+            //Destroy(this.gameObject);
 
 
 

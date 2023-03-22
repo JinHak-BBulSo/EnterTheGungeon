@@ -38,6 +38,7 @@ public class PathFinderGrid : MonoBehaviour
     public bool isInOpenList;
 
     bool isCreated;
+    ObjectPool objectPool;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class PathFinderGrid : MonoBehaviour
         defaultName = this.name;
 
         pathFinder = transform.parent.GetComponent<PathFinder>();
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
 
 
         player = GameObject.FindWithTag("Player");
@@ -76,9 +78,10 @@ public class PathFinderGrid : MonoBehaviour
     }
     private void OnEnable()
     {
-
+        Debug.Log("Enable");
         if (isCreated)
         {
+            objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
             pathFinder = transform.parent.GetComponent<PathFinder>();
             enemy = pathFinder.enemy;
 
@@ -101,6 +104,20 @@ public class PathFinderGrid : MonoBehaviour
             }
         }
         isCreated = true;
+    }
+
+
+    bool isFirstActiveFalse;
+    private void OnDisable()
+    {
+        Debug.Log("Disable");
+        if (isFirstActiveFalse)
+        {
+            objectPool.ReturnObject(this.gameObject, 1);
+        }
+        isFirstActiveFalse = true;
+
+
     }
 
 

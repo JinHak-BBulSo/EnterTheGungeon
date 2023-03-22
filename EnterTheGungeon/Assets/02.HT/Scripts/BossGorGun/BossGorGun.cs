@@ -169,9 +169,16 @@ public class BossGorGun : MonoBehaviour
             {
                 moveSpeed = defaultMoveSpeed;
                 transform.rotation = defaultRotation;
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, moveSpeed);
+                Vector2 dir_ = player.transform.position - transform.position;
+                rigid.velocity = dir_.normalized * moveSpeed;
+
+                //transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, moveSpeed);
             }
-            else { }
+            else
+            {
+                Vector2 dir_ = player.transform.position - transform.position;
+                rigid.velocity = Vector2.zero;
+            }
         }
     }
 

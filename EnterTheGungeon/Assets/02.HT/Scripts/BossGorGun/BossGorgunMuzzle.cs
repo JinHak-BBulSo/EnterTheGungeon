@@ -86,18 +86,30 @@ public class BossGorgunMuzzle : MonoBehaviour
                 }
             }
 
-            GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-            clone_.transform.position = transform.position;
-            clone_.GetComponent<TestBullet>().bulletType = 0;
-            clone_.GetComponent<RectTransform>().localScale = Vector3.one;
-
-            xValue = clone_.transform.position.x - bossGorgun.position.x;
-            yValue = clone_.transform.position.y - bossGorgun.position.y;
-
-            directionForSummonBullet = new Vector2(xValue, yValue);
-            clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
+            if (!isDelayEnd)
+            {
+                StartCoroutine(ShotDelay());
+            }
         }
     }
+    bool isDelayEnd;
+    IEnumerator ShotDelay()
+    {
+        isDelayEnd = true;
+        yield return new WaitForSeconds(0.05f);
+        GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+        clone_.transform.position = transform.position;
+        clone_.GetComponent<TestBullet>().bulletType = 0;
+        clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+
+        xValue = clone_.transform.position.x - bossGorgun.position.x;
+        yValue = clone_.transform.position.y - bossGorgun.position.y;
+
+        directionForSummonBullet = new Vector2(xValue, yValue);
+        clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
+        isDelayEnd = false;
+    }
+
     public void MoveCheck()
     {
         if (isLeft && isMuzzlePositionSet)

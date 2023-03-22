@@ -83,6 +83,7 @@ public class BossGorgunBody : MonoBehaviour
 
     public void AttackPattern3(int rotateEmptySpace_)
     {
+        int patternBulletNum_ = 0;
         for (float i = 0; i <= 360; i += 10)
         {
             if (i >= 0 + rotateEmptySpace_ && i < 45 + rotateEmptySpace_ || i >= 120 + rotateEmptySpace_ && i < 165 + rotateEmptySpace_ || i >= 240 + rotateEmptySpace_ && i < 285 + rotateEmptySpace_)
@@ -90,6 +91,9 @@ public class BossGorgunBody : MonoBehaviour
                 GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
                 clone_.transform.position = eye.transform.position;
                 clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                clone_.name = $"{patternBulletNum_}";
+                clone_.GetComponent<TestBullet>().patternBulletNumber = patternBulletNum_;
+                patternBulletNum_++;
 
                 clone_.GetComponent<TestBullet>().isGorgunBullet = true;
 

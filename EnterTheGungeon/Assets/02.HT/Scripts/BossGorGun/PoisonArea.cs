@@ -40,7 +40,7 @@ public class PoisonArea : MonoBehaviour
         {
 
             StartCoroutine(SpreadPoison());
-            StartCoroutine(DestroyObject());
+            StartCoroutine(ReturnObject());
         }
         isCreated = true;
     }
@@ -58,12 +58,13 @@ public class PoisonArea : MonoBehaviour
         }
     }
 
-    IEnumerator DestroyObject()
+    IEnumerator ReturnObject()
     {
         yield return new WaitForSeconds(5);
         sizeX = defaultSizeX;
         sizeY = defaultSizeY;
         rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+        StopAllCoroutines();
         objectPool.ReturnObject(this.gameObject, 2);
         //Destroy(this.gameObject);
     }

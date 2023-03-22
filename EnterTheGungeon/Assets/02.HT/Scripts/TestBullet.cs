@@ -90,6 +90,8 @@ public class TestBullet : MonsterBullets
         isGorgunBullet = false;
         rigid.velocity = Vector3.zero;
         rectTransform.rotation = Quaternion.Euler(Vector3.zero);
+        isCheckAngle = false;
+        StopAllCoroutines();
         objectPool.ReturnObject(this.gameObject, 1);
         //Destroy(this.gameObject);
     }

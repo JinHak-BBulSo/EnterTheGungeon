@@ -32,7 +32,7 @@ public class TestEnemy : MonoBehaviour
     bool isTargetLeftBack;
     bool isTargetRightBack;
 
-    bool isMove;
+    public bool isMove;
     bool IsSpawnEnd;
     bool isAttack;
 
@@ -154,6 +154,7 @@ public class TestEnemy : MonoBehaviour
         else
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
         FindPlayerDirection();
@@ -176,7 +177,9 @@ public class TestEnemy : MonoBehaviour
     {
         isMove = true;
 
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
+        GetComponent<Rigidbody2D>().velocity = direction.normalized * moveSpeed * 10;
+
+        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
     }
     void Attack()
     {
@@ -223,10 +226,11 @@ public class TestEnemy : MonoBehaviour
                 float[] yPos_ = { -45, -30, -15, 0, 15, 30, 45, 45, 45, 45, 40, 20, 5, 0, 0, 0, -15, -30, -45 };
                 for (int i = 0; i < 19; i++)
                 {
-                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                     clone_.GetComponent<TestBullet>().bulletType = 1;
-                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     clone_.transform.localPosition = new Vector2(transform.localPosition.x + xPos_[i], transform.localPosition.y + yPos_[i]);
+                    //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     yield return new WaitForSeconds(0.03f);
                 }
             }
@@ -234,9 +238,11 @@ public class TestEnemy : MonoBehaviour
             {
                 for (float i = 0; i <= 360; i += 10)
                 {
-                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
-                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
 
                     angleForSummonBullet = i * Mathf.PI / 180.0f;
                     xValue = Mathf.Cos(angleForSummonBullet);
@@ -250,17 +256,21 @@ public class TestEnemy : MonoBehaviour
                 }
                 for (int i = 0; i <= 60; i += 10)
                 {
-                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
-                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
                     StartCoroutine(WaitToSummonAllBullet(clone_, clone_.transform.up.normalized));
                 }
                 for (int i = 0; i >= -60; i -= 10)
                 {
-                    GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                    GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
-                    clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                    //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
                     StartCoroutine(WaitToSummonAllBullet(clone_, -clone_.transform.up.normalized));
                 }
@@ -271,9 +281,11 @@ public class TestEnemy : MonoBehaviour
         {
             for (float i = minDistArrayIndex * 45; i <= minDistArrayIndex * 45 + 90; i += 5)
             {
-                GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+                GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                 clone_.GetComponent<TestBullet>().bulletType = 0;
-                clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
 
                 angleForSummonBullet = i * Mathf.PI / 180.0f;
                 xValue = Mathf.Cos(angleForSummonBullet);
@@ -331,18 +343,27 @@ public class TestEnemy : MonoBehaviour
         }
     }
 
+    bool isCreatedPathFinder;
     void PathFind()
     {
-        pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
-        pathFinder.transform.SetParent(transform.parent);
-        pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
-        pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
-        pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
+        if (!isCreatedPathFinder)
+        {
+            pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
+            pathFinder.transform.SetParent(transform.parent);
+            pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
+            pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
+            pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
 
-        pathFinder.name = $"{this.name}" + "PathFinder";
+            pathFinder.name = $"{this.name}" + "PathFinder";
 
-        pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
+            pathFinder.GetComponent<PathFinder>().enemy = this.gameObject;
+        }
+        else
+        {
+            pathFinder.SetActive(true);
+        }
         isPathFind = true;
+        isCreatedPathFinder = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
