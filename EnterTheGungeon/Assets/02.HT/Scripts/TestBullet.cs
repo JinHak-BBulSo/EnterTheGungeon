@@ -15,19 +15,22 @@ public class TestBullet : MonsterBullets
 
     public bool isGorgunBullet;
     bool isGorgunBulletCheck;
-    Image image;
+    SpriteRenderer image;
     Rigidbody2D rigid;
     public int patternBulletNumber;
     ObjectPool objectPool;
     bool isCreated;
     RectTransform rectTransform;
 
+    public string enemyName;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        image = GetComponent<Image>();
+        image = GetComponent<SpriteRenderer>();
+
         rigid = GetComponent<Rigidbody2D>();
         rectTransform = GetComponent<RectTransform>();
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
@@ -82,12 +85,23 @@ public class TestBullet : MonsterBullets
             objectPool.ReturnObject(this.gameObject, 1);
             //Destroy(this.gameObject);
         }
+        else
+        {
+            if (other.tag == "Untagged" && other.tag == "Wall")
+            {
+                isGorgunBullet = false;
+                objectPool.ReturnObject(this.gameObject, 1);
+            }
+        }
     }
 
     IEnumerator ReturnBullet()
     {
         yield return new WaitForSeconds(5);
+        enemyName = default;
         isGorgunBullet = false;
+        image.enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
         rigid.velocity = Vector3.zero;
         rectTransform.rotation = Quaternion.Euler(Vector3.zero);
         isCheckAngle = false;

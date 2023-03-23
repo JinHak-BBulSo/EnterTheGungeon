@@ -63,8 +63,8 @@ public class ObjectPool : MonoBehaviour
             if (!poolName_[i].activeInHierarchy)
             {
                 //poolName_[i].transform.SetParent(transform_);
-                // poolName_[i].SetActive(true);
-                // return poolName_[i];
+                poolName_[i].SetActive(true);
+                return poolName_[i];
             }
         }
 

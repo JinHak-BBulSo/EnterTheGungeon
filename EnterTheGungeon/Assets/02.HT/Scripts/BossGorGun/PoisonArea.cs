@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PoisonArea : MonoBehaviour
 {
+    public string enemyName;
     public float spreadSpeed;
     public float sizeX;
     float sizeY;
@@ -11,7 +12,6 @@ public class PoisonArea : MonoBehaviour
     float defaultSizeY;
 
     public RectTransform rectTransform;
-    CircleCollider2D coillder;
     ObjectPool objectPool;
 
     bool isCreated;
@@ -19,11 +19,12 @@ public class PoisonArea : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        coillder = GetComponent<CircleCollider2D>();
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
 
-        defaultSizeX = rectTransform.sizeDelta.x;
-        defaultSizeY = rectTransform.sizeDelta.y;
+        //defaultSizeX = rectTransform.sizeDelta.x;
+        defaultSizeX = rectTransform.localScale.x;
+        //defaultSizeY = rectTransform.sizeDelta.y;
+        defaultSizeY = rectTransform.localScale.y;
         gameObject.SetActive(false);
         //StartCoroutine(SpreadPoison());
         //StartCoroutine(DestroyObject());
@@ -31,7 +32,6 @@ public class PoisonArea : MonoBehaviour
 
     private void Update()
     {
-        coillder.radius = sizeX / 2;
     }
 
     private void OnEnable()
@@ -47,13 +47,16 @@ public class PoisonArea : MonoBehaviour
 
     IEnumerator SpreadPoison()
     {
-        while (sizeX < 200)
+        while (sizeX < 300)
         {
-            sizeX = rectTransform.sizeDelta.x;
-            sizeY = rectTransform.sizeDelta.y;
+            //sizeX = rectTransform.sizeDelta.x;
+            sizeX = rectTransform.localScale.x;
+            //sizeY = rectTransform.sizeDelta.y;
+            sizeY = rectTransform.localScale.y;
             sizeX += spreadSpeed * Time.deltaTime;
             sizeY += spreadSpeed * Time.deltaTime;
-            rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+            //rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+            rectTransform.localScale = new Vector2(sizeX, sizeY);
             yield return null;
         }
     }
@@ -61,9 +64,11 @@ public class PoisonArea : MonoBehaviour
     IEnumerator ReturnObject()
     {
         yield return new WaitForSeconds(5);
+        enemyName = default;
         sizeX = defaultSizeX;
         sizeY = defaultSizeY;
-        rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+        //rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+        rectTransform.localScale = new Vector2(sizeX, sizeY);
         StopAllCoroutines();
         objectPool.ReturnObject(this.gameObject, 2);
         //Destroy(this.gameObject);

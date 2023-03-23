@@ -38,6 +38,8 @@ public class BossGorgunMuzzle : MonoBehaviour
     List<GameObject> enemyBulletPool;
     GameObject enemyBulletPrefab;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,7 +102,8 @@ public class BossGorgunMuzzle : MonoBehaviour
         GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
         clone_.transform.position = transform.position;
         clone_.GetComponent<TestBullet>().bulletType = 0;
-        clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+        clone_.GetComponent<TestBullet>().enemyName = bossGorgun.GetComponent<BossGorGun>().enemyName;
+        //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
 
         xValue = clone_.transform.position.x - bossGorgun.position.x;
         yValue = clone_.transform.position.y - bossGorgun.position.y;

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BossGorGun : MonoBehaviour
 {
+    public string enemyName;
+    
     TestEnemyEye eye;
     GameObject player;
     Quaternion defaultRotation;
@@ -62,6 +64,8 @@ public class BossGorGun : MonoBehaviour
 
     void Start()
     {
+        enemyName = "Gorgun";
+
         maxHp = 975;
         currentHp = 975;
 
@@ -167,10 +171,13 @@ public class BossGorGun : MonoBehaviour
             //조건 추가 공격중이 아닐때
             if (distance > 300)
             {
-                moveSpeed = defaultMoveSpeed;
-                transform.rotation = defaultRotation;
-                Vector2 dir_ = player.transform.position - transform.position;
-                rigid.velocity = dir_.normalized * moveSpeed;
+                if (!isAttackPattern)
+                {
+                    moveSpeed = defaultMoveSpeed;
+                    transform.rotation = defaultRotation;
+                    Vector2 dir_ = player.transform.position - transform.position;
+                    rigid.velocity = dir_.normalized * moveSpeed;
+                }
 
                 //transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, moveSpeed);
             }
@@ -201,6 +208,7 @@ public class BossGorGun : MonoBehaviour
     {
         GameObject poisonArea_ = objectPool.GetObject(poisonAreaPool, poisonAreaPrefab, 2);
         poisonArea_.transform.position = transform.position;
+        poisonArea_.GetComponent<PoisonArea>().enemyName = enemyName;
         poisonArea_.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 

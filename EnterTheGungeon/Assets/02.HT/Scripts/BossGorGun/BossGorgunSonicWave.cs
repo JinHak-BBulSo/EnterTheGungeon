@@ -5,22 +5,18 @@ using UnityEngine;
 public class BossGorgunSonicWave : MonoBehaviour
 {
     RectTransform rectTransform;
-    CircleCollider2D circleCollider;
 
     public float spreadSpeed;
     float sizeX;
     float sizeY;
 
-    // @brief for not collide check innerCircle
-    float innerRadius;
-
-
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        circleCollider = GetComponent<CircleCollider2D>();
 
         spreadSpeed = 300;
+        sizeX = rectTransform.localScale.x;
+        sizeY = rectTransform.localScale.y;
 
         StartCoroutine(DestroyObject());
     }
@@ -28,20 +24,19 @@ public class BossGorgunSonicWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        circleCollider.radius = sizeX / 2;
-        innerRadius = circleCollider.radius * 0.8f;
-
         StartCoroutine(SpreadWave());
     }
 
     IEnumerator SpreadWave()
     {
         //transform.localScale += Vector3.one * spreadSpeed * Time.deltaTime;
-        sizeX = rectTransform.sizeDelta.x;
-        sizeY = rectTransform.sizeDelta.y;
+        //sizeX = rectTransform.sizeDelta.x;
+        //sizeX = rectTransform.localScale.x;
+        //sizeY = rectTransform.sizeDelta.y;
+        //sizeY = rectTransform.localScale.y;
         sizeX += spreadSpeed * Time.deltaTime;
         sizeY += spreadSpeed * Time.deltaTime;
-        rectTransform.sizeDelta = new Vector2(sizeX, sizeY);
+        rectTransform.localScale = new Vector2(sizeX, sizeY);
         yield return null;
     }
 
@@ -54,18 +49,11 @@ public class BossGorgunSonicWave : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        float Distance_ = Vector2.Distance(other.transform.position, transform.position);
-
-        if (Distance_ > innerRadius)
+        //석화상태부여
+        //ex) player.status = petrified;
+        if (other.tag == "PlayerBullet")
         {
-            //석화상태부여
-            //ex) player.status = petrified;
-
-            //
-            if (other.tag == "PlayerBullet")
-            {
-                Destroy(other.gameObject); //or setactive(false)
-            }
+            Destroy(other.gameObject); //or setactive(false)
         }
     }
 

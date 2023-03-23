@@ -18,7 +18,6 @@ public class PathFinderGrid : MonoBehaviour
     public GameObject enemy;
     //target pos
     GameObject player;
-
     public float distanceToEnemy;
     public float distanceToPlayer;
     public bool isStartPosition;
@@ -78,7 +77,7 @@ public class PathFinderGrid : MonoBehaviour
     }
     private void OnEnable()
     {
-        Debug.Log("Enable");
+       // Debug.Log("Enable");
         if (isCreated)
         {
             objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
@@ -110,7 +109,7 @@ public class PathFinderGrid : MonoBehaviour
     bool isFirstActiveFalse;
     private void OnDisable()
     {
-        Debug.Log("Disable");
+        //Debug.Log("Disable");
         if (isFirstActiveFalse)
         {
             objectPool.ReturnObject(this.gameObject, 1);

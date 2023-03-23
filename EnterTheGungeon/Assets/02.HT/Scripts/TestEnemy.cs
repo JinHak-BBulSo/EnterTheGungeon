@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TestEnemy : MonoBehaviour
 {
     public int attackType;
-
+    public string enemyName;
     TestEnemyWeapon weapon;
     TestEnemyEye eye;
     GameObject hand;
@@ -24,6 +24,8 @@ public class TestEnemy : MonoBehaviour
 
     bool isDead;
     // { status
+    Image bodyImage;
+    RectTransform bodyImageRectTransform;
 
     // { animation var
 
@@ -89,11 +91,13 @@ public class TestEnemy : MonoBehaviour
         currentHp = maxHp;
 
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
+        bodyImage = transform.GetChild(0).GetComponent<Image>();
+        bodyImageRectTransform = transform.GetChild(0).GetComponent<RectTransform>();
 
         if (attackType == 0)
         {
             hand = transform.GetChild(2).gameObject;
-            weapon = hand.transform.GetChild(1).GetComponent<TestEnemyWeapon>();
+            weapon = hand.transform.GetChild(0).GetComponent<TestEnemyWeapon>();
         }
 
         rectTransform = GetComponent<RectTransform>();
@@ -101,6 +105,7 @@ public class TestEnemy : MonoBehaviour
 
         StartCoroutine(SpawnTime());
         //moveSpeed = 0.3f;
+
 
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
         enemyBulletPool = objectPool.enemyBulletPool;
@@ -110,26 +115,25 @@ public class TestEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-        
+        ImageSizeSet();
+
+
         if (!IsSpawnEnd) { }
         else
         {
 
             isMove = false;
-            isAttack = transform.GetChild(0).GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
+            isAttack = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
 
             dist = Vector2.Distance(transform.position, player.transform.position);
-            Debug.Log("Monster" + transform.position);
-            Debug.Log(player.transform.position);
-            if (dist > 500 && !isAttack)
+            if (dist > 500 / 71.94f && !isAttack)
             {
                 Move();
             }
             else { }
 
             // { Raycast To Player & Condition Check RayCast Hit
+            //Debug.Log(eye.hit.collider.tag);
             if (eye.hit != default)
             {
                 if (eye.hit.collider.tag == "Player")
@@ -146,23 +150,20 @@ public class TestEnemy : MonoBehaviour
 
             // { set var for using animation
             direction = player.transform.position - transform.position;
-            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("inputX", direction.x);
-            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("inputY", direction.y);
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputX", direction.x);
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputY", direction.y);
             // ] set var for using animation
         }
 
         if (isMove)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsMove", true);
+            transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", true);
         }
         else
         {
-<<<<<<< HEAD
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
+            //transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-=======
-            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
->>>>>>> origin/Develop
+            transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
         }
 
         FindPlayerDirection();
@@ -170,7 +171,7 @@ public class TestEnemy : MonoBehaviour
         //-working
         if (!isPathFind)
         {
-            PathFind();
+            //PathFind();
         }
         //-working
 
@@ -185,13 +186,10 @@ public class TestEnemy : MonoBehaviour
     {
         isMove = true;
 
-<<<<<<< HEAD
         GetComponent<Rigidbody2D>().velocity = direction.normalized * moveSpeed * 10;
 
         //transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
-=======
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * 10 * Time.deltaTime);
->>>>>>> origin/Develop
+        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * 10 * Time.deltaTime);
     }
     void Attack()
     {
@@ -206,7 +204,7 @@ public class TestEnemy : MonoBehaviour
             if (!isDelayEnd)
             {
                 isDelayEnd = true;
-                transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
 
                 //bookllet casttime_ = 1, gunNut casttime_ = 0.5f
                 StartCoroutine(Fire(1, 5));
@@ -217,11 +215,16 @@ public class TestEnemy : MonoBehaviour
 
         }
     }
+    void ImageSizeSet()
+    {
+        bodyImage.SetNativeSize();
+        bodyImageRectTransform.sizeDelta = new Vector2(bodyImageRectTransform.sizeDelta.x * 3, bodyImageRectTransform.sizeDelta.y * 3);
+    }
     IEnumerator SpawnTime()
     {
         yield return new WaitForSeconds(1.5f);
         IsSpawnEnd = true;
-        transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
+        transform.GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
     }
 
     IEnumerator Fire(float castTime_, float delayTime_)   //castime & delaytime < scriptableobj에 값 추가 예정
@@ -239,9 +242,13 @@ public class TestEnemy : MonoBehaviour
                 for (int i = 0; i < 19; i++)
                 {
                     GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                     clone_.GetComponent<TestBullet>().bulletType = 1;
-                    clone_.transform.localPosition = new Vector2(transform.localPosition.x + xPos_[i], transform.localPosition.y + yPos_[i]);
+                    clone_.GetComponent<TestBullet>().enemyName = enemyName;
+
+
+                    clone_.transform.position = new Vector2(transform.position.x + xPos_[i] / 71.94f, transform.position.y + yPos_[i] / 71.94f);
+                    //clone_.transform.localPosition = new Vector2(transform.localPosition.x + xPos_[i], transform.localPosition.y + yPos_[i]);
                     //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     yield return new WaitForSeconds(0.03f);
                 }
@@ -251,39 +258,42 @@ public class TestEnemy : MonoBehaviour
                 for (float i = 0; i <= 360; i += 10)
                 {
                     GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                     //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.GetComponent<TestBullet>().enemyName = enemyName;
                     //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
 
                     angleForSummonBullet = i * Mathf.PI / 180.0f;
                     xValue = Mathf.Cos(angleForSummonBullet);
                     yValue = Mathf.Sin(angleForSummonBullet);
                     directionForSummonBullet = new Vector2(xValue, yValue);
-                    summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 50;
+                    summonBulletPosition = (Vector2)transform.position + directionForSummonBullet * 50 / 71.94f;
 
-                    clone_.transform.localPosition = summonBulletPosition;
+                    clone_.transform.position = summonBulletPosition;
                     StartCoroutine(WaitToSummonAllBullet(clone_, directionForSummonBullet.normalized));
                     //clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
                 }
                 for (int i = 0; i <= 60; i += 10)
                 {
                     GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                     //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.GetComponent<TestBullet>().enemyName = enemyName;
                     //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
-                    clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
+                    clone_.transform.position = new Vector2(transform.position.x, transform.position.y + i / 71.94f);
                     StartCoroutine(WaitToSummonAllBullet(clone_, clone_.transform.up.normalized));
                 }
                 for (int i = 0; i >= -60; i -= 10)
                 {
                     GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-                    clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                    //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                     //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                     clone_.GetComponent<TestBullet>().bulletType = 0;
+                    clone_.GetComponent<TestBullet>().enemyName = enemyName;
                     //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
-                    clone_.transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + i);
+                    clone_.transform.position = new Vector2(transform.position.x, transform.position.y + i / 71.94f);
                     StartCoroutine(WaitToSummonAllBullet(clone_, -clone_.transform.up.normalized));
                 }
             }
@@ -294,18 +304,19 @@ public class TestEnemy : MonoBehaviour
             for (float i = minDistArrayIndex * 45; i <= minDistArrayIndex * 45 + 90; i += 5)
             {
                 GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
-                clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                 //GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
                 clone_.GetComponent<TestBullet>().bulletType = 0;
+                clone_.GetComponent<TestBullet>().enemyName = enemyName;
                 //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
 
                 angleForSummonBullet = i * Mathf.PI / 180.0f;
                 xValue = Mathf.Cos(angleForSummonBullet);
                 yValue = Mathf.Sin(angleForSummonBullet);
                 directionForSummonBullet = new Vector2(xValue, yValue);
-                summonBulletPosition = (Vector2)transform.localPosition + directionForSummonBullet * 50;
+                summonBulletPosition = (Vector2)transform.position + directionForSummonBullet * 50 / 71.94f;
 
-                clone_.transform.localPosition = summonBulletPosition;
+                clone_.transform.position = summonBulletPosition;
                 clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
             }
         }
