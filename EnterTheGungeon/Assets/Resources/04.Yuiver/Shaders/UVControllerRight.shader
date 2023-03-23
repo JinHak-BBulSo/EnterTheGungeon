@@ -1,4 +1,4 @@
-Shader "MyShader/2D/UVSprite"
+Shader "MyShader/2D/UVSpriteRiht"
 {
     Properties
     {
@@ -204,6 +204,15 @@ Shader "MyShader/2D/UVSprite"
                     float4  positionCS      : SV_POSITION;
                     float4  color           : COLOR;
                     float2  uv              : TEXCOORD0;
+                    float2  rotatedOriginalUV1 : TEXCOORD1; // 추가
+                    float2  rotatedOriginalUV2 : TEXCOORD2; // 추가
+                    float2  rotatedOriginalUV3 : TEXCOORD3; // 추가
+                    float2  rotatedOriginalUV4 : TEXCOORD4; // 추가
+                    float2  rotatedOriginalUV5 : TEXCOORD5; // 추가
+                    float2  rotatedOriginalUV6 : TEXCOORD6; // 추가
+                    float2  rotatedOriginalUV7 : TEXCOORD7; // 추가
+                    float2  rotatedOriginalUV8 : TEXCOORD8; // 추가
+
                     #if defined(DEBUG_DISPLAY)
                     float3  positionWS  : TEXCOORD2;
                     #endif
@@ -216,25 +225,93 @@ Shader "MyShader/2D/UVSprite"
                 float4 _Color;
                 half4 _RendererColor;
 
+                float2 OrbitUV(float2 uv, float distance, float angle)
+                {
+                    float2 center = float2(0.5, 0.8); // 원점 설정 (0.5, 0.5는 텍스처의 중심입니다)
+                    uv -= center; // 원점을 중심으로 평행 이동
+
+                    float2 direction = normalize(uv); // 원점에서 UV까지의 방향 벡터
+                    float2 offset = direction * distance; // 일정 거리를 유지하기 위한 오프셋 벡터 계산
+
+                    uv += offset; // 일정 거리를 유지하도록 UV 좌표 수정
+
+                    // 회전 적용
+                    float2 rotatedUV;
+                    rotatedUV.x = uv.x * cos(angle) - uv.y * sin(angle);
+                    rotatedUV.y = uv.x * sin(angle) + uv.y * cos(angle);
+
+                    rotatedUV += center; // 원래 위치로 되돌리기
+                    return rotatedUV;
+                }
+
+                float2 AdjustUV2(float2 uv)
+                {
+                    uv.x *= 0.5;
+                    uv.x += 0.5;
+                    return uv;
+                }
+
                 Varyings UnlitVertex(Attributes attributes)
                 {
+                    float speed = 200;
+                    float distance = -0.15;
+                    float rotationAngle1 = _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle2 = 45 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle3 = 90 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle4 = 135 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle5 = 180 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle6 = 225 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle7 = 270 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle8 = 315 + _Time.x * speed * 3.14159265359 / 180.0;
+
                     Varyings o = (Varyings)0;
                     UNITY_SETUP_INSTANCE_ID(attributes);
                     UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+                    float2 originalUV = AdjustUV2(attributes.uv);
+                    //float2 originalUV = attributes.uv;
+
+                    float2 rotatedOriginalUV1 = OrbitUV(originalUV, distance, rotationAngle1);
+                    float2 rotatedOriginalUV2 = OrbitUV(originalUV, distance, rotationAngle2);
+                    float2 rotatedOriginalUV3 = OrbitUV(originalUV, distance, rotationAngle3);
+                    float2 rotatedOriginalUV4 = OrbitUV(originalUV, distance, rotationAngle4);
+                    float2 rotatedOriginalUV5 = OrbitUV(originalUV, distance, rotationAngle5);
+                    float2 rotatedOriginalUV6 = OrbitUV(originalUV, distance, rotationAngle6);
+                    float2 rotatedOriginalUV7 = OrbitUV(originalUV, distance, rotationAngle7);
+                    float2 rotatedOriginalUV8 = OrbitUV(originalUV, distance, rotationAngle8);
 
                     o.positionCS = TransformObjectToHClip(attributes.positionOS);
+
                     #if defined(DEBUG_DISPLAY)
                     o.positionWS = TransformObjectToWorld(v.positionOS);
+
                     #endif
-                    o.uv = TRANSFORM_TEX(float2 (attributes.uv.x +  cos(_Time.y/10), attributes.uv.y), _MainTex);
+                    o.uv = TRANSFORM_TEX(attributes.uv, _MainTex);
                     o.color = attributes.color * _Color * _RendererColor;
+                    o.rotatedOriginalUV1 = rotatedOriginalUV1;
+                    o.rotatedOriginalUV2 = rotatedOriginalUV2;
+                    o.rotatedOriginalUV3 = rotatedOriginalUV3;
+                    o.rotatedOriginalUV4 = rotatedOriginalUV4;
+                    o.rotatedOriginalUV5 = rotatedOriginalUV5;
+                    o.rotatedOriginalUV6 = rotatedOriginalUV6;
+                    o.rotatedOriginalUV7 = rotatedOriginalUV7;
+                    o.rotatedOriginalUV8 = rotatedOriginalUV8;
+
                     return o;
                 }
 
                 float4 UnlitFragment(Varyings i) : SV_Target
                 {
-                    float4 mainTex = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                    float4 col1 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV1);
+                    float4 col2 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV2);
+                    float4 col3 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV3);
+                    float4 col4 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV4);
+                    float4 col5 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV5);
+                    float4 col6 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV6);
+                    float4 col7 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV7);
+                    float4 col8 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV8);
+
+                    float4 blendedCol = col1 * 0.2 + col2 * 0.2 + col3 * 0.2 + col4 * 0.2 + col5 * 0.2 + col6 * 0.2 + col7 * 0.2 + col8 * 0.2;
 
                     #if defined(DEBUG_DISPLAY)
                     SurfaceData2D surfaceData;
@@ -251,7 +328,7 @@ Shader "MyShader/2D/UVSprite"
                     }
                     #endif
 
-                    return mainTex;
+                    return blendedCol;
                 }
                 ENDHLSL
             }
