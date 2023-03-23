@@ -14,12 +14,10 @@ public class PlayerInventory : MonoBehaviour
 
     private const int IEVEN_TAB_VAL = 5;
 
-    //private Dictionary<string, Sprite> inventorySprite = default;
-
-    private Dictionary<string, List<GameObject>> invenDict = default;
-    private List<GameObject> weaponItems = default;
-    private List<GameObject> activeItems = default;
-    private List<GameObject> passiveItems = default;
+    private Dictionary<string, List<Item>> invenDict = default;
+    private List<Item> weaponItems = default;
+    private List<Item> activeItems = default;
+    private List<Item> passiveItems = default;
     // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
 
     private const int IEVEN_TAB_ICON_CNT = 4;
@@ -99,22 +97,13 @@ public class PlayerInventory : MonoBehaviour
         selectTabInvenVal = nowTabInvenCnt;
         isOutTabMenu = false;
 
-        //Sprite[] sprites_ = Resources.LoadAll<Sprite>("03.Junil/Inventory");
-
-
-        //// 인벤토리 스프라이트 배열 선언
-        //inventorySprite = new Dictionary<string, Sprite>();
-
-        //for(int i = 0; i < sprites_.Length; i++)
-        //{
-        //    inventorySprite[sprites_[i].name] = sprites_[i];
-        //}
+        
 
         // 현재 탭 int 값을 보고 거기에 맞는 리스트를 가져온다
-        invenDict = new Dictionary<string, List<GameObject>>();
-        weaponItems = new List<GameObject>();
-        activeItems = new List<GameObject>();
-        passiveItems = new List<GameObject>();
+        invenDict = new Dictionary<string, List<Item>>();
+        weaponItems = new List<Item>();
+        activeItems = new List<Item>();
+        passiveItems = new List<Item>();
 
         invenDict.Add("총", weaponItems);
         invenDict.Add("액티브", activeItems);
@@ -201,6 +190,28 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
+
+    public void AddItem(Item item)
+    {
+
+        ItemTag itemTag = item.tag;
+
+
+        switch (itemTag)
+        {
+            case ItemTag.GUN:
+                break;
+
+            case ItemTag.ACTIVE:
+                break;
+
+            case ItemTag.PASSIVE:
+                break;
+
+            case ItemTag.ETC:
+                break;
+        }
+    }
 
 
     /// @brief 인벤토리 탭을 어떤 걸 선택했는지 보여주는 함수

@@ -20,11 +20,20 @@ public class PlayerController : MonoBehaviour
     /// @param int ChkBlankBullets : 소지하고 있는 공포탄 개수
     public int chkBlankBullets = default;
 
+    // 아머 수치
     public int armorVal = default;
 
+    // 아머를 장착하고 있는지의 유무 체크하는 bool 값
     public bool isArmor = true;
 
     public bool isOnInventory = false;
+
+    // 현재 장착중인 무기의 한손인지 두손인지 체크하는 int 값
+    public int nowWeaponHandVal = default;
+
+
+    // 피격이나 아머를 먹는 등의 이벤트가 발생하면 참이 되는 bool 값
+    public bool isStatusEvent = true;
 
     private void Awake()
     {
@@ -40,7 +49,11 @@ public class PlayerController : MonoBehaviour
         chkBlankBullets = 2;
         armorVal = 1;
         isArmor = true;
+        isStatusEvent = true;
         isOnInventory = false;
+
+        // 임시로 1로 지정
+        nowWeaponHandVal = 1;
     }
 
 
@@ -56,7 +69,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isOnInventory == true) { return; }
+        if(isStatusEvent == true)
+        {
+            playerMove.PlayerAniRestart(isArmor, nowWeaponHandVal);
+
+            isStatusEvent = false;
+        }
+
+        if (isOnInventory == true) { return; }
 
         ResetPlayerAni();
 
@@ -97,7 +117,7 @@ public class PlayerController : MonoBehaviour
         // 구르기를 사용
         if (Input.GetMouseButtonDown(1))
         {
-            playerMove.PlayerAniRestart(isArmor);
+            //playerMove.PlayerAniRestart(isArmor, );
             playerMove.OnDodge();
         }
 
@@ -143,5 +163,10 @@ public class PlayerController : MonoBehaviour
         // 추후 무기 값도 가져오기
     }
 
+    //! 플레이어의 현재 애니메이션을 갱신하기 위해 발동시키는 함수
+    public void OnHitAndStatusEvent()
+    {
+        isStatusEvent = true;
+    }   // OnHitAndStatusEvent()
 
 }
