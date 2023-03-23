@@ -2679,7 +2679,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_122
+      name: ShopCarpetRightEdge
       rect:
         serializedVersion: 2
         x: 36
@@ -2994,7 +2994,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_137
+      name: ShopCarpetMiddle
       rect:
         serializedVersion: 2
         x: 36
@@ -3309,7 +3309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_152
+      name: ShopCarpetLeftEdge
       rect:
         serializedVersion: 2
         x: 36
@@ -4590,7 +4590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_213
+      name: ShopWallTopEdge1
       rect:
         serializedVersion: 2
         x: 306
@@ -4611,7 +4611,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_214
+      name: ShopWallTopEdge2
       rect:
         serializedVersion: 2
         x: 324
@@ -4695,7 +4695,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_218
+      name: ShopWallTop
       rect:
         serializedVersion: 2
         x: 396
@@ -4842,7 +4842,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_225
+      name: shopLeftSIdeWall
       rect:
         serializedVersion: 2
         x: 18
@@ -5262,7 +5262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_245
+      name: ShopWall1
       rect:
         serializedVersion: 2
         x: 378
@@ -5325,7 +5325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_248
+      name: ShopWall2
       rect:
         serializedVersion: 2
         x: 432
@@ -5430,7 +5430,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_253
+      name: ShopRIghtSideWall
       rect:
         serializedVersion: 2
         x: 18
@@ -8979,7 +8979,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_422
+      name: ShopCounterGround
       rect:
         serializedVersion: 2
         x: 36
@@ -11751,7 +11751,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_554
+      name: RedCarpetPattern
       rect:
         serializedVersion: 2
         x: 396
@@ -11772,7 +11772,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_555
+      name: OutSideBase
       rect:
         serializedVersion: 2
         x: 414
@@ -12360,7 +12360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas0 #77172_583
+      name: ShopWall3
       rect:
         serializedVersion: 2
         x: 414
@@ -13084,10 +13084,23 @@ TextureImporter:
       GreenWall1: -1334968204
       GreenWall2: 1158654477
       GreenWall3: -193477207
+      OutSideBase: 1055882634
       RedCarpetBase: 422157219
       RedCarpetEdge: 502299435
       RedCarpetEdgeSide: -1973292833
       RedCarpetMiddle: -286634800
+      RedCarpetPattern: 373081956
+      ShopCarpetLeftEdge: -46246774
+      ShopCarpetMiddle: 1477248799
+      ShopCarpetRightEdge: -532655898
+      ShopCounterGround: 326666659
+      ShopRIghtSideWall: -1554280840
+      ShopWall1: -1620368783
+      ShopWall2: 1588224969
+      ShopWall3: -65732921
+      ShopWallTop: 1666254136
+      ShopWallTopEdge1: 1251179698
+      ShopWallTopEdge2: 437635932
       StoneGround1: 1652167709
       StoneGround2: -1322514580
       WallTopBase: -582645897
@@ -13119,7 +13132,6 @@ TextureImporter:
       atlas0 #77172_12: -142417244
       atlas0 #77172_120: 2101572160
       atlas0 #77172_121: -1769882748
-      atlas0 #77172_122: -532655898
       atlas0 #77172_123: 1022987835
       atlas0 #77172_124: -967796811
       atlas0 #77172_125: 381170145
@@ -13135,7 +13147,6 @@ TextureImporter:
       atlas0 #77172_134: -429392930
       atlas0 #77172_135: -1137430187
       atlas0 #77172_136: -624887533
-      atlas0 #77172_137: 1477248799
       atlas0 #77172_138: 1466231361
       atlas0 #77172_139: -1076272022
       atlas0 #77172_14: -1385553467
@@ -13151,7 +13162,6 @@ TextureImporter:
       atlas0 #77172_149: 2122549209
       atlas0 #77172_150: -1819926812
       atlas0 #77172_151: 1465550242
-      atlas0 #77172_152: -46246774
       atlas0 #77172_153: 1881426148
       atlas0 #77172_154: 1807118077
       atlas0 #77172_156: 1838155165
@@ -13213,12 +13223,9 @@ TextureImporter:
       atlas0 #77172_209: -869786573
       atlas0 #77172_21: -1397283799
       atlas0 #77172_211: 1579696887
-      atlas0 #77172_213: 1251179698
-      atlas0 #77172_214: 437635932
       atlas0 #77172_215: -1732576723
       atlas0 #77172_216: 1567477904
       atlas0 #77172_217: -1106987221
-      atlas0 #77172_218: 1666254136
       atlas0 #77172_219: 1646088325
       atlas0 #77172_22: 549146811
       atlas0 #77172_220: 1851950718
@@ -13226,7 +13233,6 @@ TextureImporter:
       atlas0 #77172_222: 851827271
       atlas0 #77172_223: -1076213757
       atlas0 #77172_224: -2007429248
-      atlas0 #77172_225: -1598122129
       atlas0 #77172_226: 1689457899
       atlas0 #77172_227: -137864888
       atlas0 #77172_228: 2130166712
@@ -13248,16 +13254,13 @@ TextureImporter:
       atlas0 #77172_242: 509444046
       atlas0 #77172_243: -1401296055
       atlas0 #77172_244: -347578631
-      atlas0 #77172_245: -1620368783
       atlas0 #77172_246: 1396523138
       atlas0 #77172_247: 901552267
-      atlas0 #77172_248: 1588224969
       atlas0 #77172_249: 567562868
       atlas0 #77172_25: -1137752675
       atlas0 #77172_250: 1784626190
       atlas0 #77172_251: -937684092
       atlas0 #77172_252: -2096402613
-      atlas0 #77172_253: -1554280840
       atlas0 #77172_254: -1223251497
       atlas0 #77172_255: 1596472760
       atlas0 #77172_256: 578877788
@@ -13440,7 +13443,6 @@ TextureImporter:
       atlas0 #77172_42: -122309738
       atlas0 #77172_420: 243189826
       atlas0 #77172_421: -2089678468
-      atlas0 #77172_422: 326666659
       atlas0 #77172_423: 1706102123
       atlas0 #77172_424: 448035533
       atlas0 #77172_425: -1790818257
@@ -13571,8 +13573,6 @@ TextureImporter:
       atlas0 #77172_551: -1413361319
       atlas0 #77172_552: -1343655819
       atlas0 #77172_553: 1087167670
-      atlas0 #77172_554: 373081956
-      atlas0 #77172_555: 1055882634
       atlas0 #77172_556: 1475887543
       atlas0 #77172_557: -140739606
       atlas0 #77172_558: 1141870029
@@ -13601,7 +13601,6 @@ TextureImporter:
       atlas0 #77172_580: -198453669
       atlas0 #77172_581: 589930150
       atlas0 #77172_582: 738856437
-      atlas0 #77172_583: -65732921
       atlas0 #77172_584: 1458923959
       atlas0 #77172_585: -1123293228
       atlas0 #77172_586: 1431335681
@@ -13675,6 +13674,7 @@ TextureImporter:
       carpetEdgeSide: 1444930983
       carpetMiddle: 2016611957
       carpetMiddle2: -430607547
+      shopLeftSIdeWall: -1598122129
       wallside: -941124066
       walltopEdge: 1271444826
       walltopEdge2: -1322517212

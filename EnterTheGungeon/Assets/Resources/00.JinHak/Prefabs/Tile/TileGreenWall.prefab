@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileGreenWall
       objectReference: {fileID: 0}
+    - target: {fileID: 4079810015872558642, guid: 84409b1b61747be4aad65b826150d8b8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 5804837340443466022, guid: 84409b1b61747be4aad65b826150d8b8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
