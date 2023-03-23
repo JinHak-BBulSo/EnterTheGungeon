@@ -5,35 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class MoveCamera2D : MonoBehaviour
 {
-    /// @param Transform target : 카메라가 쫒아 다닐 대상
-    public Transform target = default;
+    // { [Junil] fix PlayerCamera
 
-
-    public float speedCamera = default;
-
-    public Vector2 center = default;
-    public Vector2 size = default;
-
-
+    [SerializeField]
+    private const float SPEED_CAMERA = 4f;
+    
     [SerializeField]
     private float cameraHeight = default;
     private float cameraWidth = default;
+    
+    // 카메라가 쫒아 다닐 대상
+    public GameObject target = default;
+
+
+    public float exceptionRangeVal = default;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObjs_ = GFunc.GetRootObj("GameObjs");
+        
 
 
-        //Transform targetObjs_ = gameObjs_.FindChildObj("PlayerMarineObjs").transform.GetChild(0);
-        target = gameObjs_.FindChildObj("PlayerMarineObjs").transform.GetChild(0);
+        GameObject gameObjs_ = GameObject.Find("GameObjs");
 
-        speedCamera = 10f;
+        gameObject.transform.parent = gameObjs_.transform;
+
+        exceptionRangeVal = 0.35f;
+
+        
+        target = gameObjs_.FindChildObj("PlayerMarineObjs").GetChildrenObjs()[0];
 
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
-
 
     }
 
@@ -45,34 +49,42 @@ public class MoveCamera2D : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, speedCamera);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
+        // 플레이어 위치 값
+        Vector3 targetPos_ = target.transform.position;
+        // 마우스 위치 값
+        Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // 마우스 위치에 대한 최대, 최소 값을 구한 값
+        float clampMinX = Mathf.Clamp(mousePos_.x,
+            targetPos_.x - (cameraWidth * 0.5f), targetPos_.x + (cameraWidth * 0.5f));
+
+        float clampMinY = Mathf.Clamp(mousePos_.y,
+            targetPos_.y - (cameraHeight * 0.5f), targetPos_.y + (cameraHeight * 0.5f));
+
+
+        // 새로운 카메라 위치를 잡아주기 위한 값들
+        Vector3 testCamera_ = new Vector3(clampMinX, clampMinY, -10f);
+        Vector3 targetCameraPos_ = new Vector3(targetPos_.x, targetPos_.y, -10f);
+
+        
+        // 예외 범위를 지정하여 카메라 위치를 잡는 조건
+        if ((targetPos_.x - (cameraWidth * exceptionRangeVal) <= clampMinX && clampMinX <= targetPos_.x + (cameraWidth * exceptionRangeVal)) &&
+            (targetPos_.y - (cameraHeight * exceptionRangeVal) <= clampMinY && clampMinY <= targetPos_.y + (cameraHeight * exceptionRangeVal)))
+        {
+            // 부드러운 움직임을 위해서 Vector3.Lerp 사용
+            gameObject.transform.position = Vector3.Lerp(transform.position, targetCameraPos_, SPEED_CAMERA * Time.deltaTime);
+        }   // if : 예외 범위일 때는 플레이어 위치를 잡는 조건
+        else
+        {
+            gameObject.transform.position = Vector3.Lerp(transform.position, testCamera_, SPEED_CAMERA * Time.deltaTime);
+
+        }   // else : 그 외는 마우스 위치를 잡는 조건
 
 
 
-        /// @param float clampX : 카메라 이동 범위 제한
-        float largeX = size.x * 0.5f - cameraWidth;
-        float clampX = Mathf.Clamp(transform.position.x,
-            -largeX + center.x, largeX + center.x);
-
-
-        /// @param float clampY : 카메라 이동 범위 제한
-        float largeY = size.y * 0.5f - cameraHeight;
-        float clampY = Mathf.Clamp(transform.position.y,
-            -largeY + center.y, largeY + center.y);
-
-        transform.position = new Vector3(clampX, clampY, -10f);
     }
 
-
-
-    /// @brief 카메라 범위를 보여줄, 기즈모를 보여주는 함수
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(center, size);
-    }
-
+    // } [Junil] fix PlayerCamera
 
 
 

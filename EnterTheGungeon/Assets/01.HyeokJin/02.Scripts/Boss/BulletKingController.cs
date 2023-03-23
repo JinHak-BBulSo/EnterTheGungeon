@@ -7,10 +7,12 @@ public class BulletKingController : MonoBehaviour
     private ObjectManager objectManager = default;
     private Animator bulletkingAnimator = default;
     private GameObject player = default;
+    private GameObject firePosition_LeftBotoom = default;
+    private GameObject firePosition_LeftCenter = default;
+    private GameObject firePosition_LeftTop = default;
 
     private float bulletCount = default;
     private float bulletSpeed = default;
-    private float bulletLifeTime = default;
     private float moveSpeed = default;
     private float enemyRadius = default;
 
@@ -35,12 +37,15 @@ public class BulletKingController : MonoBehaviour
     private void OnEnable()
     {
         health = 950;
-        Invoke("Pattern", 1f);
+        Invoke("Pattern_1", 1f);
     }
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
+        firePosition_LeftBotoom = GameObject.Find("LeftBottom");
+        firePosition_LeftBotoom = GameObject.Find("LeftCenter");
+        firePosition_LeftBotoom = GameObject.Find("LeftCenter");
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
         bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
     }
@@ -51,7 +56,7 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        //Move();
     }
 
     //  [YHJ] 2023-03-16
@@ -113,62 +118,94 @@ public class BulletKingController : MonoBehaviour
     #region Pattern_1
     //  [YHJ] 2023-03-16
     //  @brief Bullet King 전방, 후방을 제외한 위치에 플레이어가 있을 시 플레이어를 향해 3-Way 총알을 두 번 발사한다.
+
     private void Pattern_1()
     {
+        StartCoroutine("Pattern_1_3way");
+    }
 
+    IEnumerator Pattern_1_3way()
+    {
         isPatternStart = true;
 
-        direction_X = transform.position.x - player.transform.position.x;
-        direction_Y = transform.position.y - player.transform.position.y;
+        maxPatternCount = 2;
+        bulletSpeed = 5f;
+        bulletCount = 3;
 
-        if (direction_X > 1 && direction_Y > 0)
+        direction_X = player.transform.position.x - transform.position.x;
+        direction_Y = player.transform.position.y - transform.position.y;
+
+        float angle = Mathf.Atan2(direction_Y, direction_X) * Mathf.Rad2Deg;
+
+        if (-5 < direction_X && direction_X < -1)
         {
-            //  왼쪽 아래로 3-way 총알을 두 번 발사
-
-            maxPatternCount = 2;
-            bulletSpeed = 5f;
-            bulletCount = 4;
-
-            for (int i = 0; i < bulletCount; i++)
+            if (-5 < direction_Y && direction_Y < -1.5)
             {
-                GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
-                bullet.transform.position = transform.position;
-                bullet.transform.rotation = Quaternion.identity;
 
-                Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
-                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = firePosition_LeftTop.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = firePosition_LeftCenter.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = firePosition_LeftBotoom.transform.position;
+                            break;
+                    }
+                    bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = player.transform.position - transform.position;
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.2f);
+                }
+            }
+            else if (-1.5 < direction_Y && direction_Y < 0)
+            {
+
+            }
+            else if (-1.5 < direction_Y && direction_Y < 5)
+            {
+                Debug.Log("Left Top");
             }
         }
-        else if (direction_X < -1 && direction_Y > 0)
+        else if (1 < direction_X && direction_X < 5)
         {
-            //  오른쪽 아래로 3-way 총알을 두 번 발사
-
-            maxPatternCount = 2;
-            bulletSpeed = 5f;
-            bulletCount = 4;
-
-            for (int i = 0; i < bulletCount; i++)
+            if (-5 < direction_Y && direction_Y < -1.5)
             {
-                GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
-                bullet.transform.position = transform.position;
-                bullet.transform.rotation = Quaternion.identity;
-
-                Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-                Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
-                bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+                Debug.Log("Right Bottom");
+            }
+            else if (-1.5 < direction_Y && direction_Y < 0)
+            {
+                Debug.Log("Right Center");
+            }
+            else if (1.5 < direction_Y && direction_Y < 5)
+            {
+                Debug.Log("Right Top");
             }
         }
+        else
+        {
+            Debug.Log("Out");
+        }
+
+
 
         curPatternCount++;
 
         if (curPatternCount < maxPatternCount)
         {
-            Invoke("Pattern_1", 2f);
+            Invoke("Pattern_1", 0.5f);
         }
         else
         {
-            Invoke("Pattern", 2f);
+            Invoke("Pattern_1", 2f);
         }
     }   //  Pattern_1()
     #endregion

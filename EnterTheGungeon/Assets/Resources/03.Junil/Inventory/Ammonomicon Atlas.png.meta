@@ -1,0 +1,3449 @@
+fileFormatVersion: 2
+guid: 68216498b0fb20c4f985e5cd4786f201
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 466
+        width: 144
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66297492feaeac48972e39631a617ae
+      internalID: 1698166843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 435
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84cf752981271649a1550f6ed3690ad
+      internalID: 1951149355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 413
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff745a780c71774b9d85cfda4da948a
+      internalID: -791812256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_105
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 227
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b421a59d76fb9b4db341e59e881c422
+      internalID: 1474966576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_107
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 214
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce58cfeb4f981e847be23d6d181f057d
+      internalID: -646930606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_108
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 215
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbd023714271434687426da9b55170e
+      internalID: 1432491334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_109
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 213
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec610f406cc4f2458de6538fdea7346
+      internalID: 924137467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_111
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 196
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c4eef6842b57d41836d269bb44f25b
+      internalID: -1487802134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_112
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 174
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95b8af0adafc704f8e660c77ea0e770
+      internalID: -670424753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_113
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 176
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89486c24f0e34c649afff793f841207f
+      internalID: -518130059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_115
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 152
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d2ecd73c78f1f4dab7bd74606b80f6
+      internalID: -1132821742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_116
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 154
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8859c99255c264cb713b1a4c3b4a78
+      internalID: 2039835585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_117
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 154
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6962e273b5139ff4da6085232af5fca1
+      internalID: 1314978206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_120
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 119
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff23e783c89a75419f85ab194fac17d
+      internalID: -1824885928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_121
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 106
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d6c336ef42a6646bfe3143974c485e
+      internalID: -2073413637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_122
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 111
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e32d1b9ef99a84bb0ef41a86d7b99f
+      internalID: -254039641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_123
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 111
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936f690c73bb90e4f9ce1e52aea30c6e
+      internalID: 614864475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_124
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 110
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ea8fed01bab7f40ad2fc6d30bbcae9
+      internalID: 1773645292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_125
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 97
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3e9a9f8840d8b4a8c865b4c1f89186
+      internalID: 1656029154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_163
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 24
+        width: 142
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5532f351de0160d49bafd72d58703919
+      internalID: 641936948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_201
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 462
+        width: 158
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8950e3d8aac3d1e42b051c51e5f56de7
+      internalID: 913397798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_106
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 191
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c47e2fab85cab34fbe48b291d1a4a7b
+      internalID: -155461048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_110
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 194
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc30a59ad30738b40a5a9210eeb0c951
+      internalID: -82817529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_205
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 171
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238eec292eff94a478604e2c847de2e1
+      internalID: 951539019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_206
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 171
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4665d404959374fb9528a39f717967
+      internalID: 1128922673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_207
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 149
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9feebee0f838cb04993e9e1fc317dadf
+      internalID: 2041015619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_208
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 147
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192806456189a264fad409a80e0911b2
+      internalID: 655632640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_209
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 149
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c7008522342f8449d434b5f3dfbe5b
+      internalID: 1218944655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_210
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 134
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10edb90d71cddaf47a41af564767ef47
+      internalID: -1517171707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_211
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 134
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e90f3986c28064abce2449184e69a3
+      internalID: -1724125486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_212
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 119
+        width: 142
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683275b88cf9c784b9b702cd8196757c
+      internalID: 321675849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_213
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 193
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7383660b919a48b48bb30d565bba61ae
+      internalID: 1847189983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_214
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 191
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efc89a0faed1fb469523e7e8c6f12e8
+      internalID: 892262946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_215
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 171
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36945ddbfd6546842b05993b3aa1d266
+      internalID: 783029217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_216
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 171
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa44e0178b9a51a4ea34369b838a377c
+      internalID: 676831685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_217
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 149
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0191805bca0974884891cff9a451f7
+      internalID: 1385185523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_218
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 149
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b8582717952244fb2ac7f91ae1aaab
+      internalID: 1454418206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_219
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 197
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bcc57010f3ac549a9237776353a4e5
+      internalID: 1930497679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_220
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 198
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73bce74561ad03847ba54c5bd74e58aa
+      internalID: -2104886197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_221
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 207
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856d460d510bb5a4798008a6dd77d66a
+      internalID: 1933627355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_222
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 194
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc100cecef2a9604492aaef413163265
+      internalID: 330287832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_223
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 181
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1a2555a9adc0e40a04434e48b34880
+      internalID: 739875733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_224
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 177
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657f749b15686c3458d532e46297eb0e
+      internalID: 462750248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_225
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 177
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962e468c93497bc4ea650407851ebf98
+      internalID: -1827223694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_226
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 168
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ccddfb806f1a54fa04d9995d1c8819
+      internalID: 1270638658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_227
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 156
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f0d173f69e44845b7a8614d2c9a478
+      internalID: 1486498332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_228
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 153
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c5a28fe8ba6bd4697c92cbe9864ee9
+      internalID: 1924911078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_229
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 131
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db0ceeb4f3628141b88cb810dff70dd
+      internalID: -1788083365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_230
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 133
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f5b6700deb7db4faca3ac408f6d84d
+      internalID: -925011114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_231
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 153
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57d101762d16084db5ab1dd19b99a7a
+      internalID: 1433657705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_232
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 178
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf310ace1a9aeb4384df6b01dfcd86d
+      internalID: 794614595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_233
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 178
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8471c55d5d91ca74ea68e5cc8c0ee802
+      internalID: 473574979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_234
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 165
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258219c8244454342aa066ac247546b6
+      internalID: 1184879520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_235
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 165
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a322f981a3d322f43b90fc7fe751e017
+      internalID: 939402273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_236
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 148
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187ba972458389f4989f8719b551b4e3
+      internalID: -1826878393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_237
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 131
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605b26ad462b22a4592fb0ed31153981
+      internalID: 378170328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_238
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 197
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aac029186315a640a4d0c41b533e2ee
+      internalID: 261771353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_239
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 175
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a00e374d88787459d1d2862ad2d44d
+      internalID: 337521484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_114
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 155
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401bd6068699d0f4faf2d606d4f7e45d
+      internalID: 2143189226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_240
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 133
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94ec4be1d8e3cf43bc99d4cfe0c9869
+      internalID: -770050630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_241
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 131
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f208cf173871e7a46a0e6e7b66b620d8
+      internalID: 1992535272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_118
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 130
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6badc12b41841864a80fea34966ff49f
+      internalID: -1653861407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_242
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 132
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02c9c796aa164e4c9ac97709653a7b0
+      internalID: 1545819841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_119
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 130
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbbf0db508d8054d8d1330f01146d00
+      internalID: 268911051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_243
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 132
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0d2fd69bb1e4540ad06c5cd719c9dc
+      internalID: -344608137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_244
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 154
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1ef4a59ac24a649888464b00da28e9
+      internalID: 639697303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_245
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 163
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4655ed4d2af7594b91c6506e1790d27
+      internalID: -1791193923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_246
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 139
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c1ae5f6b56e4244a9084ab4a69aa08
+      internalID: -63055965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_247
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 146
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb03b73d6dc20864895ad24e9855d1e8
+      internalID: 312315244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_248
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 136
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10609e066f0b3348936bdba8b46f85b
+      internalID: 870120685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_249
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 126
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caea52b1a7f67849a096cf451b98511
+      internalID: -1105312288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_250
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 102
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead31460d2aacd44dad0d6652a0c4749
+      internalID: 1085202120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_251
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 102
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e018724b70d526147812fd101eb9dd6c
+      internalID: 682150995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_252
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 114
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb2f21a6751b6146b2a202e92bc293d
+      internalID: 58087599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_253
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 115
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a9b4dccfc45b248a8a9e2d09d0c650
+      internalID: 79806349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_254
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 114
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c838520fdf15d4f98dba29471cf144
+      internalID: 1150594239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_255
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 93
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3837b4fe53484b46902a8030f5029e9
+      internalID: -971351684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_256
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 92
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ba88cbf9f1643488ac07c8d0339918
+      internalID: 1235764645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_257
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 92
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d514feae9173b4abd33f5f784d0d06
+      internalID: -1029967815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_258
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 80
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6ca99326ab25c409e6bbadc219dab0
+      internalID: -1265108842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_259
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 80
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e9feccb91d5e54fb5a2fc513dbf8f4
+      internalID: 1466965103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_146
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 70
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351c803051a461948a5e6f3c101c4723
+      internalID: -515655573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_260
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 70
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebb2c4472422f34d859414bb1384ff4
+      internalID: 951445238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_261
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 58
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bcaaf0f38c3ff4d940541651a402d4
+      internalID: 1536386056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_262
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 39
+        width: 5
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67af759817e633f4384cef6730a10d58
+      internalID: 46865475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_263
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 46
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f515399104c11a24ba2001817d96086a
+      internalID: -481944069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_264
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 48
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b89395c026c8174da23136033f3c0d0
+      internalID: -288157463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_265
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 26
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5143b653f4f894daf9554016dcdc4d
+      internalID: 165731373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_266
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 27
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c221254dc7adc42adda20eb1c9bddb
+      internalID: 755189468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_267
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 24
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc9651c469c2814e9f934d2e8909114
+      internalID: -1368999511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_177
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 14
+        width: 152
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f379da0780e1448900e238cec319ac
+      internalID: 762670440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_178
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 40
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc77e4ce109a517468d1835e925b1d4e
+      internalID: -814917863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_179
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 39
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32edd13d02c5fd45956b2d3889af9e2
+      internalID: 1818466736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_180
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 39
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1233248527e7142bad0069873bc674
+      internalID: -802845143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_181
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 39
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d945296c0d37bc14a8b67f034d04837b
+      internalID: 1078334279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_126
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 95
+        width: 142
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72fb7b6d9a08a34c8d3ec06e310926b
+      internalID: -1105317219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_127
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 87
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601f7296d6159b543a945bebc189c47c
+      internalID: -911347320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_128
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 86
+        width: 154
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058d794d570ae554bb30dafeaa0a364d
+      internalID: -1578496008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_129
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 95
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff242066fb270df46a217f27aa197085
+      internalID: 1001284888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_130
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 119
+        width: 130
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14767b32889ecbf43b94f9970c81d5b9
+      internalID: 198782154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_133
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 106
+        width: 130
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb17c2605f93efd4497fb0f0c521db13
+      internalID: 548791438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_134
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 95
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da38462755a7a349b760406fada2a91
+      internalID: 545427645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_135
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 95
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b738c5d29aca584688eb84b1683d328
+      internalID: -305356141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_131
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 88
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1069e293263caa44386f0f20b9460c13
+      internalID: -163865285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_136
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 88
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece4b10eb9cd0de4688d106c2f6ab5a2
+      internalID: -1322637903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_132
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 88
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea6cfd3bdc564549bbcc841c75c7e80
+      internalID: 229573030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_137
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 86
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a217342f0a80f74886e9e5e04ad721f
+      internalID: 708802991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_138
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 75
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ae0ccd226e02143851bb7482fdfe28
+      internalID: -197538679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_145
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 76
+        width: 132
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcceef38e1771a4398b8d41cdb05878
+      internalID: 380586890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_167
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 76
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d175d30a7aed34d9fa540f742d024d
+      internalID: 1196452638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_143
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 65
+        width: 150
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bfa4b3ed20e5441afa67b7d212be4b
+      internalID: 816130913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_144
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 68
+        width: 158
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb580462418e89e4aaacbaf520c680c0
+      internalID: 1917585183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_169
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 53
+        width: 149
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace5d3037fd7c3441ae510782201e5b1
+      internalID: 1108083954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_182
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 40
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237b89a4f90789f4580f097b208c80f1
+      internalID: 729554694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_183
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 40
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d442de47a954d1442a274854cbb83d03
+      internalID: 117041869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_164
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 24
+        width: 150
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c41b92130a80d646bfdf8412a923981
+      internalID: 1347034644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_139
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 0
+        width: 142
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ade8e3c42d7174fa152b404d0cb60e
+      internalID: 1769135162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_147
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 0
+        width: 130
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb278b89ba04954c8b568d8abbdd803
+      internalID: 1492419952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_148
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 157
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0294aa3ee996d4b40973da5389bb3d7a
+      internalID: -1186650714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_149
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 14
+        width: 5
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3de6c2305c2f2145922235cc24ac834
+      internalID: 2123892297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_150
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 48
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410e19d616c60cd4196d282ecfbb3177
+      internalID: -1698271092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_151
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 48
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7e8a650f3621543bab68bd2dfce79a
+      internalID: 1862873493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_152
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 38
+        width: 48
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a781b1d6185e3294486390debdc88528
+      internalID: -1718036308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_153
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 38
+        width: 48
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb8f0e12bf5a1e47a1a48ab322b12e5
+      internalID: -1656974970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_154
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 40
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cc7d3476ddddc4bb3b6ac60997e188
+      internalID: -1934583281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_155
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 115
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2178c585598994bbdecdfb754104cc
+      internalID: 547658676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_140
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 71
+        width: 142
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628711d2dab11134c9e89330a0490a49
+      internalID: 1045052597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_141
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 87
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b32b7615ef6fb248b2d6423f6598195
+      internalID: 1525297858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_142
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 24
+        width: 70
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b6a8d9b5ae5494887e03d42825074f
+      internalID: -643106138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 256
+        width: 115
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281c068fd4d68f049a9fa1beac0f2f97
+      internalID: 1783754000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 371
+        width: 123
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae44b975b4938f47ab1d5850f0acb61
+      internalID: -1804891399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 413
+        width: 128
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9ce49eadcf78046940b20fa284b9ba
+      internalID: 1868170234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 462
+        width: 41
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ca99e19c116af4c94fe3e47ad7a37c
+      internalID: -622958427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 462
+        width: 41
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec6e5b26109ead43a498744b758c2d8
+      internalID: -2097924184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 444
+        width: 142
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8e6060c5d7045439fcfd1cd529bb9b
+      internalID: -297862325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 470
+        width: 142
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0d39ec1fccf3f4eb3f79f838419c1a
+      internalID: 807943549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 496
+        width: 155
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288d9be1aebc95440b0ab6937b070c51
+      internalID: 375894967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 509
+        width: 159
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9520c09f01bd1da439e74d37c0935f9c
+      internalID: 272184598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 501
+        width: 55
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca61a7f60e965e41b4383a7685aa5ea
+      internalID: 1172747965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 452
+        width: 150
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83aaffec04d8cd341861ff38b51f55b6
+      internalID: 1531439934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 387
+        width: 142
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630ae6bcc6ea6ee4e92c16a4253a4d8f
+      internalID: -560463882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 361
+        width: 141
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24185925d59724446a9746442b973b07
+      internalID: 558746475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 374
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fa2437590cc3e41b06b056d5aa686a
+      internalID: -159569208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 374
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e5573b30b399a49b8078ffd819c7fe
+      internalID: -1746564605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammonomicon Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 413
+        width: 47
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c152d74597428f45af4180aa63afabe
+      internalID: 313550040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ammonomicon Atlas_0: 1698166843
+      Ammonomicon Atlas_1: -560463882
+      Ammonomicon Atlas_10: -297862325
+      Ammonomicon Atlas_100: -223307825
+      Ammonomicon Atlas_101: -480140682
+      Ammonomicon Atlas_102: 1788669516
+      Ammonomicon Atlas_103: 1999289402
+      Ammonomicon Atlas_104: -759378614
+      Ammonomicon Atlas_105: 1474966576
+      Ammonomicon Atlas_106: -155461048
+      Ammonomicon Atlas_107: -646930606
+      Ammonomicon Atlas_108: 1432491334
+      Ammonomicon Atlas_109: 924137467
+      Ammonomicon Atlas_11: 807943549
+      Ammonomicon Atlas_110: -82817529
+      Ammonomicon Atlas_111: -1487802134
+      Ammonomicon Atlas_112: -670424753
+      Ammonomicon Atlas_113: -518130059
+      Ammonomicon Atlas_114: 2143189226
+      Ammonomicon Atlas_115: -1132821742
+      Ammonomicon Atlas_116: 2039835585
+      Ammonomicon Atlas_117: 1314978206
+      Ammonomicon Atlas_118: -1653861407
+      Ammonomicon Atlas_119: 268911051
+      Ammonomicon Atlas_12: 272184598
+      Ammonomicon Atlas_120: -1824885928
+      Ammonomicon Atlas_121: -2073413637
+      Ammonomicon Atlas_122: -254039641
+      Ammonomicon Atlas_123: 614864475
+      Ammonomicon Atlas_124: 1773645292
+      Ammonomicon Atlas_125: 1656029154
+      Ammonomicon Atlas_126: -1105317219
+      Ammonomicon Atlas_127: -911347320
+      Ammonomicon Atlas_128: -1578496008
+      Ammonomicon Atlas_129: 1001284888
+      Ammonomicon Atlas_13: -1746564605
+      Ammonomicon Atlas_130: 198782154
+      Ammonomicon Atlas_131: -163865285
+      Ammonomicon Atlas_132: 229573030
+      Ammonomicon Atlas_133: 548791438
+      Ammonomicon Atlas_134: 545427645
+      Ammonomicon Atlas_135: -305356141
+      Ammonomicon Atlas_136: -1322637903
+      Ammonomicon Atlas_137: 708802991
+      Ammonomicon Atlas_138: -197538679
+      Ammonomicon Atlas_139: 1769135162
+      Ammonomicon Atlas_14: 313550040
+      Ammonomicon Atlas_140: 1045052597
+      Ammonomicon Atlas_141: 1525297858
+      Ammonomicon Atlas_142: -643106138
+      Ammonomicon Atlas_143: 816130913
+      Ammonomicon Atlas_144: 1917585183
+      Ammonomicon Atlas_145: 380586890
+      Ammonomicon Atlas_146: -515655573
+      Ammonomicon Atlas_147: 1492419952
+      Ammonomicon Atlas_148: -1186650714
+      Ammonomicon Atlas_149: 2123892297
+      Ammonomicon Atlas_15: -9342743
+      Ammonomicon Atlas_150: -1698271092
+      Ammonomicon Atlas_151: 1862873493
+      Ammonomicon Atlas_152: -1718036308
+      Ammonomicon Atlas_153: -1656974970
+      Ammonomicon Atlas_154: -1934583281
+      Ammonomicon Atlas_155: 547658676
+      Ammonomicon Atlas_156: 269275460
+      Ammonomicon Atlas_157: 1019561067
+      Ammonomicon Atlas_158: -496076859
+      Ammonomicon Atlas_159: 2091415953
+      Ammonomicon Atlas_16: 1710711202
+      Ammonomicon Atlas_160: -1600532001
+      Ammonomicon Atlas_161: -1889369315
+      Ammonomicon Atlas_162: 878127584
+      Ammonomicon Atlas_163: 641936948
+      Ammonomicon Atlas_164: 1347034644
+      Ammonomicon Atlas_165: -383659996
+      Ammonomicon Atlas_166: -1574766422
+      Ammonomicon Atlas_167: 1196452638
+      Ammonomicon Atlas_168: 1152227356
+      Ammonomicon Atlas_169: 1108083954
+      Ammonomicon Atlas_17: -680419188
+      Ammonomicon Atlas_170: -471804308
+      Ammonomicon Atlas_171: 804875811
+      Ammonomicon Atlas_172: -723064262
+      Ammonomicon Atlas_173: -1360857265
+      Ammonomicon Atlas_174: 34975503
+      Ammonomicon Atlas_175: 130633409
+      Ammonomicon Atlas_176: 176138503
+      Ammonomicon Atlas_177: 762670440
+      Ammonomicon Atlas_178: -814917863
+      Ammonomicon Atlas_179: 1818466736
+      Ammonomicon Atlas_18: -214672180
+      Ammonomicon Atlas_180: -802845143
+      Ammonomicon Atlas_181: 1078334279
+      Ammonomicon Atlas_182: 729554694
+      Ammonomicon Atlas_183: 117041869
+      Ammonomicon Atlas_184: -1169339527
+      Ammonomicon Atlas_185: -357884556
+      Ammonomicon Atlas_186: -804976692
+      Ammonomicon Atlas_187: -950365140
+      Ammonomicon Atlas_188: 1908934299
+      Ammonomicon Atlas_189: 480102769
+      Ammonomicon Atlas_19: -537072593
+      Ammonomicon Atlas_190: 996497781
+      Ammonomicon Atlas_191: -838328924
+      Ammonomicon Atlas_192: -1698326247
+      Ammonomicon Atlas_193: -1519717504
+      Ammonomicon Atlas_194: 2066450848
+      Ammonomicon Atlas_195: -447507354
+      Ammonomicon Atlas_196: 611814609
+      Ammonomicon Atlas_197: 1043624163
+      Ammonomicon Atlas_198: 766245357
+      Ammonomicon Atlas_199: -516630963
+      Ammonomicon Atlas_2: 558746475
+      Ammonomicon Atlas_20: -201356794
+      Ammonomicon Atlas_200: -1804981294
+      Ammonomicon Atlas_201: 913397798
+      Ammonomicon Atlas_202: 1532392309
+      Ammonomicon Atlas_203: -2104135059
+      Ammonomicon Atlas_204: 1243242912
+      Ammonomicon Atlas_205: 951539019
+      Ammonomicon Atlas_206: 1128922673
+      Ammonomicon Atlas_207: 2041015619
+      Ammonomicon Atlas_208: 655632640
+      Ammonomicon Atlas_209: 1218944655
+      Ammonomicon Atlas_21: 421008325
+      Ammonomicon Atlas_210: -1517171707
+      Ammonomicon Atlas_211: -1724125486
+      Ammonomicon Atlas_212: 321675849
+      Ammonomicon Atlas_213: 1847189983
+      Ammonomicon Atlas_214: 892262946
+      Ammonomicon Atlas_215: 783029217
+      Ammonomicon Atlas_216: 676831685
+      Ammonomicon Atlas_217: 1385185523
+      Ammonomicon Atlas_218: 1454418206
+      Ammonomicon Atlas_219: 1930497679
+      Ammonomicon Atlas_22: -1292860298
+      Ammonomicon Atlas_220: -2104886197
+      Ammonomicon Atlas_221: 1933627355
+      Ammonomicon Atlas_222: 330287832
+      Ammonomicon Atlas_223: 739875733
+      Ammonomicon Atlas_224: 462750248
+      Ammonomicon Atlas_225: -1827223694
+      Ammonomicon Atlas_226: 1270638658
+      Ammonomicon Atlas_227: 1486498332
+      Ammonomicon Atlas_228: 1924911078
+      Ammonomicon Atlas_229: -1788083365
+      Ammonomicon Atlas_23: 144662984
+      Ammonomicon Atlas_230: -925011114
+      Ammonomicon Atlas_231: 1433657705
+      Ammonomicon Atlas_232: 794614595
+      Ammonomicon Atlas_233: 473574979
+      Ammonomicon Atlas_234: 1184879520
+      Ammonomicon Atlas_235: 939402273
+      Ammonomicon Atlas_236: -1826878393
+      Ammonomicon Atlas_237: 378170328
+      Ammonomicon Atlas_238: 261771353
+      Ammonomicon Atlas_239: 337521484
+      Ammonomicon Atlas_24: -1789940378
+      Ammonomicon Atlas_240: -770050630
+      Ammonomicon Atlas_241: 1992535272
+      Ammonomicon Atlas_242: 1545819841
+      Ammonomicon Atlas_243: -344608137
+      Ammonomicon Atlas_244: 639697303
+      Ammonomicon Atlas_245: -1791193923
+      Ammonomicon Atlas_246: -63055965
+      Ammonomicon Atlas_247: 312315244
+      Ammonomicon Atlas_248: 870120685
+      Ammonomicon Atlas_249: -1105312288
+      Ammonomicon Atlas_25: -1804891399
+      Ammonomicon Atlas_250: 1085202120
+      Ammonomicon Atlas_251: 682150995
+      Ammonomicon Atlas_252: 58087599
+      Ammonomicon Atlas_253: 79806349
+      Ammonomicon Atlas_254: 1150594239
+      Ammonomicon Atlas_255: -971351684
+      Ammonomicon Atlas_256: 1235764645
+      Ammonomicon Atlas_257: -1029967815
+      Ammonomicon Atlas_258: -1265108842
+      Ammonomicon Atlas_259: 1466965103
+      Ammonomicon Atlas_26: -75688931
+      Ammonomicon Atlas_260: 951445238
+      Ammonomicon Atlas_261: 1536386056
+      Ammonomicon Atlas_262: 46865475
+      Ammonomicon Atlas_263: -481944069
+      Ammonomicon Atlas_264: -288157463
+      Ammonomicon Atlas_265: 165731373
+      Ammonomicon Atlas_266: 755189468
+      Ammonomicon Atlas_267: -1368999511
+      Ammonomicon Atlas_268: -2043546875
+      Ammonomicon Atlas_27: 1951149355
+      Ammonomicon Atlas_28: 1897617857
+      Ammonomicon Atlas_29: -916901872
+      Ammonomicon Atlas_3: 1172747965
+      Ammonomicon Atlas_30: -791812256
+      Ammonomicon Atlas_31: -1765202287
+      Ammonomicon Atlas_32: 964573387
+      Ammonomicon Atlas_33: -886599242
+      Ammonomicon Atlas_34: 896081383
+      Ammonomicon Atlas_35: -1808484454
+      Ammonomicon Atlas_36: 1800623137
+      Ammonomicon Atlas_37: 1565714817
+      Ammonomicon Atlas_38: -963304347
+      Ammonomicon Atlas_39: 106386184
+      Ammonomicon Atlas_4: 375894967
+      Ammonomicon Atlas_40: 1719964692
+      Ammonomicon Atlas_41: -334885758
+      Ammonomicon Atlas_42: -1721157702
+      Ammonomicon Atlas_43: 1447544465
+      Ammonomicon Atlas_44: 524242706
+      Ammonomicon Atlas_45: 1937432366
+      Ammonomicon Atlas_46: -1800297722
+      Ammonomicon Atlas_47: -2086481276
+      Ammonomicon Atlas_48: -1451593955
+      Ammonomicon Atlas_49: -1633206572
+      Ammonomicon Atlas_5: -622958427
+      Ammonomicon Atlas_50: 1481213347
+      Ammonomicon Atlas_51: 1634708431
+      Ammonomicon Atlas_52: 573938072
+      Ammonomicon Atlas_53: -1931873615
+      Ammonomicon Atlas_54: -309710133
+      Ammonomicon Atlas_55: 1783754000
+      Ammonomicon Atlas_56: -1516267916
+      Ammonomicon Atlas_57: 535308166
+      Ammonomicon Atlas_58: 66664606
+      Ammonomicon Atlas_59: 164918101
+      Ammonomicon Atlas_6: -159569208
+      Ammonomicon Atlas_60: 138213856
+      Ammonomicon Atlas_61: 2052275431
+      Ammonomicon Atlas_62: -871905059
+      Ammonomicon Atlas_63: -999486789
+      Ammonomicon Atlas_64: -1293982432
+      Ammonomicon Atlas_65: -1213313063
+      Ammonomicon Atlas_66: 368170992
+      Ammonomicon Atlas_67: 1771721069
+      Ammonomicon Atlas_68: 512590491
+      Ammonomicon Atlas_69: -461202776
+      Ammonomicon Atlas_7: 1531439934
+      Ammonomicon Atlas_70: -1713843913
+      Ammonomicon Atlas_71: -571912253
+      Ammonomicon Atlas_72: -1316502785
+      Ammonomicon Atlas_73: -243642593
+      Ammonomicon Atlas_74: -1551541543
+      Ammonomicon Atlas_75: 1036343057
+      Ammonomicon Atlas_76: 1676830996
+      Ammonomicon Atlas_77: 1948782364
+      Ammonomicon Atlas_78: 1833251165
+      Ammonomicon Atlas_79: -1730829749
+      Ammonomicon Atlas_8: 1868170234
+      Ammonomicon Atlas_80: 939204454
+      Ammonomicon Atlas_81: 1862058750
+      Ammonomicon Atlas_82: 1341938056
+      Ammonomicon Atlas_83: 56137031
+      Ammonomicon Atlas_84: 1614804525
+      Ammonomicon Atlas_85: -451310336
+      Ammonomicon Atlas_86: 168325843
+      Ammonomicon Atlas_87: 76669423
+      Ammonomicon Atlas_88: -1313144346
+      Ammonomicon Atlas_89: 1762619668
+      Ammonomicon Atlas_9: -2097924184
+      Ammonomicon Atlas_90: 1593010872
+      Ammonomicon Atlas_91: -1500018328
+      Ammonomicon Atlas_92: 817424602
+      Ammonomicon Atlas_93: 1299766167
+      Ammonomicon Atlas_94: -517641589
+      Ammonomicon Atlas_95: 1489664801
+      Ammonomicon Atlas_96: 838707139
+      Ammonomicon Atlas_97: -1126509745
+      Ammonomicon Atlas_98: -1388146232
+      Ammonomicon Atlas_99: 429788874
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
