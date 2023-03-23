@@ -46,20 +46,18 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> mapPrefabs = new List<GameObject>();
-    public GameObject indexCheckObj = default;
-    public GameObject mapAccessLine = default;
-    public GameObject mapAccessWall = default;
+    //public GameObject indexCheckObj = default;
+    private GameObject mapAccessLine = default;
+    private GameObject mapAccessWall = default;
 
     private const float MINIMUM_DIVIDE_RATE = 0.36f;
     private const float MAXIMUM_DIVIDE_RATE = 0.64f;
     private const int MAXIMUM_DEPTH = 4;
 
-    [SerializeField]
-    private GameObject roomLine = default;
-    [SerializeField]
+    private GameObject accessLine = default;
     private GameObject lineWallTop = default;
-    [SerializeField]
     private GameObject lineWallBottom = default;
+    private GameObject maps = default;
 
     private MapNode[] mapNodeArray = new MapNode[MAXIMUM_DEPTH * MAXIMUM_DEPTH];
 
@@ -69,15 +67,19 @@ public class MapGenerator : MonoBehaviour
 
     private void Awake()
     {
+        maps = transform.GetChild(0).gameObject;
+        mapAccessLine = transform.GetChild(1).gameObject;
+        mapAccessWall = transform.GetChild(2).gameObject;
+        accessLine = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/AccessLine");
+        lineWallTop = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/lineWallTop");
+        lineWallBottom = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/lineWallBottom");
+
         MapNode root_ = new MapNode(new RectInt(0, 0, mapSize.x, mapSize.y), 0);
         DivideMap(root_, 0);
         RoomAccess(root_, 0);
     }
     void Start()
     {
-        /*MapNode root_ = new MapNode(new RectInt(0, 0, mapSize.x, mapSize.y), 0);
-        DivideMap(root_, 0);*/
-
         AccessZone();
         AccessZoneRoom();
 
@@ -88,15 +90,6 @@ public class MapGenerator : MonoBehaviour
         lineComposite.gameObject.SetActive(false);
         lineComposite.gameObject.SetActive(true); 
 
-        /*mapAccessWall.AddComponent<CompositeCollider2D>().isTrigger = true;
-        CompositeCollider2D wallComposite = mapAccessWall.GetComponent<CompositeCollider2D>();
-        wallComposite.geometryType = CompositeCollider2D.GeometryType.Polygons;
-
-        wallComposite.gameObject.SetActive(false);
-        wallComposite.gameObject.SetActive(true);
-
-        ColliderSizeSet();
-        wallComposite.isTrigger = false;*/
         ColliderSizeSet();
         StartCoroutine(AccessRoomLineColEnableFalse(lineComposite));
     }
@@ -180,9 +173,9 @@ public class MapGenerator : MonoBehaviour
     {
         if (height_ == MAXIMUM_DEPTH)
         {
-            GameObject indexCheck = Instantiate(indexCheckObj, transform.parent);
+            /*GameObject indexCheck = Instantiate(indexCheckObj, transform.parent);
             indexCheck.transform.position = (Vector2)nowNode_.nodePosition;
-            indexCheck.name = nowNode_.nodeIndex.ToString();
+            indexCheck.name = nowNode_.nodeIndex.ToString();*/
             mapNodeArray[nowNode_.nodeIndex] = nowNode_;
 
             int index = 0;
@@ -539,7 +532,7 @@ public class MapGenerator : MonoBehaviour
     }
     private void DrawAccessLine(Vector2 start_, Vector2 end_)
     {
-        LineRenderer lineRenderer_ = Instantiate(roomLine).GetComponent<LineRenderer>();
+        LineRenderer lineRenderer_ = Instantiate(accessLine).GetComponent<LineRenderer>();
         lineRenderer_.SetPosition(0, start_);
         lineRenderer_.SetPosition(1, end_);
 
@@ -565,9 +558,9 @@ public class MapGenerator : MonoBehaviour
     }
     private void DrawAccessLine(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_)
     {
-        LineRenderer lineRenderer_ = Instantiate(roomLine).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer2_ = Instantiate(roomLine).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer3_ = Instantiate(roomLine).GetComponent<LineRenderer>();
+        LineRenderer lineRenderer_ = Instantiate(accessLine).GetComponent<LineRenderer>();
+        LineRenderer lineRenderer2_ = Instantiate(accessLine).GetComponent<LineRenderer>();
+        LineRenderer lineRenderer3_ = Instantiate(accessLine).GetComponent<LineRenderer>();
 
         lineRenderer_.SetPosition(0, start_);
         lineRenderer_.SetPosition(1, middle_);
