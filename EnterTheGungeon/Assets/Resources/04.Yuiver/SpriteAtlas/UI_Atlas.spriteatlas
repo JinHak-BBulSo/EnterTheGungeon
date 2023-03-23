@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainTitle_Atlas
+  m_Name: UI_Atlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -53,6 +53,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: eef73323db3e8a64c8e5384e2bb5c435, type: 2}
   - {fileID: 21300000, guid: 698047d38c7a4644781ed760ca9a64af, type: 2}
   - {fileID: 21300000, guid: c3b3b4e304f52f74b8adf347c6d2a5a6, type: 2}
+  - {fileID: 21300000, guid: 2c3094048985fa84f9fef6126447c8d3, type: 2}
   - {fileID: 21300000, guid: 45ced6049a261d947bd6de0a707495ca, type: 2}
   - {fileID: 21300000, guid: 4b0371140e596a44e87cbd558fad0d1c, type: 2}
   - {fileID: 21300000, guid: 24b1d8058766a5940824b486b5f60c19, type: 2}
@@ -94,12 +95,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1b27c7ecb7eb48941b572f5d3fccd48a, type: 2}
   - {fileID: 21300000, guid: 17d3f60d0dc69984d9222c81ed827f96, type: 2}
   - {fileID: 21300000, guid: 72999e3db9032674e8c0ef42f4638e9c, type: 2}
+  - {fileID: 21300000, guid: 19d53f4ddff3f84469294845f061b6ef, type: 2}
   - {fileID: 21300000, guid: 335757dd71c07bd4985a53857209d101, type: 2}
   - {fileID: 21300000, guid: b3ef164e44444d24b96a4c6fa2fb47c4, type: 2}
   - {fileID: 21300000, guid: 60d203bec62fb31479f09c5230e60b3d, type: 2}
   - {fileID: 21300000, guid: 13d7f9ee368f53f4c9d0e24279345cbf, type: 2}
   - {fileID: 21300000, guid: 199e502f423a4964a879f6af56c35b25, type: 2}
   - {fileID: 21300000, guid: 337dda5fbfaa44d4495095731c75d5cb, type: 2}
+  - {fileID: 21300000, guid: c6212f8fa42e1254b838ecce3a1f4e98, type: 2}
   - {fileID: 21300000, guid: 788f8bafcdab7684d96fe36a25f43cdb, type: 2}
   - {fileID: 21300000, guid: 05fc48ff035aebe4488824f80029a4b8, type: 2}
   m_PackedSpriteNamesToIndex:
@@ -118,6 +121,7 @@ SpriteAtlas:
   - silhouette_lich_bot_lower_003
   - title_comet_22x3
   - silhouette_lich_top_windy_006
+  - Hp_2
   - TITLE
   - title_comet_white_sprite_001
   - silhouette_lich_gun_001
@@ -159,14 +163,16 @@ SpriteAtlas:
   - silhouette_lich_top_windy_005
   - Option_Setting
   - silhouette_lich_click_003
+  - Hp_1
   - NewTitleShadowMask
   - title_comet_sailrmoon_003
   - silhouette_lich_gun_003
   - flag_wave_002
   - silhouette_lich_top_windy_002
   - title_comet_white_003
+  - Hp_0
   - marsh_of_gungeon_nonglow_002
   - silhouette_lich_bot_flap_004
   m_RenderDataMap: {}
-  m_Tag: MainTitle_Atlas
+  m_Tag: UI_Atlas
   m_IsVariant: 0

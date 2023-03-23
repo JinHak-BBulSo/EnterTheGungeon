@@ -14,11 +14,15 @@ public class EnemyManager : GSingleton<EnemyManager>
 
     public List<string> enemyName = new List<string> { "bulletKin", "bandanaBulletKin" };
 
+<<<<<<< HEAD
     public void CreateEnemy(string enemyName, Transform transform_)
+=======
+    public GameObject CreateEnemy(string enemyName, Transform transform_)
+>>>>>>> origin/Develop
     {
         enemyData = Resources.Load<EnemyData>($"02.HT/ScriptableObjects/Enemies/{enemyName}");
 
-        enemyPrefab = Resources.Load<GameObject>("02.HT/Prefabs/EnemyPrefab");
+        enemyPrefab = Resources.Load<GameObject>("02.HT/Prefabs/EnemyPrefabRenderVersion");
 
         GameObject clone = Instantiate(enemyPrefab, transform_);
         if (enemyData.Weapon.Count > 0)
@@ -32,14 +36,14 @@ public class EnemyManager : GSingleton<EnemyManager>
         clone.name = enemyData.EnemyName;
 
         // { image 변경 & image size 조절
-        clone.transform.GetChild(0).GetComponent<Image>().sprite = enemyData.EnemyImage;
+        clone.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = enemyData.EnemyImage;
         clone.transform.GetChild(0).GetComponent<Image>().SetNativeSize();
         clone.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(clone.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x * 3, clone.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y * 3);
         clone.transform.GetComponent<RectTransform>().sizeDelta = clone.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta;
         clone.transform.GetComponent<CapsuleCollider2D>().size = clone.transform.GetComponent<RectTransform>().sizeDelta;
         // } image 변경 & image size 조절
 
-        clone.transform.GetChild(0).GetComponent<Animator>().runtimeAnimatorController = enemyData.EnemyAnim;
+        clone.transform.GetChild(0).GetChild(0).GetComponent<Animator>().runtimeAnimatorController = enemyData.EnemyAnim;
 
         //attaktype설정
         clone.GetComponent<TestEnemy>().attackType = enemyData.AttackType;
@@ -53,6 +57,11 @@ public class EnemyManager : GSingleton<EnemyManager>
         //Status 설정
         clone.GetComponent<TestEnemy>().maxHp = enemyData.EnemyHp;
         clone.GetComponent<TestEnemy>().moveSpeed = enemyData.EnemyMoveSpeed;
+<<<<<<< HEAD
+=======
+
+        return clone;
+>>>>>>> origin/Develop
     }
 
     public void CreateBoss(GameObject bossPrefab_, Transform transform_)

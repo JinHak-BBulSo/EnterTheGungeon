@@ -93,7 +93,7 @@ public class TestEnemy : MonoBehaviour
         if (attackType == 0)
         {
             hand = transform.GetChild(2).gameObject;
-            weapon = hand.transform.GetChild(0).GetComponent<TestEnemyWeapon>();
+            weapon = hand.transform.GetChild(1).GetComponent<TestEnemyWeapon>();
         }
 
         rectTransform = GetComponent<RectTransform>();
@@ -110,15 +110,19 @@ public class TestEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
+        
+        
         if (!IsSpawnEnd) { }
         else
         {
 
             isMove = false;
-            isAttack = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
+            isAttack = transform.GetChild(0).GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
 
-            dist = Vector2.Distance(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition);
+            dist = Vector2.Distance(transform.position, player.transform.position);
+            Debug.Log("Monster" + transform.position);
+            Debug.Log(player.transform.position);
             if (dist > 500 && !isAttack)
             {
                 Move();
@@ -142,19 +146,23 @@ public class TestEnemy : MonoBehaviour
 
             // { set var for using animation
             direction = player.transform.position - transform.position;
-            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputX", direction.x);
-            transform.GetChild(0).GetComponent<Animator>().SetFloat("inputY", direction.y);
+            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("inputX", direction.x);
+            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("inputY", direction.y);
             // ] set var for using animation
         }
 
         if (isMove)
         {
-            transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", true);
+            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsMove", true);
         }
         else
         {
+<<<<<<< HEAD
             transform.GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+=======
+            transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
+>>>>>>> origin/Develop
         }
 
         FindPlayerDirection();
@@ -177,9 +185,13 @@ public class TestEnemy : MonoBehaviour
     {
         isMove = true;
 
+<<<<<<< HEAD
         GetComponent<Rigidbody2D>().velocity = direction.normalized * moveSpeed * 10;
 
         //transform.localPosition = Vector3.MoveTowards(transform.localPosition, GameObject.Find("TestPlayer").transform.localPosition, moveSpeed);
+=======
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * 10 * Time.deltaTime);
+>>>>>>> origin/Develop
     }
     void Attack()
     {
@@ -194,7 +206,7 @@ public class TestEnemy : MonoBehaviour
             if (!isDelayEnd)
             {
                 isDelayEnd = true;
-                transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
+                transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("IsAttack");
 
                 //bookllet casttime_ = 1, gunNut casttime_ = 0.5f
                 StartCoroutine(Fire(1, 5));
@@ -209,7 +221,7 @@ public class TestEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         IsSpawnEnd = true;
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
+        transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsSpawnEnd", true);
     }
 
     IEnumerator Fire(float castTime_, float delayTime_)   //castime & delaytime < scriptableobj에 값 추가 예정
@@ -370,7 +382,7 @@ public class TestEnemy : MonoBehaviour
     {
         if (other.tag == "PlayerBullet")
         {
-            damageTaken = 0;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
+            damageTaken = other.GetComponent<PlayerBullet>().bulletDamage; //after setting playerbullet, change this.
             currentHp -= damageTaken;
             damageTaken = 0;
         }

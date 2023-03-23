@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector.Editor.Validation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +24,12 @@ public class MoveCamera2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameObjs_ = GFunc.GetRootObj("GameObjs");
+        
+
+
+        GameObject gameObjs_ = GameObject.Find("GameObjs");
+
+        gameObject.transform.parent = gameObjs_.transform;
 
         exceptionRangeVal = 0.35f;
 
