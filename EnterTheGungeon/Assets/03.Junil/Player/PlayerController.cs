@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isArmor = true;
 
+    public bool isOnInventory = false;
+
     private void Awake()
     {
         playerMove = gameObject.GetComponentMust<PlayerMove>();
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         chkBlankBullets = 2;
         armorVal = 1;
         isArmor = true;
+        isOnInventory = false;
     }
 
 
@@ -47,11 +50,14 @@ public class PlayerController : MonoBehaviour
     {
         // 플레이어 싱글톤 호출
         PlayerManager.Instance.player = this;
+        GFunc.Log("플레이어 캐싱 ok");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isOnInventory == true) { return; }
+
         ResetPlayerAni();
 
 

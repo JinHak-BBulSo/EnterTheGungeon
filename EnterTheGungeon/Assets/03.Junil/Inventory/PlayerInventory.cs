@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
 
     private const int IEVEN_TAB_VAL = 5;
 
-    private Dictionary<string, Sprite> inventorySprite = default;
+    //private Dictionary<string, Sprite> inventorySprite = default;
 
     private Dictionary<string, List<GameObject>> invenDict = default;
     private List<GameObject> weaponItems = default;
@@ -32,6 +32,8 @@ public class PlayerInventory : MonoBehaviour
     private GameObject[] monsterMenu = default;
     private GameObject[] bossMenu = default;
 
+    // 장비 - 총에 들어갈 오브젝트 배열
+    public GameObject[] weaponObjs = default;
 
 
     // 총 아이템을 모아두는 인벤토리
@@ -67,6 +69,17 @@ public class PlayerInventory : MonoBehaviour
     public Text itemTxt = default;
 
 
+    // 현재 몇 번째 인벤인지 알려주는 int 값
+    public int nowTabInvenCnt = default;
+
+    // 현재 선택된 탭이 무엇인지 알려주는 int 값
+    public int selectTabInvenVal = default;
+
+
+    // 현재 탭을 벗어났는지 확인하는 bool 값
+    public bool isOutTabMenu = false;
+
+
     private void Awake()
     {
 
@@ -76,31 +89,39 @@ public class PlayerInventory : MonoBehaviour
         monsterMenu = new GameObject[IEVEN_TAB_ICON_CNT];
         bossMenu = new GameObject[IEVEN_TAB_ICON_CNT];
 
+
         // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
         SetInventory();
 
 
         invenTabMenu = IEVEN_TAB_VAL;
+        nowTabInvenCnt = 0;
+        selectTabInvenVal = nowTabInvenCnt;
+        isOutTabMenu = false;
+
+        //Sprite[] sprites_ = Resources.LoadAll<Sprite>("03.Junil/Inventory");
 
 
+        //// 인벤토리 스프라이트 배열 선언
+        //inventorySprite = new Dictionary<string, Sprite>();
 
-        Sprite[] sprites_ = Resources.LoadAll<Sprite>("03.Junil/Inventory");
+        //for(int i = 0; i < sprites_.Length; i++)
+        //{
+        //    inventorySprite[sprites_[i].name] = sprites_[i];
+        //}
 
-
-        // 인벤토리 스프라이트 배열 선언
-        inventorySprite = new Dictionary<string, Sprite>();
-
-        for(int i = 0; i < sprites_.Length; i++)
-        {
-            inventorySprite[sprites_[i].name] = sprites_[i];
-        }
-
-
+        // 현재 탭 int 값을 보고 거기에 맞는 리스트를 가져온다
         invenDict = new Dictionary<string, List<GameObject>>();
         weaponItems = new List<GameObject>();
         activeItems = new List<GameObject>();
         passiveItems = new List<GameObject>();
 
+        invenDict.Add("총", weaponItems);
+        invenDict.Add("액티브", activeItems);
+        invenDict.Add("패시브", passiveItems);
+
+
+        weaponObjs = Resources.LoadAll<GameObject>("03.Junil/Weapon/ItemUseWeapons");
 
 
     }
@@ -108,22 +129,223 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // 플레이어 싱글톤 호출
+        PlayerManager.Instance.playerInventory = this;
+        PlayerManager.Instance.playerInventoryObj = gameObject;
+        GFunc.Log("인벤토리 캐싱 ok");
+
+        gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         
+
+        // 엔터 키 입력 시 발동하는 조건
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            selectTabInvenVal = nowTabInvenCnt;
+            GFunc.Log("엔터값 입력");
+            TabInvenMenuVal(nowTabInvenCnt);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            // 0~4 까지의 범위를 범어나지 않게 하기 위한 조건
+            if (nowTabInvenCnt == 0) { return; }
+            GFunc.Log("인벤 작동");
+
+            nowTabInvenCnt--;
+            TabInvenMenuVal(nowTabInvenCnt);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            // 0~4 까지의 범위를 범어나지 않게 하기 위한 조건
+            if (nowTabInvenCnt == 4) { return; }
+            GFunc.Log("인벤 작동");
+
+            nowTabInvenCnt++;
+            TabInvenMenuVal(nowTabInvenCnt);
+
+        }
+
+
+        // 탭에서 상세 창으로 넘어가는 조건
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            isOutTabMenu = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            isOutTabMenu = false;
+        }
+
+
     }
+
+    /// @brief 장비 창을 보여주는 함수
+    public void OnEquipmentMenu()
+    {
+
+        //foreach(GameObject nowWeapon in weaponObjs)
+        //{
+        //    invenDict["총"].Add(nowWeapon);
+        //}
+
+
+    }
+
 
 
     /// @brief 인벤토리 탭을 어떤 걸 선택했는지 보여주는 함수
-    public void ViewTabInven()
+    public void TabInvenMenuVal(int nowTabInven)
     {
-        
+        ResetTabInvenMenu(equipmentMenu);
+        ResetTabInvenMenu(gunMenu);
+        ResetTabInvenMenu(itemMenu);
+        ResetTabInvenMenu(monsterMenu);
+        ResetTabInvenMenu(bossMenu);
+
+        equipmentMenu[3].SetActive(true);
+        gunMenu[3].SetActive(true);
+        itemMenu[3].SetActive(true);
+        monsterMenu[3].SetActive(true);
+        bossMenu[3].SetActive(true);
+
+        if (selectTabInvenVal == nowTabInven)
+        {
+
+            switch (nowTabInven)
+            {
+                case 0:
+                    equipmentMenu[3].SetActive(false);
+                    equipmentMenu[0].SetActive(true);
+
+                    break;
+
+                case 1:
+                    gunMenu[3].SetActive(false);
+                    gunMenu[0].SetActive(true);
+
+                    break;
+
+                case 2:
+                    itemMenu[3].SetActive(false);
+                    itemMenu[0].SetActive(true);
+
+                    break;
+
+                case 3:
+                    monsterMenu[3].SetActive(false);
+                    monsterMenu[0].SetActive(true);
+
+                    break;
+
+                case 4:
+                    bossMenu[3].SetActive(false);
+                    bossMenu[0].SetActive(true);
+
+                    break;
+
+            }
+        }   // if : 현재 선택된 값과 있는 위치 값이 같은 조건
+        else
+        {
+            switch (nowTabInven)
+            {
+                case 0:
+                    equipmentMenu[3].SetActive(false);
+
+                    equipmentMenu[2].SetActive(true);
+
+                    break;
+
+                case 1:
+                    gunMenu[3].SetActive(false);
+
+                    gunMenu[2].SetActive(true);
+
+                    break;
+
+                case 2:
+                    itemMenu[3].SetActive(false);
+
+                    itemMenu[2].SetActive(true);
+
+                    break;
+
+                case 3:
+                    monsterMenu[3].SetActive(false);
+
+                    monsterMenu[2].SetActive(true);
+
+                    break;
+
+                case 4:
+                    bossMenu[3].SetActive(false);
+
+                    bossMenu[2].SetActive(true);
+
+                    break;
+            }
+
+            switch (selectTabInvenVal)
+            {
+                case 0:
+                    equipmentMenu[3].SetActive(false);
+
+                    equipmentMenu[1].SetActive(true);
+
+                    break;
+
+                case 1:
+                    gunMenu[3].SetActive(false);
+
+                    gunMenu[1].SetActive(true);
+
+                    break;
+
+                case 2:
+                    itemMenu[3].SetActive(false);
+
+                    itemMenu[1].SetActive(true);
+
+                    break;
+
+                case 3:
+                    monsterMenu[3].SetActive(false);
+
+                    monsterMenu[1].SetActive(true);
+
+                    break;
+
+                case 4:
+                    bossMenu[3].SetActive(false);
+
+                    bossMenu[1].SetActive(true);
+
+                    break;
+            }
+
+            
+        }
     }
 
+
+    /// @brief 현재 모든 인벤토리 탭의 선택 값을 초기화하는 함수
+    public void ResetTabInvenMenu(GameObject[] tabMenu)
+    {
+        for (int i = 0; i < IEVEN_TAB_ICON_CNT; i++)
+        {
+            tabMenu[i].SetActive(false);
+        }
+    }
     
     /// @brief 초기 인벤토리를 셋팅하는 함수
     public void SetInventory()
@@ -148,9 +370,19 @@ public class PlayerInventory : MonoBehaviour
             itemMenu[i] = itemMenuChild_.transform.GetChild(i).gameObject;
             monsterMenu[i] = monsterMenuChild_.transform.GetChild(i).gameObject;
             bossMenu[i] = bossMenuChild_.transform.GetChild(i).gameObject;
+
+            equipmentMenu[i].SetActive(false);
+            gunMenu[i].SetActive(false);
+            itemMenu[i].SetActive(false);
+            monsterMenu[i].SetActive(false);
+            bossMenu[i].SetActive(false);
         }
 
-
+        equipmentMenu[0].SetActive(true);
+        gunMenu[3].SetActive(true);
+        itemMenu[3].SetActive(true);
+        monsterMenu[3].SetActive(true);
+        bossMenu[3].SetActive(true);
 
         GameObject inventorySetObjs_ = ammonomicList_.FindChildObj("InventorySetObjs");
 
