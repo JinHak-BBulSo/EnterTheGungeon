@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InteractiveObj : MonoBehaviour
 {
-    protected GameObject objRenderer = default;
-    void Start()
+    protected Animator objAni = default;
+    protected virtual void Start()
     {
-        objRenderer = transform.GetChild(0).gameObject;
+        objAni = GetComponent<Animator>();
     }
 }
