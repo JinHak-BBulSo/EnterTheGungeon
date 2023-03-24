@@ -79,7 +79,6 @@ public class PlayerAttack : MonoBehaviour
         
 
         /// @param Vector2 len_ : 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
-        //Vector2 len_ = mousePos_ - transform.position;
         Vector2 len_ = mousePos_ - transform.position;
 
         float lookZ_ = Mathf.Atan2(len_.y, len_.x);

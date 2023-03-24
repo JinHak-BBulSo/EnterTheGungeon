@@ -150,6 +150,7 @@ public class TestEnemy : MonoBehaviour
         else
         {
             transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("IsMove", false);
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
         FindPlayerDirection();
@@ -172,7 +173,8 @@ public class TestEnemy : MonoBehaviour
     {
         isMove = true;
 
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * 10 * Time.deltaTime);
+        GetComponent<Rigidbody2D>().velocity = direction.normalized * moveSpeed * 10;
+        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * 10 * Time.deltaTime);
     }
     void Attack()
     {

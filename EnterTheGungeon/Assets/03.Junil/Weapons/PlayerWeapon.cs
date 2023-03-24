@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWeapon : MonoBehaviour
+public class PlayerWeapon : Weapons
 {
 
     public GameObject bulletObjs = default;
@@ -11,45 +11,10 @@ public class PlayerWeapon : MonoBehaviour
 
     public GameObject rotateWeapon = default;
 
-
-    // 무기 이름
-    public string weaponName = string.Empty;
-
-    // 무기 설명
-    public string weaponDescription = string.Empty;
-
-    // 무기 위치
-    public Vector3 weaponPos = default;
-
-    // 재장전 값
-    public float weaponReload = default;
-
-    // 무기 탄창 크기
-    public int weaponMagazine = default;
-
-    // 무기의 탄약량
-    public int weaponBulletValue = default;
-
-    // 무기 넉백 값
-    public float knockBack = default;
-
-    // 총알 속도
-    public float bulletSpeed = default;
-
-    // 총알 피해량
-    public int bulletDamage = default;
-
-    // 무기 사거리
-    public float bulletRange = default;
-
-    // 총알의 산탄도
-    public int bulletShotRange = default;
-
-    // 무기 발사 딜레이
-    public float weaponDeley = default;
-
-    // 무기가 한 손인지, 두 손인지, 안들고 있는지 확인
-    public int weaponHand = default;
+    public bool isReload = false;
+    public bool isAttack = false;
+    public int countBullet = default;
+    public float deleyChkVal = default;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +31,7 @@ public class PlayerWeapon : MonoBehaviour
 
     /// [Junil] 2023/03/16
     /// @brief 총에 대한 정보를 한번에 처리하는 함수
-    public void SetWeaponData(Weapons weapons)
+    public virtual void SetWeaponData()
     {
         GameObject weapons_ = gameObject.transform.parent.gameObject;
 
@@ -82,7 +47,7 @@ public class PlayerWeapon : MonoBehaviour
         // 총구 위치
         firePos = gameObject.FindChildObj("FirePos").transform;
 
-        weaponName = weapons.WeaponName();
+        /*weaponName = weapons.WeaponName();
         weaponDescription = weapons.WeaponDescription();
         weaponPos = weapons.WeaponPos();
         weaponReload = weapons.WeaponReload();
@@ -94,10 +59,10 @@ public class PlayerWeapon : MonoBehaviour
         bulletRange = weapons.BulletRange();
         bulletShotRange = weapons.BulletShotRange();
         weaponDeley = weapons.WeaponDeley();
-        weaponHand = weapons.WeaponHand();
+        weaponHand = weapons.WeaponHand();*/
 
     }
-
+    
     /// [Junil] 2023/03/16
     /// @brief 총을 재장전하는 함수
     public virtual void ReloadBullet()
@@ -111,5 +76,15 @@ public class PlayerWeapon : MonoBehaviour
     public virtual void FireBullet()
     {
         
+    }
+    public IEnumerator OnReload()
+    {
+        GFunc.Log("리로드 중");
+        isReload = true;
+
+        yield return new WaitForSeconds(weaponReload);
+        countBullet = weaponMagazine;
+
+        isReload = false;
     }
 }

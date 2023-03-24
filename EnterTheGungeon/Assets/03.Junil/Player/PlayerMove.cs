@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     private Animator playerAni = default;
     private PlayerAttack playerAttack = default;
 
+    
 
     public float playerSpeed = default;
     public bool isDodgeing = false;
@@ -36,7 +37,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAni.SetTrigger("OnArmorOne");
+        
 
     }
 
@@ -76,7 +77,8 @@ public class PlayerMove : MonoBehaviour
 
         if (isReDodgeing == true)
         {
-            StopCoroutine("ReDodge");
+            StopReDodge();
+            //StopCoroutine("ReDodge");
             isReDodgeing = false;
 
         }
@@ -94,7 +96,7 @@ public class PlayerMove : MonoBehaviour
 
         playerRigid2D.velocity = len_.normalized * playerSpeed;
 
-        StartCoroutine("OffDodge");
+        StartCoroutine(OffDodge());
     }
 
 
@@ -107,7 +109,24 @@ public class PlayerMove : MonoBehaviour
 
         //playerAni.SetTrigger("OnArmorOne");
 
-        StartCoroutine("ReDodge");
+        StartReDodge();
+        //StartCoroutine("ReDodge");
+    }
+
+    IEnumerator ReDodgeCoroutine = default;
+
+    void StartReDodge()
+    {
+        ReDodgeCoroutine = ReDodge();
+        StartCoroutine(ReDodgeCoroutine);
+    }
+
+    void StopReDodge()
+    {
+        if(ReDodgeCoroutine != null)
+        {
+            StopCoroutine(ReDodgeCoroutine);
+        }
     }
 
     IEnumerator ReDodge()
@@ -115,13 +134,56 @@ public class PlayerMove : MonoBehaviour
         isReDodgeing = true;
         yield return new WaitForSeconds(0.2f);
         isReDodgeing = false;
-        playerAni.SetTrigger("OnArmorOne");
+        
+        PlayerManager.Instance.player.isStatusEvent = true;
     }
 
+
+    // 아머의 유무와 현재 장착하고 있는 무기가 없거나, 한 손, 두 손인 경우를 받아서
+    // 그에 맞는 애니메이션을 작동시키는 함수이다
     // 추후 무기 값도 보내기
-    public void PlayerAniRestart(bool isArmor)
+    public void PlayerAniRestart(bool isArmor, int nowWeaponHand)
     {
-        isNowArmor = isArmor;
+        if(isArmor == true)
+        {
+            switch (nowWeaponHand)
+            {
+                case 0:
+                    playerAni.SetTrigger("OnArmorZero");
+
+                    break;
+
+                case 1:
+                    playerAni.SetTrigger("OnArmorOne");
+
+                    break;
+
+                case 2:
+                    playerAni.SetTrigger("OnArmorTwo");
+
+                    break;
+            }
+        }
+        else
+        {
+            switch (nowWeaponHand)
+            {
+                case 0:
+                    playerAni.SetTrigger("OffArmorZero");
+
+                    break;
+
+                case 1:
+                    playerAni.SetTrigger("OffArmorOne");
+
+                    break;
+
+                case 2:
+                    playerAni.SetTrigger("OffArmorTwo");
+
+                    break;
+            }
+        }
     }
 
 }

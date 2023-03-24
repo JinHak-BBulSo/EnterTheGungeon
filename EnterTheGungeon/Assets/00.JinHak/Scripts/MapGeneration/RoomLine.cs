@@ -6,9 +6,9 @@ public class RoomLine : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.transform.parent.parent.tag == "Wall")
+        if (collision.gameObject.tag == "Wall" && collision.transform.parent.name != "MapAccessWall")
         {
-            collision.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
         }
     }
 }
