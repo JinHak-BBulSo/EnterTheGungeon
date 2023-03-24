@@ -134,9 +134,8 @@ public class PlayerMove : MonoBehaviour
         isReDodgeing = true;
         yield return new WaitForSeconds(0.2f);
         isReDodgeing = false;
-        // 임시
-        PlayerAniRestart(PlayerManager.Instance.player.isArmor,
-            PlayerManager.Instance.player.nowWeaponHandVal);
+        
+        PlayerManager.Instance.player.isStatusEvent = true;
     }
 
 

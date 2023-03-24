@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class BlankController : MonoBehaviour
 {
-    public int playerBlank = default;
     public const int PLAYER_Display_MAX_Blank = 22;
 
     [ShowInInspector]
@@ -14,14 +13,10 @@ public class BlankController : MonoBehaviour
 
     void Start()
     {
-        playerBlank = 2;
         for (int i = 0; i < transform.childCount; i++)
         {
             blankObjList.Add(transform.GetChild(i).GetComponent<BlankElement>());
         }
-
-        SetPlayerBlank(2);
-
     }
 
     // Update is called once per frame
@@ -32,7 +27,7 @@ public class BlankController : MonoBehaviour
 
     public void SetPlayerBlank(int playerBlank_)
     {
-        playerBlank= playerBlank_;
+        int playerBlank= playerBlank_;
 
         for (int i = 0; i < playerBlank; i++)
         {
