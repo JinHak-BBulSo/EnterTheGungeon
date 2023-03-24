@@ -137,3 +137,14 @@ public enum AudioSetting
 }
 
 #endregion
+
+/// [KJH] 2023-03-23
+///  @brief item을 tag를 통해 카테고리 별로 분류하기 위해 정의
+public enum ItemTag
+{
+    NONE = -1,
+    GUN = 0,
+    ACTIVE,
+    PASSIVE,
+    ETC
+}

@@ -285,7 +285,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3006484057556045433}
   - component: {fileID: 522101034742151561}
-  - component: {fileID: 7311213422381681563}
   m_Layer: 5
   m_Name: PlayerMarineObjs
   m_TagString: Untagged
@@ -336,19 +335,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &7311213422381681563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3006484057556045430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ee3d96d03788247b4779d1306a2ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &3006484057885638595
 GameObject:
   m_ObjectHideFlags: 0

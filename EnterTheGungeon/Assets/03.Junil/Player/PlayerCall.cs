@@ -8,6 +8,7 @@ public class PlayerCall : MonoBehaviour
     private void Awake()
     {
         PlayerManager.Instance.Create();
+        GFunc.Log($"Create ok");
     }
 
     // Start is called before the first frame update
