@@ -5,37 +5,26 @@ using UnityEngine;
 public class SPMAWeapon : PlayerWeapon
 {
     private GameObject spmaBulletPrefab = default;
-
     private GameObject[] spmaBullets = default;
 
-
-    public Weapons weapons = default;
-
-    public int countBullet = default;
-    public float deleyChkVal = default;
-
-    public bool isAttack = false;
-    public bool isReload = false;
+    void Awake()
+    {
+        SetWeaponData();
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         spmaBulletPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/SPMA_Bullet");
 
         isAttack = false;
         isReload = false;
         deleyChkVal = 0f;
 
-        weapons = new MarineNorWeapon();
-
-
-        SetWeaponData(weapons);
-
         countBullet = weaponMagazine;
 
-        gameObject.transform.localPosition = weapons.WeaponPos();
+        gameObject.transform.localPosition = weaponPos;
 
         spmaBullets = new GameObject[weaponMagazine];
 
@@ -45,6 +34,7 @@ public class SPMAWeapon : PlayerWeapon
         {
             spmaBullets[i] = Instantiate(spmaBulletPrefab, saveBulletPos_,
                 Quaternion.identity, bulletObjs.transform);
+            spmaBullets[i].GetComponent<SPMABulletMove>().SetBulletData(this);
 
             spmaBullets[i].SetActive(false);
         }
@@ -110,16 +100,27 @@ public class SPMAWeapon : PlayerWeapon
 
     }
 
-    IEnumerator OnReload()
+    public override void SetWeaponData()
     {
-        GFunc.Log("리로드 중");
-        isReload = true;
+        base.SetWeaponData();
 
-        yield return new WaitForSeconds(weaponReload);
-        countBullet = weaponMagazine;
+        this.weaponName = "해병 휴대 무기";
+        this.weaponDescription = "항상 그대 곁에\r\n" +
+            "무한 탄환입니다. 비밀 벽을 드러내지 않습니다. 프라이머다인의 하급 병사가 총굴로 가지고 온 해병 휴대 무기입니다.\r\n" +
+            "튼튼한 총처럼 보이지만, 정작 필요할 때는 오작동을 일으키는 것으로 알려졌습니다.";
 
-        isReload = false;
+        this.weaponPos = new Vector3(5f, 2f, 0f);
+        this.weaponReload = 1.2f;
+        this.weaponMagazine = 10;
+
+        // -1은 탄약량이 무제한이라는 의미이다.
+        this.weaponBulletValue = -1;
+        this.knockBack = 12f;
+        this.bulletSpeed = 10f;
+        this.bulletDamage = 5;
+        this.bulletRange = 18f;
+        this.bulletShotRange = 5;
+        this.weaponDeley = 0.25f;
+        this.weaponHand = 1;
     }
-
-    
 }

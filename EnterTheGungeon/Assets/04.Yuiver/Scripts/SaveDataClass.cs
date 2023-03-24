@@ -40,6 +40,8 @@ namespace SaveData
         [OdinSerialize]
         public int key;
 
+        [OdinSerialize]
+        public int deathCount;
         // Other fields you want to save
     }
 

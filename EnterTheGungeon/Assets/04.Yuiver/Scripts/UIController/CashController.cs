@@ -10,7 +10,6 @@ public class CashController : MonoBehaviour
     void Start()
     {
         cashTxt = gameObject.transform.GetChild(1).gameObject;
-        SetPlayerCash(333);
     }
 
     // Update is called once per frame

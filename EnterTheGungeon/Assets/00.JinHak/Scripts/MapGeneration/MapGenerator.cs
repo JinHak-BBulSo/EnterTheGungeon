@@ -189,9 +189,9 @@ public class MapGenerator : MonoBehaviour
                 {
                     if (index > 100)
                     {
-                        GameObject nodeRoom_ = Instantiate(mapPrefabs[2], transform.parent);
+                        GameObject nodeRoom_ = Instantiate(mapPrefabs[2], maps.transform);
                         nodeRoom_.transform.position = nowNode_.nodePosition;
-                        nowNode_.room = room_;
+                        nowNode_.room = nodeRoom_.GetComponent<Room>();
 
                         nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
                         nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
@@ -204,7 +204,7 @@ public class MapGenerator : MonoBehaviour
                 }
                 else
                 {
-                    GameObject nodeRoom_ = Instantiate(room_.gameObject, transform.parent);
+                    GameObject nodeRoom_ = Instantiate(room_.gameObject, maps.transform);
                     nodeRoom_.transform.position = nowNode_.nodePosition;
                     nowNode_.room = room_;
 
@@ -234,11 +234,11 @@ public class MapGenerator : MonoBehaviour
                         start_ = mapNodeArray[i].topCenter;
                         end_ = mapNodeArray[i + 1].bottomCenter;
 
-                        startLeft_ = new Vector2(start_.x - 1, start_.y + 1.3f);
-                        startRight_ = new Vector2(start_.x + 1, start_.y + 1.3f);
+                        startLeft_ = new Vector2(start_.x - 1, start_.y);
+                        startRight_ = new Vector2(start_.x + 1, start_.y);
 
-                        endLeft_ = new Vector2(end_.x - 1, end_.y - 1.3f);
-                        endRight_ = new Vector2(end_.x + 1, end_.y - 1.3f);
+                        endLeft_ = new Vector2(end_.x - 1, end_.y);
+                        endRight_ = new Vector2(end_.x + 1, end_.y);
 
                         DrawAccessLine(startLeft_, endLeft_, lineWallTop);
                         DrawAccessLine(startRight_, endRight_, lineWallBottom);
@@ -249,11 +249,11 @@ public class MapGenerator : MonoBehaviour
                         start_ = mapNodeArray[i].rightCenter;
                         end_ = mapNodeArray[i + 1].leftCenter;
 
-                        startLeft_ = new Vector2(start_.x + 1.3f, start_.y - 1);
-                        startRight_ = new Vector2(start_.x + 1.3f, start_.y + 1);
+                        startLeft_ = new Vector2(start_.x, start_.y - 1);
+                        startRight_ = new Vector2(start_.x, start_.y + 1);
 
-                        endLeft_ = new Vector2(end_.x - 1.3f, end_.y - 1);
-                        endRight_ = new Vector2(end_.x - 1.3f, end_.y + 1);
+                        endLeft_ = new Vector2(end_.x, end_.y - 1);
+                        endRight_ = new Vector2(end_.x, end_.y + 1);
 
                         DrawAccessLine(startLeft_, endLeft_, lineWallTop);
                         DrawAccessLine(startRight_, endRight_, lineWallBottom);
@@ -305,7 +305,7 @@ public class MapGenerator : MonoBehaviour
 
         int ran_ = Random.Range(0, accessRoomIndex_.Count);
         Vector2 mapCreatePoint_ = default;
-        GameObject startMapObj = Instantiate(mapPrefabs[0], transform.parent);
+        GameObject startMapObj = Instantiate(mapPrefabs[0], maps.transform);
         
         startMap.room = startMapObj.GetComponent<Room>();
 
@@ -383,11 +383,6 @@ public class MapGenerator : MonoBehaviour
 
             endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
             endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
-
-            Debug.Log(startLeft_);
-            Debug.Log(startRight_);
-            Debug.Log(endLeft_);
-            Debug.Log(endRight_);
 
             DrawAccessLine(startLeft_, endLeft_, lineWallTop);
             DrawAccessLine(startRight_, endRight_, lineWallBottom);
