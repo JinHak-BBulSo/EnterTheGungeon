@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993995679745223168}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MapBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5719976723212546583}
   - component: {fileID: 2091052795822341591}
   - component: {fileID: 1851634356584696840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 6837520042866313668}
   - component: {fileID: 6837520042866313671}
   - component: {fileID: 6837520042866313670}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MapObjs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6837520042866313670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5322010944836718416}
   - component: {fileID: 6339644692677231928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MapTileGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2760823330444413362}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BookShelfRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
