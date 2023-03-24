@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerMarine_FrontTable_zero
+  m_Name: PlayerMarine_FrontTablekick_Two
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 24fb3fe79709e8048a6f09c6552f673e, type: 3}
+      value: {fileID: 21300000, guid: f3a49c5776da35c498456ad4a67915a4, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 560141089a5e334468a670c80a029421, type: 3}
+      value: {fileID: 21300000, guid: ab319c6b6ececb545a798235f1278576, type: 3}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: 6e73fb919d64e414d9381728dcf781e2, type: 3}
+      value: {fileID: 21300000, guid: 794700359e4fe2a4a8b45965821c912f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 24fb3fe79709e8048a6f09c6552f673e, type: 3}
-    - {fileID: 21300000, guid: 560141089a5e334468a670c80a029421, type: 3}
-    - {fileID: 21300000, guid: 6e73fb919d64e414d9381728dcf781e2, type: 3}
+    - {fileID: 21300000, guid: f3a49c5776da35c498456ad4a67915a4, type: 3}
+    - {fileID: 21300000, guid: ab319c6b6ececb545a798235f1278576, type: 3}
+    - {fileID: 21300000, guid: 794700359e4fe2a4a8b45965821c912f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

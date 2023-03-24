@@ -6,32 +6,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : GSingleton<PlayerInventory>
 {
-
     private PlayerInvenList playerInvenList = default;
     private PlayerInvenInfo playerInvenInfo = default;
-
-
 
     // 현재 탭을 벗어났는지 확인하는 bool 값
     public bool isOutTabMenu = false;
 
-
     private void Awake()
     {
- 
-
         // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
         SetInventory();
 
-
-        isOutTabMenu = false;
-
-        
-
-
-
+        isOutTabMenu = false;  
     }
 
 

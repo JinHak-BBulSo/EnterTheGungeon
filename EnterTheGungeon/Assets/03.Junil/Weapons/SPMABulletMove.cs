@@ -8,8 +8,6 @@ public class SPMABulletMove : PlayerBullet
     private Rigidbody2D spmaBulletRigid2D = default;
     private Animator spmaAni = default;
 
-    public Weapons weapons = default;
-
     public Vector3 activePos = default;
 
     public bool isOffBullet = false;
@@ -35,15 +33,12 @@ public class SPMABulletMove : PlayerBullet
     // Start is called before the first frame update
     void Start()
     {
-        weapons = new MarineNorWeapon();
+        
 
         isOffBullet = false;
 
         spmaBulletRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         spmaAni = gameObject.GetComponentMust<Animator>();
-
-        SetBulletData(weapons);
-
     }
 
     // Update is called once per frame

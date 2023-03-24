@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerMove playerMove = default;
-    private PlayerAttack playerAttack = default;
+    public PlayerMove playerMove = default;
+    public PlayerAttack playerAttack = default;
     private Canvas playerSort = default;
 
 
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // 피격이나 쉴드를 먹는 등의 이벤트가 발생하면 참이 되는 bool 값
     public bool isStatusEvent = true;
 
+    public System.Action activeItem = default;
 
     private void Awake()
     {
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
             shield = 0,
             blank = 2,
             money = 0,
-            key = 1
+            key = 1,
             // 다른 필드에 대한 기본값 설정                
         };
 
@@ -113,6 +114,8 @@ public class PlayerController : MonoBehaviour
             //BlankController.SetPlayerBlank(playerBlank);
             //KeyController.SetPlayerKey(playerKey);
             //CashController.SetPlayerCash(playerMoney);
+            ResetPlayerAni();
+
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
 
             isStatusEvent = false;
@@ -120,7 +123,6 @@ public class PlayerController : MonoBehaviour
 
         if (isOnInventory == true) { return; }
 
-        ResetPlayerAni();
 
 
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -211,4 +213,5 @@ public class PlayerController : MonoBehaviour
         isStatusEvent = true;
     }   // OnHitAndStatusEvent()
 
+    
 }
