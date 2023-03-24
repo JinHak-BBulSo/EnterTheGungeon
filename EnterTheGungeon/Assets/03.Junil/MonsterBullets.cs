@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterBullets : MonoBehaviour
+public class MonsterBullets : BaseBullet
 {
     // { [Junil] 몬스터 총알은 이 스크립트를 상속받기
     public virtual void OnEnable()
@@ -23,6 +23,5 @@ public class MonsterBullets : MonoBehaviour
     }
 
     // } [Junil] 몬스터 총알은 이 스크립트를 상속받기
-
 
 }

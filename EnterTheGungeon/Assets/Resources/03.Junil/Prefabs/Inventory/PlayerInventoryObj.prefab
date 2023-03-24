@@ -4812,6 +4812,7 @@ GameObject:
   - component: {fileID: 9120905735611877329}
   - component: {fileID: 9120905735611877335}
   - component: {fileID: 9120905735611877334}
+  - component: {fileID: 8901810944739355239}
   m_Layer: 5
   m_Name: AmmonomiconInfo
   m_TagString: Untagged
@@ -4878,6 +4879,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8901810944739355239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120905735611877328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f28301112a8acd4a9237531f49c653b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameTxt: {fileID: 0}
+  itemTrueImg: {fileID: 0}
+  itemImg: {fileID: 0}
+  itemDescTxt: {fileID: 0}
+  itemClassTxt: {fileID: 0}
+  itemTxtObj: {fileID: 0}
+  itemTxt: {fileID: 0}
 --- !u!1 &9120905735618644336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,19 +4988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b090695477147488fbec9cd8cabfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponObjs: []
-  gunsInven: {fileID: 0}
-  activeInven: {fileID: 0}
-  passiveInven: {fileID: 0}
-  itemNameTxt: {fileID: 0}
-  itemTrueImg: {fileID: 0}
-  itemImg: {fileID: 0}
-  itemDescTxt: {fileID: 0}
-  itemClassTxt: {fileID: 0}
-  itemTxtObj: {fileID: 0}
-  itemTxt: {fileID: 0}
-  nowTabInvenCnt: 0
-  selectTabInvenVal: 0
   isOutTabMenu: 0
 --- !u!1 &9120905736106050807
 GameObject:
@@ -4991,6 +4998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9120905736106050804}
+  - component: {fileID: 1515551789678207867}
   m_Layer: 5
   m_Name: AmmonomiconList
   m_TagString: Untagged
@@ -5022,6 +5030,24 @@ RectTransform:
   m_AnchoredPosition: {x: -239.93, y: 5.43}
   m_SizeDelta: {x: 450, y: 634}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1515551789678207867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120905736106050807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd5721d8e14d334ca26ec9540349fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObjs: []
+  gunsInven: {fileID: 0}
+  activeInven: {fileID: 0}
+  passiveInven: {fileID: 0}
+  nowTabInvenCnt: 0
+  selectTabInvenVal: 0
 --- !u!1 &9120905736425550736
 GameObject:
   m_ObjectHideFlags: 0
