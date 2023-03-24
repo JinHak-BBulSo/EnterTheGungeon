@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
+    string bulletPath = "01.HyeokJin/Prefabs/Bullets";
     [Header("Prefabs_Enemy")]
     [SerializeField] public GameObject bossBulletKingPrefab = default;
     [Header("Prefabs_Bullet")]
-    [SerializeField] public GameObject bulletBasicPrefab = default;
+    [SerializeField] public GameObject[] bulletPrefabs = new GameObject[7];
     [SerializeField] public GameObject bulletTypeAPrefab = default;
     [SerializeField] public GameObject bulletTypeBPrefab = default;
     [SerializeField] public GameObject bulletTypeCPrefab = default;
@@ -29,6 +30,8 @@ public class ObjectManager : MonoBehaviour
     //  @brief Awake
     private void Awake()
     {
+        bulletPrefabs = Resources.LoadAll<GameObject>(bulletPath);
+
         bulletBasic = new GameObject[500];
         bulletTypeA = new GameObject[500];
         bulletTypeB = new GameObject[500];
@@ -51,7 +54,7 @@ public class ObjectManager : MonoBehaviour
         //  Bullet_Basic : Basic
         for (int index = 0; index < bulletBasic.Length; index++)
         {
-            bulletBasic[index] = Instantiate(bulletBasicPrefab);
+            bulletBasic[index] = Instantiate(bulletPrefabs[0]);
             bulletBasic[index].SetActive(false);
         }
 
