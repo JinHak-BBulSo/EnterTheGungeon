@@ -82,7 +82,7 @@ MonoBehaviour:
   enemy:
   - bulletKin
   boss: {fileID: 0}
-  roomSize: {x: 22, y: 15}
+  roomSize: {x: 22, y: 16}
   isPlayerEnter: 0
 --- !u!61 &5767004668382457339
 BoxCollider2D:
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22, y: 15}
+  m_Size: {x: 22, y: 16}
   m_EdgeRadius: 0
 --- !u!1 &6046016865167449531
 GameObject:

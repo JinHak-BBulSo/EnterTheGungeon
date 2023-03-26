@@ -13,16 +13,17 @@ public enum OverDistance
 
 public class Table : InteractiveObj
 {
-    BoxCollider2D deskBoxCollider = default;
+    BoxCollider2D tableBoxCollider = default;
+    Rigidbody2D tableRigid = default;
     private bool isOver = false;
-    private bool isOverSet = false;
+    private bool isRigidSet = false;
     public OverDistance distance;
 
     
     protected override void Start()
     {
         base.Start();
-        deskBoxCollider = GetComponent<BoxCollider2D>();
+        tableBoxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -54,12 +55,26 @@ public class Table : InteractiveObj
     IEnumerator ReSetCollider()
     {
         yield return new WaitForSeconds(0.3f);
-        deskBoxCollider.enabled = false;
-        isOverSet = true;
+        tableBoxCollider.enabled = false;
+        isRigidSet = true;
         gameObject.AddComponent<PolygonCollider2D>();
-        Rigidbody2D rigid_ = gameObject.AddComponent<Rigidbody2D>();
-        rigid_.gravityScale = 0;
-        rigid_.mass = 200;
-        rigid_.constraints = RigidbodyConstraints2D.FreezeRotation;
+        tableRigid = gameObject.AddComponent<Rigidbody2D>();
+        tableRigid.gravityScale = 0;
+        tableRigid.mass = 200;
+        tableRigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if (isRigidSet)
+            {
+                tableRigid.velocity = Vector3.zero;
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 }
