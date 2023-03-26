@@ -7,6 +7,17 @@ public class SPMAWeapon : PlayerWeapon
     private GameObject spmaBulletPrefab = default;
     private GameObject[] spmaBullets = default;
 
+    public bool isEmptyBullet = false;
+
+    private void OnEnable()
+    {
+        if (countBullet == 0)
+        {
+            isEmptyBullet = true;
+        }
+    }
+
+
     void Awake()
     {
         SetWeaponData();
@@ -21,6 +32,7 @@ public class SPMAWeapon : PlayerWeapon
         isAttack = false;
         isReload = false;
         deleyChkVal = 0f;
+        isEmptyBullet = false;
 
         countBullet = weaponMagazine;
 
@@ -46,6 +58,15 @@ public class SPMAWeapon : PlayerWeapon
     void Update()
     {
         deleyChkVal += Time.deltaTime;
+
+
+        if (isEmptyBullet == true)
+        {
+            isEmptyBullet = false;
+            GFunc.Log("재장전 실행됨");
+            StartCoroutine(OnReload());
+        }
+        
     }
 
 
@@ -69,11 +90,19 @@ public class SPMAWeapon : PlayerWeapon
         {
             isAttack = true;
 
+            //if(spmaBullets[countBullet - 1].activeSelf == true)
+            //{
+            //    spmaBullets[countBullet - 1].SetActive(false);
+
+            //}
             spmaBullets[countBullet - 1].transform.position = firePos.position;
 
             spmaBullets[countBullet - 1].transform.rotation = gameObject.transform.rotation;
 
             spmaBullets[countBullet - 1].transform.Rotate(new Vector3(0f, 0f, -90f));
+
+            //spmaBullets[countBullet - 1].GetComponent<SPMABulletMove>().SetActivePos();
+
             spmaBullets[countBullet - 1].SetActive(true);
 
             float shotRange_ = Random.Range(bulletShotRange * -1, bulletShotRange + 1);
@@ -84,9 +113,10 @@ public class SPMAWeapon : PlayerWeapon
 
             countBullet--;
 
-            if(countBullet == 0)
+            if (countBullet == 0)
             {
-                StartCoroutine(OnReload());
+                isEmptyBullet = true;
+                GFunc.Log("wwwww");
             }
         }
     }
@@ -116,7 +146,7 @@ public class SPMAWeapon : PlayerWeapon
         // -1은 탄약량이 무제한이라는 의미이다.
         this.weaponBulletValue = -1;
         this.knockBack = 12f;
-        this.bulletSpeed = 10f;
+        this.bulletSpeed = 11f;
         this.bulletDamage = 5;
         this.bulletRange = 18f;
         this.bulletShotRange = 5;

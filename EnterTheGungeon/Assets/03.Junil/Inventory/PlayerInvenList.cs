@@ -17,14 +17,14 @@ public class PlayerInvenList : MonoBehaviour
 
     // { [Junil] 인벤토리를 관리할 리스트와 딕셔너리
 
-    private int invenTabMenu = default;
+    public int invenTabMenu = default;
 
     private const int IEVEN_TAB_VAL = 5;
 
-    private Dictionary<string, List<Item>> invenDict = default;
-    private List<Item> weaponItems = default;
-    private List<Item> activeItems = default;
-    private List<Item> passiveItems = default;
+    public Dictionary<string, List<Item>> invenDict = default;
+    public List<Item> weaponItems = default;
+    public List<Item> activeItems = default;
+    public List<Item> passiveItems = default;
     // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
 
 

@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
 
     private GameObject playerObj = default;
     private GameObject rotateObjs = default;
-    private GameObject weaponObjs = default;
+    public GameObject weaponObjs = default;
     private Animator playerAni = default;
     private Canvas rotateSort = default;
 

@@ -92,26 +92,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf0744590157e34eafe6cea50d7b407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletDamage: 0
+  bulletShotRange: 0
+  weaponDeley: 0
   bulletObjs: {fileID: 0}
   firePos: {fileID: 0}
   rotateWeapon: {fileID: 0}
-  weaponName: 
-  weaponDescription: 
-  weaponPos: {x: 0, y: 0, z: 0}
-  weaponReload: 0
-  weaponMagazine: 0
-  weaponBulletValue: 0
-  knockBack: 0
-  bulletSpeed: 0
-  bulletDamage: 0
-  bulletRange: 0
-  bulletShotRange: 0
-  weaponDeley: 0
-  weaponHand: 0
+  isReload: 0
+  isAttack: 0
   countBullet: 0
   deleyChkVal: 0
-  isAttack: 0
-  isReload: 0
+  isEmptyBullet: 0
 --- !u!95 &5735891002897960200
 Animator:
   serializedVersion: 5
