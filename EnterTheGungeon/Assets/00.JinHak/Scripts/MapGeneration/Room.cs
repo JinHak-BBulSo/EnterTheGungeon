@@ -7,8 +7,10 @@ public class Room : MonoBehaviour
 {
     public List<string> enemy;
     public GameObject boss;
+    public GameObject mapBoss;
     public Vector2 roomSize = default;
     public bool isPlayerEnter = false;
+    public int enemyCount = 0;
     private List<GameObject> enemies = new List<GameObject>();
 
     void Start()
@@ -21,7 +23,17 @@ public class Room : MonoBehaviour
         }
         if (boss != null)
         {
-            EnemyManager.Instance.CreateBoss(boss, this.transform);
+            mapBoss = EnemyManager.Instance.CreateBoss(boss, this.transform);
+            mapBoss.SetActive(false);
+        }
+        enemyCount = enemy.Count;
+    }
+
+    void Update()
+    {
+        if(isPlayerEnter && enemy.Count == 0)
+        {
+            DoorManager.Instance.AllDoorOpen();
         }
     }
 
@@ -30,9 +42,15 @@ public class Room : MonoBehaviour
         if(collision.tag == "Player" && collision.gameObject != null)
         {
             isPlayerEnter = true;
+            DoorManager.Instance.AllDoorClose();
+
             foreach (GameObject enemy in enemies)
             {
                 enemy.SetActive(true);
+            }
+            if(boss != null)
+            {
+                mapBoss.SetActive(true);
             }
         }
     }

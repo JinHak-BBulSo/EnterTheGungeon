@@ -359,7 +359,7 @@ public class TestEnemy : MonoBehaviour
         {
             isDead = false;
 
-
+            transform.parent.GetComponent<Room>().enemyCount--; // KJH ADD
             StopAllCoroutines();
 
             //Destroy(this.gameObject); will be add amimation event

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &209556092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209556093}
+  m_Layer: 0
+  m_Name: AllDoors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209556093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209556092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2368857389254991544}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2368857388949108363
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +86,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2368857389254991545}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -63,6 +94,7 @@ Transform:
   - {fileID: 2368857388949108362}
   - {fileID: 2368857389291702242}
   - {fileID: 2368857390285597382}
+  - {fileID: 209556093}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,6 +118,11 @@ MonoBehaviour:
   - {fileID: 451387547048328439, guid: facaf693cec0b0342a664c6769467546, type: 3}
   - {fileID: 991968239737337623, guid: 867001bcdbe15a0479f465cccceb5b4d, type: 3}
   - {fileID: 1653150327078611867, guid: cc83371554d03d74a8d876928007e0ae, type: 3}
+  specialMapPrefabs:
+  - {fileID: 495369536383558220, guid: 8d30754337f8fa048a78fdba25452370, type: 3}
+  - {fileID: 2294845348300537775, guid: 1b6a2f59ae25a2349a456896c05419f0, type: 3}
+  - {fileID: 2294845348300537775, guid: 1b6a2f59ae25a2349a456896c05419f0, type: 3}
+  - {fileID: 1969713071350642575, guid: 69b83e572faa3c849b9f38c881b2f38c, type: 3}
   mapSize: {x: 140, y: 120}
 --- !u!1 &2368857389291702243
 GameObject:

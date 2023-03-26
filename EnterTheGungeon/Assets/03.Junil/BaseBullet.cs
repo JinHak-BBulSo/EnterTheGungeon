@@ -23,7 +23,6 @@ public class BaseBullet : MonoBehaviour
         if (collision.tag == "Wall")
         {
             OnOffBullet();
-
         }
     }
 }

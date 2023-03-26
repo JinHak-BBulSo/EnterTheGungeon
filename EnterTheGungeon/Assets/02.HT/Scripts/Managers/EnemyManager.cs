@@ -57,9 +57,11 @@ public class EnemyManager : GSingleton<EnemyManager>
         return clone;
     }
 
-    public void CreateBoss(GameObject bossPrefab_, Transform transform_)
+    // KJH return type 수정
+    public GameObject CreateBoss(GameObject bossPrefab_, Transform transform_)
     {
         GameObject clone = Instantiate(bossPrefab_, transform_);
+        return clone;
     }
 
 }

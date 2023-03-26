@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2294845348300537772}
   - component: {fileID: -191145444781015326}
+  - component: {fileID: 3997156182620720666}
   m_Layer: 0
   m_Name: Stage1BossMap
   m_TagString: Untagged
@@ -201,7 +202,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: []
   boss: {fileID: 1484470546362955494, guid: 7afa9cef907d8ff49b87002e216383d4, type: 3}
-  roomSize: {x: 0, y: 0}
+  roomSize: {x: 40, y: 30}
+  isPlayerEnter: 0
+  enemyCount: 0
+--- !u!61 &3997156182620720666
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294845348300537775}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 40, y: 30}
+  m_EdgeRadius: 0
 --- !u!1 &6847586259658803139
 GameObject:
   m_ObjectHideFlags: 0
