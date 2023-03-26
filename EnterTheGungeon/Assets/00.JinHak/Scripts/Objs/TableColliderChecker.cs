@@ -16,12 +16,19 @@ public class TableColliderChecker : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        image.color = new Color(1, 1, 1, 1);
-        table.distance = distance;
+        if (collision.tag == "Player" && !table.isOver)
+        {
+            image.color = new Color(1, 1, 1, 1);
+            table.distance = distance;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        image.color = new Color(1, 1, 1, 0);
-        table.distance = OverDistance.NONE;
+        if (collision.tag == "Player")
+        {
+            image.color = new Color(1, 1, 1, 0);
+            if(!table.isOver)
+                table.distance = OverDistance.NONE;
+        }
     }
 }
