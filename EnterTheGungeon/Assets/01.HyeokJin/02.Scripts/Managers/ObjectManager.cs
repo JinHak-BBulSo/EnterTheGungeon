@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
-    string bulletPath = "01.HyeokJin/Prefabs/Bullets";
-    [Header("Prefabs_Enemy")]
-    [SerializeField] public GameObject bossBulletKingPrefab = default;
-    [Header("Prefabs_Bullet")]
-    [SerializeField] public GameObject[] bulletPrefabs = new GameObject[7];
-    [SerializeField] public GameObject bulletTypeAPrefab = default;
-    [SerializeField] public GameObject bulletTypeBPrefab = default;
-    [SerializeField] public GameObject bulletTypeCPrefab = default;
-    [SerializeField] public GameObject bulletTypeDPrefab = default;
-    [SerializeField] public GameObject bulletTypeEPrefab = default;
-    [SerializeField] public GameObject bulletTypeFPrefab = default;
+    private string bulletPath = "01.HyeokJin/Prefabs/Bullets";
+
+    private GameObject[] bulletPrefabs = new GameObject[7];
 
     GameObject[] bulletBasic = default;
     GameObject[] bulletTypeA = default;
@@ -61,42 +53,42 @@ public class ObjectManager : MonoBehaviour
         //  BulletTypeA : Rotation
         for (int index = 0; index < bulletTypeA.Length; index++)
         {
-            bulletTypeA[index] = Instantiate(bulletTypeAPrefab);
+            bulletTypeA[index] = Instantiate(bulletPrefabs[1]);
             bulletTypeA[index].SetActive(false);
         }
 
         //  bulletTypeB : Flicker
         for (int index = 0; index < bulletTypeB.Length; index++)
         {
-            bulletTypeB[index] = Instantiate(bulletTypeBPrefab);
+            bulletTypeB[index] = Instantiate(bulletPrefabs[2]);
             bulletTypeB[index].SetActive(false);
         }
 
         //  bulletTypeC : Big
         for (int index = 0; index < bulletTypeC.Length; index++)
         {
-            bulletTypeC[index] = Instantiate(bulletTypeCPrefab);
+            bulletTypeC[index] = Instantiate(bulletPrefabs[3]);
             bulletTypeC[index].SetActive(false);
         }
 
         //  bulletTypeD : Grenade
         for (int index = 0; index < bulletTypeD.Length; index++)
         {
-            bulletTypeD[index] = Instantiate(bulletTypeDPrefab);
+            bulletTypeD[index] = Instantiate(bulletPrefabs[4]);
             bulletTypeD[index].SetActive(false);
         }
 
         //  bulletTypeE : Long
         for (int index = 0; index < bulletTypeE.Length; index++)
         {
-            bulletTypeE[index] = Instantiate(bulletTypeEPrefab);
+            bulletTypeE[index] = Instantiate(bulletPrefabs[5]);
             bulletTypeE[index].SetActive(false);
         }
 
         //  bulletTypeF : Bounce
         for (int index = 0; index < bulletTypeF.Length; index++)
         {
-            bulletTypeF[index] = Instantiate(bulletTypeFPrefab);
+            bulletTypeF[index] = Instantiate(bulletPrefabs[6]);
             bulletTypeF[index].SetActive(false);
         }
     }   //  Generate()

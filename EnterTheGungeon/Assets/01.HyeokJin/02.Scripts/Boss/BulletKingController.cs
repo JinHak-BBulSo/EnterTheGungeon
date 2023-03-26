@@ -7,9 +7,20 @@ public class BulletKingController : MonoBehaviour
     private ObjectManager objectManager = default;
     private Animator bulletkingAnimator = default;
     private GameObject player = default;
-    private GameObject firePosition_LeftBotoom = default;
-    private GameObject firePosition_LeftCenter = default;
-    private GameObject firePosition_LeftTop = default;
+
+    private SpriteRenderer throneSpriteRenderer = default;
+
+    private GameObject muzzle_Left_1 = default;
+    private GameObject muzzle_Left_2 = default;
+    private GameObject muzzle_Left_3 = default;
+    private GameObject muzzle_Left_4 = default;
+    private GameObject muzzle_Left_5 = default;
+    private GameObject muzzle_Right_1 = default;
+    private GameObject muzzle_Right_2 = default;
+    private GameObject muzzle_Right_3 = default;
+    private GameObject muzzle_Right_4 = default;
+    private GameObject muzzle_Right_5 = default;
+
 
     private float bulletCount = default;
     private float bulletSpeed = default;
@@ -37,17 +48,28 @@ public class BulletKingController : MonoBehaviour
     private void OnEnable()
     {
         health = 950;
-        Invoke("Pattern_1", 1f);
+        Invoke("Status", 1f);
     }
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        firePosition_LeftBotoom = GameObject.Find("LeftBottom");
-        firePosition_LeftBotoom = GameObject.Find("LeftCenter");
-        firePosition_LeftBotoom = GameObject.Find("LeftCenter");
+
+        muzzle_Left_1 = GameObject.Find("Muzzle_Left_1");
+        muzzle_Left_2 = GameObject.Find("Muzzle_Left_2");
+        muzzle_Left_3 = GameObject.Find("Muzzle_Left_3");
+        muzzle_Left_4 = GameObject.Find("Muzzle_Left_4");
+        muzzle_Left_5 = GameObject.Find("Muzzle_Left_5");
+        muzzle_Right_1 = GameObject.Find("Muzzle_Right_1");
+        muzzle_Right_2 = GameObject.Find("Muzzle_Right_2");
+        muzzle_Right_3 = GameObject.Find("Muzzle_Right_3");
+        muzzle_Right_4 = GameObject.Find("Muzzle_Right_4");
+        muzzle_Right_5 = GameObject.Find("Muzzle_Right_5");
+
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
         bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
+
+        throneSpriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void Start()
     {
@@ -56,18 +78,19 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        //Move();
+        Move();
     }
 
+    #region Move
     //  [YHJ] 2023-03-16
     //  @brief Bullet King 이 Player를 추적한다.
     private void Move()
     {
-        if (isPatternStart)
-        {
-            isMoving = false;
-            return;
-        }
+        //if (isPatternStart)
+        //{
+        //    isMoving = false;
+        //    return;
+        //}
 
         moveSpeed = 1.5f;
 
@@ -83,11 +106,13 @@ public class BulletKingController : MonoBehaviour
         {
             isMoving = false;
         }
-    }
+    }   //  Move()
+    #endregion
 
-    private void Pattern()
+    #region Status
+    private void Status()
     {
-        patternIndex = Random.Range(1, 7);
+        patternIndex = Random.Range(6, 7);
 
         curPatternCount = 0;
 
@@ -112,82 +137,262 @@ public class BulletKingController : MonoBehaviour
                 Pattern_6();
                 break;
         }
-
-    }
+    }   //  Status
+    #endregion
 
     #region Pattern_1
     //  [YHJ] 2023-03-16
     //  @brief Bullet King 전방, 후방을 제외한 위치에 플레이어가 있을 시 플레이어를 향해 3-Way 총알을 두 번 발사한다.
-
     private void Pattern_1()
     {
         StartCoroutine("Pattern_1_3way");
-    }
+    }   //  Pattern_1()
 
     IEnumerator Pattern_1_3way()
     {
         isPatternStart = true;
 
-        maxPatternCount = 2;
-        bulletSpeed = 5f;
+        maxPatternCount = 1;
+        bulletSpeed = 10f;
         bulletCount = 3;
 
         direction_X = player.transform.position.x - transform.position.x;
         direction_Y = player.transform.position.y - transform.position.y;
 
-        float angle = Mathf.Atan2(direction_Y, direction_X) * Mathf.Rad2Deg;
-
-        if (-5 < direction_X && direction_X < -1)
+        if (-8 < direction_X && direction_X < -1)
         {
-            if (-5 < direction_Y && direction_Y < -1.5)
+            if (-8 < direction_Y && direction_Y < -1.5)
             {
+                //  Left Bottom
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Left_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Left_4.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Left_5.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, -130f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = new Vector2(-1f, -1f);
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
+
+                yield return new WaitForSeconds(0.05f);
 
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
                     switch (i)
                     {
                         case 0:
-                            bullet.transform.position = firePosition_LeftTop.transform.position;
+                            bullet.transform.position = muzzle_Left_3.transform.position;
                             break;
                         case 1:
-                            bullet.transform.position = firePosition_LeftCenter.transform.position;
+                            bullet.transform.position = muzzle_Left_4.transform.position;
                             break;
                         case 2:
-                            bullet.transform.position = firePosition_LeftBotoom.transform.position;
+                            bullet.transform.position = muzzle_Left_5.transform.position;
                             break;
                     }
-                    bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, -130f);
 
                     Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-                    Vector2 direction = player.transform.position - transform.position;
+                    Vector2 direction = new Vector2(-1f, -1f);
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
             else if (-1.5 < direction_Y && direction_Y < 0)
             {
+                //  Left Center
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
 
-            }
-            else if (-1.5 < direction_Y && direction_Y < 5)
-            {
-                Debug.Log("Left Top");
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Left_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Left_2.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Left_1.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = Vector2.left;
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
+
+                yield return new WaitForSeconds(0.05f);
+
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Left_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Left_2.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Left_1.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = Vector2.left;
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
         }
-        else if (1 < direction_X && direction_X < 5)
+        else if (1 < direction_X && direction_X < 8)
         {
-            if (-5 < direction_Y && direction_Y < -1.5)
+            if (-8 < direction_Y && direction_Y < -1.5)
             {
-                Debug.Log("Right Bottom");
+                //  Right Bottom
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Right_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Right_4.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Right_5.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, -50f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = new Vector2(1f, -1f);
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
+
+                yield return new WaitForSeconds(0.05f);
+
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Right_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Right_4.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Right_5.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, -50f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = new Vector2(1f, -1f);
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
             else if (-1.5 < direction_Y && direction_Y < 0)
             {
                 Debug.Log("Right Center");
-            }
-            else if (1.5 < direction_Y && direction_Y < 5)
-            {
-                Debug.Log("Right Top");
+
+                //  Right Center
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Right_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Right_2.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Right_1.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = Vector2.right;
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
+
+                yield return new WaitForSeconds(0.05f);
+
+                for (int i = 0; i < bulletCount; i++)
+                {
+                    GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+
+                    switch (i)
+                    {
+                        case 0:
+                            bullet.transform.position = muzzle_Right_3.transform.position;
+                            break;
+                        case 1:
+                            bullet.transform.position = muzzle_Right_2.transform.position;
+                            break;
+                        case 2:
+                            bullet.transform.position = muzzle_Right_1.transform.position;
+                            break;
+                    }
+
+                    bullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+                    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+                    Vector2 direction = Vector2.right;
+                    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
+
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
         }
         else
@@ -195,17 +400,15 @@ public class BulletKingController : MonoBehaviour
             Debug.Log("Out");
         }
 
-
-
         curPatternCount++;
 
         if (curPatternCount < maxPatternCount)
         {
-            Invoke("Pattern_1", 0.5f);
+            Invoke("Pattern_1", 0.05f);
         }
         else
         {
-            Invoke("Pattern_1", 2f);
+            Invoke("Status", 1.5f);
         }
     }   //  Pattern_1()
     #endregion
@@ -551,4 +754,20 @@ public class BulletKingController : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerBullet"))
+        {
+            StartCoroutine("OnHit");
+        }
+    }
+
+    IEnumerator OnHit()
+    {
+        yield return new WaitForSeconds(0.1f);
+        throneSpriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        throneSpriteRenderer.color = Color.white;
+    }
 }

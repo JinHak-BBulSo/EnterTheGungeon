@@ -1462,6 +1462,7 @@ MonoBehaviour:
   chkBlankBullets: 0
   armorVal: 0
   isArmor: 1
+  isOnInventory: 0
 --- !u!224 &3006484058183098475
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1868,6 +1869,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerInventory: {fileID: 0}
+  playerInventoryObj: {fileID: 0}
 --- !u!1 &7844517689510986582
 GameObject:
   m_ObjectHideFlags: 0
