@@ -6,6 +6,6 @@ public class DropItemHP : DropItem
 {
     public override void GetDropItem()
     {
-        //PlayerManager.Instance.player.HP++;
+        PlayerManager.Instance.player.playerHp++;
     }
 }
