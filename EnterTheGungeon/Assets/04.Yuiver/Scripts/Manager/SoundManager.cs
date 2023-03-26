@@ -8,6 +8,9 @@ public class SoundManager : GSingleton<SoundManager>
     // DontDestroyOnLoad로 로드되는 사운드매니저에 아무생각없이 Dictionary에 지역을 이동할때마다 캐싱하게 된다면 메모리 누수가 생기기 때문에 Clear함수로 메모리를 관리해야한다.
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
+    // 볼륨 값을 저장할 변수
+    private float[] _volumeValues = new float[(int)Sound.MaxCount] { 1f, 1f, 1f };
+
     //오디오 재생기    ->AudioSource
     //오디오 음원      ->AudioClip
     //오디오를 듣는곳  ->AudioListener
@@ -73,18 +76,21 @@ public class SoundManager : GSingleton<SoundManager>
             }
             audioSource.pitch = pitch;
             audioSource.clip = audioClip;
+            audioSource.volume = _volumeValues[(int)Sound.Bgm];
             audioSource.Play();
         }
         else if (type == Sound.SFX)
         {
             AudioSource audioSource = _audioSources[(int)Sound.SFX];
             audioSource.pitch = pitch;
+            audioSource.volume = _volumeValues[(int)Sound.SFX];
             audioSource.PlayOneShot(audioClip);
         }
         else
         {
             AudioSource audioSource = _audioSources[(int)Sound.UI_SFX];
             audioSource.pitch = pitch;
+            audioSource.volume = _volumeValues[(int)Sound.UI_SFX];
             audioSource.PlayOneShot(audioClip);
         }
     }
@@ -119,4 +125,17 @@ public class SoundManager : GSingleton<SoundManager>
 
         return audioClip;
     }
+
+    // 각 오디오 타입별 볼륨을 설정하는 메소드 추가
+    public void SetVolume(Sound type, float volume)
+    {
+        _volumeValues[(int)type] = Mathf.Clamp01(volume);
+        _audioSources[(int)type].volume = _volumeValues[(int)type];
+    }
+
+    public float GetVolume(Sound type)
+    {
+        return _volumeValues[(int)type];
+    }
+
 }

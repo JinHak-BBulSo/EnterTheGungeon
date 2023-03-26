@@ -3,22 +3,30 @@ using System.IO;
 using System.Security.Cryptography;
 using UnityEngine;
 using SaveData;
-using System.Numerics;
-using Unity.VisualScripting;
 
 public class DataManager : GSingleton<DataManager>
 {
 
     private string AES_SavePath = default;
+    private string OptionSave = default;
     private string SavePath = default;
+
+    public Texture2D[] cursorImg = default;
 
     protected override void Init()
     {
         base.Init();
+        cursorImg = Resources.LoadAll<Texture2D>("MOUSE");
         AES_SavePath = Path.Combine(Application.persistentDataPath, "GungeonKey.bytes");
         SavePath = Path.Combine(Application.persistentDataPath, "GungeonSaveData.bytes");
+        OptionSave = Path.Combine(Application.persistentDataPath, "GungeonOptionData.bytes");
+    }
+    public void SetCursor(int i)
+    {
+        Cursor.SetCursor(cursorImg[i], new UnityEngine.Vector2(6.5f, 6.5f), CursorMode.Auto);
     }
 
+    #region PlayerData
     public void SaveGameData(PlayerState data)
     {
         AESKey AESKey = CreatOrLoadAESkey();
@@ -53,7 +61,8 @@ public class DataManager : GSingleton<DataManager>
                 shield = 0,
                 blank = 2,
                 money = 0,
-                key = 1
+                key = 1,
+                deathCount = 0,
                 // 다른 필드에 대한 기본값 설정                
             };
 
@@ -64,6 +73,53 @@ public class DataManager : GSingleton<DataManager>
             return defaultData;
         }
     }
+    #endregion
+
+    #region OptionData
+    public void SaveOptionData(OptionState data)
+    {
+        AESKey AESKey = CreatOrLoadAESkey();
+
+        byte[] bytes = SerializationUtility.SerializeValue(data, DataFormat.Binary);
+        bytes = AESHelper.Encrypt(bytes, AESKey.AES_Key, AESKey.AES_Iv);
+        System.Text.Encoding.Default.GetBytes(OptionSave);
+        File.WriteAllBytes(OptionSave, bytes);
+        Debug.Log($"Game data saved to: {OptionSave}");
+    }
+    public OptionState LoadOptionGameData()
+    {
+        AESKey AESKey = CreatOrLoadAESkey();
+
+        if (File.Exists(OptionSave))
+        {
+            byte[] bytes = File.ReadAllBytes(OptionSave);
+            bytes = AESHelper.Decrypt(bytes, AESKey.AES_Key, AESKey.AES_Iv);
+            OptionState data = SerializationUtility.DeserializeValue<OptionState>(bytes, DataFormat.Binary);
+            Debug.Log($"Game data loaded to: {OptionSave}");
+            return data;
+        }
+        else
+        {
+            Debug.LogWarning($"No save file found at: {OptionSave}");
+
+            // 기본값을 가진 GameSaveData 객체 생성
+            OptionState defaultData = new OptionState
+            {
+                MusicVolume = 1f,
+                SFXVolume = 1f,
+                UIVolume = 1f,
+                mouseCursor = 0,
+                // 다른 필드에 대한 기본값 설정                
+            };
+
+            // 기본 데이터 저장
+            SaveOptionData(defaultData);
+
+            // 기본 데이터 반환
+            return defaultData;
+        }
+    }
+    #endregion
 
     #region [yuiver]Save&Load Data AES256Key Don't touch
     //! AES-256 키가 생성될때 기본 경로에 저장해주는 함수

@@ -9,13 +9,8 @@ public class CameraScripts : MonoBehaviour
 
     void Start()
     {
-        cursorImg = Resources.LoadAll<Texture2D>("04.Yuiver/MOUSE");
-        Cursor.SetCursor(cursorImg[0],new Vector2(6.5f,6.5f),CursorMode.Auto);
-        //Post Processing
-        //UnityEngine.Rendering.Universal.UniversalAdditionalCameraData uac = this.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
-        //uac.renderPostProcessing = true;
-        //Material material =
-        
+        cursorImg = Resources.LoadAll<Texture2D>("MOUSE");
+        Cursor.SetCursor(cursorImg[0],new Vector2(6.5f,6.5f),CursorMode.Auto);    
     }
 
     // Update is called once per frame

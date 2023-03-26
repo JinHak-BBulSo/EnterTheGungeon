@@ -1,3 +1,4 @@
+using SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class CountFpsController : MonoBehaviour
 
     private void Awake()
     {
+        DataManager.Instance.Create();
         SoundManager.Instance.Create();
         DontDestroyOnLoad(this.gameObject);
         //waitOneSecond의 초기값 설정
@@ -21,7 +23,11 @@ public class CountFpsController : MonoBehaviour
     }
     private void Start()
     {
-        SoundManager.Instance.Play("TestSound", Sound.SFX);
+        OptionState firstLoadData = default;
+
+        firstLoadData = DataManager.Instance.LoadOptionGameData();
+        DataManager.Instance.SetCursor(firstLoadData.mouseCursor);
+        SoundManager.Instance.Play("TestSound", Sound.Bgm);
     }
 
     void OnGUI()

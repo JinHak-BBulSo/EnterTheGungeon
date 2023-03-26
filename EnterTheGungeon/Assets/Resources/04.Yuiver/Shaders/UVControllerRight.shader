@@ -302,6 +302,7 @@ Shader "MyShader/2D/UVSpriteRiht"
 
                 float4 UnlitFragment(Varyings i) : SV_Target
                 {
+                    float4 originalColor = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
                     float4 col1 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV1);
                     float4 col2 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV2);
                     float4 col3 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV3);
@@ -312,6 +313,15 @@ Shader "MyShader/2D/UVSpriteRiht"
                     float4 col8 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV8);
 
                     float4 blendedCol = col1 * 0.2 + col2 * 0.2 + col3 * 0.2 + col4 * 0.2 + col5 * 0.2 + col6 * 0.2 + col7 * 0.2 + col8 * 0.2;
+                    
+                    // 알파 값이 아닌 경우에 원본 텍스처의 색상을 사용하는 코드
+                    if (blendedCol.a != 0)
+                    {
+                        blendedCol = originalColor;
+                    }
+
+                    // 원본 텍스처 색상과 블렌딩 된 색상을 선형 보간 (lerp) 하는 코드 추가
+                    //float4 finalColor = lerp(originalColor, blendedCol, 1);
 
                     #if defined(DEBUG_DISPLAY)
                     SurfaceData2D surfaceData;

@@ -48,6 +48,14 @@ namespace SaveData
     [Serializable]
     public class OptionState
     {
+        [OdinSerialize]
+        public float MusicVolume;
+        [OdinSerialize]
+        public float SFXVolume;
+        [OdinSerialize]
+        public float UIVolume;
+        [OdinSerialize]
+        public int mouseCursor;
         // Other fields you want to save
     }
 }
