@@ -18,8 +18,9 @@ public class SPMABulletMove : PlayerBullet
         spmaBulletRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         spmaAni = gameObject.GetComponentMust<Animator>();
     }
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         activePos = gameObject.transform.position;
         // KJH ADD
         spmaBulletRigid2D.velocity = transform.up * bulletSpeed;

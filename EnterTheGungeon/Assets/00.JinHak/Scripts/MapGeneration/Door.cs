@@ -25,14 +25,16 @@ public class Door : MonoBehaviour
     {
         doorCol.isTrigger = false;
         isOpen = false;
-        doorAni.SetTrigger("isClose");
+        doorAni.SetBool("isOpen", false);
+        doorAni.SetBool("isClose", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && !isOpen)
         {
-            doorAni.SetTrigger("isOpen");
+            doorAni.SetBool("isOpen", true);
+            doorAni.SetBool("isClose", false);
             isOpen = true;
         }
     }

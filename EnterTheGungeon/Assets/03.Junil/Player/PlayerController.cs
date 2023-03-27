@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     // 플레이어 열쇠 개수
     public int playerKey = default;
 
+    // 플레이어 데미지
+    public int playerDamage = default;
+
     // } [Junil] 플레이어 스탯 캐싱 값
 
 
