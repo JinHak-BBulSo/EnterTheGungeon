@@ -61,10 +61,32 @@ public class SPMABulletMove : PlayerBullet
         // KJH 수정
         if(bulletRange <= Len_ && !isOffBullet)
         {
-            OnOffBullet();
+            StartOffBullet();
         }
     }
 
+    //! 총알이 총구에서 발사될 때 시작 지점을 지정해주는 함수
+    public void SetActivePos()
+    {
+        activePos = gameObject.transform.position;
+
+    }
+
+    IEnumerator OffBulletCoroutine = default;
+
+    void StartOffBullet()
+    {
+        OffBulletCoroutine = OffBullet();
+        StartCoroutine(OffBulletCoroutine);
+    }
+
+    void StopOffBullet()
+    {
+        if(OffBulletCoroutine != null)
+        {
+            StopCoroutine(OffBulletCoroutine);
+        }
+    }
 
     public override IEnumerator OffBullet()
     {

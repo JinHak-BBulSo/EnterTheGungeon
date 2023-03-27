@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerInvenList : MonoBehaviour
 {
@@ -15,21 +18,13 @@ public class PlayerInvenList : MonoBehaviour
     private GameObject[] bossMenu = default;
 
 
-    // { [Junil] 인벤토리를 관리할 리스트와 딕셔너리
 
-    private int invenTabMenu = default;
+    // 총, 액티브, 패시브 슬롯 정보를 관리하는 리스트
+    public GameObject slotPrefabs = default;
 
-    private const int IEVEN_TAB_VAL = 5;
-
-    private Dictionary<string, List<Item>> invenDict = default;
-    private List<Item> weaponItems = default;
-    private List<Item> activeItems = default;
-    private List<Item> passiveItems = default;
-    // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
-
-
-    // 장비 - 총에 들어갈 오브젝트 배열
-    public GameObject[] weaponObjs = default;
+    public List<GameObject> gunInvenSlots = new List<GameObject>();
+    public List<GameObject> activeInvenSlots = new List<GameObject>();
+    public List<GameObject> passiveInvenSlots = new List<GameObject>();
 
 
     // 총 아이템을 모아두는 인벤토리
@@ -40,6 +35,30 @@ public class PlayerInvenList : MonoBehaviour
 
     // 패시브 아이템을 모아두는 인벤토리
     public GameObject passiveInven = default;
+
+
+    // { [Junil] 인벤토리 크기를 조절할 이미지들
+    public Image gunInvenImage = default;
+
+    public Image activeInvenImage = default;
+
+    public Image passiveInvenImage = default;
+
+    // } [Junil] 인벤토리 크기를 조절할 이미지들
+
+
+    // { [Junil] 인벤토리를 관리할 리스트와 딕셔너리
+
+    public int invenTabMenu = default;
+
+    private const int IEVEN_TAB_VAL = 5;
+
+    public Dictionary<string, List<Item>> invenDict = default;
+    public List<Item> weaponItems = new List<Item>();
+    public List<Item> activeItems = new List<Item>();
+    public List<Item> passiveItems = new List<Item>();
+    // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
+
 
 
     // 현재 몇 번째 인벤인지 알려주는 int 값
@@ -64,11 +83,52 @@ public class PlayerInvenList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
+
     }
 
 
+    //! 켜져있는 슬롯이 5개씩 넘어가면 실행되는 함수
+    public void AddHeightImage(List<GameObject> ListName_)
+    {
+        int tempInt_ = 0;
 
+        for(int i = 0; i < ListName_.Count / 5; i++)
+        {
+            if (ListName_[i * 5].activeSelf == true)
+            {
+                if (i == 0) { /* Do Nothing */ }
+                else
+                {
+                    tempInt_++;
+                }
+            }
+        }
+
+        switch (ListName_[0].transform.parent.gameObject.name)
+        {
+            case "GunsInventory":
+                gunInvenImage.rectTransform.sizeDelta = new Vector2(
+                    gunInvenImage.rectTransform.sizeDelta.x,
+                    gunInvenImage.rectTransform.sizeDelta.y + 24 * tempInt_);
+                break;
+
+            case "ActiveInventory":
+                activeInvenImage.rectTransform.sizeDelta = new Vector2(
+                    activeInvenImage.rectTransform.sizeDelta.x,
+                    activeInvenImage.rectTransform.sizeDelta.y + 24 * tempInt_);
+                break;
+
+            case "PassiveInventory":
+                passiveInvenImage.rectTransform.sizeDelta = new Vector2(
+                    passiveInvenImage.rectTransform.sizeDelta.x,
+                    passiveInvenImage.rectTransform.sizeDelta.y + 24 * tempInt_);
+                break;
+        }
+
+
+    }
 
 
     //! 인벤토리 탭을 어떤 걸 선택했는지 보여주는 함수
@@ -201,6 +261,7 @@ public class PlayerInvenList : MonoBehaviour
         }
     }
 
+    
 
     //! 탭 값을 초기화 해주는 함수
     public void ResetValTab()
@@ -247,6 +308,10 @@ public class PlayerInvenList : MonoBehaviour
 
     public void SetInvenList()
     {
+        // Slot 프리팹 가져오기
+        slotPrefabs = Resources.Load<GameObject>("03.Junil/Prefabs/Inventory/Slot");
+
+
         equipmentMenu = new GameObject[IEVEN_TAB_ICON_CNT];
         gunMenu = new GameObject[IEVEN_TAB_ICON_CNT];
         itemMenu = new GameObject[IEVEN_TAB_ICON_CNT];
@@ -258,17 +323,6 @@ public class PlayerInvenList : MonoBehaviour
         nowTabInvenCnt = 0;
         selectTabInvenVal = nowTabInvenCnt;
 
-        // 현재 탭 int 값을 보고 거기에 맞는 리스트를 가져온다
-        invenDict = new Dictionary<string, List<Item>>();
-        weaponItems = new List<Item>();
-        activeItems = new List<Item>();
-        passiveItems = new List<Item>();
-
-        invenDict.Add("총", weaponItems);
-        invenDict.Add("액티브", activeItems);
-        invenDict.Add("패시브", passiveItems);
-
-        weaponObjs = Resources.LoadAll<GameObject>("03.Junil/Weapon/ItemUseWeapons");
 
 
         // 인벤토리 탭을 보여주는 장소
@@ -300,28 +354,53 @@ public class PlayerInvenList : MonoBehaviour
         // 총, 액티브, 패시브 위치를 가져오기
         GameObject inventorySetObjs_ = gameObject.transform.GetChild(2).gameObject;
 
-        for (int i = 0; i < inventorySetObjs_.transform.childCount; i++)
+        for (int i = 0 + 1; i < inventorySetObjs_.transform.childCount; i+=2)
         {
             GameObject nowEquipment_ = inventorySetObjs_.transform.GetChild(i).gameObject;
 
-            GameObject nowEquipmentInven_ = nowEquipment_.transform.GetChild(1).gameObject;
-
-            GameObject tempInventoryObj_ = nowEquipmentInven_.transform.GetChild(0).gameObject;
+            GameObject nowEquipmentInven_ = nowEquipment_.transform.GetChild(0).gameObject;
 
             switch (i)
             {
-                case 0:
-                    gunsInven = tempInventoryObj_;
-                    break;
-
                 case 1:
-                    activeInven = tempInventoryObj_;
+                    gunsInven = nowEquipmentInven_;
+                    gunInvenImage = nowEquipment_.GetComponentMust<Image>();
                     break;
 
-                case 2:
-                    passiveInven = tempInventoryObj_;
+                case 3:
+                    activeInven = nowEquipmentInven_;
+                    activeInvenImage = nowEquipment_.GetComponentMust<Image>();
+
+                    break;
+
+                case 5:
+                    passiveInven = nowEquipmentInven_;
+                    passiveInvenImage = nowEquipment_.GetComponentMust<Image>();
+
                     break;
             }
         }
+
+
+        // 슬롯은 각각 10개만 넣는다
+        for (int i = 0; i < 10; i++)
+        {
+            gunInvenSlots.Add(Instantiate(slotPrefabs, gunsInven.transform.position,
+                Quaternion.identity, gunsInven.transform));
+
+            activeInvenSlots.Add(Instantiate(slotPrefabs, activeInven.transform.position,
+                Quaternion.identity, activeInven.transform));
+
+            passiveInvenSlots.Add(Instantiate(slotPrefabs, passiveInven.transform.position,
+                Quaternion.identity, passiveInven.transform));
+
+            gunInvenSlots[i].SetActive(false);
+            activeInvenSlots[i].SetActive(false);
+            passiveInvenSlots[i].SetActive(false);
+
+        }
+
+
+
     }
 }

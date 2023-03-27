@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //GFunc.Log($"{playerAttack.isDodgeing}");
     }
 
     public void OnMove(float inputX, float inputY)
@@ -78,7 +78,6 @@ public class PlayerMove : MonoBehaviour
         if (isReDodgeing == true)
         {
             StopReDodge();
-            //StopCoroutine("ReDodge");
             isReDodgeing = false;
 
         }
@@ -86,13 +85,13 @@ public class PlayerMove : MonoBehaviour
         isDodgeing = true;
         playerAttack.isDodgeing = true;
 
-        /// @param Vector3 mousePos_ : 마우스 커서 위치 값
+        // 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        /// @param Vector2 len_ : 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
+        // 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
         Vector2 len_ = mousePos_ - transform.position;
 
-        playerAni.SetTrigger("OnDodge");
+        PlayerAniDodge();
 
         playerRigid2D.velocity = len_.normalized * playerSpeed;
 
@@ -107,10 +106,7 @@ public class PlayerMove : MonoBehaviour
         isDodgeing = false;
         playerAttack.isDodgeing = false;
 
-        //playerAni.SetTrigger("OnArmorOne");
-
         StartReDodge();
-        //StartCoroutine("ReDodge");
     }
 
     IEnumerator ReDodgeCoroutine = default;
@@ -139,12 +135,29 @@ public class PlayerMove : MonoBehaviour
     }
 
 
+    //! 플레이어의 쉴드 유무를 확인하여 구르기 애니메이션 호출을 정해주는 함수
+    public void PlayerAniDodge()
+    {
+        switch (PlayerManager.Instance.player.isShield)
+        {
+            case true:
+                playerAni.SetTrigger("OnArmorDodge");
+
+                break;
+
+            case false:
+                playerAni.SetTrigger("OffArmorDodge");
+
+                break;
+        }
+    }
+
     // 아머의 유무와 현재 장착하고 있는 무기가 없거나, 한 손, 두 손인 경우를 받아서
     // 그에 맞는 애니메이션을 작동시키는 함수이다
     // 추후 무기 값도 보내기
-    public void PlayerAniRestart(bool isArmor, int nowWeaponHand)
+    public void PlayerAniRestart(bool isShield, int nowWeaponHand)
     {
-        if(isArmor == true)
+        if(isShield == true)
         {
             switch (nowWeaponHand)
             {
