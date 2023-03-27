@@ -66,7 +66,7 @@ public class MapGenerator : MonoBehaviour
 
     // 전체 맵의 크기
     [SerializeField]
-    Vector2Int mapSize = default;
+    private Vector2Int mapSize = default;
 
     private void Awake()
     {

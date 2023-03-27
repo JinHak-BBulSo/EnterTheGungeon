@@ -13,13 +13,14 @@ public enum OverDistance
 
 public class Table : InteractiveObj
 {
-    BoxCollider2D tableBoxCollider = default;
-    SpriteRenderer tableRenderer = default;
-    Rigidbody2D tableRigid = default;
-    public bool isOver = false;
+    private BoxCollider2D tableBoxCollider = default;
+    private SpriteRenderer tableRenderer = default;
+    private Rigidbody2D tableRigid = default;
     private bool isRigidSet = false;
-    public OverDistance distance;
     private int tableHp = 10;
+
+    public bool isOver = false;
+    public OverDistance distance;
 
     public Sprite[] brokenSprite = default;
     

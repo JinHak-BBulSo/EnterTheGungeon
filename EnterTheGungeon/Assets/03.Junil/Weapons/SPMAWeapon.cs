@@ -116,7 +116,6 @@ public class SPMAWeapon : PlayerWeapon
             if (countBullet == 0)
             {
                 isEmptyBullet = true;
-                GFunc.Log("wwwww");
             }
         }
     }

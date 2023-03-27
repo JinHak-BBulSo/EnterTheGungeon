@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e90461504a75849a22eb86ad5eca75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 563427891494766239}
   distance: 2
 --- !u!1 &1110032463854193295
 GameObject:
@@ -296,7 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e90461504a75849a22eb86ad5eca75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 563427891494766239}
   distance: 3
 --- !u!1 &1110032465394190169
 GameObject:
@@ -414,7 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e90461504a75849a22eb86ad5eca75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 563427891494766239}
   distance: 1
 --- !u!1 &1110032465751406911
 GameObject:
@@ -532,7 +529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e90461504a75849a22eb86ad5eca75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 563427891494766239}
   distance: 0
 --- !u!1 &5050688589258727485
 GameObject:
@@ -661,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOver: 0
-  distance: 0
+  distance: -1
   brokenSprite:
   - {fileID: 21300000, guid: 2d1ed529da3cdaf49911298e63d5b2af, type: 3}
   - {fileID: 21300000, guid: edd9b4e909919324691b086bf4d8a6b3, type: 3}

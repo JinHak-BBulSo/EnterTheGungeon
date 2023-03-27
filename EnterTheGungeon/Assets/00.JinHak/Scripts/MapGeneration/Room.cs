@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
     public GameObject mapBoss;
     public Vector2 roomSize = default;
     public bool isPlayerEnter = false;
-    public int enemyCount = 0;
+    private int enemyCount = 0;
     private List<GameObject> enemies = new List<GameObject>();
     public GameObject[] spawnPoints = default;
     public GameObject monsterobjs = default;

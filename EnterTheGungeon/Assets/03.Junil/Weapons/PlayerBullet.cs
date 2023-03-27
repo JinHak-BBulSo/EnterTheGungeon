@@ -19,8 +19,8 @@ public class PlayerBullet : BaseBullet
 
     protected virtual void OnEnable()
     {
+        // KJH 수정
         bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
-        Debug.Log(bulletDamage);
     }
 
     public void SetBulletData(Weapons weapons)
@@ -31,7 +31,5 @@ public class PlayerBullet : BaseBullet
         bulletRange = weapons.BulletRange();
 
     }
-
-
 
 }
