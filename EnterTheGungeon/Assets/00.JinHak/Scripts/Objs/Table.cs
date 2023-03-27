@@ -13,21 +13,26 @@ public enum OverDistance
 
 public class Table : InteractiveObj
 {
-    BoxCollider2D deskBoxCollider = default;
-    private bool isOver = false;
-    private bool isOverSet = false;
+    BoxCollider2D tableBoxCollider = default;
+    SpriteRenderer tableRenderer = default;
+    Rigidbody2D tableRigid = default;
+    public bool isOver = false;
+    private bool isRigidSet = false;
     public OverDistance distance;
+    private int tableHp = 10;
 
+    public Sprite[] brokenSprite = default;
     
     protected override void Start()
     {
         base.Start();
-        deskBoxCollider = GetComponent<BoxCollider2D>();
+        tableBoxCollider = GetComponent<BoxCollider2D>();
+        tableRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isOver)
+        if (Input.GetKeyDown(KeyCode.E) && !isOver && distance != OverDistance.NONE)
         {
             Debug.Log(distance);
             switch (distance)
@@ -38,10 +43,10 @@ public class Table : InteractiveObj
                 case OverDistance.DOWN:
                     objAni.SetTrigger("isTopUp");
                     break;
-                case OverDistance.LEFT:
+                case OverDistance.RIGHT:
                     objAni.SetTrigger("isLeftUp");
                     break;
-                case OverDistance.RIGHT:
+                case OverDistance.LEFT:
                     objAni.SetTrigger("isRightUp");
                     break;
             }
@@ -54,12 +59,44 @@ public class Table : InteractiveObj
     IEnumerator ReSetCollider()
     {
         yield return new WaitForSeconds(0.3f);
-        deskBoxCollider.enabled = false;
-        isOverSet = true;
+        objAni.enabled = false;
+        tableBoxCollider.enabled = false;
+        isRigidSet = true;
         gameObject.AddComponent<PolygonCollider2D>();
-        Rigidbody2D rigid_ = gameObject.AddComponent<Rigidbody2D>();
-        rigid_.gravityScale = 0;
-        rigid_.mass = 200;
-        rigid_.constraints = RigidbodyConstraints2D.FreezeRotation;
+        gameObject.tag = "Wall";
+        tableRigid = gameObject.AddComponent<Rigidbody2D>();
+        tableRigid.gravityScale = 0;
+        tableRigid.mass = 200;
+        tableRigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if (isRigidSet)
+            {
+                tableRigid.velocity = Vector3.zero;
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if((collision.tag == "PlayerBullet" ||  collision.tag == "MonsterBullet") && gameObject.tag == "Wall")
+        {
+            tableHp--;
+            if(tableHp > 6)
+            {
+                tableRenderer.sprite = brokenSprite[(int)distance * 3 + 0];
+            }
+            else if(tableHp > 3 && tableHp <= 6)
+            {
+                tableRenderer.sprite = brokenSprite[(int)distance * 3 + 1];
+            }
+            else
+            {
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                tableRenderer.sprite = brokenSprite[(int)distance * 3 + 2];
+            }
+        }
     }
 }
