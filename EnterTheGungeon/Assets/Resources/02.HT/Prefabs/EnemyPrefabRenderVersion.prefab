@@ -257,6 +257,7 @@ MonoBehaviour:
   attackType: 0
   maxHp: 0
   moveSpeed: 0
+  isMove: 0
   completePath: []
   isPathFind: 0
 --- !u!50 &9118489137937263900
@@ -279,7 +280,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!70 &9118489137937263903
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

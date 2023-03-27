@@ -10,7 +10,6 @@ public class KeyController : MonoBehaviour
     void Start()
     {
         keyTxt = gameObject.transform.GetChild(1).gameObject;
-        SetPlayerKey(3);
     }
 
     // Update is called once per frame

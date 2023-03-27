@@ -10,6 +10,8 @@ public class TestEnemyEye : MonoBehaviour
 
     float distanceToPlayer;
 
+    float drawRayLength;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class TestEnemyEye : MonoBehaviour
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
+
+
         // { Look At Player Position
         angle = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x)
         * Mathf.Rad2Deg;
@@ -28,11 +32,21 @@ public class TestEnemyEye : MonoBehaviour
         // } Look At Player Position
 
         // { Raycast To Player
-        Debug.DrawRay(transform.position, transform.up * 10, Color.red);
-        int layerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        int layerMask = (1 << LayerMask.NameToLayer("Ignore Raycast")) | (1 << LayerMask.NameToLayer("Water"));
         layerMask = ~layerMask;
         //hit = Physics2D.Raycast(transform.position, transform.up, distanceToPlayer+10, layerMask);
         hit = Physics2D.Raycast(transform.position, transform.up, distanceToPlayer + 10, layerMask);
         // } Raycast To Player
+
+        drawRayLength = Vector2.Distance(transform.position, hit.collider.transform.position);
+        if (hit.collider.tag == "Player")
+        {
+            Debug.DrawRay(transform.position, transform.up * drawRayLength, Color.green);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.up * drawRayLength, Color.red);
+
+        }
     }
 }

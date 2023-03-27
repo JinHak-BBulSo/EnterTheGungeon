@@ -34,6 +34,11 @@ public class BossGorgunMuzzle : MonoBehaviour
 
     Transform bossGorgun;
 
+    ObjectPool objectPool;
+    List<GameObject> enemyBulletPool;
+    GameObject enemyBulletPrefab;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +53,10 @@ public class BossGorgunMuzzle : MonoBehaviour
         }
 
         bossGorgun = transform.parent.parent;
+
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        enemyBulletPool = objectPool.enemyBulletPool;
+        enemyBulletPrefab = objectPool.enemyBulletPrefab;
     }
 
     // Update is called once per frame
@@ -79,17 +88,31 @@ public class BossGorgunMuzzle : MonoBehaviour
                 }
             }
 
-            GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-            clone_.GetComponent<TestBullet>().bulletType = 0;
-            clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
-
-            xValue = clone_.transform.position.x - bossGorgun.position.x;
-            yValue = clone_.transform.position.y - bossGorgun.position.y;
-
-            directionForSummonBullet = new Vector2(xValue, yValue);
-            clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
+            if (!isDelayEnd)
+            {
+                StartCoroutine(ShotDelay());
+            }
         }
     }
+    bool isDelayEnd;
+    IEnumerator ShotDelay()
+    {
+        isDelayEnd = true;
+        yield return new WaitForSeconds(0.05f);
+        GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+        clone_.transform.position = transform.position;
+        clone_.GetComponent<TestBullet>().bulletType = 0;
+        clone_.GetComponent<TestBullet>().enemyName = bossGorgun.GetComponent<BossGorGun>().enemyName;
+        //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+
+        xValue = clone_.transform.position.x - bossGorgun.position.x;
+        yValue = clone_.transform.position.y - bossGorgun.position.y;
+
+        directionForSummonBullet = new Vector2(xValue, yValue);
+        clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
+        isDelayEnd = false;
+    }
+
     public void MoveCheck()
     {
         if (isLeft && isMuzzlePositionSet)

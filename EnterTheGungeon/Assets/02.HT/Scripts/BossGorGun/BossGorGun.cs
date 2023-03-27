@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BossGorGun : MonoBehaviour
 {
+    public string enemyName;
+    
     TestEnemyEye eye;
     GameObject player;
     Quaternion defaultRotation;
@@ -54,8 +56,16 @@ public class BossGorGun : MonoBehaviour
     int damageTaken;
     public bool isChangeTostatue;
 
+
+
+    ObjectPool objectPool;
+    List<GameObject> poisonAreaPool;
+    GameObject poisonAreaPrefab;
+
     void Start()
     {
+        enemyName = "Gorgun";
+
         maxHp = 975;
         currentHp = 975;
 
@@ -76,6 +86,10 @@ public class BossGorGun : MonoBehaviour
         effectImageRectTransform = effectObject.GetComponent<RectTransform>();
 
         bossGorgunBody = transform.GetChild(0).GetComponent<BossGorgunBody>();
+
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        poisonAreaPool = objectPool.poisonAreaPool;
+        poisonAreaPrefab = objectPool.poisonAreaPrefab;
     }
 
     void Update()
@@ -157,11 +171,21 @@ public class BossGorGun : MonoBehaviour
             //조건 추가 공격중이 아닐때
             if (distance > 300)
             {
-                moveSpeed = defaultMoveSpeed;
-                transform.rotation = defaultRotation;
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, moveSpeed);
+                if (!isAttackPattern)
+                {
+                    moveSpeed = defaultMoveSpeed;
+                    transform.rotation = defaultRotation;
+                    Vector2 dir_ = player.transform.position - transform.position;
+                    rigid.velocity = dir_.normalized * moveSpeed;
+                }
+
+                //transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, moveSpeed);
             }
-            else { }
+            else
+            {
+                Vector2 dir_ = player.transform.position - transform.position;
+                rigid.velocity = Vector2.zero;
+            }
         }
     }
 
@@ -182,9 +206,9 @@ public class BossGorGun : MonoBehaviour
 
     void MakePoisonArea()
     {
-        GameObject poisonArea_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/BossGorgun/PoisonArea"), transform.position, new Quaternion(0, 0, 0, 0));
-        poisonArea_.name = "PoisonArea";
-        poisonArea_.transform.SetParent(GameObject.Find("PoisonObject").transform);
+        GameObject poisonArea_ = objectPool.GetObject(poisonAreaPool, poisonAreaPrefab, 2);
+        poisonArea_.transform.position = transform.position;
+        poisonArea_.GetComponent<PoisonArea>().enemyName = enemyName;
         poisonArea_.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 

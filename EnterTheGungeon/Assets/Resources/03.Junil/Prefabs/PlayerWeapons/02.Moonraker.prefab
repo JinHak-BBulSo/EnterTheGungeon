@@ -312,22 +312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d899bb073112c74ab56b1f18eeecfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletDamage: 0
+  bulletShotRange: 0
+  weaponDeley: 0
   bulletObjs: {fileID: 0}
   firePos: {fileID: 0}
   rotateWeapon: {fileID: 0}
-  weaponName: 
-  weaponDescription: 
-  weaponPos: {x: 0, y: 0, z: 0}
-  weaponReload: 0
-  weaponMagazine: 0
-  weaponBulletValue: 0
-  knockBack: 0
-  bulletSpeed: 0
-  bulletDamage: 0
-  bulletRange: 0
-  bulletShotRange: 0
-  weaponDeley: 0
-  weaponHand: 0
   defDistanceRay: 0
   moonLineRenderer: {fileID: 8251179335846212876}
   moonTransform: {fileID: 0}

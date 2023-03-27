@@ -21,7 +21,11 @@ public class Room : MonoBehaviour
         }
         if (boss != null)
         {
-            EnemyManager.Instance.CreateBoss(boss, this.transform);
+            GameObject boss_ = EnemyManager.Instance.CreateBoss(boss, this.transform);
+            boss_.GetComponent<RectTransform>().localScale = new Vector3(0.0139f,0.0139f,0.0139f);
+
+            //test
+            boss_.transform.position = new Vector2(0,10);
         }
     }
 
