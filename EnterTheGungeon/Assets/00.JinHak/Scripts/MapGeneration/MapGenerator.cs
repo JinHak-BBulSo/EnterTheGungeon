@@ -43,12 +43,17 @@ public class MapGenerator : MonoBehaviour
     private MapNode startMap = new MapNode(new RectInt(0, 0, 22, 22), 0);
     private MapNode shopMap = default;
     private MapNode bossMap = default;
+    private GameObject horizontalDoor = default;
+    private GameObject verticalDoor = default;
 
     [SerializeField]
     private List<GameObject> mapPrefabs = new List<GameObject>();
-    //public GameObject indexCheckObj = default;
+    [SerializeField]
+    private List<GameObject> specialMapPrefabs = new List<GameObject>();
+
     private GameObject mapAccessLine = default;
     private GameObject mapAccessWall = default;
+    private GameObject allDoors = default;
 
     private const float MINIMUM_DIVIDE_RATE = 0.36f;
     private const float MAXIMUM_DIVIDE_RATE = 0.64f;
@@ -67,12 +72,16 @@ public class MapGenerator : MonoBehaviour
 
     private void Awake()
     {
+        DoorManager.Instance.Create();
         maps = transform.GetChild(0).gameObject;
         mapAccessLine = transform.GetChild(1).gameObject;
         mapAccessWall = transform.GetChild(2).gameObject;
+        allDoors = transform.GetChild(3).gameObject;
         accessLine = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/AccessLine");
         lineWallTop = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/lineWallTop");
         lineWallBottom = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/lineWallBottom");
+        horizontalDoor = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/HorizonDoor");
+        verticalDoor = Resources.Load<GameObject>("00.JinHak/Prefabs/MapGenerator/VerticalDoor");
 
         MapNode root_ = new MapNode(new RectInt(0, 0, mapSize.x, mapSize.y), 0);
         DivideMap(root_, 0);
@@ -173,97 +182,7 @@ public class MapGenerator : MonoBehaviour
     {
         if (height_ == MAXIMUM_DEPTH)
         {
-            /*GameObject indexCheck = Instantiate(indexCheckObj, transform.parent);
-            indexCheck.transform.position = (Vector2)nowNode_.nodePosition;
-            indexCheck.name = nowNode_.nodeIndex.ToString();*/
-            mapNodeArray[nowNode_.nodeIndex] = nowNode_;
-
-            int index = 0;
-
-            while (true)
-            {
-                int ran_ = Random.Range(2, mapPrefabs.Count);
-                Room room_ = mapPrefabs[ran_].GetComponent<Room>();
-                
-                if(room_.roomSize.x > nowNode_.nodeRect.width || room_.roomSize.y > nowNode_.nodeRect.height)
-                {
-                    if (index > 100)
-                    {
-                        GameObject nodeRoom_ = Instantiate(mapPrefabs[2], transform.parent);
-                        nodeRoom_.transform.position = nowNode_.nodePosition;
-                        nowNode_.room = room_;
-
-                        nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
-                        nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
-                        nowNode_.topCenter = nowNode_.nodePosition + new Vector2(0, room_.roomSize.y / 2) * 0.65f;
-                        nowNode_.bottomCenter = nowNode_.nodePosition - new Vector2(0, room_.roomSize.y / 2) * 0.65f;
-                        break;
-                    }
-                    index++;
-                    continue;
-                }
-                else
-                {
-                    GameObject nodeRoom_ = Instantiate(room_.gameObject, transform.parent);
-                    nodeRoom_.transform.position = nowNode_.nodePosition;
-                    nowNode_.room = room_;
-
-                    nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
-                    nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
-                    nowNode_.topCenter = nowNode_.nodePosition + new Vector2(0, room_.roomSize.y / 2) * 0.65f;
-                    nowNode_.bottomCenter = nowNode_.nodePosition - new Vector2(0, room_.roomSize.y / 2) * 0.65f;
-
-                    break;
-                }
-            }
-
-            if(nowNode_.nodeIndex == MAXIMUM_DEPTH * MAXIMUM_DEPTH - 1)
-            {
-                for(int i = 0; i < mapNodeArray.Count(); i += 2)
-                {
-                    Vector2 start_;
-                    Vector2 end_;
-                    Vector2 startLeft_;
-                    Vector2 endLeft_;
-                    Vector2 startRight_;
-                    Vector2 endRight_;
-
-                    // x 포지션 값이 같은 경우
-                    if (mapNodeArray[i].nodePosition.x == mapNodeArray[i + 1].nodePosition.x)
-                    {
-                        start_ = mapNodeArray[i].topCenter;
-                        end_ = mapNodeArray[i + 1].bottomCenter;
-
-                        startLeft_ = new Vector2(start_.x - 1, start_.y + 1.3f);
-                        startRight_ = new Vector2(start_.x + 1, start_.y + 1.3f);
-
-                        endLeft_ = new Vector2(end_.x - 1, end_.y - 1.3f);
-                        endRight_ = new Vector2(end_.x + 1, end_.y - 1.3f);
-
-                        DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-                        DrawAccessLine(startRight_, endRight_, lineWallBottom);
-                    }
-                    // y 포지션 값이 같은 경우
-                    else
-                    {
-                        start_ = mapNodeArray[i].rightCenter;
-                        end_ = mapNodeArray[i + 1].leftCenter;
-
-                        startLeft_ = new Vector2(start_.x + 1.3f, start_.y - 1);
-                        startRight_ = new Vector2(start_.x + 1.3f, start_.y + 1);
-
-                        endLeft_ = new Vector2(end_.x - 1.3f, end_.y - 1);
-                        endRight_ = new Vector2(end_.x - 1.3f, end_.y + 1);
-
-                        DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-                        DrawAccessLine(startRight_, endRight_, lineWallBottom);
-                    }
-
-                    DrawAccessLine(start_, end_);
-                }
-
-
-            }
+            MapCreate(nowNode_);
 
             return;
         }
@@ -303,97 +222,195 @@ public class MapGenerator : MonoBehaviour
     {
         List<int> accessRoomIndex_ = new List<int>{ 0, 4, 8, 15};
 
-        int ran_ = Random.Range(0, accessRoomIndex_.Count);
-        Vector2 mapCreatePoint_ = default;
-        GameObject startMapObj = Instantiate(mapPrefabs[0], transform.parent);
-        
-        startMap.room = startMapObj.GetComponent<Room>();
-
-        Vector2 start_ = default;
-        Vector2 end_ = default;
-
-        Vector2 startLeft_;
-        Vector2 endLeft_;
-        Vector2 startRight_;
-        Vector2 endRight_;
-
-        float offsetHorizontal = startMap.room.roomSize.x / 2 + 2;
-        float offsetVertical = startMap.room.roomSize.y / 2 + 2;
-
-        switch (accessRoomIndex_[ran_])
+        for (int i = 0; i < 4; i++)
         {
-            case 0:
-                mapCreatePoint_ = new Vector2(mapNodeArray[0].leftCenter.x - offsetHorizontal, mapNodeArray[0].nodePosition.y);
-                startMapObj.transform.position = mapCreatePoint_;
-                startMap.nodePosition = startMapObj.transform.position;
-                startMap.rightCenter = startMap.nodePosition + new Vector2(startMap.room.roomSize.x / 2, 0) * 0.65f;
-                
-                start_ = startMap.rightCenter;
-                end_ = mapNodeArray[0].leftCenter;
-                break;
-            case 4:
-                mapCreatePoint_ = new Vector2(mapNodeArray[4].leftCenter.x - offsetHorizontal, mapNodeArray[4].nodePosition.y);
-                startMapObj.transform.position = mapCreatePoint_;
-                startMap.nodePosition = startMapObj.transform.position;
-                startMap.rightCenter = startMap.nodePosition + new Vector2(startMap.room.roomSize.x / 2, 0) * 0.65f;
-                
-                start_ = startMap.rightCenter;
-                end_ = mapNodeArray[4].leftCenter;
-                break;
-            case 8:
-                mapCreatePoint_ = new Vector2(mapNodeArray[8].nodePosition.x, mapNodeArray[8].bottomCenter.y - offsetVertical);
-                startMapObj.transform.position = mapCreatePoint_;
-                startMap.nodePosition = startMapObj.transform.position;
-                startMap.topCenter = startMap.nodePosition + new Vector2(0, startMap.room.roomSize.y / 2) * 0.65f;
-                 
-                start_ = startMap.topCenter;
-                end_ = mapNodeArray[8].bottomCenter;
-                break;
-            case 15:
-                mapCreatePoint_ = new Vector2(mapNodeArray[15].nodePosition.x, mapNodeArray[15].topCenter.y + offsetVertical);
-                startMapObj.transform.position = mapCreatePoint_;
-                startMap.nodePosition = startMapObj.transform.position;
-                startMap.bottomCenter = startMap.nodePosition - new Vector2(0, startMap.room.roomSize.y / 2) * 0.65f;
-                
-                start_ = mapNodeArray[15].topCenter;
-                end_ = startMap.bottomCenter;
-                break;
-        }
+            int ran_ = Random.Range(0, accessRoomIndex_.Count);
+            
+            Vector2 mapCreatePoint_ = default;
+            GameObject startMapObj = Instantiate(specialMapPrefabs[i], maps.transform);
 
-        startMapObj.GetComponent<StartPoint>().SetPlayer();
-        DrawAccessLine(start_, end_);
+            startMap.room = startMapObj.GetComponent<Room>();
 
-        // x 포지션 값이 같은 경우
-        if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
-        {
-            startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
-            startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
+            Vector2 start_ = default;
+            Vector2 end_ = default;
 
-            endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
-            endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
+            Vector2 startLeft_;
+            Vector2 endLeft_;
+            Vector2 startRight_;
+            Vector2 endRight_;
 
-            DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-            DrawAccessLine(startRight_, endRight_, lineWallBottom);
-        }
-        // y 포지션 값이 같은 경우
-        else
-        {
-            startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
-            startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
+            float offsetHorizontal = startMap.room.roomSize.x / 2 + 2;
+            float offsetVertical = startMap.room.roomSize.y / 2 + 2;
 
-            endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
-            endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
+            switch (accessRoomIndex_[ran_])
+            {
+                case 0:
+                    mapCreatePoint_ = new Vector2(mapNodeArray[0].leftCenter.x - offsetHorizontal, mapNodeArray[0].nodePosition.y);
+                    startMapObj.transform.position = mapCreatePoint_;
+                    startMap.nodePosition = startMapObj.transform.position;
+                    startMap.rightCenter = startMap.nodePosition + new Vector2(startMap.room.roomSize.x / 2, 0) * 0.65f;
 
-            Debug.Log(startLeft_);
-            Debug.Log(startRight_);
-            Debug.Log(endLeft_);
-            Debug.Log(endRight_);
+                    start_ = startMap.rightCenter;
+                    end_ = mapNodeArray[0].leftCenter;
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    break;
+                case 4:
+                    mapCreatePoint_ = new Vector2(mapNodeArray[4].leftCenter.x - offsetHorizontal, mapNodeArray[4].nodePosition.y);
+                    startMapObj.transform.position = mapCreatePoint_;
+                    startMap.nodePosition = startMapObj.transform.position;
+                    startMap.rightCenter = startMap.nodePosition + new Vector2(startMap.room.roomSize.x / 2, 0) * 0.65f;
 
-            DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-            DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                    start_ = startMap.rightCenter;
+                    end_ = mapNodeArray[4].leftCenter;
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    break;
+                case 8:
+                    mapCreatePoint_ = new Vector2(mapNodeArray[8].nodePosition.x, mapNodeArray[8].bottomCenter.y - offsetVertical);
+                    startMapObj.transform.position = mapCreatePoint_;
+                    startMap.nodePosition = startMapObj.transform.position;
+                    startMap.topCenter = startMap.nodePosition + new Vector2(0, startMap.room.roomSize.y / 2) * 0.65f;
+
+                    start_ = startMap.topCenter;
+                    end_ = mapNodeArray[8].bottomCenter;
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    break;
+                case 15:
+                    mapCreatePoint_ = new Vector2(mapNodeArray[15].nodePosition.x, mapNodeArray[15].topCenter.y + offsetVertical);
+                    startMapObj.transform.position = mapCreatePoint_;
+                    startMap.nodePosition = startMapObj.transform.position;
+                    startMap.bottomCenter = startMap.nodePosition - new Vector2(0, startMap.room.roomSize.y / 2) * 0.65f;
+
+                    start_ = mapNodeArray[15].topCenter;
+                    end_ = startMap.bottomCenter;
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    break;
+            }
+
+            if(i == 0) startMapObj.GetComponent<StartPoint>().SetPlayer();
+            DrawAccessLine(start_, end_, accessLine);
+
+            // x 포지션 값이 같은 경우
+            if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+            {
+                startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
+                startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
+
+                endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
+                endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
+
+                DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                DrawAccessLine(startRight_, endRight_, lineWallBottom);
+            }
+            // y 포지션 값이 같은 경우
+            else
+            {
+                startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
+                startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
+
+                endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
+                endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
+
+                DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                DrawAccessLine(startRight_, endRight_, lineWallBottom);
+            }
+            accessRoomIndex_.RemoveAt(ran_);
         }
     }
+    
+    private void MapCreate(MapNode nowNode_)
+    {
+        mapNodeArray[nowNode_.nodeIndex] = nowNode_;
 
+        int index = 0;
+
+        while (true)
+        {
+            int ran_ = Random.Range(2, mapPrefabs.Count);
+            Room room_ = mapPrefabs[ran_].GetComponent<Room>();
+
+            if (room_.roomSize.x > nowNode_.nodeRect.width || room_.roomSize.y > nowNode_.nodeRect.height)
+            {
+                if (index > 100)
+                {
+                    Debug.Log(index);
+                    Debug.Log(nowNode_.nodeIndex);
+                    GameObject nodeRoom_ = Instantiate(mapPrefabs[2], maps.transform);
+                    room_ = nodeRoom_.GetComponent<Room>();
+                    nodeRoom_.transform.position = nowNode_.nodePosition;
+                    nowNode_.room = nodeRoom_.GetComponent<Room>();
+
+                    nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                    nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                    nowNode_.topCenter = nowNode_.nodePosition + new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+                    nowNode_.bottomCenter = nowNode_.nodePosition - new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+                    break;
+                }
+                index++;
+                continue;
+            }
+            else
+            {
+                GameObject nodeRoom_ = Instantiate(room_.gameObject, maps.transform);
+                nodeRoom_.transform.position = nowNode_.nodePosition;
+                nowNode_.room = room_;
+
+                nowNode_.leftCenter = nowNode_.nodePosition - new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                nowNode_.rightCenter = nowNode_.nodePosition + new Vector2(room_.roomSize.x / 2, 0) * 0.65f;
+                nowNode_.topCenter = nowNode_.nodePosition + new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+                nowNode_.bottomCenter = nowNode_.nodePosition - new Vector2(0, room_.roomSize.y / 2) * 0.65f;
+
+                break;
+            }
+        }
+
+        if (nowNode_.nodeIndex == MAXIMUM_DEPTH * MAXIMUM_DEPTH - 1)
+        {
+            for (int i = 0; i < mapNodeArray.Count(); i += 2)
+            {
+                Vector2 start_;
+                Vector2 end_;
+                Vector2 startLeft_;
+                Vector2 endLeft_;
+                Vector2 startRight_;
+                Vector2 endRight_;
+
+                // x 포지션 값이 같은 경우
+                if (mapNodeArray[i].nodePosition.x == mapNodeArray[i + 1].nodePosition.x)
+                {
+                    start_ = mapNodeArray[i].topCenter;
+                    end_ = mapNodeArray[i + 1].bottomCenter;
+
+                    startLeft_ = new Vector2(start_.x - 1, start_.y);
+                    startRight_ = new Vector2(start_.x + 1, start_.y);
+
+                    endLeft_ = new Vector2(end_.x - 1, end_.y - 0.5f);
+                    endRight_ = new Vector2(end_.x + 1, end_.y - 0.5f);
+
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
+                }
+                // y 포지션 값이 같은 경우
+                else
+                {
+                    start_ = mapNodeArray[i].rightCenter;
+                    end_ = mapNodeArray[i + 1].leftCenter;
+
+                    startLeft_ = new Vector2(start_.x, start_.y - 1);
+                    startRight_ = new Vector2(start_.x, start_.y + 1);
+
+                    endLeft_ = new Vector2(end_.x, end_.y - 1);
+                    endRight_ = new Vector2(end_.x, end_.y + 1);
+
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = end_ - new Vector2(2, 0);
+                }
+
+                DrawAccessLine(start_, end_, accessLine);
+                DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                DrawAccessLine(startRight_, endRight_, lineWallBottom);
+            }
+        }
+    }
     private void AccessZone()
     {
         int[] zoneAccessRoomIndex_ = new int[4] { 3, 5, 9, 12 };
@@ -439,42 +456,48 @@ public class MapGenerator : MonoBehaviour
         start_ = mapNodeArray[zoneAccessRoomIndex_[0]].topCenter;
         end_ = mapNodeArray[zoneAccessRoomIndex_[1]].bottomCenter;
         middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
-        middle2_ = new Vector2(end_.x, middle_.y);
+        middle2_ = new Vector2(end_.x, (start_.y + end_.y) / 2);
 
-        DrawAccessLine(start_, end_, middle_, middle2_);
-        DrawAccessLineSide(start_, end_, middle_, middle2_, 0);
+        DrawAccessLine(start_, end_ , middle_, middle2_, accessLine, 0);
+        DrawAccessWallSide(start_, end_, middle_, middle2_, 0);
+        Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+        Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
 
         // 존1, 존3 연결
 
         start_ = mapNodeArray[zoneAccessRoomIndex_[0]].rightCenter;
         end_ = mapNodeArray[zoneAccessRoomIndex_[2]].leftCenter;
         middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
-        middle2_ = new Vector2(middle_.x, end_.y);
+        middle2_ = new Vector2((start_.x + end_.x) / 2, end_.y);
 
-        
-
-        DrawAccessLine(start_, end_, middle_, middle2_);
-        DrawAccessLineSide(start_, end_, middle_, middle2_, 1);
+        DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 1);
+        DrawAccessWallSide(start_, end_, middle_, middle2_, 1);
+        Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+        Instantiate(verticalDoor, allDoors.transform).transform.position = end_ - new Vector2(2, 0);
 
         // 존2, 존4 연결
 
         start_ = mapNodeArray[zoneAccessRoomIndex_[1]].rightCenter;
         end_ = mapNodeArray[zoneAccessRoomIndex_[3]].leftCenter;
         middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
-        middle2_ = new Vector2(middle_.x, end_.y);
+        middle2_ = new Vector2((start_.x + end_.x) / 2, end_.y);
 
 
-        DrawAccessLine(start_, end_, middle_, middle2_);
-        DrawAccessLineSide(start_, end_, middle_, middle2_, 1);
+        DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 1);
+        DrawAccessWallSide(start_, end_, middle_, middle2_, 1);
+        Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+        Instantiate(verticalDoor, allDoors.transform).transform.position = end_ - new Vector2(2, 0);
 
         // 존3, 존4 연결
         start_ = mapNodeArray[zoneAccessRoomIndex_[2]].topCenter;
         end_ = mapNodeArray[zoneAccessRoomIndex_[3]].bottomCenter;
         middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
-        middle2_ = new Vector2(end_.x, middle_.y);
+        middle2_ = new Vector2(end_.x, (start_.y + end_.y) / 2);
 
-        DrawAccessLine(start_, end_, middle_, middle2_);
-        DrawAccessLineSide(start_, end_, middle_, middle2_, 0);
+        DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 0);
+        DrawAccessWallSide(start_, end_, middle_, middle2_, 0);
+        Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+        Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
     }
 
     private void AccessZoneRoom()
@@ -501,7 +524,10 @@ public class MapGenerator : MonoBehaviour
                     middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
                     middle2_ = new Vector2(middle_.x, end_.y);
                 }
-                DrawAccessLineSide(start_, end_, middle_, middle2_, 1);
+                DrawAccessWallSide(start_, end_, middle_, middle2_, 1);
+                DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 1);
+                Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                Instantiate(verticalDoor, allDoors.transform).transform.position = end_ - new Vector2(2, 0);
             }
             else
             {
@@ -516,97 +542,24 @@ public class MapGenerator : MonoBehaviour
                     end_ = mapNodeArray[MAXIMUM_DEPTH * i + 2].leftCenter;
                     middle_ = new Vector2((start_.x + end_.x) / 2, start_.y);
                     middle2_ = new Vector2(middle_.x, end_.y);
-                    DrawAccessLineSide(start_, end_, middle_, middle2_, 1);
+                    DrawAccessWallSide(start_, end_, middle_, middle2_, 1);
+                    DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 1);
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    Instantiate(verticalDoor, allDoors.transform).transform.position = end_ - new Vector2(2, 0);
                 }
                 else
                 {
-                    DrawAccessLineSide(start_, end_, middle_, middle2_, 0);
+                    DrawAccessWallSide(start_, end_, middle_, middle2_, 0);
+                    DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 0);
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
                 }
-                
-            }
-
-            DrawAccessLine(start_, end_, middle_, middle2_);
+            }  
         }
-
         SetStartRoom();
     }
-    private void DrawAccessLine(Vector2 start_, Vector2 end_)
-    {
-        LineRenderer lineRenderer_ = Instantiate(accessLine).GetComponent<LineRenderer>();
-        lineRenderer_.SetPosition(0, start_);
-        lineRenderer_.SetPosition(1, end_);
 
-        lineRenderer_.AddComponent<BoxCollider2D>();
-        BoxCollider2D lineBoxCollider = lineRenderer_.GetComponent<BoxCollider2D>();
-
-        lineBoxCollider.isTrigger = true;
-        lineBoxCollider.usedByComposite = true;
-        lineBoxCollider.transform.parent = mapAccessLine.transform;
-    }
-
-    private void DrawAccessLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
-    {
-        LineRenderer lineRenderer_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
-        lineRenderer_.SetPosition(0, start_);
-        lineRenderer_.SetPosition(1, end_);
-
-        lineRenderer_.transform.parent = mapAccessWall.transform;
-
-        lineRenderer_.AddComponent<BoxCollider2D>().isTrigger = true;
-        BoxCollider2D lineBoxCollider = lineRenderer_.GetComponent<BoxCollider2D>();
-        lineBoxCollider.usedByComposite = true;
-    }
-    private void DrawAccessLine(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_)
-    {
-        LineRenderer lineRenderer_ = Instantiate(accessLine).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer2_ = Instantiate(accessLine).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer3_ = Instantiate(accessLine).GetComponent<LineRenderer>();
-
-        lineRenderer_.SetPosition(0, start_);
-        lineRenderer_.SetPosition(1, middle_);
-
-        lineRenderer2_.SetPosition(0, middle_);
-        lineRenderer2_.SetPosition(1, middle2_);
-
-        lineRenderer3_.SetPosition(0, middle2_);
-        lineRenderer3_.SetPosition(1, end_);
-
-        lineRenderer_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer_.transform.parent = mapAccessLine.transform;
-        lineRenderer2_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer2_.transform.parent = mapAccessLine.transform;
-        lineRenderer3_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer3_.transform.parent = mapAccessLine.transform;
-    }
-    private void DrawAccessLine(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_, GameObject lineRenderObj_)
-    {
-        LineRenderer lineRenderer_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer2_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
-        LineRenderer lineRenderer3_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
-
-        lineRenderer_.SetPosition(0, start_);
-        lineRenderer_.SetPosition(1, middle_);
-
-        lineRenderer2_.SetPosition(0, middle_);
-        lineRenderer2_.SetPosition(1, middle2_);
-
-        lineRenderer3_.SetPosition(0, middle2_);
-        lineRenderer3_.SetPosition(1, end_);
-
-        lineRenderer_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer_.GetComponent<BoxCollider2D>().usedByComposite = true;
-        lineRenderer_.transform.parent = mapAccessWall.transform;
-
-        lineRenderer2_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer2_.GetComponent<BoxCollider2D>().usedByComposite = true;
-        lineRenderer2_.transform.parent = mapAccessWall.transform;
-
-        lineRenderer3_.AddComponent<BoxCollider2D>().isTrigger = true;
-        lineRenderer3_.GetComponent<BoxCollider2D>().usedByComposite = true;
-        lineRenderer3_.transform.parent = mapAccessWall.transform;
-    }
-
-    private void DrawAccessLineSide(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_, int distanceIndex_)
+    private void DrawAccessWallSide(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_, int distanceIndex_)
     {
         Vector2 startLeft_;
         Vector2 middleLeft_;
@@ -671,13 +624,84 @@ public class MapGenerator : MonoBehaviour
             endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
         }
 
-        DrawAccessLine(startLeft_, endLeft_, middleLeft_, middleLeft2_, lineWallTop);
-        DrawAccessLine(startRight_, endRight_, middleRight_, middleRight2_, lineWallBottom);
+        DrawAccessLine(startLeft_, endLeft_, middleLeft_, middleLeft2_, lineWallTop, distanceIndex_);
+        DrawAccessLine(startRight_, endRight_, middleRight_, middleRight2_, lineWallBottom, distanceIndex_);
     }
 
     IEnumerator AccessRoomLineColEnableFalse(CompositeCollider2D lineComposite_)
     {
         yield return null;
         lineComposite_.enabled = false;
+    }
+    private void DrawAccessLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
+    {
+        LineRenderer startLine_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
+        startLine_.SetPosition(0, start_);
+        startLine_.SetPosition(1, end_);
+
+        startLine_.AddComponent<BoxCollider2D>().isTrigger = true;
+        BoxCollider2D lineBoxCollider = startLine_.GetComponent<BoxCollider2D>();
+
+        if (lineRenderObj_ == accessLine)
+        {
+            lineBoxCollider.usedByComposite = true;
+            lineBoxCollider.transform.parent = mapAccessLine.transform;
+        }
+        else
+        {
+            startLine_.transform.parent = mapAccessWall.transform;
+        }
+    }
+
+    private void DrawAccessLine(Vector2 start_, Vector2 end_, Vector2 middle_, Vector2 middle2_, GameObject lineRenderObj_, int distanceIndex_)
+    {
+        LineRenderer startLine_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
+        LineRenderer middleLine_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
+        LineRenderer endLine_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();
+
+        // 0 -> top to bottom distance
+        if (distanceIndex_ == 0)
+        {
+            startLine_.SetPosition(0, start_);
+            startLine_.SetPosition(1, middle_ + new Vector2(0, 0.5f));
+
+            middleLine_.SetPosition(0, middle_);
+            middleLine_.SetPosition(1, middle2_);
+
+            endLine_.SetPosition(0, middle2_ - new Vector2(0, 0.5f));
+            endLine_.SetPosition(1, end_);  
+        }
+        // 1 -> right to bottom distance
+        else
+        {
+            startLine_.SetPosition(0, start_);
+            startLine_.SetPosition(1, middle_ + new Vector2(0.5f, 0));
+
+            middleLine_.SetPosition(0, middle_);
+            middleLine_.SetPosition(1, middle2_);
+
+            endLine_.SetPosition(0, middle2_ - new Vector2(0.5f, 0));
+            endLine_.SetPosition(1, end_);
+        }
+
+        startLine_.AddComponent<BoxCollider2D>().isTrigger = true;
+        middleLine_.AddComponent<BoxCollider2D>().isTrigger = true;
+        endLine_.AddComponent<BoxCollider2D>().isTrigger = true;
+
+        if (lineRenderObj_ == accessLine)
+        {
+            startLine_.GetComponent<BoxCollider2D>().usedByComposite = true;
+            middleLine_.GetComponent<BoxCollider2D>().usedByComposite = true;
+            endLine_.GetComponent<BoxCollider2D>().usedByComposite = true;
+            startLine_.transform.parent = mapAccessLine.transform;
+            middleLine_.transform.parent = mapAccessLine.transform;
+            endLine_.transform.parent = mapAccessLine.transform;
+        }
+        else
+        {
+            startLine_.transform.parent = mapAccessWall.transform;
+            middleLine_.transform.parent = mapAccessWall.transform;
+            endLine_.transform.parent = mapAccessWall.transform;
+        }
     }
 }

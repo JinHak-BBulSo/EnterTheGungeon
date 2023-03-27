@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TileAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cb0a43c0af3bd804aa5c25babd4c0ebd, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 137c7020bcf13274695c215f71e4b6a8, type: 3}
+  - {fileID: 21300000, guid: a38d835e46f27614c9ac5ec7b1978911, type: 2}
+  - {fileID: 21300000, guid: 65da73bafb1eab248bb64695d0dd9cd9, type: 2}
+  - {fileID: 21300000, guid: afa6dcb96523398428648700768ec22b, type: 2}
+  - {fileID: 21300000, guid: cf7c03b5e2973f841be0b485b7d57561, type: 2}
+  - {fileID: 21300000, guid: a9cb6bc3f390dbe41b9ea79314e2df21, type: 2}
+  - {fileID: 21300000, guid: f3963a20aac3cf54d87c1fdd8ef65249, type: 2}
+  - {fileID: 21300000, guid: c279f77216073b44ea8bc04038e8a3fe, type: 2}
+  - {fileID: 21300000, guid: 3af997b1b715faf428bce390b82bf572, type: 2}
+  - {fileID: 21300000, guid: bbd821e1f37fab246badd50c7f64f367, type: 2}
+  - {fileID: 21300000, guid: 4777996246ff4f048aeafb99a269dac8, type: 2}
+  - {fileID: 21300000, guid: 070e11433db8a194181ab759f6bd2da8, type: 3}
+  - {fileID: 21300000, guid: 777cbcfa74351a24da528cc4756e0584, type: 2}
+  - {fileID: 21300000, guid: 83c51a07708db2e49a2edfd566bfc0cc, type: 2}
+  - {fileID: 21300000, guid: 6f45ee73b0d9ae74786280161d8acbae, type: 2}
+  - {fileID: 21300000, guid: bdb0493ab947ded46b2ac1db011bec77, type: 2}
+  - {fileID: 21300000, guid: 3dd5d3371a1fb404b8fe8918d02959d8, type: 2}
+  - {fileID: 21300000, guid: 9ff0894a9fa121b4593a674b16d8c710, type: 2}
+  - {fileID: 21300000, guid: 2ba6e481fb6da704abe55474904acc0d, type: 2}
+  - {fileID: 21300000, guid: 187c430c0fe1fc949b7047092b529bfe, type: 2}
+  - {fileID: 21300000, guid: f93a95e6051906e4882a22b23af20483, type: 2}
+  - {fileID: 21300000, guid: e8612fe48d7c7ed428557f75a92a633c, type: 2}
+  - {fileID: 21300000, guid: e5ec82d94f8a40f4388ac25bfd785bb9, type: 2}
+  - {fileID: 21300000, guid: 17f8853e9068d8a4b9007adfb92b4e53, type: 2}
+  - {fileID: 21300000, guid: 4ac8b70ac9a8e0440af6be1436bd6ed8, type: 2}
+  - {fileID: 21300000, guid: 31ecb66d04699564aa2ba7192d0bd532, type: 2}
+  - {fileID: 21300000, guid: 6062efa7ae3ec4146b8ac0eb6c166958, type: 2}
+  - {fileID: 21300000, guid: b4e0f842108fc99499801d406185798d, type: 2}
+  - {fileID: 21300000, guid: e884fe395674a2f4cb309f871638e85c, type: 2}
+  - {fileID: 21300000, guid: 5424384dec8d9974a902245d4d43e408, type: 2}
+  - {fileID: 21300000, guid: 209d12fd6cd00fb498067c4b625959a0, type: 2}
+  - {fileID: 21300000, guid: 760e08f265b0d944b9e10f30d6059c0d, type: 2}
+  - {fileID: 21300000, guid: f26597bb9c9a4104b95ede15630efec3, type: 2}
+  - {fileID: 21300000, guid: 14b92f5dbc9071d43a21d6479d963681, type: 2}
+  - {fileID: 21300000, guid: 0ce721bed8631c14da8c83237b58aff0, type: 2}
+  - {fileID: 21300000, guid: b9f15e26f4c788d42a6822e568aad75d, type: 2}
+  - {fileID: 21300000, guid: ef10d5562d4ca904ca17cc7eca8f8ce0, type: 2}
+  - {fileID: 21300000, guid: da0ef5ec559fc594daa4eb818f6f93a8, type: 2}
+  - {fileID: 21300000, guid: 24c9884d4acac4c47b7ba7582ae42551, type: 2}
+  - {fileID: 21300000, guid: 38be65447fbebe04eb5d2d9ffa34892c, type: 2}
+  - {fileID: 21300000, guid: e4e235632fac43743a513a0f5dfd261b, type: 2}
+  - {fileID: 21300000, guid: 327a3dc9e18292b438be7d867f87cdbe, type: 2}
+  - {fileID: 21300000, guid: 9099a7de5aaf89843ab6e0746c8b1cb5, type: 2}
+  - {fileID: 21300000, guid: d42b6457e116b4547a169118ef261d55, type: 2}
+  - {fileID: 21300000, guid: 3d65dfb2b0eeeba4dbe5f2b91e4117c9, type: 2}
+  - {fileID: 21300000, guid: dc9002391bd85954fa496bd27ad8d094, type: 2}
+  - {fileID: 21300000, guid: dd08a65b67e4d7e4792603e09c72fbec, type: 2}
+  - {fileID: 21300000, guid: ce5aa62c1fa325a4b81376aded4319ad, type: 2}
+  - {fileID: 21300000, guid: 4d33705c2f1f0474eb6a22816b7e683f, type: 3}
+  - {fileID: 21300000, guid: ea515f8eabe0f4149809d236b3d75a13, type: 2}
+  - {fileID: 21300000, guid: 1217e00f86ae66141b00658f9d7e9c6d, type: 2}
+  - {fileID: 21300000, guid: 6f03090d905dd30468f7edbd36ecf677, type: 2}
+  - {fileID: 21300000, guid: 99af42cd9eb66cf4582a35470dc9b60b, type: 2}
+  - {fileID: 21300000, guid: 6b198dd364243e040806354fb73233bf, type: 2}
+  - {fileID: 21300000, guid: 2f611b4562cd3434791965affcd4254e, type: 2}
+  - {fileID: 21300000, guid: ebca9b0ff468f904586c9010f1cbed17, type: 2}
+  - {fileID: 21300000, guid: f2b6ef61d3135c24db5663cd0b79d034, type: 2}
+  - {fileID: 21300000, guid: 8d416b685aa78954fbf56fafdc9d5b8d, type: 2}
+  - {fileID: 21300000, guid: e83c882af961a7a488327f9659cab46f, type: 2}
+  - {fileID: 21300000, guid: 0e0780df58b8e5d41a25624dafb31b6e, type: 2}
+  - {fileID: 21300000, guid: 784a493f6df2f98489f6f2d7a996c441, type: 2}
+  - {fileID: 21300000, guid: c1431bfa068740e4b904685da6e38893, type: 2}
+  m_PackedSpriteNamesToIndex:
+  - wallTop
+  - ShopWall1
+  - ShopWall2
+  - GreenTileBase
+  - wallside
+  - ShopWallTop
+  - ShopCounterGround
+  - GreenTile6
+  - ShopCarpetMiddle
+  - BookShelfMiddle1
+  - woodBase
+  - accessLine
+  - BookShelfTopLeftEdge
+  - ShopWall3
+  - OutSideBase
+  - BookShelfRightEdge
+  - ShopCarpetRightEdge
+  - RedCarpetMiddle
+  - walltopEdge
+  - RedCarpetPattern
+  - carpetEdge
+  - GreenWall1
+  - GreenWall2
+  - carpetBase
+  - ShopWallTopEdge1
+  - ShopWallTopEdge2
+  - ShopRIghtSideWall
+  - carpetEdgeSide
+  - GreenTile2
+  - WoodMiddle1
+  - GreenTile4
+  - GreenTile5
+  - BookShelfTopMiddle2
+  - BookShelfTopMiddle1
+  - carpetMiddle2
+  - GreenTileBase2
+  - BookShelfLeftEdge
+  - BookShelfMiddle3
+  - woodMiddle2
+  - RedCarpetEdge
+  - carpetEdge2
+  - RedCarpetBase
+  - shopLeftSIdeWall
+  - WoodDoubleSide
+  - WoodEdge
+  - WoodSideEdge
+  - StoneGround2
+  - BookShelfLadder
+  - wallBottom
+  - carpetMiddle
+  - RedCarpetEdgeSide
+  - ShopCarpetLeftEdge
+  - WallTopBase
+  - walltopEdge2
+  - BlackTile
+  - GreenTile3
+  - BookShelfMiddle2
+  - StoneGround1
+  - wood
+  - GreenWall3
+  - BookShelfTopMiddle3
+  - BookShelfTopRightEdge
+  m_RenderDataMap: {}
+  m_Tag: TileAtlas
+  m_IsVariant: 0

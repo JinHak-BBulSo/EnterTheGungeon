@@ -127,8 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: []
   boss: {fileID: 0}
+  mapBoss: {fileID: 0}
   roomSize: {x: 22, y: 22}
-  isPlayerEnter: 0
+  isPlayerEnter: 1
+  enemyCount: 0
 --- !u!114 &5649636485529515000
 MonoBehaviour:
   m_ObjectHideFlags: 0

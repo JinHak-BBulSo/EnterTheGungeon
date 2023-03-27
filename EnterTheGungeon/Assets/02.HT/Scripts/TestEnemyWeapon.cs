@@ -11,10 +11,19 @@ public class TestEnemyWeapon : MonoBehaviour
     public float delayTime;
 
     bool isDelayEnd;
+
+    ObjectPool objectPool;
+    List<GameObject> enemyBulletPool;
+    GameObject enemyBulletPrefab;
+    TestEnemy testEnemy;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        testEnemy = transform.parent.parent.GetComponent<TestEnemy>();
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        enemyBulletPool = objectPool.enemyBulletPool;
+        enemyBulletPrefab = objectPool.enemyBulletPrefab;
     }
 
     // Update is called once per frame
@@ -43,10 +52,13 @@ public class TestEnemyWeapon : MonoBehaviour
         {
             isDelayEnd = true;
             Debug.Log("fire bullet");
-            GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-            clone.transform.SetParent(GameObject.Find("GameObjs").transform);
-            clone.GetComponent<TestBullet>().bulletType = 0;
-            clone.GetComponent<Rigidbody2D>().velocity = clone.transform.up * 5;
+            GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+            clone_.transform.position = transform.position;
+            //GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
+            //clone.transform.SetParent(GameObject.Find("GameObjs").transform);
+            clone_.GetComponent<TestBullet>().bulletType = 0;
+            clone_.GetComponent<TestBullet>().enemyName = testEnemy.enemyName;
+            clone_.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
             StartCoroutine(FireDelay(delayTime));
         }
     }
