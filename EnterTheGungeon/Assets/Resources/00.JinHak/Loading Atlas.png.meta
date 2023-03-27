@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Loading4
+      name: Loading_13
       rect:
         serializedVersion: 2
         x: 657
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading1
+      name: Loading_1
       rect:
         serializedVersion: 2
         x: 330
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading2
+      name: Loading_5
       rect:
         serializedVersion: 2
         x: 441
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading3
+      name: Loading_9
       rect:
         serializedVersion: 2
         x: 549
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading8
+      name: Loading_14
       rect:
         serializedVersion: 2
         x: 657
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading5
+      name: Loading_2
       rect:
         serializedVersion: 2
         x: 330
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading6
+      name: Loading_6
       rect:
         serializedVersion: 2
         x: 441
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading7
+      name: Loading_10
       rect:
         serializedVersion: 2
         x: 549
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading12
+      name: Loading_15
       rect:
         serializedVersion: 2
         x: 657
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading9
+      name: Loading_3
       rect:
         serializedVersion: 2
         x: 331
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading10
+      name: Loading_7
       rect:
         serializedVersion: 2
         x: 441
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading11
+      name: Loading_11
       rect:
         serializedVersion: 2
         x: 549
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading16
+      name: Loading_16
       rect:
         serializedVersion: 2
         x: 657
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading13
+      name: Loading_4
       rect:
         serializedVersion: 2
         x: 331
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading14
+      name: Loading_8
       rect:
         serializedVersion: 2
         x: 441
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading15
+      name: Loading_12
       rect:
         serializedVersion: 2
         x: 549
@@ -785,22 +785,22 @@ TextureImporter:
       Loading Atlas_97: -419197322
       Loading Atlas_98: 383171495
       Loading Atlas_99: -1515853281
-      Loading1: -630746216
-      Loading10: 1306260461
-      Loading11: -1072852803
-      Loading12: -1199223609
-      Loading13: 1436859562
-      Loading14: -1258570111
-      Loading15: -1865170375
-      Loading16: 214128220
-      Loading2: 1793536437
-      Loading3: 1553681797
-      Loading4: 1747430915
-      Loading5: 833024876
-      Loading6: -379567506
-      Loading7: 1378276057
-      Loading8: 2071721912
-      Loading9: -338604431
+      Loading_1: -630746216
+      Loading_10: 1378276057
+      Loading_11: -1072852803
+      Loading_12: -1865170375
+      Loading_13: 1747430915
+      Loading_14: 2071721912
+      Loading_15: -1199223609
+      Loading_16: 214128220
+      Loading_2: 833024876
+      Loading_3: -338604431
+      Loading_4: 1436859562
+      Loading_5: 1793536437
+      Loading_6: -379567506
+      Loading_7: 1306260461
+      Loading_8: -1258570111
+      Loading_9: 1553681797
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
