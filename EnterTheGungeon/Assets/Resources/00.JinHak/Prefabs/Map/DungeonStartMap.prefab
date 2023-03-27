@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: -6641809427068937447}
   - component: {fileID: 5649636485529515000}
   - component: {fileID: 8381646289323367550}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DungeonStartMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,11 +129,11 @@ MonoBehaviour:
   enemy: []
   boss: {fileID: 0}
   mapBoss: {fileID: 0}
-  roomSize: {x: 22, y: 22}
-  isPlayerEnter: 1
   enemyCount: 0
+  roomSize: {x: 22, y: 22}
   spawnPoints: []
   monsterobjs: {fileID: 0}
+  isPlayerEnter: 1
   isRoomClear: 1
   isSpecialRoom: 1
 --- !u!114 &5649636485529515000
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 495369537474440341}
   - component: {fileID: 495369537474440343}
   - component: {fileID: 495369537474440340}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BattleFloorDarkBlueCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

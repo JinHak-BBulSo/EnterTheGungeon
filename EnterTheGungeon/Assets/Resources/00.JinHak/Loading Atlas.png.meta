@@ -1,0 +1,809 @@
+fileFormatVersion: 2
+guid: 0fab23600963fae469b38be8ab53236e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Loading4
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 428
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0faca2ea9b69f5478452b706b871faf
+      internalID: 1747430915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 428
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a8655396c502340a2f24276527fcc1
+      internalID: -630746216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading2
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 428
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bf7255ab575e343a0aa20f0a30d606
+      internalID: 1793536437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading3
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 428
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d0c077baa4dad46a69292260e5faa6
+      internalID: 1553681797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading8
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 367
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343dae2e0793a5a438ee5d38034eea2a
+      internalID: 2071721912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 366
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de08a53963d2f849af732b6bf2e11b5
+      internalID: 833024876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading6
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 367
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245da564efe517f49a53ae3e734f4cac
+      internalID: -379567506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading7
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 367
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a64abd16322f24cb12932aa038c19f
+      internalID: 1378276057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading12
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 306
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b557ffb8cc0d94f9d4abd4aa7289f4
+      internalID: -1199223609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading9
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 305
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a71927df1302bf499b2e05c35dad276
+      internalID: -338604431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading10
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 306
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62343cd20185e9488b1ca52c03dd181
+      internalID: 1306260461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading11
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 306
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918501385eb46384d86ea061479c07ce
+      internalID: -1072852803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading16
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 245
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed03a109cb8ff446a1530354724d7e9
+      internalID: 214128220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading13
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 245
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643b08211e4eed84b8115e4c22e3942c
+      internalID: 1436859562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading14
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 245
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3aecc1dfb35d342a045476f4cd51a0
+      internalID: -1258570111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading15
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 245
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f4be6971363e34f8f3e36e7514c7a8
+      internalID: -1865170375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Loading Atlas_0: -1106795661
+      Loading Atlas_1: 1641800179
+      Loading Atlas_100: -1059212846
+      Loading Atlas_101: 928023780
+      Loading Atlas_102: 1628561191
+      Loading Atlas_103: 448009316
+      Loading Atlas_104: 2106723457
+      Loading Atlas_105: -1421955660
+      Loading Atlas_106: -1270624920
+      Loading Atlas_107: 1858558899
+      Loading Atlas_108: 2143107359
+      Loading Atlas_109: -2051290726
+      Loading Atlas_110: -56088231
+      Loading Atlas_111: -575323671
+      Loading Atlas_112: -2116464479
+      Loading Atlas_113: -265883606
+      Loading Atlas_114: 707845750
+      Loading Atlas_115: -434878052
+      Loading Atlas_116: -1632140063
+      Loading Atlas_117: 592924790
+      Loading Atlas_118: 210925024
+      Loading Atlas_119: -1123131193
+      Loading Atlas_12: -699730216
+      Loading Atlas_120: 78045996
+      Loading Atlas_121: -2111695212
+      Loading Atlas_122: 1390296607
+      Loading Atlas_123: 236550490
+      Loading Atlas_124: -401860917
+      Loading Atlas_125: 270799714
+      Loading Atlas_126: 1528053303
+      Loading Atlas_127: 1783041275
+      Loading Atlas_128: 417372241
+      Loading Atlas_129: 422952570
+      Loading Atlas_13: 391784536
+      Loading Atlas_130: -402558692
+      Loading Atlas_131: -1039541335
+      Loading Atlas_132: 175571473
+      Loading Atlas_133: 2087890232
+      Loading Atlas_134: 46399971
+      Loading Atlas_135: 1429259629
+      Loading Atlas_136: 1349525325
+      Loading Atlas_137: 1462596717
+      Loading Atlas_138: -1495662947
+      Loading Atlas_139: 1991218171
+      Loading Atlas_14: -1177717522
+      Loading Atlas_140: -1720586924
+      Loading Atlas_141: 1222258504
+      Loading Atlas_142: -1439208500
+      Loading Atlas_143: -1049262844
+      Loading Atlas_144: 2116860148
+      Loading Atlas_145: 1373857425
+      Loading Atlas_146: 772952567
+      Loading Atlas_147: 605457245
+      Loading Atlas_148: 1536363560
+      Loading Atlas_149: -656371075
+      Loading Atlas_15: 112951863
+      Loading Atlas_150: -1687291297
+      Loading Atlas_151: -784400779
+      Loading Atlas_152: 1305780761
+      Loading Atlas_153: -157492534
+      Loading Atlas_154: 1078478291
+      Loading Atlas_155: 1664641483
+      Loading Atlas_156: 1960910666
+      Loading Atlas_157: 90899499
+      Loading Atlas_158: 1577725975
+      Loading Atlas_159: 163569471
+      Loading Atlas_16: -1170456071
+      Loading Atlas_160: 1276583556
+      Loading Atlas_161: -665360696
+      Loading Atlas_162: 946795250
+      Loading Atlas_163: 873866118
+      Loading Atlas_164: -1447374184
+      Loading Atlas_165: 308046704
+      Loading Atlas_166: -490335621
+      Loading Atlas_167: -329514497
+      Loading Atlas_168: 34817388
+      Loading Atlas_169: 554335118
+      Loading Atlas_17: 1700712116
+      Loading Atlas_170: -67857292
+      Loading Atlas_171: -1326338751
+      Loading Atlas_172: -553041985
+      Loading Atlas_173: -950299370
+      Loading Atlas_174: -172339001
+      Loading Atlas_175: 1458085566
+      Loading Atlas_176: 1173091082
+      Loading Atlas_177: -277701006
+      Loading Atlas_178: 285870049
+      Loading Atlas_179: 422349016
+      Loading Atlas_180: -2077597181
+      Loading Atlas_181: -304193989
+      Loading Atlas_182: 1566724071
+      Loading Atlas_183: 1439579349
+      Loading Atlas_184: 175761465
+      Loading Atlas_185: 247109186
+      Loading Atlas_186: -944879130
+      Loading Atlas_187: 1806938805
+      Loading Atlas_188: -1844340893
+      Loading Atlas_189: 304054537
+      Loading Atlas_190: 1902766521
+      Loading Atlas_191: 1809607102
+      Loading Atlas_192: -44235842
+      Loading Atlas_193: -232267362
+      Loading Atlas_194: 1349974366
+      Loading Atlas_195: -2038704028
+      Loading Atlas_196: -1325814548
+      Loading Atlas_197: 1041810981
+      Loading Atlas_198: 1920926724
+      Loading Atlas_199: 636828353
+      Loading Atlas_2: -724252754
+      Loading Atlas_200: -1033066466
+      Loading Atlas_201: 2096090941
+      Loading Atlas_202: -1143396423
+      Loading Atlas_203: -2131991024
+      Loading Atlas_204: 1598986747
+      Loading Atlas_205: -1924943486
+      Loading Atlas_206: 1005219304
+      Loading Atlas_207: 1222728750
+      Loading Atlas_208: 1094767868
+      Loading Atlas_209: -503880730
+      Loading Atlas_210: -145846041
+      Loading Atlas_211: 735027849
+      Loading Atlas_212: 109127266
+      Loading Atlas_213: -1242401700
+      Loading Atlas_214: 1394233361
+      Loading Atlas_215: 1882570905
+      Loading Atlas_216: 604662898
+      Loading Atlas_217: 1251197616
+      Loading Atlas_218: 457549498
+      Loading Atlas_219: 1909950640
+      Loading Atlas_22: 1644366204
+      Loading Atlas_220: -678719091
+      Loading Atlas_221: -1288178960
+      Loading Atlas_222: 1043830200
+      Loading Atlas_223: -828517503
+      Loading Atlas_224: -1354265572
+      Loading Atlas_225: 913784570
+      Loading Atlas_226: -657481433
+      Loading Atlas_227: 517654742
+      Loading Atlas_228: -942251641
+      Loading Atlas_229: 84412040
+      Loading Atlas_23: 1152440597
+      Loading Atlas_230: -96354660
+      Loading Atlas_231: -2082841833
+      Loading Atlas_232: 677156329
+      Loading Atlas_233: -194669817
+      Loading Atlas_234: -1728292935
+      Loading Atlas_235: 995470087
+      Loading Atlas_236: -1852375740
+      Loading Atlas_237: 1152856540
+      Loading Atlas_238: -396612141
+      Loading Atlas_239: -882934563
+      Loading Atlas_24: -1423673024
+      Loading Atlas_240: -324638500
+      Loading Atlas_241: -72877721
+      Loading Atlas_242: 1337326469
+      Loading Atlas_243: -676534187
+      Loading Atlas_244: 233657852
+      Loading Atlas_245: 1567285349
+      Loading Atlas_246: 1858610795
+      Loading Atlas_247: -631858871
+      Loading Atlas_248: -189322685
+      Loading Atlas_249: -1982580215
+      Loading Atlas_25: -1863400910
+      Loading Atlas_250: 227363535
+      Loading Atlas_251: -1702630035
+      Loading Atlas_252: -50360170
+      Loading Atlas_253: -710522397
+      Loading Atlas_254: 64545870
+      Loading Atlas_255: -2102004895
+      Loading Atlas_256: -1721454323
+      Loading Atlas_257: -1136987601
+      Loading Atlas_258: 8086875
+      Loading Atlas_259: 651397614
+      Loading Atlas_26: 2009227723
+      Loading Atlas_260: 865514892
+      Loading Atlas_261: -1850017399
+      Loading Atlas_262: -1101447978
+      Loading Atlas_263: 2015091962
+      Loading Atlas_264: 1901234926
+      Loading Atlas_265: 880770844
+      Loading Atlas_266: -566615810
+      Loading Atlas_267: -1900252571
+      Loading Atlas_268: 820622935
+      Loading Atlas_269: 40170165
+      Loading Atlas_27: 768894199
+      Loading Atlas_270: -1757846836
+      Loading Atlas_271: 117980402
+      Loading Atlas_272: -2113919187
+      Loading Atlas_273: 1630615011
+      Loading Atlas_274: -93787962
+      Loading Atlas_275: 837281158
+      Loading Atlas_276: 2091404264
+      Loading Atlas_277: 2076450740
+      Loading Atlas_278: -757748312
+      Loading Atlas_279: 2037130844
+      Loading Atlas_28: 197877594
+      Loading Atlas_280: 1817514076
+      Loading Atlas_281: -1730589875
+      Loading Atlas_282: 1077781648
+      Loading Atlas_283: -1045071198
+      Loading Atlas_284: -441152465
+      Loading Atlas_285: -501073017
+      Loading Atlas_286: 1369178588
+      Loading Atlas_287: 982485950
+      Loading Atlas_288: -227240164
+      Loading Atlas_289: 1182272200
+      Loading Atlas_29: 1359819293
+      Loading Atlas_290: 2121525093
+      Loading Atlas_291: -214032376
+      Loading Atlas_292: 1184691408
+      Loading Atlas_293: -969450411
+      Loading Atlas_294: -109380155
+      Loading Atlas_295: -1200801128
+      Loading Atlas_296: 144550524
+      Loading Atlas_297: -2070153381
+      Loading Atlas_298: 1401891534
+      Loading Atlas_299: -1865000738
+      Loading Atlas_3: 304282176
+      Loading Atlas_300: 146186755
+      Loading Atlas_301: 1773527180
+      Loading Atlas_302: -388238653
+      Loading Atlas_303: -1478573142
+      Loading Atlas_304: 163202020
+      Loading Atlas_305: 1606590271
+      Loading Atlas_306: -1978089022
+      Loading Atlas_307: -1354372753
+      Loading Atlas_308: -1856800803
+      Loading Atlas_309: 477408990
+      Loading Atlas_31: 2022627913
+      Loading Atlas_310: -1405149005
+      Loading Atlas_311: 1662091876
+      Loading Atlas_312: -1004951431
+      Loading Atlas_313: 790874580
+      Loading Atlas_314: 821319767
+      Loading Atlas_315: 1594079858
+      Loading Atlas_316: -3114798
+      Loading Atlas_317: 1529085203
+      Loading Atlas_318: 1039558326
+      Loading Atlas_319: -223994353
+      Loading Atlas_320: -1707345246
+      Loading Atlas_321: -1519625315
+      Loading Atlas_322: -902042275
+      Loading Atlas_323: -1367722235
+      Loading Atlas_324: -766235004
+      Loading Atlas_325: 1977003492
+      Loading Atlas_326: -1842075432
+      Loading Atlas_327: -1801828449
+      Loading Atlas_328: 836007712
+      Loading Atlas_329: 1389565925
+      Loading Atlas_330: -1628524814
+      Loading Atlas_331: 838442796
+      Loading Atlas_332: 1817292365
+      Loading Atlas_333: -2082855149
+      Loading Atlas_334: 1447574601
+      Loading Atlas_335: 1386274659
+      Loading Atlas_336: -260329830
+      Loading Atlas_337: -1549968546
+      Loading Atlas_35: -1501662940
+      Loading Atlas_36: -991401202
+      Loading Atlas_37: 1418614228
+      Loading Atlas_38: -77821842
+      Loading Atlas_39: 2042586835
+      Loading Atlas_4: -1445298693
+      Loading Atlas_40: 439279415
+      Loading Atlas_41: 44669600
+      Loading Atlas_42: -189715313
+      Loading Atlas_43: 1982195680
+      Loading Atlas_45: 1903073327
+      Loading Atlas_46: 1525462511
+      Loading Atlas_47: -1061106845
+      Loading Atlas_48: 885124772
+      Loading Atlas_49: -817124445
+      Loading Atlas_5: -1594187634
+      Loading Atlas_50: -645379274
+      Loading Atlas_51: -1237432172
+      Loading Atlas_52: 830287805
+      Loading Atlas_53: -460065991
+      Loading Atlas_54: 86910721
+      Loading Atlas_55: 400653759
+      Loading Atlas_56: -548471105
+      Loading Atlas_57: -1753937114
+      Loading Atlas_58: -2105462282
+      Loading Atlas_59: -1972585198
+      Loading Atlas_6: 1826375902
+      Loading Atlas_60: -239516234
+      Loading Atlas_61: -165158291
+      Loading Atlas_62: 63629900
+      Loading Atlas_63: -686193
+      Loading Atlas_64: -1224129029
+      Loading Atlas_65: -1541242037
+      Loading Atlas_66: -886769399
+      Loading Atlas_67: -1300132851
+      Loading Atlas_68: -1951432322
+      Loading Atlas_69: -1889880998
+      Loading Atlas_70: 37377492
+      Loading Atlas_71: 2094398704
+      Loading Atlas_75: 1077308233
+      Loading Atlas_76: -1261323157
+      Loading Atlas_77: 968851880
+      Loading Atlas_78: 922799588
+      Loading Atlas_79: 1626510236
+      Loading Atlas_8: 1802008400
+      Loading Atlas_80: -1081892072
+      Loading Atlas_81: -1418433076
+      Loading Atlas_82: 165101277
+      Loading Atlas_83: 986185398
+      Loading Atlas_84: 134643203
+      Loading Atlas_85: 739762067
+      Loading Atlas_86: -461591960
+      Loading Atlas_87: -1292738926
+      Loading Atlas_88: 943632764
+      Loading Atlas_89: -2072026391
+      Loading Atlas_90: 821145501
+      Loading Atlas_91: 1776626186
+      Loading Atlas_92: 1269590826
+      Loading Atlas_93: 1730187244
+      Loading Atlas_94: -130703867
+      Loading Atlas_95: 1407741830
+      Loading Atlas_96: 5956766
+      Loading Atlas_97: -419197322
+      Loading Atlas_98: 383171495
+      Loading Atlas_99: -1515853281
+      Loading1: -630746216
+      Loading10: 1306260461
+      Loading11: -1072852803
+      Loading12: -1199223609
+      Loading13: 1436859562
+      Loading14: -1258570111
+      Loading15: -1865170375
+      Loading16: 214128220
+      Loading2: 1793536437
+      Loading3: 1553681797
+      Loading4: 1747430915
+      Loading5: 833024876
+      Loading6: -379567506
+      Loading7: 1378276057
+      Loading8: 2071721912
+      Loading9: -338604431
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

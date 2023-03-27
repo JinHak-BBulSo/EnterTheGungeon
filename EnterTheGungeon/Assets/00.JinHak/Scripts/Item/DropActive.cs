@@ -7,6 +7,6 @@ public class DropActive : DropItem
     public GameObject activeitem = default;
     public void GetActive()
     {
-        //PlayerInvenList.activeItems.Add(this.item);
+        PlayerInventory.Instance.playerInvenList.activeItems.Add(this.item);
     }
 }

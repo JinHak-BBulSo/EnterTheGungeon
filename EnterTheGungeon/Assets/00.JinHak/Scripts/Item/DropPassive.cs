@@ -6,6 +6,6 @@ public class DropPassive : DropItem
 {
     public void GetPassive()
     {
-        //PlayerInvenList.passiveItems.Add(this.item);
+        PlayerInventory.Instance.playerInvenList.passiveItems.Add(this.item);
     }
 }
