@@ -41,8 +41,6 @@ public class MapGenerator : MonoBehaviour
     }
 
     private MapNode startMap = new MapNode(new RectInt(0, 0, 22, 22), 0);
-    private MapNode shopMap = default;
-    private MapNode bossMap = default;
     private GameObject horizontalDoor = default;
     private GameObject verticalDoor = default;
 
@@ -68,7 +66,7 @@ public class MapGenerator : MonoBehaviour
 
     // 전체 맵의 크기
     [SerializeField]
-    Vector2Int mapSize = default;
+    private Vector2Int mapSize = default;
 
     private void Awake()
     {
@@ -110,7 +108,7 @@ public class MapGenerator : MonoBehaviour
             BoxCollider2D childCollider_ = mapAccessWall.transform.GetChild(i).GetComponent<BoxCollider2D>();
             if(childCollider_.size.x > 0.6)
             {
-                childCollider_.size = new Vector2(childCollider_.size.x * 0.85f, 0.3f);
+                childCollider_.size = new Vector2(childCollider_.size.x * 0.8f, 0.3f);
             }
             else
             {

@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class TableColliderChecker : MonoBehaviour
 {
-    Image image = default;
+    private Image image = default;
+    private Table table = default;
     [SerializeField]
-    Table table = default;
-    public OverDistance distance = default;
+    private OverDistance distance = OverDistance.NONE;
 
     void Start()
     {
+        table = transform.parent.parent.GetComponent<Table>();
         image = GetComponent<Image>();    
     }
     private void OnTriggerEnter2D(Collider2D collision)

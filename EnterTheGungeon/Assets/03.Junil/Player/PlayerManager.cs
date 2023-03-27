@@ -14,6 +14,7 @@ public class PlayerManager : GSingleton<PlayerManager>
     public GameObject playerInventoryObj = default;
     public PlayerWeapon nowEquipWeapon = default;
 
+
     public override void Awake()
     {
         base.Awake();
