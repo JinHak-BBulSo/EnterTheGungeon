@@ -54,17 +54,7 @@ public class DataManager : GSingleton<DataManager>
             Debug.LogWarning($"No save file found at: {SavePath}");
 
             // 기본값을 가진 GameSaveData 객체 생성
-            PlayerState defaultData = new PlayerState
-            {
-                hp = 6,
-                maxHp = 6,
-                shield = 0,
-                blank = 2,
-                money = 0,
-                key = 1,
-                deathCount = 0,
-                // 다른 필드에 대한 기본값 설정                
-            };
+            PlayerState defaultData = new PlayerState();
 
             // 기본 데이터 저장
             SaveGameData(defaultData);
@@ -103,14 +93,7 @@ public class DataManager : GSingleton<DataManager>
             Debug.LogWarning($"No save file found at: {OptionSave}");
 
             // 기본값을 가진 GameSaveData 객체 생성
-            OptionState defaultData = new OptionState
-            {
-                MusicVolume = 1f,
-                SFXVolume = 1f,
-                UIVolume = 1f,
-                mouseCursor = 0,
-                // 다른 필드에 대한 기본값 설정                
-            };
+            OptionState defaultData = new OptionState();
 
             // 기본 데이터 저장
             SaveOptionData(defaultData);

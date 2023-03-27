@@ -2,6 +2,7 @@ using SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CountFpsController : MonoBehaviour
 {
@@ -24,8 +25,13 @@ public class CountFpsController : MonoBehaviour
     private void Start()
     {
         OptionState firstLoadData = default;
-
+        
         firstLoadData = DataManager.Instance.LoadOptionGameData();
+        SoundManager.Instance.SetVolume(Sound.Bgm, firstLoadData.MusicVolume);
+        SoundManager.Instance.SetVolume(Sound.SFX, firstLoadData.SFXVolume);
+        SoundManager.Instance.SetVolume(Sound.UI_SFX, firstLoadData.UIVolume);
+
+
         DataManager.Instance.SetCursor(firstLoadData.mouseCursor);
         SoundManager.Instance.Play("TestSound", Sound.Bgm);
     }

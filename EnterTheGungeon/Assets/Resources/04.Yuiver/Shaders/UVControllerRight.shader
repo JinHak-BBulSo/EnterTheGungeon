@@ -208,10 +208,6 @@ Shader "MyShader/2D/UVSpriteRiht"
                     float2  rotatedOriginalUV2 : TEXCOORD2; // 추가
                     float2  rotatedOriginalUV3 : TEXCOORD3; // 추가
                     float2  rotatedOriginalUV4 : TEXCOORD4; // 추가
-                    float2  rotatedOriginalUV5 : TEXCOORD5; // 추가
-                    float2  rotatedOriginalUV6 : TEXCOORD6; // 추가
-                    float2  rotatedOriginalUV7 : TEXCOORD7; // 추가
-                    float2  rotatedOriginalUV8 : TEXCOORD8; // 추가
 
                     #if defined(DEBUG_DISPLAY)
                     float3  positionWS  : TEXCOORD2;
@@ -256,13 +252,9 @@ Shader "MyShader/2D/UVSpriteRiht"
                     float speed = 200;
                     float distance = -0.15;
                     float rotationAngle1 = _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle2 = 45 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle3 = 90 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle4 = 135 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle5 = 180 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle6 = 225 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle7 = 270 + _Time.x * speed * 3.14159265359 / 180.0;
-                    float rotationAngle8 = 315 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle2 = 90 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle3 = 180 + _Time.x * speed * 3.14159265359 / 180.0;
+                    float rotationAngle4 = 270 + _Time.x * speed * 3.14159265359 / 180.0;
 
                     Varyings o = (Varyings)0;
                     UNITY_SETUP_INSTANCE_ID(attributes);
@@ -275,10 +267,6 @@ Shader "MyShader/2D/UVSpriteRiht"
                     float2 rotatedOriginalUV2 = OrbitUV(originalUV, distance, rotationAngle2);
                     float2 rotatedOriginalUV3 = OrbitUV(originalUV, distance, rotationAngle3);
                     float2 rotatedOriginalUV4 = OrbitUV(originalUV, distance, rotationAngle4);
-                    float2 rotatedOriginalUV5 = OrbitUV(originalUV, distance, rotationAngle5);
-                    float2 rotatedOriginalUV6 = OrbitUV(originalUV, distance, rotationAngle6);
-                    float2 rotatedOriginalUV7 = OrbitUV(originalUV, distance, rotationAngle7);
-                    float2 rotatedOriginalUV8 = OrbitUV(originalUV, distance, rotationAngle8);
 
                     o.positionCS = TransformObjectToHClip(attributes.positionOS);
 
@@ -292,10 +280,6 @@ Shader "MyShader/2D/UVSpriteRiht"
                     o.rotatedOriginalUV2 = rotatedOriginalUV2;
                     o.rotatedOriginalUV3 = rotatedOriginalUV3;
                     o.rotatedOriginalUV4 = rotatedOriginalUV4;
-                    o.rotatedOriginalUV5 = rotatedOriginalUV5;
-                    o.rotatedOriginalUV6 = rotatedOriginalUV6;
-                    o.rotatedOriginalUV7 = rotatedOriginalUV7;
-                    o.rotatedOriginalUV8 = rotatedOriginalUV8;
 
                     return o;
                 }
@@ -307,21 +291,14 @@ Shader "MyShader/2D/UVSpriteRiht"
                     float4 col2 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV2);
                     float4 col3 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV3);
                     float4 col4 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV4);
-                    float4 col5 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV5);
-                    float4 col6 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV6);
-                    float4 col7 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV7);
-                    float4 col8 = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.rotatedOriginalUV8);
 
-                    float4 blendedCol = col1 * 0.2 + col2 * 0.2 + col3 * 0.2 + col4 * 0.2 + col5 * 0.2 + col6 * 0.2 + col7 * 0.2 + col8 * 0.2;
+                    float4 blendedCol = col1 + col2 + col3 + col4;
                     
                     // 알파 값이 아닌 경우에 원본 텍스처의 색상을 사용하는 코드
                     if (blendedCol.a != 0)
                     {
                         blendedCol = originalColor;
                     }
-
-                    // 원본 텍스처 색상과 블렌딩 된 색상을 선형 보간 (lerp) 하는 코드 추가
-                    //float4 finalColor = lerp(originalColor, blendedCol, 1);
 
                     #if defined(DEBUG_DISPLAY)
                     SurfaceData2D surfaceData;

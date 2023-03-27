@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CloudMaterial Left
+  m_Name: CloudMaterialLeft
   m_Shader: {fileID: 4800000, guid: 7ef3bfe48b5c9bd469d2a3af6219f0c2, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

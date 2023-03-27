@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class DetailOptionController : MonoBehaviour
 {
     OptionState loadOptionData = default;
-    int seclectMouse = default;
+    public int seclectMouse = default;
 
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
@@ -105,17 +105,12 @@ public class DetailOptionController : MonoBehaviour
     }
     public void ResetOptionData()
     {
-        OptionState defaultData = new OptionState
-        {
-            MusicVolume = 1f,
-            SFXVolume = 1f,
-            UIVolume = 1f,
-            mouseCursor = 0,
-            // 다른 필드에 대한 기본값 설정                
-        };
+        OptionState defaultData = new OptionState();
+
         loadOptionData = defaultData;
         DataManager.Instance.SaveOptionData(loadOptionData);
         DataManager.Instance.SetCursor(loadOptionData.mouseCursor);
+        seclectMouse = loadOptionData.mouseCursor;
         InitializeSliders();
     }
     public void CancleChangeOption()
