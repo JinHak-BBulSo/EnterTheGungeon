@@ -84,6 +84,7 @@ public class TestEnemy : MonoBehaviour
     ObjectPool objectPool;
     List<GameObject> enemyBulletPool;
     GameObject enemyBulletPrefab;
+    public Room belongRoom = default;
 
     // Start is called before the first frame update
     void Start()
@@ -116,7 +117,7 @@ public class TestEnemy : MonoBehaviour
     void Update()
     {
         ImageSizeSet();
-
+        
 
         if (!IsSpawnEnd) { }
         else
@@ -126,8 +127,10 @@ public class TestEnemy : MonoBehaviour
             isAttack = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
 
             dist = Vector2.Distance(transform.position, player.transform.position);
+
             if (dist > 500 / 71.94f && !isAttack)
             {
+   
                 Move();
             }
             else { }
@@ -145,6 +148,7 @@ public class TestEnemy : MonoBehaviour
                     Move();
                 }
             }
+
             // } Raycast To Player & Condition Check RayCast Hit
 
 
@@ -405,8 +409,9 @@ public class TestEnemy : MonoBehaviour
         {
             isDead = false;
 
-            transform.parent.GetComponent<Room>().enemyCount--; // KJH ADD
+            belongRoom.enemyCount--; // KJH ADD
             StopAllCoroutines();
+            gameObject.SetActive(false);
 
             //Destroy(this.gameObject); will be add amimation event
         }

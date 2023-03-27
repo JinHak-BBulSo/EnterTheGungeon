@@ -11,20 +11,25 @@ public class PlayerBullet : BaseBullet
     // 총알 피해량
     public int bulletDamage = default;
 
+    // 무기 원본 총알 피해량
+    public int originBulletDamage = default;
+
     // 무기 사거리
     public float bulletRange = default;
 
-
+    protected virtual void OnEnable()
+    {
+        // KJH 수정
+        bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+    }
 
     public void SetBulletData(Weapons weapons)
     {
                 
         bulletSpeed = weapons.BulletSpeed();
-        bulletDamage = weapons.BulletDamage();
+        originBulletDamage = weapons.BulletDamage();
         bulletRange = weapons.BulletRange();
 
     }
-
-
 
 }
