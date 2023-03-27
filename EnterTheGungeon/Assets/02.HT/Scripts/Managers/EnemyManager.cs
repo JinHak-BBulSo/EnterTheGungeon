@@ -12,7 +12,13 @@ public class EnemyManager : GSingleton<EnemyManager>
     GameObject bossPrefab;
     GameObject weapon;
 
-    public List<string> enemyName = new List<string> { "bulletKin", "bandanaBulletKin" };
+    public List<string> enemyName = new List<string> { "bulletKin", "bandanaBulletKin", "gunNut" };
+    public List<string> bossName = new List<string> { "gorGun" };
+
+    public Dictionary<string, bool> enemyFindCheck = new Dictionary<string, bool>()
+    {{"bulletKin", false}, {"bandanaBulletKin", false}, {"gunNut", false}};
+    public Dictionary<string, bool> bossFindCheck = new Dictionary<string, bool>()
+    {{"gorGun", false}};
 
     public GameObject CreateEnemy(string enemyName, Transform transform_)
     {
@@ -32,7 +38,7 @@ public class EnemyManager : GSingleton<EnemyManager>
 
         clone.name = enemyData.EnemyName;
         clone.GetComponent<TestEnemy>().enemyName = enemyData.EnemyName;
-        
+
 
         // { image 변경 & image size 조절
         //clone.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = enemyData.EnemyImage;

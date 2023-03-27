@@ -171,7 +171,7 @@ public class TestEnemy : MonoBehaviour
         //-working
         if (!isPathFind)
         {
-            //PathFind();
+            PathFind();
         }
         //-working
 
@@ -181,6 +181,10 @@ public class TestEnemy : MonoBehaviour
             isDead = true;
             Die();
         }
+
+        // /Debug.Log(EnemyManager.Instance.enemyName.BinarySearch(enemyName));
+        Debug.Log(EnemyManager.Instance.enemyFindCheck[enemyName]);
+
     }
     void Move()
     {
@@ -387,7 +391,7 @@ public class TestEnemy : MonoBehaviour
         }
         else
         {
-            for(int i = 0 ; i < pathFinder.transform.childCount; i++)
+            for (int i = 0; i < pathFinder.transform.childCount; i++)
             {
                 pathFinder.transform.GetChild(i).gameObject.SetActive(true);
             }
