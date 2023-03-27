@@ -52,7 +52,7 @@ public class PlayerInventory : GSingleton<PlayerInventory>
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
 
         
@@ -139,8 +139,8 @@ public class PlayerInventory : GSingleton<PlayerInventory>
 
 
 
-        playerInvenList.SetInvenList();
         playerInvenInfo.SetInvenInfo();
+        playerInvenList.SetInvenList();
 
 
     }
