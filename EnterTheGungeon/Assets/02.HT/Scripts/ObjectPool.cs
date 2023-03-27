@@ -20,7 +20,7 @@ public class ObjectPool : MonoBehaviour
     {
         pathFinderGridPool = new List<GameObject>();
         pathFinderGridPrefab = Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid");
-        pathFinderGridPoolSize = 2000;
+        pathFinderGridPoolSize = 2500;
 
         for (int i = 0; i < pathFinderGridPoolSize; i++)
         {
@@ -62,7 +62,6 @@ public class ObjectPool : MonoBehaviour
         {
             if (!poolName_[i].activeInHierarchy)
             {
-                //poolName_[i].transform.SetParent(transform_);
                 poolName_[i].SetActive(true);
                 return poolName_[i];
             }

@@ -81,8 +81,6 @@ public class PathFinder : MonoBehaviour
                 gridArray[x, y] = grid_;
             }
         }
-
-
     }
 
     void Update()
@@ -225,12 +223,22 @@ public class PathFinder : MonoBehaviour
                 enemy.GetComponent<TestEnemy>().completePath = completePath;
             }
             else { }
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).GetComponent<PathFinderGrid>().ResetGrid();
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+            isSetGridStatus = false;
+            isFinPathFind = false;
+            openList.Clear();
+            closeList.Clear();
+            completePath.Clear();
+
             enemy.GetComponent<TestEnemy>().isPathFind = false;
-            gameObject.SetActive(false);
+
+            //gameObject.SetActive(false);
             //Destroy(this.gameObject);
-
-
-
         }
         else
         {

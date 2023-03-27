@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8990097154586097490}
   m_Layer: 2
   m_Name: EnemyPrefab
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +55,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackType: 0
+  enemyName: 
   maxHp: 0
   moveSpeed: 0
+  isMove: 0
   completePath: []
   isPathFind: 0
 --- !u!50 &8990097154586097489

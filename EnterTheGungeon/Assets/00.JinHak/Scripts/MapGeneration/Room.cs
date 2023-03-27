@@ -13,12 +13,16 @@ public class Room : MonoBehaviour
     public int enemyCount = 0;
     private List<GameObject> enemies = new List<GameObject>();
 
+    //test detele this at merge
     void Start()
     {
         for (int i = 0; i < enemy.Count; i++)
         {
             GameObject enemy_ = EnemyManager.Instance.CreateEnemy(enemy[i], this.transform);
             enemies.Add(enemy_);
+            //test detele this at merge
+            enemy_.transform.position = new Vector2(0, 10);
+            //test detele this at merge
             enemies[i].SetActive(false);
         }
         if (boss != null)
@@ -31,7 +35,7 @@ public class Room : MonoBehaviour
 
     void Update()
     {
-        if(isPlayerEnter && enemy.Count == 0)
+        if (isPlayerEnter && enemy.Count == 0)
         {
             DoorManager.Instance.AllDoorOpen();
         }
@@ -39,16 +43,18 @@ public class Room : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && collision.gameObject != null)
+        if (collision.tag == "Player" && collision.gameObject != null)
         {
             isPlayerEnter = true;
-            DoorManager.Instance.AllDoorClose();
+            //test change this at merge
+            //DoorManager.Instance.AllDoorClose();
+            //test change this at merge
 
             foreach (GameObject enemy in enemies)
             {
                 enemy.SetActive(true);
             }
-            if(boss != null)
+            if (boss != null)
             {
                 mapBoss.SetActive(true);
             }

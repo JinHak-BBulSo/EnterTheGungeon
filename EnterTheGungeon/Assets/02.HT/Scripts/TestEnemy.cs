@@ -371,11 +371,15 @@ public class TestEnemy : MonoBehaviour
     {
         if (!isCreatedPathFinder)
         {
-            pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"), Vector3.zero, transform.rotation);
+            pathFinder = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinder"));
             pathFinder.transform.SetParent(transform.parent);
-            pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
-            pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
-            pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta;
+
+            //pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<RectTransform>().sizeDelta;
+            pathFinder.GetComponent<RectTransform>().sizeDelta = transform.parent.GetComponent<Room>().roomSize;
+
+            //pathFinder.GetComponent<RectTransform>().localScale = Vector3.one;
+
+            pathFinder.GetComponent<GridLayoutGroup>().cellSize = rectTransform.sizeDelta * 0.0139f;
 
             pathFinder.name = $"{this.name}" + "PathFinder";
 
@@ -383,7 +387,11 @@ public class TestEnemy : MonoBehaviour
         }
         else
         {
-            pathFinder.SetActive(true);
+            for(int i = 0 ; i < pathFinder.transform.childCount; i++)
+            {
+                pathFinder.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            //pathFinder.SetActive(true);
         }
         isPathFind = true;
         isCreatedPathFinder = true;
