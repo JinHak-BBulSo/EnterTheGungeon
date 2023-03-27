@@ -6,6 +6,6 @@ public class DropItemBlank : DropItem
 {
     public override void GetDropItem()
     {
-        PlayerManager.Instance.player.chkBlankBullets++;
+        PlayerManager.Instance.player.playerBlank++;
     }
 }
