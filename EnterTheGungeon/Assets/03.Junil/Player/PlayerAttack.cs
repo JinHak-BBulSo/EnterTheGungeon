@@ -17,17 +17,17 @@ public class PlayerAttack : MonoBehaviour
     public GameObject[] playerWeaponPrefabs = default;
 
     // 지금 사용 가능한 무기 배열
-    public List<GameObject> playerWeapons = default;
+    public List<GameObject> playerWeapons = new List<GameObject>();
 
     // 지금 사용할 무기 스크립트 가져오는 배열
-    public List<PlayerWeapon> playerWeaponScript = default;
+    public List<PlayerWeapon> playerWeaponScript = new List<PlayerWeapon>();
 
     public bool isDodgeing = false;
 
     public int nowWeaponIndex = default;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         rotateObjs = gameObject.transform.parent.gameObject;
         playerObj = rotateObjs.transform.parent.gameObject;
@@ -42,29 +42,29 @@ public class PlayerAttack : MonoBehaviour
 
         isDodgeing = false;
 
-        playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
+        //playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
 
 
-        for (int i = 0; i < playerWeaponPrefabs.Length; i++)
-        {
+        //for (int i = 0; i < playerWeaponPrefabs.Length; i++)
+        //{
 
-            playerWeapons.Add(Instantiate(playerWeaponPrefabs[i], weaponObjs.transform.position,
-                Quaternion.identity, weaponObjs.transform));
+        //    playerWeapons.Add(Instantiate(playerWeaponPrefabs[i], weaponObjs.transform.position,
+        //        Quaternion.identity, weaponObjs.transform));
 
-            playerWeaponScript.Add(playerWeapons[i].GetComponentMust<PlayerWeapon>());
+        //    playerWeaponScript.Add(playerWeapons[i].GetComponentMust<PlayerWeapon>());
 
 
             
-            playerWeapons[i].name = playerWeaponPrefabs[i].name;
-            playerWeaponScript[i].name = playerWeaponPrefabs[i].name + "_Script";
+        //    playerWeapons[i].name = playerWeaponPrefabs[i].name;
+        //    playerWeaponScript[i].name = playerWeaponPrefabs[i].name + "_Script";
 
-            playerWeaponPrefabs[i].SetActive(false);
-            playerWeapons[i].SetActive(false);
+        //    playerWeaponPrefabs[i].SetActive(false);
+        //    playerWeapons[i].SetActive(false);
 
-        }
+        //}
 
 
-        playerWeapons[nowWeaponIndex].SetActive(true);
+        //playerWeapons[nowWeaponIndex].SetActive(true);
     }
 
     // Update is called once per frame
@@ -128,6 +128,12 @@ public class PlayerAttack : MonoBehaviour
     //! 현재 들고 있는 총을 발사하는 함수
     public void FireBulletWeapon()
     {
+        if(playerWeaponScript[nowWeaponIndex] == default ||
+           playerWeaponScript[nowWeaponIndex] == null)
+        {
+            return;
+        }
+
         GFunc.Log("공격 클릭 됨");
         playerWeaponScript[nowWeaponIndex].FireBullet();
     }

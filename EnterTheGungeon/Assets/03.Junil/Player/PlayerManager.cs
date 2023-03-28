@@ -6,12 +6,9 @@ using UnityEngine;
 public class PlayerManager : GSingleton<PlayerManager>
 {
     private bool isClicked = false;
-    
-    
-    public PlayerController player = default;
 
-    public PlayerInventory playerInventory = default;
-    public GameObject playerInventoryObj = default;
+
+    public PlayerController player = default;
     public PlayerWeapon nowEquipWeapon = default;
 
 
@@ -26,12 +23,12 @@ public class PlayerManager : GSingleton<PlayerManager>
     }
 
 
-    //! 인벤토리를 여는 함수
-    public void OpenInventory(bool isClick)
-    {
-        player.isOnInventory = isClick;
-        playerInventoryObj.SetActive(isClick);
-    }
+    ////! 인벤토리를 여는 함수
+    //public void OpenInventory(bool isClick)
+    //{
+    //    player.isOnInventory = isClick;
+    //    playerInventoryObj.SetActive(isClick);
+    //}
 
     protected override void Init()
     {
