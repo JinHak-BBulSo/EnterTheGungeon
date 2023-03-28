@@ -129,7 +129,7 @@ public class InventoryControl : MonoBehaviour
     {
         int itemListCnt_ = 0;
         Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
-        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon");
+        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon1");
         
         
         itemListCnt_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;

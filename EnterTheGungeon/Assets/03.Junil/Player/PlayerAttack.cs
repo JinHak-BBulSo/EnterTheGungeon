@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -35,8 +36,8 @@ public class PlayerAttack : MonoBehaviour
         weaponObjs = gameObject.FindChildObj("Weapons");
 
 
-        rotateSort = weaponObjs.GetComponentMust<Canvas>();
-        rotateSort.sortingLayerName = "Player";
+        //rotateSort = weaponObjs.GetComponentMust<Canvas>();
+        //rotateSort.sortingLayerName = "Player";
         
         nowWeaponIndex = 0;
 
@@ -161,11 +162,14 @@ public class PlayerAttack : MonoBehaviour
 
         if (26f < lookZ2_&& lookZ2_ < 153f)
         {
-            rotateSort.sortingOrder = 0;
+            playerWeapons[nowWeaponIndex].GetComponentMust<SpriteRenderer>().sortingOrder = 0;
+            //rotateSort.sortingOrder = 0;
         }
         else
         {
-            rotateSort.sortingOrder = 2;
+            playerWeapons[nowWeaponIndex].GetComponentMust<SpriteRenderer>().sortingOrder = 2;
+
+            //rotateSort.sortingOrder = 2;
         }
     }
 }
