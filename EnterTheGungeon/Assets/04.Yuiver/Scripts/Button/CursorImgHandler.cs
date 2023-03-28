@@ -4,11 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CursorImgHandler : MonoBehaviour
 {
-    public int seclectMouse = default;
+
+
     OptionState loadCursorOptionData = default;
+
+
+    public int seclectMouse = default;
     public Image myCursorImg = default;
     public Texture2D[] CursorTexture = default;
     private void Awake()
@@ -26,7 +31,14 @@ public class CursorImgHandler : MonoBehaviour
     }
     public void CursorImgChange(int cursorImgNum)
     {
-        myCursorImg.sprite = ConvertTexture2DToSprite(DataManager.Instance.cursorImg[cursorImgNum]);
+        if (myCursorImg == null)
+        { 
+            /*Do Nothing*/
+        }
+        else
+        { 
+            myCursorImg.sprite = ConvertTexture2DToSprite(DataManager.Instance.cursorImg[cursorImgNum]);
+        }
     }
     public void ClickCursorChangerRight()
     {

@@ -44,6 +44,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b347fca077220584ea751535b4c2b5b0, type: 2}
   - {fileID: 21300000, guid: 57bf89f0ba9602a48953e7ab69200454, type: 2}
   - {fileID: 21300000, guid: f88bb31146c96514396e415dfb6bb7b6, type: 2}
+  - {fileID: 21300000, guid: ac198a910e072a7409381560a11e2e2c, type: 2}
   - {fileID: 21300000, guid: f4fd88a10c32d7a4fa9651a901423e74, type: 2}
   - {fileID: 21300000, guid: 970881e1b7570ce48bee1a26e3602fa2, type: 2}
   - {fileID: 21300000, guid: c8ed5bf180640494fab42b81d0a35ddd, type: 2}
@@ -84,6 +85,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d3eb52991599b604f99d10b11c2ed181, type: 2}
   - {fileID: 21300000, guid: 3648208a22de4fa449b3636b8fea2c54, type: 2}
   - {fileID: 21300000, guid: 0f5e0f8adfa804546a3ded98c54783c6, type: 2}
+  - {fileID: 21300000, guid: 29670baa95f3ceb4c885eb919ca3c69f, type: 2}
   - {fileID: 21300000, guid: 785dddaa7e423e44f9b4e827f7643e74, type: 2}
   - {fileID: 21300000, guid: 628ca26b480fbac4f9aa783c5e55142c, type: 2}
   - {fileID: 21300000, guid: 9d8b70ab1581a9c4b8eea18837031e72, type: 2}
@@ -112,6 +114,7 @@ SpriteAtlas:
   - silhouette_lich_bot_idle_002
   - silhouette_lich_click_005
   - title_water_001
+  - LeftTri
   - silhouette_lich_bot_flap_001
   - silhouette_lich_gun_005
   - isle_of_gungeon_crop_002
@@ -152,6 +155,7 @@ SpriteAtlas:
   - silhouette_lich_click_004
   - silhouette_lich_bot_flap_002
   - silhouette_lich_bot_lower_001
+  - RightTri
   - marsh_of_gungeon_glow_001
   - silhouette_lich_bot_lower_002
   - title_comet_sailrmoon_005

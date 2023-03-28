@@ -81,33 +81,46 @@ namespace SaveData
     [Serializable]
     public class OptionState
     {
+        //게임 플레이 옵션
+        [OdinSerialize]
+        public int mouseCursor;
+
+        //그래픽 옵션
+        [OdinSerialize]
+        public bool fullScreenOn;
+
+
+        //사운드 옵션
         [OdinSerialize]
         public float MusicVolume;
         [OdinSerialize]
         public float SFXVolume;
         [OdinSerialize]
         public float UIVolume;
-        [OdinSerialize]
-        public int mouseCursor;
         // Other fields you want to save
 
         public OptionState()
         {
+            mouseCursor = 0;
+
+            fullScreenOn = true;
+
             MusicVolume = 1f;
             SFXVolume = 1f;
             UIVolume = 1f;
-            mouseCursor = 0;
         }
 
         /// <summary>
         /// 오버로딩된 옵션의 설정을 하는 함수입니다.
         /// </summary>
+        /// <param name="fullScreenOn_">전체화면인지 아닌지 bool값 입력하세요.</param>
         /// <param name="musicVolume_">0~1사이의 값만 입력하세요.</param>
         /// <param name="SFXVolume_">0~1사이의 값만 입력하세요.</param>
         /// <param name="UIVolume_">0~1사이의 값만 입력하세요.</param>
         /// <param name="mouseCursor_">마우스 커서는 0~5번까지 존재합니다.</param>
-        public OptionState(float musicVolume_,float SFXVolume_,float UIVolume_,int mouseCursor_ = 0)
+        public OptionState(bool fullScreenOn_, float musicVolume_,float SFXVolume_,float UIVolume_,int mouseCursor_ = 0)
         {
+            fullScreenOn = fullScreenOn_;
             MusicVolume = musicVolume_;
             SFXVolume = SFXVolume_;
             UIVolume = UIVolume_;

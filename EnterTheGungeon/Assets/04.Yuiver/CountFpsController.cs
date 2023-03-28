@@ -31,7 +31,7 @@ public class CountFpsController : MonoBehaviour
         SoundManager.Instance.SetVolume(Sound.SFX, firstLoadData.SFXVolume);
         SoundManager.Instance.SetVolume(Sound.UI_SFX, firstLoadData.UIVolume);
 
-
+        Screen.fullScreen = firstLoadData.fullScreenOn;
         DataManager.Instance.SetCursor(firstLoadData.mouseCursor);
         SoundManager.Instance.Play("TestSound", Sound.Bgm);
     }
