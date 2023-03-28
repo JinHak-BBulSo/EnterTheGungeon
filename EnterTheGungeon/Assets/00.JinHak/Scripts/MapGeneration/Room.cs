@@ -35,14 +35,14 @@ public class Room : MonoBehaviour
         if (boss != null)
         {
             mapBoss = EnemyManager.Instance.CreateBoss(boss, this.transform);
+            mapBoss.transform.position = spawnPoints[0].transform.position;
             mapBoss.SetActive(false);
         }
-        Debug.Log("eneycount : " + enemyCount);
     }
 
     void Update()
     {
-        if(isPlayerEnter && enemyCount == 0)
+        if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {
             isRoomClear = true;
             DoorManager.Instance.AllDoorOpen();

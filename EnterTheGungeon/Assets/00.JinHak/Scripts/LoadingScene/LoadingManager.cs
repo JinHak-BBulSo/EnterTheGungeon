@@ -8,26 +8,16 @@ public class LoadingManager : GSingleton<LoadingManager>
 {
     AsyncOperation op = default;
     public string nextSceneName = string.Empty;
-    [SerializeField]
-    private GameObject playerCamera = default;
-
-    public override void Start()
-    {
-        playerCamera = GameObject.Find("GameObjs").transform.GetChild(0).gameObject;
-    }
 
     public void StartLoading()
     {
         StartCoroutine(LoadScene());
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadLoadingScene(string sceneName)
     {
         nextSceneName = sceneName;
         SceneManager.LoadScene("LoadingScene");
-        PlayerManager.Instance.player.gameObject.SetActive(false);
-        playerCamera.gameObject.SetActive(false);
-        StartLoading();
     }
 
     IEnumerator LoadScene()
@@ -49,13 +39,17 @@ public class LoadingManager : GSingleton<LoadingManager>
                 // progress >= 1 즉, 준비가 다된 상황
                 if (op.progress >= 1.0f)
                 { 
-                    op.allowSceneActivation = true; 
                     yield break; 
                 }
             }
         }
 
-        playerCamera.SetActive(true);
-        PlayerManager.Instance.player.gameObject.SetActive(true);
+        StartCoroutine(NextSceneLoad());
+    }
+
+    IEnumerator NextSceneLoad()
+    {
+        yield return new WaitForSeconds(1f);
+        op.allowSceneActivation = true;
     }
 }
