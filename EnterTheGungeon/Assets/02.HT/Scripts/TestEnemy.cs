@@ -20,7 +20,7 @@ public class TestEnemy : MonoBehaviour
 
     // { status
     public int maxHp;
-    int currentHp;
+    public int currentHp;
     public float moveSpeed;
 
     bool isDead;
@@ -433,9 +433,10 @@ public class TestEnemy : MonoBehaviour
         }
     }
 
-    
+
     void DropCoin()
     {
+        Debug.Log("!");
         isDrop = true;
 
         if (dropCoinCount < 5)
@@ -455,10 +456,14 @@ public class TestEnemy : MonoBehaviour
             GameObject coinPrefab1_ = Resources.Load<GameObject>("02.HT/Prefabs/CoinPrefab1");
             GameObject coinPrefab2_ = Resources.Load<GameObject>("02.HT/Prefabs/CoinPrefab2");
             GameObject clone2_ = Instantiate(coinPrefab2_, transform.parent);
+            float rangeXPos = Random.Range(-1, 1);
+            float rangeYPos = Random.Range(-1, 1);
+            clone2_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
+
             for (int i = 0; i < dropCoinCount - 5; i++)
             {
-                float rangeXPos = Random.Range(-1, 1);
-                float rangeYPos = Random.Range(-1, 1);
+                rangeXPos = Random.Range(-1, 1);
+                rangeYPos = Random.Range(-1, 1);
                 GameObject clone1_ = Instantiate(coinPrefab1_, transform.parent);
                 clone1_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
             }
