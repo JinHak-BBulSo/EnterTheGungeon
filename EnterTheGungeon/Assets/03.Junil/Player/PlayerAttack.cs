@@ -121,8 +121,6 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        
-
     }
 
     //! 현재 들고 있는 총을 발사하는 함수
@@ -132,6 +130,7 @@ public class PlayerAttack : MonoBehaviour
             playerWeaponScript[nowWeaponIndex] == default ||
            playerWeaponScript[nowWeaponIndex] == null)
         {
+            PlayerManager.Instance.player.OnHitAndStatusEvent();
             return;
         }
 

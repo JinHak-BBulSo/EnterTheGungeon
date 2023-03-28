@@ -28,6 +28,14 @@ public class MoonrakerWeapon : PlayerWeapon
     public bool isLaserOn = false;
     public bool isChkMagazine = false;
 
+
+
+    private void OnEnable()
+    {
+        PlayerManager.Instance.player.nowWeaponHand = weaponHand;
+
+    }
+
     void Awake()
     {
         SetWeaponData();

@@ -11,10 +11,13 @@ public class SPMAWeapon : PlayerWeapon
 
     private void OnEnable()
     {
+
         if (countBullet == 0)
         {
             isEmptyBullet = true;
         }
+
+        PlayerManager.Instance.player.nowWeaponHand = weaponHand;
     }
 
 

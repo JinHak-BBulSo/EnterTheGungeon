@@ -91,9 +91,10 @@ public class PlayerMove : MonoBehaviour
         // 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
         Vector2 len_ = mousePos_ - transform.position;
 
+        playerRigid2D.velocity = len_.normalized * playerSpeed;
+
         PlayerAniDodge();
 
-        playerRigid2D.velocity = len_.normalized * playerSpeed;
 
         StartCoroutine(OffDodge());
     }
@@ -130,7 +131,7 @@ public class PlayerMove : MonoBehaviour
         isReDodgeing = true;
         yield return new WaitForSeconds(0.2f);
         isReDodgeing = false;
-        
+
         PlayerManager.Instance.player.isStatusEvent = true;
     }
 
@@ -162,7 +163,7 @@ public class PlayerMove : MonoBehaviour
             switch (nowWeaponHand)
             {
                 case 0:
-                    playerAni.SetTrigger("OnArmorZero");
+                    playerAni.SetTrigger("OnArmorTwo");
 
                     break;
 
@@ -172,7 +173,7 @@ public class PlayerMove : MonoBehaviour
                     break;
 
                 case 2:
-                    playerAni.SetTrigger("OnArmorTwo");
+                    playerAni.SetTrigger("OnArmorZero");
 
                     break;
             }
@@ -182,7 +183,7 @@ public class PlayerMove : MonoBehaviour
             switch (nowWeaponHand)
             {
                 case 0:
-                    playerAni.SetTrigger("OffArmorZero");
+                    playerAni.SetTrigger("OffArmorTwo");
 
                     break;
 
@@ -192,7 +193,8 @@ public class PlayerMove : MonoBehaviour
                     break;
 
                 case 2:
-                    playerAni.SetTrigger("OffArmorTwo");
+                    
+                    playerAni.SetTrigger("OffArmorZero");
 
                     break;
             }

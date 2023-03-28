@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         isOnInventory = false;
 
         // 임시로 1로 지정
-        nowWeaponHand = 1;
+        nowWeaponHand = 0;
     }
 
 

@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4055031681470043948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -318,12 +318,13 @@ MonoBehaviour:
   bulletObjs: {fileID: 0}
   firePos: {fileID: 0}
   rotateWeapon: {fileID: 0}
+  isReload: 0
+  isAttack: 0
+  countBullet: 0
+  deleyChkVal: 0
   defDistanceRay: 0
   moonLineRenderer: {fileID: 8251179335846212876}
   moonTransform: {fileID: 0}
-  countBullet: 0
-  deleyChkVal: 0
-  layerMask: 0
   reflectMax: 0
   isLoopActive: 0
   isLaserOn: 0

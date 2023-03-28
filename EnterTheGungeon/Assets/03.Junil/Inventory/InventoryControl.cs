@@ -32,7 +32,8 @@ public class InventoryControl : MonoBehaviour
     void Start()
     {
 
-        //AddFirstWeapon(0);
+        AddFirstItem();
+
         // 인벤토리를 꺼버린다.
         InventoryManager.Instance.inventoryDataObjs.SetActive(false);
 
@@ -123,6 +124,41 @@ public class InventoryControl : MonoBehaviour
             InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt);
     }
 
+
+    public void AddFirstItem()
+    {
+        int itemListCnt_ = 0;
+        Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
+        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon");
+        
+        
+        itemListCnt_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;
+        Slot weaponSlot = InventoryManager.Instance.inventoryDatas.weaponSlots[itemListCnt_];
+        //DropGun dropGun_ = dropItem_ as DropGun;
+
+        weaponSlot.slotItem = SPMAWeapon_;
+        weaponSlot.SetSlotData();
+        weaponSlot.gameObject.transform.parent.gameObject.SetActive(true);
+
+        // 무기 오브젝트가 들어갈 플레이어의 PlayerAttack 스크립트
+        PlayerAttack weaponObjs_ = PlayerManager.Instance.player.playerAttack;
+
+        // playerWeapons 리스트에 무기 추가
+        weaponObjs_.playerWeapons.Add(
+            Instantiate(SPMAWeaponPrefab,
+            weaponObjs_.weaponObjs.transform.position,
+            Quaternion.identity,
+            weaponObjs_.weaponObjs.transform));
+
+        // playerWeaponScript 리스트에 무기 스크립트 추가
+        weaponObjs_.playerWeaponScript.Add(
+            weaponObjs_.playerWeapons[itemListCnt_].GetComponentMust<PlayerWeapon>());
+
+        itemListCnt_++;
+        InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
+
+    }
+
     public void AddItem(DropItem dropItem_)
     {
         int itemListCnt_ = 0;
@@ -136,10 +172,21 @@ public class InventoryControl : MonoBehaviour
 
                 weaponSlot.slotItem = dropItem_.item;
                 weaponSlot.SetSlotData();
-                weaponSlot.gameObject.SetActive(true);
-                Instantiate(dropGun_.dropWeapon, PlayerManager.Instance.player.playerAttack.weaponObjs.transform.position,
+                weaponSlot.gameObject.transform.parent.gameObject.SetActive(true);
+
+                // 무기 오브젝트가 들어갈 플레이어의 PlayerAttack 스크립트
+                PlayerAttack weaponObjs_ = PlayerManager.Instance.player.playerAttack;
+
+                // playerWeapons 리스트에 무기 추가
+                weaponObjs_.playerWeapons.Add(
+                    Instantiate(dropGun_.dropWeapon,
+                    weaponObjs_.weaponObjs.transform.position,
                     Quaternion.identity,
-                    PlayerManager.Instance.player.playerAttack.weaponObjs.transform);
+                    weaponObjs_.weaponObjs.transform));
+
+                // playerWeaponScript 리스트에 무기 스크립트 추가
+                weaponObjs_.playerWeaponScript.Add(
+                    weaponObjs_.playerWeapons[itemListCnt_].GetComponentMust<PlayerWeapon>());
 
                 itemListCnt_++;
                 InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
@@ -152,7 +199,7 @@ public class InventoryControl : MonoBehaviour
 
                 activeSlot.slotItem = dropItem_.item;
                 activeSlot.SetSlotData();
-                activeSlot.gameObject.SetActive(true);
+                activeSlot.gameObject.transform.parent.gameObject.SetActive(true);
                 PlayerManager.Instance.player.playerActiveItem = dropActive_.activeitem.GetComponent<ActiveItem>();
 
                 itemListCnt_++;
@@ -165,7 +212,7 @@ public class InventoryControl : MonoBehaviour
 
                 passiveSlot.slotItem = dropItem_.item;
                 passiveSlot.SetSlotData();
-                passiveSlot.gameObject.SetActive(true);
+                passiveSlot.gameObject.transform.parent.gameObject.SetActive(true);
 
                 itemListCnt_++;
                 InventoryManager.Instance.inventoryDatas.passiveListCnt = itemListCnt_;
@@ -174,4 +221,6 @@ public class InventoryControl : MonoBehaviour
 
 
     }   // AddItem()
+
+
 }
