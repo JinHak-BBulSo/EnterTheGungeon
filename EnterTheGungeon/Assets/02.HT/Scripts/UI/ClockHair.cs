@@ -80,7 +80,6 @@ public class ClockHair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (deadScreen.isSideSizeCheck)
         {
 
@@ -155,6 +154,7 @@ public class ClockHair : MonoBehaviour
 
         //clockHair
         HandsRotateAndSetPosition();
+
     }
 
     void HandsRotateAndSetPosition()

@@ -6,6 +6,7 @@ public class TestEnemy : MonoBehaviour
 {
     public int attackType;
     public string enemyName;
+    public int dropCoinCount;
     TestEnemyWeapon weapon;
     TestEnemyEye eye;
     GameObject hand;
@@ -85,6 +86,8 @@ public class TestEnemy : MonoBehaviour
     List<GameObject> enemyBulletPool;
     GameObject enemyBulletPrefab;
 
+    bool isDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +129,8 @@ public class TestEnemy : MonoBehaviour
             isAttack = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack");
 
             dist = Vector2.Distance(transform.position, player.transform.position);
+
+
             if (dist > 500 / 71.94f && !isAttack)
             {
                 Move();
@@ -171,7 +176,7 @@ public class TestEnemy : MonoBehaviour
         //-working
         if (!isPathFind)
         {
-            PathFind();
+            //PathFind();
         }
         //-working
 
@@ -179,11 +184,14 @@ public class TestEnemy : MonoBehaviour
         if (currentHp <= 0)
         {
             isDead = true;
+            if (!isDrop)
+            {
+                DropCoin();
+            }
             Die();
         }
 
         // /Debug.Log(EnemyManager.Instance.enemyName.BinarySearch(enemyName));
-        Debug.Log(EnemyManager.Instance.enemyFindCheck[enemyName]);
 
     }
     void Move()
@@ -418,9 +426,43 @@ public class TestEnemy : MonoBehaviour
             isDead = false;
 
             transform.parent.GetComponent<Room>().enemyCount--; // KJH ADD
+
             StopAllCoroutines();
 
             //Destroy(this.gameObject); will be add amimation event
+        }
+    }
+
+    
+    void DropCoin()
+    {
+        isDrop = true;
+
+        if (dropCoinCount < 5)
+        {
+            GameObject coinPrefab_ = Resources.Load<GameObject>("02.HT/Prefabs/CoinPrefab1");
+
+            for (int i = 0; i < dropCoinCount; i++)
+            {
+                float rangeXPos = Random.Range(-1, 1);
+                float rangeYPos = Random.Range(-1, 1);
+                GameObject clone_ = Instantiate(coinPrefab_, transform.parent);
+                clone_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
+            }
+        }
+        else
+        {
+            GameObject coinPrefab1_ = Resources.Load<GameObject>("02.HT/Prefabs/CoinPrefab1");
+            GameObject coinPrefab2_ = Resources.Load<GameObject>("02.HT/Prefabs/CoinPrefab2");
+            GameObject clone2_ = Instantiate(coinPrefab2_, transform.parent);
+            for (int i = 0; i < dropCoinCount - 5; i++)
+            {
+                float rangeXPos = Random.Range(-1, 1);
+                float rangeYPos = Random.Range(-1, 1);
+                GameObject clone1_ = Instantiate(coinPrefab1_, transform.parent);
+                clone1_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
+            }
+
         }
     }
 }
