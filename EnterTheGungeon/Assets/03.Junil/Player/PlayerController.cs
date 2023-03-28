@@ -8,7 +8,12 @@ public class PlayerController : MonoBehaviour
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
     private Canvas playerSort = default;
-
+    public ActiveItem playerActiveItem = default;
+    public ActiveItem PlayerActiveItem
+    {
+        get { return playerActiveItem; }
+        private set { }
+    }
 
     // { [Junil] 공포탄 이벤트를 사용하기 위한 델리게이트, 이벤트 선언
     public delegate void PlayerBlankBullets();
@@ -193,7 +198,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
+        // 액티브 사용
+        if (Input.GetKeyDown(KeyCode.Space) && PlayerActiveItem != default)
+        {
+            playerActiveItem.UseActive();
+            playerActiveItem = default;
+        }
     }
 
     public void ResetPlayerAni()

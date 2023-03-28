@@ -14,6 +14,7 @@ public class Slot : MonoBehaviour
     private void Awake()
     {
         slotImage = gameObject.GetComponentMust<Image>();
+        gameObject.SetActive(false);
     }
 
     public void SetSlotData()

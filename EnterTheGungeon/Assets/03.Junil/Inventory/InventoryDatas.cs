@@ -7,14 +7,9 @@ public class InventoryDatas : MonoBehaviour
     public InvenListData invenListData = default;
     public InvenInfoData invenInfoData = default;
 
-    public List<GameObject> gunInvenSlots = new List<GameObject>();
-    public List<GameObject> activeInvenSlots = new List<GameObject>();
-    public List<GameObject> passiveInvenSlots = new List<GameObject>();
-
-    public List<Slot> weaponSlots = new List<Slot>();
-    public List<Slot> activeSlots = new List<Slot>();
-    public List<Slot> passiveSlots = new List<Slot>();
-
+    public List<Slot> weaponSlots = default;
+    public List<Slot> activeSlots = default;
+    public List<Slot> passiveSlots = default;
 
     public int weaponListCnt = default;
     public int activeListCnt = default;
@@ -58,34 +53,6 @@ public class InventoryDatas : MonoBehaviour
 
     //}
 
-
-
-
-    public void AddItem(Item item)
-    {
-
-        ItemTag itemTag = item.tag;
-
-
-        switch (itemTag)
-        {
-            case ItemTag.GUN:
-                break;
-
-            case ItemTag.ACTIVE:
-                break;
-
-            case ItemTag.PASSIVE:
-                break;
-
-            case ItemTag.ETC:
-                break;
-        }
-    }
-
-
-
-
     /// @brief 초기 인벤토리를 셋팅하는 함수
     public void SetInventory()
     {
@@ -97,7 +64,7 @@ public class InventoryDatas : MonoBehaviour
         activeListCnt = 0;
         passiveListCnt = 0;
 
-    invenInfoData.SetInvenInfo();
+        invenInfoData.SetInvenInfo();
         invenListData.SetInvenList();
     }
 }

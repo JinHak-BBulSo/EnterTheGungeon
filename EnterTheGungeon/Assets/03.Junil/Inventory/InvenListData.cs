@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,9 +55,6 @@ public class InvenListData : MonoBehaviour
     private const int IEVEN_TAB_VAL = 5;
 
     public Dictionary<string, List<Item>> invenDict = default;
-    public List<Item> weaponItems = new List<Item>();
-    public List<Item> activeItems = new List<Item>();
-    public List<Item> passiveItems = new List<Item>();
     // } [Junil] 인벤토리를 관리할 리스트와 딕셔너리
 
 
@@ -304,6 +302,7 @@ public class InvenListData : MonoBehaviour
 
     public void SetInvenList()
     {
+        Debug.Log("실행");
 
         InventoryDatas inventoryData_ =
             gameObject.transform.parent.
@@ -384,30 +383,14 @@ public class InvenListData : MonoBehaviour
 
         GFunc.Log($"{gunsInven.transform.GetChild(0).gameObject}");
         // 슬롯은 각각 10개만 넣는다
-        for (int i = 0; i < 10; i++)
+
+
+        // 각각의 리스트에 슬롯 프리팹을 추가한다.
+        for(int i = 0; i < InventoryManager.MAX_SLOT_COUNT; i++)
         {
-
-            // 각각의 리스트에 슬롯 프리팹을 추가한다.
-            inventoryData_.gunInvenSlots.Add(gunsInven.transform.GetChild(i).gameObject);
-
-            inventoryData_.weaponSlots.Add(inventoryData_.gunInvenSlots[i].GetComponentMust<Slot>());
-
-            inventoryData_.activeInvenSlots.Add(activeInven.transform.GetChild(i).gameObject);
-
-            inventoryData_.activeSlots.Add(inventoryData_.activeInvenSlots[i].GetComponentMust<Slot>());
-
-            inventoryData_.passiveInvenSlots.Add(passiveInven.transform.GetChild(i).gameObject);
-
-            inventoryData_.passiveSlots.Add(inventoryData_.passiveInvenSlots[i].GetComponentMust<Slot>());
-
-            inventoryData_.gunInvenSlots[i].SetActive(false);
-            inventoryData_.activeInvenSlots[i].SetActive(false);
-            inventoryData_.passiveInvenSlots[i].SetActive(false);
-
+            inventoryData_.weaponSlots.Add(gunsInven.transform.GetChild(i).GetComponent<Slot>());
+            inventoryData_.activeSlots.Add(activeInven.transform.GetChild(i).GetComponent<Slot>());
+            inventoryData_.passiveSlots.Add(passiveInven.transform.GetChild(i).GetComponent<Slot>());
         }
-
-
     }   // SetInvenList()
-
-
 }

@@ -10,7 +10,7 @@ public class PlayerManager : GSingleton<PlayerManager>
 
     public PlayerController player = default;
     public PlayerWeapon nowEquipWeapon = default;
-
+    
 
     public override void Awake()
     {

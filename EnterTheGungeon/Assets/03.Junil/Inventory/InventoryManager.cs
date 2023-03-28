@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : GSingleton<InventoryManager>
 {
+    public static int MAX_SLOT_COUNT = 10;
     public InventoryControl inventoryControl = default;
     public InventoryDatas inventoryDatas = default;
     public GameObject inventoryDataObjs = default;

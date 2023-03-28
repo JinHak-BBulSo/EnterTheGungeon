@@ -123,56 +123,52 @@ public class InventoryControl : MonoBehaviour
             InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt);
     }
 
-    public void AddItem(Item dropItem_)
+    public void AddItem(DropItem dropItem_)
     {
+        int itemListCnt_ = 0;
 
-        switch (dropItem_.tag)
+        switch (dropItem_.item.tag)
         {
             case ItemTag.GUN:
+                itemListCnt_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;
+                Slot weaponSlot = InventoryManager.Instance.inventoryDatas.weaponSlots[itemListCnt_];
+                DropGun dropGun_ = dropItem_ as DropGun;
 
+                weaponSlot.slotItem = dropItem_.item;
+                weaponSlot.SetSlotData();
+                weaponSlot.gameObject.SetActive(true);
+                Instantiate(dropGun_.dropWeapon, PlayerManager.Instance.player.playerAttack.weaponObjs.transform.position,
+                    Quaternion.identity,
+                    PlayerManager.Instance.player.playerAttack.weaponObjs.transform);
 
-                int tempWeaponVal_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;
-
-                InventoryManager.Instance.inventoryDatas.weaponSlots[tempWeaponVal_].slotItem = dropItem_;
-                InventoryManager.Instance.inventoryDatas.weaponSlots[tempWeaponVal_].SetSlotData();
-
-                InventoryManager.Instance.inventoryDatas.gunInvenSlots[tempWeaponVal_].SetActive(true);
-
-                tempWeaponVal_++;
-
-                InventoryManager.Instance.inventoryDatas.weaponListCnt = tempWeaponVal_;
-
+                itemListCnt_++;
+                InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
                 break;
 
             case ItemTag.ACTIVE:
+                itemListCnt_ = InventoryManager.Instance.inventoryDatas.activeListCnt;
+                Slot activeSlot = InventoryManager.Instance.inventoryDatas.activeSlots[itemListCnt_];
+                DropActive dropActive_ = dropItem_ as DropActive;
 
-                int tempActiveVal_ = InventoryManager.Instance.inventoryDatas.activeListCnt;
+                activeSlot.slotItem = dropItem_.item;
+                activeSlot.SetSlotData();
+                activeSlot.gameObject.SetActive(true);
+                PlayerManager.Instance.player.playerActiveItem = dropActive_.activeitem.GetComponent<ActiveItem>();
 
-                InventoryManager.Instance.inventoryDatas.activeSlots[tempActiveVal_].slotItem = dropItem_;
-                InventoryManager.Instance.inventoryDatas.activeSlots[tempActiveVal_].SetSlotData();
-
-
-                InventoryManager.Instance.inventoryDatas.activeInvenSlots[tempActiveVal_].SetActive(true);
-
-                tempActiveVal_++;
-
-                InventoryManager.Instance.inventoryDatas.activeListCnt = tempActiveVal_;
-
+                itemListCnt_++;
+                InventoryManager.Instance.inventoryDatas.activeListCnt = itemListCnt_;
                 break;
 
             case ItemTag.PASSIVE:
+                itemListCnt_ = InventoryManager.Instance.inventoryDatas.passiveListCnt;
+                Slot passiveSlot = InventoryManager.Instance.inventoryDatas.passiveSlots[itemListCnt_];
 
-                int tempPassiveVal_ = InventoryManager.Instance.inventoryDatas.passiveListCnt;
+                passiveSlot.slotItem = dropItem_.item;
+                passiveSlot.SetSlotData();
+                passiveSlot.gameObject.SetActive(true);
 
-                InventoryManager.Instance.inventoryDatas.passiveSlots[tempPassiveVal_].slotItem = dropItem_;
-                InventoryManager.Instance.inventoryDatas.passiveSlots[tempPassiveVal_].SetSlotData();
-
-                InventoryManager.Instance.inventoryDatas.passiveInvenSlots[tempPassiveVal_].SetActive(true);
-
-                tempPassiveVal_++;
-
-                InventoryManager.Instance.inventoryDatas.passiveListCnt = tempPassiveVal_;
-
+                itemListCnt_++;
+                InventoryManager.Instance.inventoryDatas.passiveListCnt = itemListCnt_;
                 break;
         }
 

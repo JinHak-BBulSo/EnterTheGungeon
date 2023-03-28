@@ -128,7 +128,8 @@ public class PlayerAttack : MonoBehaviour
     //! 현재 들고 있는 총을 발사하는 함수
     public void FireBulletWeapon()
     {
-        if(playerWeaponScript[nowWeaponIndex] == default ||
+        if (playerWeaponScript.Count == 0 ||
+            playerWeaponScript[nowWeaponIndex] == default ||
            playerWeaponScript[nowWeaponIndex] == null)
         {
             return;
