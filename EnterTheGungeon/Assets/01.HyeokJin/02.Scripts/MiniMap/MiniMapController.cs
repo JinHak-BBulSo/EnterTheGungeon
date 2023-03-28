@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiniMapController : MonoBehaviour
 {
     private GameObject miniMap = default;
+    [SerializeField] public Camera miniMap_Cam = default;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class MiniMapController : MonoBehaviour
     private void Start()
     {
         miniMap.SetActive(false);
+        miniMap_Cam.enabled = false;
     }
 
     private void Update()
@@ -26,11 +28,12 @@ public class MiniMapController : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab))
         {
             miniMap.SetActive(true);
+            miniMap_Cam.enabled = true;
         }
         else
         {
             miniMap.SetActive(false);
+            miniMap_Cam.enabled = false;
         }
-
     }
 }
