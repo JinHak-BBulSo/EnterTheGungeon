@@ -18,7 +18,7 @@ public class MoonrakerWeapon : PlayerWeapon
     public LineRenderer moonLineRenderer = default;
     public Transform moonTransform = default;
 
-    public int layerMask = default;
+    private int layerMask = default;
 
     // 반사되는 최대 횟수
     public int reflectMax = default;
@@ -60,7 +60,9 @@ public class MoonrakerWeapon : PlayerWeapon
 
 
         layerMask = (1 << LayerMask.NameToLayer("Player"))
-            | (1 << LayerMask.NameToLayer("Bullet"));
+            | (1 << LayerMask.NameToLayer("Bullet")
+            | (1 << LayerMask.NameToLayer("Ignore Raycast"))
+            );
         layerMask = ~layerMask;
         
     }
@@ -68,8 +70,6 @@ public class MoonrakerWeapon : PlayerWeapon
     // Update is called once per frame
     void Update()
     {
-        GFunc.Log($"{weaponMagazine}");
-
         if (isLaserOn == true)
         {
             if(isChkMagazine == false)

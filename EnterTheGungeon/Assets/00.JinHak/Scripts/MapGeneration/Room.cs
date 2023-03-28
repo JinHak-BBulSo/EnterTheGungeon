@@ -8,12 +8,14 @@ public class Room : MonoBehaviour
     public List<string> enemy;
     public GameObject boss;
     public GameObject mapBoss;
-    public Vector2 roomSize = default;
-    public bool isPlayerEnter = false;
-    public int enemyCount = 0;
     private List<GameObject> enemies = new List<GameObject>();
+    public int enemyCount = 0;
+
+    public Vector2 roomSize = default;
     public GameObject[] spawnPoints = default;
     public GameObject monsterobjs = default;
+
+    public bool isPlayerEnter = false;
     public bool isRoomClear = false;
     public bool isSpecialRoom = false;
 
@@ -33,17 +35,15 @@ public class Room : MonoBehaviour
         if (boss != null)
         {
             mapBoss = EnemyManager.Instance.CreateBoss(boss, this.transform);
+            mapBoss.transform.position = spawnPoints[0].transform.position;
             mapBoss.SetActive(false);
         }
-        Debug.Log("eneycount : " + enemyCount);
     }
 
     void Update()
     {
-        if(isPlayerEnter && enemyCount == 0)
+        if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {
-            Debug.Log("오픈");
-            Debug.Log(gameObject.name);
             isRoomClear = true;
             DoorManager.Instance.AllDoorOpen();
         }  

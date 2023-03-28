@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class DropPassive : DropItem
 {
-    public void GetPassive()
+    public override void GetDropItem()
     {
-        //PlayerInvenList.passiveItems.Add(this.item);
+        InventoryManager.Instance.inventoryControl.AddItem(this);
+        GetPassive();
+    }
+    public virtual void GetPassive()
+    {
+        /* Override Using */
     }
 }

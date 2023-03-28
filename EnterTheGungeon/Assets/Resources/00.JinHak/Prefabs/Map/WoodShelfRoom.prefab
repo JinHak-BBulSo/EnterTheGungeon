@@ -1133,14 +1133,16 @@ MonoBehaviour:
   - bookllet
   boss: {fileID: 0}
   mapBoss: {fileID: 0}
-  roomSize: {x: 29, y: 17}
-  isPlayerEnter: 0
   enemyCount: 0
+  roomSize: {x: 29, y: 17}
   spawnPoints:
   - {fileID: 5180816352269791282}
   - {fileID: 7800423453780755607}
   - {fileID: 5958362837246583635}
   monsterobjs: {fileID: 0}
+  isPlayerEnter: 0
+  isRoomClear: 0
+  isSpecialRoom: 0
 --- !u!61 &6949709848718775724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1191,7 +1193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5180816352269791282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.06, y: -3.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1222,7 +1224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5958362837246583635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.87, y: -6.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1287,7 +1289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7800423453780755607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.41, y: -6.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

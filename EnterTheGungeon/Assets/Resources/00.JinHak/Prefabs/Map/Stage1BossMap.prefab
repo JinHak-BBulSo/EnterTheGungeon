@@ -185,6 +185,7 @@ Transform:
   - {fileID: 5816853195934715155}
   - {fileID: 81864043426808195}
   - {fileID: 81864042530312043}
+  - {fileID: 3280657530573157305}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,11 +204,11 @@ MonoBehaviour:
   enemy: []
   boss: {fileID: 1484470546362955494, guid: 7afa9cef907d8ff49b87002e216383d4, type: 3}
   mapBoss: {fileID: 0}
-  roomSize: {x: 40, y: 30}
-  isPlayerEnter: 0
   enemyCount: 0
+  roomSize: {x: 40, y: 30}
   spawnPoints: []
   monsterobjs: {fileID: 0}
+  isPlayerEnter: 0
   isRoomClear: 0
   isSpecialRoom: 1
 --- !u!61 &3997156182620720666
@@ -236,6 +237,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 30}
   m_EdgeRadius: 0
+--- !u!1 &4647603104968641757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3280657530573157305}
+  m_Layer: 2
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3280657530573157305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647603104968641757}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2294845348300537772}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6847586259658803139
 GameObject:
   m_ObjectHideFlags: 0

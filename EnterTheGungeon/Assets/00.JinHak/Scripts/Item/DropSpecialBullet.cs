@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class DropSpecialBullet : DropPassive
 {
-    public override void GetDropItem()
+    public override void GetPassive()
     {
         PlayerManager.Instance.player.playerDamage += 2;
-        GetPassive();
     }
 }
