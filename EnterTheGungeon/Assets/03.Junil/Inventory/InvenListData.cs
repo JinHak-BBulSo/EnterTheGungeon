@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerInvenList : MonoBehaviour
+public class InvenListData : MonoBehaviour
 {
-
+    
     private const int IEVEN_TAB_ICON_CNT = 4;
 
     // 인벤토리 탭 종류 | 장비, 총, 아이템, 적, 보스
@@ -22,9 +22,9 @@ public class PlayerInvenList : MonoBehaviour
     // 총, 액티브, 패시브 슬롯 정보를 관리하는 리스트
     public GameObject slotPrefabs = default;
 
-    public List<GameObject> gunInvenSlots = new List<GameObject>();
-    public List<GameObject> activeInvenSlots = new List<GameObject>();
-    public List<GameObject> passiveInvenSlots = new List<GameObject>();
+    //public List<GameObject> gunInvenSlots = new List<GameObject>();
+    //public List<GameObject> activeInvenSlots = new List<GameObject>();
+    //public List<GameObject> passiveInvenSlots = new List<GameObject>();
 
 
     // 총 아이템을 모아두는 인벤토리
@@ -68,11 +68,6 @@ public class PlayerInvenList : MonoBehaviour
     public int selectTabInvenVal = default;
 
 
-    private void Awake()
-    {
-        
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -80,13 +75,13 @@ public class PlayerInvenList : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
 
         
 
-    }
+    //}
 
 
     //! 켜져있는 슬롯이 5개씩 넘어가면 실행되는 함수
@@ -306,8 +301,14 @@ public class PlayerInvenList : MonoBehaviour
     }
 
 
+
     public void SetInvenList()
     {
+
+        InventoryDatas inventoryData_ =
+            gameObject.transform.parent.
+            gameObject.transform.parent.gameObject.GetComponentMust<InventoryDatas>();
+
         // Slot 프리팹 가져오기
         slotPrefabs = Resources.Load<GameObject>("03.Junil/Prefabs/Inventory/Slot");
 
@@ -381,26 +382,32 @@ public class PlayerInvenList : MonoBehaviour
             }
         }
 
-
+        GFunc.Log($"{gunsInven.transform.GetChild(0).gameObject}");
         // 슬롯은 각각 10개만 넣는다
         for (int i = 0; i < 10; i++)
         {
-            gunInvenSlots.Add(Instantiate(slotPrefabs, gunsInven.transform.position,
-                Quaternion.identity, gunsInven.transform));
 
-            activeInvenSlots.Add(Instantiate(slotPrefabs, activeInven.transform.position,
-                Quaternion.identity, activeInven.transform));
+            // 각각의 리스트에 슬롯 프리팹을 추가한다.
+            inventoryData_.gunInvenSlots.Add(gunsInven.transform.GetChild(i).gameObject);
 
-            passiveInvenSlots.Add(Instantiate(slotPrefabs, passiveInven.transform.position,
-                Quaternion.identity, passiveInven.transform));
+            inventoryData_.weaponSlots.Add(inventoryData_.gunInvenSlots[i].GetComponentMust<Slot>());
 
-            gunInvenSlots[i].SetActive(false);
-            activeInvenSlots[i].SetActive(false);
-            passiveInvenSlots[i].SetActive(false);
+            inventoryData_.activeInvenSlots.Add(activeInven.transform.GetChild(i).gameObject);
+
+            inventoryData_.activeSlots.Add(inventoryData_.activeInvenSlots[i].GetComponentMust<Slot>());
+
+            inventoryData_.passiveInvenSlots.Add(passiveInven.transform.GetChild(i).gameObject);
+
+            inventoryData_.passiveSlots.Add(inventoryData_.passiveInvenSlots[i].GetComponentMust<Slot>());
+
+            inventoryData_.gunInvenSlots[i].SetActive(false);
+            inventoryData_.activeInvenSlots[i].SetActive(false);
+            inventoryData_.passiveInvenSlots[i].SetActive(false);
 
         }
 
 
+    }   // SetInvenList()
 
-    }
+
 }

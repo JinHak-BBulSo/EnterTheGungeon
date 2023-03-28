@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerInvenInfo : MonoBehaviour
+public class InvenInfoData : MonoBehaviour
 {
     // 현재 선택한 아이템의 이름을 보여줄 텍스트
     public Text itemNameTxt = default;
@@ -32,20 +32,6 @@ public class PlayerInvenInfo : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //! 아이템 정보를 셋팅하는 함수 | 추후 수정 예정
-    public void SetItemInformation(string itemName_)
-    {
-        // 아이템 이름
-        itemNameTxt.text = itemName_;
-
-        // 아이템 이미지, 그림자 켜기
-    }
 
     public void SetInvenInfo()
     {

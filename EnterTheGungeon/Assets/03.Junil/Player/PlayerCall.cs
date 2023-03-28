@@ -8,7 +8,7 @@ public class PlayerCall : MonoBehaviour
     private void Awake()
     {
         PlayerManager.Instance.Create();
-        LoadingManager.Instance.Create();
+        InventoryManager.Instance.Create();
         GFunc.Log($"Create ok");
     }
 
