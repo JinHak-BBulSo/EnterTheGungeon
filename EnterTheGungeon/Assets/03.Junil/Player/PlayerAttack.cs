@@ -24,6 +24,9 @@ public class PlayerAttack : MonoBehaviour
 
     public int nowWeaponIndex = default;
 
+    public bool isReloadNow = false;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -70,17 +73,39 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-        if(rotateStand_.x > 0)
+        if (rotateStand_.x > 0)
         {
             gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
 
             playerObj.transform.localScale = new Vector3(1f, 1f, 1f);
+
+            if (isReloadNow == true)
+            {
+                PlayerManager.Instance.player.weaponReload.transform.localScale = new Vector3(1f, 1f, 1f);
+
+            }
+            else
+            {
+                PlayerManager.Instance.player.weaponReload.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
+
+            }
         }
         else
         {
             gameObject.transform.localScale = new Vector3(-1f, -1f, 1f);
 
             playerObj.transform.localScale = new Vector3(-1f, 1f, 1f);
+
+            if(isReloadNow == true)
+            {
+                PlayerManager.Instance.player.weaponReload.transform.localScale = new Vector3(-1f, 1f, 1f);
+
+            }
+            else
+            {
+                PlayerManager.Instance.player.weaponReload.transform.localScale = new Vector3(-0.0001f, 0.0001f, 0.0001f);
+
+            }
         }
 
 

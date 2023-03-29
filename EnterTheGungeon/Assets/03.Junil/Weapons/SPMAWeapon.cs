@@ -127,9 +127,8 @@ public class SPMAWeapon : PlayerWeapon
 
     public override void ReloadBullet()
     {
-        PlayerManager.Instance.player.weaponReload.ReloadStart(1.2f);
-
-        if (isReload == true) { return; }
+        // 현재 재장전 중이거나 현재 총알 수가 최대 총알 수와 같다면 멈추게 하는 조건
+        if (isReload == true || countBullet == weaponMagazine ) { return; }
 
         spmaAnimator.SetTrigger("OnReload");
 

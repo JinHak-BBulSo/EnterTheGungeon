@@ -151,7 +151,8 @@ public class MoonrakerWeapon : PlayerWeapon
                 // 레이저 공격
                 if(weaponDeley < deleyChkVal)
                 {
-                    
+                    // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
+                    //hit_.collider.gameObject.GetComponent
                 }
 
             }

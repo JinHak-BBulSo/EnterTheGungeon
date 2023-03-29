@@ -71,6 +71,11 @@ public class PlayerController : MonoBehaviour
     // 플레이어가 피격을 당했는지 확인하는 bool 값
     public bool isAttacked = false;
 
+    // 플레이어가 석화 상태인지 확인하는 bool 값
+    public bool isPetrified = false;
+
+
+
     private void Awake()
     {
         playerMove = gameObject.GetComponentMust<PlayerMove>();
@@ -101,6 +106,7 @@ public class PlayerController : MonoBehaviour
         isStatusEvent = true;
         isOnInventory = false;
         isAttacked = false;
+        isPetrified = false;
 
         nowWeaponHand = 0;
 
@@ -123,13 +129,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isStatusEvent == true)
+        // 석화 상태이상에 당하면 잠시 멈추게 하는 조건
+        if(isPetrified == true) { return; }
+
+        if (isStatusEvent == true)
         {
             //HpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
             //BlankController.SetPlayerBlank(playerBlank);
             //KeyController.SetPlayerKey(playerKey);
             //CashController.SetPlayerCash(playerMoney);
-            ResetPlayerAni();
+            CheckShield();
 
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
 
@@ -213,7 +222,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ResetPlayerAni()
+    //! 현재 플레이어가 쉴드를 가지고 있는지 확인하는 함수
+    public void CheckShield()
     {
         if(playerShield == 0)
         {
@@ -224,8 +234,40 @@ public class PlayerController : MonoBehaviour
             isShield = true;
         }
 
-        // 추후 무기 값도 가져오기
     }
+
+    //! 플레이어가 석화 상태에 당하면 실행하는 함수
+    public void OnPetrified()
+    {
+        StartCoroutine(StartPetrified());
+    }
+
+    // 석화 상태 이상에 대한 코루틴
+    IEnumerator StartPetrified()
+    {
+        isPetrified = true;
+
+        Color playerColor_ = playerImage.color;
+
+        playerColor_.r = 128f / 255f;
+        playerColor_.g = 128f / 255f;
+        playerColor_.b = 128f / 255f;
+
+        playerImage.color = playerColor_;
+        
+        yield return new WaitForSeconds(2f);
+
+        playerColor_.r = 255f / 255f;
+        playerColor_.g = 255f / 255f;
+        playerColor_.b = 255f / 255f;
+
+
+        playerImage.color = playerColor_;
+
+        isPetrified = false;
+
+    }
+
 
     //! 플레이어의 현재 애니메이션을 갱신하기 위해 발동시키는 함수
     public void OnHitAndStatusEvent()

@@ -19,7 +19,6 @@ public class WeaponReload : MonoBehaviour
         // 재장전 바의 최대 길이
         MaxWidth = gameObject.GetComponent<RectTransform>().rect.width;
 
-        gameObject.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
         isReload = false;
 
     }
@@ -36,8 +35,8 @@ public class WeaponReload : MonoBehaviour
         if (isReload == true) { return; }
 
         isReload = true;
+        PlayerManager.Instance.player.playerAttack.isReloadNow = isReload;
 
-        gameObject.transform.localScale = Vector3.one;
 
         RectTransform rectTransform = reloadBarImg.transform as RectTransform;
 
@@ -64,8 +63,8 @@ public class WeaponReload : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        gameObject.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
         isReload = false;
+        PlayerManager.Instance.player.playerAttack.isReloadNow = isReload;
 
     }
 

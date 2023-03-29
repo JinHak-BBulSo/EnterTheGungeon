@@ -2485,7 +2485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298720574151034928, guid: 12a5dac630666de49a0b5a3dc5fec2f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298720574151034928, guid: 12a5dac630666de49a0b5a3dc5fec2f2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2821,7 +2821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298720575215963301, guid: 12a5dac630666de49a0b5a3dc5fec2f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298720575215963301, guid: 12a5dac630666de49a0b5a3dc5fec2f2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5919,6 +5919,7 @@ MonoBehaviour:
   playerWeaponScript: []
   isDodgeing: 0
   nowWeaponIndex: 0
+  isReloadNow: 0
 --- !u!1 &5256318854350720693
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,6 +6105,7 @@ MonoBehaviour:
   nowWeaponHand: 0
   isStatusEvent: 1
   isAttacked: 0
+  isPetrified: 0
 --- !u!1 &5256318855880270507
 GameObject:
   m_ObjectHideFlags: 0
