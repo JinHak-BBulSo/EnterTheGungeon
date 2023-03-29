@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5280013660737458224}
   m_Layer: 2
-  m_Name: StartPoint
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,8 +460,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8870316073612450853}
-  - component: {fileID: 1844706648683584875}
   - component: {fileID: 6033025290650774931}
+  - component: {fileID: 7904519950871809839}
   m_Layer: 2
   m_Name: Stage1BossMap2
   m_TagString: Untagged
@@ -484,31 +484,10 @@ Transform:
   - {fileID: 3780985187949244058}
   - {fileID: 7341863819635302922}
   - {fileID: 5280013660737458224}
+  - {fileID: 1258395027720310828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1844706648683584875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870316073612450854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2097cf72896884b9b69553ed82c4c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: []
-  boss: {fileID: 1484470546362955494, guid: 7afa9cef907d8ff49b87002e216383d4, type: 3}
-  mapBoss: {fileID: 0}
-  enemyCount: 0
-  roomSize: {x: 40, y: 30}
-  spawnPoints: []
-  monsterobjs: {fileID: 0}
-  isPlayerEnter: 0
-  isRoomClear: 0
-  isSpecialRoom: 1
 --- !u!61 &6033025290650774931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -535,6 +514,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &7904519950871809839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870316073612450854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c856a570da898c499fa73a1ea5f8417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: []
+  boss: {fileID: 1484470546362955494, guid: 7afa9cef907d8ff49b87002e216383d4, type: 3}
+  mapBoss: {fileID: 0}
+  enemyCount: 0
+  roomSize: {x: 40, y: 30}
+  spawnPoints:
+  - {fileID: 2647772095296712532}
+  monsterobjs: {fileID: 0}
+  isPlayerEnter: 0
+  isRoomClear: 0
+  isSpecialRoom: 1
+  roomEntrances:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isBossKill: 0
+  bossCount: 1
 --- !u!1001 &2090460178970444999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24278,4 +24287,82 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5272518330044725964, guid: c2d6c1f0a4f917446a3545e67a5097b2, type: 3}
   m_PrefabInstance: {fileID: 5607668062918749912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8818105711725132848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8870316073612450853}
+    m_Modifications:
+    - target: {fileID: 7716500081126922800, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500081192136178, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500081370703783, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500081864336048, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716500082343488543, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: m_Name
+      value: BossMapEntrance
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+--- !u!4 &1258395027720310828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+  m_PrefabInstance: {fileID: 8818105711725132848}
   m_PrefabAsset: {fileID: 0}
