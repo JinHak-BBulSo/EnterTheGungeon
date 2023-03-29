@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BossEntranceAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1b6e7637c47c03743a356eea76738e96, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 33bd3130edbfbe44d8a3f429b85e42c4, type: 3}
+  - {fileID: 21300000, guid: b58964932ccef3d4c8fe44028aa17c99, type: 3}
+  - {fileID: 21300000, guid: 32defeb3406342d4584d4c09b160524e, type: 3}
+  - {fileID: 21300000, guid: d2a1162462bc3074cb26f97e87712ac1, type: 3}
+  - {fileID: 21300000, guid: 43860d74f5fcc0846824fdbb2aba7d2b, type: 3}
+  - {fileID: 21300000, guid: 121a7625561ef1b4a9d2782c1eb61721, type: 3}
+  - {fileID: 21300000, guid: 17b71c368e57f684a8d3bae40c423daa, type: 3}
+  - {fileID: 21300000, guid: 2526bdab4f7aae64284d75c4821efe9d, type: 3}
+  - {fileID: 21300000, guid: d84918eb12c598f4ca76e580e6ef80b5, type: 3}
+  - {fileID: 21300000, guid: 484698fb460bc404d8e6106cd21dec76, type: 3}
+  - {fileID: 21300000, guid: d885022c30650d14c82f6a90eb118e2c, type: 3}
+  - {fileID: 21300000, guid: bd995a2e35f94c24aababc7a11ab5844, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Boss_Door_skull_north_open_001
+  - Boss_Door_Column_south_top_001
+  - Boss_Door_Column_top_001
+  - Boss_Door_Column_east_001
+  - Boss_Door_skull_east_open_001
+  - Boss_Door_skull_west_open_001
+  - Boss_Door_south_mat_001
+  - Boss_Door_Column_west_001
+  - Boss_Door_foyer_001
+  - Boss_Door_skull_south_open_001
+  - Boss_Door_Column_bottom_001
+  - Boss_Door_west_mat_001
+  m_RenderDataMap: {}
+  m_Tag: BossEntranceAtlas
+  m_IsVariant: 0

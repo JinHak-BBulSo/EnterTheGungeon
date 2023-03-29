@@ -97,16 +97,17 @@ public class PlayerController : MonoBehaviour
 
         // 임시로 1로 지정
         nowWeaponHand = 1;
+
+        // 플레이어 싱글톤 호출
+        // [KJH] 위치 변경 Start -> Awake
+        PlayerManager.Instance.player = this;
+        GFunc.Log("플레이어 캐싱 ok");
     }
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        // 플레이어 싱글톤 호출
-        PlayerManager.Instance.player = this;
-        GFunc.Log("플레이어 캐싱 ok");
+        
 
 
  

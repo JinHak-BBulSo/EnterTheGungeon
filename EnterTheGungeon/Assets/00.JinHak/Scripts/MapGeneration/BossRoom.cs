@@ -6,7 +6,7 @@ public class BossRoom : Room
 {
     GameObject bossRoomEntrance = default;
     public GameObject[] roomEntrances = new GameObject[4];
-    public bool isBossKill = false;
+    private bool isBossKill = false;
     public int bossCount = 1;
 
     private void Awake()
@@ -21,14 +21,23 @@ public class BossRoom : Room
     public override void Start()
     {
         base.Start();
-        mapBoss.GetComponent<Boss>().belongRoom = this;      
+        if (boss.name == "BossGorgun")
+        {
+            mapBoss.GetComponent<Boss>().belongRoom = this;
+        }
+        else
+        {
+            Debug.Log(mapBoss.name);
+            mapBoss.transform.GetChild(0).GetComponent<Boss>().belongRoom = this;
+        }
     }
 
     public override void Update()
     {
-        if (isPlayerEnter && enemyCount == 0 && !isRoomClear)
+        if (isPlayerEnter && bossCount == 0 && !isRoomClear)
         {
             isRoomClear = true;
+            isBossKill = true;
             DoorManager.Instance.AllDoorOpen();
         }
     }

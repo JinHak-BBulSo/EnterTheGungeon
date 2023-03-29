@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletKingController : MonoBehaviour
+public class BulletKingController : Boss
 {
     private ObjectManager objectManager = default;
     private Animator bulletkingAnimator = default;
     private GameObject player = default;
 
+    private GameObject bossBulletKing = default;
+    private Vector3 direction = default;
+
     private SpriteRenderer throneSpriteRenderer = default;
 
+    private GameObject muzzle = default;
     private GameObject muzzle_Left_1 = default;
     private GameObject muzzle_Left_2 = default;
     private GameObject muzzle_Left_3 = default;
@@ -53,22 +57,24 @@ public class BulletKingController : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-
-        muzzle_Left_1 = GameObject.Find("Muzzle_Left_1");
-        muzzle_Left_2 = GameObject.Find("Muzzle_Left_2");
-        muzzle_Left_3 = GameObject.Find("Muzzle_Left_3");
-        muzzle_Left_4 = GameObject.Find("Muzzle_Left_4");
-        muzzle_Left_5 = GameObject.Find("Muzzle_Left_5");
-        muzzle_Right_1 = GameObject.Find("Muzzle_Right_1");
-        muzzle_Right_2 = GameObject.Find("Muzzle_Right_2");
-        muzzle_Right_3 = GameObject.Find("Muzzle_Right_3");
-        muzzle_Right_4 = GameObject.Find("Muzzle_Right_4");
-        muzzle_Right_5 = GameObject.Find("Muzzle_Right_5");
-
-        objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
+        player = PlayerManager.Instance.player.gameObject;
+        bossBulletKing = transform.parent.gameObject;
         bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
 
+        muzzle = bossBulletKing.transform.GetChild(3).gameObject;
+
+        muzzle_Left_1 = muzzle.transform.GetChild(0).gameObject;
+        muzzle_Left_2 = muzzle.transform.GetChild(1).gameObject;
+        muzzle_Left_3 = muzzle.transform.GetChild(2).gameObject;
+        muzzle_Left_4 = muzzle.transform.GetChild(3).gameObject;
+        muzzle_Left_5 = muzzle.transform.GetChild(4).gameObject;
+        muzzle_Right_1 = muzzle.transform.GetChild(5).gameObject;
+        muzzle_Right_2 = muzzle.transform.GetChild(6).gameObject;
+        muzzle_Right_3 = muzzle.transform.GetChild(7).gameObject;
+        muzzle_Right_4 = muzzle.transform.GetChild(8).gameObject;
+        muzzle_Right_5 = muzzle.transform.GetChild(9).gameObject;
+
+        objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
         throneSpriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void Start()
@@ -94,13 +100,13 @@ public class BulletKingController : MonoBehaviour
 
         moveSpeed = 1.5f;
 
-        distance = Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
+        distance = Vector2.Distance(transform.position, player.transform.position);
 
         if (distance > 5)
         {
             isMoving = true;
-            Vector3 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
-            GameObject.Find("Boss_BulletKing").transform.position += direction * moveSpeed * Time.deltaTime;
+            direction = (player.transform.position - transform.position).normalized;
+            bossBulletKing.transform.position += direction * moveSpeed * Time.deltaTime;
         }
         else
         {
@@ -112,7 +118,7 @@ public class BulletKingController : MonoBehaviour
     #region Status
     private void Status()
     {
-        patternIndex = Random.Range(6, 7);
+        patternIndex = Random.Range(0, 7);
 
         curPatternCount = 0;
 
@@ -420,7 +426,6 @@ public class BulletKingController : MonoBehaviour
     {
 
         isPatternStart = true;
-        bulletkingAnimator.SetTrigger("isPattern_2");
 
         maxPatternCount = 4;
         bulletSpeed = 10f;
@@ -452,7 +457,6 @@ public class BulletKingController : MonoBehaviour
         if (curPatternCount > 1)
         {
             isPatternStart = false;
-            bulletkingAnimator.ResetTrigger("isPattern_2");
         }
     }   //  Pattern_2()
     #endregion
@@ -515,7 +519,6 @@ public class BulletKingController : MonoBehaviour
     {
 
         isPatternStart = true;
-        bulletkingAnimator.SetTrigger("isPattern_3");
 
         maxPatternCount = 30;
         bulletSpeed = 8f;
