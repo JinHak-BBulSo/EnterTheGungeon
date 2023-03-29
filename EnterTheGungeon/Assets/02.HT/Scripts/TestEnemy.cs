@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class TestEnemy : MonoBehaviour
 {
     public int attackType;
@@ -15,6 +16,7 @@ public class TestEnemy : MonoBehaviour
 
     float angle;
     GameObject player;
+    Rigidbody2D rigid;
 
     Vector2 direction;
 
@@ -96,6 +98,7 @@ public class TestEnemy : MonoBehaviour
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
         bodyImage = transform.GetChild(0).GetComponent<Image>();
         bodyImageRectTransform = transform.GetChild(0).GetComponent<RectTransform>();
+        rigid = GetComponent<Rigidbody2D>();
 
         if (attackType == 0)
         {
@@ -192,6 +195,8 @@ public class TestEnemy : MonoBehaviour
         }
 
         // /Debug.Log(EnemyManager.Instance.enemyName.BinarySearch(enemyName));
+
+
 
     }
     void Move()
@@ -416,7 +421,17 @@ public class TestEnemy : MonoBehaviour
             damageTaken = other.GetComponent<PlayerBullet>().bulletDamage; //after setting playerbullet, change this.
             currentHp -= damageTaken;
             damageTaken = 0;
+
+            OnDamage(other.transform.position);
         }
+    }
+
+    void OnDamage(Vector3 collisionPos_)
+    {
+        Vector2 dir_ = transform.position - collisionPos_;
+
+        rigid.velocity = Vector2.zero;
+        rigid.AddForce(dir_.normalized * 100, ForceMode2D.Impulse);//?
     }
 
     void Die()
@@ -436,7 +451,6 @@ public class TestEnemy : MonoBehaviour
 
     void DropCoin()
     {
-        Debug.Log("!");
         isDrop = true;
 
         if (dropCoinCount < 5)

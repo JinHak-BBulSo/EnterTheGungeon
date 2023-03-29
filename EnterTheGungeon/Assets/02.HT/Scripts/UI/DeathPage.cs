@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class DeathPage : MonoBehaviour
 {
     DeadScreen deadScreen;
@@ -14,7 +13,7 @@ public class DeathPage : MonoBehaviour
     void Start()
     {
         deadScreen = transform.parent.parent.parent.parent.parent.GetChild(0).GetComponent<DeadScreen>();
-        
+
         deathPage2 = transform.parent.parent.GetChild(1).GetChild(1);
         deadScreenShot = deathPage2.GetChild(0).GetComponent<Image>();
     }
@@ -23,5 +22,6 @@ public class DeathPage : MonoBehaviour
     void Update()
     {
         deadScreenShot.sprite = deadScreen.screenShot;
+
     }
 }

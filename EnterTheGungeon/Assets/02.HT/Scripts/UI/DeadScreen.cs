@@ -105,7 +105,13 @@ public class DeadScreen : MonoBehaviour
 
             if (!isCaptured)
             {
-                ScreenShotDeadScreen();
+                cameraMain.GetComponent<MoveCamera2D>().isPlayerDie = true;
+                if (cameraMain.GetComponent<MoveCamera2D>().isFocus)
+                {
+                    ScreenShotDeadScreen();
+                    //Testtesttest();
+                }
+
             }
             else
             {
@@ -165,10 +171,13 @@ public class DeadScreen : MonoBehaviour
                 {
                     StartCoroutine(LoadAmmonomicon());
                 }
+
             }
         }
 
     }
+
+    public Camera cameraMain;
 
 
     void ImageSizeSet()
@@ -208,43 +217,8 @@ public class DeadScreen : MonoBehaviour
 
         Texture2D texture2D_ = ScreenCapture.CaptureScreenshotAsTexture();
 
-        screenShot = Sprite.Create(texture2D_, new Rect(0, 0, texture2D_.width, texture2D_.height), new Vector2(0.5f, 0.5f));
+        screenShot = Sprite.Create(texture2D_, new Rect(300, 150, 600, 300), new Vector2(0.5f, 0.5f));
 
         isCaptured = true;
-    }
-
-    public void Testtesttest()
-    {
-        // 캡처할 영역 크기
-        Vector2 captureSize = new Vector2(300f, 200f);
-
-        // 캡처할 영역의 중심 계산
-        RectTransform canvasRT = FindObjectOfType<Canvas>().GetComponent<RectTransform>();
-        Vector2 captureCenter = canvasRT.sizeDelta / 2f + new Vector2(0f, 27f);
-
-        // 카메라 ViewportRect 계산
-        Vector2 captureSizeRatio = new Vector2(captureSize.x / canvasRT.sizeDelta.x, captureSize.y / canvasRT.sizeDelta.y);
-        Vector2 captureMin = captureCenter - canvasRT.sizeDelta / 2f * captureSizeRatio;
-        Vector2 captureMax = captureCenter + canvasRT.sizeDelta / 2f * captureSizeRatio;
-        Rect captureViewportRect = new Rect(captureMin.x / canvasRT.sizeDelta.x, captureMin.y / canvasRT.sizeDelta.y, captureSizeRatio.x, captureSizeRatio.y);
-
-        // 캡처할 RenderTexture 생성
-        RenderTexture renderTexture = new RenderTexture((int)captureSize.x, (int)captureSize.y, 24);
-
-        // 카메라 ViewportRect, targetTexture 설정
-        Camera.main.rect = captureViewportRect;
-        Camera.main.targetTexture = renderTexture;
-
-        // 화면 렌더링 후 텍스처로 캡처
-        Camera.main.Render();
-        Texture2D texture = new Texture2D((int)captureSize.x, (int)captureSize.y, TextureFormat.RGB24, false);
-        RenderTexture.active = renderTexture;
-        texture.ReadPixels(new Rect(0f, 0f, captureSize.x, captureSize.y), 0, 0);
-        texture.Apply();
-
-        // 카메라 ViewportRect, targetTexture 설정 초기화
-        Camera.main.rect = new Rect(0f, 0f, 1f, 1f);
-        Camera.main.targetTexture = null;
-        RenderTexture.active = null;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BossGorGun : MonoBehaviour
 {
     public string enemyName;
-    
+
     TestEnemyEye eye;
     GameObject player;
     Quaternion defaultRotation;
@@ -48,8 +48,8 @@ public class BossGorGun : MonoBehaviour
     // Var for AttackPattern1
     public bool isPlayerUpside;
 
-    int maxHp;
-    int currentHp;
+    public int maxHp;
+    public int currentHp;
     public bool isDead;
 
     //피격시 받는 데미지 체크를 위한 변수
@@ -62,9 +62,15 @@ public class BossGorGun : MonoBehaviour
     List<GameObject> poisonAreaPool;
     GameObject poisonAreaPrefab;
 
+    GameObject hpbarPrefab;
+    GameObject hpbar;
+    Transform hpbarTransform;
+
+    public bool IsSpawnEnd;
+
     void Start()
     {
-        enemyName = "Gorgun";
+        enemyName = "The Gorgun";
 
         maxHp = 975;
         currentHp = 975;
@@ -90,36 +96,48 @@ public class BossGorGun : MonoBehaviour
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
         poisonAreaPool = objectPool.poisonAreaPool;
         poisonAreaPrefab = objectPool.poisonAreaPrefab;
+
+        hpbarPrefab = Resources.Load<GameObject>("02.HT/Prefabs/BossPrefabs/BossHpBar");
+        hpbarTransform = GameObject.Find("UIObjs").transform;
+
+        hpbar = Instantiate(hpbarPrefab, hpbarTransform);
+        hpbar.GetComponent<BossHpBar>().boss = this.gameObject;
+        hpbar.GetComponent<BossHpBar>().bossName = enemyName;
+
     }
 
     void Update()
     {
         distance = Vector2.Distance(player.transform.localPosition, transform.localPosition);
-
-        if (!isMovepattern)
-        {
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
-            bossCollider.isTrigger = false;
-            anim.SetBool("isMovePattern1", false);
-        }
-
-        if (!isDead)
-        {
-            Move();
-            attack();
-            EndAttack();
-        }
-
-        if (currentHp <= 0)
-        {
-            isDead = true;
-        }
-        if (isDead)
-        {
-
-            Die();
-        }
         ImageSizeSet();
+        if (!IsSpawnEnd) { }
+        else
+        {
+            if (!isMovepattern)
+            {
+                rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
+                bossCollider.isTrigger = false;
+                anim.SetBool("isMovePattern1", false);
+            }
+
+            if (!isDead)
+            {
+                Move();
+                attack();
+                EndAttack();
+            }
+
+            if (currentHp <= 0)
+            {
+                //isDead = true;
+                Die();
+            }
+            /* if (isDead)
+            {
+
+                Die();
+            } */
+        }
     }
 
     void ImageSizeSet()
@@ -229,13 +247,13 @@ public class BossGorGun : MonoBehaviour
         // @brief colide player bullet, take damage and apply currentHp.
         if (other.tag == "PlayerBullet")
         {
-            damageTaken = 0;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
+            damageTaken = other.GetComponent<PlayerBullet>().bulletDamage;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
             currentHp -= damageTaken;
             damageTaken = 0;
 
             if (isChangeTostatue)
             {
-                Destroy(this.gameObject);
+                anim.SetBool("isDestroy", true);
             }
         }
     }
@@ -372,9 +390,9 @@ public class BossGorGun : MonoBehaviour
 
     void Die()
     {
-        if (isDead == true)
+        if (isDead == false)
         {
-            isDead = false;
+            isDead = true;
             if (effectObject.activeSelf == true)
             {
                 effectObject.SetActive(false);
@@ -389,6 +407,8 @@ public class BossGorGun : MonoBehaviour
             StopAllCoroutines();
         }
     }
+
+
 
 
 }

@@ -96,6 +96,7 @@ MonoBehaviour:
   bulletDamage: 0
   bulletRange: 0
   activePos: {x: 0, y: 0, z: 0}
+  isOffBullet: 0
 --- !u!58 &7542813110006510733
 CircleCollider2D:
   m_ObjectHideFlags: 0
