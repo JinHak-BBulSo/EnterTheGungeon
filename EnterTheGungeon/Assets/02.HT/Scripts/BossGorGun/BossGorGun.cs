@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossGorGun : MonoBehaviour
+//[KJH] Boos 클래스 상속 추가
+public class BossGorGun : Boss
 {
     public string enemyName;
     
@@ -61,6 +62,7 @@ public class BossGorGun : MonoBehaviour
     ObjectPool objectPool;
     List<GameObject> poisonAreaPool;
     GameObject poisonAreaPrefab;
+
 
     void Start()
     {
@@ -374,6 +376,9 @@ public class BossGorGun : MonoBehaviour
     {
         if (isDead == true)
         {
+            //[KJH] ADD
+            belongRoom.bossCount -= 1;
+
             isDead = false;
             if (effectObject.activeSelf == true)
             {
