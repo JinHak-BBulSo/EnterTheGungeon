@@ -9,18 +9,9 @@ public class PlayerCall : MonoBehaviour
     {
         PlayerManager.Instance.Create();
         InventoryManager.Instance.Create();
-        GFunc.Log($"Create ok");
+
+        GFunc.Log("각 매니저 생성");
+
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

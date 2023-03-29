@@ -82,11 +82,11 @@ public class MoonrakerWeapon : PlayerWeapon
         {
             if(isChkMagazine == false)
             {
-                StartCoroutine("MinusWeaponMagazine");
+                StartMinusMagazine();
                 isChkMagazine = true;
             }
 
-            TestLaser();
+            AttackLaser();
 
             
         }
@@ -95,6 +95,9 @@ public class MoonrakerWeapon : PlayerWeapon
         {
             OffLaser();
         }
+
+
+        deleyChkVal += Time.deltaTime;
     }
 
     public override void FireBullet()
@@ -108,7 +111,7 @@ public class MoonrakerWeapon : PlayerWeapon
         base.ReloadBullet();
     }
 
-    public void TestLaser()
+    public void AttackLaser()
     {
         moonLineRenderer.enabled = true;
         isLoopActive = true;
@@ -145,6 +148,12 @@ public class MoonrakerWeapon : PlayerWeapon
                 moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
                 
 
+                // 레이저 공격
+                if(weaponDeley < deleyChkVal)
+                {
+                    
+                }
+
             }
             else
             {
@@ -168,12 +177,29 @@ public class MoonrakerWeapon : PlayerWeapon
 
     public void OffLaser()
     {
-        StopCoroutine("MinusWeaponMagazine");
+        StopMinusMagazine();
         isLaserOn = false;
         isChkMagazine = false;
         moonLineRenderer.enabled = false;
     }
 
+
+
+    IEnumerator MinusMagazine = default;
+
+    void StartMinusMagazine()
+    {
+        MinusMagazine = MinusWeaponMagazine();
+        StartCoroutine(MinusMagazine);
+    }
+
+    void StopMinusMagazine()
+    {
+        if(MinusMagazine != null)
+        {
+            StopCoroutine(MinusMagazine);
+        }
+    }
 
 
     IEnumerator MinusWeaponMagazine()

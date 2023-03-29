@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerController playerController = default;
+    
     private Rigidbody2D playerRigid2D = default;
     private Animator playerAni = default;
-    private PlayerAttack playerAttack = default;
+    //private PlayerAttack playerAttack = default;
 
     
 
@@ -18,15 +18,17 @@ public class PlayerMove : MonoBehaviour
 
     public bool isReDodgeing = false;
 
+
+
     private void Awake()
     {
-        playerController = gameObject.GetComponentMust<PlayerController>();
+        
         playerRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         playerAni = gameObject.GetComponentMust<Animator>();
 
-        GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
+        GameObject rotateObjs_ = gameObject.transform.GetChild(0).gameObject;
 
-        playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
+        //playerAttack = rotateObjs_.transform.GetChild(0).gameObject.GetComponentMust<PlayerAttack>();
 
         isNowArmor = false;
         isDodgeing = false;
@@ -41,12 +43,9 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //GFunc.Log($"{playerAttack.isDodgeing}");
-    }
+    
 
+    //! 플레이어 좌우 상하 움직임을 담당하는 함수
     public void OnMove(float inputX, float inputY)
     {
 
@@ -68,6 +67,7 @@ public class PlayerMove : MonoBehaviour
     }
 
 
+    //! 플레이어의 구르기를 담당하는 함수
     public void OnDodge()
     {
         if (isDodgeing == true) 
@@ -81,9 +81,10 @@ public class PlayerMove : MonoBehaviour
             isReDodgeing = false;
 
         }
+        PlayerAniDodge();
 
         isDodgeing = true;
-        playerAttack.isDodgeing = true;
+        PlayerManager.Instance.player.playerAttack.isDodgeing = true;
 
         // 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -93,7 +94,6 @@ public class PlayerMove : MonoBehaviour
 
         playerRigid2D.velocity = len_.normalized * playerSpeed;
 
-        PlayerAniDodge();
 
 
         StartCoroutine(OffDodge());
@@ -105,11 +105,12 @@ public class PlayerMove : MonoBehaviour
         
         yield return new WaitForSeconds(0.8f);
         isDodgeing = false;
-        playerAttack.isDodgeing = false;
+        PlayerManager.Instance.player.playerAttack.isDodgeing = false;
 
         StartReDodge();
     }
 
+    //! 다시 구르기를 할지에 대한 텀을 주는 코루틴
     IEnumerator ReDodgeCoroutine = default;
 
     void StartReDodge()
@@ -132,7 +133,7 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         isReDodgeing = false;
 
-        PlayerManager.Instance.player.isStatusEvent = true;
+        PlayerManager.Instance.player.OnHitAndStatusEvent();
     }
 
 
@@ -154,8 +155,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // 아머의 유무와 현재 장착하고 있는 무기가 없거나, 한 손, 두 손인 경우를 받아서
-    // 그에 맞는 애니메이션을 작동시키는 함수이다
-    // 추후 무기 값도 보내기
+    // 그에 맞는 애니메이션을 작동시키는 함수이다.
     public void PlayerAniRestart(bool isShield, int nowWeaponHand)
     {
         if(isShield == true)

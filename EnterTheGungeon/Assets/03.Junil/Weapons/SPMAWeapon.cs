@@ -6,12 +6,15 @@ public class SPMAWeapon : PlayerWeapon
 {
     private GameObject spmaBulletPrefab = default;
     private GameObject[] spmaBullets = default;
+    private Animator spmaAnimator = default;
+
 
     public bool isEmptyBullet = false;
 
     private void OnEnable()
     {
 
+        // 만약 켜질때 장탄 수가 0이면 다시 재장전해주는 조건
         if (countBullet == 0)
         {
             isEmptyBullet = true;
@@ -66,8 +69,10 @@ public class SPMAWeapon : PlayerWeapon
         if (isEmptyBullet == true)
         {
             isEmptyBullet = false;
+            spmaAnimator.SetTrigger("EndReload");
+
             GFunc.Log("재장전 실행됨");
-            StartCoroutine(OnReload());
+            ReloadBullet();
         }
         
     }
@@ -91,20 +96,16 @@ public class SPMAWeapon : PlayerWeapon
 
         if (isAttack == false)
         {
+
             isAttack = true;
+            spmaAnimator.SetTrigger("OnAttack");
 
-            //if(spmaBullets[countBullet - 1].activeSelf == true)
-            //{
-            //    spmaBullets[countBullet - 1].SetActive(false);
 
-            //}
             spmaBullets[countBullet - 1].transform.position = firePos.position;
 
             spmaBullets[countBullet - 1].transform.rotation = gameObject.transform.rotation;
 
             spmaBullets[countBullet - 1].transform.Rotate(new Vector3(0f, 0f, -90f));
-
-            //spmaBullets[countBullet - 1].GetComponent<SPMABulletMove>().SetActivePos();
 
             spmaBullets[countBullet - 1].SetActive(true);
 
@@ -119,18 +120,25 @@ public class SPMAWeapon : PlayerWeapon
             if (countBullet == 0)
             {
                 isEmptyBullet = true;
+
             }
         }
     }
 
     public override void ReloadBullet()
     {
-        
+        PlayerManager.Instance.player.weaponReload.ReloadStart(1.2f);
+
         if (isReload == true) { return; }
 
+        spmaAnimator.SetTrigger("OnReload");
+
+        PlayerManager.Instance.player.weaponReload.ReloadStart(weaponReload);
         StartCoroutine(OnReload());
 
     }
+
+    
 
     public override void SetWeaponData()
     {
@@ -154,5 +162,7 @@ public class SPMAWeapon : PlayerWeapon
         this.bulletShotRange = 5;
         this.weaponDeley = 0.25f;
         this.weaponHand = 1;
+
+        spmaAnimator = gameObject.GetComponentMust<Animator>();
     }
 }

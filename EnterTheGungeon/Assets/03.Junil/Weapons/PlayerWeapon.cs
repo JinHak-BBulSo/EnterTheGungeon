@@ -29,8 +29,7 @@ public class PlayerWeapon : Weapons
     }
 
 
-    /// [Junil] 2023/03/16
-    /// @brief 총에 대한 정보를 한번에 처리하는 함수
+    //! 총에 대한 정보를 한번에 처리하는 함수
     public virtual void SetWeaponData()
     {
         GameObject weapons_ = gameObject.transform.parent.gameObject;
@@ -47,36 +46,22 @@ public class PlayerWeapon : Weapons
         // 총구 위치
         firePos = gameObject.FindChildObj("FirePos").transform;
 
-        /*weaponName = weapons.WeaponName();
-        weaponDescription = weapons.WeaponDescription();
-        weaponPos = weapons.WeaponPos();
-        weaponReload = weapons.WeaponReload();
-        weaponMagazine = weapons.WeaponMagazine();
-        weaponBulletValue = weapons.WeaponBulletValue();
-        knockBack = weapons.KnockBack();
-        bulletSpeed = weapons.BulletSpeed();
-        bulletDamage = weapons.BulletDamage();
-        bulletRange = weapons.BulletRange();
-        bulletShotRange = weapons.BulletShotRange();
-        weaponDeley = weapons.WeaponDeley();
-        weaponHand = weapons.WeaponHand();*/
 
     }
     
-    /// [Junil] 2023/03/16
-    /// @brief 총을 재장전하는 함수
+    // 총을 재장전하는 함수
     public virtual void ReloadBullet()
     {
         // -1 값은 재장전이 없다는 의미이다.
         if(weaponReload == -1) { /* Do Nothing */}
     }
 
-    /// [Junil] 2023/03/16
-    /// @brief 총을 발사하는 함수
+    // 총을 발사하는 함수
     public virtual void FireBullet()
     {
         
     }
+
     public IEnumerator OnReload()
     {
         GFunc.Log("리로드 중");

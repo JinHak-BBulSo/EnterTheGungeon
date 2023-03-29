@@ -42,7 +42,5 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         invenInfoData_.itemImg.sprite = slotItem.itemSprite;
 
 
-        // 선택한 아이템의 한 줄 설명
-
     }
 }

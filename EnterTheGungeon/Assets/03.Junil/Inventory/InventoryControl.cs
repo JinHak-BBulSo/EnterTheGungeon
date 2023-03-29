@@ -6,26 +6,15 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour
 {
-
     
-
-    // { [Junil] 무기 프리팹을 가져와서 넣는 배열
-    // 무기 프리팹 저장하는 배열
-    public GameObject[] playerWeaponPrefabs = default;
-    // 무기 이미지를 저장하는 배열
-    public Sprite[] playerWeaponSpriteObjs = default;
-    // } [Junil] 무기 프리팹을 가져와서 넣는 배열
-
     // 인벤토리가 열려있는지의 대한 유무
     public bool isOpenInven = false;
+
 
     private void Awake()
     {
         isOpenInven = false;
-
-        // 플레이어 무기 프리팹과 그 무기의 이미지를 배열에 저장한다.
-        //playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
-        //playerWeaponSpriteObjs = Resources.LoadAll<Sprite>("03.Junil/Weapon/ItemUseWeapons");
+                
     }
 
     // Start is called before the first frame update
@@ -33,12 +22,11 @@ public class InventoryControl : MonoBehaviour
     {
 
         AddFirstItem();
-
-        // 인벤토리를 꺼버린다.
-        InventoryManager.Instance.inventoryDataObjs.SetActive(false);
-
         // 인벤토리 매니저 호출
         InventoryManager.Instance.inventoryControl = this;
+        InventoryManager.Instance.inventoryDataObjs.SetActive(false);
+        GFunc.Log("인벤 컨트롤 호출");
+        
 
     }
 
@@ -104,17 +92,7 @@ public class InventoryControl : MonoBehaviour
 
         }
 
-
-        // 탭에서 상세 창으로 넘어가는 조건
-        //if (Input.GetKeyDown(KeyCode.RightArrow))
-        //{
-        //    isOutTabMenu = true;
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-        //    isOutTabMenu = false;
-        //}
+                
     }
 
     public void OnViewTabMenuControl()
@@ -127,15 +105,16 @@ public class InventoryControl : MonoBehaviour
 
     public void AddFirstItem()
     {
+
         int itemListCnt_ = 0;
         Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
-        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon1");
-        
-        
+        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
+            ("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon");
+
+
         itemListCnt_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;
         Slot weaponSlot = InventoryManager.Instance.inventoryDatas.weaponSlots[itemListCnt_];
-        //DropGun dropGun_ = dropItem_ as DropGun;
-
+        
         weaponSlot.slotItem = SPMAWeapon_;
         weaponSlot.SetSlotData();
         weaponSlot.gameObject.transform.parent.gameObject.SetActive(true);

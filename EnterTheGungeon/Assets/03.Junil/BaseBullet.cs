@@ -22,7 +22,7 @@ public class BaseBullet : MonoBehaviour
     {
         if (collision.tag == "Wall" || collision.tag == "Monster")
         {
-            Debug.Log(collision.tag);
+            
             OnOffBullet();
         }
     }

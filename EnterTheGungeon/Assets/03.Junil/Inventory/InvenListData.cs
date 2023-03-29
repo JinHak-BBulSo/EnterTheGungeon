@@ -23,10 +23,6 @@ public class InvenListData : MonoBehaviour
     // 총, 액티브, 패시브 슬롯 정보를 관리하는 리스트
     public GameObject slotPrefabs = default;
 
-    //public List<GameObject> gunInvenSlots = new List<GameObject>();
-    //public List<GameObject> activeInvenSlots = new List<GameObject>();
-    //public List<GameObject> passiveInvenSlots = new List<GameObject>();
-
 
     // 총 아이템을 모아두는 인벤토리
     public GameObject gunsInven = default;
@@ -73,13 +69,6 @@ public class InvenListData : MonoBehaviour
         
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-        
-
-    //}
 
 
     //! 켜져있는 슬롯이 5개씩 넘어가면 실행되는 함수

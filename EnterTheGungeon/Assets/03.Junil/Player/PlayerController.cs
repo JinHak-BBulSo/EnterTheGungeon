@@ -2,12 +2,16 @@ using SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
+    public WeaponReload weaponReload = default;
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
-    private Canvas playerSort = default;
+    public Image playerImage = default;
+
     public ActiveItem playerActiveItem = default;
     public ActiveItem PlayerActiveItem
     {
@@ -64,15 +68,17 @@ public class PlayerController : MonoBehaviour
 
     public System.Action activeItem = default;
 
+    // 플레이어가 피격을 당했는지 확인하는 bool 값
+    public bool isAttacked = false;
+
     private void Awake()
     {
         playerMove = gameObject.GetComponentMust<PlayerMove>();
         GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
         playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
-        playerSort = gameObject.transform.parent.gameObject.GetComponentMust<Canvas>();
+        playerImage = gameObject.GetComponentMust<Image>();
+        weaponReload = gameObject.transform.GetChild(3).gameObject.GetComponentMust<WeaponReload>();
 
-        playerSort.sortingLayerName = "Player";
-        playerSort.sortingOrder = 1;
 
         PlayerState playerData = new PlayerState
         {
@@ -94,9 +100,13 @@ public class PlayerController : MonoBehaviour
 
         isStatusEvent = true;
         isOnInventory = false;
+        isAttacked = false;
 
-        // 임시로 1로 지정
         nowWeaponHand = 0;
+
+        // 플레이어 싱글톤 호출
+        PlayerManager.Instance.player = this;
+        GFunc.Log("플레이어 호출");
     }
 
 
@@ -104,12 +114,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 플레이어 싱글톤 호출
-        PlayerManager.Instance.player = this;
-        GFunc.Log("플레이어 캐싱 ok");
-
-
- 
+        //// 플레이어 싱글톤 호출
+        //PlayerManager.Instance.player = this;
+        //GFunc.Log("플레이어 호출");
 
     }
 
@@ -226,5 +233,51 @@ public class PlayerController : MonoBehaviour
         isStatusEvent = true;
     }   // OnHitAndStatusEvent()
 
+    
+    //! 플레이어가 피격 시 깜빡거리는 효과
+    public void AttackedPlayer()
+    {
+
+        if(isAttacked == true) { return; }
+
+        StartCoroutine(AttackedAction());
+    }
+
+    //! 플레이어 이미지의 알파값을 조절하여 깜빡이는 효과를 주는 코루틴
+    IEnumerator AttackedAction()
+    {
+        isAttacked = true;
+
+        int countTime_ = 0;
+
+        Color playerColor_ = playerImage.color;
+
+        while (countTime_ < 10)
+        {
+            if (countTime_ % 2 == 0)
+            {
+                playerColor_.a = 90f / 255f;
+                playerImage.color = playerColor_;
+
+            }
+            else
+            {
+                playerColor_.a = 180f / 255f;
+
+                playerImage.color = playerColor_;
+
+            }
+
+            yield return new WaitForSeconds(0.2f);
+
+            countTime_++;
+        }
+
+        playerColor_.a = 255f / 255f;
+
+        playerImage.color = playerColor_;
+
+        isAttacked = false;
+    }
     
 }

@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5250718729917650191}
   - component: {fileID: 1789768193099179209}
   m_Layer: 5
-  m_Name: 01.SPMAWeapon1
+  m_Name: 01.SPMAWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6211844824196051656}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 61c2ec0c2cd9b9547afaf68d991bd4e7, type: 2}
   m_CullingMode: 0

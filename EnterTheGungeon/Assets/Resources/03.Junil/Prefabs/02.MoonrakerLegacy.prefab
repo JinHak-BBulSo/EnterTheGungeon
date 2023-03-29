@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8251179335846212876}
   - component: {fileID: 7527033837942690551}
   m_Layer: 5
-  m_Name: 02.Moonraker
+  m_Name: 02.MoonrakerLegacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
