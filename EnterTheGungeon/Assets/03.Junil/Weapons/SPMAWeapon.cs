@@ -9,6 +9,7 @@ public class SPMAWeapon : PlayerWeapon
     private Animator spmaAnimator = default;
 
 
+    // 탄약이 비어있다면 참이 되는 bool 값
     public bool isEmptyBullet = false;
 
     private void OnEnable()
@@ -18,6 +19,7 @@ public class SPMAWeapon : PlayerWeapon
         if (countBullet == 0)
         {
             isEmptyBullet = true;
+            isReload = false;
         }
 
         PlayerManager.Instance.player.nowWeaponHand = weaponHand;
@@ -36,6 +38,8 @@ public class SPMAWeapon : PlayerWeapon
         spmaBulletPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/SPMA_Bullet");
 
         isAttack = false;
+
+        // 재장전 중인지를 체크하는 bool 값
         isReload = false;
         deleyChkVal = 0f;
         isEmptyBullet = false;
@@ -64,7 +68,6 @@ public class SPMAWeapon : PlayerWeapon
     void Update()
     {
         deleyChkVal += Time.deltaTime;
-
 
         if (isEmptyBullet == true)
         {

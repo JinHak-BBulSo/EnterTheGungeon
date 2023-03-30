@@ -167,7 +167,10 @@ public class InventoryControl : MonoBehaviour
                 weaponObjs_.playerWeaponScript.Add(
                     weaponObjs_.playerWeapons[itemListCnt_].GetComponentMust<PlayerWeapon>());
 
-                itemListCnt_++;
+                weaponObjs_.playerWeapons[itemListCnt_].SetActive(false);
+
+
+               itemListCnt_++;
                 InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
                 break;
 
