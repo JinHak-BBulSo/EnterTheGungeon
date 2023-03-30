@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class BulletKingController : MonoBehaviour
 {
-    private ObjectManager objectManager = default;
     private Animator bulletkingAnimator = default;
-    private GameObject player = default;
 
+    private GameObject player = default;
+    private GameObject bossBulletKing = default;
+    private ObjectManager objectManager = default;
     private SpriteRenderer throneSpriteRenderer = default;
 
+    private GameObject muzzle = default;
     private GameObject muzzle_Left_1 = default;
     private GameObject muzzle_Left_2 = default;
     private GameObject muzzle_Left_3 = default;
@@ -23,8 +25,6 @@ public class BulletKingController : MonoBehaviour
     private GameObject muzzle_Right_4 = default;
     private GameObject muzzle_Right_5 = default;
     private GameObject muzzle_Hand = default;
-
-    Test_Bullet testbullet = default;
 
     private float bulletCount = default;
     private float bulletSpeed = default;
@@ -58,26 +58,27 @@ public class BulletKingController : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-
-        muzzle_Left_1 = GameObject.Find("Muzzle_Left_1");
-        muzzle_Left_2 = GameObject.Find("Muzzle_Left_2");
-        muzzle_Left_3 = GameObject.Find("Muzzle_Left_3");
-        muzzle_Left_4 = GameObject.Find("Muzzle_Left_4");
-        muzzle_Left_5 = GameObject.Find("Muzzle_Left_5");
-        muzzle_Right_1 = GameObject.Find("Muzzle_Right_1");
-        muzzle_Right_2 = GameObject.Find("Muzzle_Right_2");
-        muzzle_Right_3 = GameObject.Find("Muzzle_Right_3");
-        muzzle_Right_4 = GameObject.Find("Muzzle_Right_4");
-        muzzle_Right_5 = GameObject.Find("Muzzle_Right_5");
-        muzzle_Hand = GameObject.Find("Muzzle_Hand");
-
-        testbullet = GetComponent<Test_Bullet>();
+        player = PlayerManager.Instance.player.gameObject;
+        bossBulletKing = transform.parent.gameObject;
 
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
         bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
 
         throneSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        muzzle = bossBulletKing.transform.GetChild(3).gameObject;
+
+        muzzle_Left_1  = muzzle.transform.GetChild(0).gameObject;
+        muzzle_Left_2  = muzzle.transform.GetChild(1).gameObject;
+        muzzle_Left_3  = muzzle.transform.GetChild(2).gameObject;
+        muzzle_Left_4  = muzzle.transform.GetChild(3).gameObject;
+        muzzle_Left_5  = muzzle.transform.GetChild(4).gameObject;
+        muzzle_Right_1 = muzzle.transform.GetChild(5).gameObject;
+        muzzle_Right_2 = muzzle.transform.GetChild(6).gameObject;
+        muzzle_Right_3 = muzzle.transform.GetChild(7).gameObject;
+        muzzle_Right_4 = muzzle.transform.GetChild(8).gameObject;
+        muzzle_Right_5 = muzzle.transform.GetChild(9).gameObject;
+        muzzle_Hand    = muzzle.transform.GetChild(10).gameObject;
     }
     private void Start()
     {
@@ -85,7 +86,7 @@ public class BulletKingController : MonoBehaviour
 
     private void Update()
     {
-        //Move();
+        Move();
     }
 
     #region Move
@@ -101,13 +102,13 @@ public class BulletKingController : MonoBehaviour
 
         moveSpeed = 1.5f;
 
-        distance = Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
+        distance = Vector2.Distance(transform.position, player.transform.position);
 
         if (distance > 5)
         {
             isMoving = true;
-            Vector3 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
-            GameObject.Find("Boss_BulletKing").transform.position += direction * moveSpeed * Time.deltaTime;
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            bossBulletKing.transform.position += direction * moveSpeed * Time.deltaTime;
         }
         else
         {
