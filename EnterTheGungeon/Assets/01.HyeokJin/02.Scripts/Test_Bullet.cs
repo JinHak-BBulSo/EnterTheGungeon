@@ -7,6 +7,9 @@ public class Test_Bullet : MonsterBullets
 {
     [SerializeField] public bool isRotate = default;
     [SerializeField] public bool isBounce = default;
+    [SerializeField] public bool isExplode = default;
+
+    [SerializeField] public float rotateSpeed = default;
 
     private ShopKeeperController shopkeeperController = default;
     private ObjectManager objectManager = default;
@@ -27,15 +30,20 @@ public class Test_Bullet : MonsterBullets
     {
         if (isRotate)
         {
-            transform.Rotate(Vector3.forward * 3f);
+            transform.Rotate(Vector3.forward * 3);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall") || collision.CompareTag("Player"))
+        if (!isExplode && (collision.CompareTag("Wall") || collision.CompareTag("Player")))
         {
             gameObject.SetActive(false);
+        }
+
+        if (isExplode && collision.CompareTag("Player"))
+        {
+            Debug.Log("화상화상화상화상화상화상화상화상화상화상화상화상화상화상화상화상화상");
         }
 
         if (isBounce && collision.CompareTag("Wall"))

@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletKingController : MonoBehaviour
 {
-    private ObjectManager objectManager = default;
     private Animator bulletkingAnimator = default;
-    private GameObject player = default;
 
+    private GameObject player = default;
+    private GameObject bossBulletKing = default;
+    private ObjectManager objectManager = default;
     private SpriteRenderer throneSpriteRenderer = default;
 
+    private GameObject muzzle = default;
     private GameObject muzzle_Left_1 = default;
     private GameObject muzzle_Left_2 = default;
     private GameObject muzzle_Left_3 = default;
@@ -20,7 +24,7 @@ public class BulletKingController : MonoBehaviour
     private GameObject muzzle_Right_3 = default;
     private GameObject muzzle_Right_4 = default;
     private GameObject muzzle_Right_5 = default;
-
+    private GameObject muzzle_Hand = default;
 
     private float bulletCount = default;
     private float bulletSpeed = default;
@@ -33,6 +37,7 @@ public class BulletKingController : MonoBehaviour
     private int maxPatternCount = default;
     private int bulletGap = default;
 
+    private bool isExpolded = false;
 
     private bool isPatterenCountReset = false;
     private bool isMoving = false;
@@ -48,32 +53,35 @@ public class BulletKingController : MonoBehaviour
     private void OnEnable()
     {
         health = 950;
-        Invoke("Status", 1f);
+        Invoke("Status", 0.5f);
     }
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-
-        muzzle_Left_1 = GameObject.Find("Muzzle_Left_1");
-        muzzle_Left_2 = GameObject.Find("Muzzle_Left_2");
-        muzzle_Left_3 = GameObject.Find("Muzzle_Left_3");
-        muzzle_Left_4 = GameObject.Find("Muzzle_Left_4");
-        muzzle_Left_5 = GameObject.Find("Muzzle_Left_5");
-        muzzle_Right_1 = GameObject.Find("Muzzle_Right_1");
-        muzzle_Right_2 = GameObject.Find("Muzzle_Right_2");
-        muzzle_Right_3 = GameObject.Find("Muzzle_Right_3");
-        muzzle_Right_4 = GameObject.Find("Muzzle_Right_4");
-        muzzle_Right_5 = GameObject.Find("Muzzle_Right_5");
+        player = PlayerManager.Instance.player.gameObject;
+        bossBulletKing = transform.parent.gameObject;
 
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
         bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
 
         throneSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        muzzle = bossBulletKing.transform.GetChild(3).gameObject;
+
+        muzzle_Left_1  = muzzle.transform.GetChild(0).gameObject;
+        muzzle_Left_2  = muzzle.transform.GetChild(1).gameObject;
+        muzzle_Left_3  = muzzle.transform.GetChild(2).gameObject;
+        muzzle_Left_4  = muzzle.transform.GetChild(3).gameObject;
+        muzzle_Left_5  = muzzle.transform.GetChild(4).gameObject;
+        muzzle_Right_1 = muzzle.transform.GetChild(5).gameObject;
+        muzzle_Right_2 = muzzle.transform.GetChild(6).gameObject;
+        muzzle_Right_3 = muzzle.transform.GetChild(7).gameObject;
+        muzzle_Right_4 = muzzle.transform.GetChild(8).gameObject;
+        muzzle_Right_5 = muzzle.transform.GetChild(9).gameObject;
+        muzzle_Hand    = muzzle.transform.GetChild(10).gameObject;
     }
     private void Start()
     {
-
     }
 
     private void Update()
@@ -94,13 +102,13 @@ public class BulletKingController : MonoBehaviour
 
         moveSpeed = 1.5f;
 
-        distance = Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
+        distance = Vector2.Distance(transform.position, player.transform.position);
 
         if (distance > 5)
         {
             isMoving = true;
-            Vector3 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
-            GameObject.Find("Boss_BulletKing").transform.position += direction * moveSpeed * Time.deltaTime;
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            bossBulletKing.transform.position += direction * moveSpeed * Time.deltaTime;
         }
         else
         {
@@ -112,28 +120,34 @@ public class BulletKingController : MonoBehaviour
     #region Status
     private void Status()
     {
-        patternIndex = Random.Range(6, 7);
+        patternIndex = Random.Range(1, 7);
 
         curPatternCount = 0;
 
         switch (patternIndex)
         {
             case 1:
+                Debug.Log("1번");
                 Pattern_1();
                 break;
             case 2:
+                Debug.Log("2번");
                 Pattern_2();
                 break;
             case 3:
+                Debug.Log("3번");
                 Pattern_3();
                 break;
             case 4:
+                Debug.Log("4번");
                 Pattern_4();
                 break;
             case 5:
-                Test();
+                Debug.Log("5번");
+                Pattern_5();
                 break;
             case 6:
+                Debug.Log("6번");
                 Pattern_6();
                 break;
         }
@@ -148,6 +162,7 @@ public class BulletKingController : MonoBehaviour
         StartCoroutine("Pattern_1_3way");
     }   //  Pattern_1()
 
+    #region Pattern_1_3way
     IEnumerator Pattern_1_3way()
     {
         isPatternStart = true;
@@ -410,7 +425,8 @@ public class BulletKingController : MonoBehaviour
         {
             Invoke("Status", 1.5f);
         }
-    }   //  Pattern_1()
+    }   //  Pattern_1_3way()
+    #endregion
     #endregion
 
     #region Pattern_2
@@ -420,7 +436,6 @@ public class BulletKingController : MonoBehaviour
     {
 
         isPatternStart = true;
-        bulletkingAnimator.SetTrigger("isPattern_2");
 
         maxPatternCount = 4;
         bulletSpeed = 10f;
@@ -446,13 +461,7 @@ public class BulletKingController : MonoBehaviour
         }
         else
         {
-            Invoke("Pattern", 2f);
-        }
-
-        if (curPatternCount > 1)
-        {
-            isPatternStart = false;
-            bulletkingAnimator.ResetTrigger("isPattern_2");
+            Invoke("Status", 2f);
         }
     }   //  Pattern_2()
     #endregion
@@ -498,7 +507,7 @@ public class BulletKingController : MonoBehaviour
         }
         else
         {
-            Invoke("Pattern", 3f);
+            Invoke("Status", 3f);
         }
 
         if (curPatternCount > 1)
@@ -515,7 +524,6 @@ public class BulletKingController : MonoBehaviour
     {
 
         isPatternStart = true;
-        bulletkingAnimator.SetTrigger("isPattern_3");
 
         maxPatternCount = 30;
         bulletSpeed = 8f;
@@ -569,12 +577,7 @@ public class BulletKingController : MonoBehaviour
         }
         else
         {
-            Invoke("Pattern", 2f);
-        }
-
-        if (curPatternCount > 1)
-        {
-            isPatternStart = false;
+            Invoke("Status", 2f);
         }
     }
     #endregion
@@ -582,7 +585,13 @@ public class BulletKingController : MonoBehaviour
     #region Pattern_5
     //  [YHJ] 2023-03-16
     //  @brief 자신의 위쪽에 커다란 총알을 한 발 발사한다. 발사된 총알은 여러 개의 깜빡거리는 탄환 여러 개로 나뉘고 이 탄환들은 잠시 뒤 여러 갈래로 퍼져나간다.
-    IEnumerator Pattern_5()
+    private void Pattern_5()
+    {
+        StartCoroutine("Pattern_5_All");
+    }
+
+    #region Pattern_5_All
+    IEnumerator Pattern_5_All()
     {
 
         isPatternStart = true;
@@ -611,19 +620,16 @@ public class BulletKingController : MonoBehaviour
 
         if (curPatternCount < maxPatternCount)
         {
-            Invoke("Pattern_5", 0.7f);
+            Invoke("Pattern_5_All", 0.7f);
         }
         else
         {
-            Invoke("Pattern", 2f);
+            Invoke("Status", 2f);
         }
+    }   //  Pattern_5_All()
+    #endregion
 
-        if (curPatternCount > 1)
-        {
-            isPatternStart = false;
-        }
-    }
-
+    #region Pattern_5_ExplodeBullet_1
     IEnumerator Pattern_5_ExplodeBullet_1(Vector3 currentPosition_)
     {
         List<GameObject> bullets = new List<GameObject>();
@@ -652,8 +658,10 @@ public class BulletKingController : MonoBehaviour
             StartCoroutine(Pattern_5_ExplodeBullet_2(bullet.transform.position));
             bullet.gameObject.SetActive(false);
         }
-    }
+    }   //  Pattern_5_ExplodeBullet_1()
+    #endregion
 
+    #region Pattern_5_ExplodeBullet_2
     IEnumerator Pattern_5_ExplodeBullet_2(Vector3 nextPosition_)
     {
         List<GameObject> bullets = new List<GameObject>();
@@ -682,8 +690,10 @@ public class BulletKingController : MonoBehaviour
             StartCoroutine(Pattern_5_ExplodeBullet_3(bullet.transform.position));
             bullet.gameObject.SetActive(false);
         }
-    }
+    }   //  Pattern_5_ExplodeBullet_2()
+    #endregion
 
+    #region Pattern_5_ExplodeBullet_3
     IEnumerator Pattern_5_ExplodeBullet_3(Vector3 next2Position_)
     {
         List<GameObject> bullets = new List<GameObject>();
@@ -706,12 +716,8 @@ public class BulletKingController : MonoBehaviour
         }
 
         yield return null;
-    }
-
-    private void Test()
-    {
-        StartCoroutine("Pattern_5");
-    }
+    }   //  Pattern_5_ExplodeBullet_3()
+    #endregion
     #endregion
 
     #region Pattern_6
@@ -719,23 +725,27 @@ public class BulletKingController : MonoBehaviour
     //  @brief 플레이어를 향해 화염병처럼 화염 장판을 원형으로 까는 술잔을 던진다.
     private void Pattern_6()
     {
+        isPatternStart = true;
 
-        //isPatternStart = true;
+        maxPatternCount = 1;
+        bulletSpeed = 8f;
+        bulletCount = 1;
 
-        //maxPatternCount = 1;
-        //bulletSpeed = 3f;
-        //bulletCount = 1;
+        Vector2 playerPosition = player.transform.position;
 
-        //for (int i = 0; i < bulletCount; i++)
-        //{
-        //    GameObject bullet = objectManager.MakeObject("Bullet_TypeD");
-        //    bullet.transform.position = transform.position;
-        //    bullet.transform.rotation = Quaternion.identity;
+        for (int i = 0; i < bulletCount; i++)
+        {
+            GameObject bullet = objectManager.MakeObject("Bullet_TypeD");
+            bullet.transform.position = muzzle_Hand.transform.position;
+            bullet.transform.rotation = Quaternion.identity;
 
-        //    Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-        //    Vector2 direction = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletCount), Mathf.Sin(Mathf.PI * 2 * i / bulletCount));
-        //    bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
-        //}
+            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            Vector2 direction = new Vector2(playerPosition.x - bullet.transform.position.x, playerPosition.y - bullet.transform.position.y);
+            bulletRigidbody.velocity = direction.normalized * bulletSpeed;
+            bulletRigidbody.angularVelocity = 500f;
+
+            StartCoroutine(Pattern_6_StopBullet(bullet, playerPosition, 0.5f));
+        }
 
         curPatternCount++;
 
@@ -745,14 +755,37 @@ public class BulletKingController : MonoBehaviour
         }
         else
         {
-            Invoke("Pattern", 2f);
+            Invoke("Status", 2f);
         }
 
         if (curPatternCount > 1)
         {
             isPatternStart = false;
         }
-    }
+    }   //  Pattern_6()
+
+    #region Pattern_6_StopBullet
+    IEnumerator Pattern_6_StopBullet(GameObject bullet_, Vector2 targetPosition_, float distanceThreshold_)
+    {
+        while (true)
+        {
+            float distance = Vector2.Distance(bullet_.transform.position, targetPosition_);
+
+            if (distance < distanceThreshold_)
+            {
+                bullet_.GetComponent<Animator>().SetTrigger("isExplode");
+                bullet_.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                bullet_.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+
+                yield return new WaitForSeconds(1f);
+                bullet_.GetComponent<CircleCollider2D>().enabled = false;
+
+                break;
+            }
+            yield return null;
+        }
+    }   //  Pattern_6_StopBullet()
+    #endregion
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
