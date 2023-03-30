@@ -28,7 +28,7 @@ public class EnemyManager : GSingleton<EnemyManager>
 
     public List<string> bossName = new List<string> { "gorGun" };
 
-    //test
+    //test/
     public Dictionary<string, bool> enemyFindCheck = new Dictionary<string, bool>()
     {{"bulletKin", true}, {"bookllet", false}, {"gunNut", false}, {"redShotgunKin", false}};
     /* public Dictionary<string, bool> enemyFindCheck = new Dictionary<string, bool>()
@@ -121,6 +121,6 @@ public class SaveTest
 
     public int totalKillcount;
 
-    
+
 
 }
