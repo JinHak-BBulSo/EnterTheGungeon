@@ -18,14 +18,23 @@ public class BossGorgunBody : MonoBehaviour
 
     RectTransform rectTransform;
 
+    ObjectPool objectPool;
+    List<GameObject> enemyBulletPool;
+    GameObject enemyBulletPrefab;
+    BossGorGun bossGorgun;
     // Start is called before the first frame update
     void Start()
     {
+        bossGorgun = transform.parent.GetComponent<BossGorGun>();
         eye = transform.parent.GetChild(1);
         rectTransform = GetComponent<RectTransform>();
 
         muzzleLeft = transform.parent.GetChild(2).GetChild(0).GetComponent<BossGorgunMuzzle>();
         muzzleRight = transform.parent.GetChild(2).GetChild(1).GetComponent<BossGorgunMuzzle>();
+
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        enemyBulletPool = objectPool.enemyBulletPool;
+        enemyBulletPrefab = objectPool.enemyBulletPrefab;
     }
 
     // Update is called once per frame
@@ -39,9 +48,11 @@ public class BossGorgunBody : MonoBehaviour
     {
         for (float i = 0; i <= 360; i += 15)
         {
-            GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-            clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+            GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+            clone_.transform.position = transform.position;
+            //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
             clone_.GetComponent<TestBullet>().bulletType = 0;
+            clone_.GetComponent<TestBullet>().enemyName = bossGorgun.enemyName;
 
             angleForSummonBullet = i * Mathf.PI / 180.0f;
             xValue = Mathf.Cos(angleForSummonBullet);
@@ -54,9 +65,11 @@ public class BossGorgunBody : MonoBehaviour
     {
         for (float i = 5; i <= 360; i += 15)
         {
-            GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
-            clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+            GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+            clone_.transform.position = transform.position;
+            //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
             clone_.GetComponent<TestBullet>().bulletType = 0;
+            clone_.GetComponent<TestBullet>().enemyName = bossGorgun.enemyName;
 
             angleForSummonBullet = i * Mathf.PI / 180.0f;
             xValue = Mathf.Cos(angleForSummonBullet);
@@ -69,36 +82,40 @@ public class BossGorgunBody : MonoBehaviour
     {
         GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/BossGorgun/GorgunSonicWave"), eye.transform.position, transform.rotation);
         clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
-        clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+        clone_.SetLocalScale(new Vector3(10, 10, 10));
+        //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
     }
 
     public void AttackPattern3(int rotateEmptySpace_)
     {
-        int patternBulletNum = 0;
+        int patternBulletNum_ = 0;
         for (float i = 0; i <= 360; i += 10)
         {
             if (i >= 0 + rotateEmptySpace_ && i < 45 + rotateEmptySpace_ || i >= 120 + rotateEmptySpace_ && i < 165 + rotateEmptySpace_ || i >= 240 + rotateEmptySpace_ && i < 285 + rotateEmptySpace_)
             {
-                GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), eye.transform.position, transform.rotation);
-                clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
-                clone_.name = $"{patternBulletNum}";
-
-                clone_.GetComponent<TestBullet>().patternBulletNumber = patternBulletNum;
+                GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                clone_.GetComponent<TestBullet>().enemyName = bossGorgun.enemyName;
+                clone_.transform.position = eye.transform.position;
+                //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
+                clone_.name = $"{patternBulletNum_}";
+                clone_.GetComponent<TestBullet>().patternBulletNumber = patternBulletNum_;
+                patternBulletNum_++;
 
                 clone_.GetComponent<TestBullet>().isGorgunBullet = true;
-                patternBulletNum++;
 
                 angleForSummonBullet = i * Mathf.PI / 180.0f;
                 xValue = Mathf.Cos(angleForSummonBullet);
                 yValue = Mathf.Sin(angleForSummonBullet);
                 directionForSummonBullet = new Vector2(xValue, yValue);
                 clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
-                Destroy(clone_, 3);
+                //Destroy(clone_, 3);
             }
             else
             {
-                GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), eye.transform.position, transform.rotation);
-                clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
+                GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
+                clone_.GetComponent<TestBullet>().enemyName = bossGorgun.enemyName;
+                clone_.transform.position = eye.transform.position;
+                //clone_.GetComponent<RectTransform>().localScale = Vector3.one;
                 clone_.GetComponent<TestBullet>().bulletType = 0;
 
                 angleForSummonBullet = i * Mathf.PI / 180.0f;
@@ -151,5 +168,16 @@ public class BossGorgunBody : MonoBehaviour
     }
 
     // } add function to animation event 
+
+    public void DestroyStatue()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+
+    public void SpawnEndCheck()
+    {
+        transform.parent.GetComponent<BossGorGun>().IsSpawnEnd = true;
+        GetComponent<Animator>().SetBool("IsSpawnEnd", true);
+    }
 
 }

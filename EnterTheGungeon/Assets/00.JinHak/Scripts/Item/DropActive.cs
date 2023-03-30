@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropActive : MonoBehaviour
+public class DropActive : DropItem
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject activeitem = default;
 
-    // Update is called once per frame
-    void Update()
+    public override void GetDropItem()
     {
-        
+        InventoryManager.Instance.inventoryControl.AddItem(this);
     }
 }

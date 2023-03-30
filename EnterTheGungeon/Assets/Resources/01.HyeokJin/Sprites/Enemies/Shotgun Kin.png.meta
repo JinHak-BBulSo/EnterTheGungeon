@@ -402,9 +402,9 @@ TextureImporter:
       name: Shotgun Kin_24
       rect:
         serializedVersion: 2
-        x: 131
+        x: 129
         y: 448
-        width: 13
+        width: 18
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -425,7 +425,7 @@ TextureImporter:
         serializedVersion: 2
         x: 147
         y: 448
-        width: 17
+        width: 18
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -444,9 +444,9 @@ TextureImporter:
       name: Shotgun Kin_26
       rect:
         serializedVersion: 2
-        x: 167
+        x: 166
         y: 448
-        width: 17
+        width: 18
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -465,9 +465,9 @@ TextureImporter:
       name: Shotgun Kin_27
       rect:
         serializedVersion: 2
-        x: 187
+        x: 184
         y: 448
-        width: 12
+        width: 18
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -486,9 +486,9 @@ TextureImporter:
       name: Shotgun Kin_28
       rect:
         serializedVersion: 2
-        x: 202
+        x: 201
         y: 448
-        width: 17
+        width: 18
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

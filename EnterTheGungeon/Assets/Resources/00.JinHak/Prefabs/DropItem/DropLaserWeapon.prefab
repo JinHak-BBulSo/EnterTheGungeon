@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2503534564288401919}
   - component: {fileID: 1947648271920523035}
   - component: {fileID: 1399719151662427100}
-  - component: {fileID: 2665917397809108740}
   - component: {fileID: 6702186138071534143}
+  - component: {fileID: 3438743082589025746}
   m_Layer: 5
   m_Name: DropLaserWeapon
   m_TagString: Untagged
@@ -78,19 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2665917397809108740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3086728735341972814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1a57fbabb61db49b1bed2f11740a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropItem: {fileID: 11400000, guid: e40a32fefa7a0c84e862729bbb72a56c, type: 2}
 --- !u!61 &6702186138071534143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117,3 +104,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &3438743082589025746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086728735341972814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58a14b25100bb94192e42aba0985670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 36daf86b238b7e549b1739e55a6cabbc, type: 2}
+  dropWeapon: {fileID: 4055031681470043949, guid: 4673b9391cf68ba4283007d8d827e7d9, type: 3}

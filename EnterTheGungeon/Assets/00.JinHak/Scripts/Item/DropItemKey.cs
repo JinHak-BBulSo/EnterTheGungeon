@@ -6,6 +6,6 @@ public class DropItemKey : DropItem
 {
     public override void GetDropItem()
     {
-        //PlayerManager.Instance.player.Key++;
+        PlayerManager.Instance.player.playerKey++;
     }
 }

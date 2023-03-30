@@ -20,10 +20,10 @@ public class BaseBullet : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall")
+        if (collision.tag == "Wall" || collision.tag == "Monster")
         {
+            
             OnOffBullet();
-
         }
     }
 }

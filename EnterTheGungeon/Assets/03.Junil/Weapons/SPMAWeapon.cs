@@ -6,6 +6,25 @@ public class SPMAWeapon : PlayerWeapon
 {
     private GameObject spmaBulletPrefab = default;
     private GameObject[] spmaBullets = default;
+    private Animator spmaAnimator = default;
+
+
+    // 탄약이 비어있다면 참이 되는 bool 값
+    public bool isEmptyBullet = false;
+
+    private void OnEnable()
+    {
+
+        // 만약 켜질때 장탄 수가 0이면 다시 재장전해주는 조건
+        if (countBullet == 0)
+        {
+            isEmptyBullet = true;
+            isReload = false;
+        }
+
+        PlayerManager.Instance.player.nowWeaponHand = weaponHand;
+    }
+
 
     void Awake()
     {
@@ -19,8 +38,11 @@ public class SPMAWeapon : PlayerWeapon
         spmaBulletPrefab = Resources.Load<GameObject>("03.Junil/Prefabs/SPMA_Bullet");
 
         isAttack = false;
+
+        // 재장전 중인지를 체크하는 bool 값
         isReload = false;
         deleyChkVal = 0f;
+        isEmptyBullet = false;
 
         countBullet = weaponMagazine;
 
@@ -46,6 +68,16 @@ public class SPMAWeapon : PlayerWeapon
     void Update()
     {
         deleyChkVal += Time.deltaTime;
+
+        if (isEmptyBullet == true)
+        {
+            isEmptyBullet = false;
+            spmaAnimator.SetTrigger("EndReload");
+
+            GFunc.Log("재장전 실행됨");
+            ReloadBullet();
+        }
+        
     }
 
 
@@ -67,13 +99,17 @@ public class SPMAWeapon : PlayerWeapon
 
         if (isAttack == false)
         {
+
             isAttack = true;
+            spmaAnimator.SetTrigger("OnAttack");
+
 
             spmaBullets[countBullet - 1].transform.position = firePos.position;
 
             spmaBullets[countBullet - 1].transform.rotation = gameObject.transform.rotation;
 
             spmaBullets[countBullet - 1].transform.Rotate(new Vector3(0f, 0f, -90f));
+
             spmaBullets[countBullet - 1].SetActive(true);
 
             float shotRange_ = Random.Range(bulletShotRange * -1, bulletShotRange + 1);
@@ -84,21 +120,27 @@ public class SPMAWeapon : PlayerWeapon
 
             countBullet--;
 
-            if(countBullet == 0)
+            if (countBullet == 0)
             {
-                StartCoroutine(OnReload());
+                isEmptyBullet = true;
+
             }
         }
     }
 
     public override void ReloadBullet()
     {
-        
-        if (isReload == true) { return; }
+        // 현재 재장전 중이거나 현재 총알 수가 최대 총알 수와 같다면 멈추게 하는 조건
+        if (isReload == true || countBullet == weaponMagazine ) { return; }
 
+        spmaAnimator.SetTrigger("OnReload");
+
+        PlayerManager.Instance.player.weaponReload.ReloadStart(weaponReload);
         StartCoroutine(OnReload());
 
     }
+
+    
 
     public override void SetWeaponData()
     {
@@ -116,11 +158,13 @@ public class SPMAWeapon : PlayerWeapon
         // -1은 탄약량이 무제한이라는 의미이다.
         this.weaponBulletValue = -1;
         this.knockBack = 12f;
-        this.bulletSpeed = 10f;
+        this.bulletSpeed = 11f;
         this.bulletDamage = 5;
         this.bulletRange = 18f;
         this.bulletShotRange = 5;
         this.weaponDeley = 0.25f;
         this.weaponHand = 1;
+
+        spmaAnimator = gameObject.GetComponentMust<Animator>();
     }
 }

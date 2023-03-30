@@ -18,7 +18,7 @@ public class MoonrakerWeapon : PlayerWeapon
     public LineRenderer moonLineRenderer = default;
     public Transform moonTransform = default;
 
-    public int layerMask = default;
+    private int layerMask = default;
 
     // 반사되는 최대 횟수
     public int reflectMax = default;
@@ -27,6 +27,14 @@ public class MoonrakerWeapon : PlayerWeapon
     public bool isLoopActive = true;
     public bool isLaserOn = false;
     public bool isChkMagazine = false;
+
+
+
+    private void OnEnable()
+    {
+        PlayerManager.Instance.player.nowWeaponHand = weaponHand;
+
+    }
 
     void Awake()
     {
@@ -60,7 +68,9 @@ public class MoonrakerWeapon : PlayerWeapon
 
 
         layerMask = (1 << LayerMask.NameToLayer("Player"))
-            | (1 << LayerMask.NameToLayer("Bullet"));
+            | (1 << LayerMask.NameToLayer("Bullet")
+            | (1 << LayerMask.NameToLayer("Ignore Raycast"))
+            );
         layerMask = ~layerMask;
         
     }
@@ -68,17 +78,15 @@ public class MoonrakerWeapon : PlayerWeapon
     // Update is called once per frame
     void Update()
     {
-        GFunc.Log($"{weaponMagazine}");
-
         if (isLaserOn == true)
         {
             if(isChkMagazine == false)
             {
-                StartCoroutine("MinusWeaponMagazine");
+                StartMinusMagazine();
                 isChkMagazine = true;
             }
 
-            TestLaser();
+            AttackLaser();
 
             
         }
@@ -87,6 +95,9 @@ public class MoonrakerWeapon : PlayerWeapon
         {
             OffLaser();
         }
+
+
+        deleyChkVal += Time.deltaTime;
     }
 
     public override void FireBullet()
@@ -100,7 +111,7 @@ public class MoonrakerWeapon : PlayerWeapon
         base.ReloadBullet();
     }
 
-    public void TestLaser()
+    public void AttackLaser()
     {
         moonLineRenderer.enabled = true;
         isLoopActive = true;
@@ -137,6 +148,13 @@ public class MoonrakerWeapon : PlayerWeapon
                 moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
                 
 
+                // 레이저 공격
+                if(weaponDeley < deleyChkVal)
+                {
+                    // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
+                    //hit_.collider.gameObject.GetComponent
+                }
+
             }
             else
             {
@@ -160,12 +178,29 @@ public class MoonrakerWeapon : PlayerWeapon
 
     public void OffLaser()
     {
-        StopCoroutine("MinusWeaponMagazine");
+        StopMinusMagazine();
         isLaserOn = false;
         isChkMagazine = false;
         moonLineRenderer.enabled = false;
     }
 
+
+
+    IEnumerator MinusMagazine = default;
+
+    void StartMinusMagazine()
+    {
+        MinusMagazine = MinusWeaponMagazine();
+        StartCoroutine(MinusMagazine);
+    }
+
+    void StopMinusMagazine()
+    {
+        if(MinusMagazine != null)
+        {
+            StopCoroutine(MinusMagazine);
+        }
+    }
 
 
     IEnumerator MinusWeaponMagazine()

@@ -35,6 +35,10 @@ public class EnemyData : ScriptableObject
     private float enemyMoveSpeed;
     public float EnemyMoveSpeed { get { return enemyMoveSpeed; } }
 
+    [SerializeField]
+    private int dropCoinCount;
+    public int DropCoinCount { get { return dropCoinCount; } }
+
 
 
 }

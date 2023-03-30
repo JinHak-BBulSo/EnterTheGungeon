@@ -14,25 +14,27 @@ public class TestBullet : MonsterBullets
     bool isCheckAngle;
 
     public bool isGorgunBullet;
-    Image image;
+    bool isGorgunBulletCheck;
+    SpriteRenderer image;
+    Rigidbody2D rigid;
     public int patternBulletNumber;
+    ObjectPool objectPool;
+    bool isCreated;
+    RectTransform rectTransform;
+
+    public string enemyName;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        image = GetComponent<Image>();
+        image = GetComponent<SpriteRenderer>();
 
-
-        StartCoroutine(DestroyBullet());
-
-        if (isGorgunBullet)
-        {
-            image.enabled = false;
-            GetComponent<CircleCollider2D>().enabled = false;
-            StartCoroutine(Patten1Bullet());
-        }
+        rigid = GetComponent<Rigidbody2D>();
+        rectTransform = GetComponent<RectTransform>();
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,27 +60,61 @@ public class TestBullet : MonsterBullets
             StartCoroutine(WaitToFire());
         }
 
+        if (!isGorgunBulletCheck)
+        {
+            isGorgunBulletCheck = true;
+            if (isGorgunBullet)
+            {
+                image.enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                StartCoroutine(Patten1Bullet());
+            }
+            else
+            {
+                image.enabled = true;
+                GetComponent<CircleCollider2D>().enabled = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            Destroy(this.gameObject);
+            isGorgunBullet = false;
+            objectPool.ReturnObject(this.gameObject, 1);
+            //Destroy(this.gameObject);
+        }
+        else
+        {
+            if (other.tag == "Untagged" && other.tag == "Wall")
+            {
+                isGorgunBullet = false;
+                objectPool.ReturnObject(this.gameObject, 1);
+            }
         }
     }
 
-    IEnumerator DestroyBullet()
+    IEnumerator ReturnBullet()
     {
         yield return new WaitForSeconds(5);
-        Destroy(this.gameObject);
+        enemyName = default;
+        isGorgunBullet = false;
+        image.enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
+        rigid.velocity = Vector3.zero;
+        rectTransform.rotation = Quaternion.Euler(Vector3.zero);
+        isCheckAngle = false;
+        StopAllCoroutines();
+        objectPool.ReturnObject(this.gameObject, 1);
+        //Destroy(this.gameObject);
     }
 
     IEnumerator WaitToFire()
     {
         yield return new WaitForSeconds(1);
 
-        gameObject.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+        rigid.velocity = transform.up * 5;
 
     }
     IEnumerator Patten1Bullet()
@@ -92,5 +128,18 @@ public class TestBullet : MonsterBullets
                 GetComponent<CircleCollider2D>().enabled = true;
             }
         }
+    }
+
+    public override void OnEnable()
+    {
+        if (isCreated)
+        {
+            PlayerController.OnPlayerBlankBullet += this.OnPlayerBlankBullet;
+            StartCoroutine(ReturnBullet());
+            isGorgunBulletCheck = false;
+        }
+
+        isCreated = true;
+
     }
 }

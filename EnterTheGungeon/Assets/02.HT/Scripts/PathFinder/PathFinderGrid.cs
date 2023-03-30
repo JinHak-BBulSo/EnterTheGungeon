@@ -18,7 +18,6 @@ public class PathFinderGrid : MonoBehaviour
     public GameObject enemy;
     //target pos
     GameObject player;
-
     public float distanceToEnemy;
     public float distanceToPlayer;
     public bool isStartPosition;
@@ -37,6 +36,9 @@ public class PathFinderGrid : MonoBehaviour
     public List<GameObject> connectedList;
     public bool isInOpenList;
 
+    bool isCreated;
+    ObjectPool objectPool;
+
     void Start()
     {
         isPassable = true;
@@ -44,6 +46,7 @@ public class PathFinderGrid : MonoBehaviour
         defaultName = this.name;
 
         pathFinder = transform.parent.GetComponent<PathFinder>();
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
 
 
         player = GameObject.FindWithTag("Player");
@@ -59,7 +62,7 @@ public class PathFinderGrid : MonoBehaviour
             StartCoroutine(ColliderSizeSet());
         }
 
-        gridArray = transform.parent.GetComponent<PathFinder>().gridArray;
+        gridArray = pathFinder.gridArray;
         for (int y = 0; y < gridArray.GetLength(1); y++)
         {
             for (int x = 0; x < gridArray.GetLength(0); x++)
@@ -71,7 +74,63 @@ public class PathFinderGrid : MonoBehaviour
                 }
             }
         }
+
     }
+    bool isStartedPathFinder;
+    private void OnEnable()
+    {
+        // Debug.Log("Enable");
+        if (isCreated)
+        {
+            objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+            pathFinder = transform.parent.GetComponent<PathFinder>();
+            enemy = pathFinder.enemy;
+
+            if (!isColliderSizeSet)
+            {
+                StartCoroutine(ColliderSizeSet());
+            }
+
+            gridArray = pathFinder.gridArray;
+            for (int y = 0; y < gridArray.GetLength(1); y++)
+            {
+                for (int x = 0; x < gridArray.GetLength(0); x++)
+                {
+                    if (gridArray[x, y] == this.gameObject)
+                    {
+                        gridArrayX = x;
+                        gridArrayY = y;
+                    }
+                }
+            }
+
+            if (pathFinder != null && transform.parent == pathFinder.transform)
+            {
+                isStartedPathFinder = true;
+            }
+        }
+        isCreated = true;
+        /* 
+                if(isStartedPathFinder)
+                {
+                    Debug.Log("test");
+                } */
+    }
+
+
+    bool isFirstActiveFalse;
+    private void OnDisable()
+    {
+        //Debug.Log("Disable");
+        /* if (isFirstActiveFalse)
+        {
+            objectPool.ReturnObject(this.gameObject, 1);
+        }
+        isFirstActiveFalse = true; */
+
+
+    }
+
 
     void Update()
     {
@@ -94,7 +153,6 @@ public class PathFinderGrid : MonoBehaviour
             scoreG = 0;
             scoreF = scoreH;
         }
-
     }
 
     void SetGridStatus()
@@ -148,21 +206,45 @@ public class PathFinderGrid : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
 
-        if (isPassable && other.gameObject == enemy)
+        if (other.tag == "PlayerBullet" || other.tag == "MonsterBullet" || other.tag == "DestroyObj")
         {
-            isPassable = true;
+            /*do nothing*/
         }
-        else if (other.tag == "Player" || other.tag == "Monster" || !other.gameObject.GetComponent<TestObstacle>().isPassable)
+        else
         {
-            isPassable = false;
+            if (isPassable && other.gameObject == enemy)
+            {
+                isPassable = true;
+            }
+            else if (other.tag == "Player" || other.tag == "Monster" || !other.gameObject.GetComponent<TestObstacle>().isPassable)
+            {
+                isPassable = false;
+            }
+            else
+            {
+
+            }
         }
+
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player" || other.tag == "Monster" || !other.gameObject.GetComponent<TestObstacle>().isPassable)
+        if (other.tag == "PlayerBullet" || other.tag == "MonsterBullet" || other.tag == "DestroyObj")
         {
-            isPassable = true;
+            /*do nothing*/
+        }
+        else
+        {
+            if (other.tag == "Player" || other.tag == "Monster" || !other.gameObject.GetComponent<TestObstacle>().isPassable)
+            {
+                isPassable = true;
+            }
+            else
+            {
+
+            }
         }
     }
 
@@ -203,6 +285,21 @@ public class PathFinderGrid : MonoBehaviour
         CheckConnectedGrid(gridArrayX, gridArrayY + 1);
         CheckConnectedGrid(gridArrayX + 1, gridArrayY + 1);
     }
+
+    public void ResetGrid()
+    {
+        isPassable = true;
+        this.name = defaultName;
+        image.color = new Color32(255, 255, 255, 0);
+        isStartPosition = default;
+        isEndPosition = default;
+        isPassable = true;
+        isAddedCloseList = default;
+        isInOpenList = default;
+    }
+
+
+
     public void Reset()
     {
         rectTransform = default;

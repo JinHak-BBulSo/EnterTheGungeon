@@ -1,5 +1,6 @@
 # EnterTheGungeon
 
+
 2023-03-13 Init Set, Project Start
 
 Project URP Change - Built in to URP.
@@ -31,6 +32,7 @@ solve: enemy script에서 bullet을 생성 할 때 원하는 방향으로 bullet
 2023/03/20 / Fix PlayerCamera move and Add Inventory proto    
 2023/03/22 / Making Inven    
 2023/03/23 / Add Inven Tab Menu    
+
 
 
 ## [KJH]    

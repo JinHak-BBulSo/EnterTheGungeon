@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerController playerController = default;
+    
     private Rigidbody2D playerRigid2D = default;
     private Animator playerAni = default;
-    private PlayerAttack playerAttack = default;
+    //private PlayerAttack playerAttack = default;
 
     
 
@@ -18,15 +18,17 @@ public class PlayerMove : MonoBehaviour
 
     public bool isReDodgeing = false;
 
+
+
     private void Awake()
     {
-        playerController = gameObject.GetComponentMust<PlayerController>();
+        
         playerRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         playerAni = gameObject.GetComponentMust<Animator>();
 
-        GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
+        GameObject rotateObjs_ = gameObject.transform.GetChild(0).gameObject;
 
-        playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
+        //playerAttack = rotateObjs_.transform.GetChild(0).gameObject.GetComponentMust<PlayerAttack>();
 
         isNowArmor = false;
         isDodgeing = false;
@@ -41,12 +43,9 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
+    //! 플레이어 좌우 상하 움직임을 담당하는 함수
     public void OnMove(float inputX, float inputY)
     {
 
@@ -68,6 +67,7 @@ public class PlayerMove : MonoBehaviour
     }
 
 
+    //! 플레이어의 구르기를 담당하는 함수
     public void OnDodge()
     {
         if (isDodgeing == true) 
@@ -78,23 +78,23 @@ public class PlayerMove : MonoBehaviour
         if (isReDodgeing == true)
         {
             StopReDodge();
-            //StopCoroutine("ReDodge");
             isReDodgeing = false;
 
         }
+        PlayerAniDodge();
 
         isDodgeing = true;
-        playerAttack.isDodgeing = true;
+        PlayerManager.Instance.player.playerAttack.isDodgeing = true;
 
-        /// @param Vector3 mousePos_ : 마우스 커서 위치 값
+        // 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        /// @param Vector2 len_ : 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
+        // 마우스 커서 위치와 이 오브젝트의 위치를 뺀 값
         Vector2 len_ = mousePos_ - transform.position;
 
-        playerAni.SetTrigger("OnDodge");
-
         playerRigid2D.velocity = len_.normalized * playerSpeed;
+
+
 
         StartCoroutine(OffDodge());
     }
@@ -105,14 +105,12 @@ public class PlayerMove : MonoBehaviour
         
         yield return new WaitForSeconds(0.8f);
         isDodgeing = false;
-        playerAttack.isDodgeing = false;
-
-        //playerAni.SetTrigger("OnArmorOne");
+        PlayerManager.Instance.player.playerAttack.isDodgeing = false;
 
         StartReDodge();
-        //StartCoroutine("ReDodge");
     }
 
+    //! 다시 구르기를 할지에 대한 텀을 주는 코루틴
     IEnumerator ReDodgeCoroutine = default;
 
     void StartReDodge()
@@ -134,22 +132,38 @@ public class PlayerMove : MonoBehaviour
         isReDodgeing = true;
         yield return new WaitForSeconds(0.2f);
         isReDodgeing = false;
-        
-        PlayerManager.Instance.player.isStatusEvent = true;
+
+        PlayerManager.Instance.player.OnHitAndStatusEvent();
     }
 
 
-    // 아머의 유무와 현재 장착하고 있는 무기가 없거나, 한 손, 두 손인 경우를 받아서
-    // 그에 맞는 애니메이션을 작동시키는 함수이다
-    // 추후 무기 값도 보내기
-    public void PlayerAniRestart(bool isArmor, int nowWeaponHand)
+    //! 플레이어의 쉴드 유무를 확인하여 구르기 애니메이션 호출을 정해주는 함수
+    public void PlayerAniDodge()
     {
-        if(isArmor == true)
+        switch (PlayerManager.Instance.player.isShield)
+        {
+            case true:
+                playerAni.SetTrigger("OnArmorDodge");
+
+                break;
+
+            case false:
+                playerAni.SetTrigger("OffArmorDodge");
+
+                break;
+        }
+    }
+
+    // 아머의 유무와 현재 장착하고 있는 무기가 없거나, 한 손, 두 손인 경우를 받아서
+    // 그에 맞는 애니메이션을 작동시키는 함수이다.
+    public void PlayerAniRestart(bool isShield, int nowWeaponHand)
+    {
+        if(isShield == true)
         {
             switch (nowWeaponHand)
             {
                 case 0:
-                    playerAni.SetTrigger("OnArmorZero");
+                    playerAni.SetTrigger("OnArmorTwo");
 
                     break;
 
@@ -159,7 +173,7 @@ public class PlayerMove : MonoBehaviour
                     break;
 
                 case 2:
-                    playerAni.SetTrigger("OnArmorTwo");
+                    playerAni.SetTrigger("OnArmorZero");
 
                     break;
             }
@@ -169,7 +183,7 @@ public class PlayerMove : MonoBehaviour
             switch (nowWeaponHand)
             {
                 case 0:
-                    playerAni.SetTrigger("OffArmorZero");
+                    playerAni.SetTrigger("OffArmorTwo");
 
                     break;
 
@@ -179,7 +193,8 @@ public class PlayerMove : MonoBehaviour
                     break;
 
                 case 2:
-                    playerAni.SetTrigger("OffArmorTwo");
+                    
+                    playerAni.SetTrigger("OffArmorZero");
 
                     break;
             }
