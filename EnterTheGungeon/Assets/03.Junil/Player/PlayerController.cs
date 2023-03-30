@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public WeaponReload weaponReload = default;
+    public PlayerBottomCollier bottomCollider = default;
+    public GameObject topCollider = default;
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
     public Image playerImage = default;
@@ -72,45 +74,20 @@ public class PlayerController : MonoBehaviour
     // 플레이어가 석화 상태인지 확인하는 bool 값
     public bool isPetrified = false;
 
+    // 플레이어 선택이 되었는지 확인하는 bool 값
+    public bool isSetOk = false;
 
 
     private void Awake()
     {
-        playerMove = gameObject.GetComponentMust<PlayerMove>();
-        GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
-        playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
-        playerImage = gameObject.GetComponentMust<Image>();
-        weaponReload = gameObject.transform.GetChild(3).gameObject.GetComponentMust<WeaponReload>();
+        isSetOk = false;
 
-
-        PlayerState playerData = new PlayerState
-        {
-            hp = 6,
-            maxHp = 6,
-            shield = 0,
-            blank = 2,
-            money = 0,
-            key = 1,
-            // 다른 필드에 대한 기본값 설정                
-        };
-
-        playerHp = playerData.hp;
-        playerMaxHp = playerData.maxHp;
-        playerShield = playerData.shield;
-        playerBlank = playerData.blank;
-        playerMoney = playerData.money;
-        playerKey = playerData.key;
-
-        isStatusEvent = true;
-        isOnInventory = false;
-        isAttacked = false;
-        isPetrified = false;
-
-        nowWeaponHand = 0;
-
+        
         // 플레이어 싱글톤 호출
         PlayerManager.Instance.player = this;
         GFunc.Log("플레이어 호출");
+        
+        SetPlayerControl();
     }
 
 
@@ -122,13 +99,19 @@ public class PlayerController : MonoBehaviour
         //PlayerManager.Instance.player = this;
         //GFunc.Log("플레이어 호출");
 
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // 셋팅 되기 전에는 업데이트 문을 못 돌게 하는 조건
+        if (isSetOk == false) { return; }
+
         // 석화 상태이상에 당하면 잠시 멈추게 하는 조건
-        if(isPetrified == true) { return; }
+        if (isPetrified == true) { return; }
 
         if (isStatusEvent == true)
         {
@@ -208,6 +191,7 @@ public class PlayerController : MonoBehaviour
         // 재장전
         if (Input.GetKeyDown(KeyCode.R))
         {
+            if(playerAttack)
             playerAttack.ReloadBulletWeapon();
 
         }
@@ -218,6 +202,51 @@ public class PlayerController : MonoBehaviour
             playerActiveItem.UseActive();
             playerActiveItem = default;
         }
+    }
+
+    // 플레이어 선택
+    public void SetPlayerControl()
+    {
+        isSetOk = true;
+
+        playerMove = gameObject.GetComponentMust<PlayerMove>();
+        bottomCollider = gameObject.GetComponentMust<PlayerBottomCollier>();
+        topCollider = gameObject.transform.GetChild(1).gameObject;
+        GameObject rotateObjs_ = gameObject.transform.GetChild(0).gameObject;
+        playerAttack = rotateObjs_.transform.GetChild(0).gameObject.GetComponentMust<PlayerAttack>();
+        playerImage = gameObject.GetComponentMust<Image>();
+        weaponReload = gameObject.transform.GetChild(3).gameObject.GetComponentMust<WeaponReload>();
+
+
+        PlayerState playerData = new PlayerState
+        {
+            hp = 6,
+            maxHp = 6,
+            shield = 1,
+            blank = 2,
+            money = 0,
+            key = 1,
+            // 다른 필드에 대한 기본값 설정                
+        };
+
+        playerHp = playerData.hp;
+        playerMaxHp = playerData.maxHp;
+        playerShield = playerData.shield;
+        playerBlank = playerData.blank;
+        playerMoney = playerData.money;
+        playerKey = playerData.key;
+
+        isStatusEvent = true;
+        isOnInventory = false;
+        isAttacked = false;
+        isPetrified = false;
+
+        nowWeaponHand = 0;
+
+        topCollider.SetActive(true);
+
+        bottomCollider.ResettingCollider();
+        playerAttack.SetPlayerAttack();
     }
 
     //! 현재 플레이어가 쉴드를 가지고 있는지 확인하는 함수

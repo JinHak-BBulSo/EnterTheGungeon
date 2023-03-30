@@ -62,6 +62,24 @@ public class PlayerWeapon : Weapons
         
     }
 
+    // 재장전을 위한 코루틴
+    IEnumerator OnReloadCoroutine = default;
+
+    public void StartOnReload()
+    {
+        OnReloadCoroutine = OnReload();
+        StartCoroutine(OnReloadCoroutine);
+    }
+
+    public void StopOnReload()
+    {
+        if(OnReloadCoroutine != null)
+        {
+            StopCoroutine(OnReloadCoroutine);
+        }
+    }
+
+
     public IEnumerator OnReload()
     {
         GFunc.Log("리로드 중");

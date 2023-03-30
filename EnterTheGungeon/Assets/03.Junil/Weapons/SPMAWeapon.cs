@@ -28,6 +28,12 @@ public class SPMAWeapon : PlayerWeapon
         PlayerManager.Instance.player.nowWeaponHand = weaponHand;
     }
 
+    //! 꺼질 때 만약 코루틴이 돌고 있다면 끌 것이다
+    private void OnDisable()
+    {
+        StopOnReload();
+    }
+
 
     void Awake()
     {
@@ -131,6 +137,8 @@ public class SPMAWeapon : PlayerWeapon
         }
     }
 
+
+
     public override void ReloadBullet()
     {
         // 현재 재장전 중이거나 현재 총알 수가 최대 총알 수와 같다면 멈추게 하는 조건
@@ -139,7 +147,7 @@ public class SPMAWeapon : PlayerWeapon
         spmaAnimator.SetTrigger("OnReload");
 
         PlayerManager.Instance.player.weaponReload.ReloadStart(weaponReload);
-        StartCoroutine(OnReload());
+        StartOnReload();
 
     }
 

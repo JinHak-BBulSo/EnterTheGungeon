@@ -13,7 +13,7 @@ public class MoveCamera2D : MonoBehaviour
     public float cameraWidth = default;
     
     // 카메라가 쫒아 다닐 대상
-    public GameObject target = default;
+    public static GameObject target = default;
 
 
     public float exceptionRangeVal = default;
