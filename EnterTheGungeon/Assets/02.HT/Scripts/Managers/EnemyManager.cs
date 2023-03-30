@@ -114,3 +114,13 @@ public class EnemyManager : GSingleton<EnemyManager>
         }
     }
 }
+
+public class SaveTest
+{
+    public int killCount;
+
+    public int totalKillcount;
+
+    
+
+}

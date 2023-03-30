@@ -20,8 +20,10 @@ public class MoveCamera2D : MonoBehaviour
 
     public float exceptionRangeVal = default;
 
+    // { [HT] add variables
     public bool isPlayerDie;
     public bool isFocus;
+    // } [HT] add variables
 
     // Start is called before the first frame update
     void Start()
