@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2381235631347796004, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
       propertyPath: m_Name
-      value: UiObjs
+      value: UIObjs
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}

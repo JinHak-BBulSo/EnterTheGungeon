@@ -66,8 +66,6 @@ public class PlayerController : MonoBehaviour
     // 피격이나 쉴드를 먹는 등의 이벤트가 발생하면 참이 되는 bool 값
     public bool isStatusEvent = true;
 
-    public System.Action activeItem = default;
-
     // 플레이어가 피격을 당했는지 확인하는 bool 값
     public bool isAttacked = false;
 

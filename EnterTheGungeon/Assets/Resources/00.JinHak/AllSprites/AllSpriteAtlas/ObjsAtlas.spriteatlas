@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 6ce9a6b477fff6842a8e46752b4feb07, type: 3}
     - {fileID: 2800000, guid: da17a550bb67bc747ab553519db47535, type: 3}
     - {fileID: 2800000, guid: a3ea3009ee58d6b43b16866af35e0287, type: 3}
-    - {fileID: 214128220, guid: 0fab23600963fae469b38be8ab53236e, type: 3}
+    - {fileID: 2800000, guid: fe83326b18a4758478016bb023a254ce, type: 3}
     - {fileID: 2800000, guid: 3741fbb795659024ba90dbb29b5e7719, type: 3}
     - {fileID: 2800000, guid: 0a761efed8e5f4647aaf3c36c2b55ee5, type: 3}
     - {fileID: 2800000, guid: eb60b2a8cf3b15c4d9c10e56a0aefa76, type: 3}
@@ -100,7 +100,6 @@ SpriteAtlas:
     - {fileID: 2800000, guid: af9db891970e701459efe2c7becb38a9, type: 3}
     - {fileID: 2800000, guid: 2d8d7de50340fc442960a82f6873e4f7, type: 3}
     - {fileID: 2800000, guid: c0a6ca3d247f01645b3e44d194d6579d, type: 3}
-    - {fileID: 2800000, guid: fe83326b18a4758478016bb023a254ce, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -108,7 +107,6 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: d5e89330615753f4daa9e208f25f6821, type: 3}
   - {fileID: 21300000, guid: da17a550bb67bc747ab553519db47535, type: 3}
-  - {fileID: 214128220, guid: 0fab23600963fae469b38be8ab53236e, type: 3}
   - {fileID: 21300000, guid: ca9613510b679c8439e99ee4e38a62d0, type: 3}
   - {fileID: 21300000, guid: af9db891970e701459efe2c7becb38a9, type: 3}
   - {fileID: 21300000, guid: 7764b8b184445e3449558ea9a9c5a0f6, type: 3}
@@ -178,7 +176,6 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - table_horizontal_flip_south_005
   - table_horizontal_flip_north_break_002
-  - Loading_16
   - armor_burst_004
   - table_horizontal_flip_north_004
   - table_horizontal_flip_hotdog_003
