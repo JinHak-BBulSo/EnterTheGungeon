@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public HpController hpController = default;
+    public BlankController blankController = default;
+    public KeyController keyController = default;
+    public CashController cashController = default;
+
     public WeaponReload weaponReload = default;
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
@@ -134,10 +139,10 @@ public class PlayerController : MonoBehaviour
 
         if (isStatusEvent == true)
         {
-            //HpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
-            //BlankController.SetPlayerBlank(playerBlank);
-            //KeyController.SetPlayerKey(playerKey);
-            //CashController.SetPlayerCash(playerMoney);
+            hpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
+            blankController.SetPlayerBlank(playerBlank);
+            keyController.SetPlayerKey(playerKey);
+            cashController.SetPlayerCash(playerMoney);
             CheckShield();
 
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
@@ -273,7 +278,7 @@ public class PlayerController : MonoBehaviour
     public void OnHitAndStatusEvent()
     {
         isStatusEvent = true;
-    }   // OnHitAndStatusEvent()
+    }   //OnHitAndStatusEvent()
 
     
     //! 플레이어가 피격 시 깜빡거리는 효과

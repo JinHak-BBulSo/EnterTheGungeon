@@ -9,9 +9,6 @@ public class PauseButtonController : MonoBehaviour
     [SerializeField]
     List<PauseButtonHandler> buttonHandlers = default;
 
-    public GameObject gamepause = default;
-    public GameObject ammonomicon = default;
-
     private int buttonIndex = -1;
 
     // Start is called before the first frame update
@@ -76,14 +73,25 @@ public class PauseButtonController : MonoBehaviour
 
         return resultIndex;
     }
-    public void ResumeGame()
-    {
-        Time.timeScale = 1.0f;
-        gamepause.SetActive(false);
-    }
 
     public void AmmonomiconActive()
     {
-        ammonomicon.SetActive(true);
+
+        if (InventoryControl.isOpenInven == true)
+        {
+            Time.timeScale = 1.0f;
+            InventoryControl.isOpenInven = false;
+            InventoryManager.Instance.inventoryDataObjs.SetActive(false);
+            return;
+        }
+
+        Time.timeScale = 0.0f;
+        InventoryControl.isOpenInven = true;
+        GFunc.Log("눌림");
+        InventoryManager.Instance.inventoryDataObjs.SetActive(true);
+        // 인벤토리 초기값 설정
+        InventoryManager.Instance.inventoryDatas.invenListData.OnFirstViewTab();
+
     }
+
 }
