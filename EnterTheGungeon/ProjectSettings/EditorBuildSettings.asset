@@ -5,22 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/05.TeamProject/Scenes/00.InitScene.unity
     guid: eff614947f450004c9b1e3facbcd2601
-  - enabled: 0
-    path: Assets/00.JinHak/Scenes/LoadingScene.unity
-    guid: a2a81533cee35a24d8b1c92a414d193b
-  - enabled: 0
-    path: Assets/05.TeamProject/Scenes/02.TitleScene.unity
+  - enabled: 1
+    path: Assets/05.TeamProject/Scenes/01.TitleScene.unity
     guid: f671323a32aa154438db465f98e06974
-  - enabled: 0
-    path: Assets/05.TeamProject/Scenes/03.LobbyScene.unity
+  - enabled: 1
+    path: Assets/05.TeamProject/Scenes/02.LobbyScene.unity
     guid: 42b075f48ab8adb478de6d32e4b3f19a
-  - enabled: 0
-    path: Assets/05.TeamProject/Scenes/05.StageScene.unity
+  - enabled: 1
+    path: Assets/05.TeamProject/Scenes/03.StageScene.unity
     guid: 9852aeea3990fce43886580fe6033c5e
   - enabled: 1
-    path: Assets/00.JinHak/Scenes/MyMapToolScene.unity
-    guid: f82e152e95ad0004abcfe9ad040ca5f9
+    path: Assets/05.TeamProject/Scenes/LoadingScene.unity
+    guid: b9fd3799ebcbd9f4784b1a4841729f18
   m_configObjects: {}

@@ -17,7 +17,7 @@ public class LoadingManager : GSingleton<LoadingManager>
     public void LoadLoadingScene(string sceneName)
     {
         nextSceneName = sceneName;
-        SceneManager.LoadScene("LoadingScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("LoadingScene");
     }
 
     IEnumerator LoadScene()
@@ -49,7 +49,7 @@ public class LoadingManager : GSingleton<LoadingManager>
 
     IEnumerator NextSceneLoad()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         op.allowSceneActivation = true;
     }
 }

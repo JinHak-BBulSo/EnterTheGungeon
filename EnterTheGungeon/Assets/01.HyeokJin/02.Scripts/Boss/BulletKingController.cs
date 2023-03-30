@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BulletKingController : MonoBehaviour
+public class BulletKingController : Boss
 {
     private Animator bulletkingAnimator = default;
 
@@ -31,7 +31,7 @@ public class BulletKingController : MonoBehaviour
     private float moveSpeed = default;
     private float enemyRadius = default;
 
-    private int health = default;
+    private int maxHp = default;
     private int patternIndex = default;
     private int curPatternCount = default;
     private int maxPatternCount = default;
@@ -52,8 +52,15 @@ public class BulletKingController : MonoBehaviour
 
     private void OnEnable()
     {
-        health = 950;
-        Invoke("Status", 0.5f);
+        maxHp = 950;
+        currentHp = maxHp;
+    }
+
+    public override void PatternStart()
+    {
+        base.PatternStart();
+
+        Status();
     }
 
     private void Awake()

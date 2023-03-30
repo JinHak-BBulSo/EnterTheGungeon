@@ -241,7 +241,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1317391914
+--- !u!1 &1949368401
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,41 +249,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1317391916}
-  - component: {fileID: 1317391915}
+  - component: {fileID: 1949368403}
+  - component: {fileID: 1949368402}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: ManagerCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1317391915
+--- !u!114 &1949368402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317391914}
+  m_GameObject: {fileID: 1949368401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ef6f765acf72246973e6fae8da92c1, type: 3}
+  m_Script: {fileID: 11500000, guid: e0cb2c420722ea34ba6422f305dde624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTest: 0
-  isBossTest: 0
-  enemyName:
-  - bulletKin
-  - bandanaBulletKin
---- !u!4 &1317391916
+--- !u!4 &1949368403
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317391914}
+  m_GameObject: {fileID: 1949368401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 36.273792, y: 42.23236, z: -20.168972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

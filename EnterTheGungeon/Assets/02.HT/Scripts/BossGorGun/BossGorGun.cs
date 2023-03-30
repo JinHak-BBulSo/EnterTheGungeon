@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossGorGun : MonoBehaviour
+public class BossGorGun : Boss
 {
     public string enemyName;
 
@@ -47,13 +47,10 @@ public class BossGorGun : MonoBehaviour
 
     // Var for AttackPattern1
     public bool isPlayerUpside;
-
     public int maxHp;
-    public int currentHp;
     public bool isDead;
 
     //피격시 받는 데미지 체크를 위한 변수
-    int damageTaken;
     public bool isChangeTostatue;
 
 
@@ -230,7 +227,7 @@ public class BossGorGun : MonoBehaviour
         poisonArea_.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Wall")
         {
@@ -244,13 +241,10 @@ public class BossGorGun : MonoBehaviour
             pattrenNum = Random.Range(0, 4);
         }
 
+        base.OnTriggerEnter2D(other);
         // @brief colide player bullet, take damage and apply currentHp.
         if (other.tag == "PlayerBullet")
         {
-            damageTaken = other.GetComponent<PlayerBullet>().bulletDamage;// = other.GetComponent<PlayerBullet>().damage; after setting playerbullet, change this.
-            currentHp -= damageTaken;
-            damageTaken = 0;
-
             if (isChangeTostatue)
             {
                 anim.SetBool("isDestroy", true);

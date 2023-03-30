@@ -5,9 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator doorAni = default;
+    [SerializeField]
     BoxCollider2D doorCol = default;
     bool isOpen = false;
-    void Start()
+    void Awake()
     {
         doorAni = GetComponent<Animator>();
         doorCol = GetComponent<BoxCollider2D>();
@@ -18,24 +19,37 @@ public class Door : MonoBehaviour
 
     public void DoorOpen()
     {
-        doorCol.isTrigger = true;
+        if (doorCol != null)
+        {
+            doorCol.isTrigger = true;
+        }
     }
 
     public void DoorClose()
     {
-        doorCol.isTrigger = false;
+        if (doorCol != null)
+        {
+            doorCol.isTrigger = false;
+        }
         isOpen = false;
-        doorAni.SetBool("isOpen", false);
-        doorAni.SetBool("isClose", true);
+
+        if (doorAni != null)
+        {
+            doorAni.SetBool("isOpen", false);
+            doorAni.SetBool("isClose", true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && !isOpen)
         {
-            doorAni.SetBool("isOpen", true);
-            doorAni.SetBool("isClose", false);
-            isOpen = true;
+            if (doorAni != null)
+            {
+                doorAni.SetBool("isOpen", true);
+                doorAni.SetBool("isClose", false);
+                isOpen = true;
+            }
         }
     }
 }

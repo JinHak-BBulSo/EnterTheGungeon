@@ -21,7 +21,7 @@ public class TitleButtonHandler : BaseButtonHandler, IPointerEnterHandler, IPoin
         {
             case 0:
                 //Debug.Log("게임 플레이 씬 이름을 넣어주세요. 아직 설정하지 않았습니다.");
-                GFunc.LoadScene("03.LobbyScene");
+                GFunc.LoadScene("02.LobbyScene");
                 break;
             case 1:
                 Debug.Log("게임을 이어합니다. 아직 설정하지 않았습니다.");

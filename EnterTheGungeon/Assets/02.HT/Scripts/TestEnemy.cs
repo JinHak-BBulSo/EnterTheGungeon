@@ -464,6 +464,7 @@ public class TestEnemy : MonoBehaviour
                 float rangeXPos = Random.Range(-1, 1);
                 float rangeYPos = Random.Range(-1, 1);
                 GameObject clone_ = Instantiate(coinPrefab_, transform.parent);
+                clone_.GetComponent<Coin>().room = this.belongRoom;
                 clone_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
             }
         }
@@ -474,6 +475,7 @@ public class TestEnemy : MonoBehaviour
             GameObject clone2_ = Instantiate(coinPrefab2_, transform.parent);
             float rangeXPos = Random.Range(-1, 1);
             float rangeYPos = Random.Range(-1, 1);
+            clone2_.GetComponent<Coin>().room = this.belongRoom;
             clone2_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
 
             for (int i = 0; i < dropCoinCount - 5; i++)
@@ -481,6 +483,7 @@ public class TestEnemy : MonoBehaviour
                 rangeXPos = Random.Range(-1, 1);
                 rangeYPos = Random.Range(-1, 1);
                 GameObject clone1_ = Instantiate(coinPrefab1_, transform.parent);
+                clone1_.GetComponent<Coin>().room = this.belongRoom;
                 clone1_.transform.position = new Vector2(transform.position.x + rangeXPos, transform.position.y + rangeYPos);
             }
 

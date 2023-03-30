@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    Room room;
+    public Room room;
     public int coin;
     Transform player;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        room = transform.parent.GetComponent<Room>();
+        player = PlayerManager.Instance.player.transform;
     }
 
     // Update is called once per frame
@@ -28,13 +27,11 @@ public class Coin : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //PlayerManager.Instance.coin += coin;   << 플레이어 매니저나 플레이어 컨트롤러나 게임매니저나 
-            //플레이어가 획득한 코인의 변수를 갖고있는 스크립트에 적용되도록변경
+            // 플레이어가 획득한 코인의 변수를 갖고있는 스크립트에 적용되도록변경
+            // << 플레이어 매니저나 플레이어 컨트롤러나 게임매니저나
+            PlayerManager.Instance.player.playerMoney += coin;    
 
             Destroy(this.gameObject);
         }
-
-
     }
-
 }
