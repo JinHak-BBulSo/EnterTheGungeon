@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 6211844824196051511}
   - component: {fileID: 1789768193099179209}
   - component: {fileID: 109425793556781586}
+  - component: {fileID: 3894324585383741082}
   m_Layer: 5
   m_Name: 03.YariLauncher
   m_TagString: Untagged
@@ -301,6 +302,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3894324585383741082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211844824196051656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfee4ed46ece3ab44bba143a470b5606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDamage: 0
+  bulletShotRange: 0
+  weaponDeley: 0
+  bulletObjs: {fileID: 0}
+  firePos: {fileID: 0}
+  rotateWeapon: {fileID: 0}
+  isReload: 0
+  isAttack: 0
+  countBullet: 0
+  deleyChkVal: 0
+  isEmptyBullet: 0
 --- !u!1 &8770780068144608683
 GameObject:
   m_ObjectHideFlags: 0

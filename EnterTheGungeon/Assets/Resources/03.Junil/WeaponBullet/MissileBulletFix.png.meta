@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 432c18bb15caa944f98c3768b83553e2
+guid: 41e1a0252c7e3bd45ba688666badba76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MissileBullet_0
+      name: MissileBulletFix_0
       rect:
         serializedVersion: 2
-        x: 226
-        y: 374
-        width: 20
-        height: 17
+        x: 161
+        y: 224
+        width: 17
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,29 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dfd852d8493dd84e881ff6a840f7228
-      internalID: 1811644706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MissileBullet_1
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 334
-        width: 20
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14a97dd502e560a40b07794ddfff88ee
-      internalID: -483324776
+      spriteID: d928c8bd793b39b46a2acd2b2776da9a
+      internalID: -710662526
       vertices: []
       indices: 
       edges: []
@@ -169,10 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MissileBullet_0: 1811644706
-      MissileBullet_1: -483324776
-      atlas0 #69194_0: -198837358
-      atlas0 #69194_1: -412314846
+      MissileBulletFix_0: -710662526
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

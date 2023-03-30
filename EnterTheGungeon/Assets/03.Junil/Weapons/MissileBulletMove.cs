@@ -14,6 +14,8 @@ public class MissileBulletMove : PlayerBullet
 
     public bool isOffBullet = false;
 
+
+
     private void Awake()
     {
         
@@ -28,6 +30,8 @@ public class MissileBulletMove : PlayerBullet
         activePos = gameObject.transform.position;
         // KJH ADD
         missileBulletRigid2D.velocity = transform.up * bulletSpeed;
+
+        
 
         if (isOffBullet == true)
         {
@@ -46,17 +50,14 @@ public class MissileBulletMove : PlayerBullet
     void Start()
     {
         isOffBullet = false;
-
-        bulletSpeed = 3f;
-
+                
         //KJH 위치 변경 Update -> Start
-        missileBulletRigid2D.velocity = transform.right * bulletSpeed;
+        missileBulletRigid2D.velocity = transform.up * bulletSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-
 
 
         float Len_ = Vector3.Distance(gameObject.transform.position, activePos);
@@ -67,7 +68,10 @@ public class MissileBulletMove : PlayerBullet
         {
             StartCoroutine(OffBullet());
         }
+
+
     }
+
 
     //! 총알이 총구에서 발사될 때 시작 지점을 지정해주는 함수
     public void SetActivePos()
