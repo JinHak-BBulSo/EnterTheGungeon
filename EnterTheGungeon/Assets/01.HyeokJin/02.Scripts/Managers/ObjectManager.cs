@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectManager : MonoBehaviour
+public class ObjectManager : GSingleton<ObjectManager>
 {
     private string bulletPath = "01.HyeokJin/Prefabs/Bullets";
 
@@ -20,7 +20,7 @@ public class ObjectManager : MonoBehaviour
 
     //  [YHJ] 2023-03-18
     //  @brief Awake
-    private void Awake()
+    public override void Awake()
     {
         bulletPrefabs = Resources.LoadAll<GameObject>(bulletPath);
 
@@ -47,6 +47,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletBasic.Length; index++)
         {
             bulletBasic[index] = Instantiate(bulletPrefabs[0]);
+            bulletBasic[index].transform.parent = transform;
             bulletBasic[index].SetActive(false);
         }
 
@@ -54,6 +55,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeA.Length; index++)
         {
             bulletTypeA[index] = Instantiate(bulletPrefabs[1]);
+            bulletTypeA[index].transform.parent = transform;
             bulletTypeA[index].SetActive(false);
         }
 
@@ -61,6 +63,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeB.Length; index++)
         {
             bulletTypeB[index] = Instantiate(bulletPrefabs[2]);
+            bulletTypeB[index].transform.parent = transform;
             bulletTypeB[index].SetActive(false);
         }
 
@@ -68,6 +71,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeC.Length; index++)
         {
             bulletTypeC[index] = Instantiate(bulletPrefabs[3]);
+            bulletTypeC[index].transform.parent = transform;
             bulletTypeC[index].SetActive(false);
         }
 
@@ -75,6 +79,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeD.Length; index++)
         {
             bulletTypeD[index] = Instantiate(bulletPrefabs[4]);
+            bulletTypeD[index].transform.parent = transform;
             bulletTypeD[index].SetActive(false);
         }
 
@@ -82,6 +87,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeE.Length; index++)
         {
             bulletTypeE[index] = Instantiate(bulletPrefabs[5]);
+            bulletTypeE[index].transform.parent = transform;
             bulletTypeE[index].SetActive(false);
         }
 
@@ -89,6 +95,7 @@ public class ObjectManager : MonoBehaviour
         for (int index = 0; index < bulletTypeF.Length; index++)
         {
             bulletTypeF[index] = Instantiate(bulletPrefabs[6]);
+            bulletTypeF[index].transform.parent = transform;
             bulletTypeF[index].SetActive(false);
         }
     }   //  Generate()

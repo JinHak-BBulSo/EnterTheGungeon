@@ -43,6 +43,7 @@ public class MapGenerator : MonoBehaviour
     private MapNode startMap = new MapNode(new RectInt(0, 0, 22, 22), 0);
     private GameObject horizontalDoor = default;
     private GameObject verticalDoor = default;
+    private GameObject startPoint = default;
 
     [SerializeField]
     private List<GameObject> mapPrefabs = new List<GameObject>();
@@ -98,7 +99,7 @@ public class MapGenerator : MonoBehaviour
         lineComposite.gameObject.SetActive(true); 
 
         ColliderSizeSet();
-        StartCoroutine(AccessRoomLineColEnableFalse(lineComposite));
+        startPoint.GetComponent<StartPoint>().SetPlayer();
     }
 
     private void ColliderSizeSet()
@@ -292,9 +293,12 @@ public class MapGenerator : MonoBehaviour
                         Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
                     break;
             }
-            
+
             // 시작지점 설정의 경우
-            if(i == 0) startMapObj.GetComponent<StartPoint>().SetPlayer();
+            if (i == 0)
+            {
+                startPoint = startMapObj;
+            }
             
             // 보스맵 설정의 경우
             if(i == 1 || i == 2)
@@ -695,11 +699,6 @@ public class MapGenerator : MonoBehaviour
         DrawAccessLine(startRight_, endRight_, middleRight_, middleRight2_, lineWallBottom, distanceIndex_);
     }
 
-    IEnumerator AccessRoomLineColEnableFalse(CompositeCollider2D lineComposite_)
-    {
-        yield return null;
-        lineComposite_.enabled = false;
-    }
     private void DrawAccessLine(Vector2 start_, Vector2 end_, GameObject lineRenderObj_)
     {
         LineRenderer startLine_ = Instantiate(lineRenderObj_).GetComponent<LineRenderer>();

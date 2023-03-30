@@ -16,11 +16,15 @@ public class ObjectPool : MonoBehaviour
     public GameObject poisonAreaPrefab;
     int poisonAreaPoolSize;
 
+    private void Awake()
+    {
+        transform.parent = PlayerManager.Instance.player.transform.parent.parent;
+    }
     void Start()
     {
         pathFinderGridPool = new List<GameObject>();
         pathFinderGridPrefab = Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid");
-        pathFinderGridPoolSize = 2000;
+        pathFinderGridPoolSize = 0;
 
         for (int i = 0; i < pathFinderGridPoolSize; i++)
         {
@@ -62,7 +66,6 @@ public class ObjectPool : MonoBehaviour
         {
             if (!poolName_[i].activeInHierarchy)
             {
-                //poolName_[i].transform.SetParent(transform_);
                 poolName_[i].SetActive(true);
                 return poolName_[i];
             }

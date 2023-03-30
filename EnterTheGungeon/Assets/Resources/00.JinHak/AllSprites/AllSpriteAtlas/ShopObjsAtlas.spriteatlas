@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShopObjsAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1deebc9470085764fa6f3fc40c2ed15e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d22d38cef149a0744bd79ba6dc350b38, type: 2}
+  - {fileID: 21300000, guid: 9cca35fb7dad3a24691120dacb3a6127, type: 2}
+  - {fileID: 21300000, guid: 428884d7dce02784d8d8047eda834b94, type: 2}
+  - {fileID: 21300000, guid: f901871347d6ac24a88c5d5442cc3ad1, type: 2}
+  - {fileID: 21300000, guid: cee4b80dd3056b548957608bf01ac0c0, type: 2}
+  - {fileID: 21300000, guid: 281eb53d63d5146478b0c0baf610f4c3, type: 2}
+  - {fileID: 21300000, guid: 9ff66e8c89b17f6489a7c6ec456d80ce, type: 2}
+  - {fileID: 21300000, guid: b1b166df060939c42a9f317552128d1d, type: 2}
+  - {fileID: 21300000, guid: 9c7238d6c47dc254297995d8972ff370, type: 2}
+  - {fileID: 21300000, guid: 0fb35c2157134ca4787668f7a0aff80f, type: 2}
+  - {fileID: 21300000, guid: 5321e3bd2f25dc14d9deaacbf73a7951, type: 2}
+  m_PackedSpriteNamesToIndex:
+  - ShopMaskObj
+  - ShopTable
+  - ShopCounter
+  - ShopCounterShadow2
+  - ShopCounterShadow1
+  - ShopDoubleBox
+  - ShopShelf2
+  - ShopShelf1
+  - ShopBox
+  - ShopTableShadow
+  - ShopCollection
+  m_RenderDataMap: {}
+  m_Tag: ShopObjsAtlas
+  m_IsVariant: 0

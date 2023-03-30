@@ -21,7 +21,10 @@ public class SPMAWeapon : PlayerWeapon
             isEmptyBullet = true;
             isReload = false;
         }
-
+        if(PlayerManager.Instance.player.gameObject == default)
+        {
+            Debug.Log("스크립트 오더 에러");
+        }
         PlayerManager.Instance.player.nowWeaponHand = weaponHand;
     }
 

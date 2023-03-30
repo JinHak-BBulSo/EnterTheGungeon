@@ -77,9 +77,10 @@ public class TestBullet : MonsterBullets
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        base.OnTriggerEnter2D(other);
+        if (other.tag == "Player" && other.gameObject != null)
         {
             isGorgunBullet = false;
             objectPool.ReturnObject(this.gameObject, 1);
@@ -87,7 +88,7 @@ public class TestBullet : MonsterBullets
         }
         else
         {
-            if (other.tag == "Untagged" && other.tag == "Wall")
+            if (other.tag == "Untagged" && other.tag == "Wall" && other.gameObject != null)
             {
                 isGorgunBullet = false;
                 objectPool.ReturnObject(this.gameObject, 1);

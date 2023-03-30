@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1645561736624841742}
   m_Layer: 2
   m_Name: TestBullet
-  m_TagString: Untagged
+  m_TagString: MonsterBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,6 +65,7 @@ MonoBehaviour:
   angle: 0
   isGorgunBullet: 0
   patternBulletNumber: 0
+  enemyName: 
 --- !u!50 &1683603233405732563
 Rigidbody2D:
   serializedVersion: 4

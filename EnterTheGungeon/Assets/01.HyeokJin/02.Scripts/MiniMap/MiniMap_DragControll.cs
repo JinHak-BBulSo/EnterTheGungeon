@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MiniMap_DragControll : MonoBehaviour, IDragHandler, IScrollHandler
+public class MiniMap_DragControll : MonoBehaviour, IDragHandler, IScrollHandler, IPointerClickHandler
 {
     public Canvas uiCanvas;
 
@@ -43,5 +43,21 @@ public class MiniMap_DragControll : MonoBehaviour, IDragHandler, IScrollHandler
         newScale.y = Mathf.Clamp(newScale.y, minScale, maxScale);
 
         rectTransform.localScale = newScale;
+    }
+
+    public void OnPointerClick(PointerEventData eventData_)
+    {
+        //Vector2 localPoint;
+        //RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData_.position, eventData_.pressEventCamera, out localPoint);
+
+        //Collider2D[] colliders = Physics2D.OverlapPointAll(localPoint);
+        //GameObject player = GameObject.FindWithTag("Player");
+
+        //GameObject clickedObject = eventData_.pointerCurrentRaycast.gameObject;
+
+        //Debug.Log("클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭클릭");
+
+        //Vector3 targetPos = new Vector3(localPoint.x, localPoint.y, 0f);
+        //player.transform.position = targetPos;
     }
 }

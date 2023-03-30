@@ -19,6 +19,7 @@ public class Room : MonoBehaviour
     public bool isRoomClear = false;
     public bool isSpecialRoom = false;
 
+    private GameObject portalObjs = default;
     public virtual void Start()
     {
         monsterobjs = GameObject.Find("MonsterObjs");

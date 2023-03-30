@@ -169,4 +169,15 @@ public class BossGorgunBody : MonoBehaviour
 
     // } add function to animation event 
 
+    public void DestroyStatue()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+
+    public void SpawnEndCheck()
+    {
+        transform.parent.GetComponent<BossGorGun>().IsSpawnEnd = true;
+        GetComponent<Animator>().SetBool("IsSpawnEnd", true);
+    }
+
 }

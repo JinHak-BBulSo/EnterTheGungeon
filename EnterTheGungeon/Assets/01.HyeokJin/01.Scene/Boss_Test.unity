@@ -142,7 +142,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7616583943814699109, guid: d712bc2e89bd47a4b9ac4a6fbccdc488, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7616583943814699109, guid: d712bc2e89bd47a4b9ac4a6fbccdc488, type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,7 +389,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &555370473
 GameObject:
@@ -588,13 +588,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &984509171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3869134355557257197, guid: 8c87271738c90744e88f1ab7a60ffd4b, type: 3}
-  m_PrefabInstance: {fileID: 3869134355468330581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &998695499
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,34 +881,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1639649366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3869134355557257196, guid: 8c87271738c90744e88f1ab7a60ffd4b, type: 3}
   m_PrefabInstance: {fileID: 3869134355468330581}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1639649369
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984509171}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fdbdd4eac4a4774b902087bbadda28a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1939792780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1009,6 +983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6837520042866313671, guid: 9a3602c708a81324c8bb31aef1114c55, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6837520042866313673, guid: 9a3602c708a81324c8bb31aef1114c55, type: 3}
       propertyPath: m_Name
       value: MapObjs
@@ -1044,7 +1022,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3869134355468330581
 PrefabInstance:
@@ -1053,10 +1031,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 572522632}
     m_Modifications:
-    - target: {fileID: 1639649368, guid: 8c87271738c90744e88f1ab7a60ffd4b, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3869134355557257196, guid: 8c87271738c90744e88f1ab7a60ffd4b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1120,7 +1094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4255710072337948582, guid: be09325c6b7d7e74e85da99598055a4b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4255710072337948582, guid: be09325c6b7d7e74e85da99598055a4b, type: 3}
       propertyPath: m_LocalPosition.x

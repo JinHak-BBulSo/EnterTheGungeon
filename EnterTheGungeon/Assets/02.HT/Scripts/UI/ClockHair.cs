@@ -80,7 +80,6 @@ public class ClockHair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (deadScreen.isSideSizeCheck)
         {
 
@@ -122,11 +121,9 @@ public class ClockHair : MonoBehaviour
 
                 if (wobblePoint == 0)
                 {
-                    Debug.Log("!!");
                     transform.position = Vector2.MoveTowards(transform.position, targetPos1, 1 * Time.deltaTime);
                     if (transform.position == targetPos1)
                     {
-                        Debug.Log("!!!");
                         wobblePoint = 1;
                     }
                 }
@@ -157,6 +154,7 @@ public class ClockHair : MonoBehaviour
 
         //clockHair
         HandsRotateAndSetPosition();
+
     }
 
     void HandsRotateAndSetPosition()
