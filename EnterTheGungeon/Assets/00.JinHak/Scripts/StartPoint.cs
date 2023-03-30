@@ -6,7 +6,8 @@ public class StartPoint : MonoBehaviour
 {
     public void SetPlayer()
     {
-        GameObject.FindObjectOfType<PlayerController>().transform.position =
-            transform.position + new Vector3(-4, 0, 0);
+        PlayerManager.Instance.player.transform.position =
+            transform.position + new Vector3(0, -4, 0);
+        Camera.main.gameObject.transform.position = PlayerManager.Instance.player.transform.position;
     }
 }

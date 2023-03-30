@@ -47,29 +47,29 @@ AnimationClip:
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
-    - time: 0
+    - time: 0.09090909
       value: {fileID: 21300000, guid: 5dd169c0719ca3d47a9fd4ee801bb611, type: 3}
-    - time: 0.1
+    - time: 0.18181819
       value: {fileID: 21300000, guid: 89e25996882eba044ba3486b6470db93, type: 3}
-    - time: 0.2
+    - time: 0.27272728
       value: {fileID: 21300000, guid: 1390ee1ff4f58c04c9179592981978e2, type: 3}
-    - time: 0.3
+    - time: 0.36363637
       value: {fileID: 21300000, guid: 0fac506ae0dac164a8aa34268d88d5a3, type: 3}
-    - time: 0.4
+    - time: 0.45454547
       value: {fileID: 21300000, guid: 8272242f679aff94daebbb3ca13568c3, type: 3}
-    - time: 0.5
+    - time: 0.54545456
       value: {fileID: 21300000, guid: be1c9acf4f67fd445b7a9ba5458bcaca, type: 3}
-    - time: 0.6
+    - time: 0.6363636
       value: {fileID: 21300000, guid: fb283a8bb437bb64e8053e11f87b0395, type: 3}
-    - time: 0.7
+    - time: 0.72727275
       value: {fileID: 21300000, guid: 07c343484368b514abac89ae2cea0657, type: 3}
-    - time: 0.8
+    - time: 0.8181818
       value: {fileID: 21300000, guid: 48b48383e7f5de644b3a4eed983ad704, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_SampleRate: 10
+  m_SampleRate: 11
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}

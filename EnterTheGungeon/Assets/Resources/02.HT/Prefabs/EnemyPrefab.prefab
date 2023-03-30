@@ -61,6 +61,7 @@ MonoBehaviour:
   isMove: 0
   completePath: []
   isPathFind: 0
+  belongRoom: {fileID: 0}
 --- !u!50 &8990097154586097489
 Rigidbody2D:
   serializedVersion: 4

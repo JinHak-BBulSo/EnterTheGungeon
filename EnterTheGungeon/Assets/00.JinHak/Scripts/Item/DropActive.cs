@@ -5,8 +5,9 @@ using UnityEngine;
 public class DropActive : DropItem
 {
     public GameObject activeitem = default;
-    public void GetActive()
+
+    public override void GetDropItem()
     {
-        //PlayerInvenList.activeItems.Add(this.item);
+        InventoryManager.Instance.inventoryControl.AddItem(this);
     }
 }

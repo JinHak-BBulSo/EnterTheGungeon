@@ -8,7 +8,7 @@ public class GunGeonEntrance : MonoBehaviour
     {
         if(collision.tag == "Player" && collision.gameObject != null)
         {
-            GFunc.LoadScene("05.StageScene");
+            LoadingManager.Instance.LoadLoadingScene("05.StageScene");
         }
     }
 }

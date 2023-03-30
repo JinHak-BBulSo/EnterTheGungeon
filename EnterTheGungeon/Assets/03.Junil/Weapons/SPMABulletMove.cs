@@ -18,8 +18,9 @@ public class SPMABulletMove : PlayerBullet
         spmaBulletRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
         spmaAni = gameObject.GetComponentMust<Animator>();
     }
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         activePos = gameObject.transform.position;
         // KJH ADD
         spmaBulletRigid2D.velocity = transform.up * bulletSpeed;
@@ -49,9 +50,6 @@ public class SPMABulletMove : PlayerBullet
     // Update is called once per frame
     void Update()
     {
-        
-
-        
 
         float Len_ = Vector3.Distance(gameObject.transform.position, activePos);
 
@@ -60,10 +58,32 @@ public class SPMABulletMove : PlayerBullet
         // KJH 수정
         if(bulletRange <= Len_ && !isOffBullet)
         {
-            OnOffBullet();
+            StartCoroutine(OffBullet());
         }
     }
 
+    //! 총알이 총구에서 발사될 때 시작 지점을 지정해주는 함수
+    public void SetActivePos()
+    {
+        activePos = gameObject.transform.position;
+
+    }
+
+    //IEnumerator OffBulletCoroutine = default;
+
+    //void StartOffBullet()
+    //{
+    //    OffBulletCoroutine = OffBullet();
+    //    StartCoroutine(OffBullet());
+    //}
+
+    //void StopOffBullet()
+    //{
+    //    if(OffBulletCoroutine != null)
+    //    {
+    //        StopCoroutine(OffBulletCoroutine);
+    //    }
+    //}
 
     public override IEnumerator OffBullet()
     {
@@ -73,7 +93,7 @@ public class SPMABulletMove : PlayerBullet
 
         spmaAni.SetBool("isOffBullet", isOffBullet);
 
-        yield return new WaitForSeconds(0.4f); 
+        yield return new WaitForSeconds(0.2f); 
 
         this.gameObject.SetActive(false);
 
