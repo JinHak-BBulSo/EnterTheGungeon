@@ -247,6 +247,7 @@ public class PlayerController : MonoBehaviour
 
         topCollider.SetActive(true);
 
+        playerMove.SetPlayerMove();
         bottomCollider.ResettingCollider();
         playerAttack.SetPlayerAttack();
     }

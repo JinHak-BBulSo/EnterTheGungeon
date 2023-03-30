@@ -20,22 +20,6 @@ public class PlayerMove : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        
-        playerRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
-        playerAni = gameObject.GetComponentMust<Animator>();
-
-        GameObject rotateObjs_ = gameObject.transform.GetChild(0).gameObject;
-
-        //playerAttack = rotateObjs_.transform.GetChild(0).gameObject.GetComponentMust<PlayerAttack>();
-
-        isNowArmor = false;
-        isDodgeing = false;
-        isReDodgeing = false;
-        playerSpeed = 5f;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +27,24 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    //! 플레이어 움직임에 대한 초기 셋팅
+    public void SetPlayerMove()
+    {
+        playerRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
+        playerAni = gameObject.GetComponentMust<Animator>();
+
+        playerRigid2D.constraints = RigidbodyConstraints2D.None;
+        playerRigid2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+        GameObject rotateObjs_ = gameObject.transform.GetChild(0).gameObject;
+
+
+        isNowArmor = false;
+        isDodgeing = false;
+        isReDodgeing = false;
+        playerSpeed = 5f;
+    }
     
 
     //! 플레이어 좌우 상하 움직임을 담당하는 함수
