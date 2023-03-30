@@ -19,7 +19,7 @@ public class Room : MonoBehaviour
     public bool isRoomClear = false;
     public bool isSpecialRoom = false;
 
-    void Start()
+    public virtual void Start()
     {
         monsterobjs = GameObject.Find("MonsterObjs");
         for (int i = 0; i < enemy.Count; i++)
@@ -40,7 +40,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    void Update()
+    public virtual void Update()
     {
         if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {

@@ -528,9 +528,9 @@ TextureImporter:
       name: gorgun1_22
       rect:
         serializedVersion: 2
-        x: 943
+        x: 946
         y: 372
-        width: 75
+        width: 78
         height: 79
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -990,10 +990,10 @@ TextureImporter:
       name: gorgun1_44
       rect:
         serializedVersion: 2
-        x: 912
-        y: 243
-        width: 111
-        height: 111
+        x: 943
+        y: 250
+        width: 80
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1449,27 +1449,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gorgun1_66
-      rect:
-        serializedVersion: 2
-        x: 957
-        y: 232
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62f5b4afa84994748adbeaa2130fa8c6
-      internalID: 1097149629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: gorgun1_67
       rect:
         serializedVersion: 2
@@ -1827,48 +1806,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gorgun1_84
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 217
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c716eae6408603647ba969c4e3fac4bb
-      internalID: 1740225837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gorgun1_85
-      rect:
-        serializedVersion: 2
-        x: 972
-        y: 209
-        width: 26
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ed2feb2a8da7d1409b1f5ad2acfa78c
-      internalID: -1133940548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: gorgun1_86
       rect:
         serializedVersion: 2
@@ -1969,48 +1906,6 @@ TextureImporter:
       bones: []
       spriteID: 7468907fa038148429c20678ae9f9c32
       internalID: -1897244695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gorgun1_92
-      rect:
-        serializedVersion: 2
-        x: 999
-        y: 196
-        width: 9
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4de64c8f66f724542901e34b361f1d46
-      internalID: -1693012501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gorgun1_93
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 202
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9422c15afdbab894eab80ba206cea0b3
-      internalID: -376369476
       vertices: []
       indices: 
       edges: []
@@ -3174,10 +3069,10 @@ TextureImporter:
       name: gorgun1_150
       rect:
         serializedVersion: 2
-        x: 778
-        y: 1
-        width: 75
-        height: 74
+        x: 786
+        y: 0
+        width: 67
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3691,6 +3586,27 @@ TextureImporter:
       bones: []
       spriteID: b819a7c78bca21547b56865291e4232a
       internalID: -1572273963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gorgun1_14
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 146
+        width: 95
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f14aa62cafda04ab1861133d8a3a07
+      internalID: -2090312233
       vertices: []
       indices: 
       edges: []

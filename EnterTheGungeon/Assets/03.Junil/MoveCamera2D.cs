@@ -22,8 +22,6 @@ public class MoveCamera2D : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        
-
 
         GameObject gameObjs_ = GameObject.Find("GameObjs");
 

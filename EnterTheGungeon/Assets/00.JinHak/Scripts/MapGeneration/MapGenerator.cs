@@ -239,6 +239,11 @@ public class MapGenerator : MonoBehaviour
 
             float offsetHorizontal = startMap.room.roomSize.x / 2 + 2;
             float offsetVertical = startMap.room.roomSize.y / 2 + 2;
+            if(i == 1 || i == 2)
+            {
+                offsetHorizontal += 23.5f;
+                offsetVertical += 23.5f;
+            }
 
             switch (accessRoomIndex_[ran_])
             {
@@ -250,7 +255,8 @@ public class MapGenerator : MonoBehaviour
 
                     start_ = startMap.rightCenter;
                     end_ = mapNodeArray[0].leftCenter;
-                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    if(!(i == 1 || i == 2))
+                        Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
                     break;
                 case 4:
                     mapCreatePoint_ = new Vector2(mapNodeArray[4].leftCenter.x - offsetHorizontal, mapNodeArray[4].nodePosition.y);
@@ -260,7 +266,8 @@ public class MapGenerator : MonoBehaviour
 
                     start_ = startMap.rightCenter;
                     end_ = mapNodeArray[4].leftCenter;
-                    Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
+                    if (!(i == 1 || i == 2))
+                        Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
                     break;
                 case 8:
                     mapCreatePoint_ = new Vector2(mapNodeArray[8].nodePosition.x, mapNodeArray[8].bottomCenter.y - offsetVertical);
@@ -270,7 +277,8 @@ public class MapGenerator : MonoBehaviour
 
                     start_ = startMap.topCenter;
                     end_ = mapNodeArray[8].bottomCenter;
-                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    if (!(i == 1 || i == 2))
+                        Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
                     break;
                 case 15:
                     mapCreatePoint_ = new Vector2(mapNodeArray[15].nodePosition.x, mapNodeArray[15].topCenter.y + offsetVertical);
@@ -280,37 +288,98 @@ public class MapGenerator : MonoBehaviour
 
                     start_ = mapNodeArray[15].topCenter;
                     end_ = startMap.bottomCenter;
-                    Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
+                    if (!(i == 1 || i == 2))
+                        Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
                     break;
             }
-
+            
+            // 시작지점 설정의 경우
             if(i == 0) startMapObj.GetComponent<StartPoint>().SetPlayer();
+            
+            // 보스맵 설정의 경우
+            if(i == 1 || i == 2)
+            {
+                BossRoom bossRoom_ = startMapObj.GetComponent<BossRoom>();
+                if(accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+                {
+                    bossRoom_.roomEntrances[2].SetActive(true);
+                }
+                else if (accessRoomIndex_[ran_] == 8)
+                {
+                    bossRoom_.roomEntrances[0].SetActive(true);
+                }
+                else
+                {
+                    bossRoom_.roomEntrances[1].SetActive(true);
+                }
+            }
+
             DrawAccessLine(start_, end_, accessLine);
 
-            // x 포지션 값이 같은 경우
-            if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+            if (i == 1 || i == 2)
             {
-                startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
-                startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
+                // x 포지션 값이 같은 경우
+                if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+                {
+                    start_ += new Vector2(23.5f * 0.65f + 2f, 0);
+                    startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
+                    startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
 
-                endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
-                endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
+                    endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
+                    endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
 
-                DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-                DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                    DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                    DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                }
+                // y 포지션 값이 같은 경우
+                else
+                {
+                    if (accessRoomIndex_[ran_] == 8)
+                    {
+                        start_ += new Vector2(0, 23.5f * 0.65f + 2f);
+                    }
+                    else
+                    {
+                        end_ -= new Vector2(0, 23.5f * 0.65f + 2f);
+                    }
+                    startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
+                    startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
+
+                    endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
+                    endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
+
+                    DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                    DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                }
             }
-            // y 포지션 값이 같은 경우
             else
             {
-                startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
-                startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
+                // x 포지션 값이 같은 경우
+                if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+                {
+                    startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
+                    startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
 
-                endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
-                endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
+                    endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
+                    endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
 
-                DrawAccessLine(startLeft_, endLeft_, lineWallTop);
-                DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                    DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                    DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                }
+                // y 포지션 값이 같은 경우
+                else
+                {
+                    startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
+                    startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
+
+                    endLeft_ = new Vector2(end_.x - 1, end_.y - 0.65f);
+                    endRight_ = new Vector2(end_.x + 1, end_.y - 0.65f);
+
+                    DrawAccessLine(startLeft_, endLeft_, lineWallTop);
+                    DrawAccessLine(startRight_, endRight_, lineWallBottom);
+                }
             }
+
             accessRoomIndex_.RemoveAt(ran_);
         }
     }

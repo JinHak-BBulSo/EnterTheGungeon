@@ -34,6 +34,7 @@ solve: enemy script에서 bullet을 생성 할 때 원하는 방향으로 bullet
 2023/03/23 / Add Inven Tab Menu    
 
 
+
 ## [KJH]    
 2023/03/14 타일맵의 게임오브젝트 브러쉬 맵툴 준비    
 2023/03/15 맵툴 활용 타일맵 제작    

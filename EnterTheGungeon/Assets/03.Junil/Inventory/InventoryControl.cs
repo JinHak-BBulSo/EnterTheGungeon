@@ -6,38 +6,27 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour
 {
-
     
-
-    // { [Junil] 무기 프리팹을 가져와서 넣는 배열
-    // 무기 프리팹 저장하는 배열
-    public GameObject[] playerWeaponPrefabs = default;
-    // 무기 이미지를 저장하는 배열
-    public Sprite[] playerWeaponSpriteObjs = default;
-    // } [Junil] 무기 프리팹을 가져와서 넣는 배열
-
     // 인벤토리가 열려있는지의 대한 유무
     public bool isOpenInven = false;
+
 
     private void Awake()
     {
         isOpenInven = false;
-
-        // 플레이어 무기 프리팹과 그 무기의 이미지를 배열에 저장한다.
-        //playerWeaponPrefabs = Resources.LoadAll<GameObject>("03.Junil/Prefabs/PlayerWeapons");
-        //playerWeaponSpriteObjs = Resources.LoadAll<Sprite>("03.Junil/Weapon/ItemUseWeapons");
+                
     }
 
     // Start is called before the first frame update
     void Start()
     {
 
-        //AddFirstWeapon(0);
-        // 인벤토리를 꺼버린다.
-        InventoryManager.Instance.inventoryDataObjs.SetActive(false);
-
+        AddFirstItem();
         // 인벤토리 매니저 호출
         InventoryManager.Instance.inventoryControl = this;
+        InventoryManager.Instance.inventoryDataObjs.SetActive(false);
+        GFunc.Log("인벤 컨트롤 호출");
+        
 
     }
 
@@ -103,17 +92,7 @@ public class InventoryControl : MonoBehaviour
 
         }
 
-
-        // 탭에서 상세 창으로 넘어가는 조건
-        //if (Input.GetKeyDown(KeyCode.RightArrow))
-        //{
-        //    isOutTabMenu = true;
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-        //    isOutTabMenu = false;
-        //}
+                
     }
 
     public void OnViewTabMenuControl()
@@ -121,6 +100,42 @@ public class InventoryControl : MonoBehaviour
         // 인벤토리 탭을 어떤 걸 선택했는지 보여줌
         InventoryManager.Instance.inventoryDatas.invenListData.TabInvenMenuVal(
             InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt);
+    }
+
+
+    public void AddFirstItem()
+    {
+
+        int itemListCnt_ = 0;
+        Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
+        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
+            ("03.Junil/Prefabs/PlayerWeapons/01.SPMAWeapon");
+
+
+        itemListCnt_ = InventoryManager.Instance.inventoryDatas.weaponListCnt;
+        Slot weaponSlot = InventoryManager.Instance.inventoryDatas.weaponSlots[itemListCnt_];
+        
+        weaponSlot.slotItem = SPMAWeapon_;
+        weaponSlot.SetSlotData();
+        weaponSlot.gameObject.transform.parent.gameObject.SetActive(true);
+
+        // 무기 오브젝트가 들어갈 플레이어의 PlayerAttack 스크립트
+        PlayerAttack weaponObjs_ = PlayerManager.Instance.player.playerAttack;
+
+        // playerWeapons 리스트에 무기 추가
+        weaponObjs_.playerWeapons.Add(
+            Instantiate(SPMAWeaponPrefab,
+            weaponObjs_.weaponObjs.transform.position,
+            Quaternion.identity,
+            weaponObjs_.weaponObjs.transform));
+
+        // playerWeaponScript 리스트에 무기 스크립트 추가
+        weaponObjs_.playerWeaponScript.Add(
+            weaponObjs_.playerWeapons[itemListCnt_].GetComponentMust<PlayerWeapon>());
+
+        itemListCnt_++;
+        InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
+
     }
 
     public void AddItem(DropItem dropItem_)
@@ -136,12 +151,26 @@ public class InventoryControl : MonoBehaviour
 
                 weaponSlot.slotItem = dropItem_.item;
                 weaponSlot.SetSlotData();
-                weaponSlot.gameObject.SetActive(true);
-                Instantiate(dropGun_.dropWeapon, PlayerManager.Instance.player.playerAttack.weaponObjs.transform.position,
-                    Quaternion.identity,
-                    PlayerManager.Instance.player.playerAttack.weaponObjs.transform);
+                weaponSlot.gameObject.transform.parent.gameObject.SetActive(true);
 
-                itemListCnt_++;
+                // 무기 오브젝트가 들어갈 플레이어의 PlayerAttack 스크립트
+                PlayerAttack weaponObjs_ = PlayerManager.Instance.player.playerAttack;
+
+                // playerWeapons 리스트에 무기 추가
+                weaponObjs_.playerWeapons.Add(
+                    Instantiate(dropGun_.dropWeapon,
+                    weaponObjs_.weaponObjs.transform.position,
+                    Quaternion.identity,
+                    weaponObjs_.weaponObjs.transform));
+
+                // playerWeaponScript 리스트에 무기 스크립트 추가
+                weaponObjs_.playerWeaponScript.Add(
+                    weaponObjs_.playerWeapons[itemListCnt_].GetComponentMust<PlayerWeapon>());
+
+                weaponObjs_.playerWeapons[itemListCnt_].SetActive(false);
+
+
+               itemListCnt_++;
                 InventoryManager.Instance.inventoryDatas.weaponListCnt = itemListCnt_;
                 break;
 
@@ -152,7 +181,7 @@ public class InventoryControl : MonoBehaviour
 
                 activeSlot.slotItem = dropItem_.item;
                 activeSlot.SetSlotData();
-                activeSlot.gameObject.SetActive(true);
+                activeSlot.gameObject.transform.parent.gameObject.SetActive(true);
                 PlayerManager.Instance.player.playerActiveItem = dropActive_.activeitem.GetComponent<ActiveItem>();
 
                 itemListCnt_++;
@@ -165,7 +194,7 @@ public class InventoryControl : MonoBehaviour
 
                 passiveSlot.slotItem = dropItem_.item;
                 passiveSlot.SetSlotData();
-                passiveSlot.gameObject.SetActive(true);
+                passiveSlot.gameObject.transform.parent.gameObject.SetActive(true);
 
                 itemListCnt_++;
                 InventoryManager.Instance.inventoryDatas.passiveListCnt = itemListCnt_;
@@ -174,4 +203,6 @@ public class InventoryControl : MonoBehaviour
 
 
     }   // AddItem()
+
+
 }

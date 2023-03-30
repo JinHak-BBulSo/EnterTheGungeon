@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using System.IO;
+
 public class DeadScreen : MonoBehaviour
 {
     Transform background;
@@ -45,7 +47,18 @@ public class DeadScreen : MonoBehaviour
     public bool isTest;
     GameObject gamePause;
     GameObject ammonomicon;
-    // Start is called before the first frame update
+
+
+    // { Var for ScreenShot
+    int resolutionWidth;
+    int resolutionHeight;
+    string path;
+
+    bool isCaptured;
+
+    public Sprite screenShot;
+    // } Var for ScreenShot
+
     void Start()
     {
         gamePause = transform.parent.GetChild(2).gameObject;
@@ -76,64 +89,95 @@ public class DeadScreen : MonoBehaviour
 
         //} animation
 
+        resolutionWidth = Screen.width;
+        resolutionHeight = Screen.height;
+        path = Application.dataPath + "/Resources/02.HT/ScreenShot/";
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        ImageSizeSet();
-
-        if (!isColorChange)
-        {
-            backgroundColorRValue = background.GetComponent<Image>().color.r;
-            backgroundColorGValue = background.GetComponent<Image>().color.g;
-            backgroundColorBValue = background.GetComponent<Image>().color.b;
-
-            backgroundColorRValue -= chageColorSpeed * Time.deltaTime;
-            backgroundColorGValue -= chageColorSpeed * Time.deltaTime;
-            backgroundColorBValue -= chageColorSpeed * Time.deltaTime;
-            background.GetComponent<Image>().color = new Color(backgroundColorRValue, backgroundColorGValue, backgroundColorBValue, 0.5f);
-            if (backgroundColorRValue <= 0)
-            {
-                isColorChange = true;
-            }
-        }
-
-        if (!isSideSizeCheck)
-        {
-            upsideHeight = upside.sizeDelta.y;
-            downsideHeight = downside.sizeDelta.y;
-
-            upsideHeight += spreadSizeSpeed * Time.deltaTime;
-            downsideHeight += spreadSizeSpeed * Time.deltaTime;
-
-            upside.sizeDelta = new Vector2(0, upsideHeight);
-            downside.sizeDelta = new Vector2(0, downsideHeight);
-
-
-            if (upsideHeight >= 214)
-            {
-                isSideSizeCheck = true;
-            }
-        }
-
         if (isTest)
         {
-            background.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
-            upside.sizeDelta = new Vector2(0, 0);
-            downside.sizeDelta = new Vector2(0, 0);
-            isColorChange = false;
-            isSideSizeCheck = false;
+
+            if (!isCaptured)
+            {
+                cameraMain.GetComponent<MoveCamera2D>().isPlayerDie = true;
+                if (cameraMain.GetComponent<MoveCamera2D>().isFocus)
+                {
+                    ScreenShotDeadScreen();
+                    //Testtesttest();
+                }
+
+            }
+            else
+            {
+
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+
+                ImageSizeSet();
+
+                if (!isColorChange)
+                {
+                    backgroundColorRValue = background.GetComponent<Image>().color.r;
+                    backgroundColorGValue = background.GetComponent<Image>().color.g;
+                    backgroundColorBValue = background.GetComponent<Image>().color.b;
+
+                    backgroundColorRValue -= chageColorSpeed * Time.deltaTime;
+                    backgroundColorGValue -= chageColorSpeed * Time.deltaTime;
+                    backgroundColorBValue -= chageColorSpeed * Time.deltaTime;
+                    background.GetComponent<Image>().color = new Color(backgroundColorRValue, backgroundColorGValue, backgroundColorBValue, 0.5f);
+                    if (backgroundColorRValue <= 0)
+                    {
+                        isColorChange = true;
+                    }
+                }
+
+                if (!isSideSizeCheck)
+                {
+                    upsideHeight = upside.sizeDelta.y;
+                    downsideHeight = downside.sizeDelta.y;
+
+                    upsideHeight += spreadSizeSpeed * Time.deltaTime;
+                    downsideHeight += spreadSizeSpeed * Time.deltaTime;
+
+                    upside.sizeDelta = new Vector2(0, upsideHeight);
+                    downside.sizeDelta = new Vector2(0, downsideHeight);
 
 
-            isTest = false;
+                    if (upsideHeight >= 214)
+                    {
+                        isSideSizeCheck = true;
+                    }
+                }
+
+                /* if (isTest)
+                {
+                    background.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
+                    upside.sizeDelta = new Vector2(0, 0);
+                    downside.sizeDelta = new Vector2(0, 0);
+                    isColorChange = false;
+                    isSideSizeCheck = false;
+
+
+                    isTest = false;
+                } */
+
+                if (isShotEnd)
+                {
+                    StartCoroutine(LoadAmmonomicon());
+                }
+
+            }
         }
 
-        if (isShotEnd)
-        {
-            StartCoroutine(LoadAmmonomicon());
-        }
     }
+
+    public Camera cameraMain;
 
 
     void ImageSizeSet()
@@ -156,5 +200,25 @@ public class DeadScreen : MonoBehaviour
         gamePause.SetActive(true);
         yield return null;
         ammonomicon.SetActive(true);
+    }
+
+    public void ScreenShotDeadScreen()
+    {
+        DirectoryInfo dir_ = new DirectoryInfo(path);
+        if (!dir_.Exists)
+        {
+            Directory.CreateDirectory(path);
+        }
+        string screenShotName_;
+        screenShotName_ = path + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png";
+
+
+        ScreenCapture.CaptureScreenshot(screenShotName_);
+
+        Texture2D texture2D_ = ScreenCapture.CaptureScreenshotAsTexture();
+
+        screenShot = Sprite.Create(texture2D_, new Rect(300, 150, 600, 300), new Vector2(0.5f, 0.5f));
+
+        isCaptured = true;
     }
 }
