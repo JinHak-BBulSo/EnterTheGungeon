@@ -7,15 +7,19 @@ public class UIController : MonoBehaviour
 {
     public static GameObject gamePause = default;
     public static bool boolGamePause = default;
+    public static GameObject optionMenu = default;
 
-    public GameObject optionMenu = default;
+    public GameObject Inventory = default;
 
     // Start is called before the first frame update
     void Start()
     {
-        gamePause = transform.GetChild(0).gameObject;
+        gamePause = transform.GetChild(1).gameObject;
+        Inventory = transform.GetChild(2).gameObject;
+        optionMenu = transform.GetChild(3).gameObject;
         boolGamePause = false;
         gamePause.SetActive(false);
+        optionMenu.SetActive(false);
         //optionMenu.SetActive(false);
     }
 
@@ -23,11 +27,18 @@ public class UIController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && boolGamePause == false)
         {
             boolGamePause = true;
             gamePause.SetActive(true);
             Time.timeScale = 0.0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && Inventory.activeSelf == true && boolGamePause == true ||
+            Input.GetKeyDown(KeyCode.X) && Inventory.activeSelf == true && boolGamePause == true)
+        {
+            InventoryControl.isOpenInven = false;
+            Inventory.SetActive(false);
         }
     }
 
@@ -45,8 +56,8 @@ public class UIController : MonoBehaviour
     IEnumerator UIOptionScaleActive()
     {
         optionMenu.SetActive(true);
-        optionMenu.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack).SetAutoKill();
-        OptionButtonController.detailOptionActive = true;
-        yield return new WaitForSeconds(0.3f);
+        Tween OptionTween = optionMenu.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack).SetUpdate(UpdateType.Normal, true).SetAutoKill();
+        //OptionButtonController.detailOptionActive = true;
+        yield return OptionTween.WaitForCompletion();
     }
 }

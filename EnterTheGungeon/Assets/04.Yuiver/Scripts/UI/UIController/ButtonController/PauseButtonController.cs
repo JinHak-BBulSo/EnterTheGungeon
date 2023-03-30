@@ -9,6 +9,8 @@ public class PauseButtonController : MonoBehaviour
     [SerializeField]
     List<PauseButtonHandler> buttonHandlers = default;
 
+    public UIController uIController = default;
+
     private int buttonIndex = -1;
 
     // Start is called before the first frame update
@@ -29,13 +31,39 @@ public class PauseButtonController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && InventoryControl.isOpenInven == false)
         {
             ActivateSingleButton(LimitKeyBoardIndex(buttonIndex + (-1)));
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && InventoryControl.isOpenInven == false)
         {
             ActivateSingleButton(LimitKeyBoardIndex(buttonIndex + 1));
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && InventoryControl.isOpenInven == false ||
+            (Input.GetKeyDown(KeyCode.Return)) && InventoryControl.isOpenInven == false)
+        {
+            switch (buttonIndex)
+            {
+                case 0:
+                    UIController.ResumeGame();
+                    break;
+                case 1:
+                    AmmonomiconActive();
+                    break;
+                case 2:
+                    uIController.OptionActive();
+                    break;
+                case 3:
+                    Debug.Log("빠른재시작인데 여기에 어떻게 활성화 조건을 걸지 모르겠음");
+                    //GFunc.LoadScene("");
+                    break;
+                case 4:
+                    GFunc.QuitThisGame();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -77,17 +105,15 @@ public class PauseButtonController : MonoBehaviour
     public void AmmonomiconActive()
     {
 
-        if (InventoryControl.isOpenInven == true)
-        {
-            Time.timeScale = 1.0f;
-            InventoryControl.isOpenInven = false;
-            InventoryManager.Instance.inventoryDataObjs.SetActive(false);
-            return;
-        }
+        //if (InventoryControl.isOpenInven == true)
+        //{
+        //    Time.timeScale = 1.0f;
+        //    InventoryControl.isOpenInven = false;
+        //    InventoryManager.Instance.inventoryDataObjs.SetActive(false);
+        //    return;
+        //}
 
-        Time.timeScale = 0.0f;
         InventoryControl.isOpenInven = true;
-        GFunc.Log("눌림");
         InventoryManager.Instance.inventoryDataObjs.SetActive(true);
         // 인벤토리 초기값 설정
         InventoryManager.Instance.inventoryDatas.invenListData.OnFirstViewTab();
