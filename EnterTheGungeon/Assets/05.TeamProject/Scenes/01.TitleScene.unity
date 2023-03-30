@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 291272958}
   - component: {fileID: 291272957}
   m_Layer: 0
-  m_Name: FPS_TESTER
+  m_Name: UI_DataInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,10 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7476994e59dd66f4798874c44d941b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fontSize: 15
-  color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  width: 0
-  height: 0
 --- !u!4 &291272958
 Transform:
   m_ObjectHideFlags: 0
