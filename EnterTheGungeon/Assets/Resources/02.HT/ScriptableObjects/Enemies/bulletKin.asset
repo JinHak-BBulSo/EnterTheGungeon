@@ -21,3 +21,4 @@ MonoBehaviour:
   enemyAnim: {fileID: 9100000, guid: 15f2d36623f1c4640b455ca8c953d097, type: 2}
   enemyHp: 15
   enemyMoveSpeed: 0.3
+  dropCoinCount: 2

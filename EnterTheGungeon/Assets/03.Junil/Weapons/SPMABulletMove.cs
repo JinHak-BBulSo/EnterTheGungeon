@@ -50,9 +50,6 @@ public class SPMABulletMove : PlayerBullet
     // Update is called once per frame
     void Update()
     {
-        
-
-        
 
         float Len_ = Vector3.Distance(gameObject.transform.position, activePos);
 
@@ -61,7 +58,7 @@ public class SPMABulletMove : PlayerBullet
         // KJH 수정
         if(bulletRange <= Len_ && !isOffBullet)
         {
-            StartOffBullet();
+            StartCoroutine(OffBullet());
         }
     }
 
@@ -72,21 +69,21 @@ public class SPMABulletMove : PlayerBullet
 
     }
 
-    IEnumerator OffBulletCoroutine = default;
+    //IEnumerator OffBulletCoroutine = default;
 
-    void StartOffBullet()
-    {
-        OffBulletCoroutine = OffBullet();
-        StartCoroutine(OffBulletCoroutine);
-    }
+    //void StartOffBullet()
+    //{
+    //    OffBulletCoroutine = OffBullet();
+    //    StartCoroutine(OffBullet());
+    //}
 
-    void StopOffBullet()
-    {
-        if(OffBulletCoroutine != null)
-        {
-            StopCoroutine(OffBulletCoroutine);
-        }
-    }
+    //void StopOffBullet()
+    //{
+    //    if(OffBulletCoroutine != null)
+    //    {
+    //        StopCoroutine(OffBulletCoroutine);
+    //    }
+    //}
 
     public override IEnumerator OffBullet()
     {
@@ -96,7 +93,7 @@ public class SPMABulletMove : PlayerBullet
 
         spmaAni.SetBool("isOffBullet", isOffBullet);
 
-        yield return new WaitForSeconds(0.4f); 
+        yield return new WaitForSeconds(0.2f); 
 
         this.gameObject.SetActive(false);
 

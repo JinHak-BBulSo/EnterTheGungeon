@@ -2,12 +2,16 @@ using SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
+    public WeaponReload weaponReload = default;
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
-    private Canvas playerSort = default;
+    public Image playerImage = default;
+
     public ActiveItem playerActiveItem = default;
     public ActiveItem PlayerActiveItem
     {
@@ -64,15 +68,22 @@ public class PlayerController : MonoBehaviour
 
     public System.Action activeItem = default;
 
+    // 플레이어가 피격을 당했는지 확인하는 bool 값
+    public bool isAttacked = false;
+
+    // 플레이어가 석화 상태인지 확인하는 bool 값
+    public bool isPetrified = false;
+
+
+
     private void Awake()
     {
         playerMove = gameObject.GetComponentMust<PlayerMove>();
         GameObject rotateObjs_ = gameObject.FindChildObj("RotateObjs");
         playerAttack = rotateObjs_.FindChildObj("RotateWeapon").GetComponentMust<PlayerAttack>();
-        playerSort = gameObject.transform.parent.gameObject.GetComponentMust<Canvas>();
+        playerImage = gameObject.GetComponentMust<Image>();
+        weaponReload = gameObject.transform.GetChild(3).gameObject.GetComponentMust<WeaponReload>();
 
-        playerSort.sortingLayerName = "Player";
-        playerSort.sortingOrder = 1;
 
         PlayerState playerData = new PlayerState
         {
@@ -94,36 +105,40 @@ public class PlayerController : MonoBehaviour
 
         isStatusEvent = true;
         isOnInventory = false;
+        isAttacked = false;
+        isPetrified = false;
 
-        // 임시로 1로 지정
-        nowWeaponHand = 1;
+        nowWeaponHand = 0;
 
         // 플레이어 싱글톤 호출
-        // [KJH] 위치 변경 Start -> Awake
         PlayerManager.Instance.player = this;
-        GFunc.Log("플레이어 캐싱 ok");
+        GFunc.Log("플레이어 호출");
     }
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-
-
- 
+        //// 플레이어 싱글톤 호출
+        //PlayerManager.Instance.player = this;
+        //GFunc.Log("플레이어 호출");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isStatusEvent == true)
+        // 석화 상태이상에 당하면 잠시 멈추게 하는 조건
+        if(isPetrified == true) { return; }
+
+        if (isStatusEvent == true)
         {
             //HpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
             //BlankController.SetPlayerBlank(playerBlank);
             //KeyController.SetPlayerKey(playerKey);
             //CashController.SetPlayerCash(playerMoney);
-            ResetPlayerAni();
+            CheckShield();
 
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
 
@@ -207,7 +222,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ResetPlayerAni()
+    //! 현재 플레이어가 쉴드를 가지고 있는지 확인하는 함수
+    public void CheckShield()
     {
         if(playerShield == 0)
         {
@@ -218,8 +234,40 @@ public class PlayerController : MonoBehaviour
             isShield = true;
         }
 
-        // 추후 무기 값도 가져오기
     }
+
+    //! 플레이어가 석화 상태에 당하면 실행하는 함수
+    public void OnPetrified()
+    {
+        StartCoroutine(StartPetrified());
+    }
+
+    // 석화 상태 이상에 대한 코루틴
+    IEnumerator StartPetrified()
+    {
+        isPetrified = true;
+
+        Color playerColor_ = playerImage.color;
+
+        playerColor_.r = 128f / 255f;
+        playerColor_.g = 128f / 255f;
+        playerColor_.b = 128f / 255f;
+
+        playerImage.color = playerColor_;
+        
+        yield return new WaitForSeconds(2f);
+
+        playerColor_.r = 255f / 255f;
+        playerColor_.g = 255f / 255f;
+        playerColor_.b = 255f / 255f;
+
+
+        playerImage.color = playerColor_;
+
+        isPetrified = false;
+
+    }
+
 
     //! 플레이어의 현재 애니메이션을 갱신하기 위해 발동시키는 함수
     public void OnHitAndStatusEvent()
@@ -227,5 +275,51 @@ public class PlayerController : MonoBehaviour
         isStatusEvent = true;
     }   // OnHitAndStatusEvent()
 
+    
+    //! 플레이어가 피격 시 깜빡거리는 효과
+    public void AttackedPlayer()
+    {
+
+        if(isAttacked == true) { return; }
+
+        StartCoroutine(AttackedAction());
+    }
+
+    //! 플레이어 이미지의 알파값을 조절하여 깜빡이는 효과를 주는 코루틴
+    IEnumerator AttackedAction()
+    {
+        isAttacked = true;
+
+        int countTime_ = 0;
+
+        Color playerColor_ = playerImage.color;
+
+        while (countTime_ < 10)
+        {
+            if (countTime_ % 2 == 0)
+            {
+                playerColor_.a = 90f / 255f;
+                playerImage.color = playerColor_;
+
+            }
+            else
+            {
+                playerColor_.a = 180f / 255f;
+
+                playerImage.color = playerColor_;
+
+            }
+
+            yield return new WaitForSeconds(0.2f);
+
+            countTime_++;
+        }
+
+        playerColor_.a = 255f / 255f;
+
+        playerImage.color = playerColor_;
+
+        isAttacked = false;
+    }
     
 }

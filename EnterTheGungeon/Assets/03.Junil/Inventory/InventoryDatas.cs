@@ -16,15 +16,16 @@ public class InventoryDatas : MonoBehaviour
     public int passiveListCnt = default;
 
 
-    // 현재 탭을 벗어났는지 확인하는 bool 값
-    public bool isOutTabMenu = false;
 
     public void Awake()
     {
         // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
         SetInventory();
 
-        isOutTabMenu = false;
+        // 인벤토리 싱글톤 호출
+        InventoryManager.Instance.inventoryDatas = this;
+        InventoryManager.Instance.inventoryDataObjs = gameObject;
+        GFunc.Log("인벤 데이터 호출");
     }
 
 
@@ -39,21 +40,16 @@ public class InventoryDatas : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        // 플레이어 싱글톤 호출
-        InventoryManager.Instance.inventoryDatas = this;
-        InventoryManager.Instance.inventoryDataObjs = gameObject;
-        GFunc.Log("인벤토리 캐싱 ok");
+        //// 인벤토리 싱글톤 호출
+        //InventoryManager.Instance.inventoryDatas = this;
+        //InventoryManager.Instance.inventoryDataObjs = gameObject;
+        //GFunc.Log("인벤 데이터 호출");
 
 
     }
 
-    //// Update is called once per frame
-    //public void Update()
-    //{
 
-    //}
-
-    /// @brief 초기 인벤토리를 셋팅하는 함수
+    //! 초기 인벤토리를 셋팅하는 함수
     public void SetInventory()
     {
         GameObject ammonomicMenu_ = gameObject.FindChildObj("AmmonomiconMenu");
