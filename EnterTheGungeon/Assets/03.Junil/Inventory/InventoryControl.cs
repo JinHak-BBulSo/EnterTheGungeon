@@ -14,7 +14,7 @@ public class InventoryControl : MonoBehaviour
     private void Awake()
     {
         isOpenInven = false;
-                
+        transform.parent = InventoryManager.Instance.transform;
     }
 
     // Start is called before the first frame update

@@ -121,7 +121,7 @@ MonoBehaviour:
   specialMapPrefabs:
   - {fileID: 495369536383558220, guid: 8d30754337f8fa048a78fdba25452370, type: 3}
   - {fileID: 2294845348300537775, guid: 1b6a2f59ae25a2349a456896c05419f0, type: 3}
-  - {fileID: 2294845348300537775, guid: 1b6a2f59ae25a2349a456896c05419f0, type: 3}
+  - {fileID: 8870316073612450854, guid: 143502bb3c12ded4183fefbdf9d035aa, type: 3}
   - {fileID: 1969713071350642575, guid: 69b83e572faa3c849b9f38c881b2f38c, type: 3}
   mapSize: {x: 140, y: 120}
 --- !u!1 &2368857389291702243

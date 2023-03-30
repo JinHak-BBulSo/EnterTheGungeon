@@ -16,11 +16,15 @@ public class ObjectPool : MonoBehaviour
     public GameObject poisonAreaPrefab;
     int poisonAreaPoolSize;
 
+    private void Awake()
+    {
+        transform.parent = PlayerManager.Instance.player.transform.parent.parent;
+    }
     void Start()
     {
         pathFinderGridPool = new List<GameObject>();
         pathFinderGridPrefab = Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid");
-        pathFinderGridPoolSize = 2500;
+        pathFinderGridPoolSize = 0;
 
         for (int i = 0; i < pathFinderGridPoolSize; i++)
         {
