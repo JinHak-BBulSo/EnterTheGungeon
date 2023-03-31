@@ -79,7 +79,7 @@ public class TestBullet : MonsterBullets
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
+        //base.OnTriggerEnter2D(other);
         if (other.tag == "Player" && other.gameObject != null)
         {
             isGorgunBullet = false;
@@ -142,5 +142,14 @@ public class TestBullet : MonsterBullets
 
         isCreated = true;
 
+    }
+    public override void OnDisable()
+    {
+
+    }
+
+    public override void OnPlayerBlankBullet()
+    {
+        objectPool.ReturnObject(this.gameObject, 1);
     }
 }
