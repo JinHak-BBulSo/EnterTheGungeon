@@ -45,8 +45,11 @@ public class DeadScreen : MonoBehaviour
 
 
     public bool isTest;
-    GameObject gamePause;
-    GameObject ammonomicon;
+    GameObject playerInventoryObj;
+
+    GameObject ammonomiconList;
+    GameObject ammonomiconInfo;
+    //GameObject ammonomicon;
 
 
     // { Var for ScreenShot
@@ -61,8 +64,10 @@ public class DeadScreen : MonoBehaviour
 
     void Start()
     {
-        gamePause = transform.parent.GetChild(2).gameObject;
-        ammonomicon = gamePause.transform.GetChild(1).gameObject;
+        playerInventoryObj = transform.parent.GetChild(2).gameObject;
+        //ammonomicon = playerInventoryObj.transform.GetChild(1).gameObject;
+        ammonomiconList = playerInventoryObj.transform.GetChild(0).GetChild(1).gameObject;
+        ammonomiconInfo = playerInventoryObj.transform.GetChild(0).GetChild(2).gameObject;
 
         background = transform.GetChild(0);
         background.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
@@ -197,9 +202,33 @@ public class DeadScreen : MonoBehaviour
     {
         isShotEnd = false;
         yield return new WaitForSeconds(3);
-        gamePause.SetActive(true);
+        playerInventoryObj.SetActive(true);
+        for (int i = 0; i < ammonomiconList.transform.childCount; i++)
+        {
+            if (i == (ammonomiconList.transform.childCount - 1))
+            {
+                ammonomiconList.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                ammonomiconList.transform.GetChild(i).gameObject.SetActive(false);
+
+            }
+        }
+        for (int i = 0; i < ammonomiconInfo.transform.childCount; i++)
+        {
+            if (i == (ammonomiconInfo.transform.childCount - 1))
+            {
+                ammonomiconInfo.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                ammonomiconInfo.transform.GetChild(i).gameObject.SetActive(false);
+
+            }
+        }
         yield return null;
-        ammonomicon.SetActive(true);
+        //ammonomicon.SetActive(true);
     }
 
     public void ScreenShotDeadScreen()
