@@ -536,13 +536,14 @@ MonoBehaviour:
   monsterobjs: {fileID: 0}
   isPlayerEnter: 0
   isRoomClear: 0
-  isSpecialRoom: 1
   roomEntrances:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   bossCount: 1
+  introDelay: 2
+  bossIndex: 0
 --- !u!1001 &2090460178970444999
 PrefabInstance:
   m_ObjectHideFlags: 0

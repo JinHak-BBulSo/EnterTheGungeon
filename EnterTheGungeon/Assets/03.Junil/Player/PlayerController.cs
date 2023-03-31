@@ -93,7 +93,13 @@ public class PlayerController : MonoBehaviour
 
         Hole.PlayerSet();
         GFunc.Log("플레이어 호출");
-        
+
+        GameObject playerUiController = GameObject.Find("Non_Volume_UIObjs").FindChildObj("TopLeftUI");
+        hpController = playerUiController.transform.GetChild(0).GetComponent<HpController>();
+        blankController = playerUiController.transform.GetChild(1).GetComponent<BlankController>();
+        keyController = playerUiController.transform.GetChild(2).GetComponent<KeyController>();
+        cashController = playerUiController.transform.GetChild(3).GetComponent<CashController>();
+
         SetPlayerControl();
     }
 
@@ -252,6 +258,7 @@ public class PlayerController : MonoBehaviour
 
         topCollider.SetActive(true);
 
+        playerMove.SetPlayerMove();
         bottomCollider.ResettingCollider();
         playerAttack.SetPlayerAttack();
     }
@@ -310,6 +317,35 @@ public class PlayerController : MonoBehaviour
     }   //OnHitAndStatusEvent()
 
     
+    //! 플레이어의 체력을 깍는 함수
+    public void GetHitPlayer()
+    {
+
+        if (PlayerManager.Instance.player.playerMove.isDodgeing == true) { return; }
+
+        if (isShield == true)
+        {
+            playerShield--;
+
+        }
+        else
+        {
+            playerHp--;
+        }
+
+
+        if (playerHp == 0)
+        {
+            // 플레이어 사망 효과
+        }
+        else
+        {
+            AttackedPlayer();
+        }
+
+    }
+
+
     //! 플레이어가 피격 시 깜빡거리는 효과
     public void AttackedPlayer()
     {

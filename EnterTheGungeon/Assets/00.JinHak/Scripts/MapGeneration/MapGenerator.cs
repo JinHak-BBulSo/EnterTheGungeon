@@ -291,6 +291,7 @@ public class MapGenerator : MonoBehaviour
             if (i == 0)
             {
                 startPoint = startMapObj;
+                PlayerManager.Instance.nowPlayerInRoom = startMap.room;
             }
             
             // 보스맵 설정의 경우

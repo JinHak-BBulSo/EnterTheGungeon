@@ -47,10 +47,10 @@ public class HpController : MonoBehaviour
             {
                 tempPlayerHp -= 2;
                 hpObjList[i].HpImgChanger(2);
+                ShieldIndex = i + 1;
             }
             else
             {
-                ShieldIndex = i + 1;
                 hpObjList[i].HpImgChanger(tempPlayerHp);
             }
         }

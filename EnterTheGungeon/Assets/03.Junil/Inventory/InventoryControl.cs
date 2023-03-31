@@ -117,7 +117,7 @@ public class InventoryControl : MonoBehaviour
 
     public void AddFirstItem()
     {
-
+        Debug.Log("무기생성");
         int itemListCnt_ = 0;
         Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
         GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
@@ -138,7 +138,7 @@ public class InventoryControl : MonoBehaviour
         weaponObjs_.playerWeapons.Add(
             Instantiate(SPMAWeaponPrefab,
             weaponObjs_.weaponObjs.transform.position,
-            Quaternion.identity,
+            weaponObjs_.transform.rotation,
             weaponObjs_.weaponObjs.transform));
 
         // playerWeaponScript 리스트에 무기 스크립트 추가

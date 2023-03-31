@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 84247857584927824}
   - component: {fileID: 84247857584927825}
   m_Layer: 5
-  m_Name: DungeonEntranceStair
+  m_Name: GungeonEntranceStair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2542,7 +2542,7 @@ GameObject:
   - component: {fileID: 84247857871714631}
   - component: {fileID: 84247857871714628}
   m_Layer: 5
-  m_Name: DungeonEntrance
+  m_Name: GungeonEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3331,6 +3331,7 @@ GameObject:
   - component: {fileID: 9213153334871085528}
   - component: {fileID: 9213153334871085530}
   - component: {fileID: 9213153334871085529}
+  - component: {fileID: 137602659}
   m_Layer: 5
   m_Name: Renderer
   m_TagString: Untagged
@@ -3436,6 +3437,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &137602659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213153334871085535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a18c8442b606644289be0c9d0c434ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectPlayerManager: {fileID: 0}
 --- !u!1 &9213153334905655688
 GameObject:
   m_ObjectHideFlags: 0

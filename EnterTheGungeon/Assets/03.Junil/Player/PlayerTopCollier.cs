@@ -20,7 +20,7 @@ public class PlayerTopCollier : MonoBehaviour
         if (collision.tag == "MonsterBullet")
         {
             GFunc.Log("상체 반응했음");
-            PlayerManager.Instance.player.AttackedPlayer();
+            PlayerManager.Instance.player.GetHitPlayer();
         }
     }
 }
