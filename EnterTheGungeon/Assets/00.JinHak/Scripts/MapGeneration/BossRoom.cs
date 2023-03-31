@@ -6,7 +6,6 @@ public class BossRoom : Room
 {
     GameObject bossRoomEntrance = default;
     public GameObject[] roomEntrances = new GameObject[4];
-    private bool isBossKill = false;
     public int bossCount = 1;
 
     private void Awake()
@@ -37,8 +36,17 @@ public class BossRoom : Room
         if (isPlayerEnter && bossCount == 0 && !isRoomClear)
         {
             isRoomClear = true;
-            isBossKill = true;
             DoorManager.Instance.AllDoorOpen();
+        }
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        if(collision.tag == "Player" && !isRoomClear)
+        {
+            PlayerManager.Instance.playerCamera.isBossIntro = true;
+            MoveCamera2D.target = this.gameObject;
         }
     }
 }

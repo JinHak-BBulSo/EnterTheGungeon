@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MiniCamController : MoveCamera2D
@@ -35,7 +34,7 @@ public class MiniCamController : MoveCamera2D
 
     private void DisplayMiniCam()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) && UIController.boolGamePause == false)
         {
             miniCam.enabled = false;
         }

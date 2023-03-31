@@ -23,6 +23,7 @@ public class OptionButtonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        detailOptionActive = false;
         //buttonHandlers = new List<ButtonHandler>();
         buttonHandlers = transform.GetComponentsInChildren<OptionButtonHandler>().ToList();
         for (int i = 0; i < buttonHandlers.Count; i++)
@@ -126,8 +127,8 @@ public class OptionButtonController : MonoBehaviour
     }
     IEnumerator DetailScaleDisable()
     {
-        detailOption.transform.DOScale(0.8f, 0.3f).SetEase(Ease.InBack).SetAutoKill();
-        yield return new WaitForSeconds(0.3f);
+        Tween detailOptionTween = detailOption.transform.DOScale(0.8f, 0.3f).SetEase(Ease.InBack).SetUpdate(UpdateType.Normal, true).SetAutoKill();
+        yield return detailOptionTween.WaitForCompletion();
         detailOption.SetActive(false);
         detailSroll[buttonIndex].SetActive(false);
         detailOptionActive = false;
@@ -138,16 +139,16 @@ public class OptionButtonController : MonoBehaviour
     {
         detailOptionActive = true;
         detailOption.SetActive(true);
-        detailOption.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack).SetAutoKill();
-        yield return new WaitForSeconds(0.3f);
+        Tween detailOptionTween = detailOption.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack).SetUpdate(UpdateType.Normal, true).SetAutoKill();
+        yield return detailOptionTween.WaitForCompletion();
         detailSroll[buttonIndex].SetActive(true);
         Debug.Log($"detailSrollActive");
     }
 
     IEnumerator OptionScaleDisable()
     {
-        optionMenu.transform.DOScale(0.8f, 0.3f).SetEase(Ease.InBack).SetAutoKill();
-        yield return new WaitForSeconds(0.3f);
+        Tween OptionTween = optionMenu.transform.DOScale(0.8f, 0.3f).SetEase(Ease.InBack).SetUpdate(UpdateType.Normal, true).SetAutoKill();
+        yield return OptionTween.WaitForCompletion();
         TitleButtonController.optionActive = false;
         optionMenu.SetActive(false);
     }

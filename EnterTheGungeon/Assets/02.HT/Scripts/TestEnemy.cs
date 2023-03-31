@@ -91,7 +91,7 @@ public class TestEnemy : MonoBehaviour
 
     bool isDrop;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update1
     void Start()
     {
         currentHp = maxHp;

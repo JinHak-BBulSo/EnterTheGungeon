@@ -91,13 +91,6 @@ public class MapGenerator : MonoBehaviour
         AccessZone();
         AccessZoneRoom();
 
-        CompositeCollider2D lineComposite = mapAccessLine.AddComponent<CompositeCollider2D>();
-        lineComposite.isTrigger = true;
-        lineComposite.geometryType = CompositeCollider2D.GeometryType.Polygons;
-
-        lineComposite.gameObject.SetActive(false);
-        lineComposite.gameObject.SetActive(true); 
-
         ColliderSizeSet();
         startPoint.GetComponent<StartPoint>().SetPlayer();
     }

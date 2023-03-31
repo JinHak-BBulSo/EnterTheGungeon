@@ -6,6 +6,7 @@ public class ShopKeeperController : MonoBehaviour
     private Animator shopkeeperAnimator = default;
     private ObjectManager objectManager = default;
     private GameObject player = default;
+    public Room belongRoom = default;
 
     private bool isInShop = false;
     private bool isPlayerShoot = false;
@@ -25,7 +26,7 @@ public class ShopKeeperController : MonoBehaviour
     {
         shopkeeperAnimator = GetComponent<Animator>();
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
-        player = GameObject.FindWithTag("Player");
+        player = PlayerManager.Instance.player.gameObject;
     }
 
     private void Update()
@@ -79,7 +80,7 @@ public class ShopKeeperController : MonoBehaviour
     #region ShootCheck
     private void ShootCheck()
     {
-        if (Input.GetMouseButtonDown(0))    //  임시 : 마우스 왼클릭(발사) 한 경우
+        if (Input.GetMouseButtonDown(0) && belongRoom.isPlayerEnter)    //  임시 : 마우스 왼클릭(발사) 한 경우
         {
             isPlayerShoot = true;
             shootCount++;

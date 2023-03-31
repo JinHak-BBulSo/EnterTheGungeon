@@ -9,7 +9,7 @@ public class BlankController : MonoBehaviour
     public const int PLAYER_Display_MAX_Blank = 22;
 
     [ShowInInspector]
-    List<BlankElement> blankObjList = new List<BlankElement>();
+    public List<BlankElement> blankObjList = new List<BlankElement>();
 
     void Start()
     {
