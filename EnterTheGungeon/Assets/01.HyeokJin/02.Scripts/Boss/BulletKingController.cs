@@ -883,24 +883,25 @@ public class BulletKingController : Boss
     #endregion
     #endregion
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet") && !isDead)
         {
-            StartCoroutine("OnHit_HpBar");
+            int playerBulletDamage_ = collision.gameObject.GetComponentMust<PlayerBullet>().bulletDamage;
+            StartCoroutine(OnHit_HpBar(playerBulletDamage_));
             StartCoroutine("OnHit_Color");
         }
     }
 
-    IEnumerator OnHit_HpBar()
+    IEnumerator OnHit_HpBar(int playerBulletDamage_)
     {
-        int bulletDMG = 120;
+        // int bulletDMG = 120;
 
         if (currentHp > 0)
         {
             decreaseAmount = 0.001f;
 
-            currentHp -= bulletDMG;
+            currentHp -= playerBulletDamage_;
 
             while (innerHpBar.fillAmount > (float)currentHp / (float)maxHp)
             {
