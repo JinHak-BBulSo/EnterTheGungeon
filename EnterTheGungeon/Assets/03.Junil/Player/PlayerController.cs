@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
         
         // 플레이어 싱글톤 호출
         PlayerManager.Instance.player = this;
+
+        Hole.PlayerSet();
         GFunc.Log("플레이어 호출");
         
         SetPlayerControl();
