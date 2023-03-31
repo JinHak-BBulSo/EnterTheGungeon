@@ -18,6 +18,8 @@ public class GunGeonEntrance : MonoBehaviour
             InventoryManager.Instance.inventoryControl.AddFirstItem();
             // [Junil] 무기가 꺼지는 함수 호출
             PlayerManager.Instance.player.StartOffWeaponObjs();
+            
+            selectPlayerManager.DestroyNotSelectPlayer();   
             playerAni.SetTrigger("Doorway");
             StartCoroutine(SceneLoadDelay());
         }
