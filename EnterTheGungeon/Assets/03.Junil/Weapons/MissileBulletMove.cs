@@ -56,7 +56,7 @@ public class MissileBulletMove : PlayerBullet
     void Start()
     {
         isOffBullet = false;
-        radiusLength = 5f;
+        
 
         //KJH 위치 변경 Update -> Start
         missileBulletRigid2D.velocity = transform.up * bulletSpeed;
@@ -77,58 +77,27 @@ public class MissileBulletMove : PlayerBullet
         // 몬스터를 감지하면 유도되는 조건
         if(targetMonster != null || targetMonster != default)
         {
+            Vector3 missileLen_ = targetMonster.transform.position - gameObject.transform.position;
+
+            float rotateMissile_ = Mathf.Atan2(missileLen_.y, missileLen_.x) * Mathf.Rad2Deg;
+
+
+
+            gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotateMissile_ - 90f);
+            missileBulletRigid2D.velocity = missileLen_.normalized * bulletSpeed;
 
         }
 
-        // 미사일이 일정 거리 만큼 날아가면 원운동이 작동하는 조건
-        if(radiusLength < Len_)
+        if(targetMonster.activeSelf == false)
         {
-            StartRotateMissile();
+            // 다시 표적을 잡게 하는 초기값
+            targetMonster = default;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<MonsterDetect>().isFirstTarget = false;
         }
+        
 
 
 
-    }
-
-    IEnumerator RotateMissile = default;
-
-    void StartRotateMissile()
-    {
-        RotateMissile = RotateMissileMove();
-        StartCoroutine(RotateMissile);
-    }
-
-    void StopRotateMissile()
-    {
-        if(RotateMissile != null)
-        {
-            StopCoroutine(RotateMissile);
-        }
-    }
-
-    IEnumerator RotateMissileMove()
-    {
-        GFunc.Log("회전 실행돠ㅣㅁ");
-        float angle_ = 45f;
-        int countLoop_ = 0;
-
-        while (true)
-        {
-            if(countLoop_ == 8)
-            {
-                countLoop_ = 0;
-            }
-
-
-            Vector3 movePos_ = new Vector3(
-                radiusLength * Mathf.Cos(angle_ * Mathf.Deg2Rad), radiusLength * Mathf.Sin(angle_ * Mathf.Deg2Rad), 0f);
-
-            gameObject.transform.position += movePos_;
-
-            countLoop_++;
-
-            yield return new WaitForSeconds(5f);
-        }
     }
 
 
@@ -138,6 +107,8 @@ public class MissileBulletMove : PlayerBullet
         activePos = gameObject.transform.position;
 
     }
+
+
 
     public override IEnumerator OffBullet()
     {

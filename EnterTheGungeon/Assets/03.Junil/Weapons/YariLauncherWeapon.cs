@@ -149,7 +149,9 @@ public class YariLauncherWeapon : PlayerWeapon
         base.SetWeaponData();
 
         this.weaponName = "야이리 발사기";
-        this.weaponDescription = "";
+        this.weaponDesc = "지옥에 잘 왔습니다";
+        this.weaponDataTxt = "자동추적 로켓을 연속으로 발사합니다.\n" +
+            "질라 인더스트리가 생산한 전설적인 무기로, 지금은 잊혀진 한 강력한 전사의 주문에 맞춰서 만들어졌습니다.";
 
         this.weaponPos = new Vector3(5f, 2f, 0f);
         this.weaponReload = 1.5f;
@@ -157,10 +159,10 @@ public class YariLauncherWeapon : PlayerWeapon
 
         this.weaponBulletValue = 140;
         this.knockBack = 30f;
-        this.bulletSpeed = 18f;
-        this.bulletDamage = 5;
+        this.bulletSpeed = 16f;
+        this.bulletDamage = 20;
         this.bulletRange = 90f;
-        this.bulletShotRange = 5;
+        this.bulletShotRange = 10;
         this.weaponDeley = 0.04f;
         this.weaponHand = 2;
 
