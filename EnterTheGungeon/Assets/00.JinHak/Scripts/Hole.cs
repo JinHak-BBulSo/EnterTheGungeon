@@ -15,6 +15,8 @@ public class Hole : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            // [Junil] 무기가 꺼지는 함수 호출
+            PlayerManager.Instance.player.StartOffWeaponObjs();
             playerAni.SetTrigger("Falling");
             PlayerManager.Instance.player.enabled = false;
             playerRigid.velocity = Vector3.zero;

@@ -39,7 +39,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         invenInfoData_.itemTrueImg.SetActive(true);
 
         // 아이템 이미지로 변경
+        Color itemColor_ = invenInfoData_.itemImg.color;
+        itemColor_.a = 1;
+        invenInfoData_.itemImg.color = itemColor_;
         invenInfoData_.itemImg.sprite = slotItem.itemSprite;
+
+        // 무기의 한줄 설명
+        invenInfoData_.itemDescTxt.text = slotItem.itemDescTxt;
+
+        // 무기의 역할
+        invenInfoData_.itemTypeTxt.text = slotItem.itemTypeTxt;
+
+        // 아이템 상세 설명
+        invenInfoData_.itemTxt.text = slotItem.itemScript;
 
 
     }

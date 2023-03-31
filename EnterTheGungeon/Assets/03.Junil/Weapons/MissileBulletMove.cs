@@ -80,14 +80,13 @@ public class MissileBulletMove : PlayerBullet
 
             float rotateMissile_ = Mathf.Atan2(missileLen_.y, missileLen_.x) * Mathf.Rad2Deg;
 
-
-
+            
             gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotateMissile_ - 90f);
             missileBulletRigid2D.velocity = missileLen_.normalized * bulletSpeed;
 
         }
 
-        if(targetMonster.activeSelf == false)
+        if(targetMonster != null || targetMonster.activeSelf == false)
         {
             // 다시 표적을 잡게 하는 초기값
             targetMonster = default;

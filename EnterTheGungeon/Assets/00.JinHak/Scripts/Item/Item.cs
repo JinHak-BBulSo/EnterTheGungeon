@@ -9,4 +9,7 @@ public class Item : ScriptableObject
     public ItemTag tag = ItemTag.NONE;
     public Sprite itemSprite = default;
     public string itemScript = string.Empty;
+    // [Junil] 아이템 정보를 담기 위해 추가한 string 값
+    public string itemDescTxt = string.Empty;
+    public string itemTypeTxt = string.Empty;
 }
