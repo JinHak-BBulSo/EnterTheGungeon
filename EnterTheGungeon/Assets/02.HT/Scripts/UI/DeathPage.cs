@@ -14,7 +14,7 @@ public class DeathPage : MonoBehaviour
     {
         deadScreen = transform.parent.parent.parent.parent.parent.GetChild(0).GetComponent<DeadScreen>();
 
-        deathPage2 = transform.parent.parent.GetChild(1).GetChild(1);
+        deathPage2 = transform.parent.parent.GetChild(2).GetChild(3);
         deadScreenShot = deathPage2.GetChild(0).GetComponent<Image>();
     }
 

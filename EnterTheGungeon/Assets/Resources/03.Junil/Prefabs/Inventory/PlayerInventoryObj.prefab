@@ -3905,6 +3905,8 @@ MonoBehaviour:
   invenTabMenu: 0
   nowTabInvenCnt: 0
   selectTabInvenVal: 0
+  equipmentMenuDatas: []
+  monsterMenuDatas: []
 --- !u!1 &9120905736425550736
 GameObject:
   m_ObjectHideFlags: 0

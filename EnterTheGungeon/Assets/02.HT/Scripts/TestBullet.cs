@@ -83,22 +83,24 @@ public class TestBullet : MonsterBullets
         if (other.tag == "Player" && other.gameObject != null)
         {
             isGorgunBullet = false;
-            objectPool.ReturnObject(this.gameObject, 1);
+            StartCoroutine(ReturnBullet(0.1f));
+
             //Destroy(this.gameObject);
         }
         else
         {
-            if (other.tag == "Untagged" && other.tag == "Wall" && other.gameObject != null)
+            if ((other.tag == "Wall") && other.gameObject != null)
             {
                 isGorgunBullet = false;
-                objectPool.ReturnObject(this.gameObject, 1);
+                StartCoroutine(ReturnBullet(0.1f));
+                //objectPool.ReturnObject(this.gameObject, 1);
             }
         }
     }
 
-    IEnumerator ReturnBullet()
+    IEnumerator ReturnBullet(float time_)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(time_);
         enemyName = default;
         isGorgunBullet = false;
         image.enabled = true;
@@ -136,7 +138,7 @@ public class TestBullet : MonsterBullets
         if (isCreated)
         {
             PlayerController.OnPlayerBlankBullet += this.OnPlayerBlankBullet;
-            StartCoroutine(ReturnBullet());
+            StartCoroutine(ReturnBullet(5));
             isGorgunBulletCheck = false;
         }
 
@@ -150,6 +152,8 @@ public class TestBullet : MonsterBullets
 
     public override void OnPlayerBlankBullet()
     {
-        objectPool.ReturnObject(this.gameObject, 1);
+        StartCoroutine(ReturnBullet(0.1f));
+
+        //objectPool.ReturnObject(this.gameObject, 1);
     }
 }
