@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && !isOpen)
+        if(collision.tag == "Player" && !isOpen && PlayerManager.Instance.nowPlayerInRoom.isRoomClear)
         {
             if (doorAni != null)
             {

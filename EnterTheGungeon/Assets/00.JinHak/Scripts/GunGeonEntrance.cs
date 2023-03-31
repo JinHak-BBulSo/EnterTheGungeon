@@ -13,9 +13,7 @@ public class GunGeonEntrance : MonoBehaviour
         {
             playerAni = PlayerManager.Instance.player.GetComponent<Animator>();
             // 선택되지 않은 플레이어 파괴
-            selectPlayerManager.DestroyNotSelectPlayer();
-            // 초기 무기 셋팅 호출
-            InventoryManager.Instance.inventoryControl.AddFirstItem();
+            selectPlayerManager.DestroyNotSelectPlayer();   
             playerAni.SetTrigger("Doorway");
             StartCoroutine(SceneLoadDelay());
         }
