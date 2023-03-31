@@ -36,8 +36,7 @@ public class PlayerBottomCollier : MonoBehaviour
         if (collision.collider.CompareTag("MonsterBullet"))
         {
             GFunc.Log("하체 반응했음");
-            PlayerManager.Instance.player.AttackedPlayer();
-
+            PlayerManager.Instance.player.GetHitPlayer();
 
         }
     }
@@ -50,8 +49,7 @@ public class PlayerBottomCollier : MonoBehaviour
         if (collision.tag == "MonsterBullet")
         {
             GFunc.Log("하체 반응했음");
-            PlayerManager.Instance.player.AttackedPlayer();
-
+            PlayerManager.Instance.player.GetHitPlayer();
 
         }
     }

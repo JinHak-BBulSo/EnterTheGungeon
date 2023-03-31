@@ -23,6 +23,7 @@ public class EnemyBook : MonoBehaviour
     public TMP_Text textEnemyName;
     public Image imageEnemyInfo;
     public TMP_Text textEnemyExplain1;
+    public RectTransform rectEnemyExplain1;
     public TMP_Text textEnemyExplain2;
     public TMP_Text textEnemyLongDesc;
 
@@ -34,7 +35,7 @@ public class EnemyBook : MonoBehaviour
         enemyName = EnemyManager.Instance.enemyName;
         enemyFindCheck = EnemyManager.Instance.enemyFindCheck;
 
-        bossName = EnemyManager.Instance.enemyName;
+        bossName = EnemyManager.Instance.bossName;
         bossFindCheck = EnemyManager.Instance.bossFindCheck;
 
         enemyListLine1 = transform.GetChild(2).GetChild(0).GetChild(0).GetChild(0);
@@ -60,10 +61,13 @@ public class EnemyBook : MonoBehaviour
         }
 
 
-        enemyInfo = transform.parent.parent.GetChild(1).GetChild(1);
+        enemyInfo = transform.parent.parent.GetChild(2).GetChild(2);
         textEnemyName = enemyInfo.GetChild(0).GetComponent<TMP_Text>();
-        imageEnemyInfo =  enemyInfo.GetChild(2).GetComponent<Image>();
+        imageEnemyInfo = enemyInfo.GetChild(2).GetComponent<Image>();
         textEnemyExplain1 = enemyInfo.GetChild(3).GetChild(0).GetComponent<TMP_Text>();
+
+        rectEnemyExplain1 = enemyInfo.GetChild(3).GetComponent<RectTransform>();
+
         textEnemyExplain2 = enemyInfo.GetChild(4).GetChild(0).GetComponent<TMP_Text>();
         textEnemyLongDesc = enemyInfo.GetChild(7).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
     }
@@ -87,12 +91,11 @@ public class EnemyBook : MonoBehaviour
             }
         }
 
-        /* 
         for (int i = 0; i < bossList.Count; i++)
         {
             if (i < bossName.Count && bossName[i] != null)
             {
-                if (bossFindCheck[enemyName[i]])
+                if (bossFindCheck[bossName[i]])
                 {
                     bossList[i].transform.GetChild(0).gameObject.SetActive(true);
                 }
@@ -102,8 +105,16 @@ public class EnemyBook : MonoBehaviour
                 }
 
             }
-        } */
+        }
 
+        if (enemyInfo.GetChild(3).GetChild(0).GetComponent<RectTransform>().sizeDelta.x > 132)
+        {
+            rectEnemyExplain1.sizeDelta = new Vector2(enemyInfo.GetChild(3).GetChild(0).GetComponent<RectTransform>().sizeDelta.x + 30, enemyInfo.GetChild(3).GetChild(0).GetComponent<RectTransform>().sizeDelta.y);
+        }
+        else
+        {
+            rectEnemyExplain1.sizeDelta = new Vector2(132, enemyInfo.GetChild(3).GetChild(0).GetComponent<RectTransform>().sizeDelta.y);
+        }
     }
 
 }

@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletKingController : Boss
 {
     private Animator bulletkingAnimator = default;
-
     private GameObject player = default;
     private GameObject bossBulletKing = default;
     private ObjectManager objectManager = default;
     private SpriteRenderer throneSpriteRenderer = default;
+    public GameObject vfxPrefab = default;
+    private Animator vfxAnimator = default;
+
+    private GameObject bossHpBar = default;
+    private TMP_Text bossName = default;
+    private Image innerHpBar = default;
+
+    private int maxHp = default;
+    private float decreaseAmount = default;
 
     private GameObject muzzle = default;
     private GameObject muzzle_Left_1 = default;
@@ -31,11 +40,17 @@ public class BulletKingController : Boss
     private float moveSpeed = default;
     private float enemyRadius = default;
 
-    private int maxHp = default;
     private int patternIndex = default;
     private int curPatternCount = default;
     private int maxPatternCount = default;
     private int bulletGap = default;
+
+    private bool isDead = false;
+
+    private int vfxIndex = default;
+    private float vfxRangeX = default;
+    private float vfxRangeY = default;
+
 
     private bool isExpolded = false;
 
@@ -54,6 +69,8 @@ public class BulletKingController : Boss
     {
         maxHp = 950;
         currentHp = maxHp;
+
+        Invoke("Status", 2f);
     }
 
     public override void PatternStart()
@@ -65,11 +82,12 @@ public class BulletKingController : Boss
 
     private void Awake()
     {
-        player = PlayerManager.Instance.player.gameObject;
+        player = GameObject.FindWithTag("Player");
+        //player = PlayerManager.Instance.player.gameObject;
         bossBulletKing = transform.parent.gameObject;
 
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
-        bulletkingAnimator = GameObject.Find("BulletKing").GetComponent<Animator>();
+        bulletkingAnimator = GameObject.Find("Boss_BulletKing").GetComponent<Animator>();
 
         throneSpriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -86,14 +104,20 @@ public class BulletKingController : Boss
         muzzle_Right_4 = muzzle.transform.GetChild(8).gameObject;
         muzzle_Right_5 = muzzle.transform.GetChild(9).gameObject;
         muzzle_Hand    = muzzle.transform.GetChild(10).gameObject;
-    }
-    private void Start()
-    {
+
+        bossHpBar = GameObject.Find("BossHpBar").gameObject;
+        bossName = bossHpBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        innerHpBar = bossHpBar.transform.GetChild(1).gameObject.GetComponent<Image>();
+        bossName.text = "Bllet King";
+
+        //vfxPrefab = transform.GetChild(0).gameObject;
+        vfxAnimator = vfxPrefab.GetComponent<Animator>();
     }
 
     private void Update()
     {
         Move();
+        CheckDie();
     }
 
     #region Move
@@ -107,56 +131,72 @@ public class BulletKingController : Boss
         //    return;
         //}
 
-        moveSpeed = 1.5f;
-
-        distance = Vector2.Distance(transform.position, player.transform.position);
-
-        if (distance > 5)
+        if (!isDead)
         {
-            isMoving = true;
-            Vector3 direction = (player.transform.position - transform.position).normalized;
-            bossBulletKing.transform.position += direction * moveSpeed * Time.deltaTime;
+            moveSpeed = 1.5f;
+
+            distance = Vector2.Distance(transform.position, player.transform.position);
+
+            if (distance > 8)
+            {
+                isMoving = true;
+                Vector3 direction = (player.transform.position - transform.position).normalized;
+                bossBulletKing.transform.position += direction * moveSpeed * Time.deltaTime;
+            }
+            else
+            {
+                isMoving = false;
+            }
         }
-        else
-        {
-            isMoving = false;
-        }
+
     }   //  Move()
     #endregion
+
+    private void CheckDie()
+    {
+        if (currentHp <= 0)
+        {
+            isDead = true;
+        }
+    }
 
     #region Status
     private void Status()
     {
-        patternIndex = Random.Range(1, 7);
-
-        curPatternCount = 0;
-
-        switch (patternIndex)
+        if (!isDead)
         {
-            case 1:
-                Debug.Log("1번");
-                Pattern_1();
-                break;
-            case 2:
-                Debug.Log("2번");
-                Pattern_2();
-                break;
-            case 3:
-                Debug.Log("3번");
-                Pattern_3();
-                break;
-            case 4:
-                Debug.Log("4번");
-                Pattern_4();
-                break;
-            case 5:
-                Debug.Log("5번");
-                Pattern_5();
-                break;
-            case 6:
-                Debug.Log("6번");
-                Pattern_6();
-                break;
+            patternIndex = Random.Range(1, 7);
+
+            curPatternCount = 0;
+
+            switch (patternIndex)
+            {
+                case 1:
+                    Pattern_1();
+                    break;
+                case 2:
+                    Pattern_2();
+                    break;
+                case 3:
+                    Pattern_3();
+                    break;
+                case 4:
+                    Pattern_4();
+                    break;
+                case 5:
+                    Pattern_5();
+                    break;
+                case 6:
+                    Pattern_6();
+                    break;
+                case 7:
+                    Die();
+                    break;
+            }
+        }
+        else
+        {
+            Die();
         }
     }   //  Status
     #endregion
@@ -173,6 +213,12 @@ public class BulletKingController : Boss
     IEnumerator Pattern_1_3way()
     {
         isPatternStart = true;
+        bulletkingAnimator.SetBool("isPattern_1", true);
+
+        if (curPatternCount == 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
         maxPatternCount = 1;
         bulletSpeed = 10f;
@@ -424,23 +470,37 @@ public class BulletKingController : Boss
 
         curPatternCount++;
 
-        if (curPatternCount < maxPatternCount)
+
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_1", 0.05f);
         }
         else
         {
-            Invoke("Status", 1.5f);
+            bulletkingAnimator.SetBool("isPattern_1", false);
+            Invoke("Status", 2f);
         }
     }   //  Pattern_1_3way()
     #endregion
     #endregion
 
     #region Pattern_2
-    //  [YHJ] 2023-03-16
-    //  @brief 자신을 중심으로 나아가는 총알을 4겹 원형으로 발사한다.
     private void Pattern_2()
     {
+        StartCoroutine("Pattern_2_All");
+    }   //  Pattern_2()
+
+    #region Pattern_2_All
+    //  [YHJ] 2023-03-16
+    //  @brief 자신을 중심으로 나아가는 총알을 4겹 원형으로 발사한다.
+    IEnumerator Pattern_2_All()
+    {
+        bulletkingAnimator.SetBool("isPattern_2", true);
+
+        if (curPatternCount == 0)
+        {
+            yield return new WaitForSeconds(0.7f);
+        }
 
         isPatternStart = true;
 
@@ -462,25 +522,38 @@ public class BulletKingController : Boss
         curPatternCount++;
 
 
-        if (curPatternCount < maxPatternCount)
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_2", 0.5f);
         }
         else
         {
+            bulletkingAnimator.SetBool("isPattern_2", false);
             Invoke("Status", 2f);
         }
-    }   //  Pattern_2()
+    }   //  Pattern_2_All()
     #endregion
+#endregion
 
     #region Pattern_3
-    //  [YHJ] 2023-03-16
-    //  @brief 자신을 중심으로 퍼져 나가는 깜빡거리는 총알을 여러 개의 일직선으로 6개 발사한다.
     private void Pattern_3()
     {
+        StartCoroutine("Pattern_3_All");
+    }   //  Pattern_3()
+
+    #region Pattern_3_All
+    //  [YHJ] 2023-03-16
+    //  @brief 자신을 중심으로 퍼져 나가는 깜빡거리는 총알을 여러 개의 일직선으로 6개 발사한다.
+    IEnumerator Pattern_3_All()
+    {
+        bulletkingAnimator.SetBool("isPattern_3", true);
+
+        if (curPatternCount == 0)
+        {
+            yield return new WaitForSeconds(1f);
+        }
 
         isPatternStart = true;
-
 
         maxPatternCount = 6;
         bulletSpeed = 6f;
@@ -508,20 +581,17 @@ public class BulletKingController : Boss
 
         curPatternCount++;
 
-        if (curPatternCount < maxPatternCount)
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_3", 0.1f);
         }
         else
         {
-            Invoke("Status", 3f);
+            bulletkingAnimator.SetBool("isPattern_3", false);
+            Invoke("Status", 2f);
         }
-
-        if (curPatternCount > 1)
-        {
-            isPatternStart = false;
-        }
-    }
+    }   //  Pattern_3_All()
+    #endregion
     #endregion
 
     #region Pattern_4
@@ -529,6 +599,7 @@ public class BulletKingController : Boss
     //  @brief 빙글빙글 돌면서 방 전체에 총알을 일정하게 연사한 뒤, 마지막으로 약간 더 빠른 총알을 자신을 중심으로 원형으로 발사한다.
     private void Pattern_4()
     {
+        bulletkingAnimator.SetBool("isPattern_4", true);
 
         isPatternStart = true;
 
@@ -578,12 +649,13 @@ public class BulletKingController : Boss
 
         curPatternCount++;
 
-        if (curPatternCount < maxPatternCount)
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_4", 0.2f);
         }
         else
         {
+            bulletkingAnimator.SetBool("isPattern_4", false);
             Invoke("Status", 2f);
         }
     }
@@ -600,6 +672,11 @@ public class BulletKingController : Boss
     #region Pattern_5_All
     IEnumerator Pattern_5_All()
     {
+        if (curPatternCount == 0)
+        {
+            bulletkingAnimator.SetBool("isPattern_5", true);
+            yield return new WaitForSeconds(1.5f);
+        }
 
         isPatternStart = true;
 
@@ -625,12 +702,13 @@ public class BulletKingController : Boss
 
         curPatternCount++;
 
-        if (curPatternCount < maxPatternCount)
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_5_All", 0.7f);
         }
         else
         {
+            bulletkingAnimator.SetBool("isPattern_5", false);
             Invoke("Status", 2f);
         }
     }   //  Pattern_5_All()
@@ -728,11 +806,24 @@ public class BulletKingController : Boss
     #endregion
 
     #region Pattern_6
-    //  [YHJ] 2023-03-16
-    //  @brief 플레이어를 향해 화염병처럼 화염 장판을 원형으로 까는 술잔을 던진다.
     private void Pattern_6()
     {
+        StartCoroutine("Pattern_6_All");
+    }   //  Pattern_6()
+
+    #region Pattern_6_All
+    //  [YHJ] 2023-03-16
+    //  @brief 플레이어를 향해 화염병처럼 화염 장판을 원형으로 까는 술잔을 던진다.
+    IEnumerator Pattern_6_All()
+    {
         isPatternStart = true;
+
+        if (curPatternCount == 0)
+        {
+            bulletkingAnimator.SetBool("isPattern_6", true);
+            yield return new WaitForSeconds(1f);
+        }
+
 
         maxPatternCount = 1;
         bulletSpeed = 8f;
@@ -756,20 +847,17 @@ public class BulletKingController : Boss
 
         curPatternCount++;
 
-        if (curPatternCount < maxPatternCount)
+        if (!isDead && curPatternCount < maxPatternCount)
         {
             Invoke("Pattern_6", 0.7f);
         }
         else
         {
+            bulletkingAnimator.SetBool("isPattern_6", false);
             Invoke("Status", 2f);
         }
-
-        if (curPatternCount > 1)
-        {
-            isPatternStart = false;
-        }
-    }   //  Pattern_6()
+    }   //  Pattern_6_All()
+    #endregion
 
     #region Pattern_6_StopBullet
     IEnumerator Pattern_6_StopBullet(GameObject bullet_, Vector2 targetPosition_, float distanceThreshold_)
@@ -797,17 +885,69 @@ public class BulletKingController : Boss
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBullet"))
+        if (collision.CompareTag("PlayerBullet") && !isDead)
         {
-            StartCoroutine("OnHit");
+            StartCoroutine("OnHit_HpBar");
+            StartCoroutine("OnHit_Color");
         }
     }
 
-    IEnumerator OnHit()
+    IEnumerator OnHit_HpBar()
+    {
+        int bulletDMG = 120;
+
+        if (currentHp > 0)
+        {
+            decreaseAmount = 0.001f;
+
+            currentHp -= bulletDMG;
+
+            while (innerHpBar.fillAmount > (float)currentHp / (float)maxHp)
+            {
+                innerHpBar.fillAmount -= decreaseAmount;
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+        else
+        {
+            isDead = true;
+        }
+
+    }   //  OnHit_HpBar()
+
+    IEnumerator OnHit_Color()
     {
         yield return new WaitForSeconds(0.1f);
         throneSpriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         throneSpriteRenderer.color = Color.white;
+    }   //  OnHit_Color()
+
+    private void Die()
+    {
+        Debug.Log("뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐");
+
+        bulletkingAnimator.SetTrigger("isDead");
+        StartCoroutine("Die_VFX");
+    }
+
+    IEnumerator Die_VFX()
+    {
+        vfxIndex = 10;
+
+        float randomTime = Random.Range(0.08f, 0.55f);
+
+        for (int i = 0; i < vfxIndex; i++)
+        {
+            vfxRangeX = Random.Range(-1.5f, 1.5f);
+            vfxRangeY = Random.Range(-1.8f, 1.8f);
+
+            Vector3 createPosition = bossBulletKing.transform.position + new Vector3(vfxRangeX, vfxRangeY, 0f);
+            GameObject vfx = Instantiate(vfxPrefab, createPosition, Quaternion.identity);
+            vfx.SetActive(true);
+
+            yield return new WaitForSeconds(randomTime);
+        }
+        yield return new WaitForSeconds(3f);
     }
 }

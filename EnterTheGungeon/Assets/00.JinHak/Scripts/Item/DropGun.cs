@@ -12,6 +12,6 @@ public class DropGun : DropItem
 
     private void Start()
     {
-        item.itemScript = dropWeapon.GetComponent<PlayerWeapon>().weaponDescription;
+        item.itemScript = dropWeapon.GetComponent<PlayerWeapon>().weaponDataTxt;
     }
 }

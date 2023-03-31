@@ -20,36 +20,19 @@ public class PlayerAttack : MonoBehaviour
     // 지금 사용할 무기 스크립트 가져오는 배열
     public List<PlayerWeapon> playerWeaponScript = new List<PlayerWeapon>();
 
-    public bool isDodgeing = false;
-
     public int nowWeaponIndex = default;
 
     public bool isReloadNow = false;
 
     
-    //// Start is called before the first frame update
-    //private void Awake()
-    //{
-    //    rotateObjs = gameObject.transform.parent.gameObject;
-    //    playerObj = rotateObjs.transform.parent.gameObject;
-    //    playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
-    //    weaponObjs = gameObject.FindChildObj("Weapons");
-
-
-    //    nowWeaponIndex = 0;
-
-    //    isDodgeing = false;
-
-
-    //}
-
+    
     // Update is called once per frame
     void Update()
     {
         // 셋팅 되기 전에는 업데이트 문을 못 돌게 하는 조건
         if(PlayerManager.Instance.player.isSetOk == false) { return; }
 
-        if (isDodgeing == true) { return; }
+        if (PlayerManager.Instance.player.playerMove.isDodgeing == true) { return; }
 
         // { [Junil] 무기가 마우스 커서를 바라보는 코드
         // 마우스 커서 위치 값
@@ -144,15 +127,13 @@ public class PlayerAttack : MonoBehaviour
 
         nowWeaponIndex = 0;
 
-        isDodgeing = false;
-
-        //// 무기 테스트
-        //GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
-        //    ("03.Junil/Prefabs/PlayerWeapons/03.YariLauncher");
-        //playerWeapons.Add(Instantiate(SPMAWeaponPrefab, weaponObjs.transform.position,
-        //    Quaternion.identity,
-        //    weaponObjs.transform));
-        //playerWeaponScript.Add(playerWeapons[0].GetComponent<PlayerWeapon>());
+        // 무기 테스트
+        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
+            ("03.Junil/Prefabs/PlayerWeapons/03.YariLauncher");
+        playerWeapons.Add(Instantiate(SPMAWeaponPrefab, weaponObjs.transform.position,
+            Quaternion.identity,
+            weaponObjs.transform));
+        playerWeaponScript.Add(playerWeapons[0].GetComponent<PlayerWeapon>());
 
     }
 

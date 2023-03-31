@@ -28,7 +28,7 @@ public class BossHpBar : MonoBehaviour
             innerHpbar.fillAmount = (float)boss.GetComponent<BossGorGun>().currentHp / (float)boss.GetComponent<BossGorGun>().maxHp;
         }
 
-        if(boss == null)
+        if (boss == null)
         {
             Destroy(this.gameObject);
         }

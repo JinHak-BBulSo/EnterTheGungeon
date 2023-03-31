@@ -158,9 +158,10 @@ public class SPMAWeapon : PlayerWeapon
         base.SetWeaponData();
 
         this.weaponName = "해병 휴대 무기";
-        this.weaponDescription = "항상 그대 곁에\r\n" +
-            "무한 탄환입니다. 비밀 벽을 드러내지 않습니다. 프라이머다인의 하급 병사가 총굴로 가지고 온 해병 휴대 무기입니다.\r\n" +
+        this.weaponDesc = "항상 그대 곁에";
+        this.weaponDataTxt = "무한 탄환입니다. 비밀 벽을 드러내지 않습니다. 프라이머다인의 하급 병사가 총굴로 가지고 온 해병 휴대 무기입니다.\n" +
             "튼튼한 총처럼 보이지만, 정작 필요할 때는 오작동을 일으키는 것으로 알려졌습니다.";
+        
 
         this.weaponPos = new Vector3(5f, 2f, 0f);
         this.weaponReload = 1.2f;

@@ -317,6 +317,35 @@ public class PlayerController : MonoBehaviour
     }   //OnHitAndStatusEvent()
 
     
+    //! 플레이어의 체력을 깍는 함수
+    public void GetHitPlayer()
+    {
+
+        if (PlayerManager.Instance.player.playerMove.isDodgeing == true) { return; }
+
+        if (isShield == true)
+        {
+            playerShield--;
+
+        }
+        else
+        {
+            playerHp--;
+        }
+
+
+        if (playerHp == 0)
+        {
+            // 플레이어 사망 효과
+        }
+        else
+        {
+            AttackedPlayer();
+        }
+
+    }
+
+
     //! 플레이어가 피격 시 깜빡거리는 효과
     public void AttackedPlayer()
     {

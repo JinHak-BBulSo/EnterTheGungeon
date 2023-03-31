@@ -6,7 +6,9 @@ public class MonsterDetect : MonoBehaviour
 {
 
     private MissileBulletMove missileMove = default;
-    private bool isFirstTarget = false;
+    
+    // 처음 감지되는 적만 표적으로 삼는다
+    public bool isFirstTarget = false;
 
 
     private void OnDisable()

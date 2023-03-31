@@ -86,7 +86,6 @@ public class PlayerMove : MonoBehaviour
         PlayerAniDodge();
 
         isDodgeing = true;
-        PlayerManager.Instance.player.playerAttack.isDodgeing = true;
 
         // 마우스 커서 위치 값
         Vector3 mousePos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -107,7 +106,6 @@ public class PlayerMove : MonoBehaviour
         
         yield return new WaitForSeconds(0.8f);
         isDodgeing = false;
-        PlayerManager.Instance.player.playerAttack.isDodgeing = false;
 
         StartReDodge();
     }
