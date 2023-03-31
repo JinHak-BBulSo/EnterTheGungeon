@@ -87,7 +87,7 @@ public class MissileBulletMove : PlayerBullet
 
         }
 
-        if(targetMonster.activeSelf == false)
+        if(targetMonster != null && targetMonster.activeSelf == false)
         {
             // 다시 표적을 잡게 하는 초기값
             targetMonster = default;

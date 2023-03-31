@@ -62,17 +62,6 @@ public class InvenListData : MonoBehaviour
     public int selectTabInvenVal = default;
 
 
-    // { [Junil, HT] 선택된 인벤토리의 내용을 보여줄 오브젝트를 저장하는 배열
-    // 장비 내용을 저장할 배열
-    public List<GameObject> equipmentMenuDatas = new List<GameObject>();
-
-    // 몬스터 도감 내용을 저장할 배열
-    public List<GameObject> monsterMenuDatas = new List<GameObject>();
-
-    // } [Junil, HT] 선택된 인벤토리의 내용을 보여줄 오브젝트를 저장하는 배열
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -138,16 +127,11 @@ public class InvenListData : MonoBehaviour
         if (selectTabInvenVal == nowTabInven)
         {
 
-            // 선택된 인벤토리 탭 내용을 보여주는 조건
             switch (nowTabInven)
             {
-                // 장비 창
                 case 0:
                     equipmentMenu[3].SetActive(false);
                     equipmentMenu[0].SetActive(true);
-
-                    ViewTabData(selectTabInvenVal);
-
 
                     break;
 
@@ -163,12 +147,9 @@ public class InvenListData : MonoBehaviour
 
                     break;
 
-                // 몬스터 도감 창
                 case 3:
                     monsterMenu[3].SetActive(false);
                     monsterMenu[0].SetActive(true);
-
-                    ViewTabData(selectTabInvenVal);
 
                     break;
 
@@ -262,62 +243,6 @@ public class InvenListData : MonoBehaviour
         }
     }
 
-    //! 선택된 탭의 내용을 보여주는 함수
-    public void ViewTabData(int selectTabVal_)
-    {
-
-        List<GameObject> offInvenData_ = default;
-        List<GameObject> onInvenData_ = default;
-
-
-        switch (selectTabVal_)
-        {
-            case 0:
-                offInvenData_ = monsterMenuDatas;
-
-                onInvenData_ = equipmentMenuDatas;
-
-
-                break;
-
-            case 3:
-                offInvenData_ = equipmentMenuDatas;
-
-                onInvenData_ = monsterMenuDatas;
-
-
-                break;
-
-            default:
-                /* Do Nothing */
-
-                break;
-
-        }
-
-        //if (offInvenData_ == default || onInvenData_ == default) { return; }
-        if (offInvenData_ == default) { }
-        else
-        {
-            foreach (GameObject temp_ in offInvenData_)
-            {
-                temp_.SetActive(false);
-            }
-
-        }
-
-
-        if (onInvenData_ == default) { }
-        else
-        {
-            foreach (GameObject temp_ in onInvenData_)
-            {
-                temp_.SetActive(true);
-            }
-        }
-
-
-    }
 
 
     //! 탭 값을 초기화 해주는 함수
@@ -331,9 +256,6 @@ public class InvenListData : MonoBehaviour
     {
         selectTabInvenVal = nowTabInvenCnt;
     }
-
-
-
 
     //! 현재 인벤토리 탭의 선택 값을 초기화 하는 함수
     public void ResetTabInvenMenu(GameObject[] tabMenu)
@@ -454,16 +376,6 @@ public class InvenListData : MonoBehaviour
             inventoryData_.weaponSlots.Add(gunsInven.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<Slot>());
             inventoryData_.activeSlots.Add(activeInven.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<Slot>());
             inventoryData_.passiveSlots.Add(passiveInven.transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<Slot>());
-
-            if (i < 3)
-            {
-                equipmentMenuDatas.Add(gameObject.transform.GetChild(i + 1).gameObject);
-
-            }
-
         }
-
-        monsterMenuDatas.Add(gameObject.transform.GetChild(4).gameObject);
-
     }   // SetInvenList()
 }

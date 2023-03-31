@@ -19,7 +19,7 @@ public class InvenInfoData : MonoBehaviour
     public Text itemDescTxt = default;
 
     // 현재 선택한 아이템의 역할을 보여줄 텍스트
-    public Text itemClassTxt = default;
+    public Text itemTypeTxt = default;
 
 
     // 현재 선택한 아이템의 설명을 보여줄 텍스트
@@ -61,7 +61,7 @@ public class InvenInfoData : MonoBehaviour
         // 선택한 아이템의 역할
         GameObject itemClassObj_ = inventoryInfoSetObjs_.transform.GetChild(3).gameObject;
 
-        itemClassTxt = itemClassObj_.transform.GetChild(0).gameObject.GetComponentMust<Text>();
+        itemTypeTxt = itemClassObj_.transform.GetChild(0).gameObject.GetComponentMust<Text>();
 
 
         // 선택한 아이템의 상세 설명
@@ -72,14 +72,5 @@ public class InvenInfoData : MonoBehaviour
         GameObject scrollContent_ = scrollViewport_.transform.GetChild(0).gameObject;
 
         itemTxt = scrollContent_.transform.GetChild(0).gameObject.GetComponentMust<Text>();
-
-
-        InventoryManager.Instance.inventoryDatas.invenListData.equipmentMenuDatas.Add(inventoryInfoSetObjs_);
-        InventoryManager.Instance.inventoryDatas.invenListData.equipmentMenuDatas.Add(
-            gameObject.transform.GetChild(1).gameObject);
-
-        InventoryManager.Instance.inventoryDatas.invenListData.monsterMenuDatas.Add(transform.GetChild(2).gameObject);
-
-
     }
 }
