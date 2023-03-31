@@ -1,0 +1,127 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MissileBulletMove : PlayerBullet
+{
+
+    // 미사일 오브젝트의 리지드바디
+    private Rigidbody2D missileBulletRigid2D = default;
+
+    private Animator missileAni = default;
+
+    public Vector3 activePos = default;
+
+    public bool isOffBullet = false;
+
+    public GameObject targetMonster = default;
+
+    public float radiusLength = default;
+
+
+    private void Awake()
+    {
+        
+        missileBulletRigid2D = gameObject.GetComponentMust<Rigidbody2D>();
+
+        missileAni = gameObject.GetComponentMust<Animator>();
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        activePos = gameObject.transform.position;
+        // KJH ADD
+        missileBulletRigid2D.velocity = transform.up * bulletSpeed;
+
+        
+
+        if (isOffBullet == true)
+        {
+            isOffBullet = false;
+            missileAni.SetBool("isOffBullet", isOffBullet);
+
+        }
+    }
+
+    private void OnDisable()
+    {
+        activePos = Vector3.zero;
+
+        targetMonster = default;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        isOffBullet = false;
+        
+
+        //KJH 위치 변경 Update -> Start
+        missileBulletRigid2D.velocity = transform.up * bulletSpeed;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float Len_ = Vector3.Distance(gameObject.transform.position, activePos);
+
+
+        // 처음 발사한 위치에서 일정 거리 가면 발동
+        if (bulletRange <= Len_ && !isOffBullet)
+        {
+            StartCoroutine(OffBullet());
+        }
+
+        // 몬스터를 감지하면 유도되는 조건
+        if(targetMonster != null || targetMonster != default)
+        {
+            Vector3 missileLen_ = targetMonster.transform.position - gameObject.transform.position;
+
+            float rotateMissile_ = Mathf.Atan2(missileLen_.y, missileLen_.x) * Mathf.Rad2Deg;
+
+
+
+            gameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotateMissile_ - 90f);
+            missileBulletRigid2D.velocity = missileLen_.normalized * bulletSpeed;
+
+        }
+
+        if(targetMonster.activeSelf == false)
+        {
+            // 다시 표적을 잡게 하는 초기값
+            targetMonster = default;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<MonsterDetect>().isFirstTarget = false;
+        }
+        
+
+
+
+    }
+
+
+    //! 총알이 총구에서 발사될 때 시작 지점을 지정해주는 함수
+    public void SetActivePos()
+    {
+        activePos = gameObject.transform.position;
+
+    }
+
+
+
+    public override IEnumerator OffBullet()
+    {
+        missileBulletRigid2D.velocity = Vector2.zero;
+
+        isOffBullet = true;
+
+        missileAni.SetBool("isOffBullet", isOffBullet);
+
+        yield return new WaitForSeconds(0.2f);
+
+        this.gameObject.SetActive(false);
+
+    }
+
+
+}

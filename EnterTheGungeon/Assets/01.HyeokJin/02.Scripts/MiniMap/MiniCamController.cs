@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MiniCamController : MoveCamera2D
@@ -19,13 +18,16 @@ public class MiniCamController : MoveCamera2D
 
     public override void LateUpdate()
     {
-        // 플레이어 위치 값
-        Vector3 targetPos_ = new Vector3(target.transform.position.x,
-            target.transform.position.y, -20f);
-            
-        // [Junil, YHJ] 미니맵의 위치는 플레이어의 윗 쪽에 위치한다.
-        gameObject.transform.position = Vector3.Lerp(transform.position,
-            targetPos_, SPEED_CAMERA * Time.deltaTime);
+        if (!PlayerManager.Instance.playerCamera.isBossIntro)
+        {
+            // 플레이어 위치 값
+            Vector3 targetPos_ = new Vector3(target.transform.position.x,
+                target.transform.position.y, -20f);
+
+            // [Junil, YHJ] 미니맵의 위치는 플레이어의 윗 쪽에 위치한다.
+            gameObject.transform.position = Vector3.Lerp(transform.position,
+                targetPos_, SPEED_CAMERA * Time.deltaTime);
+        }
     }
 
     private void Update()
@@ -35,7 +37,7 @@ public class MiniCamController : MoveCamera2D
 
     private void DisplayMiniCam()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) && UIController.boolGamePause == false)
         {
             miniCam.enabled = false;
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public List<string> enemy;
+    public List<string> enemy = new List<string>();
     public GameObject boss;
     public GameObject mapBoss;
     private List<GameObject> enemies = new List<GameObject>();
@@ -17,9 +17,7 @@ public class Room : MonoBehaviour
 
     public bool isPlayerEnter = false;
     public bool isRoomClear = false;
-    public bool isSpecialRoom = false;
 
-    private GameObject portalObjs = default;
     public virtual void Start()
     {
         monsterobjs = GameObject.Find("MonsterObjs");
@@ -46,30 +44,33 @@ public class Room : MonoBehaviour
         if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {
             isRoomClear = true;
-            DoorManager.Instance.AllDoorOpen();
         }  
     }
 
     private void LateUpdate()
     {
-        if (isPlayerEnter && isRoomClear)
+        if (isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
         {
             DoorManager.Instance.AllDoorOpen();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player" && collision.gameObject != null)
         {
             isPlayerEnter = true;
+            PlayerManager.Instance.nowPlayerInRoom = this;
             if (!isRoomClear)
             {
                 DoorManager.Instance.AllDoorClose();
 
-                foreach (GameObject enemy in enemies)
+                if (enemy.Count != 0)
                 {
-                    enemy.SetActive(true);
+                    foreach (GameObject enemy in enemies)
+                    {
+                        enemy.SetActive(true);
+                    }
                 }
                 if (boss != null)
                 {

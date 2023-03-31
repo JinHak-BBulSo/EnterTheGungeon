@@ -7,8 +7,11 @@ public class Weapons : MonoBehaviour
     // 무기 이름
     protected string weaponName = string.Empty;
 
+    // 무기의 한줄 설명
+    protected string weaponDesc = string.Empty;
+
     // 무기 설명
-    protected string weaponDescription = string.Empty;
+    public string weaponDataTxt = string.Empty;
 
     // 무기 위치
     protected Vector3 weaponPos = default;
@@ -49,9 +52,14 @@ public class Weapons : MonoBehaviour
         return this.weaponName;
     }
 
-    public string WeaponDescription()
+    public string WeaponDesc()
     {
-        return this.weaponDescription;
+        return this.weaponDesc;
+    }
+
+    public string WeaponDataTxt()
+    {
+        return this.weaponDataTxt;
     }
     
     public Vector3 WeaponPos()
@@ -112,13 +120,3 @@ public class Weapons : MonoBehaviour
 
 }   // Weapons()
 
-
-
-class NoWeapon : Weapons
-{
-
-    public NoWeapon()
-    {
-        this.weaponHand = 0;
-    }
-}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1383545086503812184}
   - component: {fileID: 1383545086503812183}
   m_Layer: 6
-  m_Name: PlayerMiniMapIcon
+  m_Name: PlayerMiniMapIconGuide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 617967242, guid: d41a34b772880904bb425fcd4015b0b5, type: 3}
+  m_Sprite: {fileID: -1719548212, guid: d41a34b772880904bb425fcd4015b0b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

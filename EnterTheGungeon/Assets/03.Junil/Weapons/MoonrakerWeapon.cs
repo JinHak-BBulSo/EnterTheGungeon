@@ -218,8 +218,8 @@ public class MoonrakerWeapon : PlayerWeapon
     {
         base.SetWeaponData();
         this.weaponName = "문스크래퍼";
-        this.weaponDescription = "비이이이이오오옹!\r\n" +
-            "이 강력한 레이저는 테라포밍 프로젝트에서 고속으로 월면석을 깎아낼 목적으로 설계된 것입니다.";
+        this.weaponDesc = "비이이이이오오옹";
+        this.weaponDataTxt = "이 강력한 레이저는 테라포밍 프로젝트에서 고속으로 월면석을 깎아낼 목적으로 설계된 것입니다.";
 
         this.weaponPos = new Vector3(5f, 2f, 0f);
 

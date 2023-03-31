@@ -91,13 +91,6 @@ public class MapGenerator : MonoBehaviour
         AccessZone();
         AccessZoneRoom();
 
-        CompositeCollider2D lineComposite = mapAccessLine.AddComponent<CompositeCollider2D>();
-        lineComposite.isTrigger = true;
-        lineComposite.geometryType = CompositeCollider2D.GeometryType.Polygons;
-
-        lineComposite.gameObject.SetActive(false);
-        lineComposite.gameObject.SetActive(true); 
-
         ColliderSizeSet();
         startPoint.GetComponent<StartPoint>().SetPlayer();
     }
@@ -298,6 +291,7 @@ public class MapGenerator : MonoBehaviour
             if (i == 0)
             {
                 startPoint = startMapObj;
+                PlayerManager.Instance.nowPlayerInRoom = startMap.room;
             }
             
             // 보스맵 설정의 경우

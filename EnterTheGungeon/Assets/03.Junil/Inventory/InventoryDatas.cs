@@ -19,12 +19,13 @@ public class InventoryDatas : MonoBehaviour
 
     public void Awake()
     {
-        // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
-        SetInventory();
 
         // 인벤토리 싱글톤 호출
         InventoryManager.Instance.inventoryDatas = this;
         InventoryManager.Instance.inventoryDataObjs = gameObject;
+        
+        // 인벤토리에서 수정해야 할 곳들을 캐싱하는 함수
+        SetInventory();
         GFunc.Log("인벤 데이터 호출");
     }
 
@@ -60,7 +61,7 @@ public class InventoryDatas : MonoBehaviour
         activeListCnt = 0;
         passiveListCnt = 0;
 
-        invenInfoData.SetInvenInfo();
         invenListData.SetInvenList();
+        invenInfoData.SetInvenInfo();
     }
 }

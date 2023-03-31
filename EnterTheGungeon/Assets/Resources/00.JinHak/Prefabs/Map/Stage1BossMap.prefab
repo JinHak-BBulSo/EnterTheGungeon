@@ -161,13 +161,14 @@ MonoBehaviour:
   monsterobjs: {fileID: 0}
   isPlayerEnter: 0
   isRoomClear: 0
-  isSpecialRoom: 1
   roomEntrances:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   bossCount: 1
+  introDelay: 2
+  bossIndex: 1
 --- !u!1 &4647603104968641757
 GameObject:
   m_ObjectHideFlags: 0
