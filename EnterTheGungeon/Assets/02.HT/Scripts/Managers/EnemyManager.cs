@@ -26,17 +26,25 @@ public class EnemyManager : GSingleton<EnemyManager>
     "빨간 총탄 일족은 산탄총 건데드 중에서 가장 뚱뚱하고 내구성이 높습니다.\n산탄총 일족은 총탄 사회에서 자신들보다 작은 친족의 집행자 역할을 종종 맡아서 수행합니다."};
 
 
-    public List<string> bossName = new List<string> { "gorGun" };
+    public List<string> bossName = new List<string> { "bulletKing", "gorGun" };
+    public List<Sprite> imageBossInfo;
+
+    //public List<string> textEnemyExplain1 = new List<string> {"일반적인 적", "건저러 마법 개론", "어둠의 기사", "빨간색 건데드"};
+    public List<string> textBossExplain1 = new List<string> { "A Blast of Bullets", "Vengeful Gunwitch" };
+    public List<string> textBossExplain2 = new List<string> { "", "" };
+
+    public List<string> textBossLongDesc = new List<string> { "Seated atop the Lead Throne, the Bullet King rules over the Leadfort's Gundead. \n He will hold court with any brave enough to reach his sanctum. \n Beware his Chancellor, for he holds back a terrible rage.",
+    "The Gorgun, Meduzi, has been the end of many novice Gungeoneers. \n Her presence can temporarily turn firing mechanisms to stone, and her shrieks call forth bullets from beyond the Curtain." };
 
     //test/
     public Dictionary<string, bool> enemyFindCheck = new Dictionary<string, bool>()
-    {{"bulletKin", true}, {"bookllet", false}, {"gunNut", false}, {"redShotgunKin", false}};
+    {{"bulletKin", true}, {"bookllet", false}, {"gunNut", true}, {"redShotgunKin", false}};
     /* public Dictionary<string, bool> enemyFindCheck = new Dictionary<string, bool>()
     {{"bulletKin", false}, {"bandanaBulletKin", false}, {"gunNut", false}}; */
 
 
     public Dictionary<string, bool> bossFindCheck = new Dictionary<string, bool>()
-    {{"gorGun", false}};
+    {{"bulletKing", false},{"gorGun", true}};
 
 
     public override void Awake()
@@ -44,6 +52,9 @@ public class EnemyManager : GSingleton<EnemyManager>
         imageEnemyInfo = new List<Sprite> { Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_Bullet_Kin"),
     Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_Bookllet"), Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_Gun_Nut"),
     Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_Red_Shotgun_Kin")};
+
+        imageBossInfo = new List<Sprite> {Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_Bullet_King"),
+    Resources.Load<Sprite>("02.HT/Sprites/Ammonomicon/EnemyBook/Ammonomicon_The_Gorgun") };
     }
 
     public GameObject CreateEnemy(string enemyName, Transform transform_)

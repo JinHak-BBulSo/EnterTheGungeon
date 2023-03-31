@@ -29,7 +29,7 @@ public class InvenInfoData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 
@@ -72,5 +72,14 @@ public class InvenInfoData : MonoBehaviour
         GameObject scrollContent_ = scrollViewport_.transform.GetChild(0).gameObject;
 
         itemTxt = scrollContent_.transform.GetChild(0).gameObject.GetComponentMust<Text>();
+
+
+        InventoryManager.Instance.inventoryDatas.invenListData.equipmentMenuDatas.Add(inventoryInfoSetObjs_);
+        InventoryManager.Instance.inventoryDatas.invenListData.equipmentMenuDatas.Add(
+            gameObject.transform.GetChild(1).gameObject);
+
+        InventoryManager.Instance.inventoryDatas.invenListData.monsterMenuDatas.Add(transform.GetChild(2).gameObject);
+
+
     }
 }

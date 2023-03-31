@@ -8,6 +8,7 @@ public class EnemyListButton : MonoBehaviour
 {
     EnemyBook enemyBook;
     List<GameObject> enemyList;
+    List<GameObject> bossList;
 
     string defaultTextEnemyName;
     Sprite[] AmmonomiconSprite;
@@ -21,6 +22,7 @@ public class EnemyListButton : MonoBehaviour
     {
         enemyBook = transform.parent.parent.parent.parent.parent.GetComponent<EnemyBook>();
         enemyList = enemyBook.enemyList;
+        bossList = enemyBook.bossList;
 
         defaultTextEnemyName = "Unknown";
 
@@ -42,7 +44,21 @@ public class EnemyListButton : MonoBehaviour
 
     public void SetEnemyInfo()
     {
-        int index_ = enemyList.IndexOf(this.gameObject);
+        int index_ = 0;
+        /* enemyList.IndexOf(this.gameObject);
+        bossList.IndexOf(this.gameObject) */
+
+        if (enemyList.IndexOf(this.gameObject) != -1)
+        {
+            index_ = enemyList.IndexOf(this.gameObject);
+        }
+
+        if (bossList.IndexOf(this.gameObject) != -1)
+        {
+            index_ = bossList.IndexOf(this.gameObject);
+        }
+
+
 
         if (!transform.GetChild(0).gameObject.activeSelf)
         {
@@ -54,11 +70,25 @@ public class EnemyListButton : MonoBehaviour
         }
         else
         {
-            enemyBook.textEnemyName.text = EnemyManager.Instance.enemyName[index_];
-            enemyBook.imageEnemyInfo.sprite = EnemyManager.Instance.imageEnemyInfo[index_];
-            enemyBook.textEnemyExplain1.text = EnemyManager.Instance.textEnemyExplain1[index_];
-            enemyBook.textEnemyExplain2.text = EnemyManager.Instance.textEnemyExplain2[index_];
-            enemyBook.textEnemyLongDesc.text = EnemyManager.Instance.textEnemyLongDesc[index_];
+            if (enemyList.IndexOf(this.gameObject) != -1)
+            {
+                index_ = enemyList.IndexOf(this.gameObject);
+                enemyBook.textEnemyName.text = EnemyManager.Instance.enemyName[index_];
+                enemyBook.imageEnemyInfo.sprite = EnemyManager.Instance.imageEnemyInfo[index_];
+                enemyBook.textEnemyExplain1.text = EnemyManager.Instance.textEnemyExplain1[index_];
+                enemyBook.textEnemyExplain2.text = EnemyManager.Instance.textEnemyExplain2[index_];
+                enemyBook.textEnemyLongDesc.text = EnemyManager.Instance.textEnemyLongDesc[index_];
+            }
+
+            if (bossList.IndexOf(this.gameObject) != -1)
+            {
+                index_ = bossList.IndexOf(this.gameObject);
+                enemyBook.textEnemyName.text = EnemyManager.Instance.bossName[index_];
+                enemyBook.imageEnemyInfo.sprite = EnemyManager.Instance.imageBossInfo[index_];
+                enemyBook.textEnemyExplain1.text = EnemyManager.Instance.textBossExplain1[index_];
+                enemyBook.textEnemyExplain2.text = EnemyManager.Instance.textBossExplain2[index_];
+                enemyBook.textEnemyLongDesc.text = EnemyManager.Instance.textBossLongDesc[index_];
+            }
         }
     }
 }
