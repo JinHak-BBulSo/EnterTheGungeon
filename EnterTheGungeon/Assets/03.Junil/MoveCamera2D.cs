@@ -34,8 +34,14 @@ public class MoveCamera2D : MonoBehaviour
 
         exceptionRangeVal = 0.35f;
 
-        
-        target = gameObjs_.FindChildObj("PlayerObjs").GetChildrenObjs()[0];
+        if(target == null || target == default)
+        {
+            target = gameObjs_.FindChildObj("PlayerObjs").GetChildrenObjs()[0];
+        }
+        else
+        {
+            /* Do Nothing */
+        }
 
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;

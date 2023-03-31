@@ -128,11 +128,11 @@ public class PlayerController : MonoBehaviour
 
         if (isStatusEvent == true)
         {
-            hpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
-            blankController.SetPlayerBlank(playerBlank);
-            keyController.SetPlayerKey(playerKey);
-            cashController.SetPlayerCash(playerMoney);
-            CheckShield();
+            //hpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
+            //blankController.SetPlayerBlank(playerBlank);
+            //keyController.SetPlayerKey(playerKey);
+            //cashController.SetPlayerCash(playerMoney);
+            //CheckShield();
 
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
 
@@ -258,6 +258,7 @@ public class PlayerController : MonoBehaviour
 
         topCollider.SetActive(true);
 
+        playerMove.SetPlayerMove();
         bottomCollider.ResettingCollider();
         playerAttack.SetPlayerAttack();
     }

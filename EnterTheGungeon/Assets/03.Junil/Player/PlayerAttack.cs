@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     public bool isReloadNow = false;
 
-
+    
     //// Start is called before the first frame update
     //private void Awake()
     //{
@@ -35,12 +35,12 @@ public class PlayerAttack : MonoBehaviour
     //    playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
     //    weaponObjs = gameObject.FindChildObj("Weapons");
 
-        
+
     //    nowWeaponIndex = 0;
 
     //    isDodgeing = false;
 
-        
+
     //}
 
     // Update is called once per frame
@@ -145,6 +145,15 @@ public class PlayerAttack : MonoBehaviour
         nowWeaponIndex = 0;
 
         isDodgeing = false;
+
+        //// 무기 테스트
+        //GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
+        //    ("03.Junil/Prefabs/PlayerWeapons/03.YariLauncher");
+        //playerWeapons.Add(Instantiate(SPMAWeaponPrefab, weaponObjs.transform.position,
+        //    Quaternion.identity,
+        //    weaponObjs.transform));
+        //playerWeaponScript.Add(playerWeapons[0].GetComponent<PlayerWeapon>());
+
     }
 
 
