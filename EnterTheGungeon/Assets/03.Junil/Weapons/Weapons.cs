@@ -11,8 +11,7 @@ public class Weapons : MonoBehaviour
     protected string weaponDesc = string.Empty;
 
     // 무기 설명
-    protected string weaponDataTxt = string.Empty;
-
+    public string weaponDescription = string.Empty;
 
     // 무기 위치
     protected Vector3 weaponPos = default;

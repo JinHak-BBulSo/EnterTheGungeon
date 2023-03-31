@@ -9,4 +9,9 @@ public class DropGun : DropItem
     {
         InventoryManager.Instance.inventoryControl.AddItem(this);
     }
+
+    private void Start()
+    {
+        item.itemScript = dropWeapon.GetComponent<PlayerWeapon>().weaponDescription;
+    }
 }
