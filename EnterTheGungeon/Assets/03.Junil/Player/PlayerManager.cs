@@ -9,6 +9,7 @@ public class PlayerManager : GSingleton<PlayerManager>
     public PlayerController player = default;
     public Room nowPlayerInRoom = default;
     public MoveCamera2D playerCamera = default;
+    public MiniCamController miniCamController = default;
 
     public override void Awake()
     {

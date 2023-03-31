@@ -232,14 +232,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2381235630391576392, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381235631293058002, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2381235631347796000, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -324,17 +316,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2381235631347796003, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381235631347796003, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 2381235631347796004, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
       propertyPath: m_Name
       value: UIObjs
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620058141160906186, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620058141160906186, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
@@ -343,29 +335,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2381235631317543562, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
   m_PrefabInstance: {fileID: 887233675}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &887233677 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2381235631293058004, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-  m_PrefabInstance: {fileID: 887233675}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &887233678 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2381235631347796004, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
-  m_PrefabInstance: {fileID: 887233675}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &887233679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887233678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975113be7b729a34ea1cd8241f995975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miniCam: {fileID: 887233677}
 --- !u!1 &923404515
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +399,20 @@ MonoBehaviour:
     \uC9D1\uD589\uC790 \uC5ED\uD560\uC744 \uC885\uC885 \uB9E1\uC544\uC11C \uC218\uD589\uD569\uB2C8\uB2E4."
   bossName:
   - gorGun
+  imageBossInfo: []
+  textBossExplain1:
+  - A Blast of Bullets
+  - Vengeful Gunwitch
+  textBossExplain2:
+  - 
+  - 
+  textBossLongDesc:
+  - "Seated atop the Lead Throne, the Bullet King rules over the Leadfort's Gundead.
+    \n He will hold court with any brave enough to reach his sanctum. \n Beware his
+    Chancellor, for he holds back a terrible rage."
+  - "The Gorgun, Meduzi, has been the end of many novice Gungeoneers. \n Her presence
+    can temporarily turn firing mechanisms to stone, and her shrieks call forth bullets
+    from beyond the Curtain."
 --- !u!4 &923404517
 Transform:
   m_ObjectHideFlags: 0

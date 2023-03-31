@@ -14,6 +14,7 @@ public class MiniCamController : MoveCamera2D
     public override void Start()
     {
         base.Start();
+        PlayerManager.Instance.miniCamController = this;
     }
 
     public override void LateUpdate()
@@ -27,6 +28,11 @@ public class MiniCamController : MoveCamera2D
             // [Junil, YHJ] 미니맵의 위치는 플레이어의 윗 쪽에 위치한다.
             gameObject.transform.position = Vector3.Lerp(transform.position,
                 targetPos_, SPEED_CAMERA * Time.deltaTime);
+        }
+
+        if (!PlayerManager.Instance.nowPlayerInRoom.isRoomClear && gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
         }
     }
 

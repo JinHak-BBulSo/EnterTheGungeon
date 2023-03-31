@@ -56,7 +56,7 @@ public class Room : MonoBehaviour
     {
         if (isRoomClear && isPlayerEnter)
         {
-            Debug.Log("지랄마");
+            PlayerManager.Instance.miniCamController.gameObject.SetActive(true);
             DoorManager.Instance.AllDoorOpen();
         }
     }

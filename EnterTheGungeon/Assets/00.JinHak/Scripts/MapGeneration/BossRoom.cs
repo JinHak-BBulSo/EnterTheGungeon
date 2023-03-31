@@ -10,6 +10,7 @@ public class BossRoom : Room
     public float introDelay = 0;
     private GameObject cutInObjs = default;
     public int bossIndex = -1;
+    public bool cutInOn = false;
 
     private void Awake()
     {
@@ -47,9 +48,10 @@ public class BossRoom : Room
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        if(collision.tag == "Player" && !isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
+        if(collision.tag == "Player" && !isRoomClear && isPlayerEnter && !cutInOn)
         {
             PlayerManager.Instance.playerCamera.isBossIntro = true;
+            PlayerManager.Instance.miniCamController.isBossIntro = true;
             MoveCamera2D.target = this.gameObject;
             StartCoroutine(BossIntroEnd(introDelay));
         }
@@ -57,11 +59,13 @@ public class BossRoom : Room
 
     IEnumerator BossIntroEnd(float introDelay_)
     {
+        cutInOn = true;
         yield return new WaitForSeconds(1.0f);
         cutInObjs.transform.GetChild(bossIndex).gameObject.SetActive(true);
         yield return new WaitForSeconds(introDelay_);
         cutInObjs.transform.GetChild(bossIndex).gameObject.SetActive(false);
         PlayerManager.Instance.playerCamera.isBossIntro = false;
+        PlayerManager.Instance.miniCamController.isBossIntro = false;
         MoveCamera2D.target = PlayerManager.Instance.player.gameObject;
     }
 }

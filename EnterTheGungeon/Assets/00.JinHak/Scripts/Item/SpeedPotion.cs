@@ -6,7 +6,9 @@ public class SpeedPotion : ActiveItem
 {
     public override void UseActive()
     {
-        PlayerManager.Instance.player.playerHp += 1;
-        PlayerManager.Instance.player.playerMove.playerSpeed += 1.5f;
+        PlayerController player = PlayerManager.Instance.player;
+        player.playerHp += 1;
+        player.playerMove.playerSpeed += 1.5f;
+        player.hpController.SetPlayerHp(player.playerHp, player.playerMaxHp, player.playerShield);
     }
 }

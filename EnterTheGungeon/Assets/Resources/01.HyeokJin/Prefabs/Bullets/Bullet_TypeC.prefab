@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3513308984845282141}
   m_Layer: 0
   m_Name: Bullet_TypeC
-  m_TagString: Untagged
+  m_TagString: MonsterBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRotate: 0
+  isBounce: 0
+  isExplode: 0
+  rotateSpeed: 0
 --- !u!50 &7286448961338659258
 Rigidbody2D:
   serializedVersion: 4

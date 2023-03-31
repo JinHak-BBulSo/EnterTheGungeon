@@ -69,8 +69,8 @@ public class BossGorGun : Boss
     {
         enemyName = "The Gorgun";
 
-        maxHp = 975;
-        currentHp = 975;
+        maxHp = 50;
+        currentHp = 50;
 
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
         player = GameObject.FindWithTag("Player");

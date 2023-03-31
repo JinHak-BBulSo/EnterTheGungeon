@@ -67,17 +67,17 @@ public class BulletKingController : Boss
 
     private void OnEnable()
     {
-        maxHp = 950;
+        maxHp = 50;
         currentHp = maxHp;
-
-        Invoke("Status", 2f);
+        Invoke("Status", 4f);
+        bossHpBar.SetActive(true);
     }
 
-    public override void PatternStart()
+    private void OnDisable()
     {
-        base.PatternStart();
-
-        Status();
+        bossHpBar.SetActive(false);
+        CancelInvoke();
+        StopAllCoroutines();
     }
 
     private void Awake()
@@ -87,7 +87,7 @@ public class BulletKingController : Boss
         bossBulletKing = transform.parent.gameObject;
 
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
-        bulletkingAnimator = GameObject.Find("Boss_BulletKing").GetComponent<Animator>();
+        bulletkingAnimator = gameObject.transform.parent.GetComponent<Animator>();
 
         throneSpriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -112,6 +112,7 @@ public class BulletKingController : Boss
 
         //vfxPrefab = transform.GetChild(0).gameObject;
         vfxAnimator = vfxPrefab.GetComponent<Animator>();
+        bossHpBar.SetActive(false);
     }
 
     private void Update()

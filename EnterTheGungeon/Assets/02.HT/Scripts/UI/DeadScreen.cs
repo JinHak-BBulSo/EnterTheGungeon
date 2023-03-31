@@ -42,10 +42,10 @@ public class DeadScreen : MonoBehaviour
     // } Var for ClockHair
 
     public bool isShotEnd;
-
+    public bool isDieEventStarted = false;
 
     public bool isTest;
-    GameObject playerInventoryObj;
+    public GameObject playerInventoryObj;
 
     GameObject ammonomiconList;
     GameObject ammonomiconInfo;
@@ -61,10 +61,11 @@ public class DeadScreen : MonoBehaviour
 
     public Sprite screenShot;
     // } Var for ScreenShot
+    public Camera cameraMain;
 
     void Start()
     {
-        playerInventoryObj = transform.parent.GetChild(2).gameObject;
+        //playerInventoryObj = transform.parent.GetChild(2).gameObject;
         //ammonomicon = playerInventoryObj.transform.GetChild(1).gameObject;
         ammonomiconList = playerInventoryObj.transform.GetChild(0).GetChild(1).gameObject;
         ammonomiconInfo = playerInventoryObj.transform.GetChild(0).GetChild(2).gameObject;
@@ -103,11 +104,11 @@ public class DeadScreen : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if (isTest)
+        if (PlayerManager.Instance.player != null && PlayerManager.Instance.player.isDie)
         {
-
+            //isDieEventStarted = true;
             if (!isCaptured)
             {
                 cameraMain.GetComponent<MoveCamera2D>().isPlayerDie = true;
@@ -121,10 +122,13 @@ public class DeadScreen : MonoBehaviour
             else
             {
 
+                Debug.Log("1");
                 transform.GetChild(0).gameObject.SetActive(true);
                 transform.GetChild(1).gameObject.SetActive(true);
+                Debug.Log("2");
 
                 ImageSizeSet();
+                Debug.Log("3");
 
                 if (!isColorChange)
                 {
@@ -179,10 +183,9 @@ public class DeadScreen : MonoBehaviour
 
             }
         }
-
     }
 
-    public Camera cameraMain;
+    
 
 
     void ImageSizeSet()

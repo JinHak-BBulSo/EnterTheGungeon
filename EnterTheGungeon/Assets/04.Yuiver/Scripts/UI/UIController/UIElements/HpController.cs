@@ -39,19 +39,22 @@ public class HpController : MonoBehaviour
         int PlayerShield = playerShield_;
         int tempPlayerHp = PlayerHp;
         int ShieldIndex = -1;
-
+        
         for (int i = 0; i < (int)Mathf.CeilToInt(playerMaxHp * 0.5f); i++)
         {
             hpObjList[i].GetComponent<Image>().enabled = true;
-            if (tempPlayerHp - 2 >= 0)
+            if (tempPlayerHp - 2 > 0)
             {
+                Debug.Log("와우");
                 tempPlayerHp -= 2;
                 hpObjList[i].HpImgChanger(2);
-                ShieldIndex = i + 1;
             }
             else
             {
+                Debug.Log("왓더헬");
+                ShieldIndex = i + 1;
                 hpObjList[i].HpImgChanger(tempPlayerHp);
+                tempPlayerHp = 0;
             }
         }
         for (int i = 0; i < (int)(transform.childCount - (playerMaxHp * 0.5f + PlayerShield)); i++)

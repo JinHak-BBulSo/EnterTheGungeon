@@ -8,6 +8,7 @@ public class SelectPlayerManager : MonoBehaviour
     public GameObject playerRotateObjProfab = default;
     int playerCharacterIndex = -1;
     public GameObject[] playerObjs = default;
+    private bool isSelected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class SelectPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isSelected)
         {
             Vector2 clickPos_ = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -41,7 +42,7 @@ public class SelectPlayerManager : MonoBehaviour
                     playerCharacterIndex = 1;
                     StartCoroutine(SelectPlayerAni(hit_));
                 }
-                
+                isSelected = true;
             }
         }
     }   // Update()

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public PlayerMove playerMove = default;
     public PlayerAttack playerAttack = default;
     public Image playerImage = default;
+    public GameObject deadScreen = default;
 
     public ActiveItem playerActiveItem = default;
     public ActiveItem PlayerActiveItem
@@ -83,6 +84,9 @@ public class PlayerController : MonoBehaviour
     // 플레이어 선택이 되었는지 확인하는 bool 값
     public bool isSetOk = false;
 
+    // 플레이어가 사망했는지 체크
+    public bool isDie = false;
+
     private void OnEnable()
     {
         playerAttack.weaponObjs.SetActive(true);
@@ -110,7 +114,10 @@ public class PlayerController : MonoBehaviour
         blankController = playerUiController.transform.GetChild(1).GetComponent<BlankController>();
         keyController = playerUiController.transform.GetChild(2).GetComponent<KeyController>();
         cashController = playerUiController.transform.GetChild(3).GetComponent<CashController>();
-        
+
+        deadScreen = GameObject.Find("Non_Volume_UIObjs").transform.GetChild(0).GetChild(4).gameObject;
+        deadScreen.SetActive(false);
+
 
         SetPlayerControl();
     }
@@ -144,7 +151,6 @@ public class PlayerController : MonoBehaviour
             blankController.SetPlayerBlank(playerBlank);
             keyController.SetPlayerKey(playerKey);
             cashController.SetPlayerCash(playerMoney);
-            CheckShield();
 
             playerMove.PlayerAniRestart(isShield, nowWeaponHand);
 
@@ -152,13 +158,6 @@ public class PlayerController : MonoBehaviour
         }
 
         if (isOnInventory == true) { return; }
-
-        // 무기 테스트
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            InventoryManager.Instance.inventoryControl.AddFirstItem();
-        }
-
 
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
@@ -372,19 +371,22 @@ public class PlayerController : MonoBehaviour
     //! 플레이어의 체력을 깍는 함수
     public void GetHitPlayer()
     {
-
-        if (PlayerManager.Instance.player.playerMove.isDodgeing == true) { return; }
-
-        if (isShield == true)
+        if (playerHp > 0)
         {
-            playerShield--;
+            if (PlayerManager.Instance.player.playerMove.isDodgeing == true) { return; }
 
+            if (isShield == true)
+            {
+                playerShield--;
+                CheckShield();
+            }
+            else
+            {
+                playerHp--;
+            }
+            hpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
+            Debug.Log("피격 후 " + PlayerManager.Instance.player.playerHp);
         }
-        else
-        {
-            playerHp--;
-        }
-
 
         if (playerHp == 0)
         {
@@ -402,7 +404,10 @@ public class PlayerController : MonoBehaviour
     //! 플레이어가 사망 시 시작되는 함수
     public void DiePlayer()
     {
-
+        deadScreen.transform.GetChild(0).gameObject.SetActive(true);
+        deadScreen.transform.GetChild(1).gameObject.SetActive(true);
+        deadScreen.SetActive(true);
+        //deadScreen.GetComponent<DeadScreen>().DeadEventStart();
     }
 
 

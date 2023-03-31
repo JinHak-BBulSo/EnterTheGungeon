@@ -16,8 +16,11 @@ public class DropManager : GSingleton<DropManager>
     }
     public void ItemDrop()
     {
-        GameObject boxTransform_ = PlayerManager.Instance.nowPlayerInRoom.GetComponent<Room>().spawnPoints[0];
-        GameObject treasureBox_ = Instantiate(treasureBox, boxTransform_.transform.position, Quaternion.identity);
-        treasureBox_.transform.parent = PlayerManager.Instance.nowPlayerInRoom.transform;
+        if (dropItems.Count > 0)
+        {
+            GameObject boxTransform_ = PlayerManager.Instance.nowPlayerInRoom.GetComponent<Room>().spawnPoints[0];
+            GameObject treasureBox_ = Instantiate(treasureBox, boxTransform_.transform.position, Quaternion.identity);
+            treasureBox_.transform.parent = PlayerManager.Instance.nowPlayerInRoom.transform;
+        }
     }
 }

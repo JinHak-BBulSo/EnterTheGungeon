@@ -9,11 +9,6 @@ public class Boss : MonoBehaviour
     public int currentHp;
     private int damageTaken;
 
-    public virtual void PatternStart()
-    {
-        /* override using */
-    }
-
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PlayerBullet")
