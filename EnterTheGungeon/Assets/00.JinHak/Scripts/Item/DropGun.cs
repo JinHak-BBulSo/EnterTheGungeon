@@ -13,5 +13,8 @@ public class DropGun : DropItem
     private void Start()
     {
         item.itemScript = dropWeapon.GetComponent<PlayerWeapon>().weaponDataTxt;
+        // [Junil] 아이템 정보를 위해 추가
+        item.itemTypeTxt = dropWeapon.GetComponent<PlayerWeapon>().weaponType;
+        item.itemDescTxt = dropWeapon.GetComponent<PlayerWeapon>().weaponDesc;
     }
 }

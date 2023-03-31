@@ -95,6 +95,7 @@ public class PlayerMove : MonoBehaviour
 
         playerRigid2D.velocity = len_.normalized * playerSpeed;
 
+        PlayerManager.Instance.player.StartOffWeaponObjs();
 
 
         StartCoroutine(OffDodge());

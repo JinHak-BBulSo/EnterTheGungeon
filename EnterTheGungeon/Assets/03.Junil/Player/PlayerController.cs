@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public HpController hpController = default;
     public BlankController blankController = default;
     public KeyController keyController = default;
@@ -82,6 +83,16 @@ public class PlayerController : MonoBehaviour
     // 플레이어 선택이 되었는지 확인하는 bool 값
     public bool isSetOk = false;
 
+    private void OnEnable()
+    {
+        playerAttack.weaponObjs.SetActive(true);
+
+    }
+
+    private void OnDisable()
+    {
+        StopOffWeaponObjs();
+    }
 
     private void Awake()
     {
@@ -99,6 +110,7 @@ public class PlayerController : MonoBehaviour
         blankController = playerUiController.transform.GetChild(1).GetComponent<BlankController>();
         keyController = playerUiController.transform.GetChild(2).GetComponent<KeyController>();
         cashController = playerUiController.transform.GetChild(3).GetComponent<CashController>();
+        
 
         SetPlayerControl();
     }
@@ -141,6 +153,11 @@ public class PlayerController : MonoBehaviour
 
         if (isOnInventory == true) { return; }
 
+        // 무기 테스트
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            InventoryManager.Instance.inventoryControl.AddFirstItem();
+        }
 
 
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -230,7 +247,6 @@ public class PlayerController : MonoBehaviour
         playerImage = gameObject.GetComponentMust<Image>();
         weaponReload = gameObject.transform.GetChild(3).gameObject.GetComponentMust<WeaponReload>();
 
-
         PlayerState playerData = new PlayerState
         {
             hp = 6,
@@ -282,6 +298,42 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(StartPetrified());
     }
+
+    //! 구르기, 떨어짐 등등의 상황에서 잠시 weaponObj를 끄는 코루틴
+    IEnumerator OffWeaponObjs = default;
+
+    //! 구르기, 떨어짐 등등의 상황에서 잠시 weaponObj를 끄는 함수
+    public void StartOffWeaponObjs()
+    {
+
+        if(OffWeaponObjs != null)
+        {
+            StopCoroutine(OffWeaponObjs);
+        }
+
+        OffWeaponObjs = OffWeaponObjsAction();
+        StartCoroutine(OffWeaponObjs);
+    }
+
+    public void StopOffWeaponObjs()
+    {
+        if(OffWeaponObjs != null)
+        {
+            StopCoroutine(OffWeaponObjs);
+        }
+    }
+
+
+    IEnumerator OffWeaponObjsAction()
+    {
+        playerAttack.weaponObjs.SetActive(false);
+
+        yield return new WaitForSeconds(1.2f);
+
+        playerAttack.weaponObjs.SetActive(true);
+
+    }
+
 
     // 석화 상태 이상에 대한 코루틴
     IEnumerator StartPetrified()
@@ -337,11 +389,19 @@ public class PlayerController : MonoBehaviour
         if (playerHp == 0)
         {
             // 플레이어 사망 효과
+            DiePlayer();
         }
         else
         {
             AttackedPlayer();
         }
+
+    }
+
+
+    //! 플레이어가 사망 시 시작되는 함수
+    public void DiePlayer()
+    {
 
     }
 

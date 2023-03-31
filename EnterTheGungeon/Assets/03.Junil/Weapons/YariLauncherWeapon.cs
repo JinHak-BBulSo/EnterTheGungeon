@@ -150,6 +150,7 @@ public class YariLauncherWeapon : PlayerWeapon
 
         this.weaponName = "야이리 발사기";
         this.weaponDesc = "지옥에 잘 왔습니다";
+        this.weaponType = "다연장 로켓런처";
         this.weaponDataTxt = "자동추적 로켓을 연속으로 발사합니다.\n" +
             "질라 인더스트리가 생산한 전설적인 무기로, 지금은 잊혀진 한 강력한 전사의 주문에 맞춰서 만들어졌습니다.";
 

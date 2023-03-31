@@ -5,10 +5,13 @@ using UnityEngine;
 public class Weapons : MonoBehaviour
 {
     // 무기 이름
-    protected string weaponName = string.Empty;
+    public string weaponName = string.Empty;
 
     // 무기의 한줄 설명
-    protected string weaponDesc = string.Empty;
+    public string weaponDesc = string.Empty;
+
+    // 무기의 타입
+    public string weaponType = string.Empty;
 
     // 무기 설명
     public string weaponDataTxt = string.Empty;
@@ -57,6 +60,12 @@ public class Weapons : MonoBehaviour
         return this.weaponDesc;
     }
 
+    public string WeaponType()
+    {
+        return this.weaponType;
+    }
+
+    
     public string WeaponDataTxt()
     {
         return this.weaponDataTxt;

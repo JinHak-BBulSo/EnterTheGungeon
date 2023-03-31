@@ -28,6 +28,8 @@ public class MoonrakerWeapon : PlayerWeapon
     public bool isLaserOn = false;
     public bool isChkMagazine = false;
 
+    public int originBulletDamage = default;
+
 
 
     private void OnEnable()
@@ -152,7 +154,8 @@ public class MoonrakerWeapon : PlayerWeapon
                 if(weaponDeley < deleyChkVal)
                 {
                     // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
-                    //hit_.collider.gameObject.GetComponent
+                    bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+                    hit_.collider.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
                 }
 
             }
@@ -219,6 +222,7 @@ public class MoonrakerWeapon : PlayerWeapon
         base.SetWeaponData();
         this.weaponName = "문스크래퍼";
         this.weaponDesc = "비이이이이오오옹";
+        this.weaponType = "공구";
         this.weaponDataTxt = "이 강력한 레이저는 테라포밍 프로젝트에서 고속으로 월면석을 깎아낼 목적으로 설계된 것입니다.";
 
         this.weaponPos = new Vector3(5f, 2f, 0f);
@@ -235,6 +239,8 @@ public class MoonrakerWeapon : PlayerWeapon
         this.bulletSpeed = default;
 
         this.bulletDamage = 26;
+        originBulletDamage = bulletDamage;
+
         this.bulletRange = 30f;
         this.bulletShotRange = 5;
         this.weaponDeley = 0.1f;
