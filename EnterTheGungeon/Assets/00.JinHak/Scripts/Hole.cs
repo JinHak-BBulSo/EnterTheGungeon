@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour
 {
-    Animator playerAni = default;
-    Rigidbody2D playerRigid = default;
-    void Start()
+    public static Animator playerAni = default;
+    public static Rigidbody2D playerRigid = default;
+    public static void PlayerSet()
     {
         playerAni = PlayerManager.Instance.player.GetComponent<Animator>();
         playerRigid = PlayerManager.Instance.player.GetComponent<Rigidbody2D>();
