@@ -6,6 +6,8 @@ public class SelectPlayerManager : MonoBehaviour
 {
 
     public GameObject playerRotateObjProfab = default;
+    int playerCharacterIndex = -1;
+    public GameObject[] playerObjs = default;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +31,17 @@ public class SelectPlayerManager : MonoBehaviour
                 if (hit_.collider.name == "PlayerMarine")
                 {
                     GFunc.Log("마린이 선택");
+                    playerCharacterIndex = 0;
                     StartCoroutine(SelectPlayerAni(hit_));
-
                 }
 
                 if (hit_.collider.name == "PlayerGuide")
                 {
                     GFunc.Log("가이드가 선택");
+                    playerCharacterIndex = 1;
                     StartCoroutine(SelectPlayerAni(hit_));
-
                 }
+                
             }
         }
     }   // Update()
@@ -59,4 +62,15 @@ public class SelectPlayerManager : MonoBehaviour
         hitPlayer_.collider.gameObject.AddComponent<PlayerController>();
     }
 
+    public void DestroyNotSelectPlayer()
+    {
+        if (playerCharacterIndex == 0)
+        {
+            Destroy(playerObjs[1]);
+        }
+        else
+        {
+            Destroy(playerObjs[0]);
+        }
+    }
 }

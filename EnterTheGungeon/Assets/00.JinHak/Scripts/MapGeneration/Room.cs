@@ -49,7 +49,7 @@ public class Room : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (isPlayerEnter && isRoomClear)
+        if (isPlayerEnter && isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
         {
             DoorManager.Instance.AllDoorOpen();
         }

@@ -58,7 +58,7 @@ public class MoveCamera2D : MonoBehaviour
         }
         else if (isBossIntro)
         {
-            gameObject.transform.position = Vector3.Lerp(transform.position, target.transform.position, SPEED_CAMERA * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, target.transform.position, SPEED_CAMERA * Time.deltaTime);
         }
         else
         {

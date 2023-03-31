@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRotateObjProfab: {fileID: 0}
+  playerObjs:
+  - {fileID: 0}
+  - {fileID: 0}

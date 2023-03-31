@@ -50,6 +50,11 @@ public class LoadingManager : GSingleton<LoadingManager>
     IEnumerator NextSceneLoad()
     {
         yield return new WaitForSeconds(0.5f);
+        PlayerManager.Instance.player.enabled = true;
+        PlayerManager.Instance.player.OnHitAndStatusEvent();
+        // 초기 무기 셋팅 호출
+        InventoryManager.Instance.inventoryControl.AddFirstItem();
+        yield return null;
         op.allowSceneActivation = true;
     }
 }
