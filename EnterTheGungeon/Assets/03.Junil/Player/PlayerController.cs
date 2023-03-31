@@ -93,7 +93,13 @@ public class PlayerController : MonoBehaviour
 
         Hole.PlayerSet();
         GFunc.Log("플레이어 호출");
-        
+
+        GameObject playerUiController = GameObject.Find("Non_Volume_UIObjs").FindChildObj("TopLeftUI");
+        hpController = playerUiController.transform.GetChild(0).GetComponent<HpController>();
+        blankController = playerUiController.transform.GetChild(1).GetComponent<BlankController>();
+        keyController = playerUiController.transform.GetChild(2).GetComponent<KeyController>();
+        cashController = playerUiController.transform.GetChild(3).GetComponent<CashController>();
+
         SetPlayerControl();
     }
 
