@@ -21,7 +21,7 @@ public class InventoryControl : MonoBehaviour
     void Start()
     {
 
-        AddFirstItem();
+        //AddFirstItem();
         // 인벤토리 매니저 호출
         InventoryManager.Instance.inventoryControl = this;
         InventoryManager.Instance.inventoryDataObjs.SetActive(false);

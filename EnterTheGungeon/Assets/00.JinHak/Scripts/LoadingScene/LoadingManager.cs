@@ -49,7 +49,7 @@ public class LoadingManager : GSingleton<LoadingManager>
 
     IEnumerator NextSceneLoad()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         op.allowSceneActivation = true;
     }
 }
