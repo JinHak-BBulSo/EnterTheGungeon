@@ -43,14 +43,20 @@ public class Room : MonoBehaviour
     {
         if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {
+            int ran_ = Random.Range(0, 100 + 1);
+            if(ran_ > 5)
+            {
+                DropManager.Instance.ItemDrop();
+            }
             isRoomClear = true;
         }  
     }
 
     private void LateUpdate()
     {
-        if (isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
+        if (isRoomClear && isPlayerEnter)
         {
+            Debug.Log("지랄마");
             DoorManager.Instance.AllDoorOpen();
         }
     }
