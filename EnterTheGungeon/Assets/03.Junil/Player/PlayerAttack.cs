@@ -146,13 +146,13 @@ public class PlayerAttack : MonoBehaviour
 
         isDodgeing = false;
 
-        // 무기 테스트
-        GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
-            ("03.Junil/Prefabs/PlayerWeapons/03.YariLauncher");
-        playerWeapons.Add(Instantiate(SPMAWeaponPrefab, weaponObjs.transform.position,
-            Quaternion.identity,
-            weaponObjs.transform));
-        playerWeaponScript.Add(playerWeapons[0].GetComponent<PlayerWeapon>());
+        //// 무기 테스트
+        //GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
+        //    ("03.Junil/Prefabs/PlayerWeapons/03.YariLauncher");
+        //playerWeapons.Add(Instantiate(SPMAWeaponPrefab, weaponObjs.transform.position,
+        //    Quaternion.identity,
+        //    weaponObjs.transform));
+        //playerWeaponScript.Add(playerWeapons[0].GetComponent<PlayerWeapon>());
 
     }
 
