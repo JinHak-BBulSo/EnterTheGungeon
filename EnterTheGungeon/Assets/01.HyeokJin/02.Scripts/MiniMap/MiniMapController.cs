@@ -25,7 +25,8 @@ public class MiniMapController : MonoBehaviour
 
     private void DisplayMiniMap()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        //[yuiver](팀원코드 수정)메뉴 호출시 미니맵이 호출가능한 오류를 수정하기 위해 예외처리로 && Time.timeScale == 1 을 추가했습니다.
+        if (Input.GetKey(KeyCode.Tab) && Time.timeScale == 1)
         {
             miniMap.SetActive(true);
             miniMap_Cam.enabled = true;

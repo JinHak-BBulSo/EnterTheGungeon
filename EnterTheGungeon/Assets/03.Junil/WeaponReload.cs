@@ -19,6 +19,8 @@ public class WeaponReload : MonoBehaviour
         // 재장전 바의 최대 길이
         MaxWidth = gameObject.GetComponent<RectTransform>().rect.width;
 
+        gameObject.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
+
         isReload = false;
 
     }

@@ -27,27 +27,29 @@ public class PlayerAttack : MonoBehaviour
     public bool isReloadNow = false;
 
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        rotateObjs = gameObject.transform.parent.gameObject;
-        playerObj = rotateObjs.transform.parent.gameObject;
-        playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
-        weaponObjs = gameObject.FindChildObj("Weapons");
+    //// Start is called before the first frame update
+    //private void Awake()
+    //{
+    //    rotateObjs = gameObject.transform.parent.gameObject;
+    //    playerObj = rotateObjs.transform.parent.gameObject;
+    //    playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
+    //    weaponObjs = gameObject.FindChildObj("Weapons");
 
         
-        nowWeaponIndex = 0;
+    //    nowWeaponIndex = 0;
 
-        isDodgeing = false;
+    //    isDodgeing = false;
 
         
-    }
+    //}
 
     // Update is called once per frame
     void Update()
     {
+        // 셋팅 되기 전에는 업데이트 문을 못 돌게 하는 조건
+        if(PlayerManager.Instance.player.isSetOk == false) { return; }
 
-        if(isDodgeing == true) { return; }
+        if (isDodgeing == true) { return; }
 
         // { [Junil] 무기가 마우스 커서를 바라보는 코드
         // 마우스 커서 위치 값
@@ -132,12 +134,26 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    public void SetPlayerAttack()
+    {
+        rotateObjs = gameObject.transform.parent.gameObject;
+        playerObj = rotateObjs.transform.parent.gameObject;
+        playerAni = rotateObjs.transform.parent.gameObject.GetComponentMust<Animator>();
+        weaponObjs = gameObject.FindChildObj("Weapons");
+
+
+        nowWeaponIndex = 0;
+
+        isDodgeing = false;
+    }
+
+
     //! 현재 들고 있는 총을 발사하는 함수
     public void FireBulletWeapon()
     {
         if (playerWeaponScript.Count == 0 ||
             playerWeaponScript[nowWeaponIndex] == default ||
-           playerWeaponScript[nowWeaponIndex] == null)
+            playerWeaponScript[nowWeaponIndex] == null)
         {
             PlayerManager.Instance.player.OnHitAndStatusEvent();
             return;
@@ -150,6 +166,13 @@ public class PlayerAttack : MonoBehaviour
     //! 현재 총을 재장전해주는 함수
     public void ReloadBulletWeapon()
     {
+        if (nowWeaponIndex == default)
+        {
+            PlayerManager.Instance.player.OnHitAndStatusEvent();
+
+            return;
+        }
+
         playerWeaponScript[nowWeaponIndex].ReloadBullet();
 
     }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class KeyController : MonoBehaviour
 {
-    GameObject keyTxt = default;
+    public GameObject keyTxt = default;
     // Start is called before the first frame update
     void Start()
     {

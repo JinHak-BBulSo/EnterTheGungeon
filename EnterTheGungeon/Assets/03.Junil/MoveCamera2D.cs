@@ -13,7 +13,7 @@ public class MoveCamera2D : MonoBehaviour
     public float cameraWidth = default;
     
     // 카메라가 쫒아 다닐 대상
-    public GameObject target = default;
+    public static GameObject target = default;
 
 
     public float exceptionRangeVal = default;
@@ -21,10 +21,13 @@ public class MoveCamera2D : MonoBehaviour
     public bool isPlayerDie = false;
     public bool isFocus = false;
 
+    // [KJH] ADD
+    public bool isBossIntro = false;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
-
+        PlayerManager.Instance.playerCamera = this;
         GameObject gameObjs_ = GameObject.Find("GameObjs");
 
         gameObject.transform.parent = gameObjs_.transform;
@@ -46,6 +49,10 @@ public class MoveCamera2D : MonoBehaviour
         {
             transform.position = target.transform.position;
             isFocus = true;
+        }
+        else if (isBossIntro)
+        {
+            gameObject.transform.position = Vector3.Lerp(transform.position, target.transform.position, SPEED_CAMERA * Time.deltaTime);
         }
         else
         {

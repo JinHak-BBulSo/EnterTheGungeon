@@ -8,7 +8,7 @@ public class InventoryControl : MonoBehaviour
 {
     
     // 인벤토리가 열려있는지의 대한 유무
-    public bool isOpenInven = false;
+    public static bool isOpenInven = false;
 
 
     private void Awake()
@@ -21,7 +21,7 @@ public class InventoryControl : MonoBehaviour
     void Start()
     {
 
-        AddFirstItem();
+        //AddFirstItem();
         // 인벤토리 매니저 호출
         InventoryManager.Instance.inventoryControl = this;
         InventoryManager.Instance.inventoryDataObjs.SetActive(false);
@@ -33,19 +33,31 @@ public class InventoryControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && UIController.boolGamePause == false)
+        {
+            if (isOpenInven == true)
+            {
+                Time.timeScale = 1.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
+                isOpenInven = false;
+                InventoryManager.Instance.inventoryDataObjs.SetActive(false);
+
+                return;
+            }
+        }
         
         // 인벤토리 오픈
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && UIController.boolGamePause == false)
         {
             if(isOpenInven == true) 
             {
+                Time.timeScale = 1.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
                 isOpenInven = false;
                 InventoryManager.Instance.inventoryDataObjs.SetActive(false);
 
                 return; 
             }
 
-
+            Time.timeScale = 0.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
             isOpenInven = true;
             GFunc.Log("눌림");
             InventoryManager.Instance.inventoryDataObjs.SetActive(true);
