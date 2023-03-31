@@ -49,7 +49,7 @@ public class Room : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (isPlayerEnter && isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
+        if (isRoomClear && !PlayerManager.Instance.nowPlayerInRoom.isPlayerEnter)
         {
             DoorManager.Instance.AllDoorOpen();
         }
@@ -84,7 +84,6 @@ public class Room : MonoBehaviour
         if (collision.tag == "Player")
         {
             isPlayerEnter = false;
-            PlayerManager.Instance.nowPlayerInRoom = default;
         }
     }
 }
