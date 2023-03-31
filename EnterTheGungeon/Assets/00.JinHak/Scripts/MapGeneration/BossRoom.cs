@@ -45,7 +45,7 @@ public class BossRoom : Room
         base.OnTriggerEnter2D(collision);
         if(collision.tag == "Player" && !isRoomClear)
         {
-            PlayerManager.Instance.playerCamera.target = this.gameObject;
+            //PlayerManager.Instance.playerCamera.target = this.gameObject;
         }
     }
 }
