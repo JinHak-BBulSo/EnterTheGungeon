@@ -118,27 +118,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7983389178695185195, guid: daa78d6b609f2554094a80cf8014c8fb, type: 3}
   m_PrefabInstance: {fileID: 5473520524723282947}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &450253800
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683982391707572008}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b7986dd6c338cfd4897694ff54e90080, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &2601138037303737046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +144,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29, y: 0.21}
   m_EdgeRadius: 0
+--- !u!95 &450253800
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683982391707572008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7986dd6c338cfd4897694ff54e90080, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6413294038936299276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683982391707572008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d3568f8b8cb04f9cc7674af6ff44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inBoxItem: {fileID: 0}
