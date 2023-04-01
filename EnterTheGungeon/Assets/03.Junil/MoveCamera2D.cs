@@ -8,10 +8,10 @@ public class MoveCamera2D : MonoBehaviour
     // { [Junil] fix PlayerCamera
 
     public const float SPEED_CAMERA = 4f;
-    
+
     public float cameraHeight = default;
     public float cameraWidth = default;
-    
+
     // 카메라가 쫒아 다닐 대상
     public static GameObject target = default;
 
@@ -34,7 +34,7 @@ public class MoveCamera2D : MonoBehaviour
 
         exceptionRangeVal = 0.35f;
 
-        if(target == null || target == default)
+        if (target == null || target == default)
         {
             target = gameObjs_.FindChildObj("PlayerObjs").GetChildrenObjs()[0];
         }
@@ -51,9 +51,9 @@ public class MoveCamera2D : MonoBehaviour
 
     public virtual void LateUpdate()
     {
-        if(isPlayerDie)
+        if (isPlayerDie)
         {
-            transform.position = target.transform.position;
+            transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -720f); ;
             isFocus = true;
         }
         else if (isBossIntro)

@@ -30,6 +30,9 @@ public class Coin : MonoBehaviour
             // 플레이어가 획득한 코인의 변수를 갖고있는 스크립트에 적용되도록변경
             // << 플레이어 매니저나 플레이어 컨트롤러나 게임매니저나
             PlayerManager.Instance.player.playerMoney += coin;
+            
+            PlayerManager.Instance.totalCoin += coin;
+
             PlayerManager.Instance.player.OnHitAndStatusEvent();
 
             Destroy(this.gameObject);

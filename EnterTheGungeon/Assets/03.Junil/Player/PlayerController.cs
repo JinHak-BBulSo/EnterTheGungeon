@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PlayerController : MonoBehaviour
 {
-    
+
     public HpController hpController = default;
     public BlankController blankController = default;
     public KeyController keyController = default;
@@ -102,7 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         isSetOk = false;
 
-        
+
         // 플레이어 싱글톤 호출
         PlayerManager.Instance.player = this;
 
@@ -132,13 +131,12 @@ public class PlayerController : MonoBehaviour
         //GFunc.Log("플레이어 호출");
 
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // 셋팅 되기 전에는 업데이트 문을 못 돌게 하는 조건
         if (isSetOk == false) { return; }
 
@@ -164,10 +162,10 @@ public class PlayerController : MonoBehaviour
 
         playerMove.OnMove(inputX, inputY);
 
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             // 마우스 휠 아래로
-            if(0 < playerAttack.nowWeaponIndex && playerAttack.nowWeaponIndex != 0)
+            if (0 < playerAttack.nowWeaponIndex && playerAttack.nowWeaponIndex != 0)
             {
                 playerAttack.playerWeapons[playerAttack.nowWeaponIndex].SetActive(false);
 
@@ -181,7 +179,7 @@ public class PlayerController : MonoBehaviour
         else if (0 < Input.GetAxis("Mouse ScrollWheel"))
         {
             // 마우스 휠 위로
-            if(playerAttack.nowWeaponIndex < playerAttack.playerWeapons.Count - 1)
+            if (playerAttack.nowWeaponIndex < playerAttack.playerWeapons.Count - 1)
             {
                 playerAttack.playerWeapons[playerAttack.nowWeaponIndex].SetActive(false);
 
@@ -204,7 +202,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
 
-            if(playerBlank == 0 && playerBlank == default) { return; }
+            if (playerBlank == 0 && playerBlank == default) { return; }
             OnPlayerBlankBullet();
             playerBlank--;
         }
@@ -220,8 +218,8 @@ public class PlayerController : MonoBehaviour
         // 재장전
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if(playerAttack)
-            playerAttack.ReloadBulletWeapon();
+            if (playerAttack)
+                playerAttack.ReloadBulletWeapon();
 
         }
 
@@ -281,7 +279,7 @@ public class PlayerController : MonoBehaviour
     //! 현재 플레이어가 쉴드를 가지고 있는지 확인하는 함수
     public void CheckShield()
     {
-        if(playerShield == 0)
+        if (playerShield == 0)
         {
             isShield = false;
         }
@@ -305,7 +303,7 @@ public class PlayerController : MonoBehaviour
     public void StartOffWeaponObjs()
     {
 
-        if(OffWeaponObjs != null)
+        if (OffWeaponObjs != null)
         {
             StopCoroutine(OffWeaponObjs);
         }
@@ -316,7 +314,7 @@ public class PlayerController : MonoBehaviour
 
     public void StopOffWeaponObjs()
     {
-        if(OffWeaponObjs != null)
+        if (OffWeaponObjs != null)
         {
             StopCoroutine(OffWeaponObjs);
         }
@@ -346,7 +344,7 @@ public class PlayerController : MonoBehaviour
         playerColor_.b = 128f / 255f;
 
         playerImage.color = playerColor_;
-        
+
         yield return new WaitForSeconds(2f);
 
         playerColor_.r = 255f / 255f;
@@ -367,7 +365,7 @@ public class PlayerController : MonoBehaviour
         isStatusEvent = true;
     }   //OnHitAndStatusEvent()
 
-    
+
     //! 플레이어의 체력을 깍는 함수
     public void GetHitPlayer()
     {
@@ -391,6 +389,7 @@ public class PlayerController : MonoBehaviour
         if (playerHp == 0)
         {
             // 플레이어 사망 효과
+
             DiePlayer();
         }
         else
@@ -404,8 +403,9 @@ public class PlayerController : MonoBehaviour
     //! 플레이어가 사망 시 시작되는 함수
     public void DiePlayer()
     {
-        deadScreen.transform.GetChild(0).gameObject.SetActive(true);
-        deadScreen.transform.GetChild(1).gameObject.SetActive(true);
+        //deadScreen.transform.GetChild(0).gameObject.SetActive(true);
+        //deadScreen.transform.GetChild(1).gameObject.SetActive(true);
+        isDie = true;
         deadScreen.SetActive(true);
         //deadScreen.GetComponent<DeadScreen>().DeadEventStart();
     }
@@ -415,7 +415,7 @@ public class PlayerController : MonoBehaviour
     public void AttackedPlayer()
     {
 
-        if(isAttacked == true) { return; }
+        if (isAttacked == true) { return; }
 
         StartCoroutine(AttackedAction());
     }
@@ -456,5 +456,5 @@ public class PlayerController : MonoBehaviour
 
         isAttacked = false;
     }
-    
+
 }

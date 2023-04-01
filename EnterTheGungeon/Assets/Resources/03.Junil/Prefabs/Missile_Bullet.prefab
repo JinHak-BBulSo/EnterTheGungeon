@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee380ebd142d716419b7ee077a2df160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstTarget: 0
 --- !u!1 &5597195336087604152
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ GameObject:
   - component: {fileID: 1642983511823296915}
   - component: {fileID: 1123080848309691351}
   - component: {fileID: 8261266053262480711}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Missile_Bullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -301,6 +302,8 @@ MonoBehaviour:
   bulletRange: 0
   activePos: {x: 0, y: 0, z: 0}
   isOffBullet: 0
+  targetMonster: {fileID: 0}
+  radiusLength: 0
 --- !u!95 &8261266053262480711
 Animator:
   serializedVersion: 5

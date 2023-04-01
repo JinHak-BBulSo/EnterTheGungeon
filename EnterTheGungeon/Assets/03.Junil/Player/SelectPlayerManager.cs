@@ -31,6 +31,10 @@ public class SelectPlayerManager : MonoBehaviour
             {
                 if (hit_.collider.name == "PlayerMarine")
                 {
+                    // { [HT] add
+                    PlayerManager.Instance.playerClass = "Marine";
+                    // } [HT] add
+
                     GFunc.Log("마린이 선택");
                     playerCharacterIndex = 0;
                     StartCoroutine(SelectPlayerAni(hit_));
@@ -38,11 +42,19 @@ public class SelectPlayerManager : MonoBehaviour
 
                 if (hit_.collider.name == "PlayerGuide")
                 {
+                    // { [HT] add
+                    PlayerManager.Instance.playerClass = "Guide";
+                    // } [HT] add
+
                     GFunc.Log("가이드가 선택");
                     playerCharacterIndex = 1;
                     StartCoroutine(SelectPlayerAni(hit_));
                 }
                 isSelected = true;
+                // { [HT] add
+                PlayerManager.Instance.startTime = Time.time;
+                // } [HT] add
+
             }
         }
     }   // Update()

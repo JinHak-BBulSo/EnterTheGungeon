@@ -93,17 +93,17 @@ public class BulletKingController : Boss
 
         muzzle = bossBulletKing.transform.GetChild(3).gameObject;
 
-        muzzle_Left_1  = muzzle.transform.GetChild(0).gameObject;
-        muzzle_Left_2  = muzzle.transform.GetChild(1).gameObject;
-        muzzle_Left_3  = muzzle.transform.GetChild(2).gameObject;
-        muzzle_Left_4  = muzzle.transform.GetChild(3).gameObject;
-        muzzle_Left_5  = muzzle.transform.GetChild(4).gameObject;
+        muzzle_Left_1 = muzzle.transform.GetChild(0).gameObject;
+        muzzle_Left_2 = muzzle.transform.GetChild(1).gameObject;
+        muzzle_Left_3 = muzzle.transform.GetChild(2).gameObject;
+        muzzle_Left_4 = muzzle.transform.GetChild(3).gameObject;
+        muzzle_Left_5 = muzzle.transform.GetChild(4).gameObject;
         muzzle_Right_1 = muzzle.transform.GetChild(5).gameObject;
         muzzle_Right_2 = muzzle.transform.GetChild(6).gameObject;
         muzzle_Right_3 = muzzle.transform.GetChild(7).gameObject;
         muzzle_Right_4 = muzzle.transform.GetChild(8).gameObject;
         muzzle_Right_5 = muzzle.transform.GetChild(9).gameObject;
-        muzzle_Hand    = muzzle.transform.GetChild(10).gameObject;
+        muzzle_Hand = muzzle.transform.GetChild(10).gameObject;
 
         bossHpBar = GameObject.Find("BossHpBar").gameObject;
         bossName = bossHpBar.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
@@ -158,6 +158,10 @@ public class BulletKingController : Boss
         if (currentHp <= 0)
         {
             isDead = true;
+
+            // { [HT] add
+            PlayerManager.Instance.location = "Gungeon Proper";
+            // } [HT] add
         }
     }
 
@@ -534,7 +538,7 @@ public class BulletKingController : Boss
         }
     }   //  Pattern_2_All()
     #endregion
-#endregion
+    #endregion
 
     #region Pattern_3
     private void Pattern_3()
@@ -562,7 +566,7 @@ public class BulletKingController : Boss
         bulletGap = 4;
         enemyRadius = 1.8f;
 
-        for (int i = 0; i < bulletCount; i ++)
+        for (int i = 0; i < bulletCount; i++)
         {
             if (i % bulletGap == 0)
             {

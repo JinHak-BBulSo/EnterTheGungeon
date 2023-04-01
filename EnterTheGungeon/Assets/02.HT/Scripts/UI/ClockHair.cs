@@ -85,18 +85,18 @@ public class ClockHair : MonoBehaviour
 
             if (!isBaseDistanceCheck)
             {
-                baseDistanceToPlayer = Vector2.Distance(transform.position, player.position);
+                baseDistanceToPlayer = Vector2.Distance(transform.position, Vector3.zero);
                 isBaseDistanceCheck = true;
             }
-            distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            //directionToPlayer = clockHair.transform.position - player.position;
+            distanceToPlayer = Vector2.Distance(transform.position, Vector3.zero);
+            //directionToPlayer = clockHair.transform.position - Vector3.zero;
 
 
             if (distanceToPlayer > 0)
             {
                 if (!introEnd)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.position, 7 * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, Vector3.zero, 7 * Time.deltaTime);
                     targetPos1 = new Vector2(transform.position.x - 0.5f, transform.position.y + 0.5f);
                     targetPos2 = new Vector2(transform.position.x + 0.25f, transform.position.y + 0.25f);
                 }
@@ -137,8 +137,8 @@ public class ClockHair : MonoBehaviour
                 }
                 if (wobblePoint == 1 || wobblePoint == 3)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.position, 1 * Time.deltaTime);
-                    if (transform.position == player.position)
+                    transform.position = Vector2.MoveTowards(transform.position, Vector3.zero, 1 * Time.deltaTime);
+                    if (transform.position == Vector3.zero)
                     {
                         wobblePoint++;
                     }

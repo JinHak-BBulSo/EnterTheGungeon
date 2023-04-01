@@ -123,7 +123,7 @@ public class TestEnemy : MonoBehaviour
     void Update()
     {
         ImageSizeSet();
-        
+
 
         if (!IsSpawnEnd) { }
         else
@@ -136,7 +136,7 @@ public class TestEnemy : MonoBehaviour
 
             if (dist > 500 / 71.94f && !isAttack)
             {
-   
+
                 Move();
             }
             else { }
@@ -442,6 +442,7 @@ public class TestEnemy : MonoBehaviour
         {
             isDead = false;
 
+            PlayerManager.Instance.enemyKillCount++;
             belongRoom.enemyCount--; // KJH ADD
             StopAllCoroutines();
             gameObject.SetActive(false);

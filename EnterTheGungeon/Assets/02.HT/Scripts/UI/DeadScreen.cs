@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 using System.IO;
@@ -63,8 +64,14 @@ public class DeadScreen : MonoBehaviour
     // } Var for ScreenShot
     public Camera cameraMain;
 
+    bool isSetActiveClockHair;
+
+
+    GameObject miniCam;
+
     void Start()
     {
+        //miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
         //playerInventoryObj = transform.parent.GetChild(2).gameObject;
         //ammonomicon = playerInventoryObj.transform.GetChild(1).gameObject;
         ammonomiconList = playerInventoryObj.transform.GetChild(0).GetChild(1).gameObject;
@@ -106,8 +113,14 @@ public class DeadScreen : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (SceneManager.GetActiveScene().name == "03.StageScene" && miniCam == null)
+        {
+            miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
+        }
+
         if (PlayerManager.Instance.player != null && PlayerManager.Instance.player.isDie)
         {
+            miniCam.SetActive(false);
             //isDieEventStarted = true;
             if (!isCaptured)
             {
@@ -118,17 +131,21 @@ public class DeadScreen : MonoBehaviour
                     //Testtesttest();
                 }
 
+                if (PlayerManager.Instance.startTime != default)
+                {
+                    PlayerManager.Instance.playtime = TimeSpan.FromSeconds(Time.time - PlayerManager.Instance.startTime);
+                }
             }
             else
             {
-
-                Debug.Log("1");
-                transform.GetChild(0).gameObject.SetActive(true);
-                transform.GetChild(1).gameObject.SetActive(true);
-                Debug.Log("2");
+                if (!isSetActiveClockHair)
+                {
+                    isSetActiveClockHair = true;
+                    transform.GetChild(0).gameObject.SetActive(true);
+                    transform.GetChild(1).gameObject.SetActive(true);
+                }
 
                 ImageSizeSet();
-                Debug.Log("3");
 
                 if (!isColorChange)
                 {
@@ -164,28 +181,15 @@ public class DeadScreen : MonoBehaviour
                     }
                 }
 
-                /* if (isTest)
-                {
-                    background.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
-                    upside.sizeDelta = new Vector2(0, 0);
-                    downside.sizeDelta = new Vector2(0, 0);
-                    isColorChange = false;
-                    isSideSizeCheck = false;
-
-
-                    isTest = false;
-                } */
-
                 if (isShotEnd)
                 {
                     StartCoroutine(LoadAmmonomicon());
                 }
-
             }
         }
     }
 
-    
+
 
 
     void ImageSizeSet()
@@ -204,7 +208,8 @@ public class DeadScreen : MonoBehaviour
     IEnumerator LoadAmmonomicon()
     {
         isShotEnd = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
+        background.gameObject.SetActive(false);
         playerInventoryObj.SetActive(true);
         for (int i = 0; i < ammonomiconList.transform.childCount; i++)
         {
