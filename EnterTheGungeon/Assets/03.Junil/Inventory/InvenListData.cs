@@ -18,7 +18,10 @@ public class InvenListData : MonoBehaviour
     private GameObject[] monsterMenu = default;
     private GameObject[] bossMenu = default;
 
-
+    [SerializeField]
+    private GameObject inventorySetObjs = default;
+    [SerializeField]
+    private GameObject EnemyBook = default;
 
     // 총, 액티브, 패시브 슬롯 정보를 관리하는 리스트
     public GameObject slotPrefabs = default;
@@ -61,7 +64,7 @@ public class InvenListData : MonoBehaviour
     // 현재 선택된 탭이 무엇인지 알려주는 int 값
     public int selectTabInvenVal = default;
 
-
+    public Text nowInvenText = default;
 
     // Start is called before the first frame update
     void Start()
@@ -156,7 +159,7 @@ public class InvenListData : MonoBehaviour
                 case 4:
                     bossMenu[3].SetActive(false);
                     bossMenu[0].SetActive(true);
-
+                    
                     break;
 
             }
@@ -169,6 +172,13 @@ public class InvenListData : MonoBehaviour
                     equipmentMenu[3].SetActive(false);
 
                     equipmentMenu[2].SetActive(true);
+
+                    //[KJH] ADD
+                    inventorySetObjs.SetActive(true);
+                    EnemyBook.SetActive(false);
+                    InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt = 0;
+                    selectTabInvenVal = 0;
+                    nowInvenText.text = "장비";
 
                     break;
 
@@ -197,6 +207,13 @@ public class InvenListData : MonoBehaviour
                     bossMenu[3].SetActive(false);
 
                     bossMenu[2].SetActive(true);
+
+                    //[KJH] ADD
+                    inventorySetObjs.SetActive(false);
+                    EnemyBook.SetActive(true);
+                    InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt = 4;
+                    selectTabInvenVal = 4;
+                    nowInvenText.text = "도감";
 
                     break;
             }
