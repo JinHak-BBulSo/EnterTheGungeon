@@ -32,7 +32,22 @@ solve: enemy script에서 bullet을 생성 할 때 원하는 방향으로 bullet
 2023/03/20 / Fix PlayerCamera move and Add Inventory proto    
 2023/03/22 / Making Inven    
 2023/03/23 / Add Inven Tab Menu    
-
+2023/03/23 / Making PlayerMarine Status chk and Change Animator    
+2023/03/24 / Fix Inventoty script    
+2023/03/24 / Fix Player Weapon script    
+2023/03/26 / Add Player Top collider and PlayerGuide proto    
+2023/03/27 / error fix    
+2023/03/28 / New Inventory    
+2023/03/28 / Add InvenInfo Use    
+2023/03/28 / del weapon Canves and Change Weapon Sprite    
+2023/03/29 / Add Weapon Reload UI    
+2023/03/29 / Add WeaponReload Bar And playerMarine CC func    
+2023/03/29 / Fix weapon Reload and weapon Get item    
+2023/03/30 / Fix weapon colutin    
+2023/03/30 / Add playerAni and Player Select    
+2023/03/31 / Add Fire Missile proto    
+2023/03/31 / Make yari launchar and Hit Player    
+2023/03/31 / Add Missile and Fix Player Error    
 
 
 ## [KJH]    
