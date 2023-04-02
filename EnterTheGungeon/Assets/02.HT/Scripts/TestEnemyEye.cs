@@ -31,8 +31,9 @@ public class TestEnemyEye : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         // } Look At Player Position
 
+        // [KJH] Add Monster Layer 추가 및 타겟에서 제외함
         // { Raycast To Player
-        int layerMask = (1 << LayerMask.NameToLayer("Ignore Raycast")) | (1 << LayerMask.NameToLayer("Water"));
+        int layerMask = (1 << LayerMask.NameToLayer("Ignore Raycast")) | (1 << LayerMask.NameToLayer("Water") | (1 << LayerMask.NameToLayer("Monster")));
         layerMask = ~layerMask;
         //hit = Physics2D.Raycast(transform.position, transform.up, distanceToPlayer+10, layerMask);
         hit = Physics2D.Raycast(transform.position, transform.up, distanceToPlayer + 10, layerMask);
