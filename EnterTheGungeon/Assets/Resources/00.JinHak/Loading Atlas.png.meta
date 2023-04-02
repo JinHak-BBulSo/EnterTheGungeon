@@ -452,6 +452,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Text2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 230
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fe1f413396efb4bbc2fa2d59057723
+      internalID: -341942368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 230
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92a895f255d5be4c902e12201eab385
+      internalID: 1559392380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 230
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28902b48fdbc3e549ab589c339bb256e
+      internalID: 1948050459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 155
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445ad1026b99a4046812197e47957516
+      internalID: -1878281768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text0
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 230
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1c494384c09dc42a10930bdec97878
+      internalID: -610679137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -463,7 +568,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Loading Atlas_0: -1106795661
       Loading Atlas_1: 1641800179
       Loading Atlas_100: -1059212846
       Loading Atlas_101: 928023780
@@ -801,6 +905,11 @@ TextureImporter:
       Loading_7: 1306260461
       Loading_8: -1258570111
       Loading_9: 1553681797
+      Text0: -610679137
+      Text1: -1878281768
+      Text2: -1106795661
+      Text4: 1559392380
+      Text5: 1948050459
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

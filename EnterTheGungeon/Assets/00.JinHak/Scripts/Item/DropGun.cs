@@ -7,6 +7,7 @@ public class DropGun : DropItem
     public GameObject dropWeapon = default;
     public override void GetDropItem()
     {
+        SoundManager.Instance.Play("Obj/weapon_pickup_01", Sound.SFX);
         InventoryManager.Instance.inventoryControl.AddItem(this);
     }
 

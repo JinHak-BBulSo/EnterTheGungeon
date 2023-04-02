@@ -45,13 +45,11 @@ public class HpController : MonoBehaviour
             hpObjList[i].GetComponent<Image>().enabled = true;
             if (tempPlayerHp - 2 > 0)
             {
-                Debug.Log("와우");
                 tempPlayerHp -= 2;
                 hpObjList[i].HpImgChanger(2);
             }
             else
             {
-                Debug.Log("왓더헬");
                 ShieldIndex = i + 1;
                 hpObjList[i].HpImgChanger(tempPlayerHp);
                 tempPlayerHp = 0;

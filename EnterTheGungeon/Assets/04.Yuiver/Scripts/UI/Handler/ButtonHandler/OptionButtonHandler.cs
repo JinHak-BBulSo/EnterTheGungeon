@@ -15,7 +15,7 @@ public class OptionButtonHandler : BaseButtonHandler, IPointerEnterHandler, IPoi
     public void OnPointerClick(PointerEventData eventData)
     {
         // 클릭한 버튼에 해당하는 코드를 실행한다.
-
+        SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
         optionButtonController.DetailOptionSelect();
     
     }

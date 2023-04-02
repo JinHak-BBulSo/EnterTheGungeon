@@ -10,7 +10,7 @@ public class TestEnemyWeapon : MonoBehaviour
 
     public float delayTime;
 
-    bool isDelayEnd;
+    bool isDelayEnd = false;
 
     ObjectPool objectPool;
     List<GameObject> enemyBulletPool;
@@ -50,6 +50,8 @@ public class TestEnemyWeapon : MonoBehaviour
     {
         if (isDelayEnd == false)
         {
+            //[KJH] ADD
+            SoundManager.Instance.Play("BulletKin/ak47_shot_01", Sound.SFX);
             isDelayEnd = true;
             Debug.Log("fire bullet");
             GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
@@ -59,11 +61,11 @@ public class TestEnemyWeapon : MonoBehaviour
             clone_.GetComponent<TestBullet>().bulletType = 0;
             clone_.GetComponent<TestBullet>().enemyName = testEnemy.enemyName;
             clone_.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
-            StartCoroutine(FireDelay(delayTime));
+            StartCoroutine(FireDelay(delayTime)); 
         }
     }
     IEnumerator FireDelay(float delayTime)
-    {
+    {  
         yield return new WaitForSeconds(delayTime);
         isDelayEnd = false;
     }

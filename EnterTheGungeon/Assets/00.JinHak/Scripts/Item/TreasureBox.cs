@@ -19,13 +19,16 @@ public class TreasureBox : MonoBehaviour
 
     void Update()
     {
-        if(isPlayerAttach && !isOpen && Input.GetKeyDown(KeyCode.E))
+        if(isPlayerAttach && !isOpen && Input.GetKeyDown(KeyCode.E) && PlayerManager.Instance.player.playerKey >= 1)
         {
+            SoundManager.Instance.Play("Obj/chest_open_01", Sound.SFX);
             isOpen = true;
             GameObject dropItem_ = Instantiate(inBoxItem, transform.parent);
             inBoxItem.transform.position = transform.position - new Vector3(0, 1, 0);
             dropItem_.transform.parent = PlayerManager.Instance.player.transform.parent.parent;
 
+            PlayerManager.Instance.player.playerKey--;
+            PlayerManager.Instance.player.keyController.SetPlayerKey(PlayerManager.Instance.player.playerKey);
             boxAni.SetTrigger("isOpen");
             
             if(itemIndex > 2)

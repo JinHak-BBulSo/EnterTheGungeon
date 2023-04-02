@@ -18,12 +18,15 @@ public class PauseButtonHandler : BaseButtonHandler, IPointerEnterHandler, IPoin
         switch (buttonIndex)
         {
             case 0:
+                SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
                 UIController.ResumeGame();
                 break;
             case 1:
+                SoundManager.Instance.Play("Ammonomicon/ammonomicon_open_01", Sound.UI_SFX);
                 pauseButtonController.AmmonomiconActive();
                 break;
             case 2:
+                SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
                 uIController.OptionActive();
                 break;
             case 3:

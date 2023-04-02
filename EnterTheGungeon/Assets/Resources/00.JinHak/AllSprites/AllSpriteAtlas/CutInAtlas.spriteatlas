@@ -43,12 +43,16 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e329b840b4fbaa540aff5dff4667b8b0, type: 3}
   - {fileID: 21300000, guid: e07ad5d0ade3b0241890e46c56792f0c, type: 3}
   - {fileID: 21300000, guid: 67440dd05a5a5f347909ceac8b77a712, type: 3}
+  - {fileID: 21300000, guid: 7dbbacb2dddb9194193f689c33163b77, type: 3}
   - {fileID: 21300000, guid: 16473d1590e0bbe4c9427777c47daa6e, type: 3}
   - {fileID: 21300000, guid: b5a95537d1751714e96cedbfe0414fd1, type: 3}
   - {fileID: 21300000, guid: 161e48b76c80db04e9ed83f5404bae86, type: 3}
   - {fileID: 21300000, guid: 2dcde9e864e114449aa78fd89a4a05d0, type: 3}
   - {fileID: 21300000, guid: 136fcf2958cad9249bc06b2d9b357d43, type: 3}
   - {fileID: 21300000, guid: 132038897c0fc7f438ad0f8759c9a86a, type: 3}
+  - {fileID: 21300000, guid: 14cfa0e9042c0034dbc4d471969a6871, type: 3}
+  - {fileID: 21300000, guid: 15a737ea5d865ba459e974029212e536, type: 3}
+  - {fileID: 21300000, guid: 0b98764b72b7ef84bae8abae1ac56a62, type: 3}
   - {fileID: 21300000, guid: 32b6b47b176b72749bfa3e97d353369b, type: 3}
   - {fileID: 21300000, guid: 723d27dba4c6b734790ddc1efdeeb7f4, type: 3}
   - {fileID: 21300000, guid: 5a971d5c4047ecf46986a72d401f6265, type: 3}
@@ -65,12 +69,16 @@ SpriteAtlas:
   - border_triangle_bottom_anim02
   - player_marine_card_002
   - border_triangle_top_anim02
+  - player_guide_card_004
   - border_triangle_bottom_anim05
   - Meduzi_Bosscard_001
   - border_triangle_top_anim06
   - border_triangle_top_anim01
   - BulletKing_boss_Bosscard_001
   - border_triangle_bottom_anim03
+  - player_guide_card_003
+  - player_guide_card_002
+  - player_guide_card_001
   - MediumStreaks-slanted
   - border_triangle_bottom_anim04
   - border_triangle_top_anim04

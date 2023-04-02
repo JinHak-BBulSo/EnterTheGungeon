@@ -333,6 +333,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiObjs
       objectReference: {fileID: 0}
+    - target: {fileID: 2381235631347796004, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620058141160906186, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 82.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620058141160906186, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 16.76
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8ee086882bf9943967d0a6556ea416, type: 3}
 --- !u!1001 &388315764
@@ -342,6 +354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 144988631}
     m_Modifications:
+    - target: {fileID: 3006484057206678123, guid: e1bd28945f47a9549a29a5b0a43d98e1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -63.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3006484057556045430, guid: e1bd28945f47a9549a29a5b0a43d98e1, type: 3}
       propertyPath: m_Name
       value: PlayerObjs
@@ -469,8 +485,8 @@ Camera:
   m_GameObject: {fileID: 457120817}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.990566, g: 0.6494749, b: 0.6494749, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -565,7 +581,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraHeight: 0
   cameraWidth: 0
-  target: {fileID: 0}
   exceptionRangeVal: 0
   isPlayerDie: 0
   isFocus: 0
@@ -718,6 +733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8610343118703431170, guid: 92d69f0575099cd48bcc9562c110fd44, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8610343118703431171, guid: 92d69f0575099cd48bcc9562c110fd44, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1127,14 +1146,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7309486584181337015, guid: 6e6aeb59bc0768041975f064c730afb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7309486584512483068, guid: 6e6aeb59bc0768041975f064c730afb3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7309486585333372863, guid: 6e6aeb59bc0768041975f064c730afb3, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

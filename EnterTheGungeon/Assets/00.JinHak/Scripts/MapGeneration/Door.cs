@@ -46,6 +46,7 @@ public class Door : MonoBehaviour
         {
             if (doorAni != null)
             {
+                SoundManager.Instance.Play("Obj/door_open_01", Sound.SFX);
                 doorAni.SetBool("isOpen", true);
                 doorAni.SetBool("isClose", false);
                 isOpen = true;

@@ -87,6 +87,8 @@ public class OptionButtonController : MonoBehaviour
 
     public void OptionMenuDisable()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("UI/menu_cancel_01", Sound.UI_SFX);
         StartCoroutine(OptionScaleDisable());
     }
 

@@ -15,7 +15,9 @@ public class Hole : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SoundManager.Instance.Play("Player/forever_fall_01", Sound.SFX);
             // [Junil] 무기가 꺼지는 함수 호출
+
             PlayerManager.Instance.player.StartOffWeaponObjs();
             playerAni.SetTrigger("Falling");
             PlayerManager.Instance.player.enabled = false;
@@ -30,6 +32,7 @@ public class Hole : MonoBehaviour
         PlayerManager.Instance.player.enabled = true;
         PlayerManager.Instance.player.transform.position = new Vector2(0, 0);
         playerAni.SetTrigger("FallReturn");
+        SoundManager.Instance.Play("Player/fall_respawn_01", Sound.SFX);
         yield return new WaitForSeconds(0.5f);
         PlayerManager.Instance.player.OnHitAndStatusEvent();
     }

@@ -87,6 +87,8 @@ public class ClockHair : MonoBehaviour
             {
                 baseDistanceToPlayer = Vector2.Distance(transform.position, Vector3.zero);
                 isBaseDistanceCheck = true;
+                //[KJH] ADD
+                SoundManager.Instance.Play("GameOver/gameover_lockon_01_001", Sound.SFX);
             }
             distanceToPlayer = Vector2.Distance(transform.position, Vector3.zero);
             //directionToPlayer = clockHair.transform.position - Vector3.zero;
@@ -103,6 +105,8 @@ public class ClockHair : MonoBehaviour
             }
             if (distanceToPlayer <= 0.01f)
             {
+                //[KJH] ADD
+                SoundManager.Instance.Play("GameOver/gameover_reticle_01", Sound.SFX);
                 introEnd = true;
             }
 
@@ -146,8 +150,12 @@ public class ClockHair : MonoBehaviour
 
                 if (wobblePoint == 4)
                 {
+                    if(animator.GetBool("isShot") == false)
+                    {
+                        //[KJH] ADD
+                        SoundManager.Instance.Play("GameOver/gameover_shot_01", Sound.SFX);
+                    }
                     animator.SetBool("isShot", true);
-
                 }
             }
         }

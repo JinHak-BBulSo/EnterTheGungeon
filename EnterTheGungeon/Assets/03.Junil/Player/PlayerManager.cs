@@ -25,6 +25,7 @@ public class PlayerManager : GSingleton<PlayerManager>
     public TimeSpan playtime;
 
     public string lastHitEnemyName;
+    public int playerCharacterIndex = -1;
 
     // } [HT] add variables
 

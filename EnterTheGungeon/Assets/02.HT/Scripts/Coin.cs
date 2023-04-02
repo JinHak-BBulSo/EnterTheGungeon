@@ -35,6 +35,10 @@ public class Coin : MonoBehaviour
 
             PlayerManager.Instance.player.OnHitAndStatusEvent();
 
+            PlayerManager.Instance.player.cashController.SetPlayerCash(PlayerManager.Instance.player.playerMoney);
+
+            //[KJH] ADD
+            SoundManager.Instance.Play("Obj/coin_small_01", Sound.SFX);
             Destroy(this.gameObject);
         }
     }

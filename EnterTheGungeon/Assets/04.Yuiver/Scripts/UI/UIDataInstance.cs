@@ -22,6 +22,6 @@ public class UIDataInstance : MonoBehaviour
         DataManager.Instance.SetCursor(firstLoadData.mouseCursor);  //사용자가 지정해둔 마우스 커서로 마우스 커서를 변경해줌
 
         //이곳에 BGM을 넣어주면 됩니다.
-        SoundManager.Instance.Play("TestSound", Sound.Bgm);
+        //SoundManager.Instance.Play("TestSound", Sound.Bgm);
     }
 }

@@ -544,6 +544,7 @@ MonoBehaviour:
   bossCount: 1
   introDelay: 2
   bossIndex: 0
+  cutInOn: 0
 --- !u!1001 &2090460178970444999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17511,6 +17512,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8870316073612450853}
     m_Modifications:
+    - target: {fileID: 1391822813912503910, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 7904519950871809839}
+    - target: {fileID: 3016075478842709031, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 7904519950871809839}
+    - target: {fileID: 5859491836571725706, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 7904519950871809839}
+    - target: {fileID: 6772100819426045156, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 7904519950871809839}
     - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
       propertyPath: m_RootOrder
       value: 3

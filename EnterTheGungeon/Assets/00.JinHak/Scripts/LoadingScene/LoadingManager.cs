@@ -38,7 +38,8 @@ public class LoadingManager : GSingleton<LoadingManager>
             {
                 // progress >= 1 즉, 준비가 다된 상황
                 if (op.progress >= 1.0f)
-                { 
+                {
+                    SoundManager.Instance.Play("BGM/02 LEAD LORDS KEEP", Sound.Bgm);
                     yield break; 
                 }
             }
@@ -50,6 +51,7 @@ public class LoadingManager : GSingleton<LoadingManager>
     IEnumerator NextSceneLoad()
     {
         yield return new WaitForSeconds(0.5f);
+        
         op.allowSceneActivation = true;
     }
 }

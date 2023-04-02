@@ -14,7 +14,9 @@ public class ManagerCreator : MonoBehaviour
         InventoryManager.Instance.Create();
         ObjectManager.Instance.Create();
         DoorManager.Instance.Create();
+        DropManager.Instance.Create();
 
+        SoundManager.Instance.Play("BGM/01 ENTER THE GUN", Sound.Bgm);
         GFunc.LoadScene("01.TitleScene");
     }
 }

@@ -49,6 +49,36 @@ public class SoundManager : GSingleton<SoundManager>
         _audioClips.Clear();
     }
 
+    // [KJH] ADD
+    //! 오디오의 재생을 종료하기 위한 함수
+    public void Stop(Sound type = Sound.UI_SFX, float pitch = 1.0f)
+    {
+        if (type == Sound.Bgm)
+        {
+            AudioSource audioSource = _audioSources[(int)Sound.Bgm];
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+        else if (type == Sound.SFX)
+        {
+            AudioSource audioSource = _audioSources[(int)Sound.SFX];
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+        else
+        {
+            AudioSource audioSource = _audioSources[(int)Sound.UI_SFX];
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+    }
+
     //! 랩핑한 오디오 클립을 받는 버전의 코드
     public void Play(string path, Sound type = Sound.UI_SFX, float pitch = 1.0f)
     {

@@ -40,6 +40,15 @@ public class BossRoom : Room
     {
         if (isPlayerEnter && bossCount == 0 && !isRoomClear)
         {
+            foreach(var entrance in roomEntrances)
+            {
+                if (!entrance.activeSelf) continue;
+                else
+                {
+                    entrance.GetComponent<BossEntrance>().EntranceOpen();
+                }
+            }
+            SoundManager.Instance.Play("BGM/02 LEAD LORDS KEEP", Sound.Bgm);
             isRoomClear = true;
             DoorManager.Instance.AllDoorOpen();
         }
@@ -59,11 +68,13 @@ public class BossRoom : Room
 
     IEnumerator BossIntroEnd(float introDelay_)
     {
+        SoundManager.Instance.Play("BGM/03 GUNGEON UP GUNGEON DOWN", Sound.Bgm);
         cutInOn = true;
+        int cutInIndex = bossIndex + PlayerManager.Instance.playerCharacterIndex * 2;
         yield return new WaitForSeconds(1.0f);
-        cutInObjs.transform.GetChild(bossIndex).gameObject.SetActive(true);
+        cutInObjs.transform.GetChild(cutInIndex).gameObject.SetActive(true);
         yield return new WaitForSeconds(introDelay_);
-        cutInObjs.transform.GetChild(bossIndex).gameObject.SetActive(false);
+        cutInObjs.transform.GetChild(cutInIndex).gameObject.SetActive(false);
         PlayerManager.Instance.playerCamera.isBossIntro = false;
         PlayerManager.Instance.miniCamController.isBossIntro = false;
         MoveCamera2D.target = PlayerManager.Instance.player.gameObject;

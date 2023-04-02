@@ -93,6 +93,7 @@ public class SPMAWeapon : PlayerWeapon
     public override void FireBullet()
     {
         
+
         GFunc.Log("공격함");
 
         if(isReload == true) { return; }
@@ -112,6 +113,8 @@ public class SPMAWeapon : PlayerWeapon
             isAttack = true;
             spmaAnimator.SetTrigger("OnAttack");
 
+            //[KJH] ADD
+            SoundManager.Instance.Play("Player/38special_shot_01", Sound.SFX);
 
             spmaBullets[countBullet - 1].transform.position = firePos.position;
 
@@ -144,11 +147,14 @@ public class SPMAWeapon : PlayerWeapon
         // 현재 재장전 중이거나 현재 총알 수가 최대 총알 수와 같다면 멈추게 하는 조건
         if (isReload == true || countBullet == weaponMagazine ) { return; }
 
+        
+
         spmaAnimator.SetTrigger("OnReload");
 
         PlayerManager.Instance.player.weaponReload.ReloadStart(weaponReload);
         StartOnReload();
-
+        //[KJH] ADD
+        SoundManager.Instance.Play("Player/38special_reload_01", Sound.SFX);
     }
 
     

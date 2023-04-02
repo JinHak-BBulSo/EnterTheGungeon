@@ -37,6 +37,9 @@ public class InventoryControl : MonoBehaviour
         {
             if (isOpenInven == true)
             {
+                //[KJH] ADD
+                SoundManager.Instance.Play("UI/menu_cancel_01", Sound.UI_SFX);
+
                 Time.timeScale = 1.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
                 isOpenInven = false;
                 InventoryManager.Instance.inventoryDataObjs.SetActive(false);
@@ -50,6 +53,9 @@ public class InventoryControl : MonoBehaviour
         {
             if(isOpenInven == true) 
             {
+                //[KJH] ADD
+                SoundManager.Instance.Play("UI/menu_cancel_01", Sound.UI_SFX);
+
                 Time.timeScale = 1.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
                 isOpenInven = false;
                 InventoryManager.Instance.inventoryDataObjs.SetActive(false);
@@ -57,6 +63,9 @@ public class InventoryControl : MonoBehaviour
                 return; 
             }
 
+            //[KJH] ADD
+            SoundManager.Instance.Play("Ammonomicon/ammonomicon_open_01", Sound.UI_SFX);
+            
             Time.timeScale = 0.0f; // [yuiver]시간정지를 위해 UI를 묶는도중 팀원의 코드 수정
             isOpenInven = true;
             GFunc.Log("눌림");

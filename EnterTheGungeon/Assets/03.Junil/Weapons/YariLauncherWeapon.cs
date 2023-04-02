@@ -86,6 +86,7 @@ public class YariLauncherWeapon : PlayerWeapon
 
     public override void FireBullet()
     {
+        
 
         GFunc.Log("공격함");
 
@@ -106,6 +107,8 @@ public class YariLauncherWeapon : PlayerWeapon
             isAttack = true;
             yariAnimator.SetTrigger("OnAttack");
 
+            //[KJH] ADD
+            SoundManager.Instance.Play("YariRocket/yarirocketlauncher_shot_01", Sound.SFX);
 
             missileBullets[countBullet - 1].transform.position = firePos.position;
 
@@ -140,6 +143,8 @@ public class YariLauncherWeapon : PlayerWeapon
 
         PlayerManager.Instance.player.weaponReload.ReloadStart(weaponReload);
         StartOnReload();
+        //[KJH] ADD
+        SoundManager.Instance.Play("YariRocket/yarirocketlauncher_reload_01", Sound.SFX);
 
     }
 

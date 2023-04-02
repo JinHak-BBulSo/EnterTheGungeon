@@ -183,6 +183,8 @@ public class DetailOptionController : MonoBehaviour
     //! Confirm버튼을 누르면 실행되는 함수 현재 옵션데이터를 저장한다.
     public void SaveOptionData()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("UI/menu_confirm_01", Sound.UI_SFX);
         DataManager.Instance.SaveOptionData(loadOptionData);
     }
     //! Reset Default 버튼을 누르면 실행되는 함수 DataClass안에 정의된 기본 설정으로 옵션을 초기화해준다.
@@ -197,6 +199,9 @@ public class DetailOptionController : MonoBehaviour
         DataManager.Instance.SetCursor(loadOptionData.mouseCursor);
         seclectMouse = loadOptionData.mouseCursor;
         InitializeSliders();
+
+        //[KJH] ADD
+        SoundManager.Instance.Play("UI/menu_cancel_01", Sound.UI_SFX);
     }
     //! Cancel 버튼을 누르면 실행되는 함수, 메모리에 옵션 데이터 변수를 저장하지 않고 다시 로드해서 덮어쓴다.
     public void CancleChangeOption()
@@ -208,6 +213,9 @@ public class DetailOptionController : MonoBehaviour
         OnSFXVolumeChanged(loadOptionData.SFXVolume);
         OnUIVolumeChanged(loadOptionData.UIVolume);
         DataManager.Instance.SetCursor(loadOptionData.mouseCursor);
+
+        //[KJH] ADD
+        SoundManager.Instance.Play("UI/menu_cancel_01", Sound.UI_SFX);
     }
     #endregion
 }

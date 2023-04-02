@@ -6,6 +6,9 @@ public class DropItemKey : DropItem
 {
     public override void GetDropItem()
     {
-        PlayerManager.Instance.player.playerKey++;
+        SoundManager.Instance.Play("Obj/item_pickup_01", Sound.SFX);
+        PlayerController player = PlayerManager.Instance.player;
+        player.playerKey++;
+        player.keyController.SetPlayerKey(player.playerKey);
     }
 }

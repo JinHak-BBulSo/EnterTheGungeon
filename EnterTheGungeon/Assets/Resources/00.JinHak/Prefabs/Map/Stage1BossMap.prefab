@@ -169,6 +169,7 @@ MonoBehaviour:
   bossCount: 1
   introDelay: 2
   bossIndex: 1
+  cutInOn: 0
 --- !u!1 &4647603104968641757
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +552,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2294845348300537772}
     m_Modifications:
+    - target: {fileID: 1391822813912503910, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 4861889711833022340}
+    - target: {fileID: 3016075478842709031, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 4861889711833022340}
+    - target: {fileID: 5859491836571725706, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 4861889711833022340}
+    - target: {fileID: 6772100819426045156, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 4861889711833022340}
     - target: {fileID: 7716500082343488540, guid: 22d31832bfa920245aa01d06d4d43c83, type: 3}
       propertyPath: m_RootOrder
       value: 3

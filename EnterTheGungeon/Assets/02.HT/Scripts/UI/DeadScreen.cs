@@ -208,6 +208,7 @@ public class DeadScreen : MonoBehaviour
     IEnumerator LoadAmmonomicon()
     {
         isShotEnd = false;
+        
         yield return new WaitForSeconds(0.5f);
         background.gameObject.SetActive(false);
         playerInventoryObj.SetActive(true);
@@ -235,6 +236,9 @@ public class DeadScreen : MonoBehaviour
 
             }
         }
+
+        //[KJH] ADD
+        SoundManager.Instance.Play("Ammonomicon/ammonomicon_open_01", Sound.UI_SFX);
         yield return null;
         //ammonomicon.SetActive(true);
     }
@@ -254,7 +258,9 @@ public class DeadScreen : MonoBehaviour
 
         Texture2D texture2D_ = ScreenCapture.CaptureScreenshotAsTexture();
 
-        screenShot = Sprite.Create(texture2D_, new Rect(300, 150, 600, 300), new Vector2(0.5f, 0.5f));
+        //screenShot = Sprite.Create(resizeTexture2D_, new Rect(300, 150, 600, 300), new Vector2(0.5f, 0.5f));
+        // [KJH] Add texture2D resize
+        screenShot = Sprite.Create(texture2D_, new Rect(0, 0, texture2D_.width, texture2D_.height), new Vector2(0.5f, 0.5f));
 
         isCaptured = true;
     }

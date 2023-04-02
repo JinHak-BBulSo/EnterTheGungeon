@@ -6,6 +6,9 @@ public class DropSuit : DropItem
 {
     public override void GetDropItem()
     {
-        PlayerManager.Instance.player.playerShield += 2;
+        SoundManager.Instance.Play("Obj/ammo_pickup_01", Sound.SFX);
+        PlayerController player = PlayerManager.Instance.player;
+        player.playerShield += 2;
+        player.hpController.SetPlayerHp(player.playerHp, player.playerMaxHp, player.playerShield);
     }
 }

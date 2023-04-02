@@ -83,6 +83,10 @@ public class PlayerMove : MonoBehaviour
             isReDodgeing = false;
 
         }
+
+        //[KJH] ADD
+        PlayerManager.Instance.player.isAvoid = true;
+        SoundManager.Instance.Play("Player/dodge_leap_01", Sound.SFX);
         PlayerAniDodge();
 
         isDodgeing = true;
@@ -107,6 +111,7 @@ public class PlayerMove : MonoBehaviour
         
         yield return new WaitForSeconds(0.8f);
         isDodgeing = false;
+        PlayerManager.Instance.player.isAvoid = false;
 
         StartReDodge();
     }
@@ -124,6 +129,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(ReDodgeCoroutine != null)
         {
+            PlayerManager.Instance.player.isAvoid = false;
             StopCoroutine(ReDodgeCoroutine);
         }
     }

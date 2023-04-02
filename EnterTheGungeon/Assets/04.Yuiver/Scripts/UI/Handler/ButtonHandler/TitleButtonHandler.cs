@@ -21,13 +21,20 @@ public class TitleButtonHandler : BaseButtonHandler, IPointerEnterHandler, IPoin
         {
             case 0:
                 //Debug.Log("게임 플레이 씬 이름을 넣어주세요. 아직 설정하지 않았습니다.");
+                //[KJH] ADD
+                SoundManager.Instance.Play("BGM/06 SECRETS SECRETS SECRETS", Sound.Bgm);
+                SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
                 GFunc.LoadScene("02.LobbyScene");
                 break;
             case 1:
+                //[KJH] ADD
+                SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
                 Debug.Log("게임을 이어합니다. 아직 설정하지 않았습니다.");
                 //GFunc.LoadScene("05.StageScene");
                 break;
             case 2:
+                //[KJH] ADD
+                SoundManager.Instance.Play("UI/menu_select_01", Sound.UI_SFX);
                 titleButtonController.OptionMenuActive();
                 break;
             case 3:

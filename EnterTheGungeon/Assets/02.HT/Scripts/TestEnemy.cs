@@ -215,7 +215,7 @@ public class TestEnemy : MonoBehaviour
         // use weapon
         if (attackType == 0)
         {
-            weapon.fire();
+            weapon.fire();   
         }
         // summon bullet
         else if (attackType == 1)
@@ -254,6 +254,8 @@ public class TestEnemy : MonoBehaviour
         {
             int patternNum_ = Random.Range(0, 2);
 
+            //[KJH] ADD
+            SoundManager.Instance.Play("BookLlet/book_charge_01", Sound.SFX);
             if (patternNum_ == 0)
             {
                 float[] xPos_ = { -30, -30, -30, -30, -30, -30, -30, -15, -8.35f, 15, 30, 35, 30, 15, -8.35f, -15, 15, 25, 35 };
@@ -271,9 +273,13 @@ public class TestEnemy : MonoBehaviour
                     //clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
                     yield return new WaitForSeconds(0.03f);
                 }
+                SoundManager.Instance.Play("BookLlet/book_blast_01", Sound.SFX);
             }
             else if (patternNum_ == 1)
             {
+                //[KJH] ADD
+                SoundManager.Instance.Play("BookLlet/book_charge_01", Sound.SFX);
+
                 for (float i = 0; i <= 360; i += 10)
                 {
                     GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
@@ -315,6 +321,7 @@ public class TestEnemy : MonoBehaviour
                     clone_.transform.position = new Vector2(transform.position.x, transform.position.y + i / 71.94f);
                     StartCoroutine(WaitToSummonAllBullet(clone_, -clone_.transform.up.normalized));
                 }
+                SoundManager.Instance.Play("BookLlet/book_blast_01", Sound.SFX);
             }
         }
 
@@ -338,6 +345,8 @@ public class TestEnemy : MonoBehaviour
                 clone_.transform.position = summonBulletPosition;
                 clone_.GetComponent<Rigidbody2D>().AddForce(directionForSummonBullet.normalized * 5, ForceMode2D.Impulse);
             }
+            //[KJH] ADD
+            SoundManager.Instance.Play("GunNut/gunnut_shockwave_01", Sound.SFX);
         }
         // } enemy pattern
         yield return new WaitForSeconds(delayTime_);
@@ -348,7 +357,7 @@ public class TestEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         clone_.GetComponent<Rigidbody2D>().AddForce(direction_ * 5, ForceMode2D.Impulse);
-
+        //[KJH] ADD  
     }
 
     // @brief find player's direction from current enemy position.
@@ -419,10 +428,13 @@ public class TestEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PlayerBullet")
-        {
+        {          
             damageTaken = other.GetComponent<PlayerBullet>().bulletDamage; //after setting playerbullet, change this.
             currentHp -= damageTaken;
             damageTaken = 0;
+
+            /*//[KJH] ADD
+            SoundManager.Instance.Play("Player/general_hurt_01", Sound.SFX);*/
 
             OnDamage(other.transform.position);
         }
@@ -433,7 +445,7 @@ public class TestEnemy : MonoBehaviour
         Vector2 dir_ = transform.position - collisionPos_;
 
         rigid.velocity = Vector2.zero;
-        rigid.AddForce(dir_.normalized * 100, ForceMode2D.Impulse);//?
+        rigid.AddForce(dir_.normalized * 7, ForceMode2D.Impulse);//?
     }
 
     void Die()

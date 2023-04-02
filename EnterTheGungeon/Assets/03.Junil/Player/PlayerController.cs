@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour
     // 인벤토리가 열려있는지 확인하는 bool 값
     public bool isOnInventory = false;
 
+    // 플레이어가 회피 상태인지 확인
+    public bool isAvoid = false;
+
     // 현재 장착중인 무기의 한손인지 두손인지 체크하는 int 값
     public int nowWeaponHand = default;
 
@@ -194,6 +197,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             //playerMove.PlayerAniRestart(isArmor, );
+
             playerMove.OnDodge();
         }
 
@@ -205,6 +209,7 @@ public class PlayerController : MonoBehaviour
             if (playerBlank == 0 && playerBlank == default) { return; }
             OnPlayerBlankBullet();
             playerBlank--;
+            blankController.SetPlayerBlank(playerBlank);
         }
 
         // 현재 들고 있는 총을 쏜다
@@ -383,7 +388,6 @@ public class PlayerController : MonoBehaviour
                 playerHp--;
             }
             hpController.SetPlayerHp(playerHp, playerMaxHp, playerShield);
-            Debug.Log("피격 후 " + PlayerManager.Instance.player.playerHp);
         }
 
         if (playerHp == 0)
@@ -417,6 +421,7 @@ public class PlayerController : MonoBehaviour
 
         if (isAttacked == true) { return; }
 
+        
         StartCoroutine(AttackedAction());
     }
 
@@ -425,6 +430,8 @@ public class PlayerController : MonoBehaviour
     {
         isAttacked = true;
 
+        //[KJH] ADD
+        SoundManager.Instance.Play("Player/general_hurt_01", Sound.UI_SFX);
         int countTime_ = 0;
 
         Color playerColor_ = playerImage.color;

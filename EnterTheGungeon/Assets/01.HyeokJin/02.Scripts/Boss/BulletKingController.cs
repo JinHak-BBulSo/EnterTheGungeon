@@ -892,6 +892,8 @@ public class BulletKingController : Boss
     {
         if (collision.CompareTag("PlayerBullet") && !isDead)
         {
+            //[KJH] ADD
+            SoundManager.Instance.Play("Player/general_hurt_01", Sound.SFX);
             int playerBulletDamage_ = collision.gameObject.GetComponentMust<PlayerBullet>().bulletDamage;
             StartCoroutine(OnHit_HpBar(playerBulletDamage_));
             StartCoroutine("OnHit_Color");
@@ -931,8 +933,6 @@ public class BulletKingController : Boss
 
     private void Die()
     {
-        Debug.Log("뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐뒤짐");
-
         bulletkingAnimator.SetTrigger("isDead");
         StartCoroutine("Die_VFX");
     }

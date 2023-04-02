@@ -21,6 +21,7 @@ public class GunGeonEntrance : MonoBehaviour
             
             selectPlayerManager.DestroyNotSelectPlayer();   
             playerAni.SetTrigger("Doorway");
+            SoundManager.Instance.Play("Player/barefoot_stairs_01", Sound.SFX);
             StartCoroutine(SceneLoadDelay());
         }
     }
@@ -30,6 +31,7 @@ public class GunGeonEntrance : MonoBehaviour
         PlayerManager.Instance.player.enabled = false;
         PlayerManager.Instance.player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         yield return new WaitForSeconds(0.6f);
+
         LoadingManager.Instance.LoadLoadingScene("03.StageScene");
     }
 }

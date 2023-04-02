@@ -95,6 +95,8 @@ public class MoonrakerWeapon : PlayerWeapon
         
         if (Input.GetMouseButtonUp(0))
         {
+            //[KJH] ADD
+            SoundManager.Instance.Stop(Sound.SFX);
             OffLaser();
         }
 
@@ -105,7 +107,8 @@ public class MoonrakerWeapon : PlayerWeapon
     public override void FireBullet()
     {
         isLaserOn = true;
-
+        //[KJH] ADD
+        SoundManager.Instance.Play("moonrakerLaser_shot_01", Sound.SFX);
     }
 
     public override void ReloadBullet()
@@ -148,14 +151,20 @@ public class MoonrakerWeapon : PlayerWeapon
                 directLaser = Vector3.Reflect(directLaser, hit_.normal);
                 firstPos = (Vector2) directLaser.normalized + hit_.point;
                 moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
-                
+
 
                 // 레이저 공격
-                if(weaponDeley < deleyChkVal)
+                if (weaponDeley < deleyChkVal)
                 {
-                    // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
-                    bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
-                    hit_.collider.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
+                    if (hit_.collider.tag == "Monster")
+                    {
+                        //[KJH] ADD
+                        SoundManager.Instance.Play("MoonRaker/moonrakerLaser_loop_01", Sound.SFX);
+
+                        // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
+                        bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+                        hit_.collider.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
+                    }
                 }
 
             }

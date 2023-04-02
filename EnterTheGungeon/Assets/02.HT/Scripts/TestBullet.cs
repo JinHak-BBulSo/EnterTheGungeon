@@ -80,7 +80,8 @@ public class TestBullet : MonsterBullets
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         //base.OnTriggerEnter2D(other);
-        if (other.tag == "Player" && other.gameObject != null)
+        if (other.tag == "Player" && other.gameObject != null && 
+            !PlayerManager.Instance.player.isAvoid && !PlayerManager.Instance.player.isAttacked)
         {
             isGorgunBullet = false;
             StartCoroutine(ReturnBullet(0.1f));

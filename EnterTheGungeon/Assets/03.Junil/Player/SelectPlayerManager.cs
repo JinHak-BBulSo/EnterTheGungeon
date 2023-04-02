@@ -37,6 +37,7 @@ public class SelectPlayerManager : MonoBehaviour
 
                     GFunc.Log("마린이 선택");
                     playerCharacterIndex = 0;
+                    
                     StartCoroutine(SelectPlayerAni(hit_));
                 }
 
@@ -51,6 +52,9 @@ public class SelectPlayerManager : MonoBehaviour
                     StartCoroutine(SelectPlayerAni(hit_));
                 }
                 isSelected = true;
+                // [KJH] add
+                PlayerManager.Instance.playerCharacterIndex = playerCharacterIndex;
+                SoundManager.Instance.Play("UI/menu_characterselect_01", Sound.UI_SFX);
                 // { [HT] add
                 PlayerManager.Instance.startTime = Time.time;
                 // } [HT] add
