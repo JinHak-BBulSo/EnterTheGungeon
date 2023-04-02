@@ -46,6 +46,8 @@ public class BossGorgunBody : MonoBehaviour
     // { add function to animation event 
     public void ShotBulletAttack1Pattern1()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("GorGun/gorgun_attack_01b", Sound.SFX);
         for (float i = 0; i <= 360; i += 15)
         {
             GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
@@ -63,6 +65,8 @@ public class BossGorgunBody : MonoBehaviour
     }
     public void ShotBulletAttack2Pattern1()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("GorGun/gorgun_attack_02b", Sound.SFX);
         for (float i = 5; i <= 360; i += 15)
         {
             GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
@@ -80,6 +84,9 @@ public class BossGorgunBody : MonoBehaviour
     }
     public void AttackPattern2()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("GunNut/gunnut_shockwave_01", Sound.SFX);
+
         GameObject clone_ = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/BossGorgun/GorgunSonicWave"), eye.transform.position, transform.rotation);
         clone_.transform.SetParent(GameObject.Find("GameObjs").transform);
         clone_.SetLocalScale(new Vector3(10, 10, 10));
@@ -88,6 +95,8 @@ public class BossGorgunBody : MonoBehaviour
 
     public void AttackPattern3(int rotateEmptySpace_)
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("GorGun/GorGun_uzi_01", Sound.SFX);
         int patternBulletNum_ = 0;
         for (float i = 0; i <= 360; i += 10)
         {
@@ -134,6 +143,8 @@ public class BossGorgunBody : MonoBehaviour
 
     public void MoveMuzzle()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("BulletKin/ak47_shot_01", Sound.SFX);
         muzzleLeft.MoveCheck();
         muzzleRight.MoveCheck();
     }

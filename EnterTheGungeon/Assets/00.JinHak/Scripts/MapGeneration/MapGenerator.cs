@@ -665,8 +665,8 @@ public class MapGenerator : MonoBehaviour
         }
         else
         {
-            startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
-            startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
+            startLeft_ = new Vector2(start_.x + 0.5f, start_.y + 1);
+            startRight_ = new Vector2(start_.x + 0.5f, start_.y - 1);
 
             if (middle2_.y > middle_.y)
             {
@@ -685,8 +685,8 @@ public class MapGenerator : MonoBehaviour
                 middleRight2_ = new Vector2(middle2_.x - 0.65f, middle2_.y - 1f);
             }
 
-            endLeft_ = new Vector2(end_.x - 0.65f, end_.y + 1);
-            endRight_ = new Vector2(end_.x - 0.65f, end_.y - 1);
+            endLeft_ = new Vector2(end_.x - 0.5f, end_.y + 1);
+            endRight_ = new Vector2(end_.x - 0.5f, end_.y - 1);
         }
 
         DrawAccessLine(startLeft_, endLeft_, middleLeft_, middleLeft2_, lineWallTop, distanceIndex_);

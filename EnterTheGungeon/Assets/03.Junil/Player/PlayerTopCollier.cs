@@ -25,7 +25,14 @@ public class PlayerTopCollier : MonoBehaviour
         if (collision.tag == "MonsterBullet" && !player.isAttacked)
         {
             // [HT] add
-            PlayerManager.Instance.lastHitEnemyName = collision.GetComponent<TestBullet>().enemyName;
+            if (collision.GetComponent<TestBullet>() != null)
+            {
+                PlayerManager.Instance.lastHitEnemyName = collision.GetComponent<TestBullet>().enemyName;
+            }
+            else
+            {
+                PlayerManager.Instance.lastHitEnemyName = collision.GetComponent<Test_Bullet>().enemyName;
+            }
             // [HT] add
 
             GFunc.Log("상체 반응했음");

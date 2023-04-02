@@ -44,6 +44,8 @@ public class ShopItem : MonoBehaviour
     {
         player.playerMoney -= price;
         player.cashController.SetPlayerCash(player.playerMoney);
+
+        GetComponent<DropItem>().GetDropItem();
         gameObject.SetActive(false);
     }
 }

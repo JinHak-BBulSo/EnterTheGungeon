@@ -67,7 +67,7 @@ public class BulletKingController : Boss
 
     private void OnEnable()
     {
-        maxHp = 50;
+        maxHp = 350;
         currentHp = maxHp;
         Invoke("Status", 4f);
         bossHpBar.SetActive(true);
@@ -240,6 +240,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -260,6 +261,8 @@ public class BulletKingController : Boss
                     Vector2 direction = new Vector2(-1f, -1f);
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
 
@@ -268,6 +271,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -288,6 +292,8 @@ public class BulletKingController : Boss
                     Vector2 direction = new Vector2(-1f, -1f);
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
             }
@@ -297,6 +303,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -317,6 +324,8 @@ public class BulletKingController : Boss
                     Vector2 direction = Vector2.left;
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
 
@@ -325,6 +334,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -345,6 +355,8 @@ public class BulletKingController : Boss
                     Vector2 direction = Vector2.left;
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
             }
@@ -357,6 +369,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -377,6 +390,8 @@ public class BulletKingController : Boss
                     Vector2 direction = new Vector2(1f, -1f);
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
 
@@ -385,6 +400,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -405,6 +421,8 @@ public class BulletKingController : Boss
                     Vector2 direction = new Vector2(1f, -1f);
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
             }
@@ -416,6 +434,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -436,6 +455,8 @@ public class BulletKingController : Boss
                     Vector2 direction = Vector2.right;
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
 
@@ -444,6 +465,7 @@ public class BulletKingController : Boss
                 for (int i = 0; i < bulletCount; i++)
                 {
                     GameObject bullet = objectManager.MakeObject("Bullet_TypeE");
+                    bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
 
                     switch (i)
                     {
@@ -464,6 +486,8 @@ public class BulletKingController : Boss
                     Vector2 direction = Vector2.right;
                     bulletRigidbody.AddForce(direction.normalized * bulletSpeed, ForceMode2D.Impulse);
 
+                    //[KJH] ADD
+                    SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
                     yield return new WaitForSeconds(0.1f);
                 }
             }
@@ -516,6 +540,7 @@ public class BulletKingController : Boss
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_TypeA");
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
             bullet.transform.position = transform.position;
             bullet.transform.rotation = Quaternion.identity;
 
@@ -529,6 +554,8 @@ public class BulletKingController : Boss
 
         if (!isDead && curPatternCount < maxPatternCount)
         {
+            //[KJH] ADD
+            SoundManager.Instance.Play("BulletKing/bulletking_shot_01", Sound.SFX);
             Invoke("Pattern_2", 0.5f);
         }
         else
@@ -558,6 +585,8 @@ public class BulletKingController : Boss
             yield return new WaitForSeconds(1f);
         }
 
+        //[KJH] ADD
+        SoundManager.Instance.Play("BulletKing/bulletking_shot_03", Sound.SFX);
         isPatternStart = true;
 
         maxPatternCount = 6;
@@ -575,6 +604,7 @@ public class BulletKingController : Boss
             else
             {
                 GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+                bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
                 bullet.transform.position = transform.position + new Vector3(Mathf.Cos(Mathf.PI * 2 * i / (bulletCount)), Mathf.Sin(Mathf.PI * 2 * i / (bulletCount))) * enemyRadius;
                 bullet.transform.rotation = Quaternion.identity;
 
@@ -606,6 +636,12 @@ public class BulletKingController : Boss
     {
         bulletkingAnimator.SetBool("isPattern_4", true);
 
+        //[KJH] ADD
+        if(curPatternCount == 0 || curPatternCount == 15)
+        {
+            SoundManager.Instance.Play("BulletKing/bulletking_spin_01", Sound.SFX);
+        }
+
         isPatternStart = true;
 
         maxPatternCount = 30;
@@ -618,6 +654,7 @@ public class BulletKingController : Boss
             if (curPatternCount % 2 == 0)
             {
                 GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+                bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
                 bullet.transform.position = transform.position;
                 bullet.transform.rotation = Quaternion.identity;
 
@@ -632,6 +669,7 @@ public class BulletKingController : Boss
                 bulletCount = 50;
 
                 GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+                bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
                 bullet.transform.position = transform.position;
                 bullet.transform.rotation = Quaternion.identity;
 
@@ -642,6 +680,7 @@ public class BulletKingController : Boss
             else
             {
                 GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+                bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
                 bullet.transform.position = transform.position;
                 bullet.transform.rotation = Quaternion.identity;
 
@@ -683,6 +722,8 @@ public class BulletKingController : Boss
             yield return new WaitForSeconds(1.5f);
         }
 
+        //[KJH] ADD
+        SoundManager.Instance.Play("BulletKing/bulletking_shot_02", Sound.SFX);
         isPatternStart = true;
 
         maxPatternCount = 1;
@@ -690,6 +731,7 @@ public class BulletKingController : Boss
         bulletCount = 1;
 
         GameObject bullet = objectManager.MakeObject("Bullet_TypeC");
+        bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
         bullet.transform.position = transform.position + new Vector3(0f, 2f, 0f);
         bullet.transform.rotation = Quaternion.identity;
 
@@ -731,6 +773,7 @@ public class BulletKingController : Boss
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
             bullet.transform.position = currentPosition_;
             bullet.transform.rotation = Quaternion.identity;
 
@@ -763,6 +806,7 @@ public class BulletKingController : Boss
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
             bullet.transform.position = nextPosition_;
             bullet.transform.rotation = Quaternion.identity;
 
@@ -795,6 +839,7 @@ public class BulletKingController : Boss
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
             bullet.transform.position = next2Position_;
             bullet.transform.rotation = Quaternion.identity;
 
@@ -821,6 +866,8 @@ public class BulletKingController : Boss
     //  @brief 플레이어를 향해 화염병처럼 화염 장판을 원형으로 까는 술잔을 던진다.
     IEnumerator Pattern_6_All()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("BulletKing/bulletking_throw_01", Sound.SFX);
         isPatternStart = true;
 
         if (curPatternCount == 0)
@@ -839,6 +886,7 @@ public class BulletKingController : Boss
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_TypeD");
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
             bullet.transform.position = muzzle_Hand.transform.position;
             bullet.transform.rotation = Quaternion.identity;
 
@@ -876,6 +924,9 @@ public class BulletKingController : Boss
                 bullet_.GetComponent<Animator>().SetTrigger("isExplode");
                 bullet_.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 bullet_.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+
+                //[KJH] ADD
+                SoundManager.Instance.Play("BulletKing/bulletking_wine_01", Sound.SFX);
 
                 yield return new WaitForSeconds(1f);
                 bullet_.GetComponent<CircleCollider2D>().enabled = false;
@@ -933,6 +984,9 @@ public class BulletKingController : Boss
 
     private void Die()
     {
+        //[KJH] ADD
+        SoundManager.Instance.Play("BulletKing/bulletking_explode_01", Sound.SFX);
+        bossHpBar.SetActive(false);
         bulletkingAnimator.SetTrigger("isDead");
         StartCoroutine("Die_VFX");
     }

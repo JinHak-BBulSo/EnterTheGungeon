@@ -8,11 +8,13 @@ public class BossEntrance : MonoBehaviour
     BoxCollider2D entranceCollider = default;
     bool isFirstOpen = false;
     public Room bossRoom = default;
+    Vector2 originTransform = default;
 
     void Start()
     {
         entranceCollider = GetComponent<BoxCollider2D>();
         DoorManager.Instance.DoorClose += EntranceClose;
+        originTransform = new Vector2(transform.position.x, transform.position.y);
     }
 
     public void EntranceClose()
@@ -50,23 +52,10 @@ public class BossEntrance : MonoBehaviour
 
     IEnumerator BossEntranceClose()
     {
-        float timer_ = 0;
+        StopAllCoroutines();
+        yield return new WaitForSeconds(0.5f);
         entranceCollider.isTrigger = false;
-
-        while (true)
-        {
-            timer_ += Time.deltaTime;
-            if (timer_ > 1)
-            {
-                timer_ = 0;
-                yield break;
-            }
-            else
-            {
-                transform.position -= new Vector3(0, 1f * Time.deltaTime, 0);
-                yield return null;
-            }
-        }
+        transform.position = originTransform;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -108,7 +108,7 @@ public class MoonrakerWeapon : PlayerWeapon
     {
         isLaserOn = true;
         //[KJH] ADD
-        SoundManager.Instance.Play("moonrakerLaser_shot_01", Sound.SFX);
+        SoundManager.Instance.Play("MoonRaker/moonrakerLaser_shot_01", Sound.SFX);
     }
 
     public override void ReloadBullet()
@@ -118,6 +118,11 @@ public class MoonrakerWeapon : PlayerWeapon
 
     public void AttackLaser()
     {
+        if(moonLineRenderer.enabled == false)
+        {
+            //[KJH] ADD
+            SoundManager.Instance.Play("MoonRaker/moonrakerLaser_loop_01", Sound.SFX);
+        }
         moonLineRenderer.enabled = true;
         isLoopActive = true;
 
@@ -144,6 +149,7 @@ public class MoonrakerWeapon : PlayerWeapon
 
             if(hit_ != default)
             {
+                Debug.Log(hit_.collider.name);
                 Vector3 temp_ = firstPos;
 
                 countLaser_++;
@@ -158,15 +164,22 @@ public class MoonrakerWeapon : PlayerWeapon
                 {
                     if (hit_.collider.tag == "Monster")
                     {
-                        //[KJH] ADD
-                        SoundManager.Instance.Play("MoonRaker/moonrakerLaser_loop_01", Sound.SFX);
-
                         // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
                         bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
-                        hit_.collider.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
+                        if (hit_.collider.transform.parent.gameObject.GetComponentMust<TestEnemy>() != null)
+                        {
+                            hit_.collider.transform.parent.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
+                        }
+                        else if(hit_.collider.transform.parent.GetComponent<BossGorGun>() != null)
+                        {
+                            hit_.collider.transform.parent.GetComponent<BossGorGun>().currentHp -= bulletDamage;
+                        }
+                        else if (hit_.collider.transform.GetComponent<BulletKingController>() != null)
+                        {
+                            hit_.collider.transform.GetComponent<BulletKingController>().currentHp -= bulletDamage;
+                        }
                     }
                 }
-
             }
             else
             {
@@ -247,7 +260,7 @@ public class MoonrakerWeapon : PlayerWeapon
         // default는 탄속이 없다는 의미다.
         this.bulletSpeed = default;
 
-        this.bulletDamage = 26;
+        this.bulletDamage = 9;
         originBulletDamage = bulletDamage;
 
         this.bulletRange = 30f;

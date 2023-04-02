@@ -16,6 +16,7 @@ public class Table : InteractiveObj
     private BoxCollider2D tableBoxCollider = default;
     private SpriteRenderer tableRenderer = default;
     private Rigidbody2D tableRigid = default;
+    private Animator playerAni = default;
     private bool isRigidSet = false;
     private int tableHp = 10;
 
@@ -51,7 +52,8 @@ public class Table : InteractiveObj
                     objAni.SetTrigger("isRightUp");
                     break;
             }
-            
+
+            playerAni.SetTrigger("TableKickOneHand");
             isOver = true;
             StartCoroutine(ReSetCollider());
         }
@@ -59,7 +61,7 @@ public class Table : InteractiveObj
 
     IEnumerator ReSetCollider()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         objAni.enabled = false;
         tableBoxCollider.enabled = false;
         isRigidSet = true;
@@ -69,6 +71,7 @@ public class Table : InteractiveObj
         tableRigid.gravityScale = 0;
         tableRigid.mass = 200;
         tableRigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+        PlayerManager.Instance.player.OnHitAndStatusEvent();
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

@@ -33,7 +33,6 @@ public class HpController : MonoBehaviour
     // 플레이어의 체력과 최대체력 실드가 변경되야하는 순간에 이 함수를 호출하세요.
     public void SetPlayerHp(int playerHp_,int playerMaxHp_,int playerShield_)
     {
-
         int PlayerHp = playerHp_;
         int playerMaxHp = playerMaxHp_;
         int PlayerShield = playerShield_;
@@ -61,6 +60,9 @@ public class HpController : MonoBehaviour
         }
         for (int i = 0; i < PlayerShield; i++)
         {
+            //[KJH] ADD
+            hpObjList[ShieldIndex + i].GetComponent<Image>().enabled = true;
+
             hpObjList[ShieldIndex + i].HpImgChanger(3);
         }
     }

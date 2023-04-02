@@ -206,9 +206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d899bb073112c74ab56b1f18eeecfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: 
+  weaponDesc: 
+  weaponType: 
+  weaponDataTxt: 
   bulletDamage: 0
   bulletShotRange: 0
-  weaponDeley: 0
+  weaponDeley: 0.7
   bulletObjs: {fileID: 0}
   firePos: {fileID: 0}
   rotateWeapon: {fileID: 0}
@@ -223,6 +227,7 @@ MonoBehaviour:
   isLoopActive: 0
   isLaserOn: 0
   isChkMagazine: 0
+  originBulletDamage: 0
 --- !u!212 &3230433007159215783
 SpriteRenderer:
   m_ObjectHideFlags: 0

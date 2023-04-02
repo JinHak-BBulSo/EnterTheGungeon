@@ -59,6 +59,11 @@ public class BossRoom : Room
         base.OnTriggerEnter2D(collision);
         if(collision.tag == "Player" && !isRoomClear && isPlayerEnter && !cutInOn)
         {
+            if (boss.name == "BossGorgun")
+            {
+                SoundManager.Instance.Play("GorGun/gorgun_laugh_03b_8D465481", Sound.SFX);
+            }
+            
             PlayerManager.Instance.playerCamera.isBossIntro = true;
             PlayerManager.Instance.miniCamController.isBossIntro = true;
             MoveCamera2D.target = this.gameObject;
@@ -67,12 +72,16 @@ public class BossRoom : Room
     }
 
     IEnumerator BossIntroEnd(float introDelay_)
-    {
+    {  
         SoundManager.Instance.Play("BGM/03 GUNGEON UP GUNGEON DOWN", Sound.Bgm);
         cutInOn = true;
         int cutInIndex = bossIndex + PlayerManager.Instance.playerCharacterIndex * 2;
         yield return new WaitForSeconds(1.0f);
         cutInObjs.transform.GetChild(cutInIndex).gameObject.SetActive(true);
+
+        //[KJH] ADD
+        SoundManager.Instance.Play("Player/38special_shot_01", Sound.UI_SFX);
+
         yield return new WaitForSeconds(introDelay_);
         cutInObjs.transform.GetChild(cutInIndex).gameObject.SetActive(false);
         PlayerManager.Instance.playerCamera.isBossIntro = false;

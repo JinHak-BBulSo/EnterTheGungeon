@@ -20,6 +20,8 @@ public class Test_Bullet : MonsterBullets
     private float maxPatternCount = default;
     private float curPatternCount = default;
 
+    public string enemyName = string.Empty;
+
     private void Awake()
     {
         shopkeeperController = GetComponent<ShopKeeperController>();

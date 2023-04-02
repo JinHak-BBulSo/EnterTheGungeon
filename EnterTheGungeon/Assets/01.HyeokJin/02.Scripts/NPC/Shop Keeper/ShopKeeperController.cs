@@ -22,6 +22,9 @@ public class ShopKeeperController : MonoBehaviour
     private float bulletSpeed = default;
     private float enemyRadius = default;
 
+    [SerializeField]
+    GameObject[] allSellItems = new GameObject[4];
+
     private void Awake()
     {
         shopkeeperAnimator = GetComponent<Animator>();
@@ -60,6 +63,10 @@ public class ShopKeeperController : MonoBehaviour
                     Threat();
                     break;
                 default:
+                    foreach(GameObject sellItem in allSellItems)
+                    {
+                        sellItem.SetActive(false);
+                    }
                     OpenFire();
                     break;
             }
@@ -94,6 +101,12 @@ public class ShopKeeperController : MonoBehaviour
         //  플레이어가 공격하면(1회) 경고함
         if (isPlayerShoot && shootCount == 1)
         {
+            if (shopkeeperAnimator.GetBool("isWarning") == false)
+            {
+                //[KJH] ADD
+                SoundManager.Instance.Play("ShopKeeper/claw_blast_01", Sound.SFX);
+            }
+
             shopkeeperAnimator.SetBool("isWarning", true);
             isPlayerShoot = false;
             StartCoroutine("Warning_AnimationControll");
@@ -138,9 +151,16 @@ public class ShopKeeperController : MonoBehaviour
     #region Threat
     private void Threat()
     {
+        
         //  플레이어가 공격하면(2회) 샷건을 들고 위협함
         if (isPlayerShoot && shootCount == 2)
         {
+            if(shopkeeperAnimator.GetBool("isThreat") == false)
+            {
+                //[KJH] ADD
+                SoundManager.Instance.Play("ShopKeeper/shotgun_reload_01", Sound.SFX);
+            }
+            
             shopkeeperAnimator.SetBool("isThreat", true);
             isPlayerShoot = false;
         }
@@ -203,6 +223,7 @@ public class ShopKeeperController : MonoBehaviour
         {
 
             GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+            bullet.GetComponent<Test_Bullet>().enemyName = "ShopKeeper";
 
             if (isTargetFront)
             {
@@ -227,6 +248,7 @@ public class ShopKeeperController : MonoBehaviour
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject bullet = objectManager.MakeObject("Bullet_Basic");
+            bullet.GetComponent<Test_Bullet>().enemyName = "ShopKeeper";
 
             if (isTargetFront)
             {
@@ -254,6 +276,8 @@ public class ShopKeeperController : MonoBehaviour
 
         if (curPatternCount < maxPatternCount)
         {
+            //[KJH] ADD
+            SoundManager.Instance.Play("ShopKeeper/shotgun_shot_01", Sound.SFX);
             Invoke("OpenFire_Pattern", 0.5f);
         }
         else
@@ -276,6 +300,7 @@ public class ShopKeeperController : MonoBehaviour
             if (curPatternCount % 4 == 0)
             {
                 GameObject bullet = objectManager.MakeObject("Bullet_TypeF");
+                bullet.GetComponent<Test_Bullet>().enemyName = "ShopKeeper";
 
                 if (isTargetFront)
                 {

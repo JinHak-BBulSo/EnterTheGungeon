@@ -69,8 +69,8 @@ public class BossGorGun : Boss
     {
         enemyName = "The Gorgun";
 
-        maxHp = 50;
-        currentHp = 50;
+        maxHp = 400;
+        currentHp = maxHp;
 
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
         player = GameObject.FindWithTag("Player");
@@ -155,6 +155,9 @@ public class BossGorGun : Boss
                 effectObject.SetActive(true);
                 effectImage.SetNativeSize();
                 effectImageRectTransform.sizeDelta = new Vector2(effectImageRectTransform.sizeDelta.x * 3, effectImageRectTransform.sizeDelta.y * 3);
+
+                //[KJH] ADD
+                SoundManager.Instance.Play("GorGun/water_flow_01", Sound.SFX);
 
                 ispattern1StartEnd = true;
                 isFirstTargeting = true;
@@ -287,6 +290,7 @@ public class BossGorGun : Boss
                     isAttackPattern = false;
                     //isMovepattern = true;
                     bossGorgunBody.patternCount = 0;
+
                     if (!AttackDelayCheck)
                     {
                         StartCoroutine(AttackDelay());
@@ -331,6 +335,7 @@ public class BossGorGun : Boss
                     anim.SetBool("isAttack", false);
                     attackPatternCount++;
                     isAttackPattern = false;
+
                     bossGorgunBody.patternCount = 0;
                     if (!AttackDelayCheck)
                     {
@@ -386,6 +391,10 @@ public class BossGorGun : Boss
     {
         if (isDead == false)
         {
+            //[KJH] ADD
+            rigid.velocity = Vector3.zero;
+            SoundManager.Instance.Play("GorGun/gorgun_gasp_01", Sound.SFX);
+
             isDead = true;
             if (effectObject.activeSelf == true)
             {
@@ -401,8 +410,4 @@ public class BossGorGun : Boss
             StopAllCoroutines();
         }
     }
-
-
-
-
 }

@@ -6,6 +6,7 @@ public class TreasureBox : MonoBehaviour
 {
     public GameObject inBoxItem = default;
     Animator boxAni = default;
+    Animator playerAni = default;
     bool isOpen = false;
     bool isPlayerAttach = false;
     int itemIndex = -1;
@@ -30,11 +31,14 @@ public class TreasureBox : MonoBehaviour
             PlayerManager.Instance.player.playerKey--;
             PlayerManager.Instance.player.keyController.SetPlayerKey(PlayerManager.Instance.player.playerKey);
             boxAni.SetTrigger("isOpen");
-            
-            if(itemIndex > 2)
+            playerAni = PlayerManager.Instance.player.GetComponent<Animator>();
+            playerAni.SetTrigger("GetItem");
+
+            if (itemIndex > 2)
             {
                 DropManager.Instance.dropItems.RemoveAt(itemIndex);
             }
+            StartCoroutine(ResetPlayerAni());
         }
     }
 
@@ -51,5 +55,10 @@ public class TreasureBox : MonoBehaviour
         {
             isPlayerAttach = false;
         }
+    }
+    IEnumerator ResetPlayerAni()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PlayerManager.Instance.player.OnHitAndStatusEvent();
     }
 }
