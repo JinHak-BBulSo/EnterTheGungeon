@@ -123,7 +123,6 @@ public class InventoryControl : MonoBehaviour
             InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt);
     }
 
-
     public void AddFirstItem()
     {
         Debug.Log("무기생성");
