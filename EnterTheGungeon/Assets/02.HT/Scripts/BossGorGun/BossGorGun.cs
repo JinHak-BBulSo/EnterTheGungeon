@@ -394,6 +394,7 @@ public class BossGorGun : Boss
             //[KJH] ADD
             rigid.velocity = Vector3.zero;
             SoundManager.Instance.Play("GorGun/gorgun_gasp_01", Sound.SFX);
+            hpbar.SetActive(false);
 
             isDead = true;
             if (effectObject.activeSelf == true)

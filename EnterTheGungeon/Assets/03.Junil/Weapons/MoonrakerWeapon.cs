@@ -22,6 +22,7 @@ public class MoonrakerWeapon : PlayerWeapon
 
     // 반사되는 최대 횟수
     public int reflectMax = default;
+    public bool isHitAble = false;
 
 
     public bool isLoopActive = true;
@@ -29,7 +30,6 @@ public class MoonrakerWeapon : PlayerWeapon
     public bool isChkMagazine = false;
 
     public int originBulletDamage = default;
-
 
 
     private void OnEnable()
@@ -84,8 +84,8 @@ public class MoonrakerWeapon : PlayerWeapon
         {
             if(isChkMagazine == false)
             {
-                StartMinusMagazine();
                 isChkMagazine = true;
+                StartMinusMagazine();
             }
 
             AttackLaser();
@@ -101,7 +101,15 @@ public class MoonrakerWeapon : PlayerWeapon
         }
 
 
-        deleyChkVal += Time.deltaTime;
+        if (weaponDeley < deleyChkVal && isLaserOn)
+        {
+            isHitAble = true;
+        }
+        else
+        {
+            isHitAble = false;
+        }
+            deleyChkVal += Time.deltaTime;
     }
 
     public override void FireBullet()
@@ -143,61 +151,62 @@ public class MoonrakerWeapon : PlayerWeapon
         moonLineRenderer.positionCount = countLaser_;
         moonLineRenderer.SetPosition(0, firstPos);
 
-        while(isLoopActive == true)
+        /*while(isLoopActive == true)
+        {*/
+        RaycastHit2D hit_ = Physics2D.Raycast(firstPos, directLaser, defDistanceRay, layerMask);
+
+        if (hit_ != default)
         {
-            RaycastHit2D hit_ = Physics2D.Raycast(firstPos, directLaser, defDistanceRay, layerMask);
+            Debug.Log(hit_.collider.name);
+            Vector3 temp_ = firstPos;
 
-            if(hit_ != default)
+            countLaser_++;
+            moonLineRenderer.positionCount = countLaser_;
+            directLaser = Vector3.Reflect(directLaser, hit_.normal);
+            firstPos = (Vector2)directLaser.normalized + hit_.point;
+            moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
+
+
+            // 레이저 공격
+            if (isHitAble)
             {
-                Debug.Log(hit_.collider.name);
-                Vector3 temp_ = firstPos;
-
-                countLaser_++;
-                moonLineRenderer.positionCount = countLaser_;
-                directLaser = Vector3.Reflect(directLaser, hit_.normal);
-                firstPos = (Vector2) directLaser.normalized + hit_.point;
-                moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
-
-
-                // 레이저 공격
-                if (weaponDeley < deleyChkVal)
+                if (hit_.collider.tag == "Monster")
                 {
-                    if (hit_.collider.tag == "Monster")
+                    // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
+                    bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+                    if (hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>() != null)
                     {
-                        // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
-                        bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
-                        if (hit_.collider.transform.parent.gameObject.GetComponentMust<TestEnemy>() != null)
-                        {
-                            hit_.collider.transform.parent.gameObject.GetComponentMust<TestEnemy>().currentHp -= bulletDamage;
-                        }
-                        else if(hit_.collider.transform.parent.GetComponent<BossGorGun>() != null)
-                        {
-                            hit_.collider.transform.parent.GetComponent<BossGorGun>().currentHp -= bulletDamage;
-                        }
-                        else if (hit_.collider.transform.GetComponent<BulletKingController>() != null)
-                        {
-                            hit_.collider.transform.GetComponent<BulletKingController>().currentHp -= bulletDamage;
-                        }
+                        hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>().currentHp -= bulletDamage;
+                    }
+                    else if (hit_.collider.transform.parent.GetComponent<BossGorGun>() != null)
+                    {
+                        hit_.collider.transform.parent.GetComponent<BossGorGun>().currentHp -= bulletDamage;
+                    }
+                    else if (hit_.collider.transform.GetComponent<BulletKingController>() != null)
+                    {
+                        hit_.collider.transform.GetComponent<BulletKingController>().OnHitHpBar(bulletDamage);
                     }
                 }
+                deleyChkVal = 0; 
             }
-            else
-            {
-                countLaser_++;
-                moonLineRenderer.positionCount = countLaser_;
-                moonLineRenderer.SetPosition(countLaser_ - 1, firstPos + (directLaser.normalized * defDistanceRay));
-                isLoopActive = false;
-            }
-
-            if(reflectMax < countLaser_)
-            {
-                isLoopActive = false;
-            }
-
-
+        }
+        else
+        {
+            countLaser_++;
+            moonLineRenderer.positionCount = countLaser_;
+            moonLineRenderer.SetPosition(countLaser_ - 1, firstPos + (directLaser.normalized * defDistanceRay));
+            isLoopActive = false;
         }
 
-        
+        if (reflectMax < countLaser_)
+        {
+            isLoopActive = false;
+        }
+
+
+        //}
+
+
     }
 
 
@@ -260,12 +269,14 @@ public class MoonrakerWeapon : PlayerWeapon
         // default는 탄속이 없다는 의미다.
         this.bulletSpeed = default;
 
-        this.bulletDamage = 9;
+        this.bulletDamage = 6;
         originBulletDamage = bulletDamage;
+        bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+
 
         this.bulletRange = 30f;
         this.bulletShotRange = 5;
-        this.weaponDeley = 0.1f;
+        this.weaponDeley = 0.3f;
         this.weaponHand = 1;
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268305584}
   - component: {fileID: 268305585}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338608255}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Left_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501506114}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Right_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772148084}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Left_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798782565}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Right_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1000400781}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Right_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023029151}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1102033460}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133552586}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Left_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230474858}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Left_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455630140}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Right_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1755030475}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Right_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129622769}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Muzzle_Left_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3869134355248301133}
   - component: {fileID: 3869134355248301132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BulletKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 3869134355557257196}
   - component: {fileID: 1639649368}
   - component: {fileID: 1639649369}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Boss_BulletKing
   m_TagString: Monster
   m_Icon: {fileID: 0}

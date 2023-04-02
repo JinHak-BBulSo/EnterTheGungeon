@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -941,11 +942,15 @@ public class BulletKingController : Boss
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        //[KJH]ADD
         if (collision.CompareTag("PlayerBullet") && !isDead)
         {
+            int playerBulletDamage_ = 0;
+
             //[KJH] ADD
             SoundManager.Instance.Play("Player/general_hurt_01", Sound.SFX);
-            int playerBulletDamage_ = collision.gameObject.GetComponentMust<PlayerBullet>().bulletDamage;
+            playerBulletDamage_ = collision.gameObject.GetComponentMust<PlayerBullet>().bulletDamage;
+
             StartCoroutine(OnHit_HpBar(playerBulletDamage_));
             StartCoroutine("OnHit_Color");
         }
@@ -974,6 +979,12 @@ public class BulletKingController : Boss
 
     }   //  OnHit_HpBar()
 
+    // [KJH] ADD 레이저 위해 만듬
+    public void OnHitHpBar(int playerBulletDamage_)
+    {
+        StartCoroutine(OnHit_HpBar(playerBulletDamage_));
+        StartCoroutine("OnHit_Color");
+    }
     IEnumerator OnHit_Color()
     {
         yield return new WaitForSeconds(0.1f);

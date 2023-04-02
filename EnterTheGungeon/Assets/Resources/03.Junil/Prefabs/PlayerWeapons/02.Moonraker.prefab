@@ -224,6 +224,7 @@ MonoBehaviour:
   moonLineRenderer: {fileID: 3460032946472871903}
   moonTransform: {fileID: 0}
   reflectMax: 0
+  isHitAble: 0
   isLoopActive: 0
   isLaserOn: 0
   isChkMagazine: 0
