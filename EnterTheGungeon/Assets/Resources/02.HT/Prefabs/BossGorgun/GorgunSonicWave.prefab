@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4962711501360104717}
   - component: {fileID: 3401444993751699603}
   - component: {fileID: 2816726594266968800}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: GorgunSonicWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

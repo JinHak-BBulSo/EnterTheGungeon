@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4096640812625052438}
   - component: {fileID: 7286448961338659258}
   - component: {fileID: 2147860552890770010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullet_TypeA
   m_TagString: MonsterBullet
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   isBounce: 0
   isExplode: 0
   rotateSpeed: 3
+  enemyName: 
 --- !u!50 &7286448961338659258
 Rigidbody2D:
   serializedVersion: 4

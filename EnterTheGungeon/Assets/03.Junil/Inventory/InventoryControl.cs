@@ -181,7 +181,7 @@ public class InventoryControl : MonoBehaviour
                 weaponObjs_.playerWeapons.Add(
                     Instantiate(dropGun_.dropWeapon,
                     weaponObjs_.weaponObjs.transform.position,
-                    Quaternion.identity,
+                    weaponObjs_.transform.rotation,
                     weaponObjs_.weaponObjs.transform));
 
                 // playerWeaponScript 리스트에 무기 스크립트 추가

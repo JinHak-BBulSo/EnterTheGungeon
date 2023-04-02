@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 468992525096751668}
   - component: {fileID: 7465732180783409638}
   - component: {fileID: 6586097651466605147}
-  m_Layer: 4
+  m_Layer: 2
   m_Name: PoisonArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc107f2b58fab24bb93eb9235cf4ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: 
   spreadSpeed: 100
   sizeX: 0
   rectTransform: {fileID: 0}
