@@ -154,6 +154,7 @@ public class ClockHair : MonoBehaviour
                     {
                         //[KJH] ADD
                         SoundManager.Instance.Play("GameOver/gameover_shot_01", Sound.SFX);
+                        PlayerManager.Instance.player.GetComponent<Animator>().SetTrigger("OnDieEnd");
                     }
                     animator.SetBool("isShot", true);
                 }

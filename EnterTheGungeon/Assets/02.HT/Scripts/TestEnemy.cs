@@ -94,6 +94,9 @@ public class TestEnemy : MonoBehaviour
     // Start is called before the first frame update1
     void Start()
     {
+        //[KJH] ADD
+        PlayerManager.Instance.player.PlayerDie -= TurnOffAction;
+        PlayerManager.Instance.player.PlayerDie += TurnOffAction;
         currentHp = maxHp;
 
         eye = transform.GetChild(1).gameObject.GetComponent<TestEnemyEye>();
@@ -501,6 +504,11 @@ public class TestEnemy : MonoBehaviour
             }
 
         }
+    }
+
+    public void TurnOffAction()
+    {
+        gameObject.SetActive(false);
     }
 }
 

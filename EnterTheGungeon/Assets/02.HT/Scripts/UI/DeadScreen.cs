@@ -115,12 +115,18 @@ public class DeadScreen : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "03.StageScene" && miniCam == null)
         {
-            miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
+            if (!miniCam.activeSelf)
+            {
+                miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
+            }
         }
 
         if (PlayerManager.Instance.player != null && PlayerManager.Instance.player.isDie)
         {
-            miniCam.SetActive(false);
+            if (!miniCam.activeSelf)
+            {
+                miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
+            }
             //isDieEventStarted = true;
             if (!isCaptured)
             {

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //[KJH] ADD
+    public delegate void PlayerDieHandler();
+    public event PlayerDieHandler PlayerDie;
 
     public HpController hpController = default;
     public BlankController blankController = default;
@@ -410,7 +413,12 @@ public class PlayerController : MonoBehaviour
         //deadScreen.transform.GetChild(0).gameObject.SetActive(true);
         //deadScreen.transform.GetChild(1).gameObject.SetActive(true);
         isDie = true;
+        GetComponent<Animator>().SetTrigger("OnDieStart");
         deadScreen.SetActive(true);
+        StopAllCoroutines();
+        playerAttack.weaponObjs.SetActive(false);
+        PlayerDie();
+        this.enabled = false;
         //deadScreen.GetComponent<DeadScreen>().DeadEventStart();
     }
 
