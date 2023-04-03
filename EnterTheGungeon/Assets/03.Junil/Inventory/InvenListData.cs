@@ -22,6 +22,15 @@ public class InvenListData : MonoBehaviour
     private GameObject inventorySetObjs = default;
     [SerializeField]
     private GameObject EnemyBook = default;
+    // [HT] ADD
+    [SerializeField]
+    private GameObject EnemyInfo = default;
+    [SerializeField]
+    private GameObject inventoryInfoSetObjs = default;
+    [SerializeField]
+    private GameObject InventoryBottomUIObj = default;
+    [SerializeField]
+    private GameObject InvenInfoBottomObj2 = default;
 
     // 총, 액티브, 패시브 슬롯 정보를 관리하는 리스트
     public GameObject slotPrefabs = default;
@@ -159,7 +168,7 @@ public class InvenListData : MonoBehaviour
                 case 4:
                     bossMenu[3].SetActive(false);
                     bossMenu[0].SetActive(true);
-                    
+
                     break;
 
             }
@@ -175,7 +184,14 @@ public class InvenListData : MonoBehaviour
 
                     //[KJH] ADD
                     inventorySetObjs.SetActive(true);
+                    //[HT] ADD
+                    inventoryInfoSetObjs.SetActive(true);
+                    InventoryBottomUIObj.SetActive(true);
+                    InvenInfoBottomObj2.SetActive(true);
+
                     EnemyBook.SetActive(false);
+                    //[HT] ADD
+                    EnemyInfo.SetActive(false);
                     InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt = 0;
                     selectTabInvenVal = 0;
                     nowInvenText.text = "장비";
@@ -210,7 +226,14 @@ public class InvenListData : MonoBehaviour
 
                     //[KJH] ADD
                     inventorySetObjs.SetActive(false);
+                    //[HT] ADD
+                    inventoryInfoSetObjs.SetActive(false);
+                    InventoryBottomUIObj.SetActive(false);
+                    InvenInfoBottomObj2.SetActive(false);
+
                     EnemyBook.SetActive(true);
+                    //[HT] ADD
+                    EnemyInfo.SetActive(true);
                     InventoryManager.Instance.inventoryDatas.invenListData.nowTabInvenCnt = 4;
                     selectTabInvenVal = 4;
                     nowInvenText.text = "도감";

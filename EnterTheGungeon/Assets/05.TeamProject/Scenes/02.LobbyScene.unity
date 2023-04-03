@@ -1358,6 +1358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a832b1690d805f248b24e3ae0167fff8, type: 3}
+--- !u!1 &785682162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3200517835883372473, guid: a832b1690d805f248b24e3ae0167fff8, type: 3}
+  m_PrefabInstance: {fileID: 785682161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &901754227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1610,21 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2946226242510126334, guid: 3c489b32341b74e45b256c3277071ef4, type: 3}
   m_PrefabInstance: {fileID: 990380992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1273447812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2570169406119090076, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+  m_PrefabInstance: {fileID: 1730240851683783066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1273447813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2570169406297547188, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+  m_PrefabInstance: {fileID: 1730240851683783066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1273447814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2570169406055602792, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+  m_PrefabInstance: {fileID: 1730240851683783066}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476479643
 GameObject:
@@ -2074,6 +2094,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1863865574}
     - target: {fileID: 939949063804687095, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+      propertyPath: EnemyInfo
+      value: 
+      objectReference: {fileID: 785682162}
+    - target: {fileID: 939949063804687095, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
       propertyPath: nowInvenText
       value: 
       objectReference: {fileID: 2052207905}
@@ -2081,6 +2105,18 @@ PrefabInstance:
       propertyPath: inventorySetObjs
       value: 
       objectReference: {fileID: 1730240851683783068}
+    - target: {fileID: 939949063804687095, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+      propertyPath: InvenInfoBottomObj2
+      value: 
+      objectReference: {fileID: 1273447812}
+    - target: {fileID: 939949063804687095, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+      propertyPath: InventoryBottomUIObj
+      value: 
+      objectReference: {fileID: 1273447814}
+    - target: {fileID: 939949063804687095, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
+      propertyPath: inventoryInfoSetObjs
+      value: 
+      objectReference: {fileID: 1273447813}
     - target: {fileID: 1423737739016397316, guid: 74a854960cbc8d34f9f68e666fbbe833, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

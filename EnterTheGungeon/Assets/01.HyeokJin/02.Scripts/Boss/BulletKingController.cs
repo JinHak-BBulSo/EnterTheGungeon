@@ -822,6 +822,9 @@ public class BulletKingController : Boss
 
         foreach (var bullet in bullets)
         {
+            //[KJH] ADD
+            bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
+
             StartCoroutine(Pattern_5_ExplodeBullet_3(bullet.transform.position));
             bullet.gameObject.SetActive(false);
         }
@@ -839,8 +842,10 @@ public class BulletKingController : Boss
 
         for (int i = 0; i < bulletCount; i++)
         {
+            //[KJH] ADD
             GameObject bullet = objectManager.MakeObject("Bullet_TypeB");
             bullet.GetComponent<Test_Bullet>().enemyName = "BulletKing";
+
             bullet.transform.position = next2Position_;
             bullet.transform.rotation = Quaternion.identity;
 

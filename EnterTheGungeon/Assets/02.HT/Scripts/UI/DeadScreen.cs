@@ -113,20 +113,14 @@ public class DeadScreen : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (SceneManager.GetActiveScene().name == "03.StageScene" && miniCam == null)
+        if (SceneManager.GetActiveScene().name == "04.BattleScene" && miniCam == null)
         {
-            if (!miniCam.activeSelf)
-            {
-                miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
-            }
+            miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
         }
 
         if (PlayerManager.Instance.player != null && PlayerManager.Instance.player.isDie)
         {
-            if (!miniCam.activeSelf)
-            {
-                miniCam = GameObject.Find("UIObjs").transform.GetChild(0).gameObject;
-            }
+            miniCam.SetActive(false);
             //isDieEventStarted = true;
             if (!isCaptured)
             {

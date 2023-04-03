@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MoonrakerWeapon : PlayerWeapon
@@ -8,7 +9,7 @@ public class MoonrakerWeapon : PlayerWeapon
     // 레이저 길이
     [SerializeField]
     private float defDistanceRay = default;
-
+    float timer = 0;
     // 레이저 발사 위치
     private Vector3 firstPos = default;
 
@@ -87,10 +88,10 @@ public class MoonrakerWeapon : PlayerWeapon
                 isChkMagazine = true;
                 StartMinusMagazine();
             }
-
-            AttackLaser();
-
-            
+            if (!isLoopActive)
+            {
+                AttackLaser();
+            }
         }
         
         if (Input.GetMouseButtonUp(0))
@@ -126,7 +127,9 @@ public class MoonrakerWeapon : PlayerWeapon
 
     public void AttackLaser()
     {
-        if(moonLineRenderer.enabled == false)
+        Debug.Log("AttackLaser");
+        
+        if (moonLineRenderer.enabled == false)
         {
             //[KJH] ADD
             SoundManager.Instance.Play("MoonRaker/moonrakerLaser_loop_01", Sound.SFX);
@@ -151,62 +154,58 @@ public class MoonrakerWeapon : PlayerWeapon
         moonLineRenderer.positionCount = countLaser_;
         moonLineRenderer.SetPosition(0, firstPos);
 
-        /*while(isLoopActive == true)
-        {*/
-        RaycastHit2D hit_ = Physics2D.Raycast(firstPos, directLaser, defDistanceRay, layerMask);
-
-        if (hit_ != default)
+        while (isLoopActive == true)
         {
-            Debug.Log(hit_.collider.name);
-            Vector3 temp_ = firstPos;
+            RaycastHit2D hit_ = Physics2D.Raycast(firstPos, directLaser, defDistanceRay, layerMask);
 
-            countLaser_++;
-            moonLineRenderer.positionCount = countLaser_;
-            directLaser = Vector3.Reflect(directLaser, hit_.normal);
-            firstPos = (Vector2)directLaser.normalized + hit_.point;
-            moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
-
-
-            // 레이저 공격
-            if (isHitAble)
+            if (hit_ != default)
             {
-                if (hit_.collider.tag == "Monster")
+                Debug.Log(hit_.collider.name);
+                Vector3 temp_ = firstPos;
+
+                countLaser_++;
+                moonLineRenderer.positionCount = countLaser_;
+                directLaser = Vector3.Reflect(directLaser, hit_.normal);
+                firstPos = (Vector2)directLaser.normalized + hit_.point;
+                moonLineRenderer.SetPosition(countLaser_ - 1, hit_.point);
+
+
+                // 레이저 공격
+                if (isHitAble)
                 {
-                    // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
-                    bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
-                    if (hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>() != null)
+                    if (hit_.collider.tag == "Monster")
                     {
-                        hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>().currentHp -= bulletDamage;
+                        // 적 몬스터 스크립트에 접근하여 체력을 깍는 작동을 한다
+                        bulletDamage = originBulletDamage + PlayerManager.Instance.player.playerDamage;
+                        if (hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>() != null)
+                        {
+                            hit_.collider.transform.parent.gameObject.GetComponent<TestEnemy>().currentHp -= bulletDamage;
+                        }
+                        else if (hit_.collider.transform.parent.GetComponent<BossGorGun>() != null)
+                        {
+                            hit_.collider.transform.parent.GetComponent<BossGorGun>().currentHp -= bulletDamage;
+                        }
+                        else if (hit_.collider.transform.GetComponent<BulletKingController>() != null)
+                        {
+                            hit_.collider.transform.GetComponent<BulletKingController>().OnHitHpBar(bulletDamage);
+                        }
                     }
-                    else if (hit_.collider.transform.parent.GetComponent<BossGorGun>() != null)
-                    {
-                        hit_.collider.transform.parent.GetComponent<BossGorGun>().currentHp -= bulletDamage;
-                    }
-                    else if (hit_.collider.transform.GetComponent<BulletKingController>() != null)
-                    {
-                        hit_.collider.transform.GetComponent<BulletKingController>().OnHitHpBar(bulletDamage);
-                    }
+                    deleyChkVal = 0;
                 }
-                deleyChkVal = 0; 
+            }
+            else
+            {
+                countLaser_++;
+                moonLineRenderer.positionCount = countLaser_;
+                moonLineRenderer.SetPosition(countLaser_ - 1, firstPos + (directLaser.normalized * defDistanceRay));
+                isLoopActive = false;
+            }
+
+            if (reflectMax < countLaser_)
+            {
+                isLoopActive = false;
             }
         }
-        else
-        {
-            countLaser_++;
-            moonLineRenderer.positionCount = countLaser_;
-            moonLineRenderer.SetPosition(countLaser_ - 1, firstPos + (directLaser.normalized * defDistanceRay));
-            isLoopActive = false;
-        }
-
-        if (reflectMax < countLaser_)
-        {
-            isLoopActive = false;
-        }
-
-
-        //}
-
-
     }
 
 

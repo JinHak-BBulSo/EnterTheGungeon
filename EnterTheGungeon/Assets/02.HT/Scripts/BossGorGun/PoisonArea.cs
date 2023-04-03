@@ -16,7 +16,7 @@ public class PoisonArea : MonoBehaviour
 
     bool isCreated;
 
-    void Start()
+    void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();

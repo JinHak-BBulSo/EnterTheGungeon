@@ -113,6 +113,7 @@ public class BossGorGun : Boss
             if (!isMovepattern)
             {
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
+                rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
                 bossCollider.isTrigger = false;
                 anim.SetBool("isMovePattern1", false);
             }
