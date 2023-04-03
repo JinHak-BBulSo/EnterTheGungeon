@@ -64,8 +64,8 @@ public class PathFinder : MonoBehaviour
         gridArray = new GameObject[(int)(rectTransform.sizeDelta.x / cellSizeX), (int)(rectTransform.sizeDelta.y / cellSizeY)];
 
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
-        pathFinderGridPool = objectPool.pathFinderGridPool;
-        pathFinderGridPrefab = objectPool.pathFinderGridPrefab;
+        /*pathFinderGridPool = objectPool.pathFinderGridPool;
+        pathFinderGridPrefab = objectPool.pathFinderGridPrefab;*/
 
 
         for (int y = 0; y < gridArray.GetLength(1); y++)

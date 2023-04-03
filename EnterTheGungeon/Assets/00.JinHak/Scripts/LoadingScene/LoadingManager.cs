@@ -17,7 +17,7 @@ public class LoadingManager : GSingleton<LoadingManager>
     public void LoadLoadingScene(string sceneName)
     {
         nextSceneName = sceneName;
-        SceneManager.LoadScene("LoadingScene");
+        SceneManager.LoadScene("03.LoadingScene", LoadSceneMode.Additive);
     }
 
     IEnumerator LoadScene()

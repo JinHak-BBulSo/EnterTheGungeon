@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public List<GameObject> pathFinderGridPool;
-    public GameObject pathFinderGridPrefab;
+    /*public List<GameObject> pathFinderGridPool;
+    public GameObject pathFinderGridPrefab;*/
     int pathFinderGridPoolSize;
 
-    public List<GameObject> enemyBulletPool;
-    public GameObject enemyBulletPrefab;
+    public List<GameObject> enemyBulletPool = new List<GameObject>();
+    public GameObject enemyBulletPrefab = default;
     int enemyBulletPoolSize;
 
-    public List<GameObject> poisonAreaPool;
-    public GameObject poisonAreaPrefab;
+    public List<GameObject> poisonAreaPool = new List<GameObject>();
+    public GameObject poisonAreaPrefab = default;
     int poisonAreaPoolSize;
 
     private void Awake()
     {
         transform.parent = PlayerManager.Instance.player.transform.parent.parent;
+
     }
     void Start()
     {
-        pathFinderGridPool = new List<GameObject>();
+        /*pathFinderGridPool = new List<GameObject>();
         pathFinderGridPrefab = Resources.Load<GameObject>("02.HT/Prefabs/PathFinder/PathFinderGrid");
         pathFinderGridPoolSize = 0;
 
@@ -31,29 +32,23 @@ public class ObjectPool : MonoBehaviour
             GameObject clone_ = Instantiate(pathFinderGridPrefab, transform.GetChild(0));
             clone_.SetActive(false);
             pathFinderGridPool.Add(clone_);
-        }
+        }*/
 
-
-        enemyBulletPool = new List<GameObject>();
         enemyBulletPrefab = Resources.Load<GameObject>("02.HT/Prefabs/TestBullet");
         enemyBulletPoolSize = 500;
 
-        for (int i = 0; i < enemyBulletPoolSize; i++)
-        {
-            GameObject clone_ = Instantiate(enemyBulletPrefab, transform.GetChild(1));
-            //clone_.SetActive(false);
-            enemyBulletPool.Add(clone_);
-        }
-
-        poisonAreaPool = new List<GameObject>();
         poisonAreaPrefab = Resources.Load<GameObject>("02.HT/Prefabs/BossGorgun/PoisonArea");
         poisonAreaPoolSize = 500;
 
-        for (int i = 0; i < poisonAreaPoolSize; i++)
+        for (int i = 0; i < enemyBulletPoolSize; i++)
         {
-            GameObject clone_ = Instantiate(poisonAreaPrefab, transform.GetChild(2));
-            //clone_.SetActive(false);
-            poisonAreaPool.Add(clone_);
+            GameObject bulletClone_ = Instantiate(enemyBulletPrefab, transform.GetChild(1));
+            enemyBulletPool.Add(bulletClone_);
+            bulletClone_.SetActive(false);
+
+            GameObject poisonClone_ = Instantiate(poisonAreaPrefab, transform.GetChild(2));
+            poisonAreaPool.Add(poisonClone_);
+            poisonClone_.SetActive(false);
         }
     }
 

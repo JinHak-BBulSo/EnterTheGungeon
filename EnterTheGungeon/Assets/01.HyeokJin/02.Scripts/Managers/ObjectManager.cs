@@ -24,13 +24,13 @@ public class ObjectManager : GSingleton<ObjectManager>
     {
         bulletPrefabs = Resources.LoadAll<GameObject>(bulletPath);
 
-        bulletBasic = new GameObject[500];
-        bulletTypeA = new GameObject[500];
-        bulletTypeB = new GameObject[500];
+        bulletBasic = new GameObject[150];
+        bulletTypeA = new GameObject[150];
+        bulletTypeB = new GameObject[150];
         bulletTypeC = new GameObject[10];
-        bulletTypeD = new GameObject[10];
+        bulletTypeD = new GameObject[50];
         bulletTypeE = new GameObject[50];
-        bulletTypeF = new GameObject[500];
+        bulletTypeF = new GameObject[150];
 
         Generate();
     }   //  Awake()
