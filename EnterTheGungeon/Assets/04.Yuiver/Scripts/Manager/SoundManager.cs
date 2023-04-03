@@ -83,7 +83,6 @@ public class SoundManager : GSingleton<SoundManager>
     public void Play(string path, Sound type = Sound.UI_SFX, float pitch = 1.0f)
     {
         AudioClip audioClip = GetAudioClip(path , type);
-        Debug.Log(audioClip.name);
         Play(audioClip, type, pitch);
     }
 

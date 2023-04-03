@@ -31,7 +31,7 @@ public class GunGeonEntrance : MonoBehaviour
         PlayerManager.Instance.player.enabled = false;
         PlayerManager.Instance.player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         yield return new WaitForSeconds(0.6f);
-
-        LoadingManager.Instance.LoadLoadingScene("03.StageScene");
+        GFunc.LoadScene("04.BattleScene");
+        //LoadingManager.Instance.LoadLoadingScene("03.StageScene");
     }
 }

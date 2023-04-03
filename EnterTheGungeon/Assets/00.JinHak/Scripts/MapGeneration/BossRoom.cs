@@ -31,7 +31,6 @@ public class BossRoom : Room
         }
         else
         {
-            Debug.Log(mapBoss.name);
             mapBoss.transform.GetChild(0).GetComponent<Boss>().belongRoom = this;
         }
     }

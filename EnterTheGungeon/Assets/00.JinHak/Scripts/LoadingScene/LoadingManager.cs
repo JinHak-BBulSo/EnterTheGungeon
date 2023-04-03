@@ -22,7 +22,6 @@ public class LoadingManager : GSingleton<LoadingManager>
 
     IEnumerator LoadScene()
     {
-        yield return null;
         op = SceneManager.LoadSceneAsync(nextSceneName);
 
         while (!op.isDone)
@@ -30,8 +29,8 @@ public class LoadingManager : GSingleton<LoadingManager>
             yield return null;
 
             // 로딩 상황이 progress로 0 ~ 1의 숫자로 표시됨 
-            if (op.progress < 0.9f) 
-            { 
+            if (op.progress < 1f) 
+            {
                 /* Do nothing */
             }
             else
@@ -39,19 +38,10 @@ public class LoadingManager : GSingleton<LoadingManager>
                 // progress >= 1 즉, 준비가 다된 상황
                 if (op.progress >= 1.0f)
                 {
-                    SoundManager.Instance.Play("BGM/02 LEAD LORDS KEEP", Sound.Bgm);
+                    op.allowSceneActivation = true;
                     yield break; 
                 }
             }
         }
-
-        StartCoroutine(NextSceneLoad());
-    }
-
-    IEnumerator NextSceneLoad()
-    {
-        yield return new WaitForSeconds(0.5f);
-        
-        op.allowSceneActivation = true;
     }
 }

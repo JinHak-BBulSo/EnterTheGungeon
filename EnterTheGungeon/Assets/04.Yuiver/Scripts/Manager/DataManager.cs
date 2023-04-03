@@ -111,7 +111,6 @@ public class DataManager : GSingleton<DataManager>
         byte[] bytes = SerializationUtility.SerializeValue(data, DataFormat.Binary);
         System.Text.Encoding.Default.GetBytes(AES_SavePath);
         File.WriteAllBytes(AES_SavePath, bytes);
-        Debug.Log($"Game data saved to: {AES_SavePath}");
     }
     //! AES-256 키가 저장된 파일이 있다면 불러오고 없다면 새로 생성해서 저장해주는 함수
     private AESKey CreatOrLoadAESkey()
@@ -120,13 +119,10 @@ public class DataManager : GSingleton<DataManager>
         {
             byte[] bytes = File.ReadAllBytes(AES_SavePath);
             AESKey data = SerializationUtility.DeserializeValue<AESKey>(bytes, DataFormat.Binary);
-            Debug.Log($"Game data loaded to: {AES_SavePath}");
             return data;
         }
         else
         {
-            Debug.LogWarning($"No save file found at: {AES_SavePath}");
-
             byte[] makeKey = new byte[32];
             using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
             {

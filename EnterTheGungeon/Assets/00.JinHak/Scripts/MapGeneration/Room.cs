@@ -44,7 +44,7 @@ public class Room : MonoBehaviour
         if(isPlayerEnter && enemyCount == 0 && !isRoomClear)
         {
             int ran_ = Random.Range(0, 100 + 1);
-            if(ran_ > 5)
+            if(ran_ > 90)
             {
                 DropManager.Instance.ItemDrop();
             }

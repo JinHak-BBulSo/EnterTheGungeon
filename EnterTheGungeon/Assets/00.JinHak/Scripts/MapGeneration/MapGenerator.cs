@@ -71,7 +71,6 @@ public class MapGenerator : MonoBehaviour
 
     private void Awake()
     {
-        DoorManager.Instance.Create();
         maps = transform.GetChild(0).gameObject;
         mapAccessLine = transform.GetChild(1).gameObject;
         mapAccessWall = transform.GetChild(2).gameObject;
@@ -97,16 +96,16 @@ public class MapGenerator : MonoBehaviour
 
     private void ColliderSizeSet()
     {
-        for(int i = 0; i < mapAccessWall.transform.childCount; i++)
+        for (int i = 0; i < mapAccessWall.transform.childCount; i++)
         {
             BoxCollider2D childCollider_ = mapAccessWall.transform.GetChild(i).GetComponent<BoxCollider2D>();
-            if(childCollider_.size.x > 0.6)
+            if (childCollider_.size.x > 0.6)
             {
-                childCollider_.size = new Vector2(childCollider_.size.x * 0.85f, 0.3f);
+                childCollider_.size = new Vector2(childCollider_.size.x - 1f, 0.3f);
             }
             else
             {
-                childCollider_.size = new Vector2(0.3f, childCollider_.size.y * 0.85f);
+                childCollider_.size = new Vector2(0.3f, childCollider_.size.y - 1f);
             }
             childCollider_.isTrigger = false;
         }
@@ -143,7 +142,7 @@ public class MapGenerator : MonoBehaviour
         // 세로가 더 긴 경우
         else
         {
-            nowNode_.leftNode = new MapNode(new RectInt(nowNode_.nodeRect.x, nowNode_.nodeRect.y, 
+            nowNode_.leftNode = new MapNode(new RectInt(nowNode_.nodeRect.x, nowNode_.nodeRect.y,
                 nowNode_.nodeRect.width, split_), nowNode_.nodeIndex * 2);
             nowNode_.leftNode.nodePosition = new Vector2(nowNode_.nodeRect.x, nowNode_.nodeRect.y - (maxLength_ - split_));
 
@@ -164,7 +163,7 @@ public class MapGenerator : MonoBehaviour
         DivideMap(nowNode_.leftNode, height_ + 1);
         DivideMap(nowNode_.rightNode, height_ + 1);
     }
-    
+
 
     // [KJH] 2023-03-16
     // @brief 방 간의 연결을 보여주는 함수
@@ -192,7 +191,7 @@ public class MapGenerator : MonoBehaviour
             Vector2 start_;
             Vector2 end_;
 
-            if(nowNode_.leftNode.Center.y == nowNode_.rightNode.Center.y)
+            if (nowNode_.leftNode.Center.y == nowNode_.rightNode.Center.y)
             {
                 start_ = new Vector2(leftNodeCenter.x, leftNodeCenter.y);
                 end_ = new Vector2(rightNodeCenter.x, leftNodeCenter.y);
@@ -202,7 +201,7 @@ public class MapGenerator : MonoBehaviour
                 start_ = new Vector2(rightNodeCenter.x, leftNodeCenter.y);
                 end_ = new Vector2(rightNodeCenter.x, rightNodeCenter.y);
             }
-            
+
             nowNode_.leftNode.nodePosition = start_ - mapSize / 2;
             nowNode_.rightNode.nodePosition = end_ - mapSize / 2;
 
@@ -212,12 +211,12 @@ public class MapGenerator : MonoBehaviour
     }
     private void SetStartRoom()
     {
-        List<int> accessRoomIndex_ = new List<int>{ 0, 4, 8, 15};
+        List<int> accessRoomIndex_ = new List<int> { 0, 4, 8, 15 };
 
         for (int i = 0; i < 4; i++)
         {
             int ran_ = Random.Range(0, accessRoomIndex_.Count);
-            
+
             Vector2 mapCreatePoint_ = default;
             GameObject startMapObj = Instantiate(specialMapPrefabs[i], maps.transform);
 
@@ -233,7 +232,7 @@ public class MapGenerator : MonoBehaviour
 
             float offsetHorizontal = startMap.room.roomSize.x / 2 + 2;
             float offsetVertical = startMap.room.roomSize.y / 2 + 2;
-            if(i == 1 || i == 2)
+            if (i == 1 || i == 2)
             {
                 offsetHorizontal += 23.5f;
                 offsetVertical += 23.5f;
@@ -249,7 +248,7 @@ public class MapGenerator : MonoBehaviour
 
                     start_ = startMap.rightCenter;
                     end_ = mapNodeArray[0].leftCenter;
-                    if(!(i == 1 || i == 2))
+                    if (!(i == 1 || i == 2))
                         Instantiate(verticalDoor, allDoors.transform).transform.position = start_ + new Vector2(2, 0);
                     break;
                 case 4:
@@ -292,13 +291,14 @@ public class MapGenerator : MonoBehaviour
             {
                 startPoint = startMapObj;
                 PlayerManager.Instance.nowPlayerInRoom = startMap.room;
+                SoundManager.Instance.Play("BGM/02 LEAD LORDS KEEP", Sound.Bgm);
             }
-            
+
             // 보스맵 설정의 경우
-            if(i == 1 || i == 2)
+            if (i == 1 || i == 2)
             {
                 BossRoom bossRoom_ = startMapObj.GetComponent<BossRoom>();
-                if(accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
+                if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
                 {
                     bossRoom_.roomEntrances[2].SetActive(true);
                 }
@@ -319,7 +319,7 @@ public class MapGenerator : MonoBehaviour
                 // x 포지션 값이 같은 경우
                 if (accessRoomIndex_[ran_] == 0 || accessRoomIndex_[ran_] == 4)
                 {
-                    start_ += new Vector2(23.5f * 0.65f + 2f, 0);
+                    start_ += new Vector2(23.5f * 0.65f - 2f, 0);
                     startLeft_ = new Vector2(start_.x + 0.65f, start_.y + 1);
                     startRight_ = new Vector2(start_.x + 0.65f, start_.y - 1);
 
@@ -334,11 +334,11 @@ public class MapGenerator : MonoBehaviour
                 {
                     if (accessRoomIndex_[ran_] == 8)
                     {
-                        start_ += new Vector2(0, 23.5f * 0.65f + 2f);
+                        start_ += new Vector2(0, 23.5f * 0.65f - 2f);
                     }
                     else
                     {
-                        end_ -= new Vector2(0, 23.5f * 0.65f + 2f);
+                        end_ -= new Vector2(0, 23.5f * 0.65f - 3f);
                     }
                     startLeft_ = new Vector2(start_.x - 1, start_.y + 0.65f);
                     startRight_ = new Vector2(start_.x + 1, start_.y + 0.65f);
@@ -381,7 +381,7 @@ public class MapGenerator : MonoBehaviour
             accessRoomIndex_.RemoveAt(ran_);
         }
     }
-    
+
     private void MapCreate(MapNode nowNode_)
     {
         mapNodeArray[nowNode_.nodeIndex] = nowNode_;
@@ -397,8 +397,6 @@ public class MapGenerator : MonoBehaviour
             {
                 if (index > 100)
                 {
-                    Debug.Log(index);
-                    Debug.Log(nowNode_.nodeIndex);
                     GameObject nodeRoom_ = Instantiate(mapPrefabs[2], maps.transform);
                     room_ = nodeRoom_.GetComponent<Room>();
                     nodeRoom_.transform.position = nowNode_.nodePosition;
@@ -485,7 +483,7 @@ public class MapGenerator : MonoBehaviour
             zoneAccessRoomIndex_[1] = 5;
             if (mapNodeArray[5].nodePosition.y > mapNodeArray[6].nodePosition.y)
             {
-                zoneAccessRoomIndex_[1] = 6; 
+                zoneAccessRoomIndex_[1] = 6;
             }
             else if (mapNodeArray[5].nodePosition.y == mapNodeArray[6].nodePosition.y)
             {
@@ -508,7 +506,7 @@ public class MapGenerator : MonoBehaviour
         else if (mapNodeArray[8].nodePosition.y == mapNodeArray[9].nodePosition.y)
         {
             zoneAccessRoomIndex_[2] = 8;
-            
+
         }
 
         // 존1, 존2 연결
@@ -523,7 +521,7 @@ public class MapGenerator : MonoBehaviour
         middle_ = new Vector2(start_.x, (start_.y + end_.y) / 2);
         middle2_ = new Vector2(end_.x, (start_.y + end_.y) / 2);
 
-        DrawAccessLine(start_, end_ , middle_, middle2_, accessLine, 0);
+        DrawAccessLine(start_, end_, middle_, middle2_, accessLine, 0);
         DrawAccessWallSide(start_, end_, middle_, middle2_, 0);
         Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
         Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
@@ -619,7 +617,7 @@ public class MapGenerator : MonoBehaviour
                     Instantiate(horizontalDoor, allDoors.transform).transform.position = start_ + new Vector2(0, 2);
                     Instantiate(horizontalDoor, allDoors.transform).transform.position = end_ - new Vector2(0, 2);
                 }
-            }  
+            }
         }
         SetStartRoom();
     }
@@ -729,7 +727,7 @@ public class MapGenerator : MonoBehaviour
             middleLine_.SetPosition(1, middle2_);
 
             endLine_.SetPosition(0, middle2_ - new Vector2(0, 0.5f));
-            endLine_.SetPosition(1, end_);  
+            endLine_.SetPosition(1, end_);
         }
         // 1 -> right to bottom distance
         else

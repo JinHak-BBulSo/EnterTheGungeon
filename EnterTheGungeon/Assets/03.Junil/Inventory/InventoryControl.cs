@@ -125,7 +125,6 @@ public class InventoryControl : MonoBehaviour
 
     public void AddFirstItem()
     {
-        Debug.Log("무기생성");
         int itemListCnt_ = 0;
         Item SPMAWeapon_ = Resources.Load<Item>("03.Junil/Weapon/FirstSetItem/SPMAWeapon");
         GameObject SPMAWeaponPrefab = Resources.Load<GameObject>
