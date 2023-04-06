@@ -8,8 +8,6 @@ public class StartPoint : MonoBehaviour
     {
         PlayerManager.Instance.player.enabled = true;
         PlayerManager.Instance.player.OnHitAndStatusEvent();
-        // 초기 무기 셋팅 호출
-        InventoryManager.Instance.inventoryControl.AddFirstItem();
 
         PlayerManager.Instance.player.transform.position =
             transform.position + new Vector3(0, -4, 0);

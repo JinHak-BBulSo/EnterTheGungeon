@@ -53,7 +53,6 @@ public class TestEnemyWeapon : MonoBehaviour
             //[KJH] ADD
             SoundManager.Instance.Play("BulletKin/ak47_shot_01", Sound.SFX);
             isDelayEnd = true;
-            Debug.Log("fire bullet");
             GameObject clone_ = objectPool.GetObject(enemyBulletPool, enemyBulletPrefab, 2);
             clone_.transform.position = transform.position;
             //GameObject clone = Instantiate(Resources.Load<GameObject>("02.HT/Prefabs/TestBullet"), transform.position, transform.rotation);
