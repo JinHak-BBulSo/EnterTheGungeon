@@ -138,7 +138,7 @@ public class TestBullet : MonsterBullets
     {
         if (isCreated)
         {
-            PlayerController.OnPlayerBlankBullet += this.OnPlayerBlankBullet;
+            PlayerController.OnBlankBullet += this.OnPlayerBlankBullet;
             StartCoroutine(ReturnBullet(5));
             isGorgunBulletCheck = false;
         }

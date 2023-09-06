@@ -7,12 +7,12 @@ public class MonsterBullets : BaseBullet
     // { [Junil] 몬스터 총알은 이 스크립트를 상속받기
     public virtual void OnEnable()
     {
-        PlayerController.OnPlayerBlankBullet += this.OnPlayerBlankBullet;
+        PlayerController.OnBlankBullet += this.OnPlayerBlankBullet;
     }
 
     public virtual void OnDisable()
     {
-        PlayerController.OnPlayerBlankBullet -= this.OnPlayerBlankBullet;
+        PlayerController.OnBlankBullet -= this.OnPlayerBlankBullet;
 
     }
 

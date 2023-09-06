@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // { [Junil] 공포탄 이벤트를 사용하기 위한 델리게이트, 이벤트 선언
     public delegate void PlayerBlankBullets();
 
-    public static event PlayerBlankBullets OnPlayerBlankBullet;
+    public static event PlayerBlankBullets OnBlankBullet;
 
     // } [Junil] 공포탄 이벤트를 사용하기 위한 델리게이트, 이벤트 선언
 
@@ -210,7 +210,7 @@ public class PlayerController : MonoBehaviour
         {
 
             if (playerBlank == 0 && playerBlank == default) { return; }
-            OnPlayerBlankBullet();
+            OnBlankBullet();
             playerBlank--;
             blankController.SetPlayerBlank(playerBlank);
         }
